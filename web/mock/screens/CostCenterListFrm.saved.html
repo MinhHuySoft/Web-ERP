@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục kênh bán / hạng mục</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CostCenterListFrm" data-form-type="LIST" data-mode="view" data-screen-key="CostCenterListFrm" data-menu-id="0245">
+<h1>Danh mục kênh bán / hạng mục</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CostCenterListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CostCenterListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CostCenterListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CostCenterListFrm-q">Tìm nhanh</label><input id="flt-CostCenterListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="CostCenterID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-frozen>Bộ phận</th>
+<th scope="col" data-field="CostCenterName" data-type="text" data-width="240">Tên Center chi phí</th>
+<th scope="col" data-field="DiaChi" data-type="text" data-width="110">Chi Dia</th>
+<th scope="col" data-field="DienThoai" data-type="text" data-width="110">Thoai Dien</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+<th scope="col" data-field="Value" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Giá trị</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="StartDate" data-type="date" data-width="95">Ngày bắt đầu</th>
+<th scope="col" data-field="EndDate" data-type="date" data-width="95">Ngày kết thúc</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="ParentCostCenterID" data-type="text" data-width="110">Mã Center chi phí Parent</th>
+<th scope="col" data-field="isSelect" data-type="bool" data-width="60">Select</th>
+<th scope="col" data-field="HeSo" data-type="number" data-width="70" data-decimals="0">So He</th>
+</tr></thead>
+<tbody>
+<tr data-key="KD"><td>KD</td><td>Tên Center chi phí 1</td><td></td><td></td><td>KH0001</td><td data-value="237500000">237.500.000</td><td></td><td data-value="2026-07-25">25/07/2026</td><td data-value="2026-08-29">29/08/2026</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-27">27/10/2026</td><td data-value="2026-07-27">27/07/2026</td><td>PCC001</td><td data-value="false"></td><td data-value="2">2</td></tr>
+<tr data-key="KT"><td>KT</td><td>Tên Center chi phí 2</td><td>Chi Dia 2</td><td>Thoai Dien 2</td><td>KH0004</td><td data-value="20200000">20.200.000</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-08-16">16/08/2026</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-11-09">09/11/2026</td><td data-value="2026-09-02">02/09/2026</td><td>PCC002</td><td data-value="false"></td><td data-value="30">30</td></tr>
+<tr data-key="KHO"><td>KHO</td><td>Tên Center chi phí 3</td><td></td><td>Thoai Dien 3</td><td>KH0007</td><td data-value="8200000">8.200.000</td><td></td><td data-value="2026-07-21">21/07/2026</td><td data-value="2026-09-08">08/09/2026</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-10-27">27/10/2026</td><td>PCC003</td><td data-value="false"></td><td data-value="62">62</td></tr>
+<tr data-key="KTH"><td>KTH</td><td>Tên Center chi phí 4</td><td>Chi Dia 4</td><td>Thoai Dien 4</td><td>KH0010</td><td data-value="8310000">8.310.000</td><td>Giao hàng trong tuần</td><td data-value="2026-10-30">30/10/2026</td><td data-value="2026-09-07">07/09/2026</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-11-05">05/11/2026</td><td data-value="2026-07-20">20/07/2026</td><td>PCC004</td><td data-value="false"></td><td data-value="46">46</td></tr>
+<tr data-key="HC"><td>HC</td><td>Tên Center chi phí 5</td><td>Chi Dia 5</td><td>Thoai Dien 5</td><td>KH0013</td><td data-value="1230000">1.230.000</td><td></td><td data-value="2026-09-27">27/09/2026</td><td data-value="2026-09-27">27/09/2026</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-02">02/10/2026</td><td data-value="2026-09-20">20/09/2026</td><td>PCC005</td><td data-value="false"></td><td data-value="6">6</td></tr>
+<tr data-key="KD"><td>KD</td><td>Tên Center chi phí 6</td><td></td><td>Thoai Dien 6</td><td>KH0001</td><td data-value="93400000">93.400.000</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-11-11">11/11/2026</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-11">11/10/2026</td><td data-value="2026-08-01">01/08/2026</td><td>PCC006</td><td data-value="true">Có</td><td data-value="93">93</td></tr>
+<tr data-key="KT"><td>KT</td><td>Tên Center chi phí 7</td><td>Chi Dia 7</td><td></td><td>KH0004</td><td data-value="290500000">290.500.000</td><td></td><td data-value="2026-10-16">16/10/2026</td><td data-value="2026-08-19">19/08/2026</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-27">27/10/2026</td><td data-value="2026-10-24">24/10/2026</td><td>PCC007</td><td data-value="false"></td><td data-value="9">9</td></tr>
+<tr data-key="KHO"><td>KHO</td><td>Tên Center chi phí 8</td><td></td><td>Thoai Dien 8</td><td>KH0007</td><td data-value="3760000">3.760.000</td><td></td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-10-16">16/10/2026</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-11-06">06/11/2026</td><td>PCC008</td><td data-value="false"></td><td data-value="71">71</td></tr>
+<tr data-key="KTH"><td>KTH</td><td>Tên Center chi phí 9</td><td></td><td></td><td>KH0010</td><td data-value="6620000">6.620.000</td><td></td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-08-17">17/08/2026</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-08-07">07/08/2026</td><td data-value="2026-08-04">04/08/2026</td><td>PCC009</td><td data-value="false"></td><td data-value="97">97</td></tr>
+<tr data-key="HC"><td>HC</td><td>Tên Center chi phí 10</td><td></td><td>Thoai Dien 10</td><td>KH0013</td><td data-value="6780000">6.780.000</td><td></td><td data-value="2026-08-12">12/08/2026</td><td data-value="2026-08-05">05/08/2026</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-09-10">10/09/2026</td><td data-value="2026-08-04">04/08/2026</td><td>PCC010</td><td data-value="false"></td><td data-value="31">31</td></tr>
+<tr data-key="KD"><td>KD</td><td>Tên Center chi phí 11</td><td></td><td></td><td>KH0001</td><td data-value="38300000">38.300.000</td><td></td><td data-value="2026-08-27">27/08/2026</td><td data-value="2026-09-24">24/09/2026</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-11-08">08/11/2026</td><td>PCC011</td><td data-value="false"></td><td data-value="19">19</td></tr>
+<tr data-key="KT"><td>KT</td><td>Tên Center chi phí 12</td><td></td><td></td><td>KH0004</td><td data-value="82600000">82.600.000</td><td>Giao hàng trong tuần</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-09-16">16/09/2026</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-16">16/10/2026</td><td data-value="2026-10-11">11/10/2026</td><td>PCC012</td><td data-value="false"></td><td data-value="15">15</td></tr>
+<tr data-key="KHO"><td>KHO</td><td>Tên Center chi phí 13</td><td></td><td></td><td>KH0007</td><td data-value="6810000">6.810.000</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-10-16">16/10/2026</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-23">23/07/2026</td><td data-value="2026-07-23">23/07/2026</td><td>PCC013</td><td data-value="false"></td><td data-value="53">53</td></tr>
+<tr data-key="KTH"><td>KTH</td><td>Tên Center chi phí 14</td><td>Chi Dia 14</td><td></td><td>KH0010</td><td data-value="1080000">1.080.000</td><td></td><td data-value="2026-10-21">21/10/2026</td><td data-value="2026-10-09">09/10/2026</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-08-17">17/08/2026</td><td>PCC014</td><td data-value="true">Có</td><td data-value="28">28</td></tr>
+<tr data-key="HC"><td>HC</td><td>Tên Center chi phí 15</td><td></td><td></td><td>KH0013</td><td data-value="160000000">160.000.000</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="2026-07-21">21/07/2026</td><td data-value="2026-09-24">24/09/2026</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-04">04/09/2026</td><td data-value="2026-09-01">01/09/2026</td><td>PCC015</td><td data-value="false"></td><td data-value="46">46</td></tr>
+<tr data-key="KD"><td>KD</td><td>Tên Center chi phí 16</td><td>Chi Dia 16</td><td></td><td>KH0001</td><td data-value="34350000">34.350.000</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="2026-10-03">03/10/2026</td><td data-value="2026-07-20">20/07/2026</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-04">04/09/2026</td><td data-value="2026-08-14">14/08/2026</td><td>PCC016</td><td data-value="false"></td><td data-value="94">94</td></tr>
+<tr data-key="KT"><td>KT</td><td>Tên Center chi phí 17</td><td>Chi Dia 17</td><td></td><td>KH0004</td><td data-value="3330000">3.330.000</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="2026-09-27">27/09/2026</td><td data-value="2026-08-27">27/08/2026</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-29">29/10/2026</td><td data-value="2026-10-10">10/10/2026</td><td>PCC017</td><td data-value="false"></td><td data-value="50">50</td></tr>
+<tr data-key="KHO"><td>KHO</td><td>Tên Center chi phí 18</td><td>Chi Dia 18</td><td>Thoai Dien 18</td><td>KH0007</td><td data-value="133500000">133.500.000</td><td>Theo hợp đồng số 12/2026</td><td data-value="2026-09-09">09/09/2026</td><td data-value="2026-08-11">11/08/2026</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-20">20/08/2026</td><td data-value="2026-09-19">19/09/2026</td><td>PCC018</td><td data-value="false"></td><td data-value="51">51</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="Value" data-value="1136470000">1.136.470.000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</body></html>

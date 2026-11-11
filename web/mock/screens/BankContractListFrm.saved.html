@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục khế ước vay</title></head>
+<body>
+<section data-erp="screen" data-screen-id="BankContractListFrm" data-form-type="LIST" data-mode="view" data-screen-key="BankContractListFrm" data-menu-id="0251">
+<h1>Danh mục khế ước vay</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/BankContractListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/BankContractListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/BankContractListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-BankContractListFrm-q">Tìm nhanh</label><input id="flt-BankContractListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="BankContractID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="BankContractID" data-type="text" data-width="110" data-frozen>Mã hợp đồng Bank</th>
+<th scope="col" data-field="BankContractName" data-type="text" data-width="240">Tên hợp đồng Bank</th>
+<th scope="col" data-field="NgayVay" data-type="date" data-width="95">Vay Ngay</th>
+<th scope="col" data-field="AccountID" data-type="text" data-width="110">Tài khoản</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="CurrencyID" data-type="text" data-width="110">Loại tiền</th>
+<th scope="col" data-field="RateExchange" data-type="number" data-width="70" data-decimals="0">Tỷ giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="LaiSuat" data-type="number" data-width="70" data-decimals="0">Suat Lai</th>
+<th scope="col" data-field="NgayDaoHan" data-type="date" data-width="95">Han Dao Ngay</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+</tr></thead>
+<tbody>
+<tr data-key="BCI001"><td>BCI001</td><td>Tên hợp đồng Bank 1</td><td data-value="2026-09-25">25/09/2026</td><td>242</td><td data-value="187000000">187.000.000</td><td>VND</td><td data-value="1">1</td><td data-value="36700000">36.700.000</td><td data-value="84">84</td><td data-value="2026-09-13">13/09/2026</td><td>Hàng nhập khẩu</td><td>KH0001</td></tr>
+<tr data-key="BCI002"><td>BCI002</td><td>Tên hợp đồng Bank 2</td><td data-value="2026-08-08">08/08/2026</td><td>334</td><td data-value="4100000">4.100.000</td><td>USD</td><td data-value="1">1</td><td data-value="90800000">90.800.000</td><td data-value="83">83</td><td data-value="2026-11-03">03/11/2026</td><td></td><td>KH0004</td></tr>
+<tr data-key="BCI003"><td>BCI003</td><td>Tên hợp đồng Bank 3</td><td data-value="2026-07-15">15/07/2026</td><td>421</td><td data-value="60500000">60.500.000</td><td>EUR</td><td data-value="1">1</td><td data-value="1700000">1.700.000</td><td data-value="74">74</td><td data-value="2026-08-31">31/08/2026</td><td>Theo hợp đồng số 12/2026</td><td>KH0007</td></tr>
+<tr data-key="BCI004"><td>BCI004</td><td>Tên hợp đồng Bank 4</td><td data-value="2026-11-06">06/11/2026</td><td>632</td><td data-value="17500000">17.500.000</td><td>VND</td><td data-value="1">1</td><td data-value="23000000">23.000.000</td><td data-value="52">52</td><td data-value="2026-07-16">16/07/2026</td><td>Hàng nhập khẩu</td><td>KH0010</td></tr>
+<tr data-key="BCI005"><td>BCI005</td><td>Tên hợp đồng Bank 5</td><td data-value="2026-07-23">23/07/2026</td><td>642</td><td data-value="9640000">9.640.000</td><td>USD</td><td data-value="1">1</td><td data-value="29100000">29.100.000</td><td data-value="98">98</td><td data-value="2026-07-25">25/07/2026</td><td>Khách yêu cầu xuất hóa đơn</td><td>KH0013</td></tr>
+<tr data-key="BCI006"><td>BCI006</td><td>Tên hợp đồng Bank 6</td><td data-value="2026-09-25">25/09/2026</td><td>911</td><td data-value="127500000">127.500.000</td><td>EUR</td><td data-value="1">1</td><td data-value="198000000">198.000.000</td><td data-value="81">81</td><td data-value="2026-10-29">29/10/2026</td><td></td><td>KH0001</td></tr>
+<tr data-key="BCI007"><td>BCI007</td><td>Tên hợp đồng Bank 7</td><td data-value="2026-10-08">08/10/2026</td><td>131</td><td data-value="7100000">7.100.000</td><td>VND</td><td data-value="1">1</td><td data-value="33250000">33.250.000</td><td data-value="96">96</td><td data-value="2026-08-19">19/08/2026</td><td>Theo hợp đồng số 12/2026</td><td>KH0004</td></tr>
+<tr data-key="BCI008"><td>BCI008</td><td>Tên hợp đồng Bank 8</td><td data-value="2026-10-16">16/10/2026</td><td>153</td><td data-value="26500000">26.500.000</td><td>USD</td><td data-value="1">1</td><td data-value="2320000">2.320.000</td><td data-value="6">6</td><td data-value="2026-09-12">12/09/2026</td><td>Hàng nhập khẩu</td><td>KH0007</td></tr>
+<tr data-key="BCI009"><td>BCI009</td><td>Tên hợp đồng Bank 9</td><td data-value="2026-07-23">23/07/2026</td><td>214</td><td data-value="25000000">25.000.000</td><td>EUR</td><td data-value="1">1</td><td data-value="5140000">5.140.000</td><td data-value="60">60</td><td data-value="2026-09-23">23/09/2026</td><td>Khách yêu cầu xuất hóa đơn</td><td>KH0010</td></tr>
+<tr data-key="BCI010"><td>BCI010</td><td>Tên hợp đồng Bank 10</td><td data-value="2026-07-29">29/07/2026</td><td>3331</td><td data-value="92300000">92.300.000</td><td>VND</td><td data-value="1">1</td><td data-value="36400000">36.400.000</td><td data-value="86">86</td><td data-value="2026-09-10">10/09/2026</td><td>Giao hàng trong tuần</td><td>KH0013</td></tr>
+<tr data-key="BCI011"><td>BCI011</td><td>Tên hợp đồng Bank 11</td><td data-value="2026-07-14">14/07/2026</td><td>411</td><td data-value="94200000">94.200.000</td><td>USD</td><td data-value="1">1</td><td data-value="100000000">100.000.000</td><td data-value="40">40</td><td data-value="2026-08-03">03/08/2026</td><td></td><td>KH0001</td></tr>
+<tr data-key="BCI012"><td>BCI012</td><td>Tên hợp đồng Bank 12</td><td data-value="2026-07-26">26/07/2026</td><td>515</td><td data-value="331000000">331.000.000</td><td>EUR</td><td data-value="1">1</td><td data-value="37100000">37.100.000</td><td data-value="59">59</td><td data-value="2026-08-07">07/08/2026</td><td>Theo hợp đồng số 12/2026</td><td>KH0004</td></tr>
+<tr data-key="BCI013"><td>BCI013</td><td>Tên hợp đồng Bank 13</td><td data-value="2026-11-06">06/11/2026</td><td>641</td><td data-value="25550000">25.550.000</td><td>VND</td><td data-value="1">1</td><td data-value="6200000">6.200.000</td><td data-value="18">18</td><td data-value="2026-09-22">22/09/2026</td><td>Giao hàng trong tuần</td><td>KH0007</td></tr>
+<tr data-key="BCI014"><td>BCI014</td><td>Tên hợp đồng Bank 14</td><td data-value="2026-10-24">24/10/2026</td><td>811</td><td data-value="12100000">12.100.000</td><td>USD</td><td data-value="1">1</td><td data-value="50000000">50.000.000</td><td data-value="75">75</td><td data-value="2026-09-11">11/09/2026</td><td>Kiểm tra kỹ trước khi nhận</td><td>KH0010</td></tr>
+<tr data-key="BCI015"><td>BCI015</td><td>Tên hợp đồng Bank 15</td><td data-value="2026-08-05">05/08/2026</td><td>112</td><td data-value="2620000">2.620.000</td><td>EUR</td><td data-value="1">1</td><td data-value="9600000">9.600.000</td><td data-value="68">68</td><td data-value="2026-08-04">04/08/2026</td><td>Hàng nhập khẩu</td><td>KH0013</td></tr>
+<tr data-key="BCI016"><td>BCI016</td><td>Tên hợp đồng Bank 16</td><td data-value="2026-09-26">26/09/2026</td><td>152</td><td data-value="82750000">82.750.000</td><td>VND</td><td data-value="1">1</td><td data-value="28600000">28.600.000</td><td data-value="41">41</td><td data-value="2026-09-19">19/09/2026</td><td>Hàng nhập khẩu</td><td>KH0001</td></tr>
+<tr data-key="BCI017"><td>BCI017</td><td>Tên hợp đồng Bank 17</td><td data-value="2026-08-19">19/08/2026</td><td>211</td><td data-value="19550000">19.550.000</td><td>USD</td><td data-value="1">1</td><td data-value="4120000">4.120.000</td><td data-value="82">82</td><td data-value="2026-10-01">01/10/2026</td><td>Khách yêu cầu xuất hóa đơn</td><td>KH0004</td></tr>
+<tr data-key="BCI018"><td>BCI018</td><td>Tên hợp đồng Bank 18</td><td data-value="2026-10-12">12/10/2026</td><td>331</td><td data-value="107000000">107.000.000</td><td>EUR</td><td data-value="1">1</td><td data-value="4650000">4.650.000</td><td data-value="4">4</td><td data-value="2026-08-02">02/08/2026</td><td>Giao hàng trong tuần</td><td>KH0007</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="SourceAmount" data-value="1231910000">1.231.910.000</td><td></td><td></td><td data-field="Amount" data-value="696680000">696.680.000</td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</body></html>

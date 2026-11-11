@@ -1,0 +1,101 @@
+/* Design token mặc định (= theme ribbon-classic). Theme khác chỉ ghi đè các biến này + vài hiệu ứng riêng.
+   Quy ước: component KHÔNG đặt màu cứng, chỉ dùng biến --erp-*. */
+@layer tokens {
+  :root {
+    --erp-font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Roboto", "Helvetica Neue", Arial, sans-serif;
+    --erp-font-display: var(--erp-font);
+    --erp-mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+    --erp-font-size: 14px;
+
+    /* Nền & bề mặt */
+    --erp-bg: #eef1f6;
+    --erp-bg-image: none;
+    --erp-surface: #ffffff;
+    --erp-surface-2: #f6f8fb;
+    --erp-surface-3: #e9eef5;
+    --erp-overlay: rgba(15, 23, 42, .45);
+
+    /* Chữ */
+    --erp-text: #1d2433;
+    --erp-text-muted: #556074;
+    --erp-text-faint: #7d8799;
+
+    /* Viền */
+    --erp-border: #d5dbe5;
+    --erp-border-strong: #b7c0ce;
+
+    /* Màu nhấn & trạng thái */
+    --erp-accent: #1f5fbf;
+    --erp-accent-contrast: #ffffff;
+    --erp-success: #19764a;
+    --erp-warning: #935d00;
+    --erp-danger: #bf3328;
+    --erp-info: #1b65a3;
+
+    /* Hình khối */
+    --erp-radius: 6px;
+    --erp-radius-sm: 4px;
+    --erp-radius-lg: 10px;
+    --erp-shadow-sm: 0 1px 2px rgba(15, 23, 42, .08);
+    --erp-shadow: 0 2px 8px rgba(15, 23, 42, .10);
+    --erp-shadow-lg: 0 14px 36px rgba(15, 23, 42, .20);
+    --erp-shadow-inset: inset 0 1px 2px rgba(15, 23, 42, .06);
+    --erp-blur: 0px;
+
+    /* Vỏ ứng dụng (thanh tiêu đề, ribbon) */
+    --erp-chrome-bg: #1f5fbf;
+    --erp-chrome-text: #ffffff;
+    --erp-chrome-muted: rgba(255, 255, 255, .78);
+    --erp-chrome-hover: rgba(255, 255, 255, .14);
+    --erp-ribbon-bg: #f7f9fc;
+    --erp-ribbon-tabs-bg: var(--erp-chrome-bg);
+    --erp-ribbon-tab-text: var(--erp-chrome-text);
+    --erp-ribbon-tab-active-bg: var(--erp-ribbon-bg);
+    --erp-ribbon-tab-active-text: var(--erp-accent);
+    --erp-ribbon-border: #d5dbe5;
+    --erp-ribbon-btn-hover: #e2ecfa;
+    --erp-ribbon-btn-active: #cfe0f7;
+    --erp-panel-bg: var(--erp-surface);
+
+    /* Lưới dữ liệu — luôn nền đặc để dễ đọc số */
+    --erp-grid-bg: #ffffff;
+    --erp-grid-head: #f0f3f8;
+    --erp-grid-head-text: #2b3446;
+    --erp-grid-alt: #fafbfd;
+    --erp-grid-hover: #edf3fc;
+    --erp-grid-selected: #d9e7fb;
+    --erp-grid-line: #e3e8ef;
+    --erp-grid-foot: #f4f6fa;
+    --erp-grid-frozen-shadow: 3px 0 4px -2px rgba(15, 23, 42, .16);
+
+    /* Ô nhập */
+    --erp-input-bg: #ffffff;
+    --erp-input-border: #c6cedb;
+    --erp-input-readonly: #f3f5f9;
+
+    /* Mật độ */
+    --erp-row-h: 30px;
+    --erp-ctl-h: 32px;
+    --erp-gap: 10px;
+    --erp-pad: 14px;
+    --erp-titlebar-h: 46px;
+  }
+
+  :root[data-density="compact"] { --erp-row-h: 26px; --erp-ctl-h: 28px; --erp-gap: 6px; --erp-pad: 10px; --erp-titlebar-h: 40px; }
+  :root[data-density="comfortable"] { --erp-row-h: 38px; --erp-ctl-h: 38px; --erp-gap: 14px; --erp-pad: 18px; --erp-titlebar-h: 52px; }
+}
+
+/* Biến dẫn xuất — đặt ở lớp utilities để luôn tính theo giá trị theme/người dùng cuối cùng. */
+@layer utilities {
+  :root, :root[data-theme] {
+    --erp-primary: var(--erp-accent-user, var(--erp-accent));
+    --erp-primary-hover: color-mix(in srgb, var(--erp-primary) 84%, #000);
+    --erp-primary-soft: color-mix(in srgb, var(--erp-primary) 13%, var(--erp-surface));
+    --erp-primary-softer: color-mix(in srgb, var(--erp-primary) 7%, var(--erp-surface));
+    --erp-success-soft: color-mix(in srgb, var(--erp-success) 14%, var(--erp-surface));
+    --erp-warning-soft: color-mix(in srgb, var(--erp-warning) 16%, var(--erp-surface));
+    --erp-danger-soft: color-mix(in srgb, var(--erp-danger) 13%, var(--erp-surface));
+    --erp-info-soft: color-mix(in srgb, var(--erp-info) 13%, var(--erp-surface));
+    --erp-focus-ring: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary);
+  }
+}

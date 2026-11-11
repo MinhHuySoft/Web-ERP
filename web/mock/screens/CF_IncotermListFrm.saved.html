@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục điều kiện giao hàng quốc tế</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CF_IncotermListFrm" data-form-type="LIST" data-mode="view" data-screen-key="CF_IncotermListFrm" data-menu-id="0261">
+<h1>Danh mục điều kiện giao hàng quốc tế</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CF_IncotermListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CF_IncotermListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CF_IncotermListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CF_IncotermListFrm-q">Tìm nhanh</label><input id="flt-CF_IncotermListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="IncotermID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="IncotermID" data-type="text" data-width="110" data-frozen>Mã Incoterm</th>
+<th scope="col" data-field="IncotermName" data-type="text" data-width="240">Tên Incoterm</th>
+<th scope="col" data-field="IncotermNameEN" data-type="text" data-width="110">EN tên Incoterm</th>
+<th scope="col" data-field="DefaultAddPreCustomsToTaxBase" data-type="bool" data-width="60">Base thuế đến Customs Pre Add Default</th>
+<th scope="col" data-field="Description" data-type="text" data-width="240">Mô tả</th>
+<th scope="col" data-field="SortOrder" data-type="number" data-width="70" data-decimals="0">Đơn hàng Sort</th>
+<th scope="col" data-field="isDisable" data-type="bool" data-width="60">Disable</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+</tr></thead>
+<tbody>
+<tr data-key="IID001"><td>IID001</td><td>Tên Incoterm 1</td><td>EN tên Incoterm 1</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td data-value="58">58</td><td data-value="true">Có</td><td>Giao hàng trong tuần</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-11-08">08/11/2026</td><td data-value="2026-08-10">10/08/2026</td></tr>
+<tr data-key="IID002"><td>IID002</td><td>Tên Incoterm 2</td><td>EN tên Incoterm 2</td><td data-value="true">Có</td><td></td><td data-value="63">63</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-26">26/09/2026</td><td data-value="2026-07-14">14/07/2026</td></tr>
+<tr data-key="IID003"><td>IID003</td><td>Tên Incoterm 3</td><td>EN tên Incoterm 3</td><td data-value="true">Có</td><td>Theo hợp đồng số 12/2026</td><td data-value="52">52</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-24">24/09/2026</td><td data-value="2026-08-15">15/08/2026</td></tr>
+<tr data-key="IID004"><td>IID004</td><td>Tên Incoterm 4</td><td>EN tên Incoterm 4</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td data-value="90">90</td><td data-value="false"></td><td>Giao hàng trong tuần</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-30">30/10/2026</td><td data-value="2026-08-10">10/08/2026</td></tr>
+<tr data-key="IID005"><td>IID005</td><td>Tên Incoterm 5</td><td>EN tên Incoterm 5</td><td data-value="true">Có</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="77">77</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-08-20">20/08/2026</td></tr>
+<tr data-key="IID006"><td>IID006</td><td>Tên Incoterm 6</td><td>EN tên Incoterm 6</td><td data-value="false"></td><td></td><td data-value="94">94</td><td data-value="true">Có</td><td></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-09">09/08/2026</td><td data-value="2026-09-21">21/09/2026</td></tr>
+<tr data-key="IID007"><td>IID007</td><td>Tên Incoterm 7</td><td></td><td data-value="true">Có</td><td>Hàng nhập khẩu</td><td data-value="14">14</td><td data-value="true">Có</td><td>Hàng nhập khẩu</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-09-20">20/09/2026</td><td data-value="2026-08-03">03/08/2026</td></tr>
+<tr data-key="IID008"><td>IID008</td><td>Tên Incoterm 8</td><td></td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="4">4</td><td data-value="false"></td><td>Giao hàng trong tuần</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-09-08">08/09/2026</td></tr>
+<tr data-key="IID009"><td>IID009</td><td>Tên Incoterm 9</td><td>EN tên Incoterm 9</td><td data-value="true">Có</td><td>Hàng nhập khẩu</td><td data-value="90">90</td><td data-value="false"></td><td>Khách yêu cầu xuất hóa đơn</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-10-20">20/10/2026</td></tr>
+<tr data-key="IID010"><td>IID010</td><td>Tên Incoterm 10</td><td>EN tên Incoterm 10</td><td data-value="false"></td><td></td><td data-value="90">90</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-10-10">10/10/2026</td><td data-value="2026-08-05">05/08/2026</td></tr>
+<tr data-key="IID011"><td>IID011</td><td>Tên Incoterm 11</td><td></td><td data-value="true">Có</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="69">69</td><td data-value="false"></td><td></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-08-04">04/08/2026</td><td data-value="2026-08-06">06/08/2026</td></tr>
+<tr data-key="IID012"><td>IID012</td><td>Tên Incoterm 12</td><td>EN tên Incoterm 12</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="47">47</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-09-11">11/09/2026</td><td data-value="2026-08-31">31/08/2026</td></tr>
+<tr data-key="IID013"><td>IID013</td><td>Tên Incoterm 13</td><td>EN tên Incoterm 13</td><td data-value="false"></td><td></td><td data-value="83">83</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-17">17/07/2026</td><td data-value="2026-11-04">04/11/2026</td></tr>
+<tr data-key="IID014"><td>IID014</td><td>Tên Incoterm 14</td><td>EN tên Incoterm 14</td><td data-value="true">Có</td><td></td><td data-value="33">33</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-08-05">05/08/2026</td></tr>
+<tr data-key="IID015"><td>IID015</td><td>Tên Incoterm 15</td><td></td><td data-value="true">Có</td><td>Hàng nhập khẩu</td><td data-value="85">85</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-01">01/08/2026</td><td data-value="2026-09-17">17/09/2026</td></tr>
+<tr data-key="IID016"><td>IID016</td><td>Tên Incoterm 16</td><td>EN tên Incoterm 16</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td data-value="94">94</td><td data-value="false"></td><td>Giao hàng trong tuần</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-09-08">08/09/2026</td></tr>
+<tr data-key="IID017"><td>IID017</td><td>Tên Incoterm 17</td><td>EN tên Incoterm 17</td><td data-value="false"></td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="18">18</td><td data-value="true">Có</td><td></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-27">27/09/2026</td><td data-value="2026-09-21">21/09/2026</td></tr>
+<tr data-key="IID018"><td>IID018</td><td>Tên Incoterm 18</td><td></td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="12">12</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-06">06/10/2026</td><td data-value="2026-10-28">28/10/2026</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục loại thuế GTGT</title></head>
+<body>
+<section data-erp="screen" data-screen-id="VATListFrm" data-form-type="LIST" data-mode="view" data-screen-key="VATListFrm" data-menu-id="0260">
+<h1>Danh mục loại thuế GTGT</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/VATListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/VATListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/VATListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-VATListFrm-q">Tìm nhanh</label><input id="flt-VATListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="VATID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="VATID" data-type="text" data-width="110" data-frozen>VATID</th>
+<th scope="col" data-field="VATName" data-type="text" data-width="240">Tên VAT</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2">% VAT</th>
+<th scope="col" data-field="isDirect" data-type="bool" data-width="60">Direct</th>
+<th scope="col" data-field="isDeduce" data-type="bool" data-width="60">Deduce</th>
+<th scope="col" data-field="VATGroup" data-type="text" data-width="110">Nhóm VAT</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="IsDefault" data-type="bool" data-width="60">Default</th>
+</tr></thead>
+<tbody>
+<tr data-key="VAT001"><td>VAT001</td><td>Tên VAT 1</td><td data-value="8">8</td><td data-value="false"></td><td data-value="false"></td><td>Nhóm VAT 1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-10-19">19/10/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT002"><td>VAT002</td><td>Tên VAT 2</td><td data-value="10">10</td><td data-value="false"></td><td data-value="false"></td><td>Nhóm VAT 2</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-10-23">23/10/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT003"><td>VAT003</td><td>Tên VAT 3</td><td data-value="10">10</td><td data-value="false"></td><td data-value="false"></td><td>Nhóm VAT 3</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-11-06">06/11/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT004"><td>VAT004</td><td>Tên VAT 4</td><td data-value="8">8</td><td data-value="false"></td><td data-value="false"></td><td></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-07-14">14/07/2026</td><td data-value="2026-10-05">05/10/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT005"><td>VAT005</td><td>Tên VAT 5</td><td data-value="0">0</td><td data-value="false"></td><td data-value="false"></td><td></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-19">19/07/2026</td><td data-value="2026-09-20">20/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT006"><td>VAT006</td><td>Tên VAT 6</td><td data-value="8">8</td><td data-value="false"></td><td data-value="false"></td><td>Nhóm VAT 6</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-08-17">17/08/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT007"><td>VAT007</td><td>Tên VAT 7</td><td data-value="0">0</td><td data-value="true">Có</td><td data-value="false"></td><td></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-09-26">26/09/2026</td><td data-value="2026-09-11">11/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT008"><td>VAT008</td><td>Tên VAT 8</td><td data-value="0">0</td><td data-value="false"></td><td data-value="false"></td><td>Nhóm VAT 8</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-07-28">28/07/2026</td><td data-value="2026-08-02">02/08/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT009"><td>VAT009</td><td>Tên VAT 9</td><td data-value="5">5</td><td data-value="true">Có</td><td data-value="false"></td><td>Nhóm VAT 9</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-09-16">16/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT010"><td>VAT010</td><td>Tên VAT 10</td><td data-value="8">8</td><td data-value="false"></td><td data-value="false"></td><td></td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-10-20">20/10/2026</td><td data-value="2026-08-31">31/08/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="VAT011"><td>VAT011</td><td>Tên VAT 11</td><td data-value="0">0</td><td data-value="false"></td><td data-value="true">Có</td><td>Nhóm VAT 11</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-10-22">22/10/2026</td><td data-value="2026-11-06">06/11/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="VAT012"><td>VAT012</td><td>Tên VAT 12</td><td data-value="10">10</td><td data-value="false"></td><td data-value="true">Có</td><td>Nhóm VAT 12</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-08-25">25/08/2026</td><td data-value="2026-09-19">19/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT013"><td>VAT013</td><td>Tên VAT 13</td><td data-value="5">5</td><td data-value="true">Có</td><td data-value="false"></td><td>Nhóm VAT 13</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-31">31/07/2026</td><td data-value="2026-09-04">04/09/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="VAT014"><td>VAT014</td><td>Tên VAT 14</td><td data-value="5">5</td><td data-value="false"></td><td data-value="false"></td><td></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-07-15">15/07/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT015"><td>VAT015</td><td>Tên VAT 15</td><td data-value="8">8</td><td data-value="true">Có</td><td data-value="false"></td><td>Nhóm VAT 15</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-09-09">09/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT016"><td>VAT016</td><td>Tên VAT 16</td><td data-value="0">0</td><td data-value="true">Có</td><td data-value="false"></td><td>Nhóm VAT 16</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-09-02">02/09/2026</td><td data-value="false"></td></tr>
+<tr data-key="VAT017"><td>VAT017</td><td>Tên VAT 17</td><td data-value="8">8</td><td data-value="false"></td><td data-value="false"></td><td></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-03">03/10/2026</td><td data-value="2026-09-23">23/09/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="VAT018"><td>VAT018</td><td>Tên VAT 18</td><td data-value="8">8</td><td data-value="true">Có</td><td data-value="true">Có</td><td>Nhóm VAT 18</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-23">23/07/2026</td><td data-value="2026-09-17">17/09/2026</td><td data-value="false"></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

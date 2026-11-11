@@ -1,0 +1,102 @@
+@layer components {
+  /* Lưới 40 cột như LayoutX của WinForms (chuẩn ERP-HTML 9.2). Hẹp hơn thì chuyển 20 cột rồi 4 cột (container query). */
+  .erp-fields {
+    display: grid; grid-template-columns: repeat(40, minmax(0, 1fr)); gap: var(--erp-gap) 12px; align-items: start;
+  }
+  .erp-field { grid-column: span var(--span, 10); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .erp-field.is-row-start { grid-column: 1 / span var(--span, 10); }
+  .erp-field-gap { grid-column: span var(--span, 1); }
+  .erp-fields > button, .erp-fields > .erp-filter__submit { grid-column: span 5; }
+  .erp-field__label { font-size: .85em; font-weight: 550; color: var(--erp-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-field__label.is-required::after { content: " *"; color: var(--erp-danger); }
+  .erp-field > small[data-erp="error"] { color: var(--erp-danger); font-size: .82em; }
+  .erp-field[data-invalid] .erp-input, .erp-input[aria-invalid="true"] { border-color: var(--erp-danger); box-shadow: 0 0 0 2px var(--erp-danger-soft); }
+  .erp-field[data-warn] .erp-input { border-color: var(--erp-warning); }
+  .erp-field--button { justify-content: flex-end; }
+  .erp-field--button > span:empty { height: 1.2em; }
+  .erp-field--checkbox { flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 10px; min-height: var(--erp-ctl-h); align-self: end; }
+  .erp-field--checkbox .erp-field__label { white-space: normal; color: var(--erp-text); font-weight: 500; font-size: .92em; }
+  .erp-field--label .erp-output, .erp-field--label output { padding: 6px 0; }
+
+  /* ---------- Ô nhập ---------- */
+  .erp-input {
+    width: 100%; height: var(--erp-ctl-h); padding: 0 10px; border-radius: var(--erp-radius-sm); border: 1px solid var(--erp-input-border);
+    background: var(--erp-input-bg); color: var(--erp-text); min-width: 0; transition: border-color .15s, box-shadow .15s;
+  }
+  .erp-input:hover { border-color: var(--erp-border-strong); }
+  .erp-input:focus { outline: none; border-color: var(--erp-primary); box-shadow: 0 0 0 3px var(--erp-primary-soft); }
+  .erp-input[readonly], .erp-input:disabled { background: var(--erp-input-readonly); color: var(--erp-text); border-color: var(--erp-border); }
+  .erp-input:disabled { opacity: 1; cursor: default; }
+  .erp-input::placeholder { color: var(--erp-text-faint); }
+  .erp-input--num { text-align: right; font-variant-numeric: tabular-nums; }
+  .erp-textarea { height: auto; min-height: calc(var(--erp-ctl-h) * var(--rows, 2)); padding: 7px 10px; resize: vertical; line-height: 1.4; }
+  .erp-select { padding-inline-end: 26px; appearance: none; cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--erp-text-muted) 50%), linear-gradient(135deg, var(--erp-text-muted) 50%, transparent 50%);
+    background-position: calc(100% - 14px) 52%, calc(100% - 9px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+  .erp-select:disabled { background-image: none; }
+  input[type="date"].erp-input, input[type="datetime-local"].erp-input { padding-inline-end: 6px; }
+  .erp-field--percent { position: relative; }
+  .erp-suffix { position: absolute; inset-inline-end: 10px; bottom: calc(var(--erp-ctl-h) / 2 - .6em); color: var(--erp-text-faint); pointer-events: none; }
+  .erp-field--percent .erp-input { padding-inline-end: 26px; }
+
+  /* Công tắc */
+  .erp-switch {
+    appearance: none; width: 38px; height: 22px; flex: none; border-radius: 999px; margin: 0; cursor: pointer; position: relative;
+    background: var(--erp-border-strong); transition: background-color .15s;
+  }
+  .erp-switch::after {
+    content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .25); transition: transform .15s;
+  }
+  .erp-switch:checked { background: var(--erp-primary); }
+  .erp-switch:checked::after { transform: translateX(16px); }
+  .erp-switch:disabled { opacity: .6; cursor: default; }
+
+  /* Tra cứu F4 */
+  .erp-lookup { display: flex; min-width: 0; }
+  .erp-lookup .erp-input { border-start-end-radius: 0; border-end-end-radius: 0; }
+  .erp-lookup__btn {
+    flex: none; width: 34px; height: var(--erp-ctl-h); display: grid; place-items: center; border: 1px solid var(--erp-input-border);
+    border-inline-start: 0; border-radius: 0 var(--erp-radius-sm) var(--erp-radius-sm) 0; background: var(--erp-surface-2); color: var(--erp-primary); cursor: pointer;
+  }
+  .erp-lookup__btn:hover { background: var(--erp-primary-soft); }
+  .erp-lookup__btn:disabled { color: var(--erp-text-faint); cursor: default; background: var(--erp-input-readonly); }
+  .erp-lookup__btn .erp-icon { width: 16px; height: 16px; }
+  .erp-field output[data-erp="lookup-text"] { font-size: .86em; color: var(--erp-text-muted); min-height: 1.2em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-lookup-pop {
+    position: fixed; z-index: 960; max-height: 320px; overflow: auto; padding: 4px; border-radius: var(--erp-radius-lg);
+    background: var(--erp-surface); backdrop-filter: none;
+  }
+  .erp-lookup-pop table { width: 100%; border-collapse: collapse; font-size: .9em; }
+  .erp-lookup-pop th { position: sticky; top: 0; background: var(--erp-grid-head); text-align: start; font-weight: 600; padding: 6px 8px; white-space: nowrap; }
+  .erp-lookup-pop td { padding: 6px 8px; border-top: 1px solid var(--erp-grid-line); white-space: nowrap; max-width: 280px; overflow: hidden; text-overflow: ellipsis; }
+  .erp-lookup-pop tr[aria-selected="true"] td { background: var(--erp-grid-selected); }
+  .erp-lookup-pop tbody tr { cursor: pointer; }
+  .erp-lookup-pop__loading, .erp-lookup-pop__empty, .erp-lookup-pop__more { padding: 10px; color: var(--erp-text-muted); font-size: .9em; }
+
+  /* Ngày */
+  .erp-date { position: relative; }
+  .erp-input--date { font-variant-numeric: tabular-nums; }
+  .erp-date__picker { position: absolute; inset-inline-end: 0; bottom: 0; width: 34px; height: 1px; opacity: 0; pointer-events: none; border: 0; padding: 0; }
+
+  /* Mật khẩu */
+  .erp-pass { display: flex; position: relative; }
+  .erp-pass .erp-input { padding-inline-end: 38px; }
+  .erp-pass__btn { position: absolute; inset-inline-end: 2px; top: 50%; transform: translateY(-50%); width: 32px; height: 28px; display: grid; place-items: center; border: 0; background: transparent; color: var(--erp-text-faint); cursor: pointer; border-radius: 4px; }
+  .erp-pass__btn .erp-icon { width: 16px; height: 16px; }
+}
+
+/* Co giãn theo độ rộng vùng chứa (màn hình, hộp thoại) */
+@layer components {
+  @container (max-width: 1000px) {
+    .erp-fields { grid-template-columns: repeat(20, minmax(0, 1fr)); }
+    .erp-field { grid-column: span var(--span-md, 10); }
+    .erp-field.is-row-start { grid-column: 1 / span var(--span-md, 10); }
+    .erp-field-gap { display: none; }
+  }
+  @container (max-width: 560px) {
+    .erp-fields { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .erp-field, .erp-field.is-row-start { grid-column: span var(--span-m, 4); }
+    .erp-fields > button, .erp-fields > .erp-filter__submit { grid-column: 1 / -1; }
+  }
+}

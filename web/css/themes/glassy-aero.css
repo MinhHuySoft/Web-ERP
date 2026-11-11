@@ -1,0 +1,28 @@
+/* Glassy Aero — kính bóng kiểu Aero: viền sáng, dải bóng trên thanh tiêu đề và nút, nền trời sáng. */
+@layer themes {
+  :root[data-theme="glassy-aero"] {
+    --erp-bg: #d7ecfb; --erp-bg-image: linear-gradient(180deg, #b9ddf7 0%, #e3f2fd 45%, #f4f9fe 100%);
+    --erp-surface: #ffffff; --erp-surface-2: #f2f8fd; --erp-surface-3: #e2eef9; --erp-panel-bg: rgba(255, 255, 255, .76);
+    --erp-text: #102a43; --erp-text-muted: #3a556e; --erp-text-faint: #5d7891;
+    --erp-border: rgba(80, 140, 200, .38); --erp-border-strong: rgba(60, 120, 190, .55);
+    --erp-accent: #0b62c4;
+    --erp-radius: 6px; --erp-radius-lg: 10px; --erp-blur: 12px; --erp-chrome-blur: 14px;
+    --erp-shadow-sm: 0 1px 3px rgba(20, 80, 140, .14); --erp-shadow: 0 4px 14px rgba(20, 80, 140, .16); --erp-shadow-lg: 0 18px 42px rgba(20, 70, 130, .28);
+    --erp-chrome-bg: linear-gradient(180deg, rgba(255, 255, 255, .92) 0%, rgba(214, 236, 252, .88) 48%, rgba(166, 208, 242, .88) 52%, rgba(196, 226, 250, .92) 100%);
+    --erp-chrome-text: #0d2b4a; --erp-chrome-muted: #34557a; --erp-chrome-hover: rgba(255, 255, 255, .6);
+    --erp-ribbon-bg: rgba(255, 255, 255, .74); --erp-ribbon-tabs-bg: transparent; --erp-ribbon-tab-text: #0d2b4a;
+    --erp-ribbon-tab-active-bg: rgba(255, 255, 255, .94); --erp-ribbon-tab-active-text: #0b62c4; --erp-ribbon-border: rgba(110, 165, 215, .45);
+    --erp-ribbon-btn-hover: #e4f2fd; --erp-ribbon-btn-active: #c5e1f8;
+    --erp-grid-head: #edf5fc; --erp-grid-line: #dbe8f3; --erp-grid-selected: #cfe5f9; --erp-grid-hover: #eaf4fd;
+    --erp-input-border: rgba(80, 140, 200, .5);
+  }
+  :root[data-theme="glassy-aero"] .erp-titlebar { border-bottom: 1px solid rgba(255, 255, 255, .9); box-shadow: 0 1px 0 rgba(90, 150, 210, .35); }
+  :root[data-theme="glassy-aero"] .erp-ribbon { box-shadow: inset 0 1px 0 #fff; }
+  :root[data-theme="glassy-aero"] .erp-rbtn:hover { background: linear-gradient(180deg, #ffffff, #dcefff); border-color: #8ec3ee; box-shadow: inset 0 1px 0 #fff; }
+  :root[data-theme="glassy-aero"] .erp-btn { background: linear-gradient(180deg, #ffffff 0%, #eef6fd 50%, #ddeefc 51%, #eaf5fe 100%); }
+  :root[data-theme="glassy-aero"] .erp-btn--primary, :root[data-theme="glassy-aero"] .erp-tbtn--primary {
+    background: linear-gradient(180deg, #4a9be8 0%, #1f73cf 50%, #0b5cbb 51%, #2a7fd6 100%); color: #fff; border-color: #0a4f9f; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
+  }
+  :root[data-theme="glassy-aero"] .erp-grid__table thead th { background: linear-gradient(180deg, #fbfdff, #e4f0fa); }
+  :root[data-theme="glassy-aero"] .erp-toolbar, :root[data-theme="glassy-aero"] .erp-fieldset, :root[data-theme="glassy-aero"] .erp-filter { box-shadow: inset 0 1px 0 #fff, var(--erp-shadow-sm); border-color: rgba(255, 255, 255, .95); }
+}

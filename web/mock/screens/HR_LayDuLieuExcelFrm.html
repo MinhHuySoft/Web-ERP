@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Lấy dữ liệu từ Excel</title></head>
+<body>
+<section data-erp="screen" data-screen-id="HR_LayDuLieuExcelFrm" data-form-type="LIST" data-mode="view" data-screen-key="HR_LayDuLieuExcelFrm" data-menu-id="603001">
+<h1>Lấy dữ liệu từ Excel</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/HR_LayDuLieuExcelFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/HR_LayDuLieuExcelFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/HR_LayDuLieuExcelFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-HR_LayDuLieuExcelFrm-q">Tìm nhanh</label><input id="flt-HR_LayDuLieuExcelFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="stt" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="Stt" data-type="text" data-width="110" data-frozen>Stt</th>
+<th scope="col" data-field="PhongBan" data-type="text" data-width="110">Ban Phong</th>
+<th scope="col" data-field="MaNhanVien" data-type="text" data-width="110">Vien Nhan Ma</th>
+<th scope="col" data-field="TenNhanVien" data-type="text" data-width="110">Vien Nhan Ten</th>
+<th scope="col" data-field="NgayVaoLam" data-type="text" data-width="110">Lam Vao Ngay</th>
+<th scope="col" data-field="Ngay01Col1" data-type="text" data-width="110">Col1 Ngay01</th>
+<th scope="col" data-field="Ngay01Col2" data-type="text" data-width="110">Col2 Ngay01</th>
+<th scope="col" data-field="Ngay02Col1" data-type="text" data-width="110">Col1 Ngay02</th>
+<th scope="col" data-field="Ngay02Col2" data-type="text" data-width="110">Col2 Ngay02</th>
+<th scope="col" data-field="Ngay03Col1" data-type="text" data-width="110">Col1 Ngay03</th>
+<th scope="col" data-field="Ngay03Col2" data-type="text" data-width="110">Col2 Ngay03</th>
+<th scope="col" data-field="Ngay04Col1" data-type="text" data-width="110">Col1 Ngay04</th>
+<th scope="col" data-field="Ngay04Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay04</th>
+<th scope="col" data-field="Ngay05Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay05</th>
+<th scope="col" data-field="Ngay05Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay05</th>
+<th scope="col" data-field="Ngay06Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay06</th>
+<th scope="col" data-field="Ngay06Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay06</th>
+<th scope="col" data-field="Ngay07Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay07</th>
+<th scope="col" data-field="Ngay07Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay07</th>
+<th scope="col" data-field="Ngay08Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay08</th>
+<th scope="col" data-field="Ngay08Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay08</th>
+<th scope="col" data-field="Ngay09Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay09</th>
+<th scope="col" data-field="Ngay09Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay09</th>
+<th scope="col" data-field="Ngay10Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay10</th>
+<th scope="col" data-field="Ngay10Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay10</th>
+<th scope="col" data-field="Ngay11Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay11</th>
+<th scope="col" data-field="Ngay11Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay11</th>
+<th scope="col" data-field="Ngay12Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay12</th>
+<th scope="col" data-field="Ngay12Col2" data-type="text" data-width="110" data-hidden>Col2 Ngay12</th>
+<th scope="col" data-field="Ngay13Col1" data-type="text" data-width="110" data-hidden>Col1 Ngay13</th>
+</tr></thead>
+<tbody>
+<tr data-key="2611110000000000000000001"><td></td><td></td><td>Vien Nhan Ma 1</td><td></td><td>Lam Vao Ngay 1</td><td>Col1 Ngay01 1</td><td></td><td>Col1 Ngay02 1</td><td>Col2 Ngay02 1</td><td>Col1 Ngay03 1</td><td></td><td>Col1 Ngay04 1</td><td>Col2 Ngay04 1</td><td>Col1 Ngay05 1</td><td>Col2 Ngay05 1</td><td>Col1 Ngay06 1</td><td></td><td>Col1 Ngay07 1</td><td></td><td>Col1 Ngay08 1</td><td>Col2 Ngay08 1</td><td>Col1 Ngay09 1</td><td>Col2 Ngay09 1</td><td></td><td>Col2 Ngay10 1</td><td>Col1 Ngay11 1</td><td></td><td>Col1 Ngay12 1</td><td>Col2 Ngay12 1</td><td>Col1 Ngay13 1</td></tr>
+<tr data-key="2611110000000000000000002"><td></td><td></td><td></td><td>Vien Nhan Ten 2</td><td></td><td></td><td></td><td></td><td>Col2 Ngay02 2</td><td>Col1 Ngay03 2</td><td>Col2 Ngay03 2</td><td>Col1 Ngay04 2</td><td>Col2 Ngay04 2</td><td></td><td>Col2 Ngay05 2</td><td>Col1 Ngay06 2</td><td></td><td></td><td>Col2 Ngay07 2</td><td></td><td>Col2 Ngay08 2</td><td>Col1 Ngay09 2</td><td>Col2 Ngay09 2</td><td>Col1 Ngay10 2</td><td>Col2 Ngay10 2</td><td>Col1 Ngay11 2</td><td></td><td>Col1 Ngay12 2</td><td>Col2 Ngay12 2</td><td></td></tr>
+<tr data-key="2611110000000000000000003"><td>Stt 3</td><td>Ban Phong 3</td><td></td><td>Vien Nhan Ten 3</td><td></td><td>Col1 Ngay01 3</td><td>Col2 Ngay01 3</td><td>Col1 Ngay02 3</td><td></td><td></td><td>Col2 Ngay03 3</td><td></td><td></td><td></td><td>Col2 Ngay05 3</td><td>Col1 Ngay06 3</td><td></td><td></td><td>Col2 Ngay07 3</td><td></td><td>Col2 Ngay08 3</td><td>Col1 Ngay09 3</td><td>Col2 Ngay09 3</td><td></td><td>Col2 Ngay10 3</td><td>Col1 Ngay11 3</td><td>Col2 Ngay11 3</td><td>Col1 Ngay12 3</td><td>Col2 Ngay12 3</td><td></td></tr>
+<tr data-key="2611110000000000000000004"><td></td><td>Ban Phong 4</td><td>Vien Nhan Ma 4</td><td>Vien Nhan Ten 4</td><td>Lam Vao Ngay 4</td><td></td><td>Col2 Ngay01 4</td><td>Col1 Ngay02 4</td><td></td><td></td><td></td><td>Col1 Ngay04 4</td><td>Col2 Ngay04 4</td><td>Col1 Ngay05 4</td><td>Col2 Ngay05 4</td><td>Col1 Ngay06 4</td><td>Col2 Ngay06 4</td><td>Col1 Ngay07 4</td><td>Col2 Ngay07 4</td><td></td><td></td><td>Col1 Ngay09 4</td><td>Col2 Ngay09 4</td><td></td><td>Col2 Ngay10 4</td><td>Col1 Ngay11 4</td><td>Col2 Ngay11 4</td><td>Col1 Ngay12 4</td><td>Col2 Ngay12 4</td><td></td></tr>
+<tr data-key="2611110000000000000000005"><td></td><td>Ban Phong 5</td><td>Vien Nhan Ma 5</td><td>Vien Nhan Ten 5</td><td>Lam Vao Ngay 5</td><td>Col1 Ngay01 5</td><td>Col2 Ngay01 5</td><td></td><td></td><td>Col1 Ngay03 5</td><td></td><td>Col1 Ngay04 5</td><td>Col2 Ngay04 5</td><td>Col1 Ngay05 5</td><td></td><td>Col1 Ngay06 5</td><td></td><td></td><td></td><td>Col1 Ngay08 5</td><td></td><td>Col1 Ngay09 5</td><td></td><td></td><td></td><td>Col1 Ngay11 5</td><td></td><td></td><td></td><td></td></tr>
+<tr data-key="2611110000000000000000006"><td>Stt 6</td><td>Ban Phong 6</td><td></td><td>Vien Nhan Ten 6</td><td></td><td>Col1 Ngay01 6</td><td></td><td>Col1 Ngay02 6</td><td></td><td></td><td></td><td>Col1 Ngay04 6</td><td></td><td>Col1 Ngay05 6</td><td>Col2 Ngay05 6</td><td>Col1 Ngay06 6</td><td>Col2 Ngay06 6</td><td></td><td>Col2 Ngay07 6</td><td>Col1 Ngay08 6</td><td></td><td>Col1 Ngay09 6</td><td></td><td>Col1 Ngay10 6</td><td></td><td>Col1 Ngay11 6</td><td></td><td>Col1 Ngay12 6</td><td></td><td>Col1 Ngay13 6</td></tr>
+<tr data-key="2611110000000000000000007"><td></td><td></td><td>Vien Nhan Ma 7</td><td></td><td></td><td></td><td>Col2 Ngay01 7</td><td>Col1 Ngay02 7</td><td></td><td>Col1 Ngay03 7</td><td>Col2 Ngay03 7</td><td>Col1 Ngay04 7</td><td></td><td>Col1 Ngay05 7</td><td></td><td></td><td>Col2 Ngay06 7</td><td>Col1 Ngay07 7</td><td></td><td>Col1 Ngay08 7</td><td></td><td></td><td></td><td>Col1 Ngay10 7</td><td>Col2 Ngay10 7</td><td>Col1 Ngay11 7</td><td></td><td></td><td>Col2 Ngay12 7</td><td></td></tr>
+<tr data-key="2611110000000000000000008"><td>Stt 8</td><td>Ban Phong 8</td><td>Vien Nhan Ma 8</td><td></td><td></td><td>Col1 Ngay01 8</td><td>Col2 Ngay01 8</td><td></td><td>Col2 Ngay02 8</td><td>Col1 Ngay03 8</td><td></td><td>Col1 Ngay04 8</td><td>Col2 Ngay04 8</td><td>Col1 Ngay05 8</td><td></td><td>Col1 Ngay06 8</td><td>Col2 Ngay06 8</td><td>Col1 Ngay07 8</td><td></td><td>Col1 Ngay08 8</td><td></td><td>Col1 Ngay09 8</td><td></td><td>Col1 Ngay10 8</td><td>Col2 Ngay10 8</td><td></td><td></td><td>Col1 Ngay12 8</td><td></td><td>Col1 Ngay13 8</td></tr>
+<tr data-key="2611110000000000000000009"><td>Stt 9</td><td>Ban Phong 9</td><td></td><td></td><td>Lam Vao Ngay 9</td><td></td><td></td><td>Col1 Ngay02 9</td><td>Col2 Ngay02 9</td><td>Col1 Ngay03 9</td><td>Col2 Ngay03 9</td><td>Col1 Ngay04 9</td><td>Col2 Ngay04 9</td><td>Col1 Ngay05 9</td><td></td><td></td><td></td><td></td><td>Col2 Ngay07 9</td><td></td><td>Col2 Ngay08 9</td><td>Col1 Ngay09 9</td><td>Col2 Ngay09 9</td><td></td><td></td><td></td><td>Col2 Ngay11 9</td><td></td><td>Col2 Ngay12 9</td><td>Col1 Ngay13 9</td></tr>
+<tr data-key="2611110000000000000000010"><td></td><td></td><td></td><td>Vien Nhan Ten 10</td><td></td><td>Col1 Ngay01 10</td><td></td><td>Col1 Ngay02 10</td><td>Col2 Ngay02 10</td><td></td><td></td><td>Col1 Ngay04 10</td><td>Col2 Ngay04 10</td><td></td><td></td><td></td><td>Col2 Ngay06 10</td><td>Col1 Ngay07 10</td><td>Col2 Ngay07 10</td><td>Col1 Ngay08 10</td><td></td><td>Col1 Ngay09 10</td><td>Col2 Ngay09 10</td><td>Col1 Ngay10 10</td><td></td><td>Col1 Ngay11 10</td><td></td><td>Col1 Ngay12 10</td><td></td><td>Col1 Ngay13 10</td></tr>
+<tr data-key="2611110000000000000000011"><td>Stt 11</td><td>Ban Phong 11</td><td></td><td>Vien Nhan Ten 11</td><td></td><td></td><td></td><td>Col1 Ngay02 11</td><td>Col2 Ngay02 11</td><td></td><td>Col2 Ngay03 11</td><td>Col1 Ngay04 11</td><td>Col2 Ngay04 11</td><td></td><td>Col2 Ngay05 11</td><td>Col1 Ngay06 11</td><td>Col2 Ngay06 11</td><td>Col1 Ngay07 11</td><td></td><td></td><td>Col2 Ngay08 11</td><td></td><td></td><td>Col1 Ngay10 11</td><td></td><td></td><td></td><td>Col1 Ngay12 11</td><td></td><td>Col1 Ngay13 11</td></tr>
+<tr data-key="2611110000000000000000012"><td></td><td></td><td>Vien Nhan Ma 12</td><td></td><td></td><td>Col1 Ngay01 12</td><td>Col2 Ngay01 12</td><td></td><td></td><td>Col1 Ngay03 12</td><td>Col2 Ngay03 12</td><td></td><td>Col2 Ngay04 12</td><td></td><td></td><td>Col1 Ngay06 12</td><td>Col2 Ngay06 12</td><td>Col1 Ngay07 12</td><td></td><td>Col1 Ngay08 12</td><td>Col2 Ngay08 12</td><td></td><td></td><td></td><td>Col2 Ngay10 12</td><td></td><td></td><td></td><td>Col2 Ngay12 12</td><td>Col1 Ngay13 12</td></tr>
+<tr data-key="2611110000000000000000013"><td>Stt 13</td><td></td><td>Vien Nhan Ma 13</td><td>Vien Nhan Ten 13</td><td>Lam Vao Ngay 13</td><td></td><td>Col2 Ngay01 13</td><td></td><td>Col2 Ngay02 13</td><td></td><td></td><td>Col1 Ngay04 13</td><td>Col2 Ngay04 13</td><td>Col1 Ngay05 13</td><td>Col2 Ngay05 13</td><td></td><td>Col2 Ngay06 13</td><td>Col1 Ngay07 13</td><td></td><td>Col1 Ngay08 13</td><td>Col2 Ngay08 13</td><td></td><td></td><td>Col1 Ngay10 13</td><td>Col2 Ngay10 13</td><td>Col1 Ngay11 13</td><td>Col2 Ngay11 13</td><td></td><td>Col2 Ngay12 13</td><td></td></tr>
+<tr data-key="2611110000000000000000014"><td>Stt 14</td><td></td><td>Vien Nhan Ma 14</td><td>Vien Nhan Ten 14</td><td></td><td></td><td></td><td>Col1 Ngay02 14</td><td></td><td></td><td></td><td>Col1 Ngay04 14</td><td>Col2 Ngay04 14</td><td></td><td>Col2 Ngay05 14</td><td></td><td></td><td></td><td>Col2 Ngay07 14</td><td>Col1 Ngay08 14</td><td>Col2 Ngay08 14</td><td>Col1 Ngay09 14</td><td>Col2 Ngay09 14</td><td>Col1 Ngay10 14</td><td>Col2 Ngay10 14</td><td>Col1 Ngay11 14</td><td>Col2 Ngay11 14</td><td></td><td></td><td>Col1 Ngay13 14</td></tr>
+<tr data-key="2611110000000000000000015"><td></td><td>Ban Phong 15</td><td>Vien Nhan Ma 15</td><td>Vien Nhan Ten 15</td><td>Lam Vao Ngay 15</td><td></td><td>Col2 Ngay01 15</td><td>Col1 Ngay02 15</td><td>Col2 Ngay02 15</td><td>Col1 Ngay03 15</td><td></td><td>Col1 Ngay04 15</td><td>Col2 Ngay04 15</td><td>Col1 Ngay05 15</td><td>Col2 Ngay05 15</td><td></td><td>Col2 Ngay06 15</td><td>Col1 Ngay07 15</td><td>Col2 Ngay07 15</td><td></td><td></td><td></td><td>Col2 Ngay09 15</td><td>Col1 Ngay10 15</td><td></td><td>Col1 Ngay11 15</td><td>Col2 Ngay11 15</td><td></td><td></td><td>Col1 Ngay13 15</td></tr>
+<tr data-key="2611110000000000000000016"><td></td><td></td><td></td><td>Vien Nhan Ten 16</td><td>Lam Vao Ngay 16</td><td>Col1 Ngay01 16</td><td>Col2 Ngay01 16</td><td>Col1 Ngay02 16</td><td></td><td></td><td></td><td>Col1 Ngay04 16</td><td>Col2 Ngay04 16</td><td>Col1 Ngay05 16</td><td>Col2 Ngay05 16</td><td></td><td>Col2 Ngay06 16</td><td>Col1 Ngay07 16</td><td></td><td>Col1 Ngay08 16</td><td>Col2 Ngay08 16</td><td>Col1 Ngay09 16</td><td></td><td>Col1 Ngay10 16</td><td>Col2 Ngay10 16</td><td>Col1 Ngay11 16</td><td></td><td>Col1 Ngay12 16</td><td></td><td>Col1 Ngay13 16</td></tr>
+<tr data-key="2611110000000000000000017"><td></td><td></td><td>Vien Nhan Ma 17</td><td>Vien Nhan Ten 17</td><td>Lam Vao Ngay 17</td><td>Col1 Ngay01 17</td><td>Col2 Ngay01 17</td><td>Col1 Ngay02 17</td><td></td><td>Col1 Ngay03 17</td><td></td><td>Col1 Ngay04 17</td><td>Col2 Ngay04 17</td><td></td><td>Col2 Ngay05 17</td><td></td><td></td><td></td><td>Col2 Ngay07 17</td><td>Col1 Ngay08 17</td><td>Col2 Ngay08 17</td><td>Col1 Ngay09 17</td><td>Col2 Ngay09 17</td><td></td><td></td><td></td><td>Col2 Ngay11 17</td><td></td><td></td><td></td></tr>
+<tr data-key="2611110000000000000000018"><td>Stt 18</td><td></td><td>Vien Nhan Ma 18</td><td></td><td>Lam Vao Ngay 18</td><td></td><td></td><td>Col1 Ngay02 18</td><td>Col2 Ngay02 18</td><td>Col1 Ngay03 18</td><td></td><td>Col1 Ngay04 18</td><td>Col2 Ngay04 18</td><td>Col1 Ngay05 18</td><td>Col2 Ngay05 18</td><td></td><td>Col2 Ngay06 18</td><td></td><td>Col2 Ngay07 18</td><td>Col1 Ngay08 18</td><td></td><td></td><td>Col2 Ngay09 18</td><td></td><td></td><td>Col1 Ngay11 18</td><td>Col2 Ngay11 18</td><td>Col1 Ngay12 18</td><td></td><td>Col1 Ngay13 18</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

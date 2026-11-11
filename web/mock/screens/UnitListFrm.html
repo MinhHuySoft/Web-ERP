@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục đơn vị tính</title></head>
+<body>
+<section data-erp="screen" data-screen-id="UnitListFrm" data-form-type="LIST" data-mode="view" data-screen-key="UnitListFrm" data-menu-id="021214">
+<h1>Danh mục đơn vị tính</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/UnitListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/UnitListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/UnitListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-UnitListFrm-q">Tìm nhanh</label><input id="flt-UnitListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="Unit" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-frozen>ĐVT</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+</tr></thead>
+<tbody>
+<tr data-key="Cái"><td>Cái</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td></td><td data-value="false"></td></tr>
+<tr data-key="Cái"><td>Cái</td><td>Hàng nhập khẩu</td><td data-value="false"></td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td></td><td data-value="false"></td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td>Giao hàng trong tuần</td><td data-value="true">Có</td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td>Hàng nhập khẩu</td><td data-value="false"></td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="false"></td></tr>
+<tr data-key="Bộ"><td>Bộ</td><td></td><td data-value="true">Có</td></tr>
+<tr data-key="Bộ"><td>Bộ</td><td>Giao hàng trong tuần</td><td data-value="false"></td></tr>
+<tr data-key="Bộ"><td>Bộ</td><td></td><td data-value="true">Có</td></tr>
+<tr data-key="Gói"><td>Gói</td><td>Giao hàng trong tuần</td><td data-value="false"></td></tr>
+<tr data-key="Bộ"><td>Bộ</td><td></td><td data-value="false"></td></tr>
+<tr data-key="Cái"><td>Cái</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td></tr>
+<tr data-key="Hộp"><td>Hộp</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td></tr>
+<tr data-key="Gói"><td>Gói</td><td>Hàng nhập khẩu</td><td data-value="false"></td></tr>
+<tr data-key="Sợi"><td>Sợi</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="true">Có</td></tr>
+<tr data-key="Cái"><td>Cái</td><td>Theo hợp đồng số 12/2026</td><td data-value="false"></td></tr>
+<tr data-key="Chai"><td>Chai</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="false"></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

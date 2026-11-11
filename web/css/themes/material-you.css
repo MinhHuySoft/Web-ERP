@@ -1,0 +1,30 @@
+/* Material You (Material 3) — màu tông theo màu nhấn, bo góc lớn, nút dạng viên thuốc. */
+@layer themes {
+  :root[data-theme="material-you"] {
+    --erp-font: "Roboto", "Segoe UI", system-ui, sans-serif;
+    --erp-bg: #fef7ff; --erp-surface: #fffbff; --erp-surface-2: #f7f2fa; --erp-surface-3: #ece6f0; --erp-panel-bg: #f7f2fa;
+    --erp-text: #1d1b20; --erp-text-muted: #49454f; --erp-text-faint: #67626f;
+    --erp-border: #e2dce8; --erp-border-strong: #cac4d0;
+    --erp-accent: #6750a4; --erp-accent-contrast: #ffffff;
+    --erp-success: #146c43; --erp-warning: #8a5300; --erp-danger: #b3261e; --erp-info: #1f62a8;
+    --erp-radius: 12px; --erp-radius-sm: 8px; --erp-radius-lg: 18px;
+    --erp-shadow-sm: 0 1px 2px rgba(0, 0, 0, .1); --erp-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06); --erp-shadow-lg: 0 8px 28px rgba(0, 0, 0, .18);
+    --erp-chrome-bg: #f3edf7; --erp-chrome-text: #1d1b20; --erp-chrome-muted: #49454f; --erp-chrome-hover: rgba(103, 80, 164, .08);
+    --erp-ribbon-bg: #fef7ff; --erp-ribbon-tabs-bg: #f3edf7; --erp-ribbon-tab-text: #49454f; --erp-ribbon-tab-active-bg: #e8def8;
+    --erp-ribbon-tab-active-text: #21005d; --erp-ribbon-border: #ece6f0; --erp-ribbon-btn-hover: #f3edf7; --erp-ribbon-btn-active: #e8def8;
+    --erp-grid-bg: #fffbff; --erp-grid-head: #f3edf7; --erp-grid-line: #ece6f0; --erp-grid-alt: #fcf8fe; --erp-grid-hover: #f5effa; --erp-grid-selected: #e8def8; --erp-grid-foot: #f3edf7;
+    --erp-input-bg: #fffbff; --erp-input-border: #79747e;
+  }
+  :root[data-theme="material-you"] .erp-ribbon__tabsrow { padding: 4px 10px 0; }
+  :root[data-theme="material-you"] .erp-ribbon__tab { border-radius: 999px; margin-bottom: 4px; padding: 6px 16px; }
+  :root[data-theme="material-you"] .erp-ribbon__tab[aria-selected="true"] { font-weight: 600; }
+  :root[data-theme="material-you"] .erp-btn, :root[data-theme="material-you"] .erp-tbtn { border-radius: 999px; }
+  :root[data-theme="material-you"] .erp-btn--primary, :root[data-theme="material-you"] .erp-tbtn--primary { box-shadow: var(--erp-shadow-sm); }
+  :root[data-theme="material-you"] .erp-toolbar { border: 0; background: var(--erp-surface-2); }
+  :root[data-theme="material-you"] .erp-fieldset, :root[data-theme="material-you"] .erp-filter { border: 0; background: var(--erp-surface-2); }
+  :root[data-theme="material-you"] .erp-input { border-radius: 8px; }
+  :root[data-theme="material-you"] .erp-input:focus { border: 2px solid var(--erp-primary); box-shadow: none; }
+  :root[data-theme="material-you"] .erp-doctab.is-active { box-shadow: inset 0 -3px 0 var(--erp-primary); border-color: transparent; background: var(--erp-surface); }
+  :root[data-theme="material-you"] .erp-subtab[aria-selected="true"] { box-shadow: inset 0 -3px 0 var(--erp-primary); border-color: transparent; }
+  :root[data-theme="material-you"] .erp-dialog { border-radius: 28px; border: 0; }
+}

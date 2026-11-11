@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Bảng kê tăng giảm tài sản</title></head>
+<body>
+<section data-erp="screen" data-screen-id="FA_AdjustmentJournalReport" data-form-type="REPORT" data-mode="view" data-screen-key="FA_AdjustmentJournalReport" data-menu-id="1222">
+<h1>Bảng kê tăng giảm tài sản</h1>
+<form data-erp="filter" method="get" action="/mock/reports/FA_AdjustmentJournalReport.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="rp-FA_AdjustmentJournalReport-FromDate">Từ ngày</label><input id="rp-FA_AdjustmentJournalReport-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="rp-FA_AdjustmentJournalReport-ToDate">Đến ngày</label><input id="rp-FA_AdjustmentJournalReport-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="rp-FA_AdjustmentJournalReport-DepartmentID">Phòng ban</label><input id="rp-FA_AdjustmentJournalReport-DepartmentID" name="DepartmentID" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="rp-FA_AdjustmentJournalReport-AssetTypeID">Mã loại tài sản</label><input id="rp-FA_AdjustmentJournalReport-AssetTypeID" name="AssetTypeID" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="rp-FA_AdjustmentJournalReport-AssetID">Mã tài sản</label><input id="rp-FA_AdjustmentJournalReport-AssetID" name="AssetID" value=""></div>
+<button type="submit" data-action="find">Xem báo cáo</button>
+</form>
+<section data-erp="report-result">
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Dữ liệu mẫu (mock) — cột báo cáo thật do SP FA_AdjustmentJournalReportStp quyết định.</p></div>
+<table data-erp="grid" data-grid-id="R0" data-key-field="DocumentID" data-selectable="none" data-total-rows="30">
+<caption>Bảng kê tăng giảm tài sản</caption>
+<thead><tr>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="120" data-frozen>Số chứng từ</th>
+<th scope="col" data-field="DocumentDate" data-type="date" data-width="95">Ngày</th>
+<th scope="col" data-field="ObjectName" data-type="text" data-width="260">Đối tượng</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="220">Mặt hàng</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="90" data-decimals="0" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="200">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="BC1126/0001"><td>BC1126/0001</td><td data-value="2026-09-13">13/09/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Máy đo huyết áp điện tử</td><td data-value="159">159</td><td data-value="113250000">113.250.000</td><td></td></tr>
+<tr data-key="BC1126/0002"><td>BC1126/0002</td><td data-value="2026-07-26">26/07/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Hóa chất xét nghiệm Glucose</td><td data-value="154">154</td><td data-value="100000000">100.000.000</td><td></td></tr>
+<tr data-key="BC1126/0003"><td>BC1126/0003</td><td data-value="2026-07-17">17/07/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Nhiệt kế điện tử</td><td data-value="51">51</td><td data-value="381000000">381.000.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0004"><td>BC1126/0004</td><td data-value="2026-10-20">20/10/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Bơm tiêm 5ml</td><td data-value="112">112</td><td data-value="9740000">9.740.000</td><td></td></tr>
+<tr data-key="BC1126/0005"><td>BC1126/0005</td><td data-value="2026-11-11">11/11/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Khẩu trang y tế 4 lớp</td><td data-value="79">79</td><td data-value="306500000">306.500.000</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="BC1126/0006"><td>BC1126/0006</td><td data-value="2026-08-29">29/08/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Que thử đường huyết</td><td data-value="94">94</td><td data-value="47850000">47.850.000</td><td></td></tr>
+<tr data-key="BC1126/0007"><td>BC1126/0007</td><td data-value="2026-10-30">30/10/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Găng tay y tế không bột</td><td data-value="193">193</td><td data-value="25200000">25.200.000</td><td>Hàng nhập khẩu</td></tr>
+<tr data-key="BC1126/0008"><td>BC1126/0008</td><td data-value="2026-10-14">14/10/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Máy siêu âm xách tay</td><td data-value="43">43</td><td data-value="337500000">337.500.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0009"><td>BC1126/0009</td><td data-value="2026-07-19">19/07/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Máy thở không xâm nhập</td><td data-value="76">76</td><td data-value="2780000">2.780.000</td><td></td></tr>
+<tr data-key="BC1126/0010"><td>BC1126/0010</td><td data-value="2026-11-05">05/11/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Máy monitor theo dõi bệnh nhân</td><td data-value="165">165</td><td data-value="7840000">7.840.000</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="BC1126/0011"><td>BC1126/0011</td><td data-value="2026-11-05">05/11/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Bông y tế 1kg</td><td data-value="79">79</td><td data-value="15120000">15.120.000</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="BC1126/0012"><td>BC1126/0012</td><td data-value="2026-10-12">12/10/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Bộ dụng cụ phẫu thuật</td><td data-value="29">29</td><td data-value="154500000">154.500.000</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="BC1126/0013"><td>BC1126/0013</td><td data-value="2026-11-09">09/11/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Kim luồn tĩnh mạch 22G</td><td data-value="123">123</td><td data-value="1800000">1.800.000</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="BC1126/0014"><td>BC1126/0014</td><td data-value="2026-10-13">13/10/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Ống nghiệm EDTA</td><td data-value="32">32</td><td data-value="4070000">4.070.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0015"><td>BC1126/0015</td><td data-value="2026-08-09">09/08/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Gạc vô trùng 10x10</td><td data-value="165">165</td><td data-value="149500000">149.500.000</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="BC1126/0016"><td>BC1126/0016</td><td data-value="2026-10-26">26/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Dây truyền dịch</td><td data-value="96">96</td><td data-value="479000000">479.000.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0017"><td>BC1126/0017</td><td data-value="2026-08-22">22/08/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Đầu dò siêu âm</td><td data-value="98">98</td><td data-value="43100000">43.100.000</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="BC1126/0018"><td>BC1126/0018</td><td data-value="2026-08-01">01/08/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Cồn sát khuẩn 70 độ</td><td data-value="11">11</td><td data-value="4880000">4.880.000</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="BC1126/0019"><td>BC1126/0019</td><td data-value="2026-08-13">13/08/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Máy xét nghiệm sinh hóa</td><td data-value="32">32</td><td data-value="474500000">474.500.000</td><td></td></tr>
+<tr data-key="BC1126/0020"><td>BC1126/0020</td><td data-value="2026-10-14">14/10/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Máy điện tim 12 kênh</td><td data-value="65">65</td><td data-value="276000000">276.000.000</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="BC1126/0021"><td>BC1126/0021</td><td data-value="2026-10-17">17/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Máy đo huyết áp điện tử</td><td data-value="164">164</td><td data-value="241500000">241.500.000</td><td></td></tr>
+<tr data-key="BC1126/0022"><td>BC1126/0022</td><td data-value="2026-07-24">24/07/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Hóa chất xét nghiệm Glucose</td><td data-value="196">196</td><td data-value="17600000">17.600.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0023"><td>BC1126/0023</td><td data-value="2026-10-19">19/10/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Nhiệt kế điện tử</td><td data-value="98">98</td><td data-value="5840000">5.840.000</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="BC1126/0024"><td>BC1126/0024</td><td data-value="2026-10-30">30/10/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Bơm tiêm 5ml</td><td data-value="80">80</td><td data-value="10250000">10.250.000</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="BC1126/0025"><td>BC1126/0025</td><td data-value="2026-08-16">16/08/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Khẩu trang y tế 4 lớp</td><td data-value="78">78</td><td data-value="4900000">4.900.000</td><td>Hàng nhập khẩu</td></tr>
+<tr data-key="BC1126/0026"><td>BC1126/0026</td><td data-value="2026-10-30">30/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Que thử đường huyết</td><td data-value="191">191</td><td data-value="51000000">51.000.000</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="BC1126/0027"><td>BC1126/0027</td><td data-value="2026-11-11">11/11/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Găng tay y tế không bột</td><td data-value="172">172</td><td data-value="3250000">3.250.000</td><td></td></tr>
+<tr data-key="BC1126/0028"><td>BC1126/0028</td><td data-value="2026-08-28">28/08/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Máy siêu âm xách tay</td><td data-value="194">194</td><td data-value="4410000">4.410.000</td><td></td></tr>
+<tr data-key="BC1126/0029"><td>BC1126/0029</td><td data-value="2026-09-25">25/09/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Máy thở không xâm nhập</td><td data-value="164">164</td><td data-value="14700000">14.700.000</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="BC1126/0030"><td>BC1126/0030</td><td data-value="2026-07-25">25/07/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Máy monitor theo dõi bệnh nhân</td><td data-value="65">65</td><td data-value="8090000">8.090.000</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="Quantity" data-value="3258">3258</td><td data-field="Amount" data-value="3295670000">3.295.670.000</td><td></td></tr></tfoot>
+</table>
+<menu data-erp="toolbar">
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank" download>Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In / PDF</a></li>
+</menu>
+</section></section>
+</body></html>

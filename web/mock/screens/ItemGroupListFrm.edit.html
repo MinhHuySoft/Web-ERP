@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục nhóm hàng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="ItemGroupListFrm" data-form-type="LIST" data-mode="edit" data-screen-key="ItemGroupListFrm" data-menu-id="021217">
+<h1>Danh mục nhóm hàng</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-ItemGroupListFrm" formaction="/mock/screens/ItemGroupListFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/ItemGroupListFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-ItemGroupListFrm" method="post" action="/mock/screens/ItemGroupListFrm.saved.html" data-key-field="ItemGroupID"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="ItemGroupID" data-selectable="multi" data-editable data-form="rec-ItemGroupListFrm" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="ItemGroupID" data-type="text" data-width="110" data-frozen data-editor="text">Nhóm hàng</th>
+<th scope="col" data-field="ItemGroupName" data-type="text" data-width="240" data-editor="text">Tên nhóm hàng</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="ParentItemGroupID" data-type="text" data-width="110" data-editor="text">Mã nhóm hàng Parent</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60" data-editor="checkbox">Default</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden data-editor="text">Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden data-editor="text">Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="IGI001"><td>IGI001</td><td>Tên nhóm hàng 1</td><td>Giao hàng trong tuần</td><td>PIG001</td><td data-value="false"></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-07-29">29/07/2026</td></tr>
+<tr data-key="IGI002"><td>IGI002</td><td>Tên nhóm hàng 2</td><td></td><td>PIG002</td><td data-value="true">Có</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-04">04/09/2026</td><td data-value="2026-09-27">27/09/2026</td></tr>
+<tr data-key="IGI003"><td>IGI003</td><td>Tên nhóm hàng 3</td><td>Theo hợp đồng số 12/2026</td><td>PIG003</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-19">19/08/2026</td><td data-value="2026-09-01">01/09/2026</td></tr>
+<tr data-key="IGI004"><td>IGI004</td><td>Tên nhóm hàng 4</td><td>Giao hàng trong tuần</td><td>PIG004</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-22">22/10/2026</td><td data-value="2026-09-23">23/09/2026</td></tr>
+<tr data-key="IGI005"><td>IGI005</td><td>Tên nhóm hàng 5</td><td></td><td>PIG005</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-20">20/10/2026</td><td data-value="2026-07-14">14/07/2026</td></tr>
+<tr data-key="IGI006"><td>IGI006</td><td>Tên nhóm hàng 6</td><td>Giao hàng trong tuần</td><td>PIG006</td><td data-value="false"></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-08-16">16/08/2026</td></tr>
+<tr data-key="IGI007"><td>IGI007</td><td>Tên nhóm hàng 7</td><td>Theo hợp đồng số 12/2026</td><td>PIG007</td><td data-value="false"></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-16">16/10/2026</td><td data-value="2026-09-23">23/09/2026</td></tr>
+<tr data-key="IGI008"><td>IGI008</td><td>Tên nhóm hàng 8</td><td>Giao hàng trong tuần</td><td>PIG008</td><td data-value="true">Có</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-08-11">11/08/2026</td></tr>
+<tr data-key="IGI009"><td>IGI009</td><td>Tên nhóm hàng 9</td><td></td><td>PIG009</td><td data-value="true">Có</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-08-16">16/08/2026</td><td data-value="2026-07-30">30/07/2026</td></tr>
+<tr data-key="IGI010"><td>IGI010</td><td>Tên nhóm hàng 10</td><td></td><td>PIG010</td><td data-value="false"></td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-09-21">21/09/2026</td><td data-value="2026-08-20">20/08/2026</td></tr>
+<tr data-key="IGI011"><td>IGI011</td><td>Tên nhóm hàng 11</td><td>Khách yêu cầu xuất hóa đơn</td><td>PIG011</td><td data-value="false"></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-10-26">26/10/2026</td></tr>
+<tr data-key="IGI012"><td>IGI012</td><td>Tên nhóm hàng 12</td><td>Giao hàng trong tuần</td><td>PIG012</td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-07">07/10/2026</td><td data-value="2026-10-14">14/10/2026</td></tr>
+<tr data-key="IGI013"><td>IGI013</td><td>Tên nhóm hàng 13</td><td></td><td>PIG013</td><td data-value="false"></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-17">17/10/2026</td><td data-value="2026-10-07">07/10/2026</td></tr>
+<tr data-key="IGI014"><td>IGI014</td><td>Tên nhóm hàng 14</td><td>Khách yêu cầu xuất hóa đơn</td><td>PIG014</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-09-02">02/09/2026</td></tr>
+<tr data-key="IGI015"><td>IGI015</td><td>Tên nhóm hàng 15</td><td>Hàng nhập khẩu</td><td>PIG015</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-07">07/09/2026</td><td data-value="2026-09-29">29/09/2026</td></tr>
+<tr data-key="IGI016"><td>IGI016</td><td>Tên nhóm hàng 16</td><td></td><td>PIG016</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-14">14/09/2026</td><td data-value="2026-09-27">27/09/2026</td></tr>
+<tr data-key="IGI017"><td>IGI017</td><td>Tên nhóm hàng 17</td><td>Theo hợp đồng số 12/2026</td><td>PIG017</td><td data-value="true">Có</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-26">26/09/2026</td><td data-value="2026-10-28">28/10/2026</td></tr>
+<tr data-key="IGI018"><td>IGI018</td><td>Tên nhóm hàng 18</td><td>Hàng nhập khẩu</td><td>PIG018</td><td data-value="true">Có</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-10-21">21/10/2026</td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

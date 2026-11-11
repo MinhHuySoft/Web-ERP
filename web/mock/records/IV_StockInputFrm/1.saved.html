@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Nhập kho nội bộ — PN1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_StockInputFrm" data-form-type="EDIT" data-mode="view" data-screen-key="IV_StockInputFrm:PN1126/0001" data-menu-id="07025">
+<h1>Nhập kho nội bộ — PN1126/0001</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu chứng từ (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/IV_StockInputFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/IV_StockInputFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-IV_StockInputFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/IV_StockInputFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/IV_StockInputFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/IV_StockInputFrm/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/IV_StockInputFrm/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_StockInputFrm-1" method="post" action="/mock/records/IV_StockInputFrm/1.saved.html" data-key-field="DocumentID" data-key="PN1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-DocumentID">Số chứng từ</label><input id="f-rec-IV_StockInputFrm-1-DocumentID" name="DocumentID" value="PN1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-IV_StockInputFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_StockInputFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-10-06" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-IV_StockInputFrm-1-ObjectID">Mã đối tượng</label><input id="f-rec-IV_StockInputFrm-1-ObjectID" name="ObjectID" value="KH0001" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-IV_StockInputFrm-1-ObjectID">Công ty TNHH Thiết bị Y tế An Phát</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-IV_StockInputFrm-1-Memo">Diễn giải</label><input id="f-rec-IV_StockInputFrm-1-Memo" name="Memo" value="Khách yêu cầu xuất hóa đơn" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-Notes">Ghi chú</label><input id="f-rec-IV_StockInputFrm-1-Notes" name="Notes" value="Khách yêu cầu xuất hóa đơn" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockInputFrm-1-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-IV_StockInputFrm-1-isLock" name="isLock" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-InputType">Loại Input</label><input id="f-rec-IV_StockInputFrm-1-InputType" name="InputType" value="Loại Input 1" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-IV_StockInputFrm-1-BaseTotal">Tổng tiền</label><input id="f-rec-IV_StockInputFrm-1-BaseTotal" name="BaseTotal" inputmode="decimal" value="7960000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-IV_StockInputFrm-1-Status">Trạng thái</label><input id="f-rec-IV_StockInputFrm-1-Status" name="Status" inputmode="decimal" value="21" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockInputFrm-1-CalPrice">Đơn giá Cal</label><input type="hidden" name="CalPrice" value="false"><input id="f-rec-IV_StockInputFrm-1-CalPrice" name="CalPrice" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockInputFrm-1-CalCost">Chi phí Cal</label><input type="hidden" name="CalCost" value="false"><input id="f-rec-IV_StockInputFrm-1-CalCost" name="CalCost" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockInputFrm-1-isPacket">Packet</label><input type="hidden" name="isPacket" value="false"><input id="f-rec-IV_StockInputFrm-1-isPacket" name="isPacket" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-DocBatch">Batch chứng từ</label><input id="f-rec-IV_StockInputFrm-1-DocBatch" name="DocBatch" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-NguoiNhan">Nhan Nguoi</label><input id="f-rec-IV_StockInputFrm-1-NguoiNhan" name="NguoiNhan" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-ProductOrderID">Mã đơn hàng Product</label><input id="f-rec-IV_StockInputFrm-1-ProductOrderID" name="ProductOrderID" value="POI001" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-IV_StockInputFrm-1-BranchID">Chi nhánh</label><select id="f-rec-IV_StockInputFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-NguoiGiao">Giao Nguoi</label><input id="f-rec-IV_StockInputFrm-1-NguoiGiao" name="NguoiGiao" value="Giao Nguoi 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockInputFrm-1-InternalTransferBatchID">Mã Batch điều chuyển Internal</label><input id="f-rec-IV_StockInputFrm-1-InternalTransferBatchID" name="InternalTransferBatchID" value="ITB001" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="3">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="3">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110">Số lô</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95">Hạn dùng</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110">Kho</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110">TK kho</th>
+<th scope="col" data-field="AccountID2" data-type="text" data-width="110">ID2 Account</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110">Bộ phận</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110">Khoản mục</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden>Ghi chú</th>
+<th scope="col" data-field="Quantity2" data-type="number" data-width="70" data-decimals="0" data-hidden>Số lượng 2</th>
+<th scope="col" data-field="Property" data-type="text" data-width="110" data-hidden>Property</th>
+<th scope="col" data-field="Property2" data-type="text" data-width="110" data-hidden>Property2</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden>Mã Parent</th>
+<th scope="col" data-field="UnitFactor" data-type="number" data-width="70" data-decimals="0" data-hidden>Hệ số quy đổi</th>
+<th scope="col" data-field="PacketGroup" data-type="text" data-width="110" data-hidden>Nhóm Packet</th>
+<th scope="col" data-field="EquipID" data-type="text" data-width="110" data-hidden>Mã CCDC</th>
+<th scope="col" data-field="RefDoc" data-type="text" data-width="110" data-hidden>Chứng từ gốc</th>
+<th scope="col" data-field="IsRecoveredPart" data-type="bool" data-width="60" data-hidden>Linh kiện Recovered</th>
+<th scope="col" data-field="SourceAssetID" data-type="text" data-width="110" data-hidden>Mã tài sản nguồn</th>
+<th scope="col" data-field="DismantleDocumentID" data-type="text" data-width="110" data-hidden>Mã chứng từ Dismantle</th>
+<th scope="col" data-field="PartSerialNo" data-type="text" data-width="110" data-hidden>Số serial linh kiện</th>
+<th scope="col" data-field="PartCondition" data-type="text" data-width="110" data-hidden>Tình trạng linh kiện</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>PN1126/0001</td><td>VT0001</td><td>L26341</td><td data-value="2026-10-13">13/10/2026</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="108">108</td><td data-value="904000">904.000</td><td data-value="97632000">97.632.000</td><td>214</td><td>ID2 Account 1</td><td>KD</td><td>CID001</td><td></td><td data-value="82">82</td><td></td><td></td><td>PID001</td><td data-value="61">61</td><td>Nhóm Packet 1</td><td>EID001</td><td>Chứng từ gốc 1</td><td data-value="false"></td><td>SAI001</td><td>DDI001</td><td>PSN001</td><td></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>PN1126/0002</td><td>VT0008</td><td>L26496</td><td data-value="2026-11-09">09/11/2026</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="78">78</td><td data-value="122200">122.200</td><td data-value="9531600">9.531.600</td><td>3331</td><td>ID2 Account 2</td><td>KT</td><td>CID002</td><td></td><td data-value="5">5</td><td></td><td></td><td>PID002</td><td data-value="30">30</td><td>Nhóm Packet 2</td><td>EID002</td><td>Chứng từ gốc 2</td><td data-value="false"></td><td>SAI002</td><td>DDI002</td><td>PSN002</td><td>Tình trạng linh kiện 2</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>PN1126/0003</td><td>VT0015</td><td>L26142</td><td data-value="2026-11-07">07/11/2026</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="88">88</td><td data-value="124000">124.000</td><td data-value="10912000">10.912.000</td><td>411</td><td>ID2 Account 3</td><td>KHO</td><td>CID003</td><td>Theo hợp đồng số 12/2026</td><td data-value="64">64</td><td></td><td>Property2 3</td><td>PID003</td><td data-value="91">91</td><td>Nhóm Packet 3</td><td>EID003</td><td></td><td data-value="true">Có</td><td>SAI003</td><td>DDI003</td><td>PSN003</td><td>Tình trạng linh kiện 3</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="274">274</td><td data-field="UnitPrice" data-value="1150200">1.150.200</td><td data-field="Amount" data-value="118075600">118.075.600</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

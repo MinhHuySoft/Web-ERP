@@ -1,0 +1,36 @@
+/* Glassmorphism — các tấm kính mờ trên nền gradient đậm. Lưới vẫn nền đặc để đọc số rõ. */
+@layer themes {
+  :root[data-theme="glassmorphism"] {
+    --erp-bg: #1a1446;
+    --erp-bg-image: radial-gradient(900px 600px at 0% 0%, rgba(124, 58, 237, .85), transparent 60%), radial-gradient(800px 700px at 100% 20%, rgba(14, 165, 233, .75), transparent 55%), radial-gradient(900px 700px at 40% 110%, rgba(16, 185, 129, .55), transparent 60%), linear-gradient(135deg, #1e1b4b, #0c4a6e);
+    --erp-surface: rgba(26, 30, 60, .94); --erp-surface-2: rgba(255, 255, 255, .08); --erp-surface-3: rgba(255, 255, 255, .14);
+    --erp-panel-bg: rgba(255, 255, 255, .11); --erp-overlay: rgba(8, 6, 30, .55);
+    --erp-text: #f4f6ff; --erp-text-muted: #cdd3f0; --erp-text-faint: #aab2dc;
+    --erp-border: rgba(255, 255, 255, .22); --erp-border-strong: rgba(255, 255, 255, .38);
+    --erp-accent: #7dd3fc; --erp-accent-contrast: #0b1530;
+    --erp-success: #6ee7b7; --erp-warning: #fcd34d; --erp-danger: #fca5a5; --erp-info: #93c5fd;
+    --erp-radius: 10px; --erp-radius-lg: 16px; --erp-blur: 18px; --erp-chrome-blur: 22px;
+    --erp-shadow-sm: 0 2px 10px rgba(0, 0, 0, .18); --erp-shadow: 0 8px 30px rgba(0, 0, 0, .25); --erp-shadow-lg: 0 24px 60px rgba(0, 0, 0, .45);
+    --erp-chrome-bg: rgba(255, 255, 255, .10); --erp-chrome-text: #ffffff; --erp-chrome-muted: #d6dbf5; --erp-chrome-hover: rgba(255, 255, 255, .14);
+    --erp-ribbon-bg: rgba(255, 255, 255, .09); --erp-ribbon-tabs-bg: transparent; --erp-ribbon-tab-text: #e8ebff;
+    --erp-ribbon-tab-active-bg: rgba(255, 255, 255, .16); --erp-ribbon-tab-active-text: #ffffff; --erp-ribbon-border: rgba(255, 255, 255, .16);
+    --erp-ribbon-btn-hover: rgba(255, 255, 255, .14); --erp-ribbon-btn-active: rgba(255, 255, 255, .22);
+    --erp-grid-bg: #161b3a; --erp-grid-head: #20275a; --erp-grid-head-text: #e6eaff; --erp-grid-alt: #19204a; --erp-grid-hover: #232b63;
+    --erp-grid-selected: #2c3a86; --erp-grid-line: #2a3268; --erp-grid-foot: #1d2452; --erp-grid-frozen-shadow: 3px 0 6px -2px rgba(0, 0, 0, .5);
+    --erp-input-bg: rgba(10, 14, 40, .55); --erp-input-border: rgba(255, 255, 255, .3); --erp-input-readonly: rgba(255, 255, 255, .07);
+  }
+  :root[data-theme="glassmorphism"] .erp-titlebar, :root[data-theme="glassmorphism"] .erp-ribbon {
+    border-bottom: 1px solid rgba(255, 255, 255, .18); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15);
+  }
+  :root[data-theme="glassmorphism"] .erp-ribbon { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+  :root[data-theme="glassmorphism"] .erp-docbar, :root[data-theme="glassmorphism"] .erp-statusbar { background: rgba(255, 255, 255, .07); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  :root[data-theme="glassmorphism"] .erp-doctab.is-active, :root[data-theme="glassmorphism"] .erp-subtab[aria-selected="true"] { background: rgba(255, 255, 255, .16); }
+  :root[data-theme="glassmorphism"] .erp-toolbar, :root[data-theme="glassmorphism"] .erp-fieldset, :root[data-theme="glassmorphism"] .erp-filter,
+  :root[data-theme="glassmorphism"] .erp-kpi, :root[data-theme="glassmorphism"] .erp-chart { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), var(--erp-shadow); }
+  :root[data-theme="glassmorphism"] .erp-dialog { background: rgba(30, 34, 72, .86); backdrop-filter: blur(26px); -webkit-backdrop-filter: blur(26px); }
+  :root[data-theme="glassmorphism"] .erp-btn { background: rgba(255, 255, 255, .1); }
+  :root[data-theme="glassmorphism"] .erp-btn--primary, :root[data-theme="glassmorphism"] .erp-tbtn--primary { background: #7dd3fc; color: #0b1530; }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    :root[data-theme="glassmorphism"] { --erp-panel-bg: rgba(30, 34, 72, .94); --erp-chrome-bg: rgba(30, 34, 72, .96); --erp-ribbon-bg: rgba(30, 34, 72, .94); }
+  }
+}

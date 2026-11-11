@@ -1,0 +1,35 @@
+/* Neon Cyber — phong cách công nghệ: nền gần đen, viền phát sáng cyan/hồng, tiêu đề chữ đơn cách. */
+@layer themes {
+  :root[data-theme="neon-cyber"] {
+    --neon: #00e5ff; --neon2: #ff2bd6;
+    --erp-font-display: "Cascadia Code", "JetBrains Mono", ui-monospace, monospace;
+    --erp-bg: #05070c;
+    --erp-bg-image: linear-gradient(rgba(0, 229, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, .05) 1px, transparent 1px);
+    --erp-surface: #0b0f18; --erp-surface-2: #0f1521; --erp-surface-3: #151d2d; --erp-panel-bg: rgba(11, 15, 24, .92); --erp-overlay: rgba(0, 0, 0, .7);
+    --erp-text: #e6fbff; --erp-text-muted: #a3cbd6; --erp-text-faint: #7aa2ae;
+    --erp-border: rgba(0, 229, 255, .28); --erp-border-strong: rgba(0, 229, 255, .55);
+    --erp-accent: #00e5ff; --erp-accent-contrast: #001318;
+    --erp-success: #39ff9f; --erp-warning: #ffd23f; --erp-danger: #ff4d79; --erp-info: #4dc3ff;
+    --erp-radius: 4px; --erp-radius-sm: 3px; --erp-radius-lg: 6px;
+    --erp-shadow-sm: 0 0 0 1px rgba(0, 229, 255, .15); --erp-shadow: 0 0 14px rgba(0, 229, 255, .14); --erp-shadow-lg: 0 0 40px rgba(0, 229, 255, .22);
+    --erp-chrome-bg: #070a11; --erp-chrome-text: #e6fbff; --erp-chrome-muted: #8fb8c4; --erp-chrome-hover: rgba(0, 229, 255, .1);
+    --erp-ribbon-bg: #090d15; --erp-ribbon-tabs-bg: #070a11; --erp-ribbon-tab-text: #9fe9f7; --erp-ribbon-tab-active-bg: #090d15;
+    --erp-ribbon-tab-active-text: #00e5ff; --erp-ribbon-border: rgba(0, 229, 255, .22); --erp-ribbon-btn-hover: rgba(0, 229, 255, .1); --erp-ribbon-btn-active: rgba(0, 229, 255, .2);
+    --erp-grid-bg: #080c14; --erp-grid-head: #0d1420; --erp-grid-head-text: #7ff3ff; --erp-grid-alt: #0a0f19; --erp-grid-hover: #0f1a28;
+    --erp-grid-selected: #06303a; --erp-grid-line: #142233; --erp-grid-foot: #0c121d; --erp-grid-frozen-shadow: 3px 0 6px -2px rgba(0, 229, 255, .25);
+    --erp-input-bg: #060a11; --erp-input-border: rgba(0, 229, 255, .38); --erp-input-readonly: #0b111b;
+  }
+  :root[data-theme="neon-cyber"] body { background-size: 28px 28px; background-attachment: fixed; }
+  :root[data-theme="neon-cyber"] .erp-titlebar { border-bottom: 1px solid var(--neon); box-shadow: 0 0 18px rgba(0, 229, 255, .35); }
+  :root[data-theme="neon-cyber"] .erp-brand__text strong, :root[data-theme="neon-cyber"] .erp-screen__title { text-shadow: 0 0 8px rgba(0, 229, 255, .7); letter-spacing: .5px; }
+  :root[data-theme="neon-cyber"] .erp-ribbon__tab[aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--neon), 0 0 12px rgba(0, 229, 255, .3); }
+  :root[data-theme="neon-cyber"] .erp-rbtn .erp-icon, :root[data-theme="neon-cyber"] .erp-tbtn .erp-icon { filter: drop-shadow(0 0 3px rgba(0, 229, 255, .8)); }
+  :root[data-theme="neon-cyber"] .erp-toolbar, :root[data-theme="neon-cyber"] .erp-fieldset, :root[data-theme="neon-cyber"] .erp-grid,
+  :root[data-theme="neon-cyber"] .erp-filter, :root[data-theme="neon-cyber"] .erp-kpi, :root[data-theme="neon-cyber"] .erp-chart { box-shadow: 0 0 0 1px rgba(0, 229, 255, .18), 0 0 18px rgba(0, 229, 255, .08); }
+  :root[data-theme="neon-cyber"] .erp-btn--primary, :root[data-theme="neon-cyber"] .erp-tbtn--primary { background: transparent; color: var(--neon); border: 1px solid var(--neon); box-shadow: 0 0 10px rgba(0, 229, 255, .45), inset 0 0 10px rgba(0, 229, 255, .2); }
+  :root[data-theme="neon-cyber"] .erp-btn--primary:hover, :root[data-theme="neon-cyber"] .erp-tbtn--primary:hover { background: rgba(0, 229, 255, .15); color: #fff; }
+  :root[data-theme="neon-cyber"] .erp-kpi::before { background: linear-gradient(var(--neon), var(--neon2)); box-shadow: 0 0 10px var(--neon); }
+  :root[data-theme="neon-cyber"] .erp-chart__bar { fill: var(--neon); filter: drop-shadow(0 0 4px rgba(0, 229, 255, .8)); }
+  :root[data-theme="neon-cyber"] .erp-doctab.is-active { box-shadow: inset 0 2px 0 var(--neon2); }
+  :root[data-theme="neon-cyber"] .erp-input:focus { box-shadow: 0 0 0 1px var(--neon), 0 0 12px rgba(0, 229, 255, .5); }
+}

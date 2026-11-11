@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục phân loại ( DC, VT, TP, Hàng hóa .. )</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CategoryListFrm" data-form-type="LIST" data-mode="view" data-screen-key="CategoryListFrm" data-menu-id="021219">
+<h1>Danh mục phân loại ( DC, VT, TP, Hàng hóa .. )</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CategoryListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CategoryListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CategoryListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CategoryListFrm-q">Tìm nhanh</label><input id="flt-CategoryListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="CategoryID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="CategoryID" data-type="text" data-width="110" data-frozen>Nhóm hàng</th>
+<th scope="col" data-field="CategoryName" data-type="text" data-width="240">Tên nhóm</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110">TK kho</th>
+<th scope="col" data-field="isWaste" data-type="bool" data-width="60">Waste</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="isNL" data-type="bool" data-width="60">NL</th>
+<th scope="col" data-field="isBTP" data-type="bool" data-width="60">BTP</th>
+<th scope="col" data-field="isTP" data-type="bool" data-width="60">TP</th>
+<th scope="col" data-field="isHH" data-type="bool" data-width="60">HH</th>
+<th scope="col" data-field="isVT" data-type="bool" data-width="60">VT</th>
+</tr></thead>
+<tbody>
+<tr data-key="CID001"><td>CID001</td><td>Tên nhóm 1</td><td data-value="false"></td><td>214</td><td data-value="false"></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-14">14/08/2026</td><td data-value="2026-09-03">03/09/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID002"><td>CID002</td><td>Tên nhóm 2</td><td data-value="false"></td><td>3331</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-12">12/10/2026</td><td data-value="2026-07-27">27/07/2026</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID003"><td>CID003</td><td>Tên nhóm 3</td><td data-value="false"></td><td>411</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-08-29">29/08/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="CID004"><td>CID004</td><td>Tên nhóm 4</td><td data-value="false"></td><td>515</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-07">07/10/2026</td><td data-value="2026-08-30">30/08/2026</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="CID005"><td>CID005</td><td>Tên nhóm 5</td><td data-value="false"></td><td>641</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-21">21/09/2026</td><td data-value="2026-08-23">23/08/2026</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID006"><td>CID006</td><td>Tên nhóm 6</td><td data-value="false"></td><td>811</td><td data-value="false"></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-29">29/07/2026</td><td data-value="2026-10-15">15/10/2026</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID007"><td>CID007</td><td>Tên nhóm 7</td><td data-value="true">Có</td><td>112</td><td data-value="false"></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-27">27/10/2026</td><td data-value="2026-09-18">18/09/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="CID008"><td>CID008</td><td>Tên nhóm 8</td><td data-value="false"></td><td>152</td><td data-value="true">Có</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-08-23">23/08/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID009"><td>CID009</td><td>Tên nhóm 9</td><td data-value="false"></td><td>211</td><td data-value="false"></td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-12">12/10/2026</td><td data-value="2026-09-06">06/09/2026</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID010"><td>CID010</td><td>Tên nhóm 10</td><td data-value="false"></td><td>331</td><td data-value="false"></td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-08-31">31/08/2026</td><td data-value="2026-07-25">25/07/2026</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID011"><td>CID011</td><td>Tên nhóm 11</td><td data-value="false"></td><td>338</td><td data-value="false"></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-09-15">15/09/2026</td><td data-value="2026-09-28">28/09/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="CID012"><td>CID012</td><td>Tên nhóm 12</td><td data-value="false"></td><td>511</td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-10-01">01/10/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="CID013"><td>CID013</td><td>Tên nhóm 13</td><td data-value="false"></td><td>635</td><td data-value="false"></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-27">27/10/2026</td><td data-value="2026-10-15">15/10/2026</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID014"><td>CID014</td><td>Tên nhóm 14</td><td data-value="true">Có</td><td>711</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-03">03/09/2026</td><td data-value="2026-09-22">22/09/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="CID015"><td>CID015</td><td>Tên nhóm 15</td><td data-value="false"></td><td>111</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-08">08/08/2026</td><td data-value="2026-09-02">02/09/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID016"><td>CID016</td><td>Tên nhóm 16</td><td data-value="false"></td><td>1331</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-06">06/10/2026</td><td data-value="2026-07-19">19/07/2026</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="CID017"><td>CID017</td><td>Tên nhóm 17</td><td data-value="false"></td><td>156</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-13">13/09/2026</td><td data-value="2026-10-15">15/10/2026</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="CID018"><td>CID018</td><td>Tên nhóm 18</td><td data-value="false"></td><td>242</td><td data-value="false"></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-11-11">11/11/2026</td><td data-value="2026-10-30">30/10/2026</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

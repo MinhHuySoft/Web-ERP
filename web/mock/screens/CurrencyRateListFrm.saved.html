@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục tỷ giá</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CurrencyRateListFrm" data-form-type="LIST" data-mode="view" data-screen-key="CurrencyRateListFrm" data-menu-id="0253">
+<h1>Danh mục tỷ giá</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CurrencyRateListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CurrencyRateListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CurrencyRateListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CurrencyRateListFrm-q">Tìm nhanh</label><input id="flt-CurrencyRateListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserAutoID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="CurrencyID" data-type="text" data-width="110" data-frozen>Loại tiền</th>
+<th scope="col" data-field="RateDate" data-type="date" data-width="95">Ngày tỷ lệ</th>
+<th scope="col" data-field="RateExchange" data-type="number" data-width="70" data-decimals="0">Tỷ giá</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>VND</td><td data-value="2026-09-24">24/09/2026</td><td data-value="1">1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-17">17/08/2026</td><td data-value="2026-07-20">20/07/2026</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>USD</td><td data-value="2026-08-22">22/08/2026</td><td data-value="1">1</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-20">20/10/2026</td><td data-value="2026-08-15">15/08/2026</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>EUR</td><td data-value="2026-10-30">30/10/2026</td><td data-value="1">1</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-08-19">19/08/2026</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>VND</td><td data-value="2026-08-22">22/08/2026</td><td data-value="1">1</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-21">21/09/2026</td><td data-value="2026-10-09">09/10/2026</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>USD</td><td data-value="2026-10-01">01/10/2026</td><td data-value="1">1</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-08">08/10/2026</td><td data-value="2026-11-04">04/11/2026</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>EUR</td><td data-value="2026-11-11">11/11/2026</td><td data-value="1">1</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-22">22/08/2026</td><td data-value="2026-08-12">12/08/2026</td></tr>
+<tr data-key="UAI007"><td>UAI007</td><td>VND</td><td data-value="2026-07-27">27/07/2026</td><td data-value="1">1</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-27">27/08/2026</td><td data-value="2026-09-13">13/09/2026</td></tr>
+<tr data-key="UAI008"><td>UAI008</td><td>USD</td><td data-value="2026-10-08">08/10/2026</td><td data-value="1">1</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-18">18/10/2026</td><td data-value="2026-08-12">12/08/2026</td></tr>
+<tr data-key="UAI009"><td>UAI009</td><td>EUR</td><td data-value="2026-10-25">25/10/2026</td><td data-value="1">1</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-08-28">28/08/2026</td><td data-value="2026-09-01">01/09/2026</td></tr>
+<tr data-key="UAI010"><td>UAI010</td><td>VND</td><td data-value="2026-09-11">11/09/2026</td><td data-value="1">1</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-10-22">22/10/2026</td><td data-value="2026-07-30">30/07/2026</td></tr>
+<tr data-key="UAI011"><td>UAI011</td><td>USD</td><td data-value="2026-10-22">22/10/2026</td><td data-value="1">1</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-10-10">10/10/2026</td><td data-value="2026-08-03">03/08/2026</td></tr>
+<tr data-key="UAI012"><td>UAI012</td><td>EUR</td><td data-value="2026-08-02">02/08/2026</td><td data-value="1">1</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-09-07">07/09/2026</td><td data-value="2026-07-23">23/07/2026</td></tr>
+<tr data-key="UAI013"><td>UAI013</td><td>VND</td><td data-value="2026-10-03">03/10/2026</td><td data-value="1">1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-02">02/10/2026</td><td data-value="2026-08-06">06/08/2026</td></tr>
+<tr data-key="UAI014"><td>UAI014</td><td>USD</td><td data-value="2026-07-22">22/07/2026</td><td data-value="1">1</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-08-29">29/08/2026</td><td data-value="2026-09-05">05/09/2026</td></tr>
+<tr data-key="UAI015"><td>UAI015</td><td>EUR</td><td data-value="2026-07-14">14/07/2026</td><td data-value="1">1</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-11-11">11/11/2026</td><td data-value="2026-08-03">03/08/2026</td></tr>
+<tr data-key="UAI016"><td>UAI016</td><td>VND</td><td data-value="2026-11-06">06/11/2026</td><td data-value="1">1</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-11-03">03/11/2026</td><td data-value="2026-09-07">07/09/2026</td></tr>
+<tr data-key="UAI017"><td>UAI017</td><td>USD</td><td data-value="2026-11-04">04/11/2026</td><td data-value="1">1</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-22">22/08/2026</td><td data-value="2026-10-21">21/10/2026</td></tr>
+<tr data-key="UAI018"><td>UAI018</td><td>EUR</td><td data-value="2026-07-26">26/07/2026</td><td data-value="1">1</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-21">21/08/2026</td><td data-value="2026-07-28">28/07/2026</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phiếu di chuyển / bàn giao máy — MLI1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="FA_Move2026Frm" data-form-type="EDIT" data-mode="edit" data-screen-key="FA_Move2026Frm:MLI1126/0001" data-menu-id="1207">
+<h1>Phiếu di chuyển / bàn giao máy — MLI1126/0001</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-FA_Move2026Frm-1" formaction="/mock/records/FA_Move2026Frm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-FA_Move2026Frm-1" formaction="/mock/records/FA_Move2026Frm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/FA_Move2026Frm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-FA_Move2026Frm-1" method="post" action="/mock/records/FA_Move2026Frm/1.saved.html" data-key-field="DocumentID" data-key="MLI1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-FA_Move2026Frm-1-DocumentID">Số chứng từ</label><input id="f-rec-FA_Move2026Frm-1-DocumentID" name="DocumentID" value="MLI1126/0001"></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Move2026Frm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-FA_Move2026Frm-1-DocumentDate" name="DocumentDate" type="date" value="2026-08-24"></div>
+<div data-erp="field" data-control="select" data-span="6"><label for="f-rec-FA_Move2026Frm-1-MoveTypeID">Mã loại di chuyển</label><select id="f-rec-FA_Move2026Frm-1-MoveTypeID" name="MoveTypeID"><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="7" data-row-start><label for="f-rec-FA_Move2026Frm-1-NguoiGiao">Giao Nguoi</label><input id="f-rec-FA_Move2026Frm-1-NguoiGiao" name="NguoiGiao" value=""></div>
+<div data-erp="field" data-control="text" data-span="7"><label for="f-rec-FA_Move2026Frm-1-NguoiNhan">Nhan Nguoi</label><input id="f-rec-FA_Move2026Frm-1-NguoiNhan" name="NguoiNhan" value="Nhan Nguoi 1"></div>
+<div data-erp="field" data-control="select" data-span="6" data-row-start><label for="f-rec-FA_Move2026Frm-1-ContractID">Hợp đồng</label><select id="f-rec-FA_Move2026Frm-1-ContractID" name="ContractID"><option value=""></option></select></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Move2026Frm-1-EffectiveFrom">Từ Effective</label><input id="f-rec-FA_Move2026Frm-1-EffectiveFrom" name="EffectiveFrom" type="date" value="2026-08-18"></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Move2026Frm-1-EffectiveTo">Đến Effective</label><input id="f-rec-FA_Move2026Frm-1-EffectiveTo" name="EffectiveTo" type="date" value="2026-07-23"></div>
+<div data-erp="field" data-control="text" data-span="6" data-row-start><label for="f-rec-FA_Move2026Frm-1-ReferenceNo">Số Reference</label><input id="f-rec-FA_Move2026Frm-1-ReferenceNo" name="ReferenceNo" value="RN001"></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Move2026Frm-1-ReferenceDate">Ngày Reference</label><input id="f-rec-FA_Move2026Frm-1-ReferenceDate" name="ReferenceDate" type="date" value="2026-08-29"></div>
+<div data-erp="field" data-control="text" data-span="14" data-row-start><label for="f-rec-FA_Move2026Frm-1-Memo">Diễn giải</label><input id="f-rec-FA_Move2026Frm-1-Memo" name="Memo" value="Theo hợp đồng số 12/2026"></div>
+<div data-erp="field" data-control="text" data-span="14" data-row-start><label for="f-rec-FA_Move2026Frm-1-Notes">Ghi chú</label><input id="f-rec-FA_Move2026Frm-1-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="text" data-span="14" data-row-start><label for="f-rec-FA_Move2026Frm-1-DocumentLink">Liên kết chứng từ</label><input id="f-rec-FA_Move2026Frm-1-DocumentLink" name="DocumentLink" value="Liên kết chứng từ 1"></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết di chuyển / bàn giao" data-badge="7">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-FA_Move2026Frm-1" data-total-rows="7">
+<thead><tr>
+<th scope="col" data-field="AssetID" data-type="text" data-width="110" data-frozen data-editor="text">Mã tài sản</th>
+<th scope="col" data-field="AssetName" data-type="text" data-width="240" data-readonly>Tên tài sản</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-editor="text">ĐVT</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="DepartmentID" data-type="text" data-width="110" data-editor="text">Phòng ban</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode">Mã đối tượng</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}">Bộ phận</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-editor="text">Khoản mục</th>
+<th scope="col" data-field="FromObjectID" data-type="text" data-width="110" data-editor="text">Mã đối tượng từ</th>
+<th scope="col" data-field="FromStoreHouseID" data-type="text" data-width="110" data-editor="text">Kho nguồn</th>
+<th scope="col" data-field="ToStoreHouseID" data-type="text" data-width="110" data-editor="text">Kho đích</th>
+<th scope="col" data-field="FromLocation" data-type="text" data-width="110" data-hidden data-editor="text">Vị trí từ</th>
+<th scope="col" data-field="ToLocation" data-type="text" data-width="110" data-hidden data-editor="text">Vị trí đến</th>
+<th scope="col" data-field="ToLocationID" data-type="text" data-width="110" data-hidden data-editor="text">Mã vị trí đến</th>
+<th scope="col" data-field="ToQuanHuyen" data-type="text" data-width="110" data-hidden data-editor="text">Huyen Quan đến</th>
+<th scope="col" data-field="ToXaPhuong" data-type="text" data-width="110" data-hidden data-editor="text">Phuong Xa đến</th>
+<th scope="col" data-field="ToChuyenKhoa" data-type="text" data-width="110" data-hidden data-editor="text">Khoa Chuyen đến</th>
+<th scope="col" data-field="ToZoneID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Zone đến</th>
+<th scope="col" data-field="HandoverDate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày Handover</th>
+<th scope="col" data-field="HandoverComponents" data-type="text" data-width="110" data-hidden data-editor="text">Components Handover</th>
+<th scope="col" data-field="AssetCondition" data-type="text" data-width="110" data-hidden data-editor="text">Tình trạng tài sản</th>
+<th scope="col" data-field="LifecycleStatusAfter" data-type="text" data-width="110" data-hidden data-readonly>After trạng thái Lifecycle</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-editor="text">Số chứng từ</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>AID001</td><td>Tên tài sản 1</td><td>Cái</td><td data-value="172">172</td><td>DID001</td><td>KH0001</td><td>KD</td><td>CID001</td><td>FOI001</td><td>FSH001</td><td>TSH001</td><td>Vị trí từ 1</td><td></td><td>TLI001</td><td>Huyen Quan đến 1</td><td></td><td>Khoa Chuyen đến 1</td><td>TZI001</td><td data-value="2026-10-29">29/10/2026</td><td></td><td></td><td>After trạng thái Lifecycle 1</td><td>Hàng nhập khẩu</td><td>UAI001</td><td>MLI1126/0001</td></tr>
+<tr data-key="UAI002"><td>AID002</td><td>Tên tài sản 2</td><td>Hộp</td><td data-value="156">156</td><td>DID002</td><td>KH0004</td><td>KT</td><td>CID002</td><td>FOI002</td><td>FSH002</td><td>TSH002</td><td></td><td></td><td>TLI002</td><td></td><td></td><td>Khoa Chuyen đến 2</td><td>TZI002</td><td data-value="2026-08-09">09/08/2026</td><td></td><td>Tình trạng tài sản 2</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI002</td><td>MLI1126/0002</td></tr>
+<tr data-key="UAI003"><td>AID003</td><td>Tên tài sản 3</td><td>Cái</td><td data-value="159">159</td><td>DID003</td><td>KH0007</td><td>KHO</td><td>CID003</td><td>FOI003</td><td>FSH003</td><td>TSH003</td><td>Vị trí từ 3</td><td></td><td>TLI003</td><td>Huyen Quan đến 3</td><td>Phuong Xa đến 3</td><td>Khoa Chuyen đến 3</td><td>TZI003</td><td data-value="2026-08-14">14/08/2026</td><td>Components Handover 3</td><td>Tình trạng tài sản 3</td><td>After trạng thái Lifecycle 3</td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI003</td><td>MLI1126/0003</td></tr>
+<tr data-key="UAI004"><td>AID004</td><td>Tên tài sản 4</td><td>Hộp</td><td data-value="2">2</td><td>DID004</td><td>KH0010</td><td>KTH</td><td>CID004</td><td>FOI004</td><td>FSH004</td><td>TSH004</td><td>Vị trí từ 4</td><td>Vị trí đến 4</td><td>TLI004</td><td></td><td>Phuong Xa đến 4</td><td>Khoa Chuyen đến 4</td><td>TZI004</td><td data-value="2026-10-24">24/10/2026</td><td></td><td>Tình trạng tài sản 4</td><td></td><td></td><td>UAI004</td><td>MLI1126/0004</td></tr>
+<tr data-key="UAI005"><td>AID005</td><td>Tên tài sản 5</td><td>Hộp</td><td data-value="167">167</td><td>DID005</td><td>KH0013</td><td>HC</td><td>CID005</td><td>FOI005</td><td>FSH005</td><td>TSH005</td><td>Vị trí từ 5</td><td></td><td>TLI005</td><td></td><td>Phuong Xa đến 5</td><td></td><td>TZI005</td><td data-value="2026-08-09">09/08/2026</td><td>Components Handover 5</td><td>Tình trạng tài sản 5</td><td>After trạng thái Lifecycle 5</td><td></td><td>UAI005</td><td>MLI1126/0005</td></tr>
+<tr data-key="UAI006"><td>AID006</td><td>Tên tài sản 6</td><td>Hộp</td><td data-value="101">101</td><td>DID006</td><td>KH0001</td><td>KD</td><td>CID006</td><td>FOI006</td><td>FSH006</td><td>TSH006</td><td>Vị trí từ 6</td><td></td><td>TLI006</td><td></td><td>Phuong Xa đến 6</td><td>Khoa Chuyen đến 6</td><td>TZI006</td><td data-value="2026-09-18">18/09/2026</td><td>Components Handover 6</td><td></td><td>After trạng thái Lifecycle 6</td><td>Hàng nhập khẩu</td><td>UAI006</td><td>MLI1126/0006</td></tr>
+<tr data-key="UAI007"><td>AID007</td><td>Tên tài sản 7</td><td>Hộp</td><td data-value="133">133</td><td>DID007</td><td>KH0004</td><td>KT</td><td>CID007</td><td>FOI007</td><td>FSH007</td><td>TSH007</td><td></td><td></td><td>TLI007</td><td>Huyen Quan đến 7</td><td></td><td>Khoa Chuyen đến 7</td><td>TZI007</td><td data-value="2026-09-30">30/09/2026</td><td></td><td>Tình trạng tài sản 7</td><td>After trạng thái Lifecycle 7</td><td>Khách yêu cầu xuất hóa đơn</td><td>UAI007</td><td>MLI1126/0007</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td data-field="Quantity" data-value="890">890</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="2026-11-11"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

@@ -1,0 +1,2 @@
+/* Thứ tự ưu tiên CSS của toàn dự án. Theme nằm trên component để ghi đè token và hiệu ứng; utilities cao nhất. */
+@layer reset, tokens, base, components, themes, utilities;

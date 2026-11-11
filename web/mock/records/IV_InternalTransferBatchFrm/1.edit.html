@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Đợt điều chuyển nội bộ (PM / Điều phối) — BID001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_InternalTransferBatchFrm" data-form-type="EDIT" data-mode="edit" data-screen-key="IV_InternalTransferBatchFrm:BID001" data-menu-id="07010120">
+<h1>Đợt điều chuyển nội bộ (PM / Điều phối) — BID001</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_InternalTransferBatchFrm-1" formaction="/mock/records/IV_InternalTransferBatchFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_InternalTransferBatchFrm-1" formaction="/mock/records/IV_InternalTransferBatchFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/IV_InternalTransferBatchFrm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_InternalTransferBatchFrm-1" method="post" action="/mock/records/IV_InternalTransferBatchFrm/1.saved.html" data-key-field="BatchID" data-key="BID001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-BatchID">Mã đợt điều chuyển</label><input id="f-rec-IV_InternalTransferBatchFrm-1-BatchID" name="BatchID" value="BID001"></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-BatchDate">Ngày lập đợt</label><input id="f-rec-IV_InternalTransferBatchFrm-1-BatchDate" name="BatchDate" type="date" value="2026-11-04"></div>
+<div data-erp="field" data-control="button" data-span="5"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Trạng thái</button></div>
+<div data-erp="field" data-control="select" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-FromBranchID">Chi nhánh nguồn</label><select id="f-rec-IV_InternalTransferBatchFrm-1-FromBranchID" name="FromBranchID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-ToBranchID">CN đích</label><select id="f-rec-IV_InternalTransferBatchFrm-1-ToBranchID" name="ToBranchID"><option value=""></option></select></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-PlannedTransferDate">Ngày cần ĐC</label><input id="f-rec-IV_InternalTransferBatchFrm-1-PlannedTransferDate" name="PlannedTransferDate" type="date" value="2026-09-28"></div>
+<div data-erp="field" data-control="select" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-FromStoreHouseID">Kho nguồn</label><select id="f-rec-IV_InternalTransferBatchFrm-1-FromStoreHouseID" name="FromStoreHouseID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-ToStoreHouseID">Kho đích</label><select id="f-rec-IV_InternalTransferBatchFrm-1-ToStoreHouseID" name="ToStoreHouseID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-TransportMethod">Phương thức</label><select id="f-rec-IV_InternalTransferBatchFrm-1-TransportMethod" name="TransportMethod"><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-AssignedTechnician">Kỹ thuật phụ trách</label><input id="f-rec-IV_InternalTransferBatchFrm-1-AssignedTechnician" name="AssignedTechnician" value=""></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-AssignedSA">TP SA phụ trách</label><select id="f-rec-IV_InternalTransferBatchFrm-1-AssignedSA" name="AssignedSA"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-AssignedPM">PM phụ trách</label><select id="f-rec-IV_InternalTransferBatchFrm-1-AssignedPM" name="AssignedPM"><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-CarrierName">Nhà xe / Đơn vị</label><input id="f-rec-IV_InternalTransferBatchFrm-1-CarrierName" name="CarrierName" value="Tên Carrier 1"></div>
+<div data-erp="field" data-control="text" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-CarrierPhone">Điện thoại Carrier</label><input id="f-rec-IV_InternalTransferBatchFrm-1-CarrierPhone" name="CarrierPhone" value=""></div>
+<div data-erp="field" data-control="text" data-span="5"><label for="f-rec-IV_InternalTransferBatchFrm-1-VehicleNo">Biển số xe</label><input id="f-rec-IV_InternalTransferBatchFrm-1-VehicleNo" name="VehicleNo" value="VN001"></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_InternalTransferBatchFrm-1-Notes">Ghi chú</label><input id="f-rec-IV_InternalTransferBatchFrm-1-Notes" name="Notes" value="Theo hợp đồng số 12/2026"></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Các đề nghị trong đợt" data-badge="2">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_InternalTransferBatchFrm-1" data-total-rows="2">
+<thead><tr>
+<th scope="col" data-field="RequestID" data-type="text" data-width="110" data-frozen data-editor="text">Mã đề nghị</th>
+<th scope="col" data-field="DocumentDate" data-type="text" data-width="110" data-readonly>Ngày chứng từ</th>
+<th scope="col" data-field="SalesName" data-type="text" data-width="240" data-readonly>Tên doanh số</th>
+<th scope="col" data-field="RequestedTransferDate" data-type="text" data-width="110" data-readonly>Ngày điều chuyển Requested</th>
+<th scope="col" data-field="RequestStatusName" data-type="text" data-width="240" data-readonly>Tên trạng thái đề nghị</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden data-editor="text">Mã đợt điều chuyển</th>
+<th scope="col" data-field="AddedBy" data-type="text" data-width="110" data-hidden data-readonly>Added theo</th>
+<th scope="col" data-field="AddedAt" data-type="date" data-width="95" data-hidden data-readonly>At Added</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>RID001</td><td></td><td>Tên doanh số 1</td><td>Ngày điều chuyển Requested 1</td><td>Tên trạng thái đề nghị 1</td><td>Theo hợp đồng số 12/2026</td><td>UAI001</td><td>BID001</td><td></td><td data-value="2026-11-03">03/11/2026</td></tr>
+<tr data-key="UAI002"><td>RID002</td><td>Ngày chứng từ 2</td><td>Tên doanh số 2</td><td>Ngày điều chuyển Requested 2</td><td>Tên trạng thái đề nghị 2</td><td></td><td>UAI002</td><td>BID002</td><td>Added theo 2</td><td data-value="2026-07-22">22/07/2026</td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="2026-11-11"></td></tr></template>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Chi tiết điều chuyển" data-badge="6">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="single" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="RequestID" data-type="text" data-width="110" data-frozen>Mã đề nghị</th>
+<th scope="col" data-field="SalesName" data-type="text" data-width="240">Tên doanh số</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110">Mã hàng</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110">Mã hàng NCC</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240">Tên hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110">ĐVT</th>
+<th scope="col" data-field="RequestedQty" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng Requested</th>
+<th scope="col" data-field="ApprovedQty" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng đã duyệt</th>
+<th scope="col" data-field="RequestedLot" data-type="text" data-width="110">Lô Requested</th>
+<th scope="col" data-field="IsEquipment" data-type="bool" data-width="60">Equipment</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt điều chuyển</th>
+<th scope="col" data-field="RequestDetailID" data-type="text" data-width="110" data-hidden>Mã Detail đề nghị</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110" data-hidden>Số lô</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95" data-hidden>Hạn dùng</th>
+<th scope="col" data-field="TechStatus" data-type="text" data-width="110" data-hidden>Trạng thái kỹ thuật</th>
+<th scope="col" data-field="TechNotes" data-type="text" data-width="110" data-hidden>Ghi chú kỹ thuật</th>
+<th scope="col" data-field="BBKCUrl" data-type="text" data-width="110" data-hidden>Liên kết BBKC</th>
+<th scope="col" data-field="Technician" data-type="text" data-width="110" data-hidden>Technician</th>
+<th scope="col" data-field="TechCheckedAt" data-type="date" data-width="95" data-hidden>At Checked kỹ thuật</th>
+<th scope="col" data-field="ActualIssueQty" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum">Số lượng Issue Actual</th>
+<th scope="col" data-field="ActualReceiveQty" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum">Số lượng Receive Actual</th>
+<th scope="col" data-field="AccountingNote" data-type="text" data-width="110" data-hidden>Ghi chú kế toán</th>
+<th scope="col" data-field="WarehouseNote" data-type="text" data-width="110" data-hidden>Ghi chú kho</th>
+<th scope="col" data-field="ReceiveNote" data-type="text" data-width="110" data-hidden>Ghi chú Receive</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>RID001</td><td>Tên doanh số 1</td><td>VT0001</td><td>IC001</td><td>Máy đo huyết áp điện tử</td><td>Cái</td><td data-value="141">141</td><td data-value="199">199</td><td></td><td data-value="true">Có</td><td>Giao hàng trong tuần</td><td>UAI001</td><td>BID001</td><td>RDI001</td><td>L26860</td><td data-value="2026-08-01">01/08/2026</td><td></td><td></td><td>Liên kết BBKC 1</td><td></td><td data-value="2026-07-22">22/07/2026</td><td data-value="142">142</td><td data-value="115">115</td><td>Theo hợp đồng số 12/2026</td><td>Khách yêu cầu xuất hóa đơn</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="UAI002"><td>RID002</td><td>Tên doanh số 2</td><td>VT0008</td><td>IC002</td><td>Hóa chất xét nghiệm Glucose</td><td>Hộp</td><td data-value="186">186</td><td data-value="120">120</td><td>Lô Requested 2</td><td data-value="false"></td><td></td><td>UAI002</td><td>BID002</td><td>RDI002</td><td>L26234</td><td data-value="2026-09-14">14/09/2026</td><td>Trạng thái kỹ thuật 2</td><td></td><td></td><td>Technician 2</td><td data-value="2026-09-05">05/09/2026</td><td data-value="136">136</td><td data-value="79">79</td><td></td><td>Theo hợp đồng số 12/2026</td><td></td></tr>
+<tr data-key="UAI003"><td>RID003</td><td>Tên doanh số 3</td><td>VT0015</td><td>IC003</td><td>Nhiệt kế điện tử</td><td>Cái</td><td data-value="60">60</td><td data-value="45">45</td><td></td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI003</td><td>BID003</td><td>RDI003</td><td>L26373</td><td data-value="2026-10-09">09/10/2026</td><td>Trạng thái kỹ thuật 3</td><td></td><td>Liên kết BBKC 3</td><td>Technician 3</td><td data-value="2026-09-23">23/09/2026</td><td data-value="194">194</td><td data-value="78">78</td><td>Hàng nhập khẩu</td><td>Giao hàng trong tuần</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="UAI004"><td>RID004</td><td>Tên doanh số 4</td><td>VT0002</td><td>IC004</td><td>Bơm tiêm 5ml</td><td>Hộp</td><td data-value="156">156</td><td data-value="86">86</td><td>Lô Requested 4</td><td data-value="true">Có</td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI004</td><td>BID004</td><td>RDI004</td><td>L26712</td><td data-value="2026-10-30">30/10/2026</td><td>Trạng thái kỹ thuật 4</td><td>Khách yêu cầu xuất hóa đơn</td><td></td><td>Technician 4</td><td data-value="2026-10-15">15/10/2026</td><td data-value="32">32</td><td data-value="43">43</td><td>Kiểm tra kỹ trước khi nhận</td><td>Giao hàng trong tuần</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="UAI005"><td>RID005</td><td>Tên doanh số 5</td><td>VT0009</td><td>IC005</td><td>Khẩu trang y tế 4 lớp</td><td>Hộp</td><td data-value="187">187</td><td data-value="163">163</td><td></td><td data-value="false"></td><td></td><td>UAI005</td><td>BID005</td><td>RDI005</td><td>L26398</td><td data-value="2026-10-14">14/10/2026</td><td>Trạng thái kỹ thuật 5</td><td></td><td>Liên kết BBKC 5</td><td>Technician 5</td><td data-value="2026-08-14">14/08/2026</td><td data-value="113">113</td><td data-value="145">145</td><td>Giao hàng trong tuần</td><td></td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="UAI006"><td>RID006</td><td>Tên doanh số 6</td><td>VT0016</td><td>IC006</td><td>Que thử đường huyết</td><td>Hộp</td><td data-value="148">148</td><td data-value="111">111</td><td>Lô Requested 6</td><td data-value="true">Có</td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI006</td><td>BID006</td><td>RDI006</td><td>L26487</td><td data-value="2026-08-04">04/08/2026</td><td>Trạng thái kỹ thuật 6</td><td></td><td></td><td></td><td data-value="2026-08-25">25/08/2026</td><td data-value="93">93</td><td data-value="79">79</td><td></td><td>Hàng nhập khẩu</td><td></td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td data-field="RequestedQty" data-value="878">878</td><td data-field="ApprovedQty" data-value="724">724</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td data-field="ActualIssueQty" data-value="710">710</td><td data-field="ActualReceiveQty" data-value="539">539</td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T3" data-title="Thiết bị / Tài sản" data-badge="4">
+<table data-erp="grid" data-grid-id="T3" data-key-field="UserAutoID" data-selectable="single" data-total-rows="4">
+<thead><tr>
+<th scope="col" data-field="AssetID" data-type="text" data-width="110" data-frozen>Mã tài sản</th>
+<th scope="col" data-field="AssetName" data-type="text" data-width="240">Tên tài sản</th>
+<th scope="col" data-field="SerialNo" data-type="text" data-width="110">Số serial</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110">Mã hàng</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt điều chuyển</th>
+<th scope="col" data-field="BatchDetailID" data-type="text" data-width="110" data-hidden>Mã Detail Batch</th>
+<th scope="col" data-field="AssetCondition" data-type="text" data-width="110" data-hidden>Tình trạng tài sản</th>
+<th scope="col" data-field="TechStatus" data-type="text" data-width="110" data-hidden>Trạng thái kỹ thuật</th>
+<th scope="col" data-field="BBKCUrl" data-type="text" data-width="110" data-hidden>Liên kết BBKC</th>
+<th scope="col" data-field="TechNotes" data-type="text" data-width="110" data-hidden>Ghi chú kỹ thuật</th>
+<th scope="col" data-field="Technician" data-type="text" data-width="110" data-hidden>Technician</th>
+<th scope="col" data-field="CheckedAt" data-type="date" data-width="95" data-hidden>At Checked</th>
+<th scope="col" data-field="IsDispatched" data-type="bool" data-width="60" data-hidden>Dispatched</th>
+<th scope="col" data-field="IsReceived" data-type="bool" data-width="60" data-hidden>Received</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>AID001</td><td>Tên tài sản 1</td><td>SN001</td><td>VT0001</td><td>UAI001</td><td>BID001</td><td>BDI001</td><td>Tình trạng tài sản 1</td><td>Trạng thái kỹ thuật 1</td><td></td><td>Khách yêu cầu xuất hóa đơn</td><td>Technician 1</td><td data-value="2026-08-22">22/08/2026</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="UAI002"><td>AID002</td><td>Tên tài sản 2</td><td>SN002</td><td>VT0008</td><td>UAI002</td><td>BID002</td><td>BDI002</td><td>Tình trạng tài sản 2</td><td></td><td>Liên kết BBKC 2</td><td></td><td>Technician 2</td><td data-value="2026-10-10">10/10/2026</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="UAI003"><td>AID003</td><td>Tên tài sản 3</td><td>SN003</td><td>VT0015</td><td>UAI003</td><td>BID003</td><td>BDI003</td><td></td><td>Trạng thái kỹ thuật 3</td><td>Liên kết BBKC 3</td><td>Khách yêu cầu xuất hóa đơn</td><td></td><td data-value="2026-09-20">20/09/2026</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="UAI004"><td>AID004</td><td>Tên tài sản 4</td><td>SN004</td><td>VT0002</td><td>UAI004</td><td>BID004</td><td>BDI004</td><td>Tình trạng tài sản 4</td><td>Trạng thái kỹ thuật 4</td><td>Liên kết BBKC 4</td><td>Kiểm tra kỹ trước khi nhận</td><td></td><td data-value="2026-11-10">10/11/2026</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T4" data-title="Lịch sử gửi / duyệt" data-badge="6">
+<table data-erp="grid" data-grid-id="T4" data-key-field="UserAutoID" data-selectable="single" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="ThoiGian" data-type="datetime" data-width="130" data-frozen>Thời gian</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="240">Người dùng</th>
+<th scope="col" data-field="StatusName" data-type="status" data-width="120">Trạng thái</th>
+<th scope="col" data-field="SendTo" data-type="text" data-width="110">Gửi đến</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-wrap>Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt điều chuyển</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td data-value="2026-08-27T14:45:00">27/08/2026 14:45</td><td>Đỗ Văn Minh</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>Đặng Quốc Huy</td><td></td><td>UAI001</td><td>BID001</td></tr>
+<tr data-key="UAI002"><td data-value="2026-09-16T16:45:00">16/09/2026 16:45</td><td>Trần Thị Bích</td><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td>Lý Thị Quỳnh</td><td></td><td>UAI002</td><td>BID002</td></tr>
+<tr data-key="UAI003" data-tone="danger"><td data-value="2026-08-22T11:15:00">22/08/2026 11:15</td><td>Đặng Quốc Huy</td><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td>Hoàng Minh Đức</td><td></td><td>UAI003</td><td>BID003</td></tr>
+<tr data-key="UAI004"><td data-value="2026-08-22T13:15:00">22/08/2026 13:15</td><td>Lý Thị Quỳnh</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Ngô Thị Ngọc</td><td>Hàng nhập khẩu</td><td>UAI004</td><td>BID004</td></tr>
+<tr data-key="UAI005" data-tone="danger"><td data-value="2026-10-14T15:45:00">14/10/2026 15:45</td><td>Hoàng Minh Đức</td><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td>Lê Hoàng Cường</td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI005</td><td>BID005</td></tr>
+<tr data-key="UAI006"><td data-value="2026-09-24T14:15:00">24/09/2026 14:15</td><td>Ngô Thị Ngọc</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Bùi Thanh Lan</td><td>Theo hợp đồng số 12/2026</td><td>UAI006</td><td>BID006</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục loại nhập - xuất - chuyển kho</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CF_ImpExpFrm" data-form-type="LIST" data-mode="view" data-screen-key="CF_ImpExpFrm" data-menu-id="021420">
+<h1>Danh mục loại nhập - xuất - chuyển kho</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CF_ImpExpFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CF_ImpExpFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CF_ImpExpFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CF_ImpExpFrm-q">Tìm nhanh</label><input id="flt-CF_ImpExpFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="ImpExpID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="ImpExpID" data-type="text" data-width="110" data-frozen>Mã Exp Imp</th>
+<th scope="col" data-field="ImExName" data-type="text" data-width="240">Tên Ex Im</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+<th scope="col" data-field="Type" data-type="number" data-width="70" data-decimals="0">Loại</th>
+<th scope="col" data-field="CalPrice" data-type="bool" data-width="60">Đơn giá Cal</th>
+<th scope="col" data-field="CalCost" data-type="bool" data-width="60">Chi phí Cal</th>
+<th scope="col" data-field="isPacket" data-type="bool" data-width="60">Packet</th>
+<th scope="col" data-field="AccountID2" data-type="text" data-width="110">ID2 Account</th>
+</tr></thead>
+<tbody>
+<tr data-key="IEI001"><td>IEI001</td><td>Tên Ex Im 1</td><td data-value="true">Có</td><td data-value="30">30</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td>ID2 Account 1</td></tr>
+<tr data-key="IEI002"><td>IEI002</td><td>Tên Ex Im 2</td><td data-value="false"></td><td data-value="15">15</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 2</td></tr>
+<tr data-key="IEI003"><td>IEI003</td><td>Tên Ex Im 3</td><td data-value="false"></td><td data-value="63">63</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td>ID2 Account 3</td></tr>
+<tr data-key="IEI004"><td>IEI004</td><td>Tên Ex Im 4</td><td data-value="true">Có</td><td data-value="38">38</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td></td></tr>
+<tr data-key="IEI005"><td>IEI005</td><td>Tên Ex Im 5</td><td data-value="false"></td><td data-value="20">20</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+<tr data-key="IEI006"><td>IEI006</td><td>Tên Ex Im 6</td><td data-value="false"></td><td data-value="68">68</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 6</td></tr>
+<tr data-key="IEI007"><td>IEI007</td><td>Tên Ex Im 7</td><td data-value="false"></td><td data-value="11">11</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 7</td></tr>
+<tr data-key="IEI008"><td>IEI008</td><td>Tên Ex Im 8</td><td data-value="false"></td><td data-value="93">93</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+<tr data-key="IEI009"><td>IEI009</td><td>Tên Ex Im 9</td><td data-value="false"></td><td data-value="50">50</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+<tr data-key="IEI010"><td>IEI010</td><td>Tên Ex Im 10</td><td data-value="true">Có</td><td data-value="69">69</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 10</td></tr>
+<tr data-key="IEI011"><td>IEI011</td><td>Tên Ex Im 11</td><td data-value="true">Có</td><td data-value="53">53</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td>ID2 Account 11</td></tr>
+<tr data-key="IEI012"><td>IEI012</td><td>Tên Ex Im 12</td><td data-value="true">Có</td><td data-value="98">98</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 12</td></tr>
+<tr data-key="IEI013"><td>IEI013</td><td>Tên Ex Im 13</td><td data-value="false"></td><td data-value="87">87</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td>ID2 Account 13</td></tr>
+<tr data-key="IEI014"><td>IEI014</td><td>Tên Ex Im 14</td><td data-value="false"></td><td data-value="60">60</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td>ID2 Account 14</td></tr>
+<tr data-key="IEI015"><td>IEI015</td><td>Tên Ex Im 15</td><td data-value="false"></td><td data-value="10">10</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 15</td></tr>
+<tr data-key="IEI016"><td>IEI016</td><td>Tên Ex Im 16</td><td data-value="true">Có</td><td data-value="97">97</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td></td></tr>
+<tr data-key="IEI017"><td>IEI017</td><td>Tên Ex Im 17</td><td data-value="true">Có</td><td data-value="49">49</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>ID2 Account 17</td></tr>
+<tr data-key="IEI018"><td>IEI018</td><td>Tên Ex Im 18</td><td data-value="false"></td><td data-value="10">10</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

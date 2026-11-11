@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục khu vực / địa bàn</title></head>
+<body>
+<section data-erp="screen" data-screen-id="ZoneListFrm" data-form-type="LIST" data-mode="view" data-screen-key="ZoneListFrm" data-menu-id="021017">
+<h1>Danh mục khu vực / địa bàn</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/ZoneListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/ZoneListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/ZoneListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-ZoneListFrm-q">Tìm nhanh</label><input id="flt-ZoneListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="ZoneID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="ZoneID" data-type="text" data-width="110" data-frozen>Mã Zone</th>
+<th scope="col" data-field="ZoneName" data-type="text" data-width="240">Tên Zone</th>
+<th scope="col" data-field="ZoneGroup" data-type="text" data-width="110">Nhóm Zone</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="HanMucNoNhanVien" data-type="number" data-width="70" data-decimals="0">Vien Nhan số Muc Han</th>
+<th scope="col" data-field="isWeb" data-type="bool" data-width="60">Web</th>
+</tr></thead>
+<tbody>
+<tr data-key="ZID001"><td>ZID001</td><td>Tên Zone 1</td><td>Nhóm Zone 1</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="71">71</td><td data-value="false"></td></tr>
+<tr data-key="ZID002"><td>ZID002</td><td>Tên Zone 2</td><td>Nhóm Zone 2</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="75">75</td><td data-value="false"></td></tr>
+<tr data-key="ZID003"><td>ZID003</td><td>Tên Zone 3</td><td></td><td>Giao hàng trong tuần</td><td data-value="70">70</td><td data-value="false"></td></tr>
+<tr data-key="ZID004"><td>ZID004</td><td>Tên Zone 4</td><td>Nhóm Zone 4</td><td>Giao hàng trong tuần</td><td data-value="34">34</td><td data-value="true">Có</td></tr>
+<tr data-key="ZID005"><td>ZID005</td><td>Tên Zone 5</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="50">50</td><td data-value="false"></td></tr>
+<tr data-key="ZID006"><td>ZID006</td><td>Tên Zone 6</td><td></td><td>Theo hợp đồng số 12/2026</td><td data-value="28">28</td><td data-value="false"></td></tr>
+<tr data-key="ZID007"><td>ZID007</td><td>Tên Zone 7</td><td></td><td>Hàng nhập khẩu</td><td data-value="57">57</td><td data-value="false"></td></tr>
+<tr data-key="ZID008"><td>ZID008</td><td>Tên Zone 8</td><td>Nhóm Zone 8</td><td>Giao hàng trong tuần</td><td data-value="77">77</td><td data-value="false"></td></tr>
+<tr data-key="ZID009"><td>ZID009</td><td>Tên Zone 9</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="1">1</td><td data-value="true">Có</td></tr>
+<tr data-key="ZID010"><td>ZID010</td><td>Tên Zone 10</td><td>Nhóm Zone 10</td><td>Giao hàng trong tuần</td><td data-value="53">53</td><td data-value="false"></td></tr>
+<tr data-key="ZID011"><td>ZID011</td><td>Tên Zone 11</td><td>Nhóm Zone 11</td><td>Theo hợp đồng số 12/2026</td><td data-value="95">95</td><td data-value="false"></td></tr>
+<tr data-key="ZID012"><td>ZID012</td><td>Tên Zone 12</td><td>Nhóm Zone 12</td><td>Theo hợp đồng số 12/2026</td><td data-value="85">85</td><td data-value="false"></td></tr>
+<tr data-key="ZID013"><td>ZID013</td><td>Tên Zone 13</td><td></td><td></td><td data-value="12">12</td><td data-value="false"></td></tr>
+<tr data-key="ZID014"><td>ZID014</td><td>Tên Zone 14</td><td>Nhóm Zone 14</td><td>Hàng nhập khẩu</td><td data-value="79">79</td><td data-value="false"></td></tr>
+<tr data-key="ZID015"><td>ZID015</td><td>Tên Zone 15</td><td>Nhóm Zone 15</td><td></td><td data-value="96">96</td><td data-value="true">Có</td></tr>
+<tr data-key="ZID016"><td>ZID016</td><td>Tên Zone 16</td><td>Nhóm Zone 16</td><td></td><td data-value="49">49</td><td data-value="false"></td></tr>
+<tr data-key="ZID017"><td>ZID017</td><td>Tên Zone 17</td><td>Nhóm Zone 17</td><td>Theo hợp đồng số 12/2026</td><td data-value="82">82</td><td data-value="false"></td></tr>
+<tr data-key="ZID018"><td>ZID018</td><td>Tên Zone 18</td><td>Nhóm Zone 18</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="89">89</td><td data-value="false"></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

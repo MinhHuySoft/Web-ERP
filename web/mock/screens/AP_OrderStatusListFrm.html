@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập trạng thái đơn đặt hàng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_OrderStatusListFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="AP_OrderStatusListFrm" data-menu-id="050010">
+<h1>Thiết lập trạng thái đơn đặt hàng</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/AP_OrderStatusListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/AP_OrderStatusListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/AP_OrderStatusListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AP_OrderStatusListFrm-q">Tìm nhanh</label><input id="flt-AP_OrderStatusListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="StatusID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="StatusName" data-type="status" data-width="120" data-frozen>Trạng thái</th>
+<th scope="col" data-field="BackColor" data-type="number" data-width="70" data-decimals="0" data-hidden>Màu</th>
+<th scope="col" data-field="ForeColor" data-type="number" data-width="70" data-decimals="0">Color Fore</th>
+</tr></thead>
+<tbody>
+<tr data-key="2611110000000000000000001"><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td data-value="40">40</td><td data-value="4">4</td></tr>
+<tr data-key="2611110000000000000000002"><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td data-value="9">9</td><td data-value="36">36</td></tr>
+<tr data-key="2611110000000000000000003"><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td data-value="39">39</td><td data-value="15">15</td></tr>
+<tr data-key="2611110000000000000000004"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="47">47</td><td data-value="2">2</td></tr>
+<tr data-key="2611110000000000000000005"><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td data-value="99">99</td><td data-value="72">72</td></tr>
+<tr data-key="2611110000000000000000006"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="57">57</td><td data-value="61">61</td></tr>
+<tr data-key="2611110000000000000000007" data-tone="danger"><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td data-value="75">75</td><td data-value="84">84</td></tr>
+<tr data-key="2611110000000000000000008"><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td data-value="85">85</td><td data-value="56">56</td></tr>
+<tr data-key="2611110000000000000000009"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="64">64</td><td data-value="49">49</td></tr>
+<tr data-key="2611110000000000000000010" data-tone="danger"><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td data-value="15">15</td><td data-value="32">32</td></tr>
+<tr data-key="2611110000000000000000011"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="23">23</td><td data-value="98">98</td></tr>
+<tr data-key="2611110000000000000000012"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="67">67</td><td data-value="12">12</td></tr>
+<tr data-key="2611110000000000000000013" data-tone="danger"><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td data-value="39">39</td><td data-value="34">34</td></tr>
+<tr data-key="2611110000000000000000014"><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td data-value="15">15</td><td data-value="73">73</td></tr>
+<tr data-key="2611110000000000000000015"><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td data-value="15">15</td><td data-value="60">60</td></tr>
+<tr data-key="2611110000000000000000016"><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td data-value="47">47</td><td data-value="98">98</td></tr>
+<tr data-key="2611110000000000000000017"><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td data-value="26">26</td><td data-value="92">92</td></tr>
+<tr data-key="2611110000000000000000018"><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td data-value="27">27</td><td data-value="86">86</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

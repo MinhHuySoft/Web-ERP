@@ -1,0 +1,37 @@
+@layer components {
+  .erp-screen--dashboard { gap: calc(var(--erp-gap) + 6px); }
+  .erp-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .erp-kpi {
+    position: relative; padding: 16px 18px; border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
+    box-shadow: var(--erp-shadow-sm); overflow: hidden; backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
+  }
+  .erp-kpi::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--erp-primary); }
+  .erp-kpi[data-tone="success"]::before { background: var(--erp-success); }
+  .erp-kpi[data-tone="warning"]::before { background: var(--erp-warning); }
+  .erp-kpi[data-tone="info"]::before { background: var(--erp-info); }
+  .erp-kpi h2 { font-size: .86em; font-weight: 550; color: var(--erp-text-muted); margin-bottom: 6px; }
+  .erp-kpi__value { font-size: 1.7em; font-weight: 700; letter-spacing: -.3px; font-variant-numeric: tabular-nums; }
+  .erp-chart {
+    padding: 14px 16px; border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
+    box-shadow: var(--erp-shadow-sm); backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
+  }
+  .erp-chart figcaption { font-weight: 650; margin-bottom: 8px; }
+  .erp-chart__svg { width: 100%; max-height: 280px; }
+  .erp-chart__grid { stroke: var(--erp-grid-line); stroke-width: 1; }
+  .erp-chart__bar { fill: var(--erp-primary); opacity: .9; }
+  .erp-chart__bar:hover { opacity: 1; }
+  .erp-chart__line { stroke: var(--erp-primary); stroke-width: 3; }
+  .erp-chart__value { fill: var(--erp-text-muted); font-size: 12px; }
+  .erp-chart__label { fill: var(--erp-text-muted); font-size: 12px; }
+  .erp-card-block {
+    padding: 14px 16px; border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
+    backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
+  }
+  .erp-card-block::before { content: attr(data-title); display: block; font-weight: 650; margin-bottom: 8px; }
+  .erp-card-block ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; padding: 0; list-style: none; }
+  .erp-card-block a {
+    display: block; padding: 9px 12px; border-radius: var(--erp-radius); background: var(--erp-surface-2); border: 1px solid var(--erp-border);
+    text-decoration: none; color: var(--erp-text); font-weight: 500;
+  }
+  .erp-card-block a:hover { border-color: var(--erp-primary); color: var(--erp-primary); }
+}

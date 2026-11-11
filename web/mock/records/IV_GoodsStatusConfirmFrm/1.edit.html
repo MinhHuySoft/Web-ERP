@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Xác nhận tình trạng hàng hóa — CT1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_GoodsStatusConfirmFrm" data-form-type="EDIT" data-mode="edit" data-screen-key="IV_GoodsStatusConfirmFrm:CT1126/0001" data-menu-id="07016">
+<h1>Xác nhận tình trạng hàng hóa — CT1126/0001</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_GoodsStatusConfirmFrm-1" formaction="/mock/records/IV_GoodsStatusConfirmFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_GoodsStatusConfirmFrm-1" formaction="/mock/records/IV_GoodsStatusConfirmFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/IV_GoodsStatusConfirmFrm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_GoodsStatusConfirmFrm-1" method="post" action="/mock/records/IV_GoodsStatusConfirmFrm/1.saved.html" data-key-field="DocumentID" data-key="CT1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DocumentID">Số đề nghị</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DocumentID" name="DocumentID" value="CT1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-09-07" readonly></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Chuyển trạng thái</button></div>
+<div data-erp="field" data-control="checkbox" data-span="2"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-IsRain">Trời mưa</label><input type="hidden" name="IsRain" value="false"><input id="f-rec-IV_GoodsStatusConfirmFrm-1-IsRain" name="IsRain" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="print" data-icon="print">In phiếu</button></div>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-OrderNumber">Số thứ tự</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-OrderNumber" name="OrderNumber" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-PackageTypeID">Loại kiện</label><select id="f-rec-IV_GoodsStatusConfirmFrm-1-PackageTypeID" name="PackageTypeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-OrderTypeID">Loại đơn</label><select id="f-rec-IV_GoodsStatusConfirmFrm-1-OrderTypeID" name="OrderTypeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ObjectID">Mã NCC</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-ObjectID" name="ObjectID" value="KH0001" readonly></div>
+<div data-erp="field" data-control="text" data-span="8"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ObjectName">Nhà cung cấp</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-ObjectName" name="ObjectName" value="Công ty TNHH Thiết bị Y tế An Phát" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DeparturePoint">Nơi đi</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DeparturePoint" name="DeparturePoint" value="Nơi đi 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DestinationPoint">Nơi đến</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DestinationPoint" name="DestinationPoint" value="" readonly></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-TotalPalletQuantityByDocument">Tổng số lượng pallet theo chứng từ</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-TotalPalletQuantityByDocument" name="TotalPalletQuantityByDocument" inputmode="decimal" value="5840000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="6"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-TotalPalletQuantityByReal">Tổng số lượng pallet theo thực tế</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-TotalPalletQuantityByReal" name="TotalPalletQuantityByReal" inputmode="decimal" value="19360000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-TotalBarrelQuantityByDocument">Tổng số lượng thùng theo chứng từ</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-TotalBarrelQuantityByDocument" name="TotalBarrelQuantityByDocument" inputmode="decimal" value="87200000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="6"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-TotalBarrelQuantityByReal">Tổng số lượng thùng theo thực tế</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-TotalBarrelQuantityByReal" name="TotalBarrelQuantityByReal" inputmode="decimal" value="510000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="quantity" data-span="4" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ExcessPackageQuantity">Số lượng kiện thừa</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-ExcessPackageQuantity" name="ExcessPackageQuantity" inputmode="decimal" value="184" data-decimals="2" readonly></div>
+<div data-erp="field" data-control="quantity" data-span="4"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DamagedPackageQuantity">Số lượng kiện hư hỏng</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DamagedPackageQuantity" name="DamagedPackageQuantity" inputmode="decimal" value="115" data-decimals="2" readonly></div>
+<div data-erp="field" data-control="quantity" data-span="4"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-LackOfPackageQuantity">Số lượng kiện thiếu</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-LackOfPackageQuantity" name="LackOfPackageQuantity" inputmode="decimal" value="77" data-decimals="2" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-Notes">Ghi chú</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-Notes" name="Notes" value="Kiểm tra kỹ trước khi nhận" readonly></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Link BBKC</button></div>
+<div data-erp="field" data-control="text" data-span="9"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-BBKCUrl">Liên kết BBKC</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-BBKCUrl" name="BBKCUrl" value=""></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="2"><legend>Thông tin 2</legend>
+<div data-erp="field" data-control="checkbox" data-span="3" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-IsDamageOutsidePackage">Kiện bên ngoài hư hỏng</label><input type="hidden" name="IsDamageOutsidePackage" value="false"><input id="f-rec-IV_GoodsStatusConfirmFrm-1-IsDamageOutsidePackage" name="IsDamageOutsidePackage" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="select" data-span="6"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-LocationDamageDetectedID">Mã phát hiện hư hỏng vị trí</label><select id="f-rec-IV_GoodsStatusConfirmFrm-1-LocationDamageDetectedID" name="LocationDamageDetectedID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="6"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DamageInsideStatusID">Mã trạng thái bên trong hư hỏng</label><select id="f-rec-IV_GoodsStatusConfirmFrm-1-DamageInsideStatusID" name="DamageInsideStatusID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-LocationDamageDescription">Mô tả hư hỏng vị trí</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-LocationDamageDescription" name="LocationDamageDescription" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DamageDescription">Mô tả hư hỏng</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DamageDescription" name="DamageDescription" value="Kiểm tra kỹ trước khi nhận" readonly></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Mở liên kết</button></div>
+<div data-erp="field" data-control="text" data-span="12"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ImageURL">Hình ảnh</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-ImageURL" name="ImageURL" value="Hình ảnh 1" readonly></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="3"><legend>Thông tin 3</legend>
+<div data-erp="field" data-control="textarea" data-span="12" data-rows="2" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ResultDesciption">Desciption kết quả</label><textarea id="f-rec-IV_GoodsStatusConfirmFrm-1-ResultDesciption" name="ResultDesciption" rows="2" readonly></textarea></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-TotalQuantityInboundResult">Tổng kết quả nhập số lượng</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-TotalQuantityInboundResult" name="TotalQuantityInboundResult" inputmode="decimal" value="8180000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-IV_GoodsStatusConfirmFrm-1-GoodAwaitingInboundResult">Kết quả nhập chờ hàng</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-GoodAwaitingInboundResult" name="GoodAwaitingInboundResult" inputmode="decimal" value="41" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-ResultNote">Ghi chú kết quả</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-ResultNote" name="ResultNote" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="date" data-span="7" data-row-start><label for="f-rec-IV_GoodsStatusConfirmFrm-1-DatetimeRecorded">Ghi nhận thời gian</label><input id="f-rec-IV_GoodsStatusConfirmFrm-1-DatetimeRecorded" name="DatetimeRecorded" type="date" value="2026-09-27" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết 1" data-badge="3">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_GoodsStatusConfirmFrm-1" data-total-rows="3">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-readonly>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-readonly>Số đề nghị</th>
+<th scope="col" data-field="ContractID" data-type="text" data-width="110" data-frozen data-editor="text">Hợp đồng</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-readonly data-group="Thông tin hàng hóa">Mã hàng</th>
+<th scope="col" data-field="HangSX" data-type="text" data-width="110" data-readonly data-group="Thông tin hàng hóa">Hãng sản xuất</th>
+<th scope="col" data-field="UnitFactor" data-type="number" data-width="70" data-decimals="0" data-editor="number">Hệ số quy đổi</th>
+<th scope="col" data-field="Unit2" data-type="text" data-width="110" data-editor="text">ĐVT 2</th>
+<th scope="col" data-field="Additional" data-type="bool" data-width="60" data-readonly data-group="Thông tin hàng hóa">Thông tin thêm</th>
+<th scope="col" data-field="LotNumberByDocument" data-type="text" data-width="110" data-readonly data-group="Trên chứng từ">Số lô theo chứng từ</th>
+<th scope="col" data-field="SetQuantityByDocument" data-type="number" data-width="70" data-decimals="0" data-readonly data-group="Trên chứng từ">Số lượng bộ theo chứng từ</th>
+<th scope="col" data-field="BarrelQuantityByDocument" data-type="number" data-width="70" data-decimals="0" data-readonly data-group="Trên chứng từ">Số lượng thùng theo chứng từ</th>
+<th scope="col" data-field="ExpireDateByDocument" data-type="date" data-width="95" data-readonly data-group="Trên chứng từ">Ngày hạn theo chứng từ</th>
+<th scope="col" data-field="LotNumberByReal" data-type="text" data-width="110" data-hidden data-readonly data-group="Trên thực tế">Số lô theo thực tế</th>
+<th scope="col" data-field="SetQuantityByReal" data-type="number" data-width="70" data-decimals="0" data-hidden data-readonly data-group="Trên thực tế">Số lượng bộ theo thực tế</th>
+<th scope="col" data-field="BarrelQuantityByReal" data-type="number" data-width="70" data-decimals="0" data-hidden data-readonly data-group="Trên thực tế">Số lượng thùng theo thực tế</th>
+<th scope="col" data-field="ExpireDateByReal" data-type="date" data-width="95" data-hidden data-readonly data-group="Trên thực tế">Ngày hạn theo thực tế</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="RandomTestQuantity" data-type="quantity" data-width="80" data-decimals="2" data-readonly data-sum="sum" data-group="Kiểm tra xác suất">Số lượng kiểm tra xác suất</th>
+<th scope="col" data-field="TestStatus" data-type="text" data-width="110" data-hidden data-readonly data-group="Kiểm tra xác suất">Trạng thái kiểm tra</th>
+<th scope="col" data-field="NoPalletNote" data-type="text" data-width="110" data-hidden data-editor="text">Ghi chú pallet số</th>
+<th scope="col" data-field="PalletNote" data-type="text" data-width="110" data-hidden data-editor="text">Ghi chú pallet</th>
+<th scope="col" data-field="CheckerNote" data-type="text" data-width="110" data-hidden data-editor="text">Ghi chú người kiểm</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110" data-hidden data-readonly data-group="Thông tin hàng hóa">Mã hàng NCC</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Parent</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>CT1126/0001</td><td>CID001</td><td>VT0001</td><td></td><td data-value="31">31</td><td>ĐVT 2 1</td><td data-value="false"></td><td>L26722</td><td data-value="62">62</td><td data-value="24">24</td><td data-value="2026-11-11">11/11/2026</td><td>L26245</td><td data-value="88">88</td><td data-value="7">7</td><td data-value="2026-10-27">27/10/2026</td><td data-value="313500000">313.500.000</td><td data-value="16950000">16.950.000</td><td data-value="9840000">9.840.000</td><td data-value="143">143</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td>IC001</td><td>PID001</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>CT1126/0002</td><td>CID002</td><td>VT0008</td><td>Hãng sản xuất 2</td><td data-value="95">95</td><td></td><td data-value="true">Có</td><td>L26769</td><td data-value="15">15</td><td data-value="16">16</td><td data-value="2026-08-29">29/08/2026</td><td>L26528</td><td data-value="55">55</td><td data-value="76">76</td><td data-value="2026-09-22">22/09/2026</td><td data-value="41500000">41.500.000</td><td data-value="95900000">95.900.000</td><td data-value="8120000">8.120.000</td><td data-value="135">135</td><td>Trạng thái kiểm tra 2</td><td>Theo hợp đồng số 12/2026</td><td></td><td>Khách yêu cầu xuất hóa đơn</td><td>IC002</td><td>PID002</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>CT1126/0003</td><td>CID003</td><td>VT0015</td><td></td><td data-value="46">46</td><td>ĐVT 2 3</td><td data-value="false"></td><td>L26498</td><td data-value="62">62</td><td data-value="1">1</td><td data-value="2026-09-18">18/09/2026</td><td>L26564</td><td data-value="54">54</td><td data-value="78">78</td><td data-value="2026-10-28">28/10/2026</td><td data-value="44600000">44.600.000</td><td data-value="129250000">129.250.000</td><td data-value="1400000">1.400.000</td><td data-value="77">77</td><td>Trạng thái kiểm tra 3</td><td>Khách yêu cầu xuất hóa đơn</td><td>Khách yêu cầu xuất hóa đơn</td><td>Kiểm tra kỹ trước khi nhận</td><td>IC003</td><td>PID003</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td data-field="SourceAmount" data-value="399600000">399.600.000</td><td data-field="UnitPrice" data-value="242100000">242.100.000</td><td data-field="Amount" data-value="19360000">19.360.000</td><td data-field="RandomTestQuantity" data-value="355">355</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="2026-11-11"></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="2026-11-11"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Lịch sử gởi / duyệt" data-badge="7">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="single" data-total-rows="7">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số đề nghị</th>
+<th scope="col" data-field="ThoiGian" data-type="datetime" data-width="130" data-frozen>Thời gian</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="240">Người dùng</th>
+<th scope="col" data-field="StatusID" data-type="status" data-width="120" data-hidden>Trạng thái</th>
+<th scope="col" data-field="SendTo" data-type="text" data-width="110">Gửi đến</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-wrap>Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>CT1126/0001</td><td data-value="2026-07-19T18:30:00">19/07/2026 18:30</td><td>Đỗ Văn Minh</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đặng Quốc Huy</td><td></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>CT1126/0002</td><td data-value="2026-10-16T11:00:00">16/10/2026 11:00</td><td>Trần Thị Bích</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>Lý Thị Quỳnh</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>CT1126/0003</td><td data-value="2026-08-09T17:30:00">09/08/2026 17:30</td><td>Đặng Quốc Huy</td><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td>Hoàng Minh Đức</td><td>Theo hợp đồng số 12/2026</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>CT1126/0004</td><td data-value="2026-10-15T16:30:00">15/10/2026 16:30</td><td>Lý Thị Quỳnh</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Ngô Thị Ngọc</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>CT1126/0005</td><td data-value="2026-08-21T17:00:00">21/08/2026 17:00</td><td>Hoàng Minh Đức</td><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td>Lê Hoàng Cường</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>CT1126/0006</td><td data-value="2026-09-04T12:15:00">04/09/2026 12:15</td><td>Ngô Thị Ngọc</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>Bùi Thanh Lan</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+<tr data-key="UAI007" data-tone="danger"><td>UAI007</td><td>CT1126/0007</td><td data-value="2026-07-17T18:45:00">17/07/2026 18:45</td><td>Lê Hoàng Cường</td><td data-value="9"><data data-erp="status" value="9" data-tone="danger">Hủy</data></td><td>Nguyễn Văn An</td><td>Giao hàng trong tuần</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

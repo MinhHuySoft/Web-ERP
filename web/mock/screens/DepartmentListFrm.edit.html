@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục phòng ban</title></head>
+<body>
+<section data-erp="screen" data-screen-id="DepartmentListFrm" data-form-type="LIST" data-mode="edit" data-screen-key="DepartmentListFrm" data-menu-id="0223">
+<h1>Danh mục phòng ban</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-DepartmentListFrm" formaction="/mock/screens/DepartmentListFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/DepartmentListFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-DepartmentListFrm" method="post" action="/mock/screens/DepartmentListFrm.saved.html" data-key-field="DepartmentID"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="DepartmentID" data-selectable="multi" data-editable data-form="rec-DepartmentListFrm" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="DepartmentID" data-type="text" data-width="110" data-frozen data-editor="text">Phòng ban</th>
+<th scope="col" data-field="DepartmentName" data-type="text" data-width="240" data-editor="text">Tên phòng ban</th>
+<th scope="col" data-field="Note" data-type="text" data-width="110" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden data-editor="text">Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden data-editor="text">Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày tạo</th>
+<th scope="col" data-field="ParentDepartmentID" data-type="text" data-width="110" data-editor="text">Mã phòng ban Parent</th>
+</tr></thead>
+<tbody>
+<tr data-key="DID001"><td>DID001</td><td>Tên phòng ban 1</td><td></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-15">15/08/2026</td><td data-value="2026-08-26">26/08/2026</td><td>PDI001</td></tr>
+<tr data-key="DID002"><td>DID002</td><td>Tên phòng ban 2</td><td>Khách yêu cầu xuất hóa đơn</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-26">26/09/2026</td><td data-value="2026-10-19">19/10/2026</td><td>PDI002</td></tr>
+<tr data-key="DID003"><td>DID003</td><td>Tên phòng ban 3</td><td>Theo hợp đồng số 12/2026</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-27">27/09/2026</td><td data-value="2026-07-16">16/07/2026</td><td>PDI003</td></tr>
+<tr data-key="DID004"><td>DID004</td><td>Tên phòng ban 4</td><td>Giao hàng trong tuần</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-08-07">07/08/2026</td><td>PDI004</td></tr>
+<tr data-key="DID005"><td>DID005</td><td>Tên phòng ban 5</td><td>Theo hợp đồng số 12/2026</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-23">23/08/2026</td><td data-value="2026-08-03">03/08/2026</td><td>PDI005</td></tr>
+<tr data-key="DID006"><td>DID006</td><td>Tên phòng ban 6</td><td>Giao hàng trong tuần</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-11-09">09/11/2026</td><td data-value="2026-09-11">11/09/2026</td><td>PDI006</td></tr>
+<tr data-key="DID007"><td>DID007</td><td>Tên phòng ban 7</td><td>Giao hàng trong tuần</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-10-17">17/10/2026</td><td>PDI007</td></tr>
+<tr data-key="DID008"><td>DID008</td><td>Tên phòng ban 8</td><td>Kiểm tra kỹ trước khi nhận</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-05">05/09/2026</td><td data-value="2026-09-22">22/09/2026</td><td>PDI008</td></tr>
+<tr data-key="DID009"><td>DID009</td><td>Tên phòng ban 9</td><td>Khách yêu cầu xuất hóa đơn</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-09-16">16/09/2026</td><td data-value="2026-07-29">29/07/2026</td><td>PDI009</td></tr>
+<tr data-key="DID010"><td>DID010</td><td>Tên phòng ban 10</td><td></td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-08-07">07/08/2026</td><td data-value="2026-08-19">19/08/2026</td><td>PDI010</td></tr>
+<tr data-key="DID011"><td>DID011</td><td>Tên phòng ban 11</td><td>Hàng nhập khẩu</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-08-07">07/08/2026</td><td>PDI011</td></tr>
+<tr data-key="DID012"><td>DID012</td><td>Tên phòng ban 12</td><td>Giao hàng trong tuần</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-07-27">27/07/2026</td><td>PDI012</td></tr>
+<tr data-key="DID013"><td>DID013</td><td>Tên phòng ban 13</td><td></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-11-05">05/11/2026</td><td data-value="2026-08-25">25/08/2026</td><td>PDI013</td></tr>
+<tr data-key="DID014"><td>DID014</td><td>Tên phòng ban 14</td><td>Theo hợp đồng số 12/2026</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-15">15/09/2026</td><td data-value="2026-10-17">17/10/2026</td><td>PDI014</td></tr>
+<tr data-key="DID015"><td>DID015</td><td>Tên phòng ban 15</td><td></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-20">20/10/2026</td><td data-value="2026-07-28">28/07/2026</td><td>PDI015</td></tr>
+<tr data-key="DID016"><td>DID016</td><td>Tên phòng ban 16</td><td>Theo hợp đồng số 12/2026</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-10-21">21/10/2026</td><td>PDI016</td></tr>
+<tr data-key="DID017"><td>DID017</td><td>Tên phòng ban 17</td><td></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-21">21/07/2026</td><td data-value="2026-10-27">27/10/2026</td><td>PDI017</td></tr>
+<tr data-key="DID018"><td>DID018</td><td>Tên phòng ban 18</td><td>Kiểm tra kỹ trước khi nhận</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-08">08/08/2026</td><td data-value="2026-07-15">15/07/2026</td><td>PDI018</td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>
