@@ -6,7 +6,7 @@
   .erp-ribbon__tabs::-webkit-scrollbar { display: none; }
   .erp-ribbon__tab {
     display: flex; align-items: center; gap: 6px; padding: 6px 14px 7px; border: 0; border-radius: var(--erp-radius) var(--erp-radius) 0 0;
-    background: transparent; color: var(--erp-ribbon-tab-text); cursor: pointer; white-space: nowrap; font-size: .93em; opacity: .9;
+    background: transparent; color: var(--erp-ribbon-tab-text); cursor: pointer; white-space: nowrap; font-size: var(--erp-fs-sm); opacity: .9;
   }
   .erp-ribbon__tab .erp-icon { width: 16px; height: 16px; }
   .erp-ribbon__tab:hover { background: var(--erp-chrome-hover); opacity: 1; }
@@ -41,14 +41,14 @@
   }
   .erp-rgroup--mixed .erp-rbtn--large { grid-row: span 3; }
   .erp-rgroup__title {
-    font-size: .76em; font-weight: 600; color: var(--erp-text-faint); text-align: center; padding: 4px 0 6px; white-space: nowrap;
+    font-size: var(--erp-fs-xs); font-weight: 600; color: var(--erp-text-faint); text-align: center; padding: 4px 0 6px; white-space: nowrap;
     letter-spacing: .2px;
   }
 
   /* Nút ribbon */
   .erp-rbtn {
     display: flex; align-items: center; gap: 8px; border: 1px solid transparent; border-radius: 6px;
-    background: transparent; color: var(--erp-text); cursor: pointer; text-align: start; font-size: .92em;
+    background: transparent; color: var(--erp-text); cursor: pointer; text-align: start; font-size: var(--erp-fs-sm);
   }
   .erp-rbtn:hover { background: var(--erp-ribbon-btn-hover); border-color: color-mix(in srgb, var(--erp-primary) 18%, transparent); }
   .erp-rbtn:active { background: var(--erp-ribbon-btn-active); }
@@ -61,7 +61,7 @@
   .erp-rbtn--large span { line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .erp-rbtn--drop { position: relative; width: 92px; }
   .erp-rbtn__count {
-    position: absolute; top: 2px; inset-inline-end: 6px; font-size: .72em; font-weight: 700; padding: 0 5px; border-radius: 999px;
+    position: absolute; top: 2px; inset-inline-end: 6px; font-size: var(--erp-fs-xs); font-weight: 700; padding: 0 5px; border-radius: 999px;
     background: var(--erp-primary-soft); color: var(--erp-primary);
   }
   .erp-rbtn__caret { width: 12px !important; height: 12px !important; color: var(--erp-text-faint) !important; }
@@ -79,7 +79,7 @@
   .erp-rpop__list { overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2px; }
   .erp-rpop__item {
     display: flex; align-items: center; gap: 8px; padding: 7px 8px; border: 0; border-radius: var(--erp-radius); background: transparent;
-    text-align: start; cursor: pointer; font-size: .92em;
+    text-align: start; cursor: pointer; font-size: var(--erp-fs-sm);
   }
   .erp-rpop__item .erp-icon { width: 16px; height: 16px; color: var(--erp-primary); }
   .erp-rpop__item:hover, .erp-rpop__item:focus-visible { background: var(--erp-primary-soft); box-shadow: none; }

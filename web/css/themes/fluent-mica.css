@@ -5,7 +5,7 @@
     --erp-bg: #eef0f5;
     --erp-bg-image: radial-gradient(1200px 600px at 10% -10%, #dfe8f7 0%, transparent 60%), radial-gradient(900px 600px at 100% 0%, #efe6f5 0%, transparent 55%), linear-gradient(180deg, #f3f4f8, #eceff4);
     --erp-surface: #fbfbfd; --erp-surface-2: #f4f5f8; --erp-surface-3: #e9ebf0; --erp-panel-bg: rgba(255, 255, 255, .78);
-    --erp-text: #1b1b1f; --erp-text-muted: #545866; --erp-text-faint: #73788a;
+    --erp-text: #1b1b1f; --erp-text-muted: #545866; --erp-text-faint: #62677a;
     --erp-border: rgba(0, 0, 0, .1); --erp-border-strong: rgba(0, 0, 0, .2);
     --erp-accent: #0067c0;
     --erp-radius: 6px; --erp-radius-lg: 10px; --erp-blur: 24px; --erp-chrome-blur: 30px;

@@ -1,16 +1,20 @@
 @layer components {
   .erp-screen--dashboard { gap: calc(var(--erp-gap) + 6px); }
-  .erp-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-  .erp-kpi {
-    position: relative; padding: 16px 18px; border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
-    box-shadow: var(--erp-shadow-sm); overflow: hidden; backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
+  /* Dải chỉ số: một khung chung, các ô ngăn bằng vạch 1px (không phải các thẻ rời có vạch màu bên trái).
+     Màu trạng thái chỉ là chấm nhỏ cạnh nhãn, và chỉ khi có ý nghĩa (tốt / cần chú ý / xấu). */
+  .erp-kpis {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); overflow: hidden;
+    border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border); box-shadow: var(--erp-shadow-sm);
+    backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
   }
-  .erp-kpi::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--erp-primary); }
-  .erp-kpi[data-tone="success"]::before { background: var(--erp-success); }
-  .erp-kpi[data-tone="warning"]::before { background: var(--erp-warning); }
-  .erp-kpi[data-tone="info"]::before { background: var(--erp-info); }
-  .erp-kpi h2 { font-size: .86em; font-weight: 550; color: var(--erp-text-muted); margin-bottom: 6px; }
-  .erp-kpi__value { font-size: 1.7em; font-weight: 700; letter-spacing: -.3px; font-variant-numeric: tabular-nums; }
+  .erp-kpi { display: grid; gap: 4px; align-content: start; padding: 14px 18px 16px; margin: -1px 0 0 -1px; border-top: 1px solid var(--erp-border); border-inline-start: 1px solid var(--erp-border); }
+  .erp-kpi h2 { display: flex; align-items: center; gap: 7px; font-size: var(--erp-fs-sm); font-weight: 500; color: var(--erp-text-muted); }
+  .erp-kpi[data-tone="success"] h2::before, .erp-kpi[data-tone="warning"] h2::before, .erp-kpi[data-tone="danger"] h2::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--erp-success);
+  }
+  .erp-kpi[data-tone="warning"] h2::before { background: var(--erp-warning); }
+  .erp-kpi[data-tone="danger"] h2::before { background: var(--erp-danger); }
+  .erp-kpi__value { font-size: var(--erp-fs-2xl); font-weight: 650; line-height: 1.2; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
   .erp-chart {
     padding: 14px 16px; border-radius: var(--erp-radius-lg); background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
     box-shadow: var(--erp-shadow-sm); backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
@@ -20,7 +24,7 @@
   .erp-chart__grid { stroke: var(--erp-grid-line); stroke-width: 1; }
   .erp-chart__bar { fill: var(--erp-primary); opacity: .9; }
   .erp-chart__bar:hover { opacity: 1; }
-  .erp-chart__line { stroke: var(--erp-primary); stroke-width: 3; }
+  .erp-chart__line { stroke: var(--erp-primary); stroke-width: 2; }
   .erp-chart__value { fill: var(--erp-text-muted); font-size: 12px; }
   .erp-chart__label { fill: var(--erp-text-muted); font-size: 12px; }
   .erp-card-block {

@@ -2,7 +2,7 @@
 @layer themes {
   :root[data-theme="ribbon-dark"] {
     --erp-bg: #121418; --erp-surface: #1c1f25; --erp-surface-2: #22262d; --erp-surface-3: #2b3038; --erp-overlay: rgba(0, 0, 0, .6);
-    --erp-text: #e6e9ef; --erp-text-muted: #a9b1be; --erp-text-faint: #7c8594;
+    --erp-text: #e6e9ef; --erp-text-muted: #a9b1be; --erp-text-faint: #8b94a3;
     --erp-border: #333944; --erp-border-strong: #4a5260;
     --erp-accent: #5b9cf5; --erp-accent-contrast: #0b1220;
     --erp-success: #4cc38a; --erp-warning: #e6a23c; --erp-danger: #f07167; --erp-info: #64b5f6;

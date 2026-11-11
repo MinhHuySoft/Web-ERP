@@ -85,7 +85,7 @@ export function formatByType(raw, type, decimals = null) {
     case 'quantity': case 'number': case 'percent': return formatNumber(raw, decimals);
     case 'date': return formatDate(raw);
     case 'datetime': return formatDateTime(raw);
-    case 'bool': return raw === 'true' ? '✓' : '';
+    case 'bool': return raw === 'true' ? 'Có' : '';   // chữ (xuất CSV, tìm kiếm); lưới vẽ icon SVG
     default: return raw ?? '';
   }
 }

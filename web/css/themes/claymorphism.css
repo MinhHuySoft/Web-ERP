@@ -6,7 +6,7 @@
     --erp-font: "Nunito", "Segoe UI", system-ui, sans-serif;
     --erp-bg: #f3ecfb; --erp-bg-image: radial-gradient(700px 500px at 0% 0%, #ffe8f1, transparent 60%), radial-gradient(700px 500px at 100% 100%, #e3f3ff, transparent 60%);
     --erp-surface: #ffffff; --erp-surface-2: #faf6ff; --erp-surface-3: #efe7fb; --erp-panel-bg: #ffffff;
-    --erp-text: #2a2140; --erp-text-muted: #564b70; --erp-text-faint: #756b8e;
+    --erp-text: #2a2140; --erp-text-muted: #564b70; --erp-text-faint: #685e82;
     --erp-border: #e7dcf7; --erp-border-strong: #d2c2f0;
     --erp-accent: #6d4fd1; --erp-success: #188a5a; --erp-warning: #9a5800; --erp-danger: #c4344d; --erp-info: #2b6cb0;
     --erp-radius: 14px; --erp-radius-sm: 10px; --erp-radius-lg: 22px;

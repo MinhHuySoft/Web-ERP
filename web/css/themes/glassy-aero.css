@@ -3,7 +3,7 @@
   :root[data-theme="glassy-aero"] {
     --erp-bg: #d7ecfb; --erp-bg-image: linear-gradient(180deg, #b9ddf7 0%, #e3f2fd 45%, #f4f9fe 100%);
     --erp-surface: #ffffff; --erp-surface-2: #f2f8fd; --erp-surface-3: #e2eef9; --erp-panel-bg: rgba(255, 255, 255, .76);
-    --erp-text: #102a43; --erp-text-muted: #3a556e; --erp-text-faint: #5d7891;
+    --erp-text: #102a43; --erp-text-muted: #3a556e; --erp-text-faint: #4d6680;
     --erp-border: rgba(80, 140, 200, .38); --erp-border-strong: rgba(60, 120, 190, .55);
     --erp-accent: #0b62c4;
     --erp-radius: 6px; --erp-radius-lg: 10px; --erp-blur: 12px; --erp-chrome-blur: 14px;

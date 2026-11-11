@@ -1,7 +1,8 @@
 /* Ribbon cổ điển — MẶC ĐỊNH (QĐ-04). Giữ cảm giác Office/Janus Ribbon của ERP WinForms: sáng, viền rõ, mật độ cao.
+   Nền phẳng như Office hiện hành (không gradient trang trí — docs/kien-truc/03-chuan-giao-dien.md).
    Giá trị gốc nằm ở tokens.css; file này chỉ tinh chỉnh. */
 @layer themes {
-  :root[data-theme="ribbon-classic"] .erp-titlebar { background: linear-gradient(180deg, #2b6dcd 0%, #1f5fbf 100%); }
-  :root[data-theme="ribbon-classic"] .erp-ribbon__body { background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%); }
   :root[data-theme="ribbon-classic"] { --erp-ribbon-bg: #fbfcfe; }
+  :root[data-theme="ribbon-classic"] .erp-titlebar { background: var(--erp-chrome-bg); }
+  :root[data-theme="ribbon-classic"] .erp-ribbon__body { background: var(--erp-ribbon-bg); }
 }
