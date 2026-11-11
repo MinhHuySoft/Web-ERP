@@ -11,7 +11,7 @@
     --erp-chrome-bg: #ffffff; --erp-chrome-text: #111111; --erp-chrome-muted: #666666; --erp-chrome-hover: #f2f2f3;
     --erp-ribbon-bg: #ffffff; --erp-ribbon-tabs-bg: #ffffff; --erp-ribbon-tab-text: #555555; --erp-ribbon-tab-active-bg: #ffffff;
     --erp-ribbon-tab-active-text: #111111; --erp-ribbon-border: #ececec; --erp-ribbon-btn-hover: #f3f4f6; --erp-ribbon-btn-active: #e9eaee;
-    --erp-grid-head: #fafafa; --erp-grid-line: #efefef; --erp-grid-alt: #ffffff; --erp-grid-hover: #f6f8fc; --erp-grid-selected: #e8effd; --erp-grid-foot: #fafafa;
+    --erp-grid-head: #fafafa; --erp-grid-line: #efefef; --erp-grid-alt: #ffffff; --erp-grid-hover: color-mix(in srgb, var(--erp-primary) 4%, #ffffff); --erp-grid-selected: color-mix(in srgb, var(--erp-primary) 11%, #ffffff); --erp-grid-foot: #fafafa;
     --erp-grid-frozen-shadow: 1px 0 0 #e6e6e6; --erp-input-border: #d6d6d6;
   }
   :root[data-theme="minimal-flat"] .erp-titlebar { border-bottom: 1px solid #ececec; }

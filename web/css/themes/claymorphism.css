@@ -1,23 +1,22 @@
 /* Claymorphism — khối "đất sét" bo tròn lớn, bóng đôi trong/ngoài, màu pastel. */
 @layer themes {
   :root[data-theme="claymorphism"] {
-    --clay: 0 10px 22px rgba(124, 92, 214, .20), inset -5px -6px 10px rgba(124, 92, 214, .12), inset 5px 5px 10px rgba(255, 255, 255, .95);
-    --clay-sm: 0 5px 12px rgba(124, 92, 214, .18), inset -3px -4px 6px rgba(124, 92, 214, .10), inset 3px 3px 6px rgba(255, 255, 255, .95);
+    --clay: 0 10px 22px color-mix(in srgb, var(--erp-primary) 20%, transparent), inset -5px -6px 10px color-mix(in srgb, var(--erp-primary) 12%, transparent), inset 5px 5px 10px rgba(255, 255, 255, .95);
+    --clay-sm: 0 5px 12px color-mix(in srgb, var(--erp-primary) 18%, transparent), inset -3px -4px 6px color-mix(in srgb, var(--erp-primary) 10%, transparent), inset 3px 3px 6px rgba(255, 255, 255, .95);
     --erp-font: "Nunito", "Segoe UI", system-ui, sans-serif;
-    --erp-bg: #f3ecfb; --erp-bg-image: radial-gradient(700px 500px at 0% 0%, #ffe8f1, transparent 60%), radial-gradient(700px 500px at 100% 100%, #e3f3ff, transparent 60%);
-    --erp-surface: #ffffff; --erp-surface-2: #faf6ff; --erp-surface-3: #efe7fb; --erp-panel-bg: #ffffff;
+    --erp-bg: color-mix(in srgb, var(--erp-primary) 10%, #ffffff); --erp-bg-image: radial-gradient(700px 500px at 0% 0%, color-mix(in srgb, var(--erp-tone-2, #ec4899) 12%, #ffffff), transparent 60%), radial-gradient(700px 500px at 100% 100%, color-mix(in srgb, var(--erp-tone-3, #38bdf8) 12%, #ffffff), transparent 60%);
+    --erp-surface: #ffffff; --erp-surface-2: color-mix(in srgb, var(--erp-primary) 4%, #ffffff); --erp-surface-3: color-mix(in srgb, var(--erp-primary) 12%, #ffffff); --erp-panel-bg: #ffffff;
     --erp-text: #2a2140; --erp-text-muted: #564b70; --erp-text-faint: #685e82;
-    --erp-border: #e7dcf7; --erp-border-strong: #d2c2f0;
+    --erp-border: color-mix(in srgb, var(--erp-primary) 18%, #ffffff); --erp-border-strong: color-mix(in srgb, var(--erp-primary) 32%, #ffffff);
     --erp-accent: #6d4fd1; --erp-success: #188a5a; --erp-warning: #9a5800; --erp-danger: #c4344d; --erp-info: #2b6cb0;
     --erp-radius: 14px; --erp-radius-sm: 10px; --erp-radius-lg: 22px;
-    --erp-shadow-sm: var(--clay-sm); --erp-shadow: var(--clay); --erp-shadow-lg: 0 24px 50px rgba(124, 92, 214, .28);
-    --erp-chrome-bg: #8d6be6; --erp-chrome-text: #ffffff; --erp-chrome-muted: #f1eaff; --erp-chrome-hover: rgba(255, 255, 255, .2);
-    --erp-ribbon-bg: #fff9ef; --erp-ribbon-tabs-bg: #9b79ea; --erp-ribbon-tab-text: #ffffff; --erp-ribbon-tab-active-bg: #fff9ef; --erp-ribbon-tab-active-text: #6d4fd1;
-    --erp-ribbon-border: #f0e3cf; --erp-ribbon-btn-hover: #ffffff; --erp-ribbon-btn-active: #f3ebff;
-    --erp-grid-head: #f6f0ff; --erp-grid-line: #efe8fa; --erp-grid-alt: #fcfaff; --erp-grid-hover: #f5efff; --erp-grid-selected: #e8defc; --erp-grid-foot: #f6f0ff;
-    --erp-input-border: #d8cbf1;
+    --erp-shadow-sm: var(--clay-sm); --erp-shadow: var(--clay); --erp-shadow-lg: 0 24px 50px color-mix(in srgb, var(--erp-primary) 28%, transparent);
+    --erp-chrome-bg: linear-gradient(135deg, var(--erp-primary), color-mix(in srgb, var(--erp-primary) 82%, #ffffff)); --erp-chrome-text: #ffffff; --erp-chrome-muted: #f1eaff; --erp-chrome-hover: rgba(255, 255, 255, .2);
+    --erp-ribbon-bg: #fff9ef; --erp-ribbon-tabs-bg: color-mix(in srgb, var(--erp-primary) 82%, #ffffff); --erp-ribbon-tab-text: #ffffff; --erp-ribbon-tab-active-bg: #fff9ef; --erp-ribbon-tab-active-text: var(--erp-primary);
+    --erp-ribbon-border: #f0e3cf; --erp-ribbon-btn-hover: #ffffff; --erp-ribbon-btn-active: color-mix(in srgb, var(--erp-primary) 8%, #ffffff);
+    --erp-grid-head: color-mix(in srgb, var(--erp-primary) 6%, #ffffff); --erp-grid-line: color-mix(in srgb, var(--erp-primary) 10%, #ffffff); --erp-grid-alt: color-mix(in srgb, var(--erp-primary) 2%, #ffffff); --erp-grid-hover: color-mix(in srgb, var(--erp-primary) 7%, #ffffff); --erp-grid-selected: color-mix(in srgb, var(--erp-primary) 16%, #ffffff); --erp-grid-foot: color-mix(in srgb, var(--erp-primary) 6%, #ffffff);
+    --erp-input-border: color-mix(in srgb, var(--erp-primary) 28%, #ffffff);
   }
-  :root[data-theme="claymorphism"] .erp-titlebar { background: linear-gradient(135deg, #8d6be6, #b18cf2); }
   :root[data-theme="claymorphism"] .erp-ribbon__tab { border-radius: 14px 14px 0 0; }
   :root[data-theme="claymorphism"] .erp-rbtn { border-radius: 14px; }
   :root[data-theme="claymorphism"] .erp-rbtn:hover { box-shadow: var(--clay-sm); border-color: transparent; }
@@ -26,10 +25,9 @@
   :root[data-theme="claymorphism"] .erp-card-block { border-color: transparent; box-shadow: var(--clay); }
   :root[data-theme="claymorphism"] .erp-btn, :root[data-theme="claymorphism"] .erp-tbtn:hover { border-color: transparent; box-shadow: var(--clay-sm); }
   :root[data-theme="claymorphism"] .erp-btn--primary, :root[data-theme="claymorphism"] .erp-tbtn--primary {
-    background: linear-gradient(135deg, #7a5be0, #9b7af0); color: #fff;
-    box-shadow: 0 8px 16px rgba(109, 79, 209, .35), inset -3px -4px 8px rgba(60, 30, 140, .25), inset 3px 3px 6px rgba(255, 255, 255, .35);
+    background: linear-gradient(135deg, var(--erp-primary), color-mix(in srgb, var(--erp-primary) 82%, #ffffff)); color: var(--erp-on-primary);
+    box-shadow: 0 8px 16px color-mix(in srgb, var(--erp-primary) 35%, transparent), inset -3px -4px 8px color-mix(in srgb, color-mix(in srgb, var(--erp-primary) 60%, #000000) 25%, transparent), inset 3px 3px 6px rgba(255, 255, 255, .35);
   }
-  :root[data-theme="claymorphism"] .erp-input { border-radius: 12px; background: #fdfbff; box-shadow: inset 2px 3px 6px rgba(124, 92, 214, .12); }
+  :root[data-theme="claymorphism"] .erp-input { border-radius: 12px; background: color-mix(in srgb, var(--erp-primary) 2%, #ffffff); box-shadow: inset 2px 3px 6px color-mix(in srgb, var(--erp-primary) 12%, transparent); }
   :root[data-theme="claymorphism"] .erp-doctab.is-active, :root[data-theme="claymorphism"] .erp-subtab[aria-selected="true"] { border-radius: 14px 14px 0 0; }
-  :root[data-theme="claymorphism"] .erp-kpi::before { width: 6px; border-radius: 0 6px 6px 0; }
 }

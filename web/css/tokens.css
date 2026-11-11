@@ -57,8 +57,8 @@
     --erp-shadow-inset: inset 0 1px 2px rgba(15, 23, 42, .06);
     --erp-blur: 0px;
 
-    /* Vỏ ứng dụng (thanh tiêu đề, ribbon) */
-    --erp-chrome-bg: #1f5fbf;
+    /* Vỏ ứng dụng (thanh tiêu đề, ribbon). Màu nhuốm dẫn xuất từ --erp-primary để đổi theo màu người dùng chọn. */
+    --erp-chrome-bg: var(--erp-primary);
     --erp-chrome-text: #ffffff;
     --erp-chrome-muted: rgba(255, 255, 255, .78);
     --erp-chrome-hover: rgba(255, 255, 255, .14);
@@ -66,10 +66,10 @@
     --erp-ribbon-tabs-bg: var(--erp-chrome-bg);
     --erp-ribbon-tab-text: var(--erp-chrome-text);
     --erp-ribbon-tab-active-bg: var(--erp-ribbon-bg);
-    --erp-ribbon-tab-active-text: var(--erp-accent);
+    --erp-ribbon-tab-active-text: var(--erp-primary);
     --erp-ribbon-border: #d5dbe5;
-    --erp-ribbon-btn-hover: #e2ecfa;
-    --erp-ribbon-btn-active: #cfe0f7;
+    --erp-ribbon-btn-hover: color-mix(in srgb, var(--erp-primary) 11%, var(--erp-ribbon-bg));
+    --erp-ribbon-btn-active: color-mix(in srgb, var(--erp-primary) 19%, var(--erp-ribbon-bg));
     --erp-panel-bg: var(--erp-surface);
     --erp-docbar-bg: var(--erp-surface-2);
 
@@ -88,8 +88,8 @@
     --erp-grid-head: #f6f8fb;
     --erp-grid-head-text: #4a5468;
     --erp-grid-alt: #fbfcfe;
-    --erp-grid-hover: #f0f5fd;
-    --erp-grid-selected: #dde9fb;
+    --erp-grid-hover: color-mix(in srgb, var(--erp-primary) 5%, var(--erp-grid-bg));
+    --erp-grid-selected: color-mix(in srgb, var(--erp-primary) 15%, var(--erp-grid-bg));
     --erp-grid-line: #edf0f5;
     --erp-grid-foot: #f6f8fb;
     --erp-grid-frozen-shadow: 3px 0 4px -2px rgba(15, 23, 42, .16);
@@ -115,6 +115,7 @@
 @layer utilities {
   :root, :root[data-theme] {
     --erp-primary: var(--erp-accent-user, var(--erp-accent));
+    --erp-on-primary: var(--erp-accent-contrast-user, var(--erp-accent-contrast));   /* chữ trên nền màu chủ đạo */
     --erp-primary-hover: color-mix(in srgb, var(--erp-primary) 84%, #000);
     --erp-primary-soft: color-mix(in srgb, var(--erp-primary) 13%, var(--erp-surface));
     --erp-primary-softer: color-mix(in srgb, var(--erp-primary) 7%, var(--erp-surface));
@@ -124,4 +125,16 @@
     --erp-info-soft: color-mix(in srgb, var(--erp-info) 13%, var(--erp-surface));
     --erp-focus-ring: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary);
   }
+
+  /* Gradient người dùng chọn (js/core/settings.js → applyColors). Đặt ở lớp utilities nên luôn thắng theme.
+     Chữ trên thanh tiêu đề do JS chọn trắng/đen theo độ sáng của gradient. */
+  :root[data-user-chrome] {
+    --erp-chrome-bg: var(--erp-user-chrome);
+    --erp-chrome-text: var(--erp-user-chrome-text);
+    --erp-chrome-muted: var(--erp-user-chrome-muted);
+    --erp-chrome-hover: var(--erp-user-chrome-hover);
+    --erp-ribbon-tabs-bg: var(--erp-user-chrome);
+    --erp-ribbon-tab-text: var(--erp-user-chrome-text);
+  }
+  :root[data-user-bg] { --erp-bg-image: var(--erp-user-bg); }
 }

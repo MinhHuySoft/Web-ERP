@@ -11,11 +11,11 @@
     --erp-shadow: 7px 7px 15px var(--neu-dark), -7px -7px 15px var(--neu-light);
     --erp-shadow-lg: 14px 14px 30px var(--neu-dark), -10px -10px 26px var(--neu-light);
     --erp-shadow-inset: inset 3px 3px 7px var(--neu-dark), inset -3px -3px 7px var(--neu-light);
-    --erp-chrome-bg: var(--neu-bg); --erp-chrome-text: #1f2937; --erp-chrome-muted: #4f5b6e; --erp-chrome-hover: rgba(53, 89, 199, .08);
+    --erp-chrome-bg: var(--neu-bg); --erp-chrome-text: #1f2937; --erp-chrome-muted: #4f5b6e; --erp-chrome-hover: color-mix(in srgb, var(--erp-primary) 8%, transparent);
     --erp-ribbon-bg: var(--neu-bg); --erp-ribbon-tabs-bg: var(--neu-bg); --erp-ribbon-tab-text: #374151;
-    --erp-ribbon-tab-active-bg: var(--neu-bg); --erp-ribbon-tab-active-text: #3559c7; --erp-ribbon-border: transparent;
+    --erp-ribbon-tab-active-bg: var(--neu-bg); --erp-ribbon-tab-active-text: var(--erp-primary); --erp-ribbon-border: transparent;
     --erp-ribbon-btn-hover: var(--neu-bg); --erp-ribbon-btn-active: var(--neu-bg);
-    --erp-grid-bg: #eef1f5; --erp-grid-head: #e3e7ee; --erp-grid-alt: #e9edf2; --erp-grid-hover: #dfe6f3; --erp-grid-selected: #d3ddf3; --erp-grid-line: #d3d9e2; --erp-grid-foot: #e3e7ee;
+    --erp-grid-bg: #eef1f5; --erp-grid-head: #e3e7ee; --erp-grid-alt: #e9edf2; --erp-grid-hover: color-mix(in srgb, var(--erp-primary) 7%, #eef1f5); --erp-grid-selected: color-mix(in srgb, var(--erp-primary) 15%, #eef1f5); --erp-grid-line: #d3d9e2; --erp-grid-foot: #e3e7ee;
     --erp-input-bg: var(--neu-bg); --erp-input-border: rgba(120, 130, 150, .3); --erp-input-readonly: #dde2ea;
   }
   :root[data-theme="neumorphism"] .erp-titlebar { box-shadow: 0 4px 10px var(--neu-dark); }
@@ -29,9 +29,9 @@
   :root[data-theme="neumorphism"] .erp-card-block { border-color: transparent; box-shadow: var(--erp-shadow); }
   :root[data-theme="neumorphism"] .erp-tbtn:hover { background: var(--neu-bg); box-shadow: var(--erp-shadow-sm); border-color: transparent; }
   :root[data-theme="neumorphism"] .erp-btn { border-color: transparent; box-shadow: var(--erp-shadow-sm); background: var(--neu-bg); }
-  :root[data-theme="neumorphism"] .erp-btn--primary, :root[data-theme="neumorphism"] .erp-tbtn--primary { background: #3559c7; color: #fff; }
+  :root[data-theme="neumorphism"] .erp-btn--primary, :root[data-theme="neumorphism"] .erp-tbtn--primary { background: var(--erp-primary); color: var(--erp-on-primary); }
   :root[data-theme="neumorphism"] .erp-input { box-shadow: var(--erp-shadow-inset); }
-  :root[data-theme="neumorphism"] .erp-input:focus { box-shadow: var(--erp-shadow-inset), 0 0 0 2px #3559c7; }
+  :root[data-theme="neumorphism"] .erp-input:focus { box-shadow: var(--erp-shadow-inset), 0 0 0 2px var(--erp-primary); }
   :root[data-theme="neumorphism"] .erp-docbar { background: var(--neu-bg); border-bottom-color: transparent; }
   :root[data-theme="neumorphism"] .erp-doctab.is-active { box-shadow: var(--erp-shadow-sm); border-color: transparent; border-radius: 12px; top: -3px; }
   :root[data-theme="neumorphism"] .erp-subtab[aria-selected="true"] { box-shadow: var(--erp-shadow-sm); border-color: transparent; border-radius: 12px; }

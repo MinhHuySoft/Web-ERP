@@ -34,6 +34,24 @@ Component **không** đặt màu cứng, cỡ chữ lẻ hay thời gian chuyể
 | Chuyển động | `--erp-dur-fast` 120ms · `--erp-dur` 180ms · `--erp-ease-out` | Thoát nhanh hơn vào (~70%). |
 | Hình khối | `--erp-radius-sm/-/-lg`, `--erp-shadow-sm/-/-lg` | Bóng luôn có độ lệch và nhòe mềm. |
 
+## 2b. Màu do người dùng chọn
+
+Người dùng tự đổi màu trong *Giao diện & hiển thị → Màu sắc*. Mã nằm ở `web/js/core/settings.js` (`applyColors`) và `web/js/core/color.js`.
+
+- **Màu chủ đạo** (`--erp-accent-user`): chọn từ 10 màu mẫu, một màu bất kỳ, hoặc "Theo theme".
+  - **Mọi màu nhuốm phải dẫn xuất từ `--erp-primary`**, không viết cứng: thanh tiêu đề, nút ribbon khi rê chuột, dòng lưới đang chọn, bề mặt tông màu (Material You, Claymorphism, Glassy Aero), ánh neon…
+  - Theme mới cũng phải theo quy tắc này. Dùng `color-mix(in srgb, var(--erp-primary) N%, <nền>)` thay cho mã màu cứng.
+- **Màu phụ** `--erp-tone-1..3`: lấy từ gradient người dùng chọn, hoặc xoay sắc độ từ màu chủ đạo. Các theme có nền rực (Glassmorphism, Aurora, Fluent Mica, Claymorphism) tô nền bằng các màu này, kèm giá trị mặc định khi người dùng chưa chọn.
+- **Gradient 2–3 màu và góc**, áp cho **thanh tiêu đề** và/hoặc **nền ứng dụng**:
+  - Ở theme sáng, nền được pha nhạt vào `--erp-bg` (20%); ở theme tối pha 38%. Nhờ vậy chữ đặt thẳng trên nền vẫn đủ tương phản.
+  - Theme `vivid` không bị thay nền; theme đó tô gradient riêng bằng `--erp-tone-*`.
+- **Tương phản luôn được giữ:**
+  - Màu chủ đạo tự đậm/nhạt dần cho tới khi đạt 4.5:1 với nền theme; bảng cài đặt báo khi đã chỉnh.
+  - Chữ trên nút (`--erp-on-primary`) và trên thanh tiêu đề tự chọn trắng hoặc gần đen theo độ sáng.
+  - Nếu các màu gradient chênh sáng tối khiến chữ thanh tiêu đề dưới 4.5:1, bảng cài đặt cảnh báo.
+  - Mọi gradient mẫu đều đạt ≥ 4.5:1.
+- **Theme khóa màu** (`locked`: Tương phản cao) bỏ qua mọi màu người dùng chọn.
+
 ## 3. Danh sách cấm (dấu hiệu "lộ AI")
 
 | Không làm | Làm thay | Hiện trạng |
@@ -44,7 +62,7 @@ Component **không** đặt màu cứng, cỡ chữ lẻ hay thời gian chuyể
 | Kính mờ, blur, gradient làm trang trí ở theme mặc định | Nền đặc, viền 1px, bóng mềm. Blur chỉ dùng cho lớp phủ của hộp thoại. | Đã sửa (toast, thanh tiêu đề Ribbon) |
 | Hiệu ứng nảy, đàn hồi, chuyển động dài | Giảm tốc ngắn bằng `--erp-ease-out` | Đã sửa (toast) |
 | Ký tự Unicode hoặc emoji thay icon (✓ ★ ☰ …) | Icon SVG trong `web/js/core/icons.js`, cùng nét 1.8 | Đã sửa ô có/không của lưới |
-| Chữ gradient, chữ phát sáng | Nhấn bằng độ đậm hoặc cỡ chữ | Chưa dùng |
+| Chữ gradient | Nhấn bằng độ đậm hoặc cỡ chữ | Đã bỏ ở theme Aurora |
 | Hộp thoại cho việc không cần cắt ngang | Xử lý tại chỗ (toast, khung trong màn hình) | — |
 | Cỡ chữ lẻ tùy hứng (trước đây có 27 giá trị) | 6 bậc `--erp-fs-*` | Đã gom |
 
