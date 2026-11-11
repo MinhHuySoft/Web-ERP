@@ -13,6 +13,9 @@ khách hàng trong `D:\Data`) thành ứng dụng web.
 - **Phạm vi (QĐ-06):** dự án này **chỉ làm frontend**. Backend do đội khác làm và trả HTML theo chuẩn
   [docs/kien-truc/02-chuan-html-erp.md](docs/kien-truc/02-chuan-html-erp.md) (ERP-HTML v1.0).
 - **Giai đoạn 2 — Frontend:** bản demo chạy bằng mock HTML sinh từ metadata Medcom. Xem [web/README.md](web/README.md).
+- **Hướng dẫn nhanh (cho kỹ thuật và agent):** điểm vào [AGENTS.md](AGENTS.md).
+  - Backend trả HTML thế nào: [docs/huong-dan/be-tra-html-cho-fe.md](docs/huong-dan/be-tra-html-cho-fe.md).
+  - Cấu trúc và tổ chức frontend: [docs/huong-dan/fe-cau-truc-va-to-chuc.md](docs/huong-dan/fe-cau-truc-va-to-chuc.md).
 
 ## Chạy thử
 

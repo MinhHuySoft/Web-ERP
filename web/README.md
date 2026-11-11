@@ -8,7 +8,9 @@ Frontend nhận **HTML thô theo chuẩn ERP-HTML** từ backend (QĐ-06) rồi 
 
 Không build, không npm, không framework. Sửa file, tải lại trang là thấy.
 
+- Cấu trúc, luồng chạy, "muốn sửa X mở file Y", công thức mở rộng: [../docs/huong-dan/fe-cau-truc-va-to-chuc.md](../docs/huong-dan/fe-cau-truc-va-to-chuc.md)
 - Chuẩn giao tiếp với backend: [../docs/kien-truc/02-chuan-html-erp.md](../docs/kien-truc/02-chuan-html-erp.md)
+  (bản thực hành cho BE: [../docs/huong-dan/be-tra-html-cho-fe.md](../docs/huong-dan/be-tra-html-cho-fe.md))
 - Chuẩn giao diện (token, danh sách cấm, kiểm tra trước khi merge): [../docs/kien-truc/03-chuan-giao-dien.md](../docs/kien-truc/03-chuan-giao-dien.md)
 - Quyết định liên quan: [../docs/QUYET-DINH.md](../docs/QUYET-DINH.md) (QĐ-04 giao diện, QĐ-05 công nghệ, QĐ-06 phạm vi)
 
