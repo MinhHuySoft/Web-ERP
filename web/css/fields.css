@@ -7,15 +7,16 @@
   .erp-field.is-row-start { grid-column: 1 / span var(--span, 10); }
   .erp-field-gap { grid-column: span var(--span, 1); }
   .erp-fields > button, .erp-fields > .erp-filter__submit { grid-column: span 5; }
-  .erp-field__label { font-size: .85em; font-weight: 550; color: var(--erp-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-field__label { font-size: var(--erp-fs-sm); font-weight: 550; color: var(--erp-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .erp-field__label.is-required::after { content: " *"; color: var(--erp-danger); }
-  .erp-field > small[data-erp="error"] { color: var(--erp-danger); font-size: .82em; }
+  .erp-field > small[data-erp="hint"] { color: var(--erp-text-muted); font-size: var(--erp-fs-xs); line-height: 1.4; text-wrap: pretty; }
+  .erp-field > small[data-erp="error"] { color: var(--erp-danger); font-size: var(--erp-fs-sm); }
   .erp-field[data-invalid] .erp-input, .erp-input[aria-invalid="true"] { border-color: var(--erp-danger); box-shadow: 0 0 0 2px var(--erp-danger-soft); }
   .erp-field[data-warn] .erp-input { border-color: var(--erp-warning); }
   .erp-field--button { justify-content: flex-end; }
   .erp-field--button > span:empty { height: 1.2em; }
   .erp-field--checkbox { flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 10px; min-height: var(--erp-ctl-h); align-self: end; }
-  .erp-field--checkbox .erp-field__label { white-space: normal; color: var(--erp-text); font-weight: 500; font-size: .92em; }
+  .erp-field--checkbox .erp-field__label { white-space: normal; color: var(--erp-text); font-weight: 500; font-size: var(--erp-fs-sm); }
   .erp-field--label .erp-output, .erp-field--label output { padding: 6px 0; }
 
   /* ---------- Ô nhập ---------- */
@@ -62,17 +63,17 @@
   .erp-lookup__btn:hover { background: var(--erp-primary-soft); }
   .erp-lookup__btn:disabled { color: var(--erp-text-faint); cursor: default; background: var(--erp-input-readonly); }
   .erp-lookup__btn .erp-icon { width: 16px; height: 16px; }
-  .erp-field output[data-erp="lookup-text"] { font-size: .86em; color: var(--erp-text-muted); min-height: 1.2em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-field output[data-erp="lookup-text"] { font-size: var(--erp-fs-sm); color: var(--erp-text-muted); min-height: 1.2em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .erp-lookup-pop {
     position: fixed; z-index: 960; max-height: 320px; overflow: auto; padding: 4px; border-radius: var(--erp-radius-lg);
     background: var(--erp-surface); backdrop-filter: none;
   }
-  .erp-lookup-pop table { width: 100%; border-collapse: collapse; font-size: .9em; }
+  .erp-lookup-pop table { width: 100%; border-collapse: collapse; font-size: var(--erp-fs-sm); }
   .erp-lookup-pop th { position: sticky; top: 0; background: var(--erp-grid-head); text-align: start; font-weight: 600; padding: 6px 8px; white-space: nowrap; }
   .erp-lookup-pop td { padding: 6px 8px; border-top: 1px solid var(--erp-grid-line); white-space: nowrap; max-width: 280px; overflow: hidden; text-overflow: ellipsis; }
   .erp-lookup-pop tr[aria-selected="true"] td { background: var(--erp-grid-selected); }
   .erp-lookup-pop tbody tr { cursor: pointer; }
-  .erp-lookup-pop__loading, .erp-lookup-pop__empty, .erp-lookup-pop__more { padding: 10px; color: var(--erp-text-muted); font-size: .9em; }
+  .erp-lookup-pop__loading, .erp-lookup-pop__empty, .erp-lookup-pop__more { padding: 10px; color: var(--erp-text-muted); font-size: var(--erp-fs-sm); }
 
   /* Ngày */
   .erp-date { position: relative; }

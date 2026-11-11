@@ -627,7 +627,8 @@ def field_html(fid, f, value=None, display=None, mode='view', idp='f'):
                 f' data-icon="{f.get("icon", "")}"{" disabled" if mode != "view" and act == "custom" else ""}>{e(f["caption"])}</button></div>')
     else:
         ctrl = f'<input {common} value="{e(v)}"{flags}>'
-    return f'<div {" ".join(attrs)}>{lab}{ctrl}</div>'
+    hint = f'<small data-erp="hint">{e(f["hint"])}</small>' if f.get('hint') else ''
+    return f'<div {" ".join(attrs)}>{lab}{ctrl}{hint}</div>'
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -1748,12 +1749,12 @@ def c_change_password(menu):
                                       ('AR_InvoiceFrm', 'IV_StockInputFrm', 'CS_ReceiptFrm', 'AP_PurchaseFrm', 'IV_InboundRequestFrm')]
     fl = [F('UserName', 'Tên đăng nhập', 'label', 20), F('HoTen', 'Họ tên', span=20, required=True),
           F('OldPassword', 'Mật khẩu hiện tại', 'password', 20, row_start=True, required=True),
-          F('NewPassword', 'Mật khẩu mới', 'password', 20, row_start=True, required=True),
+          F('NewPassword', 'Mật khẩu mới', 'password', 20, row_start=True, required=True,
+            hint='Tối thiểu 8 ký tự, gồm chữ hoa, chữ thường và chữ số.'),
           F('ConfirmPassword', 'Nhập lại mật khẩu mới', 'password', 20, required=True),
           F('StartupForm', 'Màn hình mở khi đăng nhập', 'select', 20, row_start=True, options=starts)]
     vals = dict(UserName='admin', HoTen='Quản trị hệ thống', StartupForm='')
     parts = [toolbar([s_btn('save', rid, saved, 'Lưu', data_shortcut='Ctrl+S')]),
-             msgs(('info', 'Mật khẩu mới tối thiểu 8 ký tự, gồm chữ hoa, chữ thường và chữ số.')),
              f'<form data-erp="record" id="{rid}" method="post" action="{saved}" data-key-field="UserName" data-key="admin">{TOKEN}'
              f'<input type="hidden" name="__version" value="{TODAY.isoformat()}T09:15:00.000">']
     parts += fields_block(name, [('1', 'Tài khoản', fl)], vals, 'edit')

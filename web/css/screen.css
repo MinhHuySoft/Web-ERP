@@ -8,13 +8,13 @@
   /* Đầu màn hình: breadcrumb + tiêu đề bên trái, nút thao tác bên phải cùng hàng */
   .erp-screen__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 20px; min-width: 0; padding: 2px 2px 2px; }
   .erp-screen__titles { display: grid; gap: 3px; min-width: 0; }
-  .erp-crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: .8em; color: var(--erp-text-faint); }
+  .erp-crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: var(--erp-fs-xs); color: var(--erp-text-faint); }
   .erp-crumbs__sep { opacity: .6; }
   .erp-screen__titleline { display: flex; align-items: center; gap: 10px; min-width: 0; }
-  .erp-screen__title { font-family: var(--erp-font-display); font-size: 1.4em; font-weight: 650; line-height: 1.25; min-width: 0; overflow-wrap: anywhere; letter-spacing: -.1px; }
+  .erp-screen__title { font-family: var(--erp-font-display); font-size: var(--erp-fs-xl); font-weight: 650; line-height: 1.25; min-width: 0; overflow-wrap: anywhere; letter-spacing: -.1px; }
   .erp-screen__actions { display: flex; justify-content: flex-end; min-width: 0; margin-inline-start: auto; }
   .erp-fav { color: var(--erp-text-faint); width: 30px; height: 30px; }
-  .erp-fav[aria-pressed="true"] { color: #e3a008; }
+  .erp-fav[aria-pressed="true"] { color: var(--erp-favorite); }
   .erp-fav[aria-pressed="true"] .erp-icon { fill: currentColor; }
 
   /* ---------- Thanh công cụ ---------- */
@@ -28,7 +28,7 @@
   .erp-tbtn {
     display: inline-flex; align-items: center; gap: 7px; height: var(--erp-ctl-h); padding: 0 12px 0 10px; border-radius: 8px;
     border: 1px solid transparent; background: transparent; color: var(--erp-text); cursor: pointer; font-weight: 500;
-    text-decoration: none; white-space: nowrap; font-size: .92em;
+    text-decoration: none; white-space: nowrap; font-size: var(--erp-fs-sm);
   }
   .erp-tbtn .erp-icon { width: 17px; height: 17px; color: var(--erp-primary); }
   .erp-tbtn:hover { background: var(--erp-primary-softer); border-color: color-mix(in srgb, var(--erp-primary) 25%, transparent); color: var(--erp-text); }
@@ -46,7 +46,7 @@
   .erp-screen__actions .erp-tbtn:not(.erp-tbtn--primary):hover { border-color: color-mix(in srgb, var(--erp-primary) 45%, transparent); background: var(--erp-primary-softer); }
   /* Thanh công cụ gắn vào thanh của lưới (Xuất / In của báo cáo) */
   .erp-toolbar--inline { background: transparent; border: 0; padding: 0; gap: 4px; backdrop-filter: none; -webkit-backdrop-filter: none; }
-  .erp-toolbar--inline .erp-tbtn { height: 30px; font-size: .86em; border-color: var(--erp-border); background: var(--erp-surface); }
+  .erp-toolbar--inline .erp-tbtn { height: 30px; font-size: var(--erp-fs-sm); border-color: var(--erp-border); background: var(--erp-surface); }
 
   /* ---------- Thanh lọc: các ô xếp hàng gọn, nút Lọc canh phải ---------- */
   .erp-filter {
@@ -56,6 +56,19 @@
   .erp-filter.erp-fields { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 14px; }
   .erp-filter output[data-erp="lookup-text"]:empty { display: none; }
   .erp-filter > .erp-filter__submit { align-self: flex-end; }
+  /* Tên tra cứu hiện ngay trong ô (bên phải mã) thay vì một dòng bên dưới: hàng lọc luôn cùng độ cao,
+     chọn mã không làm lệch nút Lọc hay xô lưới. Khi đang gõ thì ẩn tên để thấy trọn mã.
+     Điện thoại (< 768px) các ô xếp dọc nên giữ tên ở dòng dưới như bình thường. */
+  @media (min-width: 768px) {
+    .erp-filter .erp-field--lookup { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .erp-filter .erp-field--lookup > .erp-lookup,
+    .erp-filter .erp-field--lookup > output[data-erp="lookup-text"] { grid-row: 2; grid-column: 1; }
+    .erp-filter .erp-field--lookup > output[data-erp="lookup-text"] {
+      justify-self: end; align-self: center; z-index: 1; max-width: calc(100% - 118px); min-height: 0; margin-inline-end: 42px;
+      padding-inline-start: 8px; line-height: 1.3; background: var(--erp-input-bg); pointer-events: none;
+    }
+    .erp-filter .erp-field--lookup:focus-within > output[data-erp="lookup-text"] { visibility: hidden; }
+  }
   .erp-filter > .erp-field { flex: 1 1 180px; max-width: 260px; }
   .erp-filter > .erp-field--lookup, .erp-filter > .erp-field--search { flex-basis: 240px; max-width: 340px; }
   .erp-filter > .erp-field--date { flex: 0 1 170px; }
@@ -70,8 +83,8 @@
     backdrop-filter: blur(var(--erp-blur)); -webkit-backdrop-filter: blur(var(--erp-blur));
   }
   .erp-fieldset__title {
-    grid-column: 1 / -1; font-weight: 700; color: var(--erp-text-faint); font-size: .76em; text-transform: uppercase; letter-spacing: .6px;
-    padding-bottom: 6px; border-bottom: 1px solid var(--erp-border); margin-bottom: 2px;
+    grid-column: 1 / -1; font-weight: 600; color: var(--erp-text); font-size: var(--erp-fs-md);
+    padding-bottom: 8px; border-bottom: 1px solid var(--erp-border); margin-bottom: 2px;
   }
   .erp-subtabs + .erp-fieldset, .erp-subtabs + .erp-grid, .erp-dtabs__panel > .erp-grid { border-top-left-radius: 0; }
   .erp-subtabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; padding: 0 4px; margin-bottom: -1px; position: relative; z-index: 1; }
@@ -93,7 +106,7 @@
   .erp-report-result > .erp-toolbar { align-self: flex-end; }
 
   /* Thông điệp trong màn hình: gọn, ít chiếm chỗ */
-  .erp-screen .erp-messages .erp-msg { padding: 7px 10px 7px 12px; font-size: .92em; }
+  .erp-screen .erp-messages .erp-msg { padding: 7px 10px 7px 12px; font-size: var(--erp-fs-sm); }
 
   /* ---------- Đính kèm ---------- */
   .erp-attachments { display: grid; gap: 12px; }

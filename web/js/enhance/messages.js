@@ -1,6 +1,7 @@
 // @ts-check
 import { h } from '../core/dom.js';
 import { icon } from '../core/icons.js';
+import { toast } from '../core/ui.js';
 
 /** @typedef {{ text:string, type:string, field:string, legacy:string }} Msg */
 
@@ -28,10 +29,21 @@ function normalizeType(t, legacy) {
   return 'info';
 }
 
-/** Hiển thị khối thông điệp ngay trong màn hình; gắn thông điệp có data-field vào ô tương ứng. @param {HTMLElement} root */
+const TOAST_MS = { success: 4000, info: 5000 };   // 3–5 giây (UI UX Pro Max: toast-dismiss)
+
+/**
+ * Thông điệp trong màn hình (chuẩn ERP-HTML 13.1):
+ *  - success / info  → toast (không chiếm chỗ trên màn hình);
+ *  - error / warning → khung trên đầu màn hình (và tại ô nếu có data-field) để người dùng không bỏ sót.
+ * @param {HTMLElement} root
+ */
 export function enhanceMessages(root) {
   for (const box of Array.from(root.querySelectorAll('[data-erp="messages"]'))) {
-    const msgs = readMessages(box);
+    const all = readMessages(box);
+    all.filter((m) => m.type === 'success' || m.type === 'info')
+      .forEach((m) => toast(m.text, /** @type {any} */ (m.type), /** @type {any} */ (TOAST_MS)[m.type]));
+    const msgs = all.filter((m) => m.type === 'error' || m.type === 'warning');
+    if (!msgs.length) { box.remove(); continue; }
     box.classList.add('erp-messages');
     box.replaceChildren(...msgs.map((m) => h('div', { class: `erp-msg erp-msg--${m.type}`, role: m.type === 'error' ? 'alert' : 'status' },
       icon(m.type === 'success' ? 'success' : m.type === 'info' ? 'info' : m.type === 'warning' ? 'warning' : 'error'),

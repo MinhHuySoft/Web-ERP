@@ -7,6 +7,20 @@
     --erp-mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
     --erp-font-size: 14px;
 
+    /* Thang chữ theo vai trò (rem = cỡ chữ người dùng chọn; tỉ lệ ~1.1–1.25 cho giao diện nghiệp vụ).
+       Chỉ dùng 6 bậc này — không đặt cỡ chữ lẻ trong component (docs/kien-truc/03-chuan-giao-dien.md). */
+    --erp-fs-xs: .857rem;   /* 12px: nhãn phụ, đếm, chú thích, đầu cột nhóm */
+    --erp-fs-sm: .929rem;   /* 13px: nhãn ô, nút phụ, ô lưới gọn, nội dung toast */
+    --erp-fs-md: 1rem;      /* 14px: chữ thường, ô nhập, ô lưới */
+    --erp-fs-lg: 1.143rem;  /* 16px: tiêu đề khối, tiêu đề hộp thoại */
+    --erp-fs-xl: 1.429rem;  /* 20px: tiêu đề màn hình */
+    --erp-fs-2xl: 1.714rem; /* 24px: số chỉ tiêu (KPI) */
+
+    /* Chuyển động: ngắn, giảm tốc khi đến; không nảy */
+    --erp-dur-fast: 120ms;
+    --erp-dur: 180ms;
+    --erp-ease-out: cubic-bezier(.16, 1, .3, 1);
+
     /* Nền & bề mặt */
     --erp-bg: #f1f4f8;
     --erp-bg-image: none;
@@ -18,7 +32,7 @@
     /* Chữ */
     --erp-text: #1b2333;
     --erp-text-muted: #556074;
-    --erp-text-faint: #7b8597;
+    --erp-text-faint: #667085;   /* ≥4.5:1 trên nền trắng và nền ứng dụng (chữ phụ, placeholder) */
 
     /* Viền */
     --erp-border: #e0e5ed;
@@ -31,6 +45,7 @@
     --erp-warning: #935d00;
     --erp-danger: #bf3328;
     --erp-info: #1b65a3;
+    --erp-favorite: #c98a00;     /* ngôi sao Yêu thích */
 
     /* Hình khối */
     --erp-radius: 6px;

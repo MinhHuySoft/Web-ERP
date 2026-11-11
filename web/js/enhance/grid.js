@@ -19,6 +19,11 @@ import { openLookup } from './lookup.js';
 const NUM = new Set(['number', 'money', 'quantity', 'percent']);
 const VIRTUAL_MIN = 160;        // từ số dòng này trở lên thì ảo hóa phần thân lưới
 const CARD_WIDTH = 620;         // lưới hẹp hơn ⇒ tự chuyển dạng thẻ
+/** Ô kiểu có/không: icon SVG cùng bộ biểu tượng (không dùng ký tự ✓), có nhãn cho trình đọc màn hình. */
+const CHECK_HTML = '<svg class="erp-icon erp-grid__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"'
+  + ' stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Có" focusable="false"><path d="m5 12 5 5L20 7"/></svg>';
+/** @param {string} raw */
+const boolHtml = (raw) => (raw === 'true' ? CHECK_HTML : '');
 
 /** @type {Map<string, Set<Grid>>} */
 const byForm = new Map();
@@ -109,7 +114,8 @@ export class Grid {
       if (!td) return { raw: '', html: '', text: '' };
       const text = td.textContent?.trim() || '';
       const raw = td.getAttribute('data-value') ?? text;
-      return { raw, html: NUM.has(c.type) || c.type === 'date' || c.type === 'datetime' || c.type === 'bool' ? esc(formatByType(raw, c.type, c.decimals)) : td.innerHTML.trim(), text: NUM.has(c.type) ? formatByType(raw, c.type, c.decimals) : text };
+      if (c.type === 'bool') return { raw, html: boolHtml(raw), text: formatByType(raw, 'bool') };
+      return { raw, html: NUM.has(c.type) || c.type === 'date' || c.type === 'datetime' ? esc(formatByType(raw, c.type, c.decimals)) : td.innerHTML.trim(), text: NUM.has(c.type) ? formatByType(raw, c.type, c.decimals) : text };
     });
     return { id: ++this.seq, key: tr.getAttribute('data-key') || '', tone: tr.getAttribute('data-tone') || '', strong: tr.hasAttribute('data-strong'), state: 'unchanged', cells, invalid: new Set() };
   }
@@ -755,8 +761,8 @@ export class Grid {
 
   /** @param {Row} row @param {Col} col @param {string} raw @param {string} [text] */
   setCell(row, col, raw, text) {
-    const t = text ?? (NUM.has(col.type) || col.type === 'date' || col.type === 'datetime' ? formatByType(raw, col.type, col.decimals) : col.type === 'bool' ? (raw === 'true' ? '✓' : '') : raw);
-    row.cells[col.i] = { raw, text: t, html: col.type === 'bool' ? (raw === 'true' ? '✓' : '') : esc(t) };
+    const t = text ?? (NUM.has(col.type) || col.type === 'date' || col.type === 'datetime' || col.type === 'bool' ? formatByType(raw, col.type, col.decimals) : raw);
+    row.cells[col.i] = { raw, text: t, html: col.type === 'bool' ? boolHtml(raw) : esc(t) };
     if (row.state === 'unchanged') row.state = 'modified';
     row.invalid.delete(col.i);
     this.markDirty();

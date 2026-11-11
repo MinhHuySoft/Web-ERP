@@ -3,7 +3,7 @@
   @media (max-width: 1279px) {
     .erp-searchbtn { width: min(300px, 30vw); }
     .erp-ctxbtn span { display: none; }
-    .erp-rbtn--large { width: 64px; min-height: 64px; font-size: .82em; }
+    .erp-rbtn--large { width: 64px; min-height: 64px; font-size: var(--erp-fs-xs); }
     .erp-rbtn--large .erp-icon { width: 24px; height: 24px; }
     .erp-ribbon__panel { min-height: 92px; }
     .erp-rbtn--small span { max-width: 150px; }
@@ -52,12 +52,12 @@
     }
     .erp-bottombar button {
       display: grid; justify-items: center; gap: 2px; padding: 5px 2px; border: 0; background: transparent; color: var(--erp-text-muted);
-      font-size: .7em; cursor: pointer; border-radius: var(--erp-radius);
+      font-size: var(--erp-fs-xs); cursor: pointer; border-radius: var(--erp-radius);
     }
     .erp-bottombar button:active { background: var(--erp-primary-soft); color: var(--erp-primary); }
     .erp-bottombar .erp-icon { width: 22px; height: 22px; }
 
-    .erp-screen__title { font-size: 1.12em; }
+    .erp-screen__title { font-size: var(--erp-fs-lg); }
     .erp-toolbar { position: sticky; top: -8px; z-index: 5; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
     .erp-toolbar::-webkit-scrollbar { display: none; }
     .erp-filter { position: relative; }
