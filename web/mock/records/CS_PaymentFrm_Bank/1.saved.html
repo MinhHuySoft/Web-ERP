@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phiếu chi ngân hàng ( Báo nợ ) — BN1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CS_PaymentFrm" data-form-type="EDIT" data-mode="view" data-screen-key="CS_PaymentFrm:BN1126/0001" data-para="Bank" data-menu-id="0926">
+<h1>Phiếu chi ngân hàng ( Báo nợ ) — BN1126/0001</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu chứng từ (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/CS_PaymentFrm_Bank/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/CS_PaymentFrm_Bank/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-CS_PaymentFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/CS_PaymentFrm_Bank/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/CS_PaymentFrm_Bank/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/CS_PaymentFrm_Bank/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/CS_PaymentFrm_Bank/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-CS_PaymentFrm-1" method="post" action="/mock/records/CS_PaymentFrm_Bank/1.saved.html" data-key-field="DocumentID" data-key="BN1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-DocumentID">Số chứng từ</label><input id="f-rec-CS_PaymentFrm-1-DocumentID" name="DocumentID" value="BN1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-CS_PaymentFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-CS_PaymentFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-10-05" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-CS_PaymentFrm-1-ObjectID">Mã đối tượng</label><input id="f-rec-CS_PaymentFrm-1-ObjectID" name="ObjectID" value="KH0001" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-CS_PaymentFrm-1-ObjectID">Công ty TNHH Thiết bị Y tế An Phát</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-CS_PaymentFrm-1-Memo">Diễn giải</label><input id="f-rec-CS_PaymentFrm-1-Memo" name="Memo" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-Notes">Ghi chú</label><input id="f-rec-CS_PaymentFrm-1-Notes" name="Notes" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-Attach">Attach</label><input id="f-rec-CS_PaymentFrm-1-Attach" name="Attach" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-CS_PaymentFrm-1-CurrencyID">Loại tiền</label><select id="f-rec-CS_PaymentFrm-1-CurrencyID" name="CurrencyID" disabled><option value=""></option><option value="VND" selected>VND</option><option value="USD">USD</option><option value="EUR">EUR</option></select></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-CS_PaymentFrm-1-RateExchange">Tỷ giá</label><input id="f-rec-CS_PaymentFrm-1-RateExchange" name="RateExchange" inputmode="decimal" value="1" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-CS_PaymentFrm-1-BaseTotal">Tổng tiền</label><input id="f-rec-CS_PaymentFrm-1-BaseTotal" name="BaseTotal" inputmode="decimal" value="230750000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-CashAccountID">Mã Account Cash</label><input id="f-rec-CS_PaymentFrm-1-CashAccountID" name="CashAccountID" value="CAI001" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-AccountID2">ID2 Account</label><input id="f-rec-CS_PaymentFrm-1-AccountID2" name="AccountID2" value="ID2 Account 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-VATAccID">TK thuế GTGT</label><input id="f-rec-CS_PaymentFrm-1-VATAccID" name="VATAccID" value="VAT001" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-CS_PaymentFrm-1-isBank">Bank</label><input type="hidden" name="isBank" value="false"><input id="f-rec-CS_PaymentFrm-1-isBank" name="isBank" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-CS_PaymentFrm-1-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-CS_PaymentFrm-1-isLock" name="isLock" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-InvoiceNo">Số hóa đơn</label><input id="f-rec-CS_PaymentFrm-1-InvoiceNo" name="InvoiceNo" value="00003128" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-CS_PaymentFrm-1-Status">Trạng thái</label><input id="f-rec-CS_PaymentFrm-1-Status" name="Status" inputmode="decimal" value="77" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-Receiver">Người nhận</label><input id="f-rec-CS_PaymentFrm-1-Receiver" name="Receiver" value="Người nhận 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-AccountNo">Số tài khoản</label><input id="f-rec-CS_PaymentFrm-1-AccountNo" name="AccountNo" value="AN001" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-DocBatch">Batch chứng từ</label><input id="f-rec-CS_PaymentFrm-1-DocBatch" name="DocBatch" value="Batch chứng từ 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-CS_PaymentFrm-1-ObjectName">Tên đối tượng</label><input id="f-rec-CS_PaymentFrm-1-ObjectName" name="ObjectName" value="Công ty TNHH Thiết bị Y tế An Phát" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-CS_PaymentFrm-1-Address">Địa chỉ</label><input id="f-rec-CS_PaymentFrm-1-Address" name="Address" value="1 Cách Mạng Tháng 8, Cần Thơ" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-CS_PaymentFrm-1-AttachDate">Ngày Attach</label><input id="f-rec-CS_PaymentFrm-1-AttachDate" name="AttachDate" type="date" value="2026-10-17" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-CS_PaymentFrm-1-BranchID">Chi nhánh</label><select id="f-rec-CS_PaymentFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_PaymentFrm-1-LocationID">Mã vị trí</label><input id="f-rec-CS_PaymentFrm-1-LocationID" name="LocationID" value="LID001" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="2">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="2">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="AccountID" data-type="text" data-width="110" data-frozen>Tài khoản</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240">Diễn giải</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="VATID" data-type="text" data-width="110">VATID</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2">% VAT</th>
+<th scope="col" data-field="VATAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền VAT</th>
+<th scope="col" data-field="TienChietKhau1" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Khau1 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau2" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Khau2 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau3" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Khau3 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau4" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Khau4 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau5" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Khau5 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau6" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Khau6 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau7" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Khau7 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau8" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Khau8 Chiet Tien</th>
+<th scope="col" data-field="TienChietKhau9" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Khau9 Chiet Tien</th>
+<th scope="col" data-field="TotalAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="RefDoc" data-type="text" data-width="110" data-hidden>Chứng từ gốc</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-hidden>Mã hàng</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum">Số lượng</th>
+<th scope="col" data-field="ContactCode" data-type="text" data-width="110" data-hidden>Mã Contact</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-hidden>Mã đối tượng</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-hidden>Bộ phận</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-hidden>Khoản mục</th>
+<th scope="col" data-field="DiffAccID" data-type="text" data-width="110" data-hidden>Mã tài khoản Diff</th>
+<th scope="col" data-field="BankContractID" data-type="text" data-width="110" data-hidden>Mã hợp đồng Bank</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden>Mã Parent</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>BN1126/0001</td><td>242</td><td></td><td data-value="302500000">302.500.000</td><td data-value="155500000">155.500.000</td><td>VAT001</td><td data-value="0">0</td><td data-value="70700000">70.700.000</td><td data-value="9480000">9.480.000</td><td data-value="455000000">455.000.000</td><td data-value="3350000">3.350.000</td><td data-value="32000000">32.000.000</td><td data-value="16540000">16.540.000</td><td data-value="13700000">13.700.000</td><td data-value="287500000">287.500.000</td><td data-value="93500000">93.500.000</td><td data-value="2610000">2.610.000</td><td data-value="33650000">33.650.000</td><td></td><td>VT0001</td><td data-value="165">165</td><td>CC001</td><td>KH0001</td><td>KD</td><td>CID001</td><td>DAI001</td><td>BCI001</td><td>PID001</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>BN1126/0002</td><td>334</td><td></td><td data-value="71600000">71.600.000</td><td data-value="15700000">15.700.000</td><td>VAT002</td><td data-value="8">8</td><td data-value="1100000">1.100.000</td><td data-value="88900000">88.900.000</td><td data-value="2220000">2.220.000</td><td data-value="232000000">232.000.000</td><td data-value="56000000">56.000.000</td><td data-value="235000000">235.000.000</td><td data-value="63500000">63.500.000</td><td data-value="182000000">182.000.000</td><td data-value="60900000">60.900.000</td><td data-value="51200000">51.200.000</td><td data-value="17340000">17.340.000</td><td></td><td>VT0008</td><td data-value="75">75</td><td>CC002</td><td>KH0004</td><td>KT</td><td>CID002</td><td>DAI002</td><td>BCI002</td><td>PID002</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="SourceAmount" data-value="374100000">374.100.000</td><td data-field="Amount" data-value="171200000">171.200.000</td><td></td><td></td><td data-field="VATAmount" data-value="71800000">71.800.000</td><td data-field="TienChietKhau1" data-value="98380000">98.380.000</td><td data-field="TienChietKhau2" data-value="457220000">457.220.000</td><td data-field="TienChietKhau3" data-value="235350000">235.350.000</td><td data-field="TienChietKhau4" data-value="88000000">88.000.000</td><td data-field="TienChietKhau5" data-value="251540000">251.540.000</td><td data-field="TienChietKhau6" data-value="77200000">77.200.000</td><td data-field="TienChietKhau7" data-value="469500000">469.500.000</td><td data-field="TienChietKhau8" data-value="154400000">154.400.000</td><td data-field="TienChietKhau9" data-value="53810000">53.810.000</td><td data-field="TotalAmount" data-value="50990000">50.990.000</td><td></td><td></td><td data-field="Quantity" data-value="240">240</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

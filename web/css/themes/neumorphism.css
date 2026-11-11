@@ -1,0 +1,39 @@
+/* Neumorphism (Soft UI) — bề mặt nổi/chìm bằng bóng kép. Giữ viền mảnh và chữ đậm để vẫn đạt tương phản AA. */
+@layer themes {
+  :root[data-theme="neumorphism"] {
+    --neu-bg: #e3e7ee; --neu-dark: #bcc4d1; --neu-light: #ffffff;
+    --erp-bg: var(--neu-bg); --erp-surface: var(--neu-bg); --erp-surface-2: #e8ecf2; --erp-surface-3: #d9dfe8; --erp-panel-bg: var(--neu-bg);
+    --erp-text: #1f2937; --erp-text-muted: #445063; --erp-text-faint: #5f6b7e;
+    --erp-border: rgba(130, 140, 160, .35); --erp-border-strong: rgba(100, 110, 130, .5);
+    --erp-accent: #3559c7;
+    --erp-radius: 12px; --erp-radius-sm: 9px; --erp-radius-lg: 18px;
+    --erp-shadow-sm: 4px 4px 9px var(--neu-dark), -4px -4px 9px var(--neu-light);
+    --erp-shadow: 7px 7px 15px var(--neu-dark), -7px -7px 15px var(--neu-light);
+    --erp-shadow-lg: 14px 14px 30px var(--neu-dark), -10px -10px 26px var(--neu-light);
+    --erp-shadow-inset: inset 3px 3px 7px var(--neu-dark), inset -3px -3px 7px var(--neu-light);
+    --erp-chrome-bg: var(--neu-bg); --erp-chrome-text: #1f2937; --erp-chrome-muted: #4f5b6e; --erp-chrome-hover: rgba(53, 89, 199, .08);
+    --erp-ribbon-bg: var(--neu-bg); --erp-ribbon-tabs-bg: var(--neu-bg); --erp-ribbon-tab-text: #374151;
+    --erp-ribbon-tab-active-bg: var(--neu-bg); --erp-ribbon-tab-active-text: #3559c7; --erp-ribbon-border: transparent;
+    --erp-ribbon-btn-hover: var(--neu-bg); --erp-ribbon-btn-active: var(--neu-bg);
+    --erp-grid-bg: #eef1f5; --erp-grid-head: #e3e7ee; --erp-grid-alt: #e9edf2; --erp-grid-hover: #dfe6f3; --erp-grid-selected: #d3ddf3; --erp-grid-line: #d3d9e2; --erp-grid-foot: #e3e7ee;
+    --erp-input-bg: var(--neu-bg); --erp-input-border: rgba(120, 130, 150, .3); --erp-input-readonly: #dde2ea;
+  }
+  :root[data-theme="neumorphism"] .erp-titlebar { box-shadow: 0 4px 10px var(--neu-dark); }
+  :root[data-theme="neumorphism"] .erp-ribbon { box-shadow: 0 6px 12px -6px var(--neu-dark); border-bottom: 0; }
+  :root[data-theme="neumorphism"] .erp-ribbon__tab[aria-selected="true"] { box-shadow: var(--erp-shadow-inset); border-radius: 12px; margin: 3px 0; }
+  :root[data-theme="neumorphism"] .erp-rbtn { border-radius: 12px; }
+  :root[data-theme="neumorphism"] .erp-rbtn:hover { box-shadow: var(--erp-shadow-sm); border-color: transparent; }
+  :root[data-theme="neumorphism"] .erp-rbtn:active, :root[data-theme="neumorphism"] .erp-tbtn:active, :root[data-theme="neumorphism"] .erp-btn:active { box-shadow: var(--erp-shadow-inset); }
+  :root[data-theme="neumorphism"] .erp-toolbar, :root[data-theme="neumorphism"] .erp-fieldset, :root[data-theme="neumorphism"] .erp-filter,
+  :root[data-theme="neumorphism"] .erp-grid, :root[data-theme="neumorphism"] .erp-kpi, :root[data-theme="neumorphism"] .erp-chart,
+  :root[data-theme="neumorphism"] .erp-card-block { border-color: transparent; box-shadow: var(--erp-shadow); }
+  :root[data-theme="neumorphism"] .erp-tbtn:hover { background: var(--neu-bg); box-shadow: var(--erp-shadow-sm); border-color: transparent; }
+  :root[data-theme="neumorphism"] .erp-btn { border-color: transparent; box-shadow: var(--erp-shadow-sm); background: var(--neu-bg); }
+  :root[data-theme="neumorphism"] .erp-btn--primary, :root[data-theme="neumorphism"] .erp-tbtn--primary { background: #3559c7; color: #fff; }
+  :root[data-theme="neumorphism"] .erp-input { box-shadow: var(--erp-shadow-inset); }
+  :root[data-theme="neumorphism"] .erp-input:focus { box-shadow: var(--erp-shadow-inset), 0 0 0 2px #3559c7; }
+  :root[data-theme="neumorphism"] .erp-docbar { background: var(--neu-bg); border-bottom-color: transparent; }
+  :root[data-theme="neumorphism"] .erp-doctab.is-active { box-shadow: var(--erp-shadow-sm); border-color: transparent; border-radius: 12px; top: -3px; }
+  :root[data-theme="neumorphism"] .erp-subtab[aria-selected="true"] { box-shadow: var(--erp-shadow-sm); border-color: transparent; border-radius: 12px; }
+  :root[data-theme="neumorphism"] .erp-switch { box-shadow: var(--erp-shadow-inset); }
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phê duyệt điều chuyển nội bộ (TP SA) — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_InternalTransferSAFrm" data-form-type="EDIT" data-mode="new" data-screen-key="IV_InternalTransferSAFrm:new" data-menu-id="07010140">
+<h1>Phê duyệt điều chuyển nội bộ (TP SA) — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_InternalTransferSAFrm-new" formaction="/mock/records/IV_InternalTransferSAFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_InternalTransferSAFrm-new" formaction="/mock/records/IV_InternalTransferSAFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/IV_InternalTransferSAFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_InternalTransferSAFrm-new" method="post" action="/mock/records/IV_InternalTransferSAFrm/1.saved.html" data-key-field="BatchID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-BatchID">Mã đợt ĐC</label><input id="f-rec-IV_InternalTransferSAFrm-new-BatchID" name="BatchID" value="" readonly></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-BatchDate">Ngày lập đợt</label><input id="f-rec-IV_InternalTransferSAFrm-new-BatchDate" name="BatchDate" type="date" value="" readonly></div>
+<div data-erp="field" data-control="button" data-span="5"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Trạng thái</button></div>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferSAFrm-new-FromBranchID">CN nguồn</label><input id="f-rec-IV_InternalTransferSAFrm-new-FromBranchID" name="FromBranchID" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-ToBranchID">CN đích</label><select id="f-rec-IV_InternalTransferSAFrm-new-ToBranchID" name="ToBranchID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-PlannedTransferDate">Ngày cần ĐC</label><input id="f-rec-IV_InternalTransferSAFrm-new-PlannedTransferDate" name="PlannedTransferDate" type="date" value=""></div>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferSAFrm-new-FromStoreHouseID">Kho nguồn</label><input id="f-rec-IV_InternalTransferSAFrm-new-FromStoreHouseID" name="FromStoreHouseID" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-ToStoreHouseID">Kho đích</label><select id="f-rec-IV_InternalTransferSAFrm-new-ToStoreHouseID" name="ToStoreHouseID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-AssignedPM">PM phụ trách</label><select id="f-rec-IV_InternalTransferSAFrm-new-AssignedPM" name="AssignedPM" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="5" data-row-start><label for="f-rec-IV_InternalTransferSAFrm-new-AssignedTechnician">KThuật phụ trách</label><input id="f-rec-IV_InternalTransferSAFrm-new-AssignedTechnician" name="AssignedTechnician" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-AssignedSA">TP SA phụ trách</label><select id="f-rec-IV_InternalTransferSAFrm-new-AssignedSA" name="AssignedSA" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="5"><label for="f-rec-IV_InternalTransferSAFrm-new-TransportMethod">Phương thức</label><select id="f-rec-IV_InternalTransferSAFrm-new-TransportMethod" name="TransportMethod" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_InternalTransferSAFrm-new-Notes">Ghi chú</label><input id="f-rec-IV_InternalTransferSAFrm-new-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Các đề nghị trong đợt" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="RequestID" data-type="text" data-width="110" data-frozen>Mã đề nghị</th>
+<th scope="col" data-field="DocumentDate" data-type="text" data-width="110">Ngày chứng từ</th>
+<th scope="col" data-field="SalesName" data-type="text" data-width="240">Tên doanh số</th>
+<th scope="col" data-field="RequestedTransferDate" data-type="text" data-width="110">Ngày điều chuyển Requested</th>
+<th scope="col" data-field="RequestStatusName" data-type="text" data-width="240">Tên trạng thái đề nghị</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt ĐC</th>
+<th scope="col" data-field="AddedBy" data-type="text" data-width="110" data-hidden>Added theo</th>
+<th scope="col" data-field="AddedAt" data-type="date" data-width="95" data-hidden>At Added</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Chi tiết phê duyệt" data-badge="0">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_InternalTransferSAFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="RequestID" data-type="text" data-width="110" data-frozen data-readonly>Mã đề nghị</th>
+<th scope="col" data-field="SalesName" data-type="text" data-width="240" data-readonly>Tên doanh số</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-readonly>Mã hàng</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110" data-readonly>Mã hàng NCC</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240" data-readonly>Tên hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-readonly>ĐVT</th>
+<th scope="col" data-field="ApprovedQty" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng đã duyệt</th>
+<th scope="col" data-field="RequestedLot" data-type="text" data-width="110" data-readonly>Lô Requested</th>
+<th scope="col" data-field="IsEquipment" data-type="bool" data-width="60" data-readonly>Equipment</th>
+<th scope="col" data-field="TechStatus" data-type="text" data-width="110" data-readonly>Trạng thái kỹ thuật</th>
+<th scope="col" data-field="BBKCUrl" data-type="text" data-width="110" data-readonly>Liên kết BBKC</th>
+<th scope="col" data-field="TechNotes" data-type="text" data-width="110" data-hidden data-readonly>Ghi chú kỹ thuật</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-readonly>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden data-readonly>Mã đợt ĐC</th>
+<th scope="col" data-field="RequestDetailID" data-type="text" data-width="110" data-hidden data-readonly>Mã Detail đề nghị</th>
+<th scope="col" data-field="RequestedQty" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-readonly data-sum="sum">Số lượng Requested</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110" data-hidden data-readonly>Số lô</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95" data-hidden data-readonly>Hạn dùng</th>
+<th scope="col" data-field="Technician" data-type="text" data-width="110" data-hidden data-readonly>Technician</th>
+<th scope="col" data-field="TechCheckedAt" data-type="date" data-width="95" data-hidden data-readonly>At Checked kỹ thuật</th>
+<th scope="col" data-field="ActualIssueQty" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-readonly data-sum="sum">Số lượng Issue Actual</th>
+<th scope="col" data-field="ActualReceiveQty" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-readonly data-sum="sum">Số lượng Receive Actual</th>
+<th scope="col" data-field="AccountingNote" data-type="text" data-width="110" data-hidden data-readonly>Ghi chú kế toán</th>
+<th scope="col" data-field="WarehouseNote" data-type="text" data-width="110" data-hidden data-readonly>Ghi chú kho</th>
+<th scope="col" data-field="ReceiveNote" data-type="text" data-width="110" data-hidden data-readonly>Ghi chú Receive</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T2"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value="2026-11-11"></td><td data-value=""></td><td data-value="2026-11-11"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+<section data-erp="tab-panel" data-tab-id="T3" data-title="Thiết bị / Tài sản" data-badge="0">
+<table data-erp="grid" data-grid-id="T3" data-key-field="UserAutoID" data-selectable="single" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="AssetID" data-type="text" data-width="110" data-frozen>Mã tài sản</th>
+<th scope="col" data-field="AssetName" data-type="text" data-width="240">Tên tài sản</th>
+<th scope="col" data-field="SerialNo" data-type="text" data-width="110">Số serial</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110">Mã hàng</th>
+<th scope="col" data-field="AssetCondition" data-type="text" data-width="110">Tình trạng tài sản</th>
+<th scope="col" data-field="TechStatus" data-type="text" data-width="110">Trạng thái kỹ thuật</th>
+<th scope="col" data-field="BBKCUrl" data-type="text" data-width="110">Liên kết BBKC</th>
+<th scope="col" data-field="TechNotes" data-type="text" data-width="110">Ghi chú kỹ thuật</th>
+<th scope="col" data-field="Technician" data-type="text" data-width="110">Technician</th>
+<th scope="col" data-field="CheckedAt" data-type="date" data-width="95">At Checked</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt ĐC</th>
+<th scope="col" data-field="BatchDetailID" data-type="text" data-width="110" data-hidden>Mã Detail Batch</th>
+<th scope="col" data-field="IsDispatched" data-type="bool" data-width="60" data-hidden>Dispatched</th>
+<th scope="col" data-field="IsReceived" data-type="bool" data-width="60" data-hidden>Received</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T4" data-title="Lịch sử gửi / duyệt" data-badge="0">
+<table data-erp="grid" data-grid-id="T4" data-key-field="UserAutoID" data-selectable="single" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="ThoiGian" data-type="datetime" data-width="130" data-frozen>Thời gian</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="240">Người dùng</th>
+<th scope="col" data-field="StatusName" data-type="status" data-width="120">Trạng thái</th>
+<th scope="col" data-field="SendTo" data-type="text" data-width="110">Gửi đến</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-wrap>Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="BatchID" data-type="text" data-width="110" data-hidden>Mã đợt ĐC</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

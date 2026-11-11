@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục các chi nhánh</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CF_BranchListFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="CF_BranchListFrm" data-menu-id="0264">
+<h1>Danh mục các chi nhánh</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CF_BranchListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CF_BranchListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CF_BranchListFrm.html">
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-CF_BranchListFrm-BranchID">Chi nhánh</label><select id="flt-CF_BranchListFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CF_BranchListFrm-q">Tìm nhanh</label><input id="flt-CF_BranchListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="BranchID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="BranchID" data-type="text" data-width="110" data-frozen>Chi nhánh</th>
+<th scope="col" data-field="BranchName" data-type="text" data-width="240">Tên chi nhánh</th>
+<th scope="col" data-field="BranchFullName" data-type="text" data-width="240">Tên Full chi nhánh</th>
+<th scope="col" data-field="BranchAddress" data-type="text" data-width="110">Địa chỉ chi nhánh</th>
+<th scope="col" data-field="BranchPhone" data-type="text" data-width="110">Điện thoại chi nhánh</th>
+<th scope="col" data-field="BranchTaxcode" data-type="text" data-width="110">Taxcode chi nhánh</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+<th scope="col" data-field="OrderStorehouseID" data-type="text" data-width="110">Mã Storehouse đơn hàng</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="ThongTinChuyenKhoan" data-type="text" data-width="110">Khoan Chuyen Tin Thong</th>
+<th scope="col" data-field="ThongTinChuyenKhoan2" data-type="text" data-width="110">Khoan2 Chuyen Tin Thong</th>
+<th scope="col" data-field="ChamSocKhachHang" data-type="text" data-width="110">Hang Khach Soc Cham</th>
+<th scope="col" data-field="ChamSocKhachHang2" data-type="text" data-width="110">Hang2 Khach Soc Cham</th>
+<th scope="col" data-field="SoDienThoaiCSKH" data-type="text" data-width="110" data-hidden>CSKH Thoai Dien So</th>
+</tr></thead>
+<tbody>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 1</td><td>Tên Full chi nhánh 1</td><td>Địa chỉ chi nhánh 1</td><td></td><td>Taxcode chi nhánh 1</td><td data-value="false"></td><td>OSI001</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-23">23/08/2026</td><td data-value="2026-08-18">18/08/2026</td><td>Khoan Chuyen Tin Thong 1</td><td>Khoan2 Chuyen Tin Thong 1</td><td>Hang Khach Soc Cham 1</td><td>Hang2 Khach Soc Cham 1</td><td>CSKH Thoai Dien So 1</td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 2</td><td>Tên Full chi nhánh 2</td><td></td><td>Điện thoại chi nhánh 2</td><td>Taxcode chi nhánh 2</td><td data-value="false"></td><td>OSI002</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-08-05">05/08/2026</td><td data-value="2026-10-19">19/10/2026</td><td>Khoan Chuyen Tin Thong 2</td><td>Khoan2 Chuyen Tin Thong 2</td><td></td><td>Hang2 Khach Soc Cham 2</td><td>CSKH Thoai Dien So 2</td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 3</td><td>Tên Full chi nhánh 3</td><td>Địa chỉ chi nhánh 3</td><td>Điện thoại chi nhánh 3</td><td>Taxcode chi nhánh 3</td><td data-value="false"></td><td>OSI003</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-19">19/09/2026</td><td data-value="2026-10-17">17/10/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 3</td><td></td><td></td><td>CSKH Thoai Dien So 3</td></tr>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 4</td><td>Tên Full chi nhánh 4</td><td></td><td>Điện thoại chi nhánh 4</td><td>Taxcode chi nhánh 4</td><td data-value="false"></td><td>OSI004</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-07-30">30/07/2026</td><td data-value="2026-08-15">15/08/2026</td><td></td><td></td><td></td><td>Hang2 Khach Soc Cham 4</td><td></td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 5</td><td>Tên Full chi nhánh 5</td><td>Địa chỉ chi nhánh 5</td><td>Điện thoại chi nhánh 5</td><td></td><td data-value="true">Có</td><td>OSI005</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-17">17/07/2026</td><td data-value="2026-10-14">14/10/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 5</td><td></td><td>Hang2 Khach Soc Cham 5</td><td>CSKH Thoai Dien So 5</td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 6</td><td>Tên Full chi nhánh 6</td><td></td><td>Điện thoại chi nhánh 6</td><td>Taxcode chi nhánh 6</td><td data-value="true">Có</td><td>OSI006</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-25">25/10/2026</td><td data-value="2026-08-06">06/08/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 6</td><td>Hang Khach Soc Cham 6</td><td>Hang2 Khach Soc Cham 6</td><td></td></tr>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 7</td><td>Tên Full chi nhánh 7</td><td>Địa chỉ chi nhánh 7</td><td></td><td></td><td data-value="false"></td><td>OSI007</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-21">21/08/2026</td><td data-value="2026-09-15">15/09/2026</td><td>Khoan Chuyen Tin Thong 7</td><td>Khoan2 Chuyen Tin Thong 7</td><td></td><td></td><td>CSKH Thoai Dien So 7</td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 8</td><td>Tên Full chi nhánh 8</td><td>Địa chỉ chi nhánh 8</td><td></td><td></td><td data-value="false"></td><td>OSI008</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-11-01">01/11/2026</td><td data-value="2026-10-09">09/10/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 8</td><td>Hang Khach Soc Cham 8</td><td>Hang2 Khach Soc Cham 8</td><td>CSKH Thoai Dien So 8</td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 9</td><td>Tên Full chi nhánh 9</td><td>Địa chỉ chi nhánh 9</td><td>Điện thoại chi nhánh 9</td><td>Taxcode chi nhánh 9</td><td data-value="false"></td><td>OSI009</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-17">17/10/2026</td><td data-value="2026-08-06">06/08/2026</td><td>Khoan Chuyen Tin Thong 9</td><td></td><td>Hang Khach Soc Cham 9</td><td></td><td>CSKH Thoai Dien So 9</td></tr>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 10</td><td>Tên Full chi nhánh 10</td><td>Địa chỉ chi nhánh 10</td><td>Điện thoại chi nhánh 10</td><td></td><td data-value="true">Có</td><td>OSI010</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-07-25">25/07/2026</td><td data-value="2026-10-04">04/10/2026</td><td>Khoan Chuyen Tin Thong 10</td><td>Khoan2 Chuyen Tin Thong 10</td><td>Hang Khach Soc Cham 10</td><td></td><td>CSKH Thoai Dien So 10</td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 11</td><td>Tên Full chi nhánh 11</td><td></td><td>Điện thoại chi nhánh 11</td><td>Taxcode chi nhánh 11</td><td data-value="true">Có</td><td>OSI011</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-11-10">10/11/2026</td><td data-value="2026-09-23">23/09/2026</td><td>Khoan Chuyen Tin Thong 11</td><td>Khoan2 Chuyen Tin Thong 11</td><td></td><td>Hang2 Khach Soc Cham 11</td><td>CSKH Thoai Dien So 11</td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 12</td><td>Tên Full chi nhánh 12</td><td>Địa chỉ chi nhánh 12</td><td></td><td></td><td data-value="false"></td><td>OSI012</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-14">14/10/2026</td><td data-value="2026-10-06">06/10/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 12</td><td>Hang Khach Soc Cham 12</td><td></td><td>CSKH Thoai Dien So 12</td></tr>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 13</td><td>Tên Full chi nhánh 13</td><td></td><td>Điện thoại chi nhánh 13</td><td></td><td data-value="true">Có</td><td>OSI013</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-09-21">21/09/2026</td><td data-value="2026-09-08">08/09/2026</td><td>Khoan Chuyen Tin Thong 13</td><td>Khoan2 Chuyen Tin Thong 13</td><td>Hang Khach Soc Cham 13</td><td></td><td>CSKH Thoai Dien So 13</td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 14</td><td>Tên Full chi nhánh 14</td><td>Địa chỉ chi nhánh 14</td><td>Điện thoại chi nhánh 14</td><td>Taxcode chi nhánh 14</td><td data-value="false"></td><td>OSI014</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-11-10">10/11/2026</td><td data-value="2026-07-21">21/07/2026</td><td>Khoan Chuyen Tin Thong 14</td><td>Khoan2 Chuyen Tin Thong 14</td><td>Hang Khach Soc Cham 14</td><td>Hang2 Khach Soc Cham 14</td><td>CSKH Thoai Dien So 14</td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 15</td><td>Tên Full chi nhánh 15</td><td></td><td></td><td>Taxcode chi nhánh 15</td><td data-value="false"></td><td>OSI015</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-08">08/08/2026</td><td data-value="2026-08-22">22/08/2026</td><td>Khoan Chuyen Tin Thong 15</td><td>Khoan2 Chuyen Tin Thong 15</td><td>Hang Khach Soc Cham 15</td><td>Hang2 Khach Soc Cham 15</td><td></td></tr>
+<tr data-key="HN"><td data-value="HN">Hà Nội</td><td>Tên chi nhánh 16</td><td>Tên Full chi nhánh 16</td><td></td><td>Điện thoại chi nhánh 16</td><td></td><td data-value="true">Có</td><td>OSI016</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-29">29/10/2026</td><td data-value="2026-10-21">21/10/2026</td><td>Khoan Chuyen Tin Thong 16</td><td>Khoan2 Chuyen Tin Thong 16</td><td></td><td></td><td>CSKH Thoai Dien So 16</td></tr>
+<tr data-key="HCM"><td data-value="HCM">Hồ Chí Minh</td><td>Tên chi nhánh 17</td><td>Tên Full chi nhánh 17</td><td>Địa chỉ chi nhánh 17</td><td>Điện thoại chi nhánh 17</td><td></td><td data-value="true">Có</td><td>OSI017</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-10">10/08/2026</td><td data-value="2026-07-24">24/07/2026</td><td>Khoan Chuyen Tin Thong 17</td><td>Khoan2 Chuyen Tin Thong 17</td><td>Hang Khach Soc Cham 17</td><td></td><td></td></tr>
+<tr data-key="DN"><td data-value="DN">Đà Nẵng</td><td>Tên chi nhánh 18</td><td>Tên Full chi nhánh 18</td><td>Địa chỉ chi nhánh 18</td><td>Điện thoại chi nhánh 18</td><td>Taxcode chi nhánh 18</td><td data-value="false"></td><td>OSI018</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-30">30/07/2026</td><td data-value="2026-09-19">19/09/2026</td><td></td><td>Khoan2 Chuyen Tin Thong 18</td><td></td><td>Hang2 Khach Soc Cham 18</td><td></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

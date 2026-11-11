@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập bút toán kết chuyển tự động cuối kỳ</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_TransferSetupFrm" data-form-type="LIST" data-mode="edit" data-screen-key="GJ_TransferSetupFrm" data-menu-id="166401">
+<h1>Thiết lập bút toán kết chuyển tự động cuối kỳ</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_TransferSetupFrm" formaction="/mock/screens/GJ_TransferSetupFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_TransferSetupFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_TransferSetupFrm" method="post" action="/mock/screens/GJ_TransferSetupFrm.saved.html" data-key-field="TransferID"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="TransferID" data-selectable="multi" data-editable data-form="rec-GJ_TransferSetupFrm" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="TransferID" data-type="text" data-width="110" data-frozen data-editor="text">Mã điều chuyển</th>
+<th scope="col" data-field="TransferName" data-type="text" data-width="240" data-editor="text">Tên điều chuyển</th>
+<th scope="col" data-field="FromAccountID" data-type="text" data-width="110" data-editor="text">Mã Account từ</th>
+<th scope="col" data-field="ToAccountID" data-type="text" data-width="110" data-editor="text">Mã Account đến</th>
+<th scope="col" data-field="TransferKind" data-type="text" data-width="110" data-editor="text">Kind điều chuyển</th>
+<th scope="col" data-field="STT" data-type="number" data-width="70" data-decimals="0" data-editor="number">STT</th>
+<th scope="col" data-field="AccountID2" data-type="text" data-width="110" data-editor="text">ID2 Account</th>
+<th scope="col" data-field="isCost" data-type="bool" data-width="60" data-editor="checkbox">Chi phí</th>
+<th scope="col" data-field="isCostCenter" data-type="bool" data-width="60" data-editor="checkbox">Center chi phí</th>
+<th scope="col" data-field="isDisable" data-type="bool" data-width="60" data-editor="checkbox">Disable</th>
+<th scope="col" data-field="ToObjectID" data-type="text" data-width="110" data-editor="text">Mã đối tượng đến</th>
+</tr></thead>
+<tbody>
+<tr data-key="TID001"><td>TID001</td><td>Tên điều chuyển 1</td><td>FAI001</td><td>TAI001</td><td>Kind điều chuyển 1</td><td data-value="5">5</td><td>ID2 Account 1</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>TOI001</td></tr>
+<tr data-key="TID002"><td>TID002</td><td>Tên điều chuyển 2</td><td>FAI002</td><td>TAI002</td><td></td><td data-value="29">29</td><td></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td>TOI002</td></tr>
+<tr data-key="TID003"><td>TID003</td><td>Tên điều chuyển 3</td><td>FAI003</td><td>TAI003</td><td>Kind điều chuyển 3</td><td data-value="69">69</td><td>ID2 Account 3</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>TOI003</td></tr>
+<tr data-key="TID004"><td>TID004</td><td>Tên điều chuyển 4</td><td>FAI004</td><td>TAI004</td><td>Kind điều chuyển 4</td><td data-value="99">99</td><td></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>TOI004</td></tr>
+<tr data-key="TID005"><td>TID005</td><td>Tên điều chuyển 5</td><td>FAI005</td><td>TAI005</td><td>Kind điều chuyển 5</td><td data-value="1">1</td><td></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td>TOI005</td></tr>
+<tr data-key="TID006"><td>TID006</td><td>Tên điều chuyển 6</td><td>FAI006</td><td>TAI006</td><td>Kind điều chuyển 6</td><td data-value="65">65</td><td>ID2 Account 6</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td>TOI006</td></tr>
+<tr data-key="TID007"><td>TID007</td><td>Tên điều chuyển 7</td><td>FAI007</td><td>TAI007</td><td>Kind điều chuyển 7</td><td data-value="88">88</td><td></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>TOI007</td></tr>
+<tr data-key="TID008"><td>TID008</td><td>Tên điều chuyển 8</td><td>FAI008</td><td>TAI008</td><td>Kind điều chuyển 8</td><td data-value="25">25</td><td></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td>TOI008</td></tr>
+<tr data-key="TID009"><td>TID009</td><td>Tên điều chuyển 9</td><td>FAI009</td><td>TAI009</td><td></td><td data-value="94">94</td><td></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td>TOI009</td></tr>
+<tr data-key="TID010"><td>TID010</td><td>Tên điều chuyển 10</td><td>FAI010</td><td>TAI010</td><td></td><td data-value="32">32</td><td>ID2 Account 10</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td>TOI010</td></tr>
+<tr data-key="TID011"><td>TID011</td><td>Tên điều chuyển 11</td><td>FAI011</td><td>TAI011</td><td>Kind điều chuyển 11</td><td data-value="26">26</td><td>ID2 Account 11</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td>TOI011</td></tr>
+<tr data-key="TID012"><td>TID012</td><td>Tên điều chuyển 12</td><td>FAI012</td><td>TAI012</td><td></td><td data-value="55">55</td><td>ID2 Account 12</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td>TOI012</td></tr>
+<tr data-key="TID013"><td>TID013</td><td>Tên điều chuyển 13</td><td>FAI013</td><td>TAI013</td><td>Kind điều chuyển 13</td><td data-value="91">91</td><td>ID2 Account 13</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td>TOI013</td></tr>
+<tr data-key="TID014"><td>TID014</td><td>Tên điều chuyển 14</td><td>FAI014</td><td>TAI014</td><td>Kind điều chuyển 14</td><td data-value="72">72</td><td></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>TOI014</td></tr>
+<tr data-key="TID015"><td>TID015</td><td>Tên điều chuyển 15</td><td>FAI015</td><td>TAI015</td><td>Kind điều chuyển 15</td><td data-value="40">40</td><td></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td>TOI015</td></tr>
+<tr data-key="TID016"><td>TID016</td><td>Tên điều chuyển 16</td><td>FAI016</td><td>TAI016</td><td>Kind điều chuyển 16</td><td data-value="34">34</td><td>ID2 Account 16</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td>TOI016</td></tr>
+<tr data-key="TID017"><td>TID017</td><td>Tên điều chuyển 17</td><td>FAI017</td><td>TAI017</td><td></td><td data-value="42">42</td><td>ID2 Account 17</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td>TOI017</td></tr>
+<tr data-key="TID018"><td>TID018</td><td>Tên điều chuyển 18</td><td>FAI018</td><td>TAI018</td><td></td><td data-value="53">53</td><td>ID2 Account 18</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td>TOI018</td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

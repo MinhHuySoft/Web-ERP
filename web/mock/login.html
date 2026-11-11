@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Đăng nhập</title></head>
+<body>
+<form data-erp="login" method="post" action="/mock/session.html">
+<h1>Đăng nhập ERP</h1>
+<div data-erp="field" data-control="select" data-span="40"><label for="lg-db">Dữ liệu</label>
+<select id="lg-db" name="Database"><option value="MedData">Medcom – MedData</option><option value="Medcom">Medcom – Medcom (cũ)</option></select></div>
+<div data-erp="field" data-control="text" data-span="40"><label for="lg-u">Tên đăng nhập</label>
+<input id="lg-u" name="UserName" autocomplete="username" required value="admin"></div>
+<div data-erp="field" data-control="password" data-span="40"><label for="lg-p">Mật khẩu</label>
+<input id="lg-p" name="Password" type="password" autocomplete="current-password" required></div>
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<button type="submit" data-action="login">Đăng nhập</button>
+</form>
+</body></html>

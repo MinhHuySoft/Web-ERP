@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi" data-theme="ribbon-classic">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiểm tra chuẩn ERP-HTML</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/layers.css">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/fields.css">
+  <style>
+    @layer components {
+      .v-page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 16px; }
+      .v-page h1 { font-size: 1.4em; }
+      .v-card { background: var(--erp-surface); border: 1px solid var(--erp-border); border-radius: var(--erp-radius-lg); padding: 16px; display: grid; gap: 10px; }
+      .v-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .v-row .erp-input { flex: 1; min-width: 240px; }
+      textarea.erp-input { height: 220px; font-family: var(--erp-mono); font-size: .85em; padding: 10px; }
+      .v-sum { display: flex; gap: 12px; flex-wrap: wrap; }
+      .v-sum span { padding: 4px 10px; border-radius: 999px; font-weight: 600; }
+      .v-ok { background: var(--erp-success-soft); color: var(--erp-success); }
+      .v-err { background: var(--erp-danger-soft); color: var(--erp-danger); }
+      .v-warn { background: var(--erp-warning-soft); color: var(--erp-warning); }
+      .v-list { list-style: none; padding: 0; display: grid; gap: 6px; }
+      .v-list li { padding: 8px 10px; border-radius: var(--erp-radius); border: 1px solid var(--erp-border); display: grid; gap: 2px; }
+      .v-list li[data-level="error"] { border-inline-start: 4px solid var(--erp-danger); }
+      .v-list li[data-level="warning"] { border-inline-start: 4px solid var(--erp-warning); }
+      .v-list code { font-family: var(--erp-mono); font-size: .82em; color: var(--erp-text-muted); word-break: break-all; }
+    }
+  </style>
+</head>
+<body>
+  <main class="v-page">
+    <h1>Kiểm tra HTML theo chuẩn ERP-HTML v1.0</h1>
+    <p class="erp-muted">Dành cho đội backend: dán HTML hoặc nhập URL (cùng origin) để kiểm tra theo danh sách mục 19 của
+      <code>docs/kien-truc/02-chuan-html-erp.md</code>. Công cụ chỉ đọc, không gửi dữ liệu đi đâu.</p>
+    <section class="v-card">
+      <div class="v-row">
+        <input id="url" class="erp-input" type="url" placeholder="/mock/screens/AR_InvoiceFrm.html hoặc URL backend">
+        <button id="fetch" class="erp-btn erp-btn--primary" type="button">Tải & kiểm tra</button>
+      </div>
+      <textarea id="src" class="erp-input" placeholder="…hoặc dán HTML vào đây"></textarea>
+      <div class="v-row"><button id="check" class="erp-btn" type="button">Kiểm tra HTML đã dán</button></div>
+    </section>
+    <section class="v-card" id="result" hidden>
+      <div class="v-sum" id="summary"></div>
+      <ul class="v-list" id="issues"></ul>
+    </section>
+  </main>
+  <script type="module" src="../js/tools/validate.js"></script>
+</body>
+</html>

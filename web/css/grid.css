@@ -1,0 +1,143 @@
+@layer components {
+  /* Lưới dữ liệu: luôn nền đặc (không làm mờ) để số liệu rõ và cuộn mượt ở mọi theme. */
+  .erp-grid {
+    display: flex; flex-direction: column; min-width: 0; min-height: 0; border-radius: var(--erp-radius-lg);
+    border: 1px solid var(--erp-border); background: var(--erp-grid-bg); box-shadow: var(--erp-shadow-sm); overflow: hidden;
+  }
+  .erp-screen--fill > .erp-grid, .erp-screen--fill .erp-report-result > .erp-grid { flex: 1 1 auto; min-height: 260px; }
+  .erp-grid__bar {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 6px 8px; border-bottom: 1px solid var(--erp-grid-line);
+    background: var(--erp-grid-bg);
+  }
+  .erp-grid__caption { font-size: .95em; margin-inline-end: 6px; }
+  .erp-grid__search { width: 220px; height: 30px; }
+  .erp-grid__count { color: var(--erp-text-muted); font-size: .85em; white-space: nowrap; }
+  .erp-grid__spacer { flex: 1; }
+  .erp-gbtn {
+    display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 9px; border: 1px solid transparent; border-radius: var(--erp-radius);
+    background: transparent; color: var(--erp-text-muted); cursor: pointer; font-size: .86em; white-space: nowrap;
+  }
+  .erp-gbtn .erp-icon { width: 16px; height: 16px; color: var(--erp-primary); }
+  .erp-gbtn:hover { background: var(--erp-primary-softer); color: var(--erp-text); border-color: var(--erp-grid-line); }
+  .erp-gbtn[aria-pressed="true"] { background: var(--erp-primary-soft); color: var(--erp-primary); }
+
+  .erp-grid__scroll { overflow: auto; min-height: 0; position: relative; outline: none; overscroll-behavior: contain; }
+  .erp-screen:not(.erp-screen--fill) .erp-grid__scroll, .erp-dtabs .erp-grid__scroll, .erp-dialog .erp-grid__scroll { max-height: min(62vh, 560px); }
+  .erp-screen--fill > .erp-grid > .erp-grid__scroll, .erp-screen--fill .erp-report-result > .erp-grid > .erp-grid__scroll { flex: 1; }
+  .erp-grid__scroll:focus-visible { box-shadow: inset 0 0 0 2px var(--erp-primary); }
+
+  .erp-grid__table { table-layout: fixed; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; min-width: 100%; }
+  .erp-grid__table th, .erp-grid__table td {
+    box-sizing: border-box; padding: 0 9px; border-bottom: 1px solid var(--erp-grid-line); border-inline-end: 1px solid var(--erp-grid-line);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: start;
+  }
+  .erp-grid__table td { height: var(--erp-row-h); background: var(--erp-grid-bg); }
+  .erp-grid__table td.is-wrap { white-space: normal; line-height: 1.3; padding-block: 3px; }
+  .erp-grid__table .is-right { text-align: right; }
+  .erp-grid__table .is-center { text-align: center; }
+
+  /* Đầu cột */
+  .erp-grid__table thead th {
+    position: sticky; top: 0; z-index: 3; height: calc(var(--erp-row-h) + 4px); padding: 0; background: var(--erp-grid-head);
+    color: var(--erp-grid-head-text); font-weight: 600; font-size: .88em; vertical-align: middle;
+  }
+  .erp-grid__table thead tr.erp-grid__grouprow th { text-align: center; padding: 0 8px; font-size: .8em; color: var(--erp-text-muted); }
+  .erp-grid__table thead tr + tr th { top: calc(var(--erp-row-h) + 4px); }
+  .erp-grid__table thead tr + tr + tr th { top: calc((var(--erp-row-h) + 4px) * 2); }
+  .erp-grid__table thead th > * { vertical-align: middle; }
+  .erp-grid__hbtn {
+    display: inline-flex; align-items: center; gap: 4px; width: calc(100% - 22px); height: 100%; min-height: calc(var(--erp-row-h) + 3px); padding: 0 4px 0 9px;
+    border: 0; background: transparent; color: inherit; font: inherit; font-weight: inherit; cursor: pointer; text-align: inherit;
+    justify-content: flex-start; overflow: hidden;
+  }
+  thead th.is-right .erp-grid__hbtn { justify-content: flex-end; }
+  thead th.is-center .erp-grid__hbtn { justify-content: center; }
+  .erp-grid__hlabel { overflow: hidden; text-overflow: ellipsis; }
+  .erp-grid__hbtn small { font-size: .75em; color: var(--erp-primary); }
+  .erp-grid__sorticon { width: 13px !important; height: 13px !important; color: var(--erp-primary); }
+  .erp-grid__hmenu {
+    width: 20px; height: 22px; padding: 0; border: 0; background: transparent; color: var(--erp-text-faint); cursor: pointer; border-radius: 4px; opacity: 0;
+    display: inline-grid; place-items: center;
+  }
+  .erp-grid__hmenu .erp-icon { width: 13px; height: 13px; }
+  thead th:hover .erp-grid__hmenu, .erp-grid__hmenu:focus-visible { opacity: 1; }
+  .erp-grid__hmenu:hover { background: var(--erp-surface-3); color: var(--erp-text); }
+  .erp-grid__resizer { position: absolute; top: 0; inset-inline-end: -3px; width: 7px; height: 100%; cursor: col-resize; z-index: 2; }
+  .erp-grid__resizer:hover, th.is-resizing .erp-grid__resizer { background: color-mix(in srgb, var(--erp-primary) 45%, transparent); }
+  .erp-req { color: var(--erp-danger); margin-inline-start: 2px; }
+  .erp-grid__filterrow th { padding: 3px 4px !important; background: var(--erp-grid-bg) !important; }
+  .erp-grid__filterrow .erp-input { height: 26px; font-size: .86em; padding: 0 6px; font-weight: 400; }
+
+  /* Cột cố định & cột chọn */
+  .erp-grid__table .is-frozen { position: sticky; z-index: 2; }
+  .erp-grid__table thead .is-frozen { z-index: 4; }
+  .erp-grid__table td.is-frozen { box-shadow: var(--erp-grid-frozen-shadow); }
+  .erp-grid__sel { width: 36px; text-align: center !important; padding: 0 !important; }
+  .erp-grid__sel input { width: 16px; height: 16px; accent-color: var(--erp-primary); cursor: pointer; vertical-align: middle; }
+
+  /* Dòng */
+  .erp-grid__table tbody tr:nth-child(even) td { background: var(--erp-grid-alt); }
+  .erp-grid__table tbody tr:hover td { background: var(--erp-grid-hover); }
+  .erp-grid__table tbody tr.is-selected td { background: var(--erp-grid-selected); }
+  .erp-grid__table tbody tr.is-active td:first-child { box-shadow: inset 3px 0 0 var(--erp-primary); }
+  .erp-grid__table tbody td.is-cell-active { outline: 2px solid var(--erp-primary); outline-offset: -2px; }
+  .erp-grid__table tbody tr.is-strong td { font-weight: 650; }
+  .erp-grid__table tbody tr[data-tone="danger"] td { color: var(--erp-danger); }
+  .erp-grid__table tbody tr[data-tone="warning"] td { color: var(--erp-warning); }
+  .erp-grid__table tbody tr[data-tone="success"] td { color: var(--erp-success); }
+  .erp-grid__table tbody tr[data-tone="muted"] td { color: var(--erp-text-faint); }
+  .erp-grid__table tbody tr[data-tone] td data[data-erp="status"] { color: unset; }
+  .erp-grid__table tbody tr.is-new td:first-child { box-shadow: inset 3px 0 0 var(--erp-success); }
+  .erp-grid__table tbody tr.is-modified td:first-child { box-shadow: inset 3px 0 0 var(--erp-warning); }
+  .erp-grid__table tbody tr.is-deleted td { text-decoration: line-through; color: var(--erp-text-faint); background: var(--erp-danger-soft); }
+  .erp-grid__table tbody td[aria-invalid="true"] { box-shadow: inset 0 0 0 2px var(--erp-danger); background: var(--erp-danger-soft); }
+  .erp-grid__table tbody td a { font-weight: 550; text-decoration: none; }
+  .erp-grid__table tbody td a:hover { text-decoration: underline; }
+  .erp-grid__spacer td { padding: 0 !important; border: 0 !important; background: transparent !important; }
+  .erp-grid.is-editable .erp-grid__table tbody td { cursor: cell; }
+  .erp-grid__table td.is-editing { padding: 0; overflow: visible; }
+  .erp-grid__editor { height: calc(var(--erp-row-h) - 1px) !important; border-radius: 0 !important; border: 2px solid var(--erp-primary) !important; box-shadow: none !important; padding: 0 7px !important; }
+
+  /* Nhóm */
+  .erp-grid__group td { background: var(--erp-surface-2) !important; font-weight: 600; padding-inline-start: calc(8px + var(--depth, 0) * 18px) !important; }
+  .erp-grid__gtoggle { border: 0; background: transparent; color: var(--erp-text); font: inherit; font-weight: 600; cursor: pointer; padding: 0 6px 0 0; }
+  .erp-grid__gtoggle small { color: var(--erp-text-muted); font-weight: 500; }
+  .erp-grid__caret { display: inline-block; width: 1em; color: var(--erp-primary); }
+  .erp-grid__gsums { display: inline-flex; gap: 16px; margin-inline-start: 18px; color: var(--erp-text-muted); font-weight: 500; font-size: .9em; }
+  .erp-grid__gsums b { color: var(--erp-text); }
+
+  /* Footer tổng */
+  .erp-grid__table tfoot td {
+    position: sticky; bottom: 0; z-index: 2; height: calc(var(--erp-row-h) + 2px); background: var(--erp-grid-foot);
+    border-top: 2px solid var(--erp-border-strong); font-weight: 650;
+  }
+  .erp-grid__table tfoot td.is-frozen { z-index: 3; }
+  .erp-grid__status { padding: 4px 10px; font-size: .8em; color: var(--erp-text-muted); border-top: 1px solid var(--erp-grid-line); background: var(--erp-grid-bg); }
+
+  /* Dạng thẻ (màn hẹp) */
+  .erp-grid__cards { display: grid; gap: 8px; padding: 8px; overflow: auto; min-height: 0; flex: 1; background: var(--erp-surface-2); align-content: start; }
+  .erp-card {
+    display: grid; gap: 6px; padding: 10px 12px; border-radius: var(--erp-radius-lg); background: var(--erp-grid-bg);
+    border: 1px solid var(--erp-grid-line); box-shadow: var(--erp-shadow-sm); cursor: pointer;
+  }
+  .erp-card.is-selected { border-color: var(--erp-primary); box-shadow: 0 0 0 2px var(--erp-primary-soft); }
+  .erp-card.is-modified { border-inline-start: 3px solid var(--erp-warning); }
+  .erp-card.is-new { border-inline-start: 3px solid var(--erp-success); }
+  .erp-card.is-deleted { opacity: .55; text-decoration: line-through; }
+  .erp-card header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .erp-card__title { font-weight: 650; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .erp-card dl { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 4px 14px; }
+  .erp-card dl div { min-width: 0; }
+  .erp-card dt { font-size: .76em; color: var(--erp-text-muted); }
+  .erp-card dd { font-size: .92em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .erp-card[data-tone="danger"] { border-color: color-mix(in srgb, var(--erp-danger) 40%, transparent); }
+  .erp-grid__more { justify-self: center; }
+  .erp-grid.is-cards .erp-gbtn[aria-label="Lọc theo cột"], .erp-grid.is-cards .erp-gbtn[aria-label="Nhóm"] { display: none; }
+
+  /* Chọn cột */
+  .erp-colpick { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; max-height: 60vh; overflow: auto; }
+  .erp-colpick li { display: grid; grid-template-columns: auto 1fr auto auto auto; align-items: center; gap: 8px; padding: 4px 6px; border-radius: var(--erp-radius); }
+  .erp-colpick li:hover { background: var(--erp-surface-2); }
+  .erp-colpick small { color: var(--erp-text-faint); font-family: var(--erp-mono); font-size: .75em; }
+  .erp-colpick .erp-iconbtn { width: 26px; height: 26px; }
+}

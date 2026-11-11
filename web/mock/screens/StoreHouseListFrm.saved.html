@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục kho</title></head>
+<body>
+<section data-erp="screen" data-screen-id="StoreHouseListFrm" data-form-type="LIST" data-mode="view" data-screen-key="StoreHouseListFrm" data-menu-id="021204">
+<h1>Danh mục kho</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/StoreHouseListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/StoreHouseListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/StoreHouseListFrm.html">
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-StoreHouseListFrm-BranchID">Chi nhánh</label><select id="flt-StoreHouseListFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-StoreHouseListFrm-q">Tìm nhanh</label><input id="flt-StoreHouseListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="StoreHouseID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110" data-frozen>Kho</th>
+<th scope="col" data-field="StoreHouseName" data-type="text" data-width="240">Tên House Store</th>
+<th scope="col" data-field="StoreHouseGroup" data-type="text" data-width="110">Nhóm House Store</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="110">Chi nhánh</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+<th scope="col" data-field="isNL" data-type="bool" data-width="60">NL</th>
+<th scope="col" data-field="isBTP" data-type="bool" data-width="60">BTP</th>
+<th scope="col" data-field="isTP" data-type="bool" data-width="60">TP</th>
+<th scope="col" data-field="isHH" data-type="bool" data-width="60">HH</th>
+<th scope="col" data-field="isVT" data-type="bool" data-width="60">VT</th>
+</tr></thead>
+<tbody>
+<tr data-key="KHO-HN"><td data-value="KHO-HN">Kho Hà Nội</td><td>Tên House Store 1</td><td></td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HCM"><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>Tên House Store 2</td><td>Nhóm House Store 2</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="KHO-DN"><td data-value="KHO-DN">Kho Đà Nẵng</td><td>Tên House Store 3</td><td>Nhóm House Store 3</td><td data-value="DN">Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="KHO-BH"><td data-value="KHO-BH">Kho bảo hành</td><td>Tên House Store 4</td><td></td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HN"><td data-value="KHO-HN">Kho Hà Nội</td><td>Tên House Store 5</td><td>Nhóm House Store 5</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HCM"><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>Tên House Store 6</td><td>Nhóm House Store 6</td><td data-value="DN">Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-DN"><td data-value="KHO-DN">Kho Đà Nẵng</td><td>Tên House Store 7</td><td>Nhóm House Store 7</td><td data-value="HN">Hà Nội</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-BH"><td data-value="KHO-BH">Kho bảo hành</td><td>Tên House Store 8</td><td>Nhóm House Store 8</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HN"><td data-value="KHO-HN">Kho Hà Nội</td><td>Tên House Store 9</td><td>Nhóm House Store 9</td><td data-value="DN">Đà Nẵng</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="KHO-HCM"><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>Tên House Store 10</td><td>Nhóm House Store 10</td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-DN"><td data-value="KHO-DN">Kho Đà Nẵng</td><td>Tên House Store 11</td><td></td><td data-value="HCM">Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="KHO-BH"><td data-value="KHO-BH">Kho bảo hành</td><td>Tên House Store 12</td><td></td><td data-value="DN">Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HN"><td data-value="KHO-HN">Kho Hà Nội</td><td>Tên House Store 13</td><td></td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HCM"><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>Tên House Store 14</td><td>Nhóm House Store 14</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="KHO-DN"><td data-value="KHO-DN">Kho Đà Nẵng</td><td>Tên House Store 15</td><td></td><td data-value="DN">Đà Nẵng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-BH"><td data-value="KHO-BH">Kho bảo hành</td><td>Tên House Store 16</td><td>Nhóm House Store 16</td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="KHO-HN"><td data-value="KHO-HN">Kho Hà Nội</td><td>Tên House Store 17</td><td></td><td data-value="HCM">Hồ Chí Minh</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="KHO-HCM"><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>Tên House Store 18</td><td>Nhóm House Store 18</td><td data-value="DN">Đà Nẵng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Đề nghị mua hàng — PRI001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_PurposeRequestListFrm" data-form-type="EDIT" data-mode="view" data-screen-key="AP_PurposeRequestListFrm:PRI001" data-menu-id="05011">
+<h1>Đề nghị mua hàng — PRI001</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu chứng từ (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AP_PurposeRequestListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/AP_PurposeRequestListFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-AP_PurposeRequestListFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/AP_PurposeRequestListFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/AP_PurposeRequestListFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/AP_PurposeRequestListFrm/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/AP_PurposeRequestListFrm/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-AP_PurposeRequestListFrm-1" method="post" action="/mock/records/AP_PurposeRequestListFrm/1.saved.html" data-key-field="PurchaseRequestID" data-key="PRI001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-PurchaseRequestID">Mã đề nghị Purchase</label><input id="f-rec-AP_PurposeRequestListFrm-1-PurchaseRequestID" name="PurchaseRequestID" value="PRI001" readonly></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-AP_PurposeRequestListFrm-1-PurchaseDate">Ngày Purchase</label><input id="f-rec-AP_PurposeRequestListFrm-1-PurchaseDate" name="PurchaseDate" type="date" value="2026-09-10" readonly></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Chuyển trạng thái</button></div>
+<div data-erp="field" data-control="multiselect" data-span="12" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-PersonSuggest">Suggest Person</label><input id="f-rec-AP_PurposeRequestListFrm-1-PersonSuggest" name="PersonSuggest" value="" disabled></div>
+<div data-erp="field" data-control="multiselect" data-span="12" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-Department">Phòng ban</label><input id="f-rec-AP_PurposeRequestListFrm-1-Department" name="Department" value="Phòng ban 1" disabled></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-PurposeDescOrClient">Client Or Desc Purpose</label><input id="f-rec-AP_PurposeRequestListFrm-1-PurposeDescOrClient" name="PurposeDescOrClient" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-Notes">Ghi chú</label><input id="f-rec-AP_PurposeRequestListFrm-1-Notes" name="Notes" value="" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="7" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-ObjectID">Mã đối tượng</label><input id="f-rec-AP_PurposeRequestListFrm-1-ObjectID" name="ObjectID" value="KH0001" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-AP_PurposeRequestListFrm-1-ObjectID">Công ty TNHH Thiết bị Y tế An Phát</output></div>
+<div data-erp="field" data-control="text" data-span="2"><label for="f-rec-AP_PurposeRequestListFrm-1-RateExchange">Tỷ giá</label><input id="f-rec-AP_PurposeRequestListFrm-1-RateExchange" name="RateExchange" value="1" readonly></div>
+<div data-erp="field" data-control="select" data-span="3"><label for="f-rec-AP_PurposeRequestListFrm-1-CurrencyID">Loại tiền</label><select id="f-rec-AP_PurposeRequestListFrm-1-CurrencyID" name="CurrencyID" disabled><option value=""></option><option value="VND" selected>VND</option><option value="USD">USD</option><option value="EUR">EUR</option></select></div>
+<div data-erp="field" data-control="money" data-span="4" data-row-start><label for="f-rec-AP_PurposeRequestListFrm-1-Price">Giá</label><input id="f-rec-AP_PurposeRequestListFrm-1-Price" name="Price" inputmode="decimal" value="8500000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-AP_PurposeRequestListFrm-1-PurposeID">Mã Purpose</label><select id="f-rec-AP_PurposeRequestListFrm-1-PurposeID" name="PurposeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-AP_PurposeRequestListFrm-1-BranchID">Chi nhánh</label><select id="f-rec-AP_PurposeRequestListFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="print" data-icon="print">In phiếu</button></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết 1" data-badge="5">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="5">
+<thead><tr>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240" data-readonly>Tên hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-readonly>ĐVT</th>
+<th scope="col" data-field="HangSX" data-type="text" data-width="110" data-readonly>Hãng sản xuất</th>
+<th scope="col" data-field="Model" data-type="text" data-width="110">Model</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="Budget" data-type="number" data-width="70" data-decimals="0">Budget</th>
+<th scope="col" data-field="TimeRequired" data-type="text" data-width="110">Required thời gian</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="TotalPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tổng đơn giá</th>
+<th scope="col" data-field="PurchaseRequestID" data-type="text" data-width="110">Mã đề nghị Purchase</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>VT0001</td><td>Máy đo huyết áp điện tử</td><td>Cái</td><td>Hãng sản xuất 1</td><td></td><td>UAI001</td><td data-value="54">54</td><td>Required thời gian 1</td><td data-value="111">111</td><td data-value="12740000">12.740.000</td><td data-value="19750000">19.750.000</td><td>PRI001</td></tr>
+<tr data-key="UAI002"><td>VT0008</td><td>Hóa chất xét nghiệm Glucose</td><td>Hộp</td><td></td><td>Model 2</td><td>UAI002</td><td data-value="4">4</td><td>Required thời gian 2</td><td data-value="192">192</td><td data-value="98000000">98.000.000</td><td data-value="6360000">6.360.000</td><td>PRI002</td></tr>
+<tr data-key="UAI003"><td>VT0015</td><td>Nhiệt kế điện tử</td><td>Cái</td><td></td><td>Model 3</td><td>UAI003</td><td data-value="47">47</td><td></td><td data-value="152">152</td><td data-value="5280000">5.280.000</td><td data-value="42000000">42.000.000</td><td>PRI003</td></tr>
+<tr data-key="UAI004"><td>VT0002</td><td>Bơm tiêm 5ml</td><td>Hộp</td><td></td><td></td><td>UAI004</td><td data-value="82">82</td><td>Required thời gian 4</td><td data-value="137">137</td><td data-value="344500000">344.500.000</td><td data-value="469500000">469.500.000</td><td>PRI004</td></tr>
+<tr data-key="UAI005"><td>VT0009</td><td>Khẩu trang y tế 4 lớp</td><td>Hộp</td><td>Hãng sản xuất 5</td><td>Model 5</td><td>UAI005</td><td data-value="7">7</td><td>Required thời gian 5</td><td data-value="35">35</td><td data-value="63800000">63.800.000</td><td data-value="56600000">56.600.000</td><td>PRI005</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="627">627</td><td data-field="UnitPrice" data-value="524320000">524.320.000</td><td data-field="TotalPrice" data-value="594210000">594.210.000</td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

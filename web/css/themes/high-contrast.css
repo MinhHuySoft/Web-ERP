@@ -1,0 +1,23 @@
+/* Tương phản cao — hỗ trợ tiếp cận: nền đen, chữ trắng, nhấn vàng, viền dày, focus rõ. */
+@layer themes {
+  :root[data-theme="high-contrast"] {
+    --erp-bg: #000000; --erp-surface: #000000; --erp-surface-2: #0a0a0a; --erp-surface-3: #1a1a1a; --erp-panel-bg: #000000; --erp-overlay: rgba(0, 0, 0, .85);
+    --erp-text: #ffffff; --erp-text-muted: #f0f0f0; --erp-text-faint: #d8d8d8;
+    --erp-border: #ffffff; --erp-border-strong: #ffffff;
+    --erp-accent: #ffff00; --erp-accent-contrast: #000000;
+    --erp-success: #3cff7a; --erp-warning: #ffd400; --erp-danger: #ff6b6b; --erp-info: #5cd3ff;
+    --erp-shadow-sm: none; --erp-shadow: none; --erp-shadow-lg: none;
+    --erp-chrome-bg: #000000; --erp-chrome-text: #ffffff; --erp-chrome-muted: #ffffff; --erp-chrome-hover: #333333;
+    --erp-ribbon-bg: #000000; --erp-ribbon-tabs-bg: #000000; --erp-ribbon-tab-text: #ffffff; --erp-ribbon-tab-active-bg: #ffff00; --erp-ribbon-tab-active-text: #000000;
+    --erp-ribbon-border: #ffffff; --erp-ribbon-btn-hover: #333333; --erp-ribbon-btn-active: #555555;
+    --erp-grid-bg: #000000; --erp-grid-head: #1a1a1a; --erp-grid-head-text: #ffff00; --erp-grid-alt: #0d0d0d; --erp-grid-hover: #262626;
+    --erp-grid-selected: #00375e; --erp-grid-line: #8a8a8a; --erp-grid-foot: #1a1a1a; --erp-grid-frozen-shadow: 2px 0 0 #ffffff;
+    --erp-input-bg: #000000; --erp-input-border: #ffffff; --erp-input-readonly: #141414;
+  }
+  :root[data-theme="high-contrast"] a { color: #5cd3ff; text-decoration: underline; }
+  :root[data-theme="high-contrast"] .erp-titlebar, :root[data-theme="high-contrast"] .erp-ribbon { border-bottom: 2px solid #fff; }
+  :root[data-theme="high-contrast"] .erp-rbtn .erp-icon, :root[data-theme="high-contrast"] .erp-tbtn .erp-icon { color: #ffff00; }
+  :root[data-theme="high-contrast"] .erp-toolbar, :root[data-theme="high-contrast"] .erp-fieldset, :root[data-theme="high-contrast"] .erp-grid,
+  :root[data-theme="high-contrast"] .erp-filter, :root[data-theme="high-contrast"] .erp-dialog, :root[data-theme="high-contrast"] .erp-input { border-width: 2px; }
+  :root[data-theme="high-contrast"] :focus-visible, :root[data-theme="high-contrast"] .erp-input:focus { box-shadow: 0 0 0 3px #ffff00 !important; }
+}

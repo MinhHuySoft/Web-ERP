@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Xác nhận tình trạng hàng về — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_IncomingShipmentStatusFrm" data-form-type="EDIT" data-mode="new" data-screen-key="IV_IncomingShipmentStatusFrm:new" data-menu-id="07013">
+<h1>Xác nhận tình trạng hàng về — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_IncomingShipmentStatusFrm-new" formaction="/mock/records/IV_IncomingShipmentStatusFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_IncomingShipmentStatusFrm-new" formaction="/mock/records/IV_IncomingShipmentStatusFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/IV_IncomingShipmentStatusFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_IncomingShipmentStatusFrm-new" method="post" action="/mock/records/IV_IncomingShipmentStatusFrm/1.saved.html" data-key-field="DocumentID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin đơn hàng</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DocumentID">Số đề nghị</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DocumentID" name="DocumentID" value="CT1126/0025" readonly></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DocumentDate" name="DocumentDate" type="date" value="2026-11-11" readonly></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Chuyển trạng thái</button></div>
+<div data-erp="field" data-control="checkbox" data-span="2"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-IsRain">Trời mưa</label><input type="hidden" name="IsRain" value="false"><input id="f-rec-IV_IncomingShipmentStatusFrm-new-IsRain" name="IsRain" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="print" data-icon="print">In phiếu</button></div>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-OrderNumber">Số thứ tự</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-OrderNumber" name="OrderNumber" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-PackageTypeID">Loại kiện</label><select id="f-rec-IV_IncomingShipmentStatusFrm-new-PackageTypeID" name="PackageTypeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-OrderTypeID">Loại đơn</label><select id="f-rec-IV_IncomingShipmentStatusFrm-new-OrderTypeID" name="OrderTypeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ObjectID">Mã NCC</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-ObjectID" name="ObjectID" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="8"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ObjectName">Nhà cung cấp</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-ObjectName" name="ObjectName" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DeparturePoint">Nơi đi</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DeparturePoint" name="DeparturePoint" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DestinationPoint">Nơi đến</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DestinationPoint" name="DestinationPoint" value="" readonly></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-TotalPalletQuantityByDocument">Tổng số lượng pallet theo chứng từ</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-TotalPalletQuantityByDocument" name="TotalPalletQuantityByDocument" inputmode="decimal" value="" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="6"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-TotalPalletQuantityByReal">Tổng số lượng pallet theo thực tế</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-TotalPalletQuantityByReal" name="TotalPalletQuantityByReal" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-TotalBarrelQuantityByDocument">Tổng số lượng thùng theo chứng từ</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-TotalBarrelQuantityByDocument" name="TotalBarrelQuantityByDocument" inputmode="decimal" value="" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="6"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-TotalBarrelQuantityByReal">Tổng số lượng thùng theo thực tế</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-TotalBarrelQuantityByReal" name="TotalBarrelQuantityByReal" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="quantity" data-span="4" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ExcessPackageQuantity">Số lượng kiện thừa</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-ExcessPackageQuantity" name="ExcessPackageQuantity" inputmode="decimal" value="" data-decimals="2"></div>
+<div data-erp="field" data-control="quantity" data-span="4"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DamagedPackageQuantity">Số lượng kiện hư hỏng</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DamagedPackageQuantity" name="DamagedPackageQuantity" inputmode="decimal" value="" data-decimals="2"></div>
+<div data-erp="field" data-control="quantity" data-span="4"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-LackOfPackageQuantity">Số lượng kiện thiếu</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-LackOfPackageQuantity" name="LackOfPackageQuantity" inputmode="decimal" value="" data-decimals="2"></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-Notes">Ghi chú</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-Notes" name="Notes" value="" readonly></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="print" data-icon="print">In phiếu</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="print" data-icon="print">In phiếu</button></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="2"><legend>Thông tin hư hỏng</legend>
+<div data-erp="field" data-control="checkbox" data-span="3" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-IsDamageOutsidePackage">Kiện bên ngoài hư hỏng</label><input type="hidden" name="IsDamageOutsidePackage" value="false"><input id="f-rec-IV_IncomingShipmentStatusFrm-new-IsDamageOutsidePackage" name="IsDamageOutsidePackage" type="checkbox" value="true"></div>
+<div data-erp="field" data-control="select" data-span="6"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-LocationDamageDetectedID">Mã phát hiện hư hỏng vị trí</label><select id="f-rec-IV_IncomingShipmentStatusFrm-new-LocationDamageDetectedID" name="LocationDamageDetectedID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="6"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DamageInsideStatusID">Mã trạng thái bên trong hư hỏng</label><select id="f-rec-IV_IncomingShipmentStatusFrm-new-DamageInsideStatusID" name="DamageInsideStatusID"><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-LocationDamageDescription">Mô tả hư hỏng vị trí</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-LocationDamageDescription" name="LocationDamageDescription" value=""></div>
+<div data-erp="field" data-control="text" data-span="15" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DamageDescription">Mô tả hư hỏng</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DamageDescription" name="DamageDescription" value=""></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Mở liên kết</button></div>
+<div data-erp="field" data-control="text" data-span="12"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ImageURL">Hình ảnh</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-ImageURL" name="ImageURL" value=""></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="3"><legend>Đánh giá và kết luận</legend>
+<div data-erp="field" data-control="textarea" data-span="12" data-rows="2" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ResultDesciption">Desciption kết quả</label><textarea id="f-rec-IV_IncomingShipmentStatusFrm-new-ResultDesciption" name="ResultDesciption" rows="2"></textarea></div>
+<div data-erp="field" data-control="money" data-span="6" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-TotalQuantityInboundResult">Tổng kết quả nhập số lượng</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-TotalQuantityInboundResult" name="TotalQuantityInboundResult" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-IV_IncomingShipmentStatusFrm-new-GoodAwaitingInboundResult">Kết quả nhập chờ hàng</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-GoodAwaitingInboundResult" name="GoodAwaitingInboundResult" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-ResultNote">Ghi chú kết quả</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-ResultNote" name="ResultNote" value=""></div>
+<div data-erp="field" data-control="date" data-span="7" data-row-start><label for="f-rec-IV_IncomingShipmentStatusFrm-new-DatetimeRecorded">Ghi nhận thời gian</label><input id="f-rec-IV_IncomingShipmentStatusFrm-new-DatetimeRecorded" name="DatetimeRecorded" type="date" value=""></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết 1" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_IncomingShipmentStatusFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-readonly>Số đề nghị</th>
+<th scope="col" data-field="ContractID" data-type="text" data-width="110" data-frozen data-readonly data-group="Thông tin hàng hóa">Hợp đồng</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-readonly data-group="Thông tin hàng hóa">Mã hàng</th>
+<th scope="col" data-field="HangSX" data-type="text" data-width="110" data-readonly data-group="Thông tin hàng hóa">Hãng sản xuất</th>
+<th scope="col" data-field="UnitFactor" data-type="number" data-width="70" data-decimals="0" data-readonly data-group="Thông tin hàng hóa">Hệ số quy đổi</th>
+<th scope="col" data-field="Unit2" data-type="text" data-width="110" data-readonly data-group="Thông tin hàng hóa">ĐVT 2</th>
+<th scope="col" data-field="Additional" data-type="bool" data-width="60" data-group="Thông tin hàng hóa" data-editor="checkbox">Thông tin thêm</th>
+<th scope="col" data-field="LotNumberByDocument" data-type="text" data-width="110" data-readonly data-group="Trên chứng từ">Số lô theo chứng từ</th>
+<th scope="col" data-field="SetQuantityByDocument" data-type="number" data-width="70" data-decimals="0" data-readonly data-group="Trên chứng từ">Số lượng bộ theo chứng từ</th>
+<th scope="col" data-field="BarrelQuantityByDocument" data-type="number" data-width="70" data-decimals="0" data-readonly data-group="Trên chứng từ">Số lượng thùng theo chứng từ</th>
+<th scope="col" data-field="ExpireDateByDocument" data-type="date" data-width="95" data-readonly data-group="Trên chứng từ">Ngày hạn theo chứng từ</th>
+<th scope="col" data-field="LotNumberByReal" data-type="text" data-width="110" data-group="Trên thực tế" data-editor="text">Số lô theo thực tế</th>
+<th scope="col" data-field="SetQuantityByReal" data-type="number" data-width="70" data-decimals="0" data-hidden data-group="Trên thực tế" data-editor="number">Số lượng bộ theo thực tế</th>
+<th scope="col" data-field="BarrelQuantityByReal" data-type="number" data-width="70" data-decimals="0" data-hidden data-group="Trên thực tế" data-editor="number">Số lượng thùng theo thực tế</th>
+<th scope="col" data-field="ExpireDateByReal" data-type="date" data-width="95" data-hidden data-group="Trên thực tế" data-editor="date">Ngày hạn theo thực tế</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="RandomTestQuantity" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum" data-group="Kiểm tra xác suất" data-editor="number">Số lượng kiểm tra xác suất</th>
+<th scope="col" data-field="TestStatus" data-type="text" data-width="110" data-hidden data-group="Kiểm tra xác suất" data-editor="text">Trạng thái kiểm tra</th>
+<th scope="col" data-field="NoPalletNote" data-type="text" data-width="110" data-hidden data-group="Kiểm tra xác suất" data-editor="text">Ghi chú pallet số</th>
+<th scope="col" data-field="PalletNote" data-type="text" data-width="110" data-hidden data-group="Kiểm tra xác suất" data-editor="text">Ghi chú pallet</th>
+<th scope="col" data-field="CheckerNote" data-type="text" data-width="110" data-hidden data-group="Kiểm tra xác suất" data-editor="text">Ghi chú người kiểm</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110" data-hidden data-readonly data-group="Thông tin hàng hóa">Mã hàng NCC</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Parent</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="2026-11-11"></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="2026-11-11"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Lịch sử gởi / duyệt" data-badge="0">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="single" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số đề nghị</th>
+<th scope="col" data-field="ThoiGian" data-type="datetime" data-width="130" data-frozen>Thời gian</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="240">Người dùng</th>
+<th scope="col" data-field="StatusID" data-type="status" data-width="120" data-hidden>Trạng thái</th>
+<th scope="col" data-field="SendTo" data-type="text" data-width="110">Gửi đến</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-wrap>Ghi chú</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

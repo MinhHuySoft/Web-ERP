@@ -1,0 +1,10 @@
+@layer utilities {
+  .erp-titlebar, .erp-ribbon-host, .erp-sidebar, .erp-docbar, .erp-statusbar, .erp-bottombar, .erp-toolbar, .erp-grid__bar,
+  .erp-filter, .erp-fav, .erp-toasts { display: none !important; }
+  .erp-app, .erp-body, .erp-main, .erp-workspace, .erp-tabpanel { display: block !important; height: auto !important; overflow: visible !important; }
+  .erp-tabpanel[hidden] { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .erp-grid__scroll { max-height: none !important; overflow: visible !important; }
+  .erp-grid, .erp-fieldset, .erp-kpi, .erp-chart { box-shadow: none !important; backdrop-filter: none !important; border-color: #999 !important; }
+  .erp-grid__table thead th, .erp-grid__table tfoot td { position: static !important; }
+}

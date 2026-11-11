@@ -1,0 +1,79 @@
+/* Điểm gãy (QĐ-04): ≥1280 đầy đủ · 768–1279 Ribbon thu gọn · <768 ngăn kéo menu + thanh dưới + lưới dạng thẻ */
+@layer components {
+  @media (max-width: 1279px) {
+    .erp-titlebar__chips { display: none; }
+    .erp-searchbtn { width: min(300px, 30vw); }
+    .erp-rbtn--large { width: 64px; min-height: 64px; font-size: .82em; }
+    .erp-rbtn--large .erp-icon { width: 24px; height: 24px; }
+    .erp-ribbon__panel { min-height: 92px; }
+    .erp-rbtn--small span { max-width: 150px; }
+    .erp-userbtn__name { display: none; }
+  }
+
+  @media (max-width: 1023px) {
+    .erp-rgroup--small .erp-rbtn--small span, .erp-rgroup--mixed .erp-rbtn--small span { display: none; }
+    .erp-rgroup--small .erp-rbtn--small, .erp-rgroup--mixed .erp-rbtn--small { padding: 2px 4px; width: 28px; justify-content: center; }
+    .erp-tbtn__label { display: none; }
+    .erp-tbtn { padding: 0 8px; }
+    .erp-tbtn--primary .erp-tbtn__label { display: inline; }
+    .erp-grid__search { width: 160px; }
+    .erp-gbtn span { display: none; }
+  }
+
+  @media (max-width: 767px) {
+    .erp-app { grid-template-rows: auto minmax(0, 1fr) auto; }
+    .erp-ribbon-host, .erp-statusbar { display: none !important; }
+    .erp-titlebar { gap: 6px; padding: 0 6px; }
+    .erp-titlebar__menu { display: inline-grid; }
+    .erp-searchbtn { display: none; }
+    .erp-titlebar [data-only="narrow"] { display: inline-grid; }
+    .erp-titlebar__actions { margin-inline-start: auto; }
+    .erp-brand__text small { max-width: 40vw; }
+
+    /* Ngăn kéo menu */
+    .erp-sidebar {
+      display: flex !important; position: fixed; z-index: 60; inset: 0 auto 0 0; width: min(330px, 88vw);
+      transform: translateX(-102%); transition: transform .22s ease; box-shadow: var(--erp-shadow-lg); background: var(--erp-surface);
+    }
+    .erp-app.is-drawer-open .erp-sidebar { transform: none; }
+    .erp-sidebar__close { display: inline-grid; }
+    .erp-app.is-drawer-open .erp-scrim { display: block; position: fixed; inset: 0; z-index: 55; background: var(--erp-overlay); }
+
+    .erp-docbar { padding: 4px 4px 0; }
+    .erp-doctab { max-width: 160px; }
+    .erp-tabpanel { padding: 8px; padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+
+    /* Thanh điều hướng dưới */
+    .erp-bottombar {
+      display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; z-index: 40; inset: auto 0 0 0;
+      padding: 4px 4px calc(4px + env(safe-area-inset-bottom)); background: var(--erp-panel-bg); border-top: 1px solid var(--erp-border);
+      box-shadow: 0 -4px 14px rgba(0, 0, 0, .08);
+    }
+    .erp-bottombar button {
+      display: grid; justify-items: center; gap: 2px; padding: 5px 2px; border: 0; background: transparent; color: var(--erp-text-muted);
+      font-size: .7em; cursor: pointer; border-radius: var(--erp-radius);
+    }
+    .erp-bottombar button:active { background: var(--erp-primary-soft); color: var(--erp-primary); }
+    .erp-bottombar .erp-icon { width: 22px; height: 22px; }
+
+    .erp-screen__title { font-size: 1.12em; }
+    .erp-toolbar { position: sticky; top: -8px; z-index: 5; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .erp-toolbar::-webkit-scrollbar { display: none; }
+    .erp-filter { position: relative; }
+    .erp-filter__toggle { display: inline-flex; grid-column: 1 / -1; justify-self: start; }
+    .erp-filter > .erp-field, .erp-filter > .erp-field-gap, .erp-filter > .erp-filter__submit { display: none; }
+    .erp-filter.is-open > .erp-field, .erp-filter.is-open > .erp-filter__submit { display: flex; }
+    .erp-fieldset { padding: 12px; }
+    .erp-grid__bar { padding: 6px; }
+    .erp-grid__search { flex: 1; width: auto; min-width: 120px; }
+    .erp-screen--fill { min-height: calc(100dvh - 190px); }
+    .erp-toasts { inset-block-end: calc(76px + env(safe-area-inset-bottom)); inset-inline: 12px; width: auto; }
+    .erp-dialog { width: calc(100vw - 12px) !important; max-height: calc(100dvh - 12px); }
+    .erp-rpop { width: calc(100vw - 16px); }
+  }
+
+  @media (pointer: coarse) {
+    .erp-tbtn, .erp-input, .erp-btn { min-height: 40px; }
+    .erp-grid__hmenu { opacity: 1; }
+  }
+}

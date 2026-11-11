@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Cấu hình người nhận thông báo</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_BPTMNotifySettingsFrm" data-form-type="EDIT" data-mode="find" data-screen-key="AP_BPTMNotifySettingsFrm" data-menu-id="059914">
+<h1>Cấu hình người nhận thông báo</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AP_BPTMNotifySettingsFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="reload" href="/mock/screens/AP_BPTMNotifySettingsFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/AP_BPTMNotifySettingsFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AP_BPTMNotifySettingsFrm-FromDate">Từ ngày</label><input id="flt-AP_BPTMNotifySettingsFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AP_BPTMNotifySettingsFrm-ToDate">Đến ngày</label><input id="flt-AP_BPTMNotifySettingsFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-AP_BPTMNotifySettingsFrm-BranchID">Chi nhánh</label><select id="flt-AP_BPTMNotifySettingsFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AP_BPTMNotifySettingsFrm-q">Tìm nhanh</label><input id="flt-AP_BPTMNotifySettingsFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserAutoID" data-selectable="single" data-total-rows="24" data-sort="UserAutoID:desc">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="link" data-width="110">Mã Auto người dùng</th>
+<th scope="col" data-field="RoleCode" data-type="text" data-width="110" data-frozen>Vai trò nhận</th>
+<th scope="col" data-field="TargetType" data-type="text" data-width="110">Kiểu người nhận</th>
+<th scope="col" data-field="TargetCode" data-type="text" data-width="110">Mã nhóm / TK</th>
+<th scope="col" data-field="AlertTypeCode" data-type="text" data-width="110">Loại cảnh báo</th>
+<th scope="col" data-field="IsActive" data-type="bool" data-width="60">Đang dùng</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td><a href="/mock/records/AP_BPTMNotifySettingsFrm/1.html" data-target="tab">UAI001</a></td><td>RC001</td><td>Loại đích 1</td><td>TC001</td><td>ATC001</td><td data-value="false"></td><td></td><td>Dương Văn Phúc</td><td data-value="2026-10-16">16/10/2026</td><td>Dương Văn Phúc</td><td data-value="2026-09-06">06/09/2026</td></tr>
+<tr data-key="UAI002"><td><a href="/mock/records/AP_BPTMNotifySettingsFrm/2.html" data-target="tab">UAI002</a></td><td>RC002</td><td>Loại đích 2</td><td>TC002</td><td>ATC002</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Phạm Thu Dung</td><td data-value="2026-10-29">29/10/2026</td><td>Phạm Thu Dung</td><td data-value="2026-09-29">29/09/2026</td></tr>
+<tr data-key="UAI003"><td><a href="/mock/records/AP_BPTMNotifySettingsFrm/3.html" data-target="tab">UAI003</a></td><td>RC003</td><td></td><td>TC003</td><td>ATC003</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Đỗ Văn Minh</td><td data-value="2026-07-19">19/07/2026</td><td>Đỗ Văn Minh</td><td data-value="2026-09-15">15/09/2026</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>RC004</td><td>Loại đích 4</td><td>TC004</td><td>ATC004</td><td data-value="false"></td><td></td><td>Trần Thị Bích</td><td data-value="2026-10-21">21/10/2026</td><td>Trần Thị Bích</td><td data-value="2026-09-30">30/09/2026</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>RC005</td><td></td><td>TC005</td><td>ATC005</td><td data-value="false"></td><td></td><td>Đặng Quốc Huy</td><td data-value="2026-10-04">04/10/2026</td><td>Đặng Quốc Huy</td><td data-value="2026-08-17">17/08/2026</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>RC006</td><td></td><td>TC006</td><td>ATC006</td><td data-value="true">Có</td><td>Khách yêu cầu xuất hóa đơn</td><td>Lý Thị Quỳnh</td><td data-value="2026-09-03">03/09/2026</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-14">14/10/2026</td></tr>
+<tr data-key="UAI007"><td>UAI007</td><td>RC007</td><td></td><td>TC007</td><td>ATC007</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td>Hoàng Minh Đức</td><td data-value="2026-09-26">26/09/2026</td><td>Hoàng Minh Đức</td><td data-value="2026-08-06">06/08/2026</td></tr>
+<tr data-key="UAI008"><td>UAI008</td><td>RC008</td><td>Loại đích 8</td><td>TC008</td><td>ATC008</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Ngô Thị Ngọc</td><td data-value="2026-08-17">17/08/2026</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-18">18/09/2026</td></tr>
+<tr data-key="UAI009"><td>UAI009</td><td>RC009</td><td>Loại đích 9</td><td>TC009</td><td>ATC009</td><td data-value="false"></td><td></td><td>Lê Hoàng Cường</td><td data-value="2026-07-17">17/07/2026</td><td>Lê Hoàng Cường</td><td data-value="2026-07-20">20/07/2026</td></tr>
+<tr data-key="UAI010"><td>UAI010</td><td>RC010</td><td>Loại đích 10</td><td>TC010</td><td>ATC010</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td>Bùi Thanh Lan</td><td data-value="2026-08-15">15/08/2026</td><td>Bùi Thanh Lan</td><td data-value="2026-07-26">26/07/2026</td></tr>
+<tr data-key="UAI011"><td>UAI011</td><td>RC011</td><td></td><td>TC011</td><td>ATC011</td><td data-value="true">Có</td><td></td><td>Nguyễn Văn An</td><td data-value="2026-07-15">15/07/2026</td><td>Nguyễn Văn An</td><td data-value="2026-10-01">01/10/2026</td></tr>
+<tr data-key="UAI012"><td>UAI012</td><td>RC012</td><td></td><td>TC012</td><td>ATC012</td><td data-value="false"></td><td></td><td>Vũ Thị Hà</td><td data-value="2026-07-31">31/07/2026</td><td>Vũ Thị Hà</td><td data-value="2026-07-28">28/07/2026</td></tr>
+<tr data-key="UAI013"><td>UAI013</td><td>RC013</td><td></td><td>TC013</td><td>ATC013</td><td data-value="false"></td><td></td><td>Dương Văn Phúc</td><td data-value="2026-11-08">08/11/2026</td><td>Dương Văn Phúc</td><td data-value="2026-08-11">11/08/2026</td></tr>
+<tr data-key="UAI014"><td>UAI014</td><td>RC014</td><td>Loại đích 14</td><td>TC014</td><td>ATC014</td><td data-value="false"></td><td></td><td>Phạm Thu Dung</td><td data-value="2026-08-04">04/08/2026</td><td>Phạm Thu Dung</td><td data-value="2026-09-13">13/09/2026</td></tr>
+<tr data-key="UAI015"><td>UAI015</td><td>RC015</td><td>Loại đích 15</td><td>TC015</td><td>ATC015</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Đỗ Văn Minh</td><td data-value="2026-10-27">27/10/2026</td><td>Đỗ Văn Minh</td><td data-value="2026-08-28">28/08/2026</td></tr>
+<tr data-key="UAI016"><td>UAI016</td><td>RC016</td><td>Loại đích 16</td><td>TC016</td><td>ATC016</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Trần Thị Bích</td><td data-value="2026-08-23">23/08/2026</td><td>Trần Thị Bích</td><td data-value="2026-08-07">07/08/2026</td></tr>
+<tr data-key="UAI017"><td>UAI017</td><td>RC017</td><td>Loại đích 17</td><td>TC017</td><td>ATC017</td><td data-value="true">Có</td><td>Theo hợp đồng số 12/2026</td><td>Đặng Quốc Huy</td><td data-value="2026-09-08">08/09/2026</td><td>Đặng Quốc Huy</td><td data-value="2026-08-04">04/08/2026</td></tr>
+<tr data-key="UAI018"><td>UAI018</td><td>RC018</td><td></td><td>TC018</td><td>ATC018</td><td data-value="false"></td><td>Hàng nhập khẩu</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-08">08/10/2026</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-24">24/08/2026</td></tr>
+<tr data-key="UAI019"><td>UAI019</td><td>RC019</td><td></td><td>TC019</td><td>ATC019</td><td data-value="true">Có</td><td>Theo hợp đồng số 12/2026</td><td>Hoàng Minh Đức</td><td data-value="2026-10-28">28/10/2026</td><td>Hoàng Minh Đức</td><td data-value="2026-11-09">09/11/2026</td></tr>
+<tr data-key="UAI020"><td>UAI020</td><td>RC020</td><td>Loại đích 20</td><td>TC020</td><td>ATC020</td><td data-value="false"></td><td>Kiểm tra kỹ trước khi nhận</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-26">26/10/2026</td><td>Ngô Thị Ngọc</td><td data-value="2026-07-25">25/07/2026</td></tr>
+<tr data-key="UAI021"><td>UAI021</td><td>RC021</td><td>Loại đích 21</td><td>TC021</td><td>ATC021</td><td data-value="true">Có</td><td></td><td>Lê Hoàng Cường</td><td data-value="2026-07-18">18/07/2026</td><td>Lê Hoàng Cường</td><td data-value="2026-08-03">03/08/2026</td></tr>
+<tr data-key="UAI022"><td>UAI022</td><td>RC022</td><td>Loại đích 22</td><td>TC022</td><td>ATC022</td><td data-value="false"></td><td></td><td>Bùi Thanh Lan</td><td data-value="2026-10-07">07/10/2026</td><td>Bùi Thanh Lan</td><td data-value="2026-07-16">16/07/2026</td></tr>
+<tr data-key="UAI023"><td>UAI023</td><td>RC023</td><td>Loại đích 23</td><td>TC023</td><td>ATC023</td><td data-value="false"></td><td>Giao hàng trong tuần</td><td>Nguyễn Văn An</td><td data-value="2026-10-04">04/10/2026</td><td>Nguyễn Văn An</td><td data-value="2026-10-03">03/10/2026</td></tr>
+<tr data-key="UAI024"><td>UAI024</td><td>RC024</td><td>Loại đích 24</td><td>TC024</td><td>ATC024</td><td data-value="false"></td><td>Theo hợp đồng số 12/2026</td><td>Vũ Thị Hà</td><td data-value="2026-09-20">20/09/2026</td><td>Vũ Thị Hà</td><td data-value="2026-09-03">03/09/2026</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

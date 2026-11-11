@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thông tin hợp đồng — CID003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="ContractListFrm" data-form-type="EDIT" data-mode="view" data-screen-key="ContractListFrm:CID003" data-menu-id="060012">
+<h1>Thông tin hợp đồng — CID003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/ContractListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/ContractListFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-ContractListFrm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/ContractListFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/ContractListFrm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/ContractListFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/ContractListFrm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-ContractListFrm-3" method="post" action="/mock/records/ContractListFrm/1.saved.html" data-key-field="ContractID" data-key="CID003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="12"><label for="f-rec-ContractListFrm-3-ContractID">Hợp đồng</label><input id="f-rec-ContractListFrm-3-ContractID" name="ContractID" value="CID003" readonly></div>
+<div data-erp="field" data-control="date" data-span="4" data-row-start><label for="f-rec-ContractListFrm-3-ContractDate">Ngày hợp đồng</label><input id="f-rec-ContractListFrm-3-ContractDate" name="ContractDate" type="date" value="2026-07-14" readonly></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-ContractListFrm-3-ExpireContrachDate">Ngày hết hạn HĐ</label><input id="f-rec-ContractListFrm-3-ExpireContrachDate" name="ExpireContrachDate" type="date" value="2026-09-04" readonly></div>
+<div data-erp="field" data-control="text" data-span="3"><label for="f-rec-ContractListFrm-3-BranchID">Chi nhánh</label><input id="f-rec-ContractListFrm-3-BranchID" name="BranchID" value="DN" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-ContractListFrm-3-ContractName">Tên hợp đồng</label><input id="f-rec-ContractListFrm-3-ContractName" name="ContractName" value="Tên hợp đồng 3" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-ContractListFrm-3-ContractName2">Name2 hợp đồng</label><input id="f-rec-ContractListFrm-3-ContractName2" name="ContractName2" value="" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="12" data-row-start><label for="f-rec-ContractListFrm-3-ObjectID">Mã đối tượng</label><input id="f-rec-ContractListFrm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-ContractListFrm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="lookup" data-span="12" data-row-start><label for="f-rec-ContractListFrm-3-EmployeeID">Nhân viên</label><input id="f-rec-ContractListFrm-3-EmployeeID" name="EmployeeID" value="NV003" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-ContractListFrm-3-EmployeeID">Lê Hoàng Cường</output></div>
+<div data-erp="field" data-control="select" data-span="12" data-row-start><label for="f-rec-ContractListFrm-3-SupportEmployeeID">Mã nhân viên Support</label><select id="f-rec-ContractListFrm-3-SupportEmployeeID" name="SupportEmployeeID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="9" data-row-start><label for="f-rec-ContractListFrm-3-PaymentTermID">Điều khoản thanh toán</label><select id="f-rec-ContractListFrm-3-PaymentTermID" name="PaymentTermID" disabled><option value=""></option></select></div>
+<div data-erp="field" data-control="text" data-span="3"><label for="f-rec-ContractListFrm-3-CurrencyID">Loại tiền</label><input id="f-rec-ContractListFrm-3-CurrencyID" name="CurrencyID" value="EUR" readonly></div>
+<div data-erp="field" data-control="money" data-span="4" data-row-start><label for="f-rec-ContractListFrm-3-ContractAmount">Tiền hợp đồng</label><input id="f-rec-ContractListFrm-3-ContractAmount" name="ContractAmount" inputmode="decimal" value="396500000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="4"><label for="f-rec-ContractListFrm-3-CreditLimit">Limit Credit</label><input id="f-rec-ContractListFrm-3-CreditLimit" name="CreditLimit" inputmode="decimal" value="121000000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="4"><label for="f-rec-ContractListFrm-3-CurrentBalance">Số dư Current</label><input id="f-rec-ContractListFrm-3-CurrentBalance" name="CurrentBalance" inputmode="decimal" value="36200000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Mở liên kết</button></div>
+<div data-erp="field" data-control="text" data-span="9"><label for="f-rec-ContractListFrm-3-DocumentUrl">Liên kết chứng từ</label><input id="f-rec-ContractListFrm-3-DocumentUrl" name="DocumentUrl" value="Liên kết chứng từ 3" readonly></div>
+<div data-erp="field" data-control="select" data-span="6" data-row-start><label for="f-rec-ContractListFrm-3-StatusID">Trạng thái</label><select id="f-rec-ContractListFrm-3-StatusID" name="StatusID" disabled><option value=""></option><option value="0" selected>Nháp</option><option value="1">Chờ duyệt</option><option value="2">Đã duyệt</option><option value="3">Hoàn thành</option><option value="9">Hủy</option></select></div>
+<div data-erp="field" data-control="text" data-span="6"><label for="f-rec-ContractListFrm-3-RecordRevenue">Revenue Record</label><input id="f-rec-ContractListFrm-3-RecordRevenue" name="RecordRevenue" value="Revenue Record 3" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết hàng hóa" data-badge="2">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="2">
+<thead><tr>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110" data-readonly>Mã hàng NCC</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240" data-readonly>Tên hàng</th>
+<th scope="col" data-field="ItemGroupID" data-type="text" data-width="110" data-readonly>Nhóm hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-readonly>ĐVT</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="Unit2" data-type="text" data-width="110">ĐVT 2</th>
+<th scope="col" data-field="UnitFactor" data-type="number" data-width="70" data-decimals="0" data-readonly>Hệ số quy đổi</th>
+<th scope="col" data-field="Quantity2" data-type="number" data-width="70" data-decimals="0" data-readonly>Số lượng 2</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="PriceAfterVAT" data-type="money" data-width="120" data-decimals="0" data-sum="sum">VAT After đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>% VAT</th>
+<th scope="col" data-field="VATAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tiền VAT</th>
+<th scope="col" data-field="ContractAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tiền hợp đồng</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240" data-hidden>Diễn giải</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden>Ghi chú</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110" data-hidden>Kho</th>
+<th scope="col" data-field="DeliveryQuantity" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum">Số lượng Delivery</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="ContractID" data-type="text" data-width="110" data-hidden>Hợp đồng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>VT0001</td><td>IC001</td><td>Máy đo huyết áp điện tử</td><td>IGI001</td><td>Cái</td><td data-value="31">31</td><td>ĐVT 2 1</td><td data-value="97">97</td><td data-value="53">53</td><td data-value="121000">121.000</td><td data-value="36400000">36.400.000</td><td data-value="3751000">3.751.000</td><td data-value="10">10</td><td data-value="40450000">40.450.000</td><td data-value="87100000">87.100.000</td><td>Giao hàng trong tuần</td><td></td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="31">31</td><td>UAI001</td><td>CID001</td></tr>
+<tr data-key="UAI002"><td>VT0008</td><td>IC002</td><td>Hóa chất xét nghiệm Glucose</td><td>IGI002</td><td>Hộp</td><td data-value="197">197</td><td>ĐVT 2 2</td><td data-value="52">52</td><td data-value="71">71</td><td data-value="1902500">1.902.500</td><td data-value="6700000">6.700.000</td><td data-value="374792500">374.792.500</td><td data-value="10">10</td><td data-value="91750000">91.750.000</td><td data-value="30900000">30.900.000</td><td>Giao hàng trong tuần</td><td>Hàng nhập khẩu</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="170">170</td><td>UAI002</td><td>CID002</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="228">228</td><td></td><td></td><td></td><td data-field="UnitPrice" data-value="2023500">2.023.500</td><td data-field="PriceAfterVAT" data-value="43100000">43.100.000</td><td data-field="Amount" data-value="378543500">378.543.500</td><td></td><td data-field="VATAmount" data-value="132200000">132.200.000</td><td data-field="ContractAmount" data-value="118000000">118.000.000</td><td></td><td></td><td></td><td data-field="DeliveryQuantity" data-value="201">201</td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Các đợt thanh toán" data-badge="2">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="single" data-total-rows="2">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="ContractID" data-type="text" data-width="110" data-frozen>Hợp đồng</th>
+<th scope="col" data-field="DotThanhToan" data-type="text" data-width="110">Toan Thanh Dot</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="NgayThanhToan" data-type="date" data-width="95">Toan Thanh Ngay</th>
+<th scope="col" data-field="DienGiai" data-type="text" data-width="110">Giai Dien</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>CID001</td><td>Toan Thanh Dot 1</td><td data-value="6890000">6.890.000</td><td data-value="2026-10-17">17/10/2026</td><td></td><td></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>CID002</td><td>Toan Thanh Dot 2</td><td data-value="73500000">73.500.000</td><td data-value="2026-11-05">05/11/2026</td><td>Giai Dien 2</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td data-field="Amount" data-value="80390000">80.390.000</td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

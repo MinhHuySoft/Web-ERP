@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục tiền tệ</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CurrencyListFrm" data-form-type="LIST" data-mode="view" data-screen-key="CurrencyListFrm" data-menu-id="0252">
+<h1>Danh mục tiền tệ</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/CurrencyListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/CurrencyListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/CurrencyListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-CurrencyListFrm-q">Tìm nhanh</label><input id="flt-CurrencyListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="CurrencyID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="CurrencyID" data-type="text" data-width="110" data-frozen>Loại tiền</th>
+<th scope="col" data-field="CurrencyName" data-type="text" data-width="240">Tên loại tiền</th>
+<th scope="col" data-field="CurrencyName2" data-type="text" data-width="110">Name2 loại tiền</th>
+<th scope="col" data-field="isMultiply" data-type="bool" data-width="60">Multiply</th>
+<th scope="col" data-field="RateExchange" data-type="number" data-width="70" data-decimals="0">Tỷ giá</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="DonViTienLe" data-type="text" data-width="110">Le Tien Vi Don</th>
+</tr></thead>
+<tbody>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 1</td><td></td><td data-value="false"></td><td data-value="1">1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-21">21/08/2026</td><td data-value="2026-10-16">16/10/2026</td><td>Le Tien Vi Don 1</td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 2</td><td></td><td data-value="false"></td><td data-value="1">1</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-11-10">10/11/2026</td><td data-value="2026-09-27">27/09/2026</td><td></td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 3</td><td></td><td data-value="true">Có</td><td data-value="1">1</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-10">10/09/2026</td><td data-value="2026-11-10">10/11/2026</td><td></td></tr>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 4</td><td>Name2 loại tiền 4</td><td data-value="false"></td><td data-value="1">1</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-29">29/09/2026</td><td data-value="2026-09-13">13/09/2026</td><td>Le Tien Vi Don 4</td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 5</td><td>Name2 loại tiền 5</td><td data-value="false"></td><td data-value="1">1</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-09">09/10/2026</td><td data-value="2026-08-11">11/08/2026</td><td></td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 6</td><td></td><td data-value="false"></td><td data-value="1">1</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-08-08">08/08/2026</td><td></td></tr>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 7</td><td></td><td data-value="false"></td><td data-value="1">1</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-09-17">17/09/2026</td><td data-value="2026-08-15">15/08/2026</td><td>Le Tien Vi Don 7</td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 8</td><td>Name2 loại tiền 8</td><td data-value="false"></td><td data-value="1">1</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-14">14/09/2026</td><td data-value="2026-10-31">31/10/2026</td><td>Le Tien Vi Don 8</td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 9</td><td>Name2 loại tiền 9</td><td data-value="true">Có</td><td data-value="1">1</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-10-14">14/10/2026</td><td>Le Tien Vi Don 9</td></tr>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 10</td><td>Name2 loại tiền 10</td><td data-value="false"></td><td data-value="1">1</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-09-28">28/09/2026</td><td data-value="2026-09-02">02/09/2026</td><td>Le Tien Vi Don 10</td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 11</td><td>Name2 loại tiền 11</td><td data-value="false"></td><td data-value="1">1</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-08-17">17/08/2026</td><td data-value="2026-10-15">15/10/2026</td><td></td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 12</td><td>Name2 loại tiền 12</td><td data-value="false"></td><td data-value="1">1</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-07-18">18/07/2026</td><td></td></tr>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 13</td><td>Name2 loại tiền 13</td><td data-value="false"></td><td data-value="1">1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-09-24">24/09/2026</td><td data-value="2026-10-14">14/10/2026</td><td></td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 14</td><td></td><td data-value="true">Có</td><td data-value="1">1</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-08-20">20/08/2026</td><td></td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 15</td><td>Name2 loại tiền 15</td><td data-value="false"></td><td data-value="1">1</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-10-16">16/10/2026</td><td></td></tr>
+<tr data-key="VND"><td>VND</td><td>Tên loại tiền 16</td><td>Name2 loại tiền 16</td><td data-value="true">Có</td><td data-value="1">1</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-02">02/10/2026</td><td data-value="2026-09-12">12/09/2026</td><td>Le Tien Vi Don 16</td></tr>
+<tr data-key="USD"><td>USD</td><td>Tên loại tiền 17</td><td>Name2 loại tiền 17</td><td data-value="false"></td><td data-value="1">1</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-03">03/10/2026</td><td data-value="2026-08-20">20/08/2026</td><td>Le Tien Vi Don 17</td></tr>
+<tr data-key="EUR"><td>EUR</td><td>Tên loại tiền 18</td><td></td><td data-value="false"></td><td data-value="1">1</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-07-26">26/07/2026</td><td>Le Tien Vi Don 18</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

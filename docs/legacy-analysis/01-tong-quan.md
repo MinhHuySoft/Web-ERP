@@ -201,7 +201,14 @@ Chi tiết ở mục "Hàm ý cho bản web" của từng tài liệu.
    - thanh lý tài sản và thanh lý CCDC không sinh bút toán;
    - "Đổi kỳ" không có tác dụng.
 
-## 6. Định hướng cho bản web (đề xuất, chưa quyết định)
+## 6. Định hướng cho bản web
+
+> **Cập nhật 2026-11-11:** chủ dự án đã chốt QĐ-01…QĐ-05 trong [../QUYET-DINH.md](../QUYET-DINH.md): WinForms chạy
+> song song liên tục trên cùng DB; được tạo bảng riêng (schema `web`); giữ toàn bộ hành vi nghiệp vụ; Ribbon mặc định
+> kèm nhiều theme, responsive; BE .NET 10 + SQL Server. Đề xuất công nghệ chi tiết:
+> [../kien-truc/01-de-xuat-cong-nghe.md](../kien-truc/01-de-xuat-cong-nghe.md). Khi mục dưới đây mâu thuẫn với các
+> quyết định đó, quyết định thắng. Cụ thể: sổ cái đọc từ view hiện có, không dựng nhật ký vật lý (thay đề xuất ở tài
+> liệu 21 §13.1); `SY_User.Password` luôn giữ hash định dạng cũ.
 
 Tổng hợp từ [10](10-engine-form-dong.md) §10, [11](11-engine-luoi-tra-cuu-bao-cao.md) §8,
 [12](12-vo-ung-dung-dang-nhap-phan-quyen.md) §8, [20](20-nghiep-vu-mua-ban-kho-quy.md) §8,
@@ -266,12 +273,9 @@ hàng → quy trình đơn hàng → mua hàng → kho → tính giá & khóa s�
      chạy.
 2. **Chọn khách pilot** và xác nhận DB pilot. Nên chọn khách có build mới (TinPhong, Meracine, Novo) và dùng nhiều
    phân hệ.
-3. **Quyết định nghiệp vụ** (gom từ "Câu hỏi còn mở" của các tài liệu):
-   - WinForms có chạy song song trên cùng DB không, và trong bao lâu?
-   - Có được tạo bảng/schema `web` trong DB khách không?
-   - Web có giữ hành vi "chứng từ chưa duyệt vẫn lên sổ" không?
-   - Giai đoạn đầu có cần in báo cáo RPX không?
-   - Có giữ giao diện Ribbon không?
+3. **Quyết định nghiệp vụ:** đã chốt phần lớn (QĐ-01…QĐ-05 trong [../QUYET-DINH.md](../QUYET-DINH.md)). Còn chờ:
+   - xác nhận danh sách ngoại lệ bảo mật (CQ-02);
+   - hướng làm báo cáo `.rpx` (CQ-03).
 4. **Đối chiếu runtime.** Một số hành vi cần thử trên bản chạy thật hoặc DB test, gồm EDITTOP, POS/CALENDAR/TIMELINE,
    thứ tự giá trị mặc định, định dạng XML gửi SP, và cách xóa detail (cascade hay trigger).
 5. **Bản build:** mã dịch ngược là build 09/11/2026 (Meracine-HN). Các khách chạy build cũ hơn có thể khác ở vài key

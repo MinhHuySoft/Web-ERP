@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục vật tư hàng hóa — VT0008</title></head>
+<body>
+<section data-erp="screen" data-screen-id="ItemListFrm" data-form-type="EDIT" data-mode="view" data-screen-key="ItemListFrm:VT0008" data-menu-id="021290">
+<h1>Danh mục vật tư hàng hóa — VT0008</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/ItemListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/ItemListFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-ItemListFrm-2" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/ItemListFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/ItemListFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/ItemListFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/ItemListFrm/2.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-ItemListFrm-2" method="post" action="/mock/records/ItemListFrm/1.saved.html" data-key-field="ItemID" data-key="VT0008">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-ItemListFrm-2-ItemID">Mã hàng</label><input id="f-rec-ItemListFrm-2-ItemID" name="ItemID" value="VT0008" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID" readonly><output data-erp="lookup-text" for="f-rec-ItemListFrm-2-ItemID">Hóa chất xét nghiệm Glucose</output></div>
+<div data-erp="field" data-control="textarea" data-span="20" data-rows="2"><label for="f-rec-ItemListFrm-2-ItemName">Tên hàng</label><textarea id="f-rec-ItemListFrm-2-ItemName" name="ItemName" rows="2" readonly>Hóa chất xét nghiệm Glucose</textarea></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-ItemName2">Name2 hàng</label><input id="f-rec-ItemListFrm-2-ItemName2" name="ItemName2" value="Name2 hàng 2" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-Unit">ĐVT</label><input id="f-rec-ItemListFrm-2-Unit" name="Unit" value="Hộp" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-ItemListFrm-2-UnitFactor">Hệ số quy đổi</label><input id="f-rec-ItemListFrm-2-UnitFactor" name="UnitFactor" inputmode="decimal" value="55" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-Unit2">ĐVT 2</label><input id="f-rec-ItemListFrm-2-Unit2" name="Unit2" value="ĐVT 2 2" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-ItemListFrm-2-KhoiLuongGram">Gram Luong Khoi</label><input id="f-rec-ItemListFrm-2-KhoiLuongGram" name="KhoiLuongGram" inputmode="decimal" value="45" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-CategoryID">Nhóm hàng</label><input id="f-rec-ItemListFrm-2-CategoryID" name="CategoryID" value="CID002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-ItemGroupID">Nhóm hàng</label><input id="f-rec-ItemListFrm-2-ItemGroupID" name="ItemGroupID" value="IGI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-NhomNganhHangID">Mã Hang Nganh Nhom</label><input id="f-rec-ItemListFrm-2-NhomNganhHangID" name="NhomNganhHangID" value="NNH002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-HangSX">Hãng sản xuất</label><input id="f-rec-ItemListFrm-2-HangSX" name="HangSX" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-QuiCachDongGoi">Goi Dong Cach Qui</label><input id="f-rec-ItemListFrm-2-QuiCachDongGoi" name="QuiCachDongGoi" value="Goi Dong Cach Qui 2" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-ItemListFrm-2-isProperty">Property</label><input type="hidden" name="isProperty" value="false"><input id="f-rec-ItemListFrm-2-isProperty" name="isProperty" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-ItemListFrm-2-isLot">Lô</label><input type="hidden" name="isLot" value="false"><input id="f-rec-ItemListFrm-2-isLot" name="isLot" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-ItemListFrm-2-IsService">Dịch vụ</label><input type="hidden" name="IsService" value="false"><input id="f-rec-ItemListFrm-2-IsService" name="IsService" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-VATID">VATID</label><input id="f-rec-ItemListFrm-2-VATID" name="VATID" value="VAT002" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-ItemListFrm-2-InvAccID">TK kho</label><input id="f-rec-ItemListFrm-2-InvAccID" name="InvAccID" value="3331" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-ItemListFrm-2-InvAccID">Thuế GTGT phải nộp</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-CostOfSaleAccID">Mã tài khoản Sale chi phí</label><input id="f-rec-ItemListFrm-2-CostOfSaleAccID" name="CostOfSaleAccID" value="COS002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-IncomeAccID">Mã tài khoản Income</label><input id="f-rec-ItemListFrm-2-IncomeAccID" name="IncomeAccID" value="IAI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-DiscountAcctID">Mã Acct chiết khấu</label><input id="f-rec-ItemListFrm-2-DiscountAcctID" name="DiscountAcctID" value="DAI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-ExpenseAccID">Mã tài khoản Expense</label><input id="f-rec-ItemListFrm-2-ExpenseAccID" name="ExpenseAccID" value="EAI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-ReturnAccID">Mã tài khoản trả lại</label><input id="f-rec-ItemListFrm-2-ReturnAccID" name="ReturnAccID" value="RAI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-ItemListFrm-2-DefaultStorehouseID">Mã Storehouse Default</label><input id="f-rec-ItemListFrm-2-DefaultStorehouseID" name="DefaultStorehouseID" value="DSI002" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-ItemListFrm-2-CostCenterID">Bộ phận</label><input id="f-rec-ItemListFrm-2-CostCenterID" name="CostCenterID" value="KT" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-ItemListFrm-2-CostCenterID">Phòng Kế toán</output></div>
+</fieldset>
+</form>
+</section>
+</body></html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Xác nhận đơn hàng — DMB1126/0002</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_OrderComfirmFrm" data-form-type="EDIT" data-mode="view" data-screen-key="AR_OrderComfirmFrm:DMB1126/0002" data-menu-id="060021">
+<h1>Xác nhận đơn hàng — DMB1126/0002</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_OrderComfirmFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/AR_OrderComfirmFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-AR_OrderComfirmFrm-2" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/AR_OrderComfirmFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/AR_OrderComfirmFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/AR_OrderComfirmFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/AR_OrderComfirmFrm/2.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-AR_OrderComfirmFrm-2" method="post" action="/mock/records/AR_OrderComfirmFrm/1.saved.html" data-key-field="DocumentID" data-key="DMB1126/0002">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4"><label for="f-rec-AR_OrderComfirmFrm-2-DocumentID">Số chứng từ</label><input id="f-rec-AR_OrderComfirmFrm-2-DocumentID" name="DocumentID" value="DMB1126/0002" readonly></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-AR_OrderComfirmFrm-2-DocumentDate">Ngày chứng từ</label><input id="f-rec-AR_OrderComfirmFrm-2-DocumentDate" name="DocumentDate" type="date" value="2026-10-19" readonly></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Chuyển trạng thái</button></div>
+<div data-erp="field" data-control="text" data-span="9" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-ContractID">Hợp đồng</label><input id="f-rec-AR_OrderComfirmFrm-2-ContractID" name="ContractID" value="CID002" readonly></div>
+<div data-erp="field" data-control="text" data-span="3"><label for="f-rec-AR_OrderComfirmFrm-2-BranchID">Chi nhánh</label><input id="f-rec-AR_OrderComfirmFrm-2-BranchID" name="BranchID" value="HCM" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="12" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-ManagerID">Quản lý</label><input id="f-rec-AR_OrderComfirmFrm-2-ManagerID" name="ManagerID" value="NV002" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-AR_OrderComfirmFrm-2-ManagerID">Trần Thị Bích</output></div>
+<div data-erp="field" data-control="lookup" data-span="12" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-EmployeeID">Nhân viên</label><input id="f-rec-AR_OrderComfirmFrm-2-EmployeeID" name="EmployeeID" value="NV002" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-AR_OrderComfirmFrm-2-EmployeeID">Trần Thị Bích</output></div>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-ObjectID">Mã đối tượng</label><input id="f-rec-AR_OrderComfirmFrm-2-ObjectID" name="ObjectID" value="KH0004" readonly></div>
+<div data-erp="field" data-control="text" data-span="8"><label for="f-rec-AR_OrderComfirmFrm-2-ObjectName">Tên đối tượng</label><input id="f-rec-AR_OrderComfirmFrm-2-ObjectName" name="ObjectName" value="Công ty CP Dược phẩm Thành Đạt" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-Address">Địa chỉ</label><input id="f-rec-AR_OrderComfirmFrm-2-Address" name="Address" value="89 Lê Lợi, Cần Thơ" readonly></div>
+<div data-erp="field" data-control="date" data-span="6" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-DeliverDate">Ngày Deliver</label><input id="f-rec-AR_OrderComfirmFrm-2-DeliverDate" name="DeliverDate" type="date" value="2026-08-12" readonly></div>
+<div data-erp="field" data-control="button" data-span="6"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Mở liên kết</button></div>
+<div data-erp="field" data-control="text" data-span="9"><label for="f-rec-AR_OrderComfirmFrm-2-DocumentUrl">Liên kết chứng từ</label><input id="f-rec-AR_OrderComfirmFrm-2-DocumentUrl" name="DocumentUrl" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-Memo">Diễn giải</label><input id="f-rec-AR_OrderComfirmFrm-2-Memo" name="Memo" value="Theo hợp đồng số 12/2026" readonly></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AR_OrderComfirmFrm-2-Notes">Ghi chú</label><input id="f-rec-AR_OrderComfirmFrm-2-Notes" name="Notes" value="Kiểm tra kỹ trước khi nhận" readonly></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run">Thực hiện</button></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết 1" data-badge="7">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="7">
+<thead><tr>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="ItemCode" data-type="text" data-width="110">Mã hàng NCC</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240" data-readonly>Tên hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-readonly>ĐVT</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="Unit2" data-type="text" data-width="110" data-readonly>ĐVT 2</th>
+<th scope="col" data-field="UnitFactor" data-type="number" data-width="70" data-decimals="0" data-readonly>Hệ số quy đổi</th>
+<th scope="col" data-field="Quantity2" data-type="number" data-width="70" data-decimals="0" data-readonly>Số lượng 2</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-readonly data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-readonly data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="DiscountPercent" data-type="percent" data-width="60" data-decimals="2">% chiết khấu</th>
+<th scope="col" data-field="DiscountAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Chiết khấu</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>% VAT</th>
+<th scope="col" data-field="VATAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tiền VAT</th>
+<th scope="col" data-field="TotalAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="SoLuongHopDong" data-type="number" data-width="70" data-decimals="0" data-hidden data-readonly>Dong Hop Luong So</th>
+<th scope="col" data-field="DeliveryQuantity" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-readonly data-sum="sum">Số lượng Delivery</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="TonKhoHienTai" data-type="number" data-width="70" data-decimals="0" data-hidden>Tai Hien Kho Ton</th>
+<th scope="col" data-field="VATQuantity" data-type="quantity" data-width="80" data-decimals="2" data-hidden data-sum="sum">Số lượng VAT</th>
+<th scope="col" data-field="DienGiai" data-type="text" data-width="110" data-hidden>Giai Dien</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden>Ghi chú</th>
+<th scope="col" data-field="Property" data-type="text" data-width="110" data-hidden>Property</th>
+<th scope="col" data-field="Property2" data-type="text" data-width="110" data-hidden>Property2</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden>Mã Parent</th>
+<th scope="col" data-field="Notes2" data-type="text" data-width="110" data-hidden>Notes2</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-hidden>Khoản mục</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110" data-hidden>Kho</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>VT0001</td><td>IC001</td><td>Máy đo huyết áp điện tử</td><td>Cái</td><td data-value="185">185</td><td></td><td data-value="12">12</td><td data-value="37">37</td><td data-value="34000">34.000</td><td data-value="6290000">6.290.000</td><td data-value="5">5</td><td data-value="2520000">2.520.000</td><td data-value="10">10</td><td data-value="17360000">17.360.000</td><td data-value="17260000">17.260.000</td><td data-value="2">2</td><td data-value="185">185</td><td>UAI001</td><td>DMB1126/0001</td><td data-value="22">22</td><td data-value="196">196</td><td></td><td>Khách yêu cầu xuất hóa đơn</td><td>Property 1</td><td>Property2 1</td><td>PID001</td><td>Theo hợp đồng số 12/2026</td><td>CID001</td><td data-value="KHO-HN">Kho Hà Nội</td></tr>
+<tr data-key="UAI002"><td>VT0008</td><td>IC002</td><td>Hóa chất xét nghiệm Glucose</td><td>Hộp</td><td data-value="90">90</td><td></td><td data-value="50">50</td><td data-value="83">83</td><td data-value="92000">92.000</td><td data-value="8280000">8.280.000</td><td data-value="5">5</td><td data-value="31250000">31.250.000</td><td data-value="8">8</td><td data-value="386000000">386.000.000</td><td data-value="7940000">7.940.000</td><td data-value="79">79</td><td data-value="12">12</td><td>UAI002</td><td>DMB1126/0002</td><td data-value="92">92</td><td data-value="79">79</td><td>Giai Dien 2</td><td>Theo hợp đồng số 12/2026</td><td>Property 2</td><td>Property2 2</td><td>PID002</td><td></td><td>CID002</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td></tr>
+<tr data-key="UAI003"><td>VT0015</td><td>IC003</td><td>Nhiệt kế điện tử</td><td>Cái</td><td data-value="81">81</td><td>ĐVT 2 3</td><td data-value="5">5</td><td data-value="50">50</td><td data-value="662500">662.500</td><td data-value="53662500">53.662.500</td><td data-value="8">8</td><td data-value="85250000">85.250.000</td><td data-value="5">5</td><td data-value="6710000">6.710.000</td><td data-value="28500000">28.500.000</td><td data-value="94">94</td><td data-value="21">21</td><td>UAI003</td><td>DMB1126/0003</td><td data-value="42">42</td><td data-value="21">21</td><td>Giai Dien 3</td><td></td><td>Property 3</td><td></td><td>PID003</td><td>Kiểm tra kỹ trước khi nhận</td><td>CID003</td><td data-value="KHO-DN">Kho Đà Nẵng</td></tr>
+<tr data-key="UAI004"><td>VT0002</td><td>IC004</td><td>Bơm tiêm 5ml</td><td>Hộp</td><td data-value="43">43</td><td></td><td data-value="31">31</td><td data-value="18">18</td><td data-value="1432500">1.432.500</td><td data-value="61597500">61.597.500</td><td data-value="10">10</td><td data-value="79600000">79.600.000</td><td data-value="8">8</td><td data-value="132500000">132.500.000</td><td data-value="216000000">216.000.000</td><td data-value="76">76</td><td data-value="49">49</td><td>UAI004</td><td>DMB1126/0004</td><td data-value="63">63</td><td data-value="146">146</td><td></td><td></td><td>Property 4</td><td></td><td>PID004</td><td></td><td>CID004</td><td data-value="KHO-BH">Kho bảo hành</td></tr>
+<tr data-key="UAI005"><td>VT0009</td><td>IC005</td><td>Khẩu trang y tế 4 lớp</td><td>Hộp</td><td data-value="34">34</td><td>ĐVT 2 5</td><td data-value="53">53</td><td data-value="20">20</td><td data-value="28400">28.400</td><td data-value="965600">965.600</td><td data-value="10">10</td><td data-value="47050000">47.050.000</td><td data-value="10">10</td><td data-value="11120000">11.120.000</td><td data-value="159250000">159.250.000</td><td data-value="37">37</td><td data-value="19">19</td><td>UAI005</td><td>DMB1126/0005</td><td data-value="73">73</td><td data-value="102">102</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td></td><td>Property2 5</td><td>PID005</td><td></td><td>CID005</td><td data-value="KHO-HN">Kho Hà Nội</td></tr>
+<tr data-key="UAI006"><td>VT0016</td><td>IC006</td><td>Que thử đường huyết</td><td>Hộp</td><td data-value="96">96</td><td>ĐVT 2 6</td><td data-value="24">24</td><td data-value="94">94</td><td data-value="91200">91.200</td><td data-value="8755200">8.755.200</td><td data-value="10">10</td><td data-value="447500000">447.500.000</td><td data-value="8">8</td><td data-value="20750000">20.750.000</td><td data-value="3890000">3.890.000</td><td data-value="18">18</td><td data-value="69">69</td><td>UAI006</td><td>DMB1126/0006</td><td data-value="9">9</td><td data-value="138">138</td><td></td><td>Giao hàng trong tuần</td><td></td><td></td><td>PID006</td><td>Khách yêu cầu xuất hóa đơn</td><td>CID006</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td></tr>
+<tr data-key="UAI007"><td>VT0003</td><td>IC007</td><td>Găng tay y tế không bột</td><td>Hộp</td><td data-value="32">32</td><td></td><td data-value="17">17</td><td data-value="55">55</td><td data-value="43000">43.000</td><td data-value="1376000">1.376.000</td><td data-value="0">0</td><td data-value="5760000">5.760.000</td><td data-value="5">5</td><td data-value="48000000">48.000.000</td><td data-value="8920000">8.920.000</td><td data-value="51">51</td><td data-value="134">134</td><td>UAI007</td><td>DMB1126/0007</td><td data-value="87">87</td><td data-value="128">128</td><td>Giai Dien 7</td><td>Kiểm tra kỹ trước khi nhận</td><td></td><td>Property2 7</td><td>PID007</td><td>Hàng nhập khẩu</td><td>CID007</td><td data-value="KHO-DN">Kho Đà Nẵng</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="Quantity" data-value="561">561</td><td></td><td></td><td></td><td data-field="UnitPrice" data-value="2383600">2.383.600</td><td data-field="Amount" data-value="140926800">140.926.800</td><td></td><td data-field="DiscountAmount" data-value="698930000">698.930.000</td><td></td><td data-field="VATAmount" data-value="622440000">622.440.000</td><td data-field="TotalAmount" data-value="441760000">441.760.000</td><td></td><td data-field="DeliveryQuantity" data-value="489">489</td><td></td><td></td><td></td><td data-field="VATQuantity" data-value="810">810</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Lịch sử gởi / duyệt" data-badge="7">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="single" data-total-rows="7">
+<thead><tr>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="ThoiGian" data-type="datetime" data-width="130" data-frozen>Thời gian</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="240">Người dùng</th>
+<th scope="col" data-field="StatusName" data-type="status" data-width="120">Trạng thái</th>
+<th scope="col" data-field="BackColor" data-type="text" data-width="110" data-hidden>Màu</th>
+<th scope="col" data-field="SendTo" data-type="text" data-width="110">Gửi đến</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-wrap>Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>DMB1126/0001</td><td data-value="2026-08-20T14:15:00">20/08/2026 14:15</td><td>Đỗ Văn Minh</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td></td><td>Đặng Quốc Huy</td><td></td><td>UAI001</td></tr>
+<tr data-key="UAI002"><td>DMB1126/0002</td><td data-value="2026-09-29T08:15:00">29/09/2026 08:15</td><td>Trần Thị Bích</td><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td></td><td>Lý Thị Quỳnh</td><td>Theo hợp đồng số 12/2026</td><td>UAI002</td></tr>
+<tr data-key="UAI003"><td>DMB1126/0003</td><td data-value="2026-08-22T07:00:00">22/08/2026 07:00</td><td>Đặng Quốc Huy</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Màu 3</td><td>Hoàng Minh Đức</td><td>Kiểm tra kỹ trước khi nhận</td><td>UAI003</td></tr>
+<tr data-key="UAI004"><td>DMB1126/0004</td><td data-value="2026-10-04T14:00:00">04/10/2026 14:00</td><td>Lý Thị Quỳnh</td><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td>Màu 4</td><td>Ngô Thị Ngọc</td><td>Giao hàng trong tuần</td><td>UAI004</td></tr>
+<tr data-key="UAI005"><td>DMB1126/0005</td><td data-value="2026-10-10T09:00:00">10/10/2026 09:00</td><td>Hoàng Minh Đức</td><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td>Màu 5</td><td>Lê Hoàng Cường</td><td>Hàng nhập khẩu</td><td>UAI005</td></tr>
+<tr data-key="UAI006"><td>DMB1126/0006</td><td data-value="2026-07-14T10:30:00">14/07/2026 10:30</td><td>Ngô Thị Ngọc</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>Màu 6</td><td>Bùi Thanh Lan</td><td></td><td>UAI006</td></tr>
+<tr data-key="UAI007"><td>DMB1126/0007</td><td data-value="2026-11-07T14:15:00">07/11/2026 14:15</td><td>Lê Hoàng Cường</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>Màu 7</td><td>Nguyễn Văn An</td><td></td><td>UAI007</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục nhóm đối tượng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="ObjectGroupListFrm" data-form-type="LIST" data-mode="view" data-screen-key="ObjectGroupListFrm" data-menu-id="021015">
+<h1>Danh mục nhóm đối tượng</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/ObjectGroupListFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/ObjectGroupListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/ObjectGroupListFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-ObjectGroupListFrm-q">Tìm nhanh</label><input id="flt-ObjectGroupListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="ObjectGroupID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="ObjectGroupID" data-type="text" data-width="110" data-frozen>Nhóm đối tượng</th>
+<th scope="col" data-field="ObjectGroupName" data-type="text" data-width="240">Tên nhóm đối tượng</th>
+<th scope="col" data-field="PhanLoaiKhach" data-type="text" data-width="110">Khach Loai Phan</th>
+<th scope="col" data-field="PaymentTermID" data-type="text" data-width="110">Điều khoản thanh toán</th>
+<th scope="col" data-field="LocationID" data-type="text" data-width="110">Mã vị trí</th>
+<th scope="col" data-field="OrderStorehouseID" data-type="text" data-width="110">Mã Storehouse đơn hàng</th>
+<th scope="col" data-field="isCustomer" data-type="bool" data-width="60">Khách hàng</th>
+<th scope="col" data-field="isVendor" data-type="bool" data-width="60">Nhà cung cấp</th>
+<th scope="col" data-field="isEmployee" data-type="bool" data-width="60">Nhân viên</th>
+<th scope="col" data-field="isManager" data-type="bool" data-width="60">Quản lý</th>
+<th scope="col" data-field="isDefault" data-type="bool" data-width="60">Default</th>
+<th scope="col" data-field="STT" data-type="number" data-width="70" data-decimals="0">STT</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="OGI001"><td>OGI001</td><td>Tên nhóm đối tượng 1</td><td></td><td>PTI001</td><td>LID001</td><td>OSI001</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="59">59</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-12">12/08/2026</td><td data-value="2026-08-20">20/08/2026</td></tr>
+<tr data-key="OGI002"><td>OGI002</td><td>Tên nhóm đối tượng 2</td><td>Khach Loai Phan 2</td><td>PTI002</td><td>LID002</td><td>OSI002</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="74">74</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-07-26">26/07/2026</td></tr>
+<tr data-key="OGI003"><td>OGI003</td><td>Tên nhóm đối tượng 3</td><td>Khach Loai Phan 3</td><td>PTI003</td><td>LID003</td><td>OSI003</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="42">42</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-11-09">09/11/2026</td><td data-value="2026-09-19">19/09/2026</td></tr>
+<tr data-key="OGI004"><td>OGI004</td><td>Tên nhóm đối tượng 4</td><td></td><td>PTI004</td><td>LID004</td><td>OSI004</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="99">99</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-08-18">18/08/2026</td><td data-value="2026-08-02">02/08/2026</td></tr>
+<tr data-key="OGI005"><td>OGI005</td><td>Tên nhóm đối tượng 5</td><td>Khach Loai Phan 5</td><td>PTI005</td><td>LID005</td><td>OSI005</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="14">14</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-17">17/07/2026</td><td data-value="2026-07-24">24/07/2026</td></tr>
+<tr data-key="OGI006"><td>OGI006</td><td>Tên nhóm đối tượng 6</td><td>Khach Loai Phan 6</td><td>PTI006</td><td>LID006</td><td>OSI006</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="6">6</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-11-11">11/11/2026</td><td data-value="2026-09-07">07/09/2026</td></tr>
+<tr data-key="OGI007"><td>OGI007</td><td>Tên nhóm đối tượng 7</td><td>Khach Loai Phan 7</td><td>PTI007</td><td>LID007</td><td>OSI007</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="24">24</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-07-28">28/07/2026</td><td data-value="2026-09-02">02/09/2026</td></tr>
+<tr data-key="OGI008"><td>OGI008</td><td>Tên nhóm đối tượng 8</td><td></td><td>PTI008</td><td>LID008</td><td>OSI008</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="62">62</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-08-06">06/08/2026</td></tr>
+<tr data-key="OGI009"><td>OGI009</td><td>Tên nhóm đối tượng 9</td><td></td><td>PTI009</td><td>LID009</td><td>OSI009</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="42">42</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-03">03/10/2026</td><td data-value="2026-07-21">21/07/2026</td></tr>
+<tr data-key="OGI010"><td>OGI010</td><td>Tên nhóm đối tượng 10</td><td>Khach Loai Phan 10</td><td>PTI010</td><td>LID010</td><td>OSI010</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="87">87</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-09-24">24/09/2026</td></tr>
+<tr data-key="OGI011"><td>OGI011</td><td>Tên nhóm đối tượng 11</td><td>Khach Loai Phan 11</td><td>PTI011</td><td>LID011</td><td>OSI011</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="52">52</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-10-10">10/10/2026</td><td data-value="2026-09-05">05/09/2026</td></tr>
+<tr data-key="OGI012"><td>OGI012</td><td>Tên nhóm đối tượng 12</td><td>Khach Loai Phan 12</td><td>PTI012</td><td>LID012</td><td>OSI012</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="32">32</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-25">25/10/2026</td><td data-value="2026-09-18">18/09/2026</td></tr>
+<tr data-key="OGI013"><td>OGI013</td><td>Tên nhóm đối tượng 13</td><td></td><td>PTI013</td><td>LID013</td><td>OSI013</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="44">44</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-11-09">09/11/2026</td></tr>
+<tr data-key="OGI014"><td>OGI014</td><td>Tên nhóm đối tượng 14</td><td>Khach Loai Phan 14</td><td>PTI014</td><td>LID014</td><td>OSI014</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="29">29</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-08-17">17/08/2026</td></tr>
+<tr data-key="OGI015"><td>OGI015</td><td>Tên nhóm đối tượng 15</td><td></td><td>PTI015</td><td>LID015</td><td>OSI015</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="85">85</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-26">26/08/2026</td><td data-value="2026-10-16">16/10/2026</td></tr>
+<tr data-key="OGI016"><td>OGI016</td><td>Tên nhóm đối tượng 16</td><td></td><td>PTI016</td><td>LID016</td><td>OSI016</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="47">47</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-08-03">03/08/2026</td><td data-value="2026-09-16">16/09/2026</td></tr>
+<tr data-key="OGI017"><td>OGI017</td><td>Tên nhóm đối tượng 17</td><td>Khach Loai Phan 17</td><td>PTI017</td><td>LID017</td><td>OSI017</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="28">28</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-06">06/10/2026</td><td data-value="2026-08-07">07/08/2026</td></tr>
+<tr data-key="OGI018"><td>OGI018</td><td>Tên nhóm đối tượng 18</td><td>Khach Loai Phan 18</td><td>PTI018</td><td>LID018</td><td>OSI018</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="58">58</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-07-24">24/07/2026</td><td data-value="2026-10-01">01/10/2026</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

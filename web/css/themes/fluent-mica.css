@@ -1,0 +1,25 @@
+/* Fluent Mica — phong cách Windows 11: nền Mica, lớp vỏ Acrylic trong mờ, bo góc mềm. */
+@layer themes {
+  :root[data-theme="fluent-mica"] {
+    --erp-font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    --erp-bg: #eef0f5;
+    --erp-bg-image: radial-gradient(1200px 600px at 10% -10%, #dfe8f7 0%, transparent 60%), radial-gradient(900px 600px at 100% 0%, #efe6f5 0%, transparent 55%), linear-gradient(180deg, #f3f4f8, #eceff4);
+    --erp-surface: #fbfbfd; --erp-surface-2: #f4f5f8; --erp-surface-3: #e9ebf0; --erp-panel-bg: rgba(255, 255, 255, .78);
+    --erp-text: #1b1b1f; --erp-text-muted: #545866; --erp-text-faint: #73788a;
+    --erp-border: rgba(0, 0, 0, .1); --erp-border-strong: rgba(0, 0, 0, .2);
+    --erp-accent: #0067c0;
+    --erp-radius: 6px; --erp-radius-lg: 10px; --erp-blur: 24px; --erp-chrome-blur: 30px;
+    --erp-shadow-sm: 0 1px 2px rgba(0, 0, 0, .06); --erp-shadow: 0 4px 12px rgba(0, 0, 0, .07); --erp-shadow-lg: 0 18px 44px rgba(0, 0, 0, .16);
+    --erp-chrome-bg: rgba(243, 244, 248, .72); --erp-chrome-text: #1b1b1f; --erp-chrome-muted: #5d6270; --erp-chrome-hover: rgba(0, 0, 0, .05);
+    --erp-ribbon-bg: rgba(250, 250, 252, .78); --erp-ribbon-tabs-bg: transparent; --erp-ribbon-tab-text: #31343c;
+    --erp-ribbon-tab-active-bg: rgba(255, 255, 255, .9); --erp-ribbon-tab-active-text: #0067c0; --erp-ribbon-border: rgba(0, 0, 0, .07);
+    --erp-ribbon-btn-hover: rgba(0, 0, 0, .045); --erp-ribbon-btn-active: rgba(0, 0, 0, .08);
+    --erp-grid-head: #f6f7f9; --erp-grid-line: #eceef2; --erp-grid-selected: #dde9f8; --erp-grid-hover: #f2f6fc;
+    --erp-input-border: rgba(0, 0, 0, .16);
+  }
+  :root[data-theme="fluent-mica"] .erp-ribbon__tabsrow { background: var(--erp-chrome-bg); }
+  :root[data-theme="fluent-mica"] .erp-ribbon__tab[aria-selected="true"] { box-shadow: inset 0 -3px 0 #0067c0; }
+  :root[data-theme="fluent-mica"] .erp-input { border-bottom-color: rgba(0, 0, 0, .34); }
+  :root[data-theme="fluent-mica"] .erp-input:focus { border-bottom: 2px solid #0067c0; box-shadow: none; }
+  :root[data-theme="fluent-mica"] .erp-docbar { background: transparent; }
+}

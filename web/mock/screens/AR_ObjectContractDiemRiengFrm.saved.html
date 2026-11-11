@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Bảng điểm riêng theo khách hàng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_ObjectContractDiemRiengFrm" data-form-type="LIST" data-mode="view" data-screen-key="AR_ObjectContractDiemRiengFrm" data-menu-id="400106">
+<h1>Bảng điểm riêng theo khách hàng</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/AR_ObjectContractDiemRiengFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/AR_ObjectContractDiemRiengFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank">In</a></li>
+</menu>
+<form data-erp="filter" method="get" action="/mock/screens/AR_ObjectContractDiemRiengFrm.html">
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AR_ObjectContractDiemRiengFrm-q">Tìm nhanh</label><input id="flt-AR_ObjectContractDiemRiengFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserAutoID" data-selectable="multi" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="FromDate" data-type="date" data-width="95" data-frozen>Từ ngày</th>
+<th scope="col" data-field="ToDate" data-type="date" data-width="95">Đến ngày</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+<th scope="col" data-field="ObjectName" data-type="text" data-width="240" data-readonly>Tên đối tượng</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110">Mã hàng</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="240" data-readonly>Tên hàng</th>
+<th scope="col" data-field="DiemSanPham" data-type="number" data-width="70" data-decimals="0">Pham San Diem</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td data-value="2026-09-17">17/09/2026</td><td data-value="2026-11-04">04/11/2026</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>VT0001</td><td>Máy đo huyết áp điện tử</td><td data-value="89">89</td><td>UAI001</td></tr>
+<tr data-key="UAI002"><td data-value="2026-08-17">17/08/2026</td><td data-value="2026-11-07">07/11/2026</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>VT0008</td><td>Hóa chất xét nghiệm Glucose</td><td data-value="57">57</td><td>UAI002</td></tr>
+<tr data-key="UAI003"><td data-value="2026-08-29">29/08/2026</td><td data-value="2026-07-20">20/07/2026</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>VT0015</td><td>Nhiệt kế điện tử</td><td data-value="21">21</td><td>UAI003</td></tr>
+<tr data-key="UAI004"><td data-value="2026-08-10">10/08/2026</td><td data-value="2026-08-02">02/08/2026</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>VT0002</td><td>Bơm tiêm 5ml</td><td data-value="21">21</td><td>UAI004</td></tr>
+<tr data-key="UAI005"><td data-value="2026-10-31">31/10/2026</td><td data-value="2026-07-28">28/07/2026</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>VT0009</td><td>Khẩu trang y tế 4 lớp</td><td data-value="19">19</td><td>UAI005</td></tr>
+<tr data-key="UAI006"><td data-value="2026-09-17">17/09/2026</td><td data-value="2026-09-04">04/09/2026</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>VT0016</td><td>Que thử đường huyết</td><td data-value="38">38</td><td>UAI006</td></tr>
+<tr data-key="UAI007"><td data-value="2026-09-04">04/09/2026</td><td data-value="2026-09-11">11/09/2026</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>VT0003</td><td>Găng tay y tế không bột</td><td data-value="16">16</td><td>UAI007</td></tr>
+<tr data-key="UAI008"><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-08-11">11/08/2026</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>VT0010</td><td>Máy siêu âm xách tay</td><td data-value="43">43</td><td>UAI008</td></tr>
+<tr data-key="UAI009"><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-11-06">06/11/2026</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>VT0017</td><td>Máy thở không xâm nhập</td><td data-value="31">31</td><td>UAI009</td></tr>
+<tr data-key="UAI010"><td data-value="2026-09-09">09/09/2026</td><td data-value="2026-07-25">25/07/2026</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>VT0004</td><td>Máy monitor theo dõi bệnh nhân</td><td data-value="23">23</td><td>UAI010</td></tr>
+<tr data-key="UAI011"><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-08-21">21/08/2026</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>VT0011</td><td>Bông y tế 1kg</td><td data-value="32">32</td><td>UAI011</td></tr>
+<tr data-key="UAI012"><td data-value="2026-08-11">11/08/2026</td><td data-value="2026-10-13">13/10/2026</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>VT0018</td><td>Bộ dụng cụ phẫu thuật</td><td data-value="32">32</td><td>UAI012</td></tr>
+<tr data-key="UAI013"><td data-value="2026-09-05">05/09/2026</td><td data-value="2026-07-28">28/07/2026</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>VT0005</td><td>Kim luồn tĩnh mạch 22G</td><td data-value="63">63</td><td>UAI013</td></tr>
+<tr data-key="UAI014"><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-10-13">13/10/2026</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>VT0012</td><td>Ống nghiệm EDTA</td><td data-value="93">93</td><td>UAI014</td></tr>
+<tr data-key="UAI015"><td data-value="2026-10-12">12/10/2026</td><td data-value="2026-07-19">19/07/2026</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>VT0019</td><td>Gạc vô trùng 10x10</td><td data-value="53">53</td><td>UAI015</td></tr>
+<tr data-key="UAI016"><td data-value="2026-11-03">03/11/2026</td><td data-value="2026-10-18">18/10/2026</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>VT0006</td><td>Dây truyền dịch</td><td data-value="32">32</td><td>UAI016</td></tr>
+<tr data-key="UAI017"><td data-value="2026-08-05">05/08/2026</td><td data-value="2026-08-31">31/08/2026</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>VT0013</td><td>Đầu dò siêu âm</td><td data-value="93">93</td><td>UAI017</td></tr>
+<tr data-key="UAI018"><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-10-26">26/10/2026</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>VT0020</td><td>Cồn sát khuẩn 70 độ</td><td data-value="45">45</td><td>UAI018</td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

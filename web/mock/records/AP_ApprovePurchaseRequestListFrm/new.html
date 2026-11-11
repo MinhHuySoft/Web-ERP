@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Duyệt đề nghị mua hàng — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_ApprovePurchaseRequestListFrm" data-form-type="EDIT" data-mode="new" data-screen-key="AP_ApprovePurchaseRequestListFrm:new" data-menu-id="05012">
+<h1>Duyệt đề nghị mua hàng — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-AP_ApprovePurchaseRequestListFrm-new" formaction="/mock/records/AP_ApprovePurchaseRequestListFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-AP_ApprovePurchaseRequestListFrm-new" formaction="/mock/records/AP_ApprovePurchaseRequestListFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/AP_ApprovePurchaseRequestListFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-AP_ApprovePurchaseRequestListFrm-new" method="post" action="/mock/records/AP_ApprovePurchaseRequestListFrm/1.saved.html" data-key-field="PurchaseRequestID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurchaseRequestID">Mã đề nghị Purchase</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurchaseRequestID" name="PurchaseRequestID" value=""></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurchaseDate">Ngày Purchase</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurchaseDate" name="PurchaseDate" type="date" value=""></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Chuyển trạng thái</button></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-PersonSuggest">Suggest Person</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-PersonSuggest" name="PersonSuggest" value=""></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-Department">Phòng ban</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-Department" name="Department" value=""></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurposeDescOrClient">Client Or Desc Purpose</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurposeDescOrClient" name="PurposeDescOrClient" value=""></div>
+<div data-erp="field" data-control="text" data-span="12" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-Notes">Ghi chú</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="lookup" data-span="7" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-ObjectID">Mã đối tượng</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-ObjectID" name="ObjectID" value="" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode"><output data-erp="lookup-text" for="f-rec-AP_ApprovePurchaseRequestListFrm-new-ObjectID"></output></div>
+<div data-erp="field" data-control="text" data-span="2"><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-RateExchange">Tỷ giá</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-RateExchange" name="RateExchange" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="3"><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-CurrencyID">Loại tiền</label><select id="f-rec-AP_ApprovePurchaseRequestListFrm-new-CurrencyID" name="CurrencyID"><option value=""></option><option value="VND" selected>VND</option><option value="USD">USD</option><option value="EUR">EUR</option></select></div>
+<div data-erp="field" data-control="money" data-span="4" data-row-start><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-Price">Giá</label><input id="f-rec-AP_ApprovePurchaseRequestListFrm-new-Price" name="Price" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurposeID">Mã Purpose</label><select id="f-rec-AP_ApprovePurchaseRequestListFrm-new-PurposeID" name="PurposeID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-AP_ApprovePurchaseRequestListFrm-new-BranchID">Chi nhánh</label><select id="f-rec-AP_ApprovePurchaseRequestListFrm-new-BranchID" name="BranchID"><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="button" data-span="4" data-row-start><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+<div data-erp="field" data-control="button" data-span="4"><span></span><button type="submit" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="run" disabled>Thực hiện</button></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết 1" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-AP_ApprovePurchaseRequestListFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen data-editor="lookup" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID">Mã hàng</th>
+<th scope="col" data-field="Budget" data-type="number" data-width="70" data-decimals="0" data-editor="number">Budget</th>
+<th scope="col" data-field="TimeRequired" data-type="text" data-width="110" data-editor="text">Required thời gian</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Đơn giá</th>
+<th scope="col" data-field="TotalPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Tổng đơn giá</th>
+<th scope="col" data-field="Model" data-type="text" data-width="110" data-editor="text">Model</th>
+<th scope="col" data-field="PurchaseRequestID" data-type="text" data-width="110" data-editor="text">Mã đề nghị Purchase</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

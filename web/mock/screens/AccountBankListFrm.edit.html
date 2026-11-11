@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục tài khoản ngân hàng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AccountBankListFrm" data-form-type="LIST" data-mode="edit" data-screen-key="AccountBankListFrm" data-menu-id="0250">
+<h1>Danh mục tài khoản ngân hàng</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-AccountBankListFrm" formaction="/mock/screens/AccountBankListFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/AccountBankListFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-AccountBankListFrm" method="post" action="/mock/screens/AccountBankListFrm.saved.html" data-key-field="AccountNo"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="AccountNo" data-selectable="multi" data-editable data-form="rec-AccountBankListFrm" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="AccountNo" data-type="text" data-width="110" data-frozen data-editor="text">Số tài khoản</th>
+<th scope="col" data-field="BankName" data-type="text" data-width="240" data-editor="text">Ngân hàng</th>
+<th scope="col" data-field="BankName2" data-type="text" data-width="110" data-editor="text">Chi nhánh NH</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode">Mã đối tượng</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden data-editor="text">Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden data-editor="text">Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden data-editor="date">Ngày tạo</th>
+<th scope="col" data-field="Province" data-type="text" data-width="110" data-editor="text">Tỉnh/TP</th>
+<th scope="col" data-field="CashAccountID" data-type="text" data-width="110" data-editor="text">Mã Account Cash</th>
+<th scope="col" data-field="BankBranch" data-type="text" data-width="110" data-editor="text">Chi nhánh Bank</th>
+<th scope="col" data-field="ObjectNameUNC" data-type="text" data-width="110" data-editor="text">UNC tên đối tượng</th>
+</tr></thead>
+<tbody>
+<tr data-key="AN001"><td>AN001</td><td>Ngân hàng 1</td><td>Chi nhánh NH 1</td><td>KH0001</td><td>Theo hợp đồng số 12/2026</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-30">30/07/2026</td><td data-value="2026-10-19">19/10/2026</td><td></td><td>CAI001</td><td></td><td></td></tr>
+<tr data-key="AN002"><td>AN002</td><td>Ngân hàng 2</td><td></td><td>KH0004</td><td></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-07-28">28/07/2026</td><td>Tỉnh/TP 2</td><td>CAI002</td><td>Chi nhánh Bank 2</td><td></td></tr>
+<tr data-key="AN003"><td>AN003</td><td>Ngân hàng 3</td><td>Chi nhánh NH 3</td><td>KH0007</td><td></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-10-26">26/10/2026</td><td></td><td>CAI003</td><td>Chi nhánh Bank 3</td><td></td></tr>
+<tr data-key="AN004"><td>AN004</td><td>Ngân hàng 4</td><td></td><td>KH0010</td><td>Hàng nhập khẩu</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-08">08/09/2026</td><td data-value="2026-10-03">03/10/2026</td><td></td><td>CAI004</td><td>Chi nhánh Bank 4</td><td>UNC tên đối tượng 4</td></tr>
+<tr data-key="AN005"><td>AN005</td><td>Ngân hàng 5</td><td></td><td>KH0013</td><td>Giao hàng trong tuần</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-03">03/09/2026</td><td data-value="2026-08-19">19/08/2026</td><td>Tỉnh/TP 5</td><td>CAI005</td><td>Chi nhánh Bank 5</td><td>UNC tên đối tượng 5</td></tr>
+<tr data-key="AN006"><td>AN006</td><td>Ngân hàng 6</td><td>Chi nhánh NH 6</td><td>KH0001</td><td>Theo hợp đồng số 12/2026</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-14">14/10/2026</td><td data-value="2026-09-23">23/09/2026</td><td>Tỉnh/TP 6</td><td>CAI006</td><td>Chi nhánh Bank 6</td><td>UNC tên đối tượng 6</td></tr>
+<tr data-key="AN007"><td>AN007</td><td>Ngân hàng 7</td><td></td><td>KH0004</td><td></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-07-19">19/07/2026</td><td>Tỉnh/TP 7</td><td>CAI007</td><td></td><td>UNC tên đối tượng 7</td></tr>
+<tr data-key="AN008"><td>AN008</td><td>Ngân hàng 8</td><td>Chi nhánh NH 8</td><td>KH0007</td><td></td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-18">18/09/2026</td><td data-value="2026-09-27">27/09/2026</td><td></td><td>CAI008</td><td>Chi nhánh Bank 8</td><td></td></tr>
+<tr data-key="AN009"><td>AN009</td><td>Ngân hàng 9</td><td></td><td>KH0010</td><td>Theo hợp đồng số 12/2026</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-07-31">31/07/2026</td><td></td><td>CAI009</td><td></td><td></td></tr>
+<tr data-key="AN010"><td>AN010</td><td>Ngân hàng 10</td><td>Chi nhánh NH 10</td><td>KH0013</td><td>Khách yêu cầu xuất hóa đơn</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-09-10">10/09/2026</td><td data-value="2026-11-04">04/11/2026</td><td>Tỉnh/TP 10</td><td>CAI010</td><td></td><td>UNC tên đối tượng 10</td></tr>
+<tr data-key="AN011"><td>AN011</td><td>Ngân hàng 11</td><td>Chi nhánh NH 11</td><td>KH0001</td><td></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-09-02">02/09/2026</td><td></td><td>CAI011</td><td>Chi nhánh Bank 11</td><td></td></tr>
+<tr data-key="AN012"><td>AN012</td><td>Ngân hàng 12</td><td></td><td>KH0004</td><td>Khách yêu cầu xuất hóa đơn</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-08-20">20/08/2026</td><td>Tỉnh/TP 12</td><td>CAI012</td><td></td><td>UNC tên đối tượng 12</td></tr>
+<tr data-key="AN013"><td>AN013</td><td>Ngân hàng 13</td><td></td><td>KH0007</td><td></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-02">02/10/2026</td><td data-value="2026-08-28">28/08/2026</td><td>Tỉnh/TP 13</td><td>CAI013</td><td></td><td></td></tr>
+<tr data-key="AN014"><td>AN014</td><td>Ngân hàng 14</td><td></td><td>KH0010</td><td></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-08-13">13/08/2026</td><td>Tỉnh/TP 14</td><td>CAI014</td><td>Chi nhánh Bank 14</td><td></td></tr>
+<tr data-key="AN015"><td>AN015</td><td>Ngân hàng 15</td><td>Chi nhánh NH 15</td><td>KH0013</td><td>Hàng nhập khẩu</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-08-28">28/08/2026</td><td></td><td>CAI015</td><td>Chi nhánh Bank 15</td><td>UNC tên đối tượng 15</td></tr>
+<tr data-key="AN016"><td>AN016</td><td>Ngân hàng 16</td><td>Chi nhánh NH 16</td><td>KH0001</td><td>Kiểm tra kỹ trước khi nhận</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-02">02/09/2026</td><td data-value="2026-07-14">14/07/2026</td><td>Tỉnh/TP 16</td><td>CAI016</td><td>Chi nhánh Bank 16</td><td>UNC tên đối tượng 16</td></tr>
+<tr data-key="AN017"><td>AN017</td><td>Ngân hàng 17</td><td></td><td>KH0004</td><td>Giao hàng trong tuần</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-31">31/10/2026</td><td data-value="2026-09-18">18/09/2026</td><td></td><td>CAI017</td><td>Chi nhánh Bank 17</td><td>UNC tên đối tượng 17</td></tr>
+<tr data-key="AN018"><td>AN018</td><td>Ngân hàng 18</td><td></td><td>KH0007</td><td>Hàng nhập khẩu</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-10-09">09/10/2026</td><td>Tỉnh/TP 18</td><td>CAI018</td><td></td><td></td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

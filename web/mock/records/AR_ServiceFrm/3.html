@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Hóa đơn dịch vụ — BD1126/0003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_ServiceFrm" data-form-type="EDIT" data-mode="view" data-screen-key="AR_ServiceFrm:BD1126/0003" data-menu-id="0604">
+<h1>Hóa đơn dịch vụ — BD1126/0003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_ServiceFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/AR_ServiceFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-AR_ServiceFrm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/AR_ServiceFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/AR_ServiceFrm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/AR_ServiceFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/AR_ServiceFrm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-AR_ServiceFrm-3" method="post" action="/mock/records/AR_ServiceFrm/1.saved.html" data-key-field="DocumentID" data-key="BD1126/0003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-DocumentID">Số chứng từ</label><input id="f-rec-AR_ServiceFrm-3-DocumentID" name="DocumentID" value="BD1126/0003" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AR_ServiceFrm-3-DocumentDate">Ngày chứng từ</label><input id="f-rec-AR_ServiceFrm-3-DocumentDate" name="DocumentDate" type="date" value="2026-08-23" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-AR_ServiceFrm-3-ObjectID">Mã đối tượng</label><input id="f-rec-AR_ServiceFrm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-AR_ServiceFrm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-AR_ServiceFrm-3-EmployeeID">Nhân viên</label><input id="f-rec-AR_ServiceFrm-3-EmployeeID" name="EmployeeID" value="NV003" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-AR_ServiceFrm-3-EmployeeID">Lê Hoàng Cường</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-AR_ServiceFrm-3-Memo">Diễn giải</label><input id="f-rec-AR_ServiceFrm-3-Memo" name="Memo" value="Hàng nhập khẩu" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-Notes">Ghi chú</label><input id="f-rec-AR_ServiceFrm-3-Notes" name="Notes" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-Receiver">Người nhận</label><input id="f-rec-AR_ServiceFrm-3-Receiver" name="Receiver" value="Người nhận 3" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-AR_ServiceFrm-3-CurrencyID">Loại tiền</label><select id="f-rec-AR_ServiceFrm-3-CurrencyID" name="CurrencyID" disabled><option value=""></option><option value="VND">VND</option><option value="USD">USD</option><option value="EUR" selected>EUR</option></select></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AR_ServiceFrm-3-RateExchange">Tỷ giá</label><input id="f-rec-AR_ServiceFrm-3-RateExchange" name="RateExchange" inputmode="decimal" value="1" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-PaymentTypeID">Hình thức thanh toán</label><input id="f-rec-AR_ServiceFrm-3-PaymentTypeID" name="PaymentTypeID" value="PTI003" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-PaymentTermID">Điều khoản thanh toán</label><input id="f-rec-AR_ServiceFrm-3-PaymentTermID" name="PaymentTermID" value="PTI003" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AR_ServiceFrm-3-DueDate">Hạn thanh toán</label><input id="f-rec-AR_ServiceFrm-3-DueDate" name="DueDate" type="date" value="2026-09-30" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-PONo">Số đơn mua</label><input id="f-rec-AR_ServiceFrm-3-PONo" name="PONo" value="PON003" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-ContractID">Hợp đồng</label><input id="f-rec-AR_ServiceFrm-3-ContractID" name="ContractID" value="CID003" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-RefDoc">Chứng từ gốc</label><input id="f-rec-AR_ServiceFrm-3-RefDoc" name="RefDoc" value="Chứng từ gốc 3" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AR_ServiceFrm-3-BaseTotal">Tổng tiền</label><input id="f-rec-AR_ServiceFrm-3-BaseTotal" name="BaseTotal" inputmode="decimal" value="18820000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-RevAccID">TK doanh thu</label><input id="f-rec-AR_ServiceFrm-3-RevAccID" name="RevAccID" value="RAI003" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-VATAccID">TK thuế GTGT</label><input id="f-rec-AR_ServiceFrm-3-VATAccID" name="VATAccID" value="VAT003" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-AR_ServiceFrm-3-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-AR_ServiceFrm-3-isLock" name="isLock" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-InvoiceNo">Số hóa đơn</label><input id="f-rec-AR_ServiceFrm-3-InvoiceNo" name="InvoiceNo" value="00009897" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AR_ServiceFrm-3-Status">Trạng thái</label><input id="f-rec-AR_ServiceFrm-3-Status" name="Status" inputmode="decimal" value="6" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AR_ServiceFrm-3-AmountTotal">Tổng tiền</label><input id="f-rec-AR_ServiceFrm-3-AmountTotal" name="AmountTotal" inputmode="decimal" value="25050000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AR_ServiceFrm-3-VATAmountTotal">Tổng tiền VAT</label><input id="f-rec-AR_ServiceFrm-3-VATAmountTotal" name="VATAmountTotal" inputmode="decimal" value="7560000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ServiceFrm-3-DocBatch">Batch chứng từ</label><input id="f-rec-AR_ServiceFrm-3-DocBatch" name="DocBatch" value="Batch chứng từ 3" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="3">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="3">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240">Diễn giải</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110">ĐVT</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="VATID" data-type="text" data-width="110">VATID</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2">% VAT</th>
+<th scope="col" data-field="VATAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền VAT</th>
+<th scope="col" data-field="TotalAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-hidden>Bộ phận</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-hidden>Khoản mục</th>
+<th scope="col" data-field="IncomeAccID" data-type="text" data-width="110" data-hidden>Mã tài khoản Income</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-hidden>Mã đối tượng</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden>Mã Parent</th>
+<th scope="col" data-field="UnitPriceV" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">V đơn giá đơn vị</th>
+<th scope="col" data-field="DiscountPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>% chiết khấu</th>
+<th scope="col" data-field="DiscountAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Chiết khấu</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>BD1126/0001</td><td>VT0001</td><td></td><td>Cái</td><td data-value="58">58</td><td data-value="88200">88.200</td><td data-value="6260000">6.260.000</td><td data-value="5115600">5.115.600</td><td>VAT001</td><td data-value="0">0</td><td data-value="3070000">3.070.000</td><td data-value="283500000">283.500.000</td><td>KD</td><td>CID001</td><td>IAI001</td><td>KH0001</td><td>PID001</td><td data-value="8070000">8.070.000</td><td data-value="8">8</td><td data-value="6110000">6.110.000</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>BD1126/0002</td><td>VT0008</td><td></td><td>Hộp</td><td data-value="164">164</td><td data-value="165400">165.400</td><td data-value="36000000">36.000.000</td><td data-value="27125600">27.125.600</td><td>VAT002</td><td data-value="8">8</td><td data-value="1490000">1.490.000</td><td data-value="32750000">32.750.000</td><td>KT</td><td>CID002</td><td>IAI002</td><td>KH0004</td><td>PID002</td><td data-value="85500000">85.500.000</td><td data-value="10">10</td><td data-value="263500000">263.500.000</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>BD1126/0003</td><td>VT0015</td><td>Theo hợp đồng số 12/2026</td><td>Cái</td><td data-value="165">165</td><td data-value="150000">150.000</td><td data-value="33200000">33.200.000</td><td data-value="24750000">24.750.000</td><td>VAT003</td><td data-value="10">10</td><td data-value="1720000">1.720.000</td><td data-value="5990000">5.990.000</td><td>KHO</td><td>CID003</td><td>IAI003</td><td>KH0007</td><td>PID003</td><td data-value="15750000">15.750.000</td><td data-value="10">10</td><td data-value="6790000">6.790.000</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="387">387</td><td data-field="UnitPrice" data-value="403600">403.600</td><td data-field="SourceAmount" data-value="75460000">75.460.000</td><td data-field="Amount" data-value="56991200">56.991.200</td><td></td><td></td><td data-field="VATAmount" data-value="6280000">6.280.000</td><td data-field="TotalAmount" data-value="322240000">322.240.000</td><td></td><td></td><td></td><td></td><td></td><td data-field="UnitPriceV" data-value="109320000">109.320.000</td><td></td><td data-field="DiscountAmount" data-value="276400000">276.400.000</td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

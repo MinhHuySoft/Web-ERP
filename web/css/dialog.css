@@ -1,0 +1,24 @@
+@layer components {
+  .erp-dialog {
+    border: 1px solid var(--erp-border); border-radius: calc(var(--erp-radius-lg) + 4px); padding: 0; color: var(--erp-text);
+    background: var(--erp-surface); box-shadow: var(--erp-shadow-lg); max-height: min(88vh, 900px); width: min(640px, calc(100vw - 24px));
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .erp-dialog:not([open]) { display: none; }
+  .erp-dialog[open] { animation: erp-dlg-in .16s ease-out; }
+  @keyframes erp-dlg-in { from { opacity: 0; transform: translateY(8px) scale(.985); } }
+  .erp-dialog::backdrop { background: var(--erp-overlay); backdrop-filter: blur(2px); }
+  .erp-dialog--sm { width: min(460px, calc(100vw - 24px)); }
+  .erp-dialog--lg { width: min(980px, calc(100vw - 24px)); }
+  .erp-dialog--full { width: calc(100vw - 24px); height: calc(100vh - 24px); max-height: none; }
+  .erp-dialog__head { display: flex; align-items: center; gap: 10px; padding: 12px 10px 10px 18px; border-bottom: 1px solid var(--erp-border); }
+  .erp-dialog__title { flex: 1; font-size: 1.08em; font-weight: 650; }
+  .erp-dialog__body { padding: 16px 18px; overflow: auto; flex: 1; container: erp-dialog / inline-size; }
+  .erp-dialog__foot { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 10px 14px; border-top: 1px solid var(--erp-border); background: var(--erp-surface-2); }
+  .erp-dialog__foot small { margin-inline-end: auto; }
+  .erp-confirm { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+  .erp-confirm > .erp-icon { width: 30px; height: 30px; color: var(--erp-warning); }
+  .erp-confirm--danger > .erp-icon { color: var(--erp-danger); }
+  .erp-confirm p + p { margin-top: 6px; }
+  .erp-login { container: erp-login / inline-size; }
+}

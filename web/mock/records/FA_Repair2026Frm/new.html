@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phiếu sửa chữa / bảo hành / bảo trì máy — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="FA_Repair2026Frm" data-form-type="EDIT" data-mode="new" data-screen-key="FA_Repair2026Frm:new" data-menu-id="1209">
+<h1>Phiếu sửa chữa / bảo hành / bảo trì máy — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-FA_Repair2026Frm-new" formaction="/mock/records/FA_Repair2026Frm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-FA_Repair2026Frm-new" formaction="/mock/records/FA_Repair2026Frm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/FA_Repair2026Frm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-FA_Repair2026Frm-new" method="post" action="/mock/records/FA_Repair2026Frm/1.saved.html" data-key-field="DocumentID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="4" data-row-start><label for="f-rec-FA_Repair2026Frm-new-DocumentID">Số chứng từ</label><input id="f-rec-FA_Repair2026Frm-new-DocumentID" name="DocumentID" value="MLRP1126/0025"></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Repair2026Frm-new-DocumentDate">Ngày chứng từ</label><input id="f-rec-FA_Repair2026Frm-new-DocumentDate" name="DocumentDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-FA_Repair2026Frm-new-ServiceTypeID">Mã loại dịch vụ</label><select id="f-rec-FA_Repair2026Frm-new-ServiceTypeID" name="ServiceTypeID"><option value=""></option></select></div>
+<div data-erp="field" data-control="select" data-span="4"><label for="f-rec-FA_Repair2026Frm-new-ServiceStatus">Trạng thái dịch vụ</label><select id="f-rec-FA_Repair2026Frm-new-ServiceStatus" name="ServiceStatus"><option value=""></option></select></div>
+<div data-erp="field" data-control="lookup" data-span="8" data-row-start><label for="f-rec-FA_Repair2026Frm-new-ObjectID">Mã đối tượng</label><input id="f-rec-FA_Repair2026Frm-new-ObjectID" name="ObjectID" value="" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode"><output data-erp="lookup-text" for="f-rec-FA_Repair2026Frm-new-ObjectID"></output></div>
+<div data-erp="field" data-control="text" data-span="8"><label for="f-rec-FA_Repair2026Frm-new-ServiceLocation">Vị trí dịch vụ</label><input id="f-rec-FA_Repair2026Frm-new-ServiceLocation" name="ServiceLocation" value=""></div>
+<div data-erp="field" data-control="select" data-span="6" data-row-start><label for="f-rec-FA_Repair2026Frm-new-ContractID">Hợp đồng</label><select id="f-rec-FA_Repair2026Frm-new-ContractID" name="ContractID"><option value=""></option></select></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-FA_Repair2026Frm-new-StartDate">Ngày bắt đầu</label><input id="f-rec-FA_Repair2026Frm-new-StartDate" name="StartDate" type="date" value=""></div>
+<div data-erp="field" data-control="date" data-span="5"><label for="f-rec-FA_Repair2026Frm-new-EndDate">Ngày kết thúc</label><input id="f-rec-FA_Repair2026Frm-new-EndDate" name="EndDate" type="date" value=""></div>
+<div data-erp="field" data-control="text" data-span="6" data-row-start><label for="f-rec-FA_Repair2026Frm-new-ReferenceNo">Số Reference</label><input id="f-rec-FA_Repair2026Frm-new-ReferenceNo" name="ReferenceNo" value=""></div>
+<div data-erp="field" data-control="date" data-span="4"><label for="f-rec-FA_Repair2026Frm-new-ReferenceDate">Ngày Reference</label><input id="f-rec-FA_Repair2026Frm-new-ReferenceDate" name="ReferenceDate" type="date" value=""></div>
+<div data-erp="field" data-control="text" data-span="6"><label for="f-rec-FA_Repair2026Frm-new-Technician">Technician</label><input id="f-rec-FA_Repair2026Frm-new-Technician" name="Technician" value=""></div>
+<div data-erp="field" data-control="text" data-span="16" data-row-start><label for="f-rec-FA_Repair2026Frm-new-Memo">Diễn giải</label><input id="f-rec-FA_Repair2026Frm-new-Memo" name="Memo" value=""></div>
+<div data-erp="field" data-control="text" data-span="16" data-row-start><label for="f-rec-FA_Repair2026Frm-new-Notes">Ghi chú</label><input id="f-rec-FA_Repair2026Frm-new-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="text" data-span="16" data-row-start><label for="f-rec-FA_Repair2026Frm-new-DocumentLink">Liên kết chứng từ</label><input id="f-rec-FA_Repair2026Frm-new-DocumentLink" name="DocumentLink" value=""></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết sửa chữa / bảo hành / bảo trì" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-FA_Repair2026Frm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="AssetID" data-type="text" data-width="110" data-frozen data-editor="text">Mã tài sản</th>
+<th scope="col" data-field="AssetName" data-type="text" data-width="240" data-readonly>Tên tài sản</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="110" data-editor="text">ĐVT</th>
+<th scope="col" data-field="NoiDung" data-type="text" data-width="110" data-editor="text">Dung Noi</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="ProblemDescription" data-type="text" data-width="110" data-editor="text">Mô tả Problem</th>
+<th scope="col" data-field="ActionTaken" data-type="text" data-width="110" data-editor="text">Taken Action</th>
+<th scope="col" data-field="ResultStatus" data-type="text" data-width="110" data-editor="text">Trạng thái kết quả</th>
+<th scope="col" data-field="WarrantyCovered" data-type="bool" data-width="60" data-editor="checkbox">Covered Warranty</th>
+<th scope="col" data-field="NextServiceDate" data-type="date" data-width="95" data-editor="date">Ngày dịch vụ Next</th>
+<th scope="col" data-field="LaborAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Tiền Labor</th>
+<th scope="col" data-field="PartsAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Tiền Parts</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-hidden data-readonly data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="InternalAlert" data-type="text" data-width="110" data-hidden data-editor="text">Cảnh báo Internal</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden data-editor="text">Ghi chú</th>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-editor="text">Số chứng từ</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="2026-11-11"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>
