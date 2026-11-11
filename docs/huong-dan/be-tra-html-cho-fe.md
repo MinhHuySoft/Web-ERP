@@ -53,6 +53,10 @@ và `session` / `menu` / `login` / `lookup-result` khi FE gọi đúng điểm �
 
 Header response tùy chọn: `X-ERP-Title` (tiêu đề tab), `X-ERP-Contract: 1.0`. Tải file: `Content-Disposition: attachment`.
 
+**Sau POST thành công nên trả 303 về URL GET của màn (Post/Redirect/Get).** FE dùng URL cuối cùng của tab để nạp lại (F5)
+và để **đánh thức tab ngủ** (FE nhả bộ nhớ của tab ít dùng khi mở nhiều tab). Nếu BE trả thẳng `200` + `screen` sau POST,
+FE không dám GET lại URL POST nên tab đó không được ngủ — trừ khi `screen` có `data-refresh-src="<URL GET của màn>"`.
+
 ## 3. Bản đồ endpoint BE cần làm
 
 4 điểm vào **cố định** do FE cấu hình (`web/config.js`); mọi URL khác BE tự đặt và đưa vào HTML. Cột "URL gợi ý" chỉ là
@@ -67,7 +71,7 @@ gợi ý — BE được đặt tùy ý.
 | Mở màn danh sách / chứng từ | GET | `/erp/screens/{FormName}?…lọc` | `screen` |
 | Mở 1 bản ghi | GET | `/erp/screens/{FormName}/{key}` | `screen` `EDIT` `data-mode="view"` |
 | Sửa / thêm | GET | `…/{key}/edit`, `…/new` | `screen` `data-mode="edit"` / `"new"` |
-| Lưu | POST | `…/{key}/save` | 303 về bản ghi, hoặc `screen` + `messages`, hoặc `confirm` |
+| Lưu | POST | `…/{key}/save` | **Nên 303 về bản ghi** (Post/Redirect/Get); lỗi → `screen` + `messages`; hỏi → `confirm` |
 | Xóa / duyệt / nút tùy biến | POST | `…/{key}/delete`, `…/actions/{tên}` | `messages`, `screen`, hoặc `dialog` (khi cần tham số) |
 | Tra cứu F4 | GET | `/erp/lookups/{nguồn}?q={q}` | `table[data-erp="lookup-result"]` |
 | Báo cáo | GET | `/erp/reports/{FormName}?…tham số` | `screen` `REPORT` |

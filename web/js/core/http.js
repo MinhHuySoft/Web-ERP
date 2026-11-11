@@ -1,7 +1,8 @@
 // @ts-check
 import { sanitize, absolutize } from './sanitize.js';
 
-/** @typedef {{ status:number, ok:boolean, url:string, doc:Document, title:string }} HtmlResponse */
+/** redirected: response đến sau redirect (vd 303 Post/Redirect/Get) ⇒ `url` là URL GET tải lại được.
+ * @typedef {{ status:number, ok:boolean, url:string, redirected:boolean, doc:Document, title:string }} HtmlResponse */
 
 const cfg = /** @type {any} */ (window).ERP_CONFIG || {};
 
@@ -33,7 +34,7 @@ export async function fetchHtml(url, opts = {}) {
   sanitize(doc.body);
   absolutize(doc.body, res.url || url);
   const title = res.headers.get('X-ERP-Title') || doc.title || '';
-  return { status: res.status, ok: res.ok, url: res.url || url, doc, title };
+  return { status: res.status, ok: res.ok, url: res.url || url, redirected: res.redirected, doc, title };
 }
 
 /** Lấy phần tử vai trò đầu tiên trong response. @param {Document|Element} doc @param {string} role */

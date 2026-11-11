@@ -37,6 +37,7 @@ Sửa `config.js`:
 
 - `loginUrl`, `sessionUrl`, `menuUrl`, `homeUrl` — 4 điểm vào, chuẩn mục 3.4;
 - `allowedOrigins` nếu backend khác origin.
+- `maxLiveTabs` (mặc định 12): số tab giữ màn trong bộ nhớ; tab ít dùng hơn "ngủ" (nhả bộ nhớ) và tự tải lại khi được chọn.
 
 Backend có thể phục vụ thư mục `web/` như file tĩnh, cùng origin là đơn giản nhất. Mọi URL khác nằm trong HTML backend trả về.
 

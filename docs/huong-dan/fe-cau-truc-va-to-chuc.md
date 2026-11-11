@@ -33,13 +33,14 @@ python -I tools/mock-gen/build_mock.py              # sinh lại web/mock/ từ 
 - **Kiểm tra chuẩn:** mở `/tools/validate.html` (dán HTML hoặc nhập URL). Có thể gọi trong code:
   `import { validate } from '/js/tools/validate.js'; validate(new DOMParser().parseFromString(html, 'text/html'))`.
 - **Nối BE thật:** sửa `loginUrl`, `sessionUrl`, `menuUrl`, `homeUrl` (+ `allowedOrigins` nếu khác origin) trong `web/config.js`.
+  `maxLiveTabs` (mặc định 12) = số tab giữ màn hình trong bộ nhớ trước khi tab cũ "ngủ" (mục 4.5).
 
 ## 3. Bản đồ thư mục
 
 ```
 web/
   index.html              khung trang: nạp CSS theo lớp, config.js, js/app.js; #erp-app là gốc ứng dụng
-  config.js               window.ERP_CONFIG: 4 điểm vào BE, allowedOrigins, contractVersion, defaultTheme
+  config.js               window.ERP_CONFIG: 4 điểm vào BE, allowedOrigins, contractVersion, defaultTheme, maxLiveTabs
   assets/                 favicon / logo
   css/
     layers.css            @layer reset, tokens, base, components, themes, utilities  (thứ tự ưu tiên toàn dự án)
@@ -165,6 +166,21 @@ việc) · `status`. Vùng nào ẩn (Ribbon khi dùng Sidebar, thanh trạng th
 
 Hộp thoại dùng ngữ cảnh tương tự (`dialogCtx`) — enhancer không cần biết đang ở tab hay hộp thoại.
 
+### 4.5 Bộ nhớ: dọn màn cũ và tab ngủ
+
+- **Mỗi tab giữ màn của nó trong bộ nhớ** khi bị ẩn (chuyển lại tab là hiện ngay). Mỗi màn khoảng vài trăm – 2.000
+  phần tử DOM; lưới ≥ 160 dòng chỉ vẽ phần đang nhìn thấy nên danh sách hàng nghìn dòng vẫn nhẹ.
+- **Dọn màn cũ:** mọi chỗ làm một màn rời trang (đóng tab, `render()` thay màn, `renderError()`, sleep, đóng hoặc thay nội
+  dung hộp thoại) đều gọi `disposeGrids(root)` (`enhance/grid.js`) **trước** khi xóa/thay DOM. `Grid.dispose()` gỡ lưới khỏi
+  sổ đăng ký `byForm` và ngắt `ResizeObserver`; thiếu bước này trình duyệt không dọn được cả màn cũ (rò bộ nhớ).
+- **Tab ngủ** (`TabManager.sleepOld()` trong `shell/tabs.js`): khi số tab đang giữ màn vượt `maxLiveTabs` (config.js,
+  mặc định 12, `0` = không giới hạn), các tab ít dùng nhất nhả màn khỏi bộ nhớ (`sleep()`: dọn lưới, xóa DOM, nhớ vị trí
+  cuộn) và hiện chữ nghiêng nhạt trên thanh tab. Bấm vào thì `wake()` tải lại từ `tab.reloadUrl` và trả vị trí cuộn.
+- **Không bao giờ ngủ:** tab đang xem, Trang chủ (ghim), tab có thay đổi chưa lưu, và tab mà màn là **kết quả POST không
+  redirect** (`reloadUrl` rỗng — GET lại URL đó không an toàn), trừ khi màn có `data-refresh-src`.
+- Trạng thái chỉ nằm trong DOM (sắp xếp / lọc tạm trên lưới, ô đang gõ dở ở màn không sửa) mất khi tab ngủ; bố cục lưới
+  lưu `localStorage` nên vẫn giữ; bộ lọc GET nằm trong URL nên vẫn giữ.
+
 ## 5. CSS: lớp, token, theme
 
 - **Thứ tự lớp** (`css/layers.css`): `reset → tokens → base → components → themes → utilities`. Theme thắng component
@@ -248,6 +264,9 @@ thêm ảnh xem trước `[data-theme-preview="<tên>"]` cuối `css/shell.css`.
 - Không màu / cỡ chữ / thời gian chuyển động cứng trong component — dùng token. Không `!important` trừ chỗ bắt buộc
   (giảm chuyển động, ẩn khi in, tương phản cao).
 - Không thêm thư viện ngoài, không bước build. Cần thứ gì thì viết module nhỏ trong `core/`.
+- Enhancer nào giữ tham chiếu **ngoài** phần tử của nó (Map / Set cấp module, `ResizeObserver`, listener trên
+  `document` / `window`, timer lặp) phải có hàm dọn và được gọi cùng `disposeGrids()` khi màn rời trang (mục 4.5).
+  Kiểm tra: mở rồi đóng màn nhiều lần, `WeakRef` tới panel phải bị dọn.
 
 ## 10. Kiểm tra trước khi merge
 

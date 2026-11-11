@@ -34,6 +34,15 @@ export const gridsOfForm = (formId) => Array.from(byForm.get(formId) || []).filt
 /** @param {HTMLElement} root @returns {Grid[]} */
 export const gridsIn = (root) => Array.from(root.querySelectorAll('.erp-grid')).map((el) => /** @type {any} */ (el).__grid).filter(Boolean);
 
+/**
+ * Giải phóng mọi lưới trong `root` TRƯỚC khi root bị xóa / thay (đóng tab, thay màn, đóng hộp thoại, tab ngủ).
+ * Không gọi thì `byForm` và ResizeObserver giữ lưới cũ — cả màn hình cũ không được trình duyệt dọn (rò bộ nhớ).
+ * @param {ParentNode|null|undefined} root
+ */
+export function disposeGrids(root) {
+  root?.querySelectorAll('.erp-grid').forEach((el) => /** @type {any} */ (el).__grid?.dispose());
+}
+
 /** @param {HTMLTableElement} table @param {import('../shell/tabs.js').TabContext|null} ctx */
 export function enhanceGrid(table, ctx) { return new Grid(table, ctx); }
 
@@ -200,8 +209,23 @@ export class Grid {
     this.table.addEventListener('click', (e) => this.onClick(e));
     this.table.addEventListener('dblclick', (e) => this.onDblClick(e));
     this.cardsEl.addEventListener('click', (e) => this.onCardClick(e));
-    new ResizeObserver(() => { if (this.view === 'auto') { const c = this.isCards(); if (c !== this.lastCards) this.renderAll(); } }).observe(this.el);
+    this.ro = new ResizeObserver(() => { if (this.view === 'auto') { const c = this.isCards(); if (c !== this.lastCards) this.renderAll(); } });
+    this.ro.observe(this.el);
     this.renderAll();
+  }
+
+  /** Gỡ khỏi sổ đăng ký toàn cục và ngắt theo dõi kích thước để trình duyệt dọn được lưới (xem disposeGrids). */
+  dispose() {
+    if (this.disposed) return;
+    this.disposed = true;
+    this.ro?.disconnect();
+    if (this.formId) {
+      const set = byForm.get(this.formId);
+      set?.delete(this);
+      if (set && !set.size) byForm.delete(this.formId);
+    }
+    /** @type {any} */ (this.el).__grid = null;
+    this.rows = [];
   }
 
   isCards() { return this.view === 'cards' || (this.view === 'auto' && this.el.clientWidth > 0 && this.el.clientWidth < CARD_WIDTH); }
