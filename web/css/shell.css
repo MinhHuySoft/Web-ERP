@@ -1,10 +1,17 @@
 @layer components {
   /* ---------- Khung ứng dụng ---------- */
+  /* Mỗi phần có vùng cố định: phần nào bị ẩn (ribbon khi dùng Sidebar, thanh trạng thái trên điện thoại) thì hàng của
+     nó co về 0 — các phần khác không bị dồn hàng (trước đây thanh trạng thái rơi vào hàng 1fr và để trống phía dưới). */
   .erp-app {
     display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "ribbon" "body" "status";
     height: 100vh; height: 100dvh; overflow: hidden;
   }
   .erp-app > * { min-width: 0; }
+  .erp-titlebar { grid-area: title; }
+  .erp-ribbon-host { grid-area: ribbon; }
+  .erp-body { grid-area: body; min-height: 0; }
+  .erp-statusbar { grid-area: status; }
   .erp-boot { display: grid; place-items: center; align-content: center; gap: 14px; height: 100vh; color: var(--erp-text-muted); }
   .erp-boot__logo, .erp-brand__logo {
     width: 30px; height: 30px; border-radius: 8px; flex: none;

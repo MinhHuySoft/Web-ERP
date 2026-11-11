@@ -21,7 +21,6 @@
   }
 
   @media (max-width: 767px) {
-    .erp-app { grid-template-rows: auto minmax(0, 1fr) auto; }
     .erp-ribbon-host, .erp-statusbar { display: none !important; }
     .erp-titlebar { gap: 6px; padding: 0 6px; }
     .erp-titlebar__menu { display: inline-grid; }
