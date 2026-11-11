@@ -251,6 +251,9 @@ export class Shell {
           const s = pick(r.doc, 'session');
           if (s) { this.readSession(s); await this.build(); return; }
           const msgs = readMessages(r.doc);
+          // Chuẩn mục 5.1: thành công có thể là 303 về homeUrl (hoặc 200 + screen) — không có lỗi và không trả lại form
+          // đăng nhập ⇒ nạp lại phiên và vào ứng dụng.
+          if (r.ok && !pick(r.doc, 'login') && !msgs.some((m) => m.type === 'error' || m.type === 'warning')) { await this.start(); return; }
           messageBox(msgs.length ? msgs : [{ text: 'Đăng nhập không thành công.', type: 'error' }], 'Đăng nhập');
         } catch (err) {
           toast(String(/** @type {any} */ (err)?.message || err), 'error');
