@@ -31,7 +31,6 @@ export class Sidebar {
     this.list = h('ul', { class: 'erp-snav', role: 'tree', 'aria-label': 'Menu chính' },
       this.homeItem(), ...menu.map((m) => this.module(m)));
     this.favBox = h('div', { class: 'erp-snav__favs' });
-    this.collapseBtn = h('button', { class: 'erp-iconbtn erp-snav__collapse', type: 'button', onclick: () => this.toggleCollapsed() });
     this.resizer = h('div', { class: 'erp-sidebar__resizer', role: 'separator', tabindex: '0', 'aria-orientation': 'vertical',
       'aria-label': 'Kéo để đổi độ rộng menu (nhấp đúp: mặc định)', title: 'Kéo để đổi độ rộng · nhấp đúp để về mặc định',
       'aria-valuemin': String(SIDEBAR_W.min), 'aria-valuemax': String(SIDEBAR_W.max) });
@@ -39,12 +38,8 @@ export class Sidebar {
     this.host.replaceChildren(
       h('div', { class: 'erp-sidebar__head' },
         h('span', { class: 'erp-snav__searchwrap' }, icon('search'), this.search),
-        h('button', { class: 'erp-iconbtn erp-snav__foldall', type: 'button', title: 'Thu gọn tất cả nhóm', 'aria-label': 'Thu gọn tất cả nhóm',
-          onclick: () => this.list?.querySelectorAll('.erp-snav__module.is-open').forEach((li) => this.setOpen(/** @type {HTMLElement} */ (li), false)) }, icon('collapse')),
         h('button', { class: 'erp-iconbtn erp-sidebar__close', type: 'button', 'aria-label': 'Đóng menu', onclick: () => this.shell.toggleDrawer(false) }, icon('close'))),
       h('div', { class: 'erp-sidebar__scroll' }, this.favBox, this.list),
-      h('div', { class: 'erp-sidebar__foot' }, this.collapseBtn,
-        h('button', { class: 'erp-snav__switch', type: 'button', title: 'Chuyển sang Ribbon', onclick: () => setSettings({ nav: 'ribbon' }) }, icon('ribbon'), h('span', {}, 'Dùng Ribbon'))),
       this.resizer);
     this.syncCollapsed();
     this.renderFavorites();
@@ -156,15 +151,8 @@ export class Sidebar {
 
   isRail() { return getSettings().sidebarCollapsed && !this.shell.root.classList.contains('is-drawer-open') && innerWidth >= 768; }
 
-  toggleCollapsed() { setSettings({ sidebarCollapsed: !getSettings().sidebarCollapsed }); }
-
-  syncCollapsed() {
-    const rail = getSettings().sidebarCollapsed;
-    this.collapseBtn?.replaceChildren(icon(rail ? 'chevrons-right' : 'chevrons-left'));
-    this.collapseBtn?.setAttribute('aria-label', rail ? 'Mở rộng menu' : 'Thu gọn menu');
-    this.collapseBtn?.setAttribute('title', rail ? 'Mở rộng menu' : 'Thu gọn thành thanh biểu tượng');
-    this.closeFlyout();
-  }
+  /** Thu gọn / mở rộng do nút ☰ trên thanh tiêu đề hoặc Ctrl+B (shell.toggleNavPanel) điều khiển. */
+  syncCollapsed() { this.closeFlyout(); }
 
   /** Bảng nổi khi menu ở dạng thanh biểu tượng. @param {MenuNode} m @param {HTMLElement} anchor */
   openFlyout(m, anchor) {

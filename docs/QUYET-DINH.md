@@ -119,7 +119,7 @@ WinForms.
   - Chuyển bằng nút trên thanh tiêu đề, hoặc trong Giao diện & hiển thị.
   - Sidebar thu gọn được thành thanh biểu tượng, có bảng nổi khi rê chuột.
   - Kéo mép phải để đổi độ rộng (200–480px, nhớ theo trình duyệt; nhấp đúp để về mặc định). Tên dài cắt bằng “…”, không tràn ngang.
-  - Thu gọn / mở rộng bằng nút ☰ trên thanh tiêu đề hoặc Ctrl+B; nút gập trên đầu sidebar đóng mọi nhóm đang mở.
+  - Thu gọn / mở rộng bằng nút ☰ trên thanh tiêu đề hoặc Ctrl+B. Sidebar không có nút riêng ở đầu/chân để giao diện gọn.
   - Tự đánh dấu màn hình đang mở.
   - Ribbon vẫn là mặc định.
 - Điểm gãy responsive:

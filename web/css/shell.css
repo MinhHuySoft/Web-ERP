@@ -87,14 +87,6 @@
   }
   .is-resizing-sidebar, .is-resizing-sidebar * { cursor: col-resize !important; user-select: none !important; }
   .is-resizing-sidebar .erp-sidebar { transition: none; }
-  .erp-snav__foldall { width: 34px; height: 34px; flex: none; color: var(--erp-text-muted); }
-  .erp-sidebar__foot { display: flex; align-items: center; gap: 6px; padding: 8px 10px; border-top: 1px solid var(--erp-border); }
-  .erp-snav__switch {
-    flex: 1; display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 10px; border: 0; border-radius: 8px;
-    background: transparent; color: var(--erp-text-muted); cursor: pointer; font-size: .88em; white-space: nowrap; overflow: hidden;
-  }
-  .erp-snav__switch:hover { background: var(--erp-surface-2); color: var(--erp-text); }
-  .erp-snav__switch .erp-icon { width: 17px; height: 17px; }
 
   .erp-snav, .erp-snav ul { list-style: none; margin: 0; padding: 0; }
   /* minmax(0,1fr): cột không tự nở theo dòng chữ dài nhất ⇒ không tràn ngang, chữ dài hiện "…" */
@@ -146,14 +138,11 @@
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__caret,
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__body,
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__favs,
-  :root[data-sidebar="rail"] .erp-sidebar .erp-snav__switch span { display: none !important; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__head { padding: 8px; justify-content: center; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-snav__foldall, :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__resizer { display: none; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__scroll { padding: 4px 8px; }
+  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__head,
+  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__resizer { display: none !important; }
+  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__scroll { padding: 8px; }
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__mhead { justify-content: center; padding: 0; height: 42px; }
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__mhead > .erp-icon:first-child { width: 21px; height: 21px; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__foot { flex-direction: column; padding: 8px; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-snav__switch { justify-content: center; padding: 0; width: 40px; flex: none; }
   }
   .erp-snav-fly {
     position: fixed; z-index: 940; width: 300px; max-height: min(80vh, 640px); overflow: auto; padding: 8px 10px 10px; border-radius: 12px;

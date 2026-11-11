@@ -36,7 +36,7 @@
       transform: translateX(-102%); transition: transform .22s ease; box-shadow: var(--erp-shadow-lg); background: var(--erp-surface);
     }
     .erp-app.is-drawer-open .erp-sidebar { transform: none; }
-    .erp-sidebar__resizer, .erp-snav__foldall { display: none; }
+    .erp-sidebar__resizer { display: none; }
     .erp-sidebar__close { display: inline-grid; }
     .erp-app.is-drawer-open .erp-scrim { display: block; position: fixed; inset: 0; z-index: 55; background: var(--erp-overlay); }
 
