@@ -1,0 +1,216 @@
+﻿Family,Pattern,Key,Rows,Forms,Class(source),Property(source),DescriptionVN(source),WINFORMS_INDEX,ExampleValue(80c)
+LYT (bố cục control trên tab master),LYT{tab} + SubID=control,LYT,727,35,LayoutItemX,GetConfig/SetConfig (21 trường ;),Vị trí/kích thước/loại control; SubValue = thứ tự hiển thị,,22;4;1;;;;;;;;;;;;;;;;;0;2
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BTA,53,9,AttachWebcamImagePropertyX,TitleText,"Tiêu đề của hình ảnh, Mặc định là chữ : Hình ảnh",,Tài liệu đính kèm
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,STT,53,9,AttachWebcamImagePropertyX,STT,"Số thứ tự file hình trong Table, Thường là số chẵn : 2,4,6,8,10...18",,2
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C3,50,22,ExecSQLWithParaButtonPropertyX,ActionAfter,"Chọn Action thực hiện sau khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,Reload
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C4,50,22,ExecSQLWithParaButtonPropertyX,SourceSQL,"Lệnh SQL Command : SP_UpdateDataStp '{P}', N'{JSON}', N'{XML}',  {0}, '{1}', {2} ... / '{P}' là khóa chính nếu có ",,"UPDATE AP_PurchaseRequestTbl SET StatusID = 4, isLock = 0, Notes = N'{0}' WHERE "
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BT,49,21,ExecSQLWithParaButtonPropertyX,ButtonText,"Tiêu đề, Caption của Command",,Duyệt
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BI,49,21,ExecSQLWithParaButtonPropertyX,IconResource,Chon Icon cho button,,check
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C2,49,21,ExecSQLWithParaButtonPropertyX,ActionBefore,"Chọn Action thực hiện trước khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,Save
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,CS4,49,21,ExecSQLWithParaButtonPropertyX,SQLCheckBeforeDoAction,MsgAction : Thực hiện SQL kiểm tra hợp lệ trước khi bấm nút. vd : kiểm tra không được duyệt nếu phiếu này đã xong rồi,,"Select N'Không được duyệt các đề nghị mua hàng đã duyệt hoặc nháp' as Msg , 1 as"
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,CS5,49,21,ExecSQLWithParaButtonPropertyX,SQLCheckBeforeDoActionPara,"Param cho SQL command, vd du : DocumentID;ObjectID",,PurchaseRequestID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,02,49,21,ExecSQLWithParaButtonPropertyX,Name1,Tên Para,CopyDataOnAddNew.MasterCopyBySQL,Notes
+TableInfoX (slot T0),T{n} + SubID,PK,48,48,TableInfoX,PrimaryKey,PrimaryKey on table,TableInfoX.PrimaryKey,PurchaseRequestID
+TableInfoX (slot T0),T{n} + SubID,TN,48,48,TableInfoX,TableName,"Schema table, Insert, Update, Delete dữ liệu trên Table này",TableInfoX.TableName,AP_PurchaseRequestTbl
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,05,47,20,ExecSQLWithParaButtonPropertyX,DefaultValueFromMaster1,"Giá trị mặc định lấy từ Master data, vd : ObjectID",CopyDataOnAddNew.MasterCopyFromDetail01,DocumentID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LBEX,47,20,ExecSQLWithParaButtonPropertyX,LockUnlockByExpression,"Expression = True là lock, false là Unlock, vd : isDisable > 0 or StatusID = 7",PropertiesX.LockUnlockByExpression,"StatusID NOT IN (12, 13)"
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,03,47,20,ExecSQLWithParaButtonPropertyX,ReadonlyParam1,Readonly,CopyDataOnAddNew.MasterCopyBySQLParam,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,0A,47,20,ExecSQLWithParaButtonPropertyX,RequireParam1,Bắt buộc phải chọn,,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,2A,47,20,ExecSQLWithParaButtonPropertyX,RequireParam2,Bắt buộc phải chọn,,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BC,46,20,ExecSQLWithParaButtonPropertyX,BackColor,"BackColor, Chọn màu nền, Muốn bỏ màu nền thì chọn Tranparent (Trong Tab Web Color)",,-16711936
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,22,45,20,ExecSQLWithParaButtonPropertyX,Name2,Tên para,CopyDataOnAddNew.Detail2CopyBySQL,Notes
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C1,41,21,ExecSQLWithParaButtonPropertyX,,,,ExecSQL
+TableInfoX (slot T0),T{n} + SubID,GD2,36,36,TableInfoX,GridColumnOrdersFix,Grid Column Orders . Thứ tự các cột : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để lấy ds cột hiện tại,TableInfoX.GridColumnOrdersFix,PurchaseRequestID;PurchaseDate;StatusID
+TableInfoX (slot T0),T{n} + SubID,SO,30,30,TableInfoX,SortByFields,Order by / Sort by Fields in Select command,TableInfoX.SortByFields,PurchaseRequestID Desc
+TableInfoX (slot T1),T{n} + SubID,PK,28,28,TableInfoX,PrimaryKey,PrimaryKey on table,TableInfoX.PrimaryKey,UserAutoID
+TableInfoX (slot T1),T{n} + SubID,TN,28,28,TableInfoX,TableName,"Schema table, Insert, Update, Delete dữ liệu trên Table này",TableInfoX.TableName,AP_PurchaseRequestDetailTbl
+Form-level (ToolBarSetting),KeyID,HBA,28,28,ToolBarSetting,HideAddNewButton,"Hide Addnew button on toolbar, Ẩn nút Thêm mới trên thanh toolbar",ToolBarSetting.HideAddNewButton,1
+Form-level (ToolBarSetting),KeyID,HBC,28,28,ToolBarSetting,HideCopyButton,"Hide Copy button on toolbar, Ẩn nút Copy trên thanh toolbar",ToolBarSetting.HideCopyButton,1
+Form-level (ToolBarSetting),KeyID,HBD,28,28,ToolBarSetting,HideDeleteButton,"Hide Delete button on toolbar, Ẩn nút Xóa trên thanh toolbar",ToolBarSetting.HideDeleteButton,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,21,28,17,ExecSQLWithParaButtonPropertyX,Type2,"Loại para : Textbox, Combo, Datetime...",CopyDataOnAddNew.Detail2CopyFromParent,0
+TableInfoX (slot T0),T{n} + SubID,HDE,27,27,TableInfoX,HideColumnArr,"Ẩn cột trên lưới, Hide Column on grid",TableInfoX.HideColumnArr,AlertID;ShipmentID;SupplierObjectID;InboundOrderTypeID;NeedsPaymentReview;Intend
+TableInfoX (slot T1),T{n} + SubID,FKA1,25,25,TableInfoX,Foreign_KeyAMain,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyAMain,ItemID
+TableInfoX (slot T1),T{n} + SubID,FKB1,25,25,TableInfoX,Foreign_KeyB1,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB1,ItemID
+TableInfoX (slot T1),T{n} + SubID,TN1,25,25,TableInfoX,TableName1,Join table,TableInfoX.TableName1,CF_ItemTbl
+TableInfoX (slot T1),T{n} + SubID,SE1,25,25,TableInfoX,SelectFields1,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields1,"A.ItemName, A.Unit, A.HangSX"
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BT,24,12,PrintButtonPropertyX,ButtonText,"Tiêu đề, Caption của Command",,In đề xuất mua hàng
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C4,24,12,PrintButtonPropertyX,SourceSQL, SQLCommand hoac Store,,AP_PurposeRequestListReportStp '{0}'
+GridDynamicColorFormat (tô màu theo cột màu),T{n}C{k} + SubID,A,23,15,GridDynamicColorFormat,FormatColumnArr,"Tô màu vào các tên cột, Để trống, tô màu cả dòng",,StatusName
+GridDynamicColorFormat (tô màu theo cột màu),T{n}C{k} + SubID,B,23,15,GridDynamicColorFormat,ColorValueColumn,"Color Value from Column, cột chứa giá trị Màu, vd :  BackColor",,BackColor
+TableInfoX (slot T0),T{n} + SubID,LCK,22,22,TableInfoX,LockColumnArr,"Readonly / LockColumn Column list on grid, khóa các cột này lại",TableInfoX.LockColumnArr,isLock;StatusID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C2,22,11,PrintButtonPropertyX,ActionBefore,"Chọn Action thực hiện trước khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,SaveContinue
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,MSQ,21,21,StatusButtonPropertyX,MenuSQLCmd,"Tạo Menu từ SQL Command, vd :  Select * from AR_OrderStatusTbl",,SELECT * FROM AP_PurchaseStatusTbl
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BCF,21,21,StatusButtonPropertyX,BackColorFieldName,"Tô màu nền có các đơn hàng theo trạng thái, FieldName chứa giá trị màu để Format BackColor, vd : StatusColor, ( Field này trong trong Datasource của MenuText hoặc MenuSQL là được)",,BackColor
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,FCF,21,21,StatusButtonPropertyX,ForeColorFieldName,"Tô màu chữ có các đơn hàng theo trạng thái, FieldName chứa giá trị màu để Format Font Color, vd : StatusColorText, ( Field này trong trong Datasource của MenuText hoặc MenuSQL là được)",,ForeColor
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,ACF,21,21,StatusButtonPropertyX,ApplyColorFieldName,"Thiết lập các cột tô màu, Để trống là tất cả cột. vd : DocumentID;DocumentDate,ObjectID",,StatusID
+TableInfoX (slot T2),T{n} + SubID,DCP,21,21,TableInfoX,TabCaption,Tiêu đề của Tab detail chứa  grid detail. vd: chi tiết hàng hóa,TableInfoX.TabCaption,Lịch sử gởi / duyệt
+TableInfoX (slot T2),T{n} + SubID,PK,21,21,TableInfoX,PrimaryKey,PrimaryKey on table,TableInfoX.PrimaryKey,UserAutoID
+TableInfoX (slot T2),T{n} + SubID,TN,21,21,TableInfoX,TableName,"Schema table, Insert, Update, Delete dữ liệu trên Table này",TableInfoX.TableName,AR_OrderLogTbl
+TableInfoX (slot T1),T{n} + SubID,LCK,20,20,TableInfoX,LockColumnArr,"Readonly / LockColumn Column list on grid, khóa các cột này lại",TableInfoX.LockColumnArr,HangSX;ItemName;Unit
+TableInfoX (slot T1),T{n} + SubID,GD2,20,20,TableInfoX,GridColumnOrdersFix,Grid Column Orders . Thứ tự các cột : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để lấy ds cột hiện tại,TableInfoX.GridColumnOrdersFix,ItemID;ItemName;Unit;HangSX;Model
+TableInfoX (slot T0),T{n} + SubID,FKA1,19,19,TableInfoX,Foreign_KeyAMain,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyAMain,LocationID
+TableInfoX (slot T0),T{n} + SubID,FKB1,19,19,TableInfoX,Foreign_KeyB1,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB1,LocationID
+TableInfoX (slot T0),T{n} + SubID,TN1,19,19,TableInfoX,TableName1,Join table,TableInfoX.TableName1,CF_LocationTbl
+TableInfoX (slot T0),T{n} + SubID,SE1,19,19,TableInfoX,SelectFields1,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields1,A.LocationGroup
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,CDF,19,19,StatusButtonPropertyX,CaptionDisplayField,"Field Hiện tên trạng thái trên nút bấm, hiện màu nền trên nút bấm",,StatusName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,GDN,19,19,StatusButtonPropertyX,FieldDisplay,"FieldName hiện thị trên Menu, Nếu Data có field này, sẽ cập nhật vào Data , nếu không thiết lập sẽ lấy FieldName thứ 2 trong Datatable",,StatusName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,GFN,19,19,StatusButtonPropertyX,FieldValue,"FieldName cập nhật vào Data, nếu không thiết lập sẽ lấy FieldName đầu tiên trong Datatable ",,StatusID
+TableInfoX (slot T1),T{n} + SubID,HDE,18,18,TableInfoX,HideColumnArr,"Ẩn cột trên lưới, Hide Column on grid",TableInfoX.HideColumnArr,StoreHouseID;TonKhoHienTai;CostID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,P1,17,12,PrintButtonPropertyX,Para,"Chọn Action thực hiện sau khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,PurchaseRequestID
+TableInfoX (slot T1),T{n} + SubID,DCP,17,17,TableInfoX,TabCaption,Tiêu đề của Tab detail chứa  grid detail. vd: chi tiết hàng hóa,TableInfoX.TabCaption,Chi tiết hàng hóa
+Form-level (ExecSQLCommand),KeyID,EBE,17,17,ExecSQLCommand,ExecSQLCheckBeforeEdit,"MsgInfoAction : Exec SQL Command check data Before Edit, SP_CheckEditInvoiceStp {0} or {Primarykey}, {isManager}, {isAdmin} , '{User}{BranchID}....'",ExecSQLCommand.ExecSQLCheckBeforeEdit,"SELECT N'Chứng từ đã vào quy trình duyệt, không được sửa trực tiếp tại màn hình "
+Form-level (ToolBarSetting),KeyID,HBP,16,16,ToolBarSetting,HidePrintButton,"Hide Print button on toolbar, Ẩn nút In trên thanh toolbar",ToolBarSetting.HidePrintButton,1
+Form-level (LayoutX),KeyID,SP,16,16,LayoutX,DocumentFilterType,"Hiện Control lọc chứng từ trên toolbar,Chọn loại lọc theo Kỳ (Tháng), Quý, Năm hoặc từ ngày đến ngày(DateToDate),  theo ngày",LayoutX.DocumentFilterType,9
+TableInfoX (slot T0),T{n} + SubID,FKA2,16,16,TableInfoX,Foreign_KeyA2,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyA2,ItemID
+TableInfoX (slot T0),T{n} + SubID,FKB2,16,16,TableInfoX,Foreign_KeyB2,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB2,ItemID
+TableInfoX (slot T0),T{n} + SubID,TN2,16,16,TableInfoX,TableName2,Join table C : on A.Key = C.key,TableInfoX.TableName2,CF_ItemTbl
+TableInfoX (slot T0),T{n} + SubID,SE2,16,16,TableInfoX,SelectFields2,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields2,ItemName
+Form-level (ExecSQLCommand),KeyID,EBD,16,16,ExecSQLCommand,ExecSQLCheckBeforeDelete,"MsgInfoAction : Exec SQL Command check data Before Delete, SP_CheckDeleteInvoiceStp {0} or {Primarykey}, {isManager}, {isAdmin} , '{User}{BranchID}....'",ExecSQLCommand.ExecSQLCheckBeforeDelete,"SELECT N'Chứng từ đã vào quy trình duyệt, không được xóa trực tiếp tại màn hình "
+Form-level (LayoutX),KeyID,DFP,15,15,LayoutX,DocumentDateField,"DocumentDate, Ngay, PeriodID, Quy, QuarterID, YearID, Nam..., Nếu là Ngày dùng để tính STT của Phiếu, nếu kỳ kế toán đã khóa, bạn không thể thêm CT vào được ",LayoutX.DocumentDateField,DocumentDate
+TableInfoX (slot T0),T{n} + SubID,FTR,15,15,TableInfoX,Filter,"Filter {User}, {SystemPara} : Normal Filter, can change by toolbar ( Click filter button )",TableInfoX.Filter,"EXISTS (SELECT 1 FROM SY_String2TableFnc(ISNULL(AR_OrderViewData.SendTo, N'')) S"
+Form-level (LayoutX),KeyID,DPR,14,14,LayoutX,DocumentPrefix,"Ký tự đầu của phiếu, Document Prefix : KH, .. {BranchID} , {User}, {CostCenterID}, {StoreHouseID} ... nếu muốn tăng theo STT, gán = '0', chọn loại = CF_Table ",AutoNumberSetting.ColumnPrefix;LayoutX.DocumentPrefix,PO
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LH,14,9,WebLinkViewerPropertyX,LinkURL,"URL link khi bấm vào, vd : http://www.test.com/abc.aspx?id={0}&id2={1}.",,{0}
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LP,14,9,WebLinkViewerPropertyX,LinkParam,Para truyền vào URL.,,DocumentUrl
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LT,14,9,WebLinkViewerPropertyX,LinkCaption,Vd : Xem thông tin trên web.,,Mở TLĐK
+TableInfoX (slot T2),T{n} + SubID,HDE,13,13,TableInfoX,HideColumnArr,"Ẩn cột trên lưới, Hide Column on grid",TableInfoX.HideColumnArr,BackColor;StatusID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,P1,12,8,ExecSQLWithParaButtonPropertyX,,,,PurchaseRequestID
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,C2,12,9,GridConditionFormat,ValueColumn,"ValueColumn, Lấy giá trị từ cột này đem so sánh với giá trị khác hoặc cột khác, Get Value to Compare. ex :  IsLock, isDiasble, Status.. ",,IsApplied
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,V1,12,9,GridConditionFormat,Value1,"Value1, Giá trị cần so sánh, Value to Compare directly with ValueColumn. ex : 0, 1, DateTime, Number.. ",,1
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,BO,12,9,GridConditionFormat,BackColor,BackColor ,,-16728064
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,C1,12,9,GridConditionFormat,FormatColumnArr,"Format Color Column, Tô màu vào cột này, bỏ trống là tô cả dòng, vd : DocumentID;DocumentDate ",,OrderDocumentID
+TableInfoX (slot T2),T{n} + SubID,GD2,12,12,TableInfoX,GridColumnOrdersFix,Grid Column Orders . Thứ tự các cột : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để lấy ds cột hiện tại,TableInfoX.GridColumnOrdersFix,DocumentID;ThoiGian;UserName;StatusName;BackColor;SendTo;Notes
+Form-level (CommonDocumentSetting),KeyID,DMK,11,11,CommonDocumentSetting,DocumentMask,"Document Mask, Lấy từ hệ thống hoặc là : {P}{MM}{YY}/{3}, {P}{MM}{YY}{3}, {P}{MM}{YY}/{4}, {P}{MM}{YY}{4}, {P}{YY}{MM}/{3}, {P}{YY}{MM}{3}, {P}{YY}{MM}/{4}, {P}{YY}{MM}{4}, {P}{3}/{MM}{YY}, {P}{4}/{MM}{YY}, {P}{YY}/{4}, {P}{YYYY}/{4}, {P}{YY}/{5}, {P}{YYYY}/{5}",AutoNumberSetting.DocumentMask;CommonDocumentSetting.DocumentMask,{P}{YY}{MM}/{3}
+Form-level (ToolBarSetting),KeyID,HBE,10,10,ToolBarSetting,HideEditButton,"Hide Edit button on toolbar, Ẩn nút Sửa trên thanh toolbar",ToolBarSetting.HideEditButton,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,PV4,10,5,ExecSQLWithParaButtonPropertyX,CaptionForeColor,Màu chữ Caption,PropertiesX.CaptionForeColor,-16777216
+TableInfoX (slot T0),T{n} + SubID,TV,9,9,TableInfoX,TableViewData,"Dùng view hoặc table để lấy dữ liệu hiển thị trên grid ( Trong View đã left join với các bảng khác và lấy ra đầy đủ lữ liệu), bỏ trống sẽ dùng TableName bên dưới",TableInfoX.TableViewData,AR_OrderViewData
+TableInfoX (slot T3),T{n} + SubID,PK,9,9,TableInfoX,PrimaryKey,PrimaryKey on table,TableInfoX.PrimaryKey,UserAutoID
+TableInfoX (slot T3),T{n} + SubID,TN,9,9,TableInfoX,TableName,"Schema table, Insert, Update, Delete dữ liệu trên Table này",TableInfoX.TableName,IV_InboundRequestLogTbl
+TableInfoX (slot T3),T{n} + SubID,DCP,9,9,TableInfoX,TabCaption,Tiêu đề của Tab detail chứa  grid detail. vd: chi tiết hàng hóa,TableInfoX.TabCaption,Lịch sử gởi / duyệt
+Form-level (ToolBarSetting),KeyID,SSP,9,9,ToolBarSetting,ShowSaveAndPrintButton,Hiện nút lưu và in,ToolBarSetting.ShowSaveAndPrintButton,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,32,9,8,ExecSQLWithParaButtonPropertyX,Name3,Tên para,CopyDataOnAddNew.Detail3CopyBySQL,Ghi chú
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,3A,9,8,ExecSQLWithParaButtonPropertyX,RequireParam3,Bắt buộc phải chọn,,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,26,9,8,ExecSQLWithParaButtonPropertyX,ListSourceSQL2,Source SQL cho combo : Select * from CF_ItemTbl,CopyDataOnAddNew.SavedExecSQL,"select UserName, HoTen from SY_User where PM = 1"
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,27,9,8,ExecSQLWithParaButtonPropertyX,ListValueColumn2,Value Column : ItemID,CopyDataOnAddNew.SavedExecSQLParam,UserName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,28,9,8,ExecSQLWithParaButtonPropertyX,ListDisplayColumn2,Display Column : ItemName,,UserName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,29,9,8,ExecSQLWithParaButtonPropertyX,ListDisplay2Column2,Display2 Column : ItemName2,CopyDataOnAddNew.Detail2Copy2LinkID,HoTen
+TableInfoX (slot T2),T{n} + SubID,FKA1,8,8,TableInfoX,Foreign_KeyAMain,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyAMain,StatusID
+TableInfoX (slot T2),T{n} + SubID,FKB1,8,8,TableInfoX,Foreign_KeyB1,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB1,StatusID
+TableInfoX (slot T2),T{n} + SubID,SE1,8,8,TableInfoX,SelectFields1,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields1,"A.StatusName, A.BackColor"
+TableInfoX (slot T2),T{n} + SubID,TN1,8,8,TableInfoX,TableName1,Join table,TableInfoX.TableName1,AR_OrderStatusTbl
+TableInfoX (slot T3),T{n} + SubID,RDO,8,8,TableInfoX,ReadOnly,Readonly mode - faster operator,,1
+TableInfoX (slot T3),T{n} + SubID,HDE,8,8,TableInfoX,HideColumnArr,"Ẩn cột trên lưới, Hide Column on grid",TableInfoX.HideColumnArr,BackColor;StatusID
+TableInfoX (slot T2),T{n} + SubID,LCK,8,8,TableInfoX,LockColumnArr,"Readonly / LockColumn Column list on grid, khóa các cột này lại",TableInfoX.LockColumnArr,ItemName;Unit;HangSX;QuantityByDocument;QuantityByReal;Lot;ExpireDate
+Form-level (LayoutX),KeyID,SPA2,7,7,LayoutX,DocumentNoCheckUser,"Nếu không phải là user tạo ra, vẫn có thể thể xem, sửa ( không yêu cầu quyền manager/admin ) ",LayoutX.DocumentNoCheckUser,1
+TableInfoX (slot T2),T{n} + SubID,RDO,7,7,TableInfoX,ReadOnly,Readonly mode - faster operator,,1
+TabMaster/Tab caption,T{n}V,T2V,7,7,TabMaster,Tab2Caption,Tiêu đề của Master tab 2,,Thông tin hư hỏng
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C5,7,7,PrintButtonPropertyX,ReportFile,"ReportFile , nếu bỏ trống sẽ lấy StoreName",,QRCodeReport
+TableInfoX (slot T4),T{n} + SubID,PK,7,7,TableInfoX,PrimaryKey,PrimaryKey on table,TableInfoX.PrimaryKey,UserAutoID
+TableInfoX (slot T4),T{n} + SubID,TN,7,7,TableInfoX,TableName,"Schema table, Insert, Update, Delete dữ liệu trên Table này",TableInfoX.TableName,IV_InboundRequestLogTbl
+TableInfoX (slot T4),T{n} + SubID,DCP,7,7,TableInfoX,TabCaption,Tiêu đề của Tab detail chứa  grid detail. vd: chi tiết hàng hóa,TableInfoX.TabCaption,Lịch sử gởi / duyệt
+TableInfoX (slot T4),T{n} + SubID,FKA1,7,7,TableInfoX,Foreign_KeyAMain,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyAMain,StatusID
+TableInfoX (slot T4),T{n} + SubID,FKB1,7,7,TableInfoX,Foreign_KeyB1,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB1,StatusID
+TableInfoX (slot T4),T{n} + SubID,TN1,7,7,TableInfoX,TableName1,Join table,TableInfoX.TableName1,IV_InboundRequestStatusTbl
+TableInfoX (slot T4),T{n} + SubID,SE1,7,7,TableInfoX,SelectFields1,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields1,"A.StatusName, A.BackColor"
+TableInfoX (slot T4),T{n} + SubID,HDE,7,7,TableInfoX,HideColumnArr,"Ẩn cột trên lưới, Hide Column on grid",TableInfoX.HideColumnArr,BackColor;StatusID
+TableInfoX (slot T4),T{n} + SubID,RDO,7,7,TableInfoX,ReadOnly,Readonly mode - faster operator,,1
+TableInfoX (slot T4),T{n} + SubID,SO,7,7,TableInfoX,SortByFields,Order by / Sort by Fields in Select command,TableInfoX.SortByFields,ThoiGian desc
+TableInfoX (slot T4),T{n} + SubID,GD2,7,7,TableInfoX,GridColumnOrdersFix,Grid Column Orders . Thứ tự các cột : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để lấy ds cột hiện tại,TableInfoX.GridColumnOrdersFix,DocumentID;ThoiGian;UserName;StatusName;BackColor;SendTo;Notes
+TableInfoX (slot T4),T{n} + SubID,WWC,7,7,TableInfoX,WordWrapColumnArr,"WordWrap, Multiline : Hiện thị nhiều dòng dữ liệu trong 1 ô grid (Khi dữ liệu quá dài), Dùng Ctrl + Enter để xuống dòng khi nhập",TableInfoX.WordWrapColumnArr,Notes
+TableInfoX (slot T2),T{n} + SubID,SO,6,6,TableInfoX,SortByFields,Order by / Sort by Fields in Select command,TableInfoX.SortByFields,ThoiGian desc
+TableInfoX (slot T2),T{n} + SubID,WWC,6,6,TableInfoX,WordWrapColumnArr,"WordWrap, Multiline : Hiện thị nhiều dòng dữ liệu trong 1 ô grid (Khi dữ liệu quá dài), Dùng Ctrl + Enter để xuống dòng khi nhập",TableInfoX.WordWrapColumnArr,Notes
+TabMaster/Tab caption,T{n}V,T1V,6,6,TabMaster,Tab1Caption,Tiêu đề của Master tab 1,,Thông tin chung
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,11,6,6,ColumnSets,G1Caption,"Tiêu đề group , caption, vd : Nhập kho",CopyDataOnAddNew.DetailCopyFromParent,Thông tin hàng hóa
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,22,6,6,ColumnSets,G2ColumnArr,"Danh sách các cột trong group, vd: ItemID;ItemName;Unit",CopyDataOnAddNew.Detail2CopyBySQL,LotNumberByDocument;SetQuantityByDocument;BarrelQuantityByDocument;ExpireDateByD
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,12,6,6,ColumnSets,G1ColumnArr,"Danh sách các cột trong group, vd: ItemID;ItemName;Unit",CopyDataOnAddNew.DetailCopyBySQL,ItemID;ItemName;ItemCode;HangSX;Additional
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,21,6,6,ColumnSets,G2Caption,"Tiêu đề group , caption, vd : Nhập kho",CopyDataOnAddNew.Detail2CopyFromParent,Trên chứng từ
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,32,6,6,ColumnSets,G3ColumnArr,"Danh sách các cột trong group, vd: ItemID;ItemName;Unit",CopyDataOnAddNew.Detail3CopyBySQL,LotNumberByReal;SetQuantityByReal;BarrelQuantityByReal;ExpireDateByReal
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,31,6,6,ColumnSets,G3Caption,"Tiêu đề group , caption, vd : Nhập kho",CopyDataOnAddNew.Detail3CopyFromParent,Trên thực tế
+TableInfoX (slot T1),T{n} + SubID,RDO,6,6,TableInfoX,ReadOnly,Readonly mode - faster operator,,1
+TableInfoX (slot T3),T{n} + SubID,GD2,6,6,TableInfoX,GridColumnOrdersFix,Grid Column Orders . Thứ tự các cột : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để lấy ds cột hiện tại,TableInfoX.GridColumnOrdersFix,AssetID;AssetName;SerialNo;ItemID
+TableInfoX (slot T3),T{n} + SubID,TV,6,6,TableInfoX,TableViewData,"Dùng view hoặc table để lấy dữ liệu hiển thị trên grid ( Trong View đã left join với các bảng khác và lấy ra đầy đủ lữ liệu), bỏ trống sẽ dùng TableName bên dưới",TableInfoX.TableViewData,IV_InternalTransferBatchAssetView
+TableInfoX (slot T2),T{n} + SubID,TV,6,6,TableInfoX,TableViewData,"Dùng view hoặc table để lấy dữ liệu hiển thị trên grid ( Trong View đã left join với các bảng khác và lấy ra đầy đủ lữ liệu), bỏ trống sẽ dùng TableName bên dưới",TableInfoX.TableViewData,IV_InternalTransferBatchDetailView
+TableInfoX (slot T1),T{n} + SubID,SUM,5,5,TableInfoX,SummaryColumnArr,Summary Column list on grid,TableInfoX.SummaryColumnArr,Amount;TotalAmount
+TabMaster/Tab caption,T{n}V,T3V,5,5,TabMaster,Tab3Caption,Tiêu đề của Master tab 3,,Đánh giá và kết luận
+TableInfoX (slot T0),T{n} + SubID,FKA3,5,5,TableInfoX,Foreign_KeyA3,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyA3,DocumentID
+TableInfoX (slot T0),T{n} + SubID,FKB3,5,5,TableInfoX,Foreign_KeyB3,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB3,DocumentID
+TableInfoX (slot T0),T{n} + SubID,TN3,5,5,TableInfoX,TableName3,Join table D : on A.Key = D.key,TableInfoX.TableName3,"(SELECT DISTINCT DocumentID, StatusID FROM IV_InboundRequestLogTbl WHERE StatusI"
+TableInfoX (slot T0),T{n} + SubID,SE3,5,5,TableInfoX,SelectFields3,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields3,C.StatusID
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,41,5,5,ColumnSets,G4Caption,"Tiêu đề group , caption, vd : Nhập kho",CopyDataOnAddNew.Detail4CopyFromParent,Kiểm tra xác suất
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,42,5,5,ColumnSets,G4ColumnArr,"Danh sách các cột trong group, vd: ItemID;ItemName;Unit",CopyDataOnAddNew.Detail4CopyBySQL,RandomTestQuantity;TestStatus;NoPalletNote;PalletNote;CheckerNote
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,C3,4,2,GridConditionFormat,CompareColumnValue1,"CompareColumnValue1,  Cột lấy giá trị cần so sánh, Vd : so sánh Cột Tồn Kho nhỏ hơn Cột SoLuong xuất. báo đỏ ( Cột này sẽ chọn 1 trong 2 cột đó để so sanh ) ",,IsApplied
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BT,4,3,CommandButtonPropertyX,ButtonText,"Tiêu đề, Caption của Command",,Gửi đề nghị
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C4,4,3,CommandButtonPropertyX,SourceSQL,"SQL Command. / FormName cần mở. N'{JSON}', N'{XML}',  {0}, '{1}', {2} ...",,"UPDATE AP_PurchaseRequestTbl SET StatusID = 2, isLock = 1  WHERE PurchaseRequest"
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,P1,4,3,CommandButtonPropertyX,Para,"Param cho SQL command, vd du : DocumentID;ObjectID",,PurchaseRequestID
+TableInfoX (slot T0),T{n} + SubID,NT1,4,4,TableInfoX,aaNotes1,Nhập các ghi chú vào để tham khảo,TableInfoX.aaNotes1,A.StatusID
+TableInfoX (slot T0),T{n} + SubID,NT2,3,3,TableInfoX,aaNotes2,Nhập các ghi chú vào để tham khảo,TableInfoX.aaNotes2,StatusID = 2
+GridConditionFormat (định dạng có điều kiện),T{n}F{k} + SubID,CO,3,3,GridConditionFormat,ForeColor,ForeColor ,,-16777216
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C3,3,2,CommandButtonPropertyX,ActionAfter,"Chọn Action thực hiện sau khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,Reload
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BI,3,2,CommandButtonPropertyX,IconResource,Chon Icon cho button,,email16
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C1,3,3,CommandButtonPropertyX,ActionType,"Loại command, chọn từ danh sách hoặc nhập vào, vd : ExecSQL, ShowSelectForm, ShowCreateForm, ShowUserForm...",,ExecSQL
+Form-level (ExecSQLCommand),KeyID,ES6,3,3,ExecSQLCommand,ExecSQLAfterSave_IsDoReload,"Reload data Sau khi thực thi lệnh, ExecSQLAfterSaveData, ExecSQLAfterSaveOnOK, ExecSQLAfterSaveOnCancel  ",ExecSQLCommand.ExecSQLAfterSave_IsDoReload,1
+TableInfoX (slot T1),T{n} + SubID,GD1,3,3,TableInfoX,GridHeaderLines,"Grid HeaderLines. 0 = ẩn header, Chiều cao của header Caption : 1,2...",TableInfoX.GridHeaderLines,2
+Form-level (ToolBarSetting),KeyID,HBO,3,3,ToolBarSetting,HideOptionButton,"Hide Option button on toolbar, Ẩn nút Tùy Chọn trên thanh toolbar",ToolBarSetting.HideOptionButton,1
+Form-level (ToolBarSetting),KeyID,HFB,3,3,ToolBarSetting,HideFilterButton,"Hide Filter button on toolbar, Ẩn nút tìm trên thanh toolbar",ToolBarSetting.HideFilterButton,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C4R,2,1,ExecSQLWithParaButtonPropertyX,UpdateValueAfterExecSQL,"Cập nhật lại dữ từ các Column trả về trong store Sql, dùng cho tính toán trả kết quả về vào các textbox",,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,BC,2,1,CommandButtonPropertyX,BackColor,"BackColor, Chọn màu nền, Muốn bỏ màu nền thì chọn Tranparent (Trong Tab Web Color)",,-16711936
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LBS,2,1,CommandButtonPropertyX,LockUnlockBySQL,"SQL trả ra 1 là lock, trả ra 0 là unlock control này",PropertiesX.LockUnlockBySQL,SELECT ISNULL((SELECT CASE WHEN isLock = 1 THEN 1 WHEN StatusID = 1 OR StatusID 
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,LBSP,2,1,CommandButtonPropertyX,LockUnlockBySQLPara,Para cho SQl,PropertiesX.LockUnlockBySQLPara,PurchaseRequestID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C2,2,1,CommandButtonPropertyX,ActionBefore,"Chọn Action thực hiện trước khi bấm Command, vd : SaveContinue, SaveSkipErr, Edit, Save..",,SaveContinue
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,CS4,2,1,CommandButtonPropertyX,SQLCheckBeforeDoAction,MsgAction : Thực hiện SQL kiểm tra hợp lệ trước khi bấm nút. vd : kiểm tra không được duyệt nếu phiếu này đã xong rồi,,"select top 1 Msg, MsgType  from (      select           1 as SortOrder,         "
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,CS5,2,1,CommandButtonPropertyX,SQLCheckBeforeDoActionPara,"Param cho SQL command, vd du : DocumentID;ObjectID",,PurchaseRequestID
+Form-level (SearchAndSumSetting),KeyID,SUD,2,2,SearchAndSumSetting,SumFieldFromDetail1Arr,"Cộng giá trị từ Grid Detail lên Master, Dùng từng cặp 1 : MasterField;DetailField;MasterField2;DetailField2. vd : BaseTotal;TotalAmount",SearchAndSumSetting.SumFieldFromDetail1Arr,BaseTotal;TotalAmount
+Form-level (LayoutX),KeyID,SPA,2,2,LayoutX,DocumentFilterDay,"Áp dụng cho DateToDate, số ngày mặc định khi hiện dữ liệu, vd : 7 ngày",LayoutX.DocumentFilterDay,30
+TableInfoX (slot T3),T{n} + SubID,FKA1,2,2,TableInfoX,Foreign_KeyAMain,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyAMain,StatusID
+TableInfoX (slot T3),T{n} + SubID,FKB1,2,2,TableInfoX,Foreign_KeyB1,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB1,StatusID
+TableInfoX (slot T3),T{n} + SubID,TN1,2,2,TableInfoX,TableName1,Join table,TableInfoX.TableName1,IV_InboundRequestStatusTbl
+TableInfoX (slot T3),T{n} + SubID,SE1,2,2,TableInfoX,SelectFields1,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields1,"A.StatusName, A.BackColor"
+TableInfoX (slot T3),T{n} + SubID,SO,2,2,TableInfoX,SortByFields,Order by / Sort by Fields in Select command,TableInfoX.SortByFields,ThoiGian desc
+TableInfoX (slot T3),T{n} + SubID,WWC,2,2,TableInfoX,WordWrapColumnArr,"WordWrap, Multiline : Hiện thị nhiều dòng dữ liệu trong 1 ô grid (Khi dữ liệu quá dài), Dùng Ctrl + Enter để xuống dòng khi nhập",TableInfoX.WordWrapColumnArr,Notes
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,SP,2,2,PrintButtonPropertyX,ShowStoreParaForm,Hiện form chọn Para theo store trước khi hiện report (Chỉ áp dụng cho store ) ,LayoutX.DocumentFilterType,1
+TableInfoX (slot T1),T{n} + SubID,TN3,2,2,TableInfoX,TableName3,Join table D : on A.Key = D.key,TableInfoX.TableName3,FA_AssetTbl
+TableInfoX (slot T1),T{n} + SubID,TN2,2,2,TableInfoX,TableName2,Join table C : on A.Key = C.key,TableInfoX.TableName2,CF_ObjectTbl
+TableInfoX (slot T1),T{n} + SubID,SE3,2,2,TableInfoX,SelectFields3,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields3,"C.AssetName AS RequestedAssetName,C.SerialNo AS RequestedAssetSerial"
+TableInfoX (slot T1),T{n} + SubID,FKB3,2,2,TableInfoX,Foreign_KeyB3,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB3,AssetID
+TableInfoX (slot T1),T{n} + SubID,SE2,2,2,TableInfoX,SelectFields2,"Join field list : ObjectName, Address ... ",TableInfoX.SelectFields2,B.ObjectName AS ExpectedObjectName
+TableInfoX (slot T1),T{n} + SubID,FKB2,2,2,TableInfoX,Foreign_KeyB2,Foreign_Key on join table B --> : A.DocumentID = B.DocID,TableInfoX.Foreign_KeyB2,ObjectID
+TableInfoX (slot T1),T{n} + SubID,FKA3,2,2,TableInfoX,Foreign_KeyA3,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyA3,RequestedAssetID
+TableInfoX (slot T1),T{n} + SubID,FKA2,2,2,TableInfoX,Foreign_KeyA2,Foreign_Key on master table A --> : A.DocumentID = B.DocID ,TableInfoX.Foreign_KeyA2,ExpectedObjectID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,42,2,2,ExecSQLWithParaButtonPropertyX,Name4,Tên para,CopyDataOnAddNew.Detail4CopyBySQL,Ghi chú
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,31,2,2,ExecSQLWithParaButtonPropertyX,Type3,"Loại para : Textbox, Combo, Datetime...",CopyDataOnAddNew.Detail3CopyFromParent,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,36,2,2,ExecSQLWithParaButtonPropertyX,ListSourceSQL3,Source SQL cho combo : Select * from CF_ItemTbl,,"SELECT UserName,HoTen, BranchID FROM SY_User WHERE Disable=0 AND ISNULL(PM,0)=1 "
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,39,2,2,ExecSQLWithParaButtonPropertyX,ListDisplay2Column3,Display2 Column : ItemName2,,HoTen;BranchID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,38,2,2,ExecSQLWithParaButtonPropertyX,ListDisplayColumn3,Display Column : ItemName,,UserName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,37,2,2,ExecSQLWithParaButtonPropertyX,ListValueColumn3,Value Column : ItemID,,UserName
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,4A,2,2,ExecSQLWithParaButtonPropertyX,RequireParam4,Bắt buộc phải chọn,,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,26A,2,2,ExecSQLWithParaButtonPropertyX,ListSourceSQLPara2,Para Source SQL,,BranchID
+TableInfoX (slot T0),T{n} + SubID,GD2A,1,1,TableInfoX,GridColumnOrdersDefault,Thứ tự các cột mặc định khi bấm reset : ItemID;ItemName;Unit;Quantity... Có thể dùng Admin tools để update,TableInfoX.GridColumnOrdersDefault,OrderDocumentID;ShipmentNo;PurchaseTypeName;SupplierObjectName;PICUser;OrderDate
+Form-level (LayoutX),KeyID,DPR-2,1,1,LayoutX,DocumentPrefix,"Ký tự đầu của phiếu, Document Prefix : KH, .. {BranchID} , {User}, {CostCenterID}, {StoreHouseID} ... nếu muốn tăng theo STT, gán = '0', chọn loại = CF_Table ",,PO
+Form-level (LayoutX),KeyID,DPR-1,1,1,LayoutX,DocumentPrefix,"Ký tự đầu của phiếu, Document Prefix : KH, .. {BranchID} , {User}, {CostCenterID}, {StoreHouseID} ... nếu muốn tăng theo STT, gán = '0', chọn loại = CF_Table ",,PO
+TableInfoX (slot T0),T{n} + SubID,GCA,1,1,TableInfoX,GroupColumnArr,"Group on Grid, Nhóm theo các cột :  Column1;Column2 ",TableInfoX.GroupColumnArr,ManagerID
+TableInfoX (slot T0),T{n} + SubID,SUM,1,1,TableInfoX,SummaryColumnArr,Summary Column list on grid,TableInfoX.SummaryColumnArr,TongDoanhSo;DoanhSoTKW;DoanhSoKhac
+Form-level (ExecSQLCommand),KeyID,ESS,1,1,ExecSQLCommand,ExecSQLAfterSaveData,"MsgInfoAction :  SP_UpdateInvoiceCheckDiscountStp {0} = khóa chính, '{Column}', '{Column2}','{@User}'...'",ExecSQLCommand.ExecSQLAfterSaveData,Update AR_InvoiceRequestTbl set MaDaiLy = ObjectID where MaDaiLy is null and Doc
+TableInfoX (slot T1),T{n} + SubID,GRH,1,1,TableInfoX,GridRowHeaderContent,Grid RowHeaderContent. Hiện STT ở đầu mỗi dòng trên Grid,TableInfoX.GridRowHeaderContent,3
+Form-level (LayoutX),KeyID,DW3,1,1,LayoutX,DocumentPrefixWithColumnPrefix,"Ký tự đầu của số chứng từ kết hợp với các column này, vd : BH-{BranchID}-{ObjectID} ,  {P}-{BranchID}-{ObjectID} , ColumnsArr = BranchID;ObjectID, {P} là Prefix từ hệ thống  ",LayoutX.DocumentPrefixWithColumnPrefix,{BranchID}-DNX
+Form-level (LayoutX),KeyID,DW2,1,1,LayoutX,DocumentPrefixWithColumnPara,"Các column truyền vào Prefix, vd : BranchID;ObjectID;ItemID,  ColumnPrefix = BH-{BranchID}-{ObjectID}-{ItemID}   ",LayoutX.DocumentPrefixWithColumnPara,BranchID
+Form-level (LayoutX),KeyID,SRC,1,1,LayoutX,DocumentSourceID,"Mã ID của phân hệ, SourceID, ( ID này được thiết lập riêng trong hệ thống) GetDocument Prefix from Config : S1, S2, S3 ..PN, PX, PT, PC ..",LayoutX.DocumentSourceID,DNX
+Form-level (ExecSQLCommand),KeyID,EBS,1,1,ExecSQLCommand,ExecSQLCheckBeforeSave,"MsgInfoAction. Kiểm tra dữ liệu trước khi lưu, vd : AR_BeforeSaveInvoiceStp {isManager}, {isAdmin},  N'{0}' = PrimaryValueOriginal, N'{1}' = N'{XMLDATA}', N'{XML}', N'{JSON}', '{User}{BranchID}, N'{FieldName}', {FieldName2}, ....' ",ExecSQLCommand.ExecSQLCheckBeforeSave,AR_OrderDetail_WarningOverQuantityStp N'{1}'
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,C5,1,1,CommandButtonPropertyX,ShowConfirmQuestion,Hiện thông báo/Question Msg xác nhận trước khi thực hiện lệnh ,,0
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,P3,1,1,CommandButtonPropertyX,RequireFieldArr,Kiểm tra có dữ liệu các field này trước khi thực hiện Action Command,,ContractID
+TableInfoX (slot T1),T{n} + SubID,RCD,1,1,TableInfoX,RequireColumnArr,"Bắt buột User phải nhập dữ liệu vào các column này, AllowNull = False",TableInfoX.RequireColumnArr,Quantity
+rác (dòng chú thích export lọt vào bảng),"-- Export SY_FrmCfg , Rows","-- Export SY_FrmCfg , Rows",1,1,,,"Dòng ""-- Export SY_FrmCfg , Rows"" do script export/import ghi nhầm",,18
+TableInfoX (slot T2),T{n} + SubID,GD1,1,1,TableInfoX,GridHeaderLines,"Grid HeaderLines. 0 = ẩn header, Chiều cao của header Caption : 1,2...",TableInfoX.GridHeaderLines,2
+TableInfoX (slot T0),T{n} + SubID,WWC,1,1,TableInfoX,WordWrapColumnArr,"WordWrap, Multiline : Hiện thị nhiều dòng dữ liệu trong 1 ô grid (Khi dữ liệu quá dài), Dùng Ctrl + Enter để xuống dòng khi nhập",TableInfoX.WordWrapColumnArr,ItemName;ResultMessage
+TableInfoX (slot T0),T{n} + SubID,SE,1,1,TableInfoX,SelectFields,"SelectFields from table, Use : * or blank for all field",TableInfoX.SelectFields,IV_InboundRequestTbl.DocumentID
+TableInfoX (slot T1),T{n} + SubID,FTR,1,1,TableInfoX,Filter,"Filter {User}, {SystemPara} : Normal Filter, can change by toolbar ( Click filter button )",TableInfoX.Filter,"COALESCE(IsActive, 1) = 1"
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,52,1,1,ColumnSets,G5ColumnArr,"Danh sách các cột trong group, vd: ItemID;ItemName;Unit",CopyDataOnAddNew.Detail5CopyBySQL,RandomTestQuantity;TestStatus;NoPalletNote;PalletNote;CheckerNote
+ColumnSets (nhóm cột lưới),T{n}CS + SubID,51,1,1,ColumnSets,G5Caption,"Tiêu đề group , caption, vd : Nhập kho",CopyDataOnAddNew.Detail5CopyFromParent,Kiểm tra xác suất
+TabMaster/Tab caption,T{n}V,T4V,1,1,TabMaster,Tab4Caption,Tiêu đề tab 4,,Thông tin hư hỏng
+TableInfoX (slot T1),T{n} + SubID,WWC,1,1,TableInfoX,WordWrapColumnArr,"WordWrap, Multiline : Hiện thị nhiều dòng dữ liệu trong 1 ô grid (Khi dữ liệu quá dài), Dùng Ctrl + Enter để xuống dòng khi nhập",TableInfoX.WordWrapColumnArr,PalletNote;NoPalletNote
+Form-level (ToolBarSetting),KeyID,BPOP,1,1,ToolBarSetting,PrintButtonOption,"Print Option, Chọn loại mẫu in khi bấm nút In (In danh sách, in chứng từ.., Auto )",ToolBarSetting.PrintButtonOption,1
+Form-level (ExecSQLCommand),KeyID,ES7,1,1,ExecSQLCommand,ExecSQLAfterSave_IsDoReloadDetail,"Reload các detail Sau khi thực thi lệnh, ExecSQLAfterSaveData, ExecSQLAfterSaveOnOK, ExecSQLAfterSaveOnCancel  ",ExecSQLCommand.ExecSQLAfterSave_IsDoReloadDetail,1
+TableInfoX (slot T0),T{n} + SubID,RDO,1,1,TableInfoX,ReadOnly,Readonly mode - faster operator,,1
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,36A,1,1,ExecSQLWithParaButtonPropertyX,ListSourceSQLPara3,Para Source SQL,,BranchID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,24,1,1,ExecSQLWithParaButtonPropertyX,DefaultValueSQL2,"Select 'ABC', {User}, {BarnchID}, SP_TinhGiaTriStp '{0}' ",CopyDataOnAddNew.ShowFormByName,select AssignedSA from IV_InternalTransferBatchTbl where BatchID = N'{0}'
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,24A,1,1,ExecSQLWithParaButtonPropertyX,DefaultValueSQLPara2,Para cho default value SQL,,BatchID
+LYS (thuộc tính control),LYS{tab} + SubID=control + SubValue=key,2C,1,1,ExecSQLWithParaButtonPropertyX,LockDefaultValueNotEmpty2,Khóa giá trị mặc định nếu không rỗng,,1
+TableInfoX (slot T3),T{n} + SubID,LCK,1,1,TableInfoX,LockColumnArr,"Readonly / LockColumn Column list on grid, khóa các cột này lại",TableInfoX.LockColumnArr,BatchID;BatchDetailID;AssetName;SerialNo;ItemID;Technician;CheckedAt;IsDispatche

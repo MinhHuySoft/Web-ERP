@@ -1,0 +1,162 @@
+﻿DB,Source,MenuID,Name,CaptionVN,InMedcomForms,InMedcomMenu,HandwrittenClass,MedcomSameMenuID,Category
+Clisun,Layout .dat,,AR_Invoice2Frm,,,,có,,chung: lớp viết tay dùng chung code
+Clisun,Layout .dat,,AR_OrderThanhTamFrm,,,,có,,chung: lớp viết tay dùng chung code
+Clisun,Layout .dat,,ChartAccListFrm,,có (LISTEDIT),có,,,chung: form động cùng FormID
+Clisun,Layout .dat,,ItemListFrm,,có (EDIT),có,,,chung: form động cùng FormID
+Clisun,Layout .dat,,ObjectListFrm,,có (LIST),có,,,chung: form động cùng FormID
+Clisun,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+Clisun,RecentlyList (menu),010118,BackupDataFrm,Sao lưu dữ liệu,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+Clisun,RecentlyList (menu),010108,SetupFrm,Thiết lập thông số hệ thống,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+Clisun,RecentlyList (menu),06022,AR_OrderThanhTamFrm,Quản lý đơn đặt hàng,,,có,khác: AR_OrderVietDucFrm,chung: lớp viết tay dùng chung code
+Clisun,RecentlyList (menu),0603,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,không có MenuID,chung: lớp viết tay dùng chung code
+Clisun,RecentlyList (menu),02108,ObjectListFrm,Danh mục đối tượng khách hàng ( tất cả ),có (LIST),có,,không có MenuID,chung: form động cùng FormID
+Clisun,RecentlyList (menu),021220,ItemListFrm,Danh mục vật tư hàng hóa,có (EDIT),có,,không có MenuID,chung: form động cùng FormID
+Clisun,RecentlyList (menu),0267,ChartAccListFrm,Hệ thống tài khoản,có (LISTEDIT),có,,cùng FormName,chung: form động cùng FormID
+TinPhong2021,Layout .dat,,AR_Invoice2Frm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong2021,Layout .dat,,GJ_Entryfrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong2021,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong2021,RecentlyList (menu),1601,GJ_Entryfrm,Chứng từ khác ( Phiếu kế toán),,có,có,không có MenuID,chung: lớp viết tay dùng chung code
+TinPhong2021,RecentlyList (menu),0607,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,khác: AR_InvoiceJournalReport,chung: lớp viết tay dùng chung code
+TinPhong2022,Layout .dat,,AR_Invoice2Frm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong2022,Layout .dat,,EI_Pattern2ListFrm,,,,,,riêng TinPhong
+TinPhong2022,Layout .dat,,EI_Pattern3ListFrm,,,,,,riêng TinPhong
+TinPhong2022,Layout .dat,,EI_PatternListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong2022,Layout .dat,,PeriodLockDataFrm,,có (EDIT),có,,,chung: form động cùng FormID
+TinPhong2022,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong2022,RecentlyList (menu),010118,BackupDataFrm,Sao lưu dữ liệu,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong2022,RecentlyList (menu),0108,PeriodLockDataFrm,Khoá dữ liệu ( Không cho thêm/sửa/xóa ),có (EDIT),có,,cùng FormName,chung: form động cùng FormID
+TinPhong2022,RecentlyList (menu),010107,FiscalFrm,Khai báo lịch tài chính,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong2022,RecentlyList (menu),0607,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,khác: AR_InvoiceJournalReport,chung: lớp viết tay dùng chung code
+TinPhong2022,RecentlyList (menu),010108,SetupFrm,Thiết lập thông số hệ thống,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong2022,RecentlyList (menu),010313,EI_Pattern3ListFrm,Khai báo quyển phiếu xuất gởi bán đại lý,,,,không có MenuID,riêng TinPhong
+TinPhong2022,RecentlyList (menu),010312,EI_Pattern2ListFrm,Khai báo quyển phiếu xuất kho,,,,không có MenuID,riêng TinPhong
+TinPhong2022,RecentlyList (menu),010310,EI_PatternListFrm,Khai báo quyển hóa đơn,có (LIST),có,,cùng FormName,chung: form động cùng FormID
+TinPhong2022,RecentlyList (menu),010320,eInvoiceSettingFrm,Thiết lập kết nối,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,AP_PurchaseFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,AP_PurchaseFrm_IMPORT,,,,,,chung: biến thể Para của AP_PURCHASEFRM
+TinPhong,Layout .dat,,AP_PurchaseJournalReport,,,có,,,chung: báo cáo (SP AP_PurchaseJournalReportStp có ở MedData)
+TinPhong,Layout .dat,,AP_ReturnFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,AR_Invoice2Frm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,AR_InvoiceDetailReport,,,có,,,chung: báo cáo (SP AR_InvoiceDetailReportStp có ở MedData)
+TinPhong,Layout .dat,,AR_OrderVietDucFrm,,có (EDIT),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,AR_StockInputFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,BBGNThuocKSDBReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,BeeC_BulkBatchResultFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_ResultDetailV22Frm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_SyncCenter2Frm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_SyncCenterBulkSendFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_SyncCenterFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_SyncCenterRefreshRangeFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BeeC_TDPReconcileResultFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,BienBanGiaoNhanHangHoaReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,BienBanKKVaKTCLReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,BienBanKiemNhapReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,BranchListFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,ChartAccListFrm,,có (LISTEDIT),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,CustomerListFrm,,có (LIST),,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,DVGiaoHangListFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,DangKyLuuHanhFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,DepartmentListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,EmployeeListFrm,,có (LIST),,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,FormControlerSetupFrm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,FrmReportParaSetup,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,FrmReportParaSetup2,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,GJ_BalanceItemFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,IV_InventoryItemDetailReport,,,có,,,chung: báo cáo (SP IV_InventoryItemDetailReportStp có ở MedData)
+TinPhong,Layout .dat,,IV_OutputReport,,,,,,chung: báo cáo (SP IV_OutputReportStp có ở MedData)
+TinPhong,Layout .dat,,IV_StockInputDetailReport,,,có,,,chung: báo cáo (SP IV_StockInputDetailReportStp có ở MedData)
+TinPhong,Layout .dat,,IV_StockInputFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,IV_StockOutputFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,IV_StockOutputVD2Frm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,IV_StockOutputVDFrm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,ItemListFrm,,có (EDIT),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,NguoiDungFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,NguoiDungNhomFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,NguoiDungPhanQuyenFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,NguoiGiaoHangFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,NhaSanXuatFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,ObjectGroupListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,ObjectListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,SY_FrmLstSettingXFrm,,,,,,riêng TinPhong
+TinPhong,Layout .dat,,SoNhapXuatTonThuocKSDBReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,StorehouseGroupListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,StorehouseListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,SystemMenuManagerFrm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,TheKhoReport,,,,,,riêng: báo cáo không có SP ở MedData
+TinPhong,Layout .dat,,UserLogFrm,,,có,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,VendorListFrm,,có (LIST),,,,chung: form động cùng FormID
+TinPhong,Layout .dat,,ViewDataFrm,,,,có,,chung: lớp viết tay dùng chung code
+TinPhong,Layout .dat,,ZoneListFrm,,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong,RecentlyList (menu),0727,IV_InventoryItemDetailReport,Sổ chi tiết vật tư,,có,,không có MenuID,chung: báo cáo (SP IV_InventoryItemDetailReportStp có ở MedData)
+TinPhong,RecentlyList (menu),068436,BBGNThuocKSDBReport,BBGN thuốc KSDB,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),068430,BienBanKKVaKTCLReport,Biên bản kiểm kê và kiểm tra chất lượng,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),068410,BienBanGiaoNhanHangHoaReport,Biên bản giao nhận hàng hóa,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong,RecentlyList (menu),068444,NguoiGiaoHangFrm,Thiết lập người giao hàng,,,,không có MenuID,riêng TinPhong
+TinPhong,RecentlyList (menu),068440,SoNhapXuatTonThuocKSDBReport,Sổ nhập xuất tồn thuốc KSDB,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),068420,BienBanKiemNhapReport,Biên bản kiểm nhập,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),0625,AR_InvoiceJournalReport,Sổ nhật ký bán hàng,,có,,không có MenuID,chung: báo cáo (SP AR_InvoiceJournalReportStp có ở MedData)
+TinPhong,RecentlyList (menu),068426,TheKhoReport,Thẻ kho,,,,không có MenuID,riêng: báo cáo không có SP ở MedData
+TinPhong,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong,RecentlyList (menu),010102,NguoiDungPhanQuyenFrm,Phân quyền sử dụng,,có,có,khác: SY_UserBranchStorehouseFrm,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),010100,NguoiDungNhomFrm,Danh sách nhóm người dùng,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),010101,NguoiDungFrm,Danh sách người dùng,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),010108,SetupFrm,Thiết lập thông số hệ thống,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),06022,AR_OrderVietDucFrm,Quản lý đơn đặt hàng,có (EDIT),có,,cùng FormName,chung: form động cùng FormID
+TinPhong,RecentlyList (menu),0607,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,khác: AR_InvoiceJournalReport,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),0101081,UserLogFrm,User log,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),010502,GJ_BalanceItemFrm,Số dư hàng tồn kho,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),0258,BranchListFrm,Danh mục chi nhánh,,,,không có MenuID,riêng TinPhong
+TinPhong,RecentlyList (menu),01060,BeeC_SyncCenter2Frm,Đẩy dữ liệu lên BeeC,,,,không có MenuID,riêng TinPhong
+TinPhong,RecentlyList (menu),01061,BeeC_ResultDetailV22Frm,Chi tiết kết quả đẩy BeeC,,,,không có MenuID,riêng TinPhong
+TinPhong,RecentlyList (menu),010102,NguoiDungPhanQuyenFrm,Phân quyền sử dụng,,có,có,khác: SY_UserBranchStorehouseFrm,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),010101,NguoiDungFrm,Danh sách người dùng,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+TinPhong,RecentlyList (menu),0107,PeriodSetupFrm,Khoá sổ / Mở sổ,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),0607,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,khác: AR_InvoiceJournalReport,chung: lớp viết tay dùng chung code
+TinPhong,RecentlyList (menu),019900,BeeC_ResultDetailV22Frm,Chi tiết kết quả đẩy BeeC,,,,không có MenuID,riêng TinPhong
+TinPhong,RecentlyList (menu),02110,ObjectListFrm,Danh mục đối tượng - khách hàng - nhà cung cấp - nhân viên,có (LIST),có,,không có MenuID,chung: form động cùng FormID
+X02DuocTP,RecentlyList (menu),0603,AR_Invoice2Frm,Hóa đơn bán hàng,,,có,không có MenuID,chung: lớp viết tay dùng chung code
+X02DuocTP,RecentlyList (menu),1601,GJ_Entryfrm,Chứng từ khác ( Phiếu kế toán),,có,có,không có MenuID,chung: lớp viết tay dùng chung code
+X02DuocTP,RecentlyList (menu),010107,FiscalFrm,Khai báo lịch tài chính,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+X22LienMai,Layout .dat,,DepartmentListFrm,,có (LIST),có,,,chung: form động cùng FormID
+X22LienMai,Layout .dat,,FormControlerSetupFrm,,,,có,,chung: lớp viết tay dùng chung code
+X22LienMai,Layout .dat,,GDP_BulkBatchResultFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_ConfigFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_ItemRegistrationFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_ItemScopeFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_ResultDetailFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_SyncCenter2Frm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_SyncCenterBulkSendFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_SyncCenterFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_SyncCenterRefreshRangeFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,GDP_TDPReconcileResultFrm,,,,,,riêng TinPhong
+X22LienMai,Layout .dat,,ItemGroupListFrm,,có (LIST),có,,,chung: form động cùng FormID
+X22LienMai,Layout .dat,,NguoiDungFrm,,,có,có,,chung: lớp viết tay dùng chung code
+X22LienMai,Layout .dat,,NguoiDungPhanQuyenFrm,,,có,có,,chung: lớp viết tay dùng chung code
+X22LienMai,Layout .dat,,SystemMenuManagerFrm,,,,có,,chung: lớp viết tay dùng chung code
+X22LienMai,RecentlyList (menu),0119,Logoff,Đăng xuất,,có,,cùng FormName,lệnh hệ thống
+X22LienMai,RecentlyList (menu),010640,GDP_ResultDetailFrm,Chi tiết kết quả đẩy GDP,,,,không có MenuID,riêng TinPhong
+X22LienMai,RecentlyList (menu),010630,GDP_SyncCenter2Frm,Đẩy dữ liệu GDP,,,,không có MenuID,riêng TinPhong
+X22LienMai,RecentlyList (menu),010101,NguoiDungFrm,Danh sách người dùng,,có,có,cùng FormName,chung: lớp viết tay dùng chung code
+X22LienMai,RecentlyList (menu),010102,NguoiDungPhanQuyenFrm,Phân quyền sử dụng,,có,có,khác: SY_UserBranchStorehouseFrm,chung: lớp viết tay dùng chung code
+X22LienMai,RecentlyList (menu),010601,GDP_ConfigFrm,Cấu hình kết nối GDP,,,,không có MenuID,riêng TinPhong
+X22LienMai,RecentlyList (menu),010610,GDP_ItemScopeFrm,Mặt hàng gửi GDP,,,,không có MenuID,riêng TinPhong
+X22LienMai,RecentlyList (menu),010620,GDP_ItemRegistrationFrm,Số đăng ký thuốc GDP,,,,không có MenuID,riêng TinPhong
+X22LienMai,RecentlyList (menu),021217,ItemGroupListFrm,Danh mục nhóm hàng,có (LIST),có,,cùng FormName,chung: form động cùng FormID
+X22LienMai,RecentlyList (menu),0223,DepartmentListFrm,Danh mục phòng ban,có (LIST),có,,cùng FormName,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (lọc %BeeC%),,BeeC_SyncCenter2Frm,Đẩy dữ liệu lên BeeC,,,,,riêng TinPhong
+TinPhong,SY_FrmLstTbl (lọc %BeeC%),,BeeC_SyncCenterFrm,Đẩy dữ liệu lên BeeC,,,,,riêng TinPhong
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,EM_ItemLevelFrm,Định mức hàng tồn kho,có (LIST),,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,ER_ItemLevelFrm,Định mức hàng tồn kho SX,có (LIST),,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,FA_CapitalListFrm,Danh mục nguồn vốn tài sản,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,GJ_DocBatchSetupfrm,Thiết lập chứng từ ghi sổ ( Lô chứng từ ),có (LIST),,có,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,GJ_EntrySetupfrm,Thiết lập các bút toán nghiệp vụ,có (LIST),,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,GJ_TransferSetupFrm,Thiết lập bút toán kết chuyển tự động,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,ItemListFrm,Danh mục hàng hóa,có (EDIT),có,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,IV_ItemLevelFrm,Định mức hàng tồn kho,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,SY_FrmLstTbl (mẫu cấu hình),,PC_AccSetupFrm,Thiết lập thông số,có (LIST),có,,,chung: form động cùng FormID
+TinPhong,SY_Menu (lọc BeeC / xung đột),0106,BeeC_SyncCenterFrm,Đẩy dữ liệu lên BeeC,,,,không có MenuID,riêng TinPhong
+TinPhong,SY_Menu (lọc BeeC / xung đột),01060,BeeC_SyncCenter2Frm,Đẩy dữ liệu lên BeeC,,,,không có MenuID,riêng TinPhong
+TinPhong,SY_Menu (lọc BeeC / xung đột),01,,Hệ thống,,,,cùng FormName,riêng TinPhong

@@ -1,0 +1,575 @@
+﻿TableName,Prefix,PrefixMeaning,Kind,Columns,PrimaryKey,IdentityColumn,ApproxRows,FKOut,FKIn,Triggers,InSY_DocSetup,UsedBySY_FrmLstTbl,has_DocumentID,has_DocumentDate,has_StatusID,has_isLock,has_BranchID,has_UserCreate,has_DateCreate,has_UserUpdate,has_DateUpdate,has_UserAutoID,has_ObjectID,has_ItemID,has_Notes,has_Memo
+AAA,(none),Không có tiền tố (chủ yếu view v*),tạm / backup,2,UserAutoID,,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+AD_ApproveSetupTbl,AD,Duyệt (Approve setup),khác (danh mục phân hệ / cấu hình / log),20,ApproveID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AD_JobGroupSetupDetailTbl,AD,Duyệt (Approve setup),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+AD_JobGroupSetupTbl,AD,Duyệt (Approve setup),khác (danh mục phân hệ / cấu hình / log),10,CodeID,,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,1
+AG_XuatKhoCuaHangDetailTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - chi tiết,5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+AG_XuatKhoCuaHangTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - master,17,DocumentID,,0,0,1,0,0,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1
+AG_XuatKhoDaiLyDetailTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - chi tiết,5,UserAutoID,,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+AG_XuatKhoDaiLyTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - master,18,DocumentID,,0,0,1,0,0,0,1,1,0,1,1,1,1,1,1,0,0,1,1,1
+AG_XuatKhoDeleteDetailTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - chi tiết,8,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0
+AG_XuatKhoDeleteTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - master,7,DocumentID,,0,0,1,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,0,1
+AG_XuatKhoTongHopDetailTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - chi tiết,5,UserAutoID,,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+AG_XuatKhoTongHopTbl,AG,Xuất kho đại lý / mã QR (Agency),chứng từ - master,15,DocumentID,,0,0,1,0,0,0,1,1,0,1,1,1,1,1,1,0,0,1,1,1
+AP_BPTMDueEntryTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),17,UserAutoID,,3,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+AP_BPTMNotifyCommercialRecipientsTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),5,UserName,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+AP_BPTMNotifyOrderRoutingTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),7,RoutingID,RoutingID,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+AP_BPTMNotifyRecipientAuditTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),7,AuditID,AuditID,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_BPTMNotifyRecipientRuleTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,3,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,0,1,0
+AP_BPTMNotifyRoutingTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),7,RoutingID,RoutingID,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+AP_BPTMTaxPaidEntryTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),15,UserAutoID,,2,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+AP_BPTMTaxPlanEntryTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,4,0,0,1,0,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+AP_InputRequestDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,13,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AP_InputRequestTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,16,DocumentID,,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+AP_OrderDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,12,UserAutoID,,10,2,1,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AP_OrderStatusTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),4,StatusID,,4,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AP_OrderTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,19,DocumentID,,8,1,5,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+AP_POAttachTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0,0,1,0
+AP_POAuditTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),10,AuditID,AuditID,8,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+AP_PODueBasisTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),4,DueBasisCode,,7,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POExtTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),21,DocumentID,,2,6,0,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,0,0
+AP_POPaymentStatusTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),5,PaymentStatusCode,,4,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POProcessStatusTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),6,StatusCode,,5,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentDeliveryDocTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),9,ShipmentID,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),9,ShipmentDetailID,,6,2,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+AP_POShipmentDueAuditTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),17,AuditID,AuditID,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentPaymentTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),11,AllocationID,,3,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+AP_POShipmentStatusTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),5,ShipmentStatusCode,,6,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentTaxForecastAuditTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),11,AuditID,AuditID,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentTaxPaymentAuditTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),13,AuditID,AuditID,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentTaxPaymentTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),6,ShipmentID,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_POShipmentTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),26,ShipmentID,,3,5,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+AP_PriceDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,5,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AP_PriceTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,11,DocumentID,,0,1,1,0,0,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+AP_PurchaseAllocateTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,149,3,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0,0,0,0
+AP_PurchaseCostTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),21,UserAutoID,,18,4,1,0,0,0,1,0,0,0,0,1,1,1,1,1,0,0,1,0
+AP_PurchaseDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,47,UserAutoID,,62,5,1,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AP_PurchaseRequestDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+AP_PurchaseRequestTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),14,PurchaseRequestID,,11,4,1,0,0,3,0,0,1,1,1,0,0,0,0,0,1,0,1,0
+AP_PurchaseStatusTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),4,StatusID,StatusID,5,0,1,0,0,3,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AP_PurchaseTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,47,DocumentID,,14,2,4,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AP_PurposePurchaseTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),3,PurposeID,PurposeID,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AP_ReturnDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,25,UserAutoID,,0,5,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AP_ReturnTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,31,DocumentID,,0,1,1,2,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AP_ServiceDetailTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - chi tiết,26,UserAutoID,,18,7,1,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+AP_ServiceTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),chứng từ - master,36,DocumentID,,13,3,1,2,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AP_VATInvoiceTbl,AP,Mua hàng / công nợ phải trả (Accounts Payable),khác (danh mục phân hệ / cấu hình / log),23,UserAutoID,,17,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+AR_BanHoCouponTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_BanHoDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,26,UserAutoID,,0,5,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_BanHoTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,26,DocumentID,,0,1,2,0,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_ChietKhauHopDongDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,7,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_ChietKhauHopDongTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,10,DocumentID,,0,0,1,0,0,0,1,1,0,1,1,1,1,1,1,0,0,0,0,1
+AR_DailyReport2Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,15,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0
+AR_DailyReport3Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,15,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0
+AR_DailyReport4Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,15,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0
+AR_DailyReport5Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,16,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0
+AR_DailyReportTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,31,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0
+AR_DiemDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,6,UserAutoID,,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_DiemTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),12,DocumentID,,0,0,2,0,1,0,1,0,0,1,0,1,1,1,1,0,0,0,0,1
+AR_EventDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,3,UserAutoID,,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_EventTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,12,DocumentID,,0,1,0,0,0,1,1,1,0,0,1,1,1,1,1,0,0,0,1,0
+AR_GiftsDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,9,UserAutoID,,8,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_GiftsObjectTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_GiftsTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),10,DocumentID,,2,0,2,0,0,0,1,0,0,1,0,1,1,1,1,0,0,0,0,1
+AR_InvoiceCouponTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_InvoiceDetailDelete,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,62,UID,,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_InvoiceDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,49,UserAutoID,,89,5,0,3,1,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_InvoiceGroupObjectTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_InvoiceGroupTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),3,GroupID,,5,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AR_InvoiceLogTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,48,1,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0
+AR_InvoiceOrderDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,13,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_InvoiceOrderTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,20,DocumentID,,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+AR_InvoiceQRCodeTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+AR_InvoiceRequestDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,13,UserAutoID,,6,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_InvoiceRequestInfoTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,18,DocumentID,,0,0,0,0,0,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+AR_InvoiceRequestTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,30,DocumentID,,4,1,1,0,0,1,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_InvoiceStatusTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),7,StatusID,,10,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AR_InvoiceTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,71,DocumentID,,38,2,4,3,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+AR_ItemGroupDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+AR_ItemGroupEmployeeTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_ItemGroupTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,ItemGroupCode,,0,0,3,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1
+AR_KeHoachDiTuyenDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,9,UserAutoID,,1,2,0,0,0,0,1,0,1,0,0,0,0,0,0,1,1,0,0,0
+AR_KeHoachDiTuyenStatusTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),2,StatusID,,2,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AR_KeHoachDiTuyenTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,8,DocumentID,,2,0,1,0,0,0,1,1,0,0,1,1,1,1,1,0,0,0,0,1
+AR_ObjectAgencyStockTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_ObjectContractDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_ObjectContractDiemRiengTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+AR_ObjectContractItemTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+AR_ObjectContractSoDuTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+AR_ObjectContractTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),9,MaHopDong,,20,0,2,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,0
+AR_ObjectContractTraDiemTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,13,DocumentID,,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1,0,1,0,1,0
+AR_ObjectGroup22222Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),9,ObjectGroupCode,,0,0,3,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1
+AR_ObjectGroupAgencyTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_ObjectGroupDetail22222Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_ObjectGroupEmployeeTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_ObjectGroupUserNameTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_ObjectNewRequireAttachTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_ObjectNewRequireTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),44,ObjectID,,0,0,1,0,0,0,0,0,1,0,1,1,1,1,1,0,1,0,1,0
+AR_ObjectNewStatusTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,StatusID,,4,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AR_ObjectOnSaleDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,5,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_ObjectOnSaleTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,DocumentID,,0,0,1,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,0,1
+AR_ObjectTraThuongDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,21,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+AR_ObjectTraThuongTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,DocumentID,,9,0,1,0,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,1
+AR_OpListDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,6,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0
+AR_OpListEmployeeTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),tạm / backup,11,UserAutoID,,8,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0
+AR_OpListTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),12,OpID,,8,0,2,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+AR_Order2DetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,17,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_Order2Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,23,DocumentID,,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_OrderAttachTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+AR_OrderCancelDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,13,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_OrderCancelTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,13,DocumentID,,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+AR_OrderDeliveryStatusTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),2,DeliveryStatusID,,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AR_OrderDeliveryStoreHouseTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,0,0,0
+AR_OrderDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,27,UserAutoID,,307,2,0,1,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_OrderLogTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,461,1,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,0
+AR_OrderStatusTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),6,StatusID,,19,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+AR_OrderStockTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),13,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+AR_OrderTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,54,DocumentID,,155,1,4,2,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+AR_PhanTramChietKhauDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,5,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_PhanTramChietKhauTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),11,DocumentID,,0,1,1,0,0,0,1,0,0,1,0,1,1,1,1,0,0,0,1,1
+AR_PhieuGiamGiaDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,5,UserAutoID,,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_PhieuGiamGiaTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,19,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,1,1,1
+AR_PriceDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,29,UserAutoID,,16,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_PriceObjectGroupTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_PriceObjectTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,1,0
+AR_PriceTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),25,DocumentID,,2,0,3,0,1,0,1,0,0,1,1,1,1,1,1,0,1,0,0,1
+AR_PromotionDenyTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_PromotionDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,12,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_PromotionExceptTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_PromotionGiftTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_PromotionObjectTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,0,1,0
+AR_PromotionTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),19,DocumentID,,0,1,5,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,1,0
+AR_ReturnCouponTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_ReturnDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,54,UserAutoID,,0,5,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_ReturnTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,41,DocumentID,,0,1,2,2,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_SalesTarget2Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),20,SalesTargetID,SalesTargetID,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,0
+AR_SalesTargetDetail2Tbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+AR_SalesTargetDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+AR_SalesTargetTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),22,SalesTargetID,SalesTargetID,0,0,2,0,0,2,0,0,0,0,1,1,1,1,1,0,0,0,1,0
+AR_ServiceDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,21,UserAutoID,,0,4,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+AR_ServiceTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,41,DocumentID,,0,1,1,2,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_TrustInvoiceDetailTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - chi tiết,27,UserAutoID,,0,3,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+AR_TrustInvoiceTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),chứng từ - master,32,DocumentID,,0,1,1,2,0,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+AR_VATInvoiceTbl,AR,Bán hàng / công nợ phải thu (Accounts Receivable),khác (danh mục phân hệ / cấu hình / log),24,UserAutoID,,24,2,1,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+CC_TblCostPrice,CC,Giá thành kiểu cũ (CostPrice),khác (danh mục phân hệ / cấu hình / log),13,CostPriceID,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+CC_TblCostPriceDetail,CC,Giá thành kiểu cũ (CostPrice),khác (danh mục phân hệ / cấu hình / log),13,ID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+CC_TblCostPriceExpense,CC,Giá thành kiểu cũ (CostPrice),khác (danh mục phân hệ / cấu hình / log),14,ID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+CC_TblCostPriceExpenseBalance,CC,Giá thành kiểu cũ (CostPrice),khác (danh mục phân hệ / cấu hình / log),12,ID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+CF_AccountBankTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),13,AccountNo,,12,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,1,0,1,0
+CF_AccountGroupTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,AccountGroupID,,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_AccountKindTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,AccountKindID,,12,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_AccountTypeTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,AccountTypeID,,14,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_AllocateMethodTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),4,AllocateKind,,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_BankContractTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),12,BankContractID,,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0
+CF_BankTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,AccountNo,,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,1,0,1,0
+CF_BranchTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),17,BranchID,,2,0,7,0,0,1,0,0,0,0,1,1,1,1,1,0,0,0,0,0
+CF_CategoryTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),14,CategoryID,,12,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ChartAccQD15,CF,Danh mục dùng chung (Config / master data),danh mục (CF),12,AccountID,,359,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ChartAccQD48,CF,Danh mục dùng chung (Config / master data),danh mục (CF),12,AccountID,,354,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ChartAccTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),17,AccountID,,214,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ChartAccVH,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,AccountID,,339,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ChuyenKhoaTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,ChuyenKhoa,,3,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ContractAttachTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),7,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+CF_ContractBBNTDetailTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),7,UserAutoID,,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,0,0,0,0
+CF_ContractBBNTTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ContractDetailTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),18,UserAutoID,,1493,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1
+CF_ContractStatusTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),4,StatusID,,4,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+CF_ContractTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),22,ContractID,,429,0,3,0,0,1,0,0,1,0,1,1,1,1,1,0,1,0,0,0
+CF_ContractThanhToanTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),7,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+CF_CostCenterTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),16,CostCenterID,,20,0,16,1,0,1,0,0,0,0,0,1,1,1,1,0,1,0,1,0
+CF_CostTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),11,CostID,,37,0,14,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+CF_CurrencyRateTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,UserAutoID,,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+CF_CurrencyTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,CurrencyID,,4,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_CustomerTypeTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,CustomerTypeID,,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_DepartmentTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,DepartmentID,,8,0,1,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_EventTypeTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,EventTypeID,,4,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_HangSanXuatTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,UserAutoID,,22,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+CF_HinhThucGiaoHangTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,HinhThucGiaoHang,,7,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ImpExpTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,ImpExpID,,18,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_ImportCostTypeTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),7,CostType,,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_IncotermTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),12,IncotermID,,11,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+CF_ItemCodeSequenceTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,CategoryID;ItemGroupID,,48,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+CF_ItemCurrencyTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,0
+CF_ItemGroupTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),9,ItemGroupID,,35,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+CF_ItemTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),39,ItemID,,772,1,42,1,0,1,0,0,0,0,0,1,1,1,1,0,0,1,0,0
+CF_ItemUnitTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),11,UserAutoID,,966,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,0,1,0,0
+CF_LoaiSoTayTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,LoaiSoTayID,,5,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_LocationDetailTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+CF_LocationTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,LocationID,STT,64,0,2,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_LotTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,Lot,,0,1,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,1,1,0
+CF_NhaXeGoiHangTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),5,NhaXeGoiHang,,3,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_NhomNganhHangTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,NhomNganhHangID,,6,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ObjectAttachTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+CF_ObjectContactTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),16,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+CF_ObjectGroupTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),16,ObjectGroupID,STT,11,0,2,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ObjectMapTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+CF_ObjectRelationTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,UserAutoID,,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+CF_ObjectTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),78,ObjectID,,719,3,43,3,0,5,0,0,0,0,1,1,1,1,1,0,1,0,1,0
+CF_ObjectTempTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),13,ObjectTempID,,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_PaymentTermTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),9,PaymentTermID,,11,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_PaymentTypeTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),8,PaymentTypeID,,3,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_PrinterTableTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,TableID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_Property2Tbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+CF_PropertyTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+CF_QRPackageTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),19,QRPackageID,,222259,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0
+CF_RelationTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,RelationID,,14,0,2,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_StoreHouseGroupTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,StoreHouseGroup,,3,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+CF_StoreHouseTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),10,StoreHouseID,,24,0,16,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+CF_ThuTrongTuanTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),2,ThuTrongTuan,,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CF_UnitTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),3,Unit,,63,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+CF_VATTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),11,VATID,,5,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+CF_ZoneTbl,CF,Danh mục dùng chung (Config / master data),danh mục (CF),6,ZoneID,,15,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+ChatMsg,(none),Không có tiền tố (chủ yếu view v*),khác (danh mục phân hệ / cấu hình / log),11,ID,ID,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_CSTypeTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),5,CSType,,28,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_InputTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),5,InputID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_OutputTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),5,OutputID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_PaymentDetailTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - chi tiết,46,UserAutoID,,5,6,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+CS_PaymentPlanAttachTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+CS_PaymentPlanDetailTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - chi tiết,32,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+CS_PaymentPlanStatusTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),4,StatusID,,4,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+CS_PaymentPlanTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - master,20,DocumentID,,0,2,2,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+CS_PaymentTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - master,32,DocumentID,,6,1,3,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+CS_PaymentTypeTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),6,DocumentType,,33,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_ReceiptDetailTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - chi tiết,26,UserAutoID,,0,5,0,1,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+CS_ReceiptPlan2DetailTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - chi tiết,13,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+CS_ReceiptPlan2Tbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - master,21,DocumentID,,1,2,1,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+CS_ReceiptPlanDetailTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - chi tiết,13,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+CS_ReceiptPlanStatusTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),4,StatusID,,6,0,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+CS_ReceiptPlanTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - master,20,DocumentID,,0,2,1,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1
+CS_ReceiptTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),chứng từ - master,33,DocumentID,,0,0,2,2,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+CS_ReceiptTypeTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),6,DocumentType,,5,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CS_VATInvoiceTbl,CS,Thu chi tiền mặt / ngân hàng (Cash),khác (danh mục phân hệ / cấu hình / log),22,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+EI_ConfigTbl,EI,Hóa đơn điện tử (eInvoice),khác (danh mục phân hệ / cấu hình / log),12,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+EI_PatternTbl,EI,Hóa đơn điện tử (eInvoice),khác (danh mục phân hệ / cấu hình / log),13,UserAutoID,,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+EI_PaymentTypeTbl,EI,Hóa đơn điện tử (eInvoice),khác (danh mục phân hệ / cấu hình / log),4,PaymentType,,9,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+EI_SettingTbl,EI,Hóa đơn điện tử (eInvoice),khác (danh mục phân hệ / cấu hình / log),19,SuplierType,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+EI_XMLTypeTbl,EI,Hóa đơn điện tử (eInvoice),khác (danh mục phân hệ / cấu hình / log),2,XMLType,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+EL_InvoiceItemTbl,EL,Danh sách hóa đơn (eInvoice list),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+EL_InvoiceListTbl,EL,Danh sách hóa đơn (eInvoice list),khác (danh mục phân hệ / cấu hình / log),27,InvoiceKey,,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+EP_OrderListTbl,EP,Vận chuyển (ePost),khác (danh mục phân hệ / cấu hình / log),35,MaVanDon,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+EP_Order_ServiceTbl,EP,Vận chuyển (ePost),khác (danh mục phân hệ / cấu hình / log),3,ORDER_SERVICE,,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+EP_SenderListTbl,EP,Vận chuyển (ePost),khác (danh mục phân hệ / cấu hình / log),6,STT,,6,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+EP_SettingTbl,EP,Vận chuyển (ePost),khác (danh mục phân hệ / cấu hình / log),21,UserAutoID,,4,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+EQ_EquipAttachTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+EQ_EquipDepreTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),16,UserAutoID,,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,1,1,0,0,0
+EQ_EquipGroupTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),4,EquipGroupID,,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+EQ_EquipLogTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1
+EQ_EquipPeriodSetupTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+EQ_EquipTbl,EQ,Công cụ dụng cụ (Equipment),khác (danh mục phân hệ / cấu hình / log),30,EquipID,,0,1,7,0,0,1,0,0,0,0,1,1,1,1,1,0,1,0,1,0
+EQ_LiquidateDetailTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - chi tiết,8,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+EQ_LiquidateTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - master,13,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+EQ_MoveDetailTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - chi tiết,9,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,0,1,0
+EQ_MoveTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - master,11,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+EQ_RepairDetailTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - chi tiết,7,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+EQ_RepairTbl,EQ,Công cụ dụng cụ (Equipment),chứng từ - master,11,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+FA_AdjustDetailTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - chi tiết,9,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+FA_AdjustTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - master,15,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+FA_AssetAttachTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+FA_AssetDepreTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),13,UserAutoID,,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0
+FA_AssetLogTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1
+FA_AssetPeriodSetupTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+FA_AssetTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),58,AssetID,,387,3,9,0,0,1,0,0,0,0,1,1,1,1,1,0,1,1,1,0
+FA_AssetTypeTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),5,AssetTypeID,,15,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_CapitalTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),4,CapitalID,,2,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_LiquidateDetailTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - chi tiết,9,UserAutoID,,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+FA_LiquidateTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - master,13,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+FA_MachineCareRuleTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),6,RuleID,,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+FA_MachineIDRenameAuditTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),7,RenameBatch;RenameType;OldID,,1019,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+FA_MachineLegacyImportTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),22,ImportBatchID;SourceSheet;SourceRow;SerialNo,,833,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_MoveDetailTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - chi tiết,23,UserAutoID,,635,2,0,2,1,0,1,0,0,0,0,0,0,0,0,1,1,0,1,0
+FA_MoveGapPatchAuditTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),16,AuditID,AuditID,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+FA_MovementTypeTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),6,MoveTypeID,,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_MoveTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - master,18,DocumentID,,635,0,1,1,1,1,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+FA_PartBarcodeTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),17,BarcodeID,,140,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,0
+FA_PartConditionTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),5,ConditionID,,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_PartEquivalentItemTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),11,MappingID,,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,0
+FA_PartInputLinkTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),7,InputDetailID;BarcodeID,,12,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+FA_PartIntegrityAuditFindingTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),12,FindingID,,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+FA_PartIntegrityAuditRunTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),8,AuditRunID,,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+FA_PartOutputLinkTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),8,OutputDetailID;BarcodeID,,5,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0
+FA_PartRecoveryTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),18,RecoveryID,,3,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+FA_PartRegistrationBatchTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),14,BatchID,,89,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,0
+FA_PartRegistrationFrmTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),24,UserAutoID,,9,0,0,2,0,1,0,0,0,0,0,1,1,0,0,1,0,1,1,0
+FA_PartRegistrationRequestTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),24,RequestID,,9,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0
+FA_PartReplacementTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),17,ReplacementID,,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+FA_PartScanLogTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),18,ScanID,,160,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+FA_PartServiceLinkTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),13,LinkID,,2,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+FA_PartTrackingPolicyTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),15,ItemID,,85,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,0
+FA_RepairDetailTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - chi tiết,15,UserAutoID,,1,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+FA_RepairTbl,FA,Tài sản cố định (Fixed Asset),chứng từ - master,22,DocumentID,,1,0,1,0,1,1,1,1,0,1,0,1,1,1,1,0,1,0,1,1
+FA_ServiceTypeTbl,FA,Tài sản cố định (Fixed Asset),khác (danh mục phân hệ / cấu hình / log),4,ServiceTypeID,,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_AdminReportSetupDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,UserAutoID,,116,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+GJ_AdminReportSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,SetupID,,147,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_AllocatePeriodSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+GJ_AllocatePeriodTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,0,1,0,0,1,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_AllocateSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),24,AllocateID,,0,0,2,0,1,0,0,0,0,0,1,1,1,1,1,0,1,1,1,0
+GJ_BSSetupDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,562,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_BSSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),10,SetupID,,267,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_CFSetupDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,400,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_CFSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,SetupID,,267,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_DocBatchSetupDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+GJ_DocBatchSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),7,DocBatchID,,0,0,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,1
+GJ_EntryCouponTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+GJ_EntryDetailTbl,GJ,Kế toán tổng hợp (General Journal),chứng từ - chi tiết,30,UserAutoID,,4,3,0,1,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1
+GJ_EntrySetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),12,UserAutoID,,49,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+GJ_EntryTbl,GJ,Kế toán tổng hợp (General Journal),chứng từ - master,25,DocumentID,,3,1,3,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+GJ_Fin01Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),9,CodeID,,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin02Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),17,CodeID,,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin03Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),29,CodeID,,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin04Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),32,CodeID,,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin05Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),19,CodeID,,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin06Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),17,CodeID,,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin07Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),17,CodeID,,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_Fin08Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),14,CodeID,,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_InvoiceCfgTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+GJ_InvoiceInDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_InvoiceInTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),23,InvoiceID,,0,0,1,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,1,0
+GJ_InvoiceInXuLyTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),4,ttxly,,3,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_InvoiceOutDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_InvoiceOutTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),23,InvoiceID,,0,0,1,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,1,0
+GJ_InvoiceOutXuLyTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),4,ttxly,,9,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_InvoiceStatusTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),4,tthai,,6,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_InvoiceSynLogTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+GJ_PeriodTaxTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),8,SetupID,,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_PLSetupDetailTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,128,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+GJ_PLSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,SetupID,,67,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_RefDocSetupTbl,GJ,Kế toán tổng hợp (General Journal),chứng từ - master,16,DocumentID,,0,0,0,0,1,0,1,1,0,0,1,1,1,1,1,0,1,1,0,1
+GJ_SM01Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),9,CodeID,,55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM02Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),14,CodeID,,66,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM03Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),29,CodeID,,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM04Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),30,CodeID,,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM05Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),32,CodeID,,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM06Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),12,CodeID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM07Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,CodeID,,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM08Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),17,CodeID,,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM09Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),21,CodeID,,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM10Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),16,CodeID,,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM11Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,CodeID,,98,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM12Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),16,CodeID,,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM13Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),15,CodeID,,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM14Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,CodeID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM15Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),17,CodeID,,85,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_SM16Tbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,CodeID,,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_TFSetupTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),11,TransferID,,12,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GJ_VATInvoiceTbl,GJ,Kế toán tổng hợp (General Journal),khác (danh mục phân hệ / cấu hình / log),21,UserAutoID,,2,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+HR_AllowanceDetailTbl,HR,Nhân sự - tiền lương,chứng từ - chi tiết,6,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_AllowanceTbl,HR,Nhân sự - tiền lương,chứng từ - master,9,DocumentID,,0,0,1,0,0,0,1,1,0,1,0,1,1,1,1,0,0,0,1,1
+HR_BangTinhCongTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),8,ID,ID,3115,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HR_BaoHiemChiTietTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_BaoHiemTbl,HR,Nhân sự - tiền lương,chứng từ - master,7,DocumentID,,0,0,1,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,1,0
+HR_CandidateDegreeTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_CandidateMarkTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_CandidateRateTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),21,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_CandidateTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),23,CandidateID,,0,1,3,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+HR_DepartmentListTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),3,PhongBan,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HR_LayDuLieuExcelTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),72,,,98,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HR_PersonAllowanceTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonAttachTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonContractTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),16,UserAutoID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonKTKLTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonNghiPhepTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonRelationTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonSalaryTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_PersonStatusTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),4,PersonStatus,,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HR_PersonTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),62,PersonID,,49,0,6,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+HR_RecruimentDetailTbl,HR,Nhân sự - tiền lương,chứng từ - chi tiết,9,UserAutoID,,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_RecruitmentTbl,HR,Nhân sự - tiền lương,chứng từ - master,10,DocumentID,,0,0,1,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,1,0
+HR_SoTayNhanVienAttachTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_SoTayNhanVienTbl,HR,Nhân sự - tiền lương,chứng từ - master,10,DocumentID,,0,1,1,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,1,0
+HR_StatusTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),2,TrangThai,,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HR_TimeSheetTbl,HR,Nhân sự - tiền lương,khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0
+HR_TrainingDetailTbl,HR,Nhân sự - tiền lương,chứng từ - chi tiết,6,UserAutoID,,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+HR_TrainingTbl,HR,Nhân sự - tiền lương,chứng từ - master,10,DocumentID,,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,0,0,0,1,0
+IS_InputTbl,IS,Nhập/xuất phụ (IS),khác (danh mục phân hệ / cấu hình / log),5,InputID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IS_OutputTbl,IS,Nhập/xuất phụ (IS),khác (danh mục phân hệ / cấu hình / log),8,OutputID,,37,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IV_AdjustDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,17,UserAutoID,,0,3,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_AdjustTbl,IV,Kho (Inventory),chứng từ - master,17,DocumentID,,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_CheckStockDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,14,UserAutoID,,0,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+IV_CheckStockTbl,IV,Kho (Inventory),chứng từ - master,19,DocumentID,,1,0,1,0,1,0,1,1,0,1,1,1,1,1,1,0,0,1,1,1
+IV_DamageInsideStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,DamageInsideStatusID,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_InboundRequestAttachTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_InboundRequestCTCPStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),4,StatusID,,5,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+IV_InboundRequestCTCPTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),27,UserAutoID,,27,6,1,0,0,0,1,0,0,0,0,1,1,1,1,1,1,0,1,1
+IV_InboundRequestDetailsTbl,IV,Kho (Inventory),chứng từ - chi tiết,26,UserAutoID,,87,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+IV_InboundRequestLogTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,92,1,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,0
+IV_InboundRequestNoSuitableTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),13,UserAutoID,,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+IV_InboundRequestStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),5,StatusID,,14,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+IV_InboundRequestTbl,IV,Kho (Inventory),chứng từ - master,38,DocumentID,,25,0,7,0,0,7,1,1,1,0,1,0,0,0,0,0,1,0,1,0
+IV_InOutDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,29,UserAutoID,,0,5,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0
+IV_InOutTbl,IV,Kho (Inventory),chứng từ - master,35,DocumentID,,0,1,2,0,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_InputCouponTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+IV_InputDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,27,UserAutoID,,15,5,0,1,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_InputRefDocTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1
+IV_InputRefExpTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1
+IV_InputTbl,IV,Kho (Inventory),chứng từ - master,24,DocumentID,,11,1,4,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_InternalTransferBatchAssetTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),12,UserAutoID,,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_InternalTransferBatchDetailTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),22,UserAutoID,,2,4,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_InternalTransferBatchLogTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,7,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,0
+IV_InternalTransferBatchRequestTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+IV_InternalTransferBatchStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),8,StatusID,,15,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+IV_InternalTransferBatchTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),35,BatchID,,1,5,3,0,0,6,0,0,1,1,0,1,1,1,1,0,0,0,1,0
+IV_InternalTransferLogTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),9,LogID,LogID,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+IV_InternalTransferRequestDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,12,UserAutoID,,18,4,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_InternalTransferRequestLogTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,20,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,0
+IV_InternalTransferRequestStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),8,StatusID,,6,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+IV_InternalTransferRequestTbl,IV,Kho (Inventory),chứng từ - master,20,DocumentID,,7,4,3,0,0,2,1,1,1,1,1,1,1,1,1,0,0,0,1,0
+IV_ItemLevelTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_LocationDamageDetectedTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,LocationDamageDetectedID,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_OpeningStockRadio20260701_Stg,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),19,SourceRow,,79,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IV_OrderTypeTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_OutputCouponTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0
+IV_OutputDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,26,UserAutoID,,10,5,0,1,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_OutputQRCodeTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,27,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0
+IV_OutputTbl,IV,Kho (Inventory),chứng từ - master,25,DocumentID,,9,1,2,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_PackageTypeTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),3,UserAutoID,,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+IV_RequestDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,10,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_RequestOutDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,10,UserAutoID,,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_RequestOutTbl,IV,Kho (Inventory),chứng từ - master,15,DocumentID,,0,1,1,0,0,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_RequestTbl,IV,Kho (Inventory),chứng từ - master,15,DocumentID,,0,1,1,0,0,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_ReturnRequestDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,9,UserAutoID,,3,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_ReturnRequestLogTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,0
+IV_ReturnRequestStatusTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),5,StatusID,,12,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+IV_ReturnRequestTbl,IV,Kho (Inventory),chứng từ - master,14,DocumentID,,2,1,0,0,0,5,1,1,1,0,0,0,0,0,0,0,1,0,0,0
+IV_StockInObjectTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),6,StockInObjectID,,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0
+IV_StockTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),4,ItemID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0
+IV_TranferDetailTbl,IV,Kho (Inventory),chứng từ - chi tiết,19,UserAutoID,,1,2,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,0
+IV_TranferTbl,IV,Kho (Inventory),chứng từ - master,21,DocumentID,,1,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,1
+IV_VATInvoiceTbl,IV,Kho (Inventory),khác (danh mục phân hệ / cấu hình / log),21,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0
+KD_DocSetup,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),11,DocType,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KD_Menu,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),19,MenuID,,93,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KD_ResUx,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),5,FID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KD_Setup,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),10,CodeID,,37,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KD_TargetTypeTbl,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),6,TargetTypeID,,0,0,2,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+KD_UserGroupPermisstion,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),13,ID,,1155,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KD_UserLog,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+KD_UserLogDetail,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+KD_UserPermisstion,KD,"Phân hệ ""Kinh doanh"" có menu/quyền riêng (KD_Menu, KD_UserGroupPermisstion)",khác (danh mục phân hệ / cấu hình / log),13,ID,,7007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MedcomErpCommandJournal,(none),Không có tiền tố (chủ yếu view v*),khác (danh mục phân hệ / cấu hình / log),10,DatabaseBindingId;SlotHash,,13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+MedcomErpCommandSchema,(none),Không có tiền tố (chủ yếu view v*),khác (danh mục phân hệ / cấu hình / log),4,SingletonId,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MedcomPurchaseRequestCommandJournal,(none),Không có tiền tố (chủ yếu view v*),khác (danh mục phân hệ / cấu hình / log),9,DatabaseBindingId;SlotHash,,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+MedcomPurchaseRequestCommandSchema,(none),Không có tiền tố (chủ yếu view v*),khác (danh mục phân hệ / cấu hình / log),3,SingletonId,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OF_ImprestOrderTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",chứng từ - master,16,DocumentID,,0,0,0,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0
+OF_LeaveApplicationTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",chứng từ - master,13,DocumentID,,0,0,0,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0
+OF_PaymentOrderTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",chứng từ - master,14,DocumentID,,0,0,0,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0
+OF_ScheduleTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",khác (danh mục phân hệ / cấu hình / log),20,UserAutoID,,12,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0
+OF_SuggestionDetailTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",chứng từ - chi tiết,6,UserAutoID,,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+OF_SuggestionTbl,OF,"Văn phòng điện tử (eOffice: đơn từ, tạm ứng, tờ trình)",chứng từ - master,13,DocumentID,,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0
+PC_AccSetupTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),7,UserAutoID,,3,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PC_BomItemTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PC_BomMaterialTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PC_BoMTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),9,BOMID,,0,0,3,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0
+PC_CenterCostCompleteTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+PC_CenterCostExTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+PC_CenterCostMaterialTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+PC_CenterCostTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),10,PriceID,,0,0,4,0,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0,1
+PC_CenterCostUnCompleteTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),4,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+PC_CostGroupSetupDetailTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+PC_CostGroupSetupTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),12,SetupID,,4,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1
+PC_ProductCostBalTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),12,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+PC_ProductCostBeginTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+PC_ProductCostDetailTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),16,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0
+PC_ProductCostExTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+PC_ProductCostItemTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),11,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PC_ProductCostTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),14,PriceID,,0,1,5,0,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0,1
+PC_ProdustCostMaterialTbl,PC,Giá thành (Product Cost),khác (danh mục phân hệ / cấu hình / log),14,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+PL_KeHoachChiPhiDetailTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),20,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+PL_KeHoachChiPhiTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),11,MaKeHoach,,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+PL_KeHoachKinhDoanhDetailTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),18,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PL_KeHoachKinhDoanhTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),13,MaKeHoach,,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+PL_KeHoachSanXuatDetailTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),18,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+PL_KeHoachSanXuatTbl,PL,Kế hoạch (Plan),khác (danh mục phân hệ / cấu hình / log),13,MaKeHoach,,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0
+SL_BasicSalaryTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),7,AutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SL_BonusSalaryTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),9,AutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SL_ItemGroupTargetTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),8,AutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SL_PunishSalaryTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),8,AutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SL_QuaterBonusSalaryTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),8,AutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SL_SalaryGroupEmployeeTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),6,UserAutoID,,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+SL_SalaryGroupTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),9,SalaryGroupID,,0,0,7,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,1
+SL_SalaryRateTbl,SL,Lương doanh số (Sales salary),khác (danh mục phân hệ / cấu hình / log),8,AutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SY_APILog,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),6,,,3367,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_ApproveCountTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),7,UserAutoID,,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0
+SY_ApproveDocumentTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),45,UserAutoID,,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,0,0
+SY_ApproveSetupTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),34,ApproveID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_BalanceAccountTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),15,UserAutoID,,9,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0
+SY_BalanceFIFO2Tbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),16,UserAutoID,,0,2,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,1,0,0
+SY_BalanceFIFOTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),14,UserAutoID,,0,2,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,1,0,0
+SY_BalanceItemTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),18,UserAutoID,,690,3,0,0,0,0,1,1,0,0,1,0,0,0,0,1,0,1,0,0
+SY_BalanceObjectTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),28,UserAutoID,,17,1,0,0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1
+SY_BalanceOutItemTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),26,UserAutoID,,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,1,0,1
+SY_DbMigrationLogTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),8,MigrationID,,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SY_DocSetup,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),11,DocType,,44,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_DocumentCashTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),8,DocumentType,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_DshBrd,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),14,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0
+SY_DshBrdCnt,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),3,MenuID,,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_EmlSetupTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),26,KeyID,,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_FmatTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),12,FormatID,,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_FmtFldTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),10,AutoID,AutoID,4215,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_FrmCfg,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),8,UserAutoID,,10687,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmCtrTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),14,UserAutoID,,174,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmDrdwTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),42,UserAutoID,,2361,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+SY_FrmExpTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),13,UserAutoID,,424,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmFltTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),31,UserAutoID,,244,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmGrdActTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),15,UserAutoID,,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmLstTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),23,FormID,,287,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_FrmMstActTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),17,UserAutoID,,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmOptBtnTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),27,UserAutoID,,91,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_FrmParTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),12,UserAutoID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_ImDatTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),8,UserAutoID,,44,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_InitSetup,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_InvoiceDebtDateErrorLogTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),6,LogID,LogID,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_Link,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),6,LinkCode,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_Menu,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),19,MenuID,,482,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_MessageTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),11,AutoID,,48,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+SY_NotifyMsg,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),13,UID,UID,12,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+SY_NotifyMsgTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),22,ID,ID,6,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+SY_Period,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),10,PeriodID,,24,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+SY_Quarter,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),7,QuarterID,,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_Res,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),3,ResID,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SY_ResUser,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,KeyID,,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_ResUx,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),6,FID,,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_RpDTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),20,UserAutoID,,2231,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_RpFTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),6,UserAutoID,,2441,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+SY_RpTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),23,ParaName,,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_Setup,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),10,CodeID,,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_STT,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),2,STT,STT,100815,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_StTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,StringID,,582,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_StupAcTbl,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,SystemAccountType,,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_SynDate,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),4,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SY_User,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),20,UserName,,42,0,2,2,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0
+SY_UserBranch,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0
+SY_UserGroup,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),4,UserGroupID,,28,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+SY_UserGroupDetail,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),7,UserAutoID,,168,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+SY_UserGroupPermisstion,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),14,ID,,11961,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_UserLog,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),8,UserAutoID,,879,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_UserLogDetail,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),9,UserAutoID,,20933,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+SY_UserPermisstion,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),14,ID,,17934,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_UserStorehouse,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),5,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+SY_UserToken,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),4,UserName,,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SY_UsLc,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),10,UHardID,,108,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SY_Year,SY,"Hệ thống (menu, form, quyền, tham số, số dư...)",hệ thống (SY),3,YearID,,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp2_CF_ObjectTbl221,Temp2,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp2_CF_ObjectTbl73,Temp2,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp2_CF_ObjectTbl817,Temp2,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp3_CF_ObjectTbl221,Temp3,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp3_CF_ObjectTbl73,Temp3,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp3_CF_ObjectTbl817,Temp3,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp_CF_ObjectTbl221,Temp,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp_CF_ObjectTbl73,Temp,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Temp_CF_ObjectTbl817,Temp,Bảng tạm,tạm / backup,1,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WA_Dashboard,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),10,UserAutoID,,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+WA_DocSetup,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),11,DocType,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WA_Menu,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),16,MenuID,,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WA_OrderGetItemByObjectLogTbl,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),9,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+WA_PlanObjectNewTbl,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",chứng từ - master,14,DocumentID,,0,0,0,0,0,0,1,1,0,0,1,1,1,1,1,0,0,0,1,1
+WA_PlanObjectTbl,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",chứng từ - master,12,DocumentID,,0,1,0,0,0,0,1,1,0,0,1,1,1,1,1,0,1,0,1,1
+WA_ResUx,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),6,FID,,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WA_UserGroupPermisstion,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),14,ID,,1345,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WA_UserLog,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),8,UserAutoID,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+WA_UserLogDetail,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),9,UserAutoID,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+WA_UserPermisstion,WA,"Ứng dụng web (Web App: báo cáo, dashboard, đơn theo hợp đồng)",khác (danh mục phân hệ / cấu hình / log),14,ID,,2016,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V38_TPTM_PermissionsBackup,ZZ,Bảng backup kỹ thuật,tạm / backup,9,ScopeType;ScopeID;MenuID,,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V39_AdminGuardBackup,ZZ,Bảng backup kỹ thuật,tạm / backup,5,ProcName,,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V41_TaxPaid_DeniedBackup,ZZ,Bảng backup kỹ thuật,tạm / backup,9,ScopeType;ScopeID;MenuID,,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V43_ModuleBackupTbl,ZZ,Bảng backup kỹ thuật,tạm / backup,4,BackupID,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V43_RouteBackupTbl,ZZ,Bảng backup kỹ thuật,tạm / backup,2,RoutingID,,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ZZ_BPTM_V48_DispatchBackupTbl,ZZ,Bảng backup kỹ thuật,tạm / backup,4,BackupID,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
