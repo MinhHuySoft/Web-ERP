@@ -23,12 +23,12 @@ export const THEMES = [
 ];
 
 /** @typedef {{ theme:string, density:'compact'|'standard'|'comfortable', fontSize:number, nav:'ribbon'|'sidebar',
- *   accent:string, reduceMotion:boolean, ribbonCollapsed:boolean }} Settings */
+ *   accent:string, reduceMotion:boolean, ribbonCollapsed:boolean, sidebarCollapsed:boolean }} Settings */
 
 /** @type {Settings} */
 const DEFAULTS = {
-  theme: cfg.defaultTheme || 'ribbon-classic', density: 'standard', fontSize: 14, nav: 'ribbon', accent: '',
-  reduceMotion: false, ribbonCollapsed: false,
+  theme: cfg.defaultTheme || 'ribbon-classic', density: 'standard', fontSize: 14, nav: cfg.defaultNav || 'ribbon', accent: '',
+  reduceMotion: false, ribbonCollapsed: false, sidebarCollapsed: false,
 };
 
 /** @param {string} key */
@@ -64,6 +64,7 @@ export function applySettings() {
   root.dataset.theme = theme;
   root.dataset.density = current.density;
   root.dataset.nav = current.nav;
+  root.dataset.sidebar = current.sidebarCollapsed ? 'rail' : 'full';
   root.dataset.motion = current.reduceMotion ? 'reduce' : 'auto';
   root.style.setProperty('--erp-font-size', `${current.fontSize}px`);
   if (current.accent) root.style.setProperty('--erp-accent-user', current.accent);

@@ -74,7 +74,7 @@ export class Shell {
     const titlebar = this.buildTitlebar();
     const ribbonHost = h('div', { class: 'erp-ribbon-host' });
     const sidebarHost = h('aside', { class: 'erp-sidebar', 'aria-label': 'Menu' });
-    const docbar = h('div', { class: 'erp-docbar', role: 'tablist', 'aria-label': 'Màn hình đang mở' });
+    const docbar = h('div', { class: 'erp-docbar' });
     const workspace = h('main', { class: 'erp-workspace', id: 'erp-workspace' });
     const statusbar = this.buildStatusbar();
     const bottombar = this.buildBottombar();
@@ -90,16 +90,49 @@ export class Shell {
     this.sidebar.render(this.menu);
 
     this.bindKeys();
-    onSettings(() => this.ribbon?.syncCollapsed());
+    onSettings(() => { this.ribbon?.syncCollapsed(); this.sidebar?.syncCollapsed(); this.syncNavButton(); });
     await this.tabs.open(cfg.homeUrl, { target: 'tab', pinned: true });
+  }
+
+  /** Tab đang xem đổi ⇒ đánh dấu mục tương ứng trong Sidebar (theo URL hoặc data-menu-id của màn hình). @param {{url:string, panel?:HTMLElement}} tab */
+  onActiveTab(tab) {
+    const menuId = tab.panel?.querySelector('[data-erp="screen"]')?.getAttribute('data-menu-id') || '';
+    this.sidebar?.highlight(tab.url, menuId);
+  }
+
+  /**
+   * Đường dẫn menu (để làm breadcrumb) của một màn hình: tìm theo data-menu-id, nếu không có thì theo URL.
+   * @param {string} menuId @param {string} url @returns {string[]}
+   */
+  menuPath(menuId, url) {
+    /** @type {string[]|null} */ let found = null;
+    const walk = (/** @type {import('./menu-model.js').MenuNode[]} */ ns) => {
+      for (const n of ns) {
+        if (found) return;
+        if (!n.children.length && ((menuId && n.id === menuId) || (url && n.url === url))) { found = [...n.path, n.label]; return; }
+        walk(n.children);
+      }
+    };
+    walk(this.menu);
+    return found || [];
+  }
+
+  syncNavButton() {
+    const side = getSettings().nav === 'sidebar';
+    if (!this.navBtn) return;
+    this.navBtn.replaceChildren(icon(side ? 'ribbon' : 'sidebar'));
+    this.navBtn.title = side ? 'Chuyển sang Ribbon (menu ngang)' : 'Chuyển sang Sidebar (menu dọc)';
+    this.navBtn.setAttribute('aria-label', this.navBtn.title);
   }
 
   buildTitlebar() {
     const company = this.sess('company');
-    const chips = ['branch', 'period', 'database'].map((k) => {
-      const it = this.session.find((x) => x.key === k);
-      return it ? h('span', { class: 'erp-chip', title: it.label }, h('small', {}, it.label), it.text) : null;
-    });
+    const ctxItems = ['branch', 'period', 'database'].map((k) => this.session.find((x) => x.key === k)).filter(Boolean);
+    const ctxBtn = ctxItems.length ? h('button', { class: 'erp-ctxbtn', type: 'button', title: 'Thông tin làm việc', 'aria-haspopup': 'dialog',
+      onclick: (/** @type {MouseEvent} */ e) => this.openContext(/** @type {HTMLElement} */ (e.currentTarget)) },
+    icon('building'), h('span', {}, ctxItems.slice(0, 2).map((x) => x?.text).join(' · ')), icon('chevron-down')) : null;
+    this.navBtn = h('button', { class: 'erp-iconbtn', type: 'button', onclick: () => setSettings({ nav: getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon' }), dataset: { only: 'wide' } });
+    this.syncNavButton();
     const user = this.session.find((x) => x.key === 'user');
     const userBtn = h('button', { class: 'erp-userbtn', type: 'button', 'aria-haspopup': 'menu', onclick: (/** @type {MouseEvent} */ e) => this.openUserMenu(/** @type {HTMLElement} */ (e.currentTarget)) },
       h('span', { class: 'erp-avatar', 'aria-hidden': 'true' }, (user?.text || '?').trim().charAt(0).toUpperCase()),
@@ -108,13 +141,23 @@ export class Shell {
       h('button', { class: 'erp-iconbtn erp-titlebar__menu', type: 'button', 'aria-label': 'Mở menu', onclick: () => this.toggleDrawer() }, icon('menu')),
       h('div', { class: 'erp-brand' }, h('span', { class: 'erp-brand__logo', 'aria-hidden': 'true' }),
         h('span', { class: 'erp-brand__text' }, h('strong', {}, cfg.appName || 'ERP'), h('small', {}, company))),
-      h('div', { class: 'erp-titlebar__chips' }, ...chips),
       h('button', { class: 'erp-searchbtn', type: 'button', onclick: () => this.palette(), title: 'Tìm chức năng (Ctrl+K)' },
         icon('search'), h('span', {}, 'Tìm chức năng, màn hình…'), h('kbd', {}, 'Ctrl K')),
       h('div', { class: 'erp-titlebar__actions' },
+        ctxBtn,
         h('button', { class: 'erp-iconbtn', type: 'button', title: 'Tìm (Ctrl+K)', 'aria-label': 'Tìm', onclick: () => this.palette(), dataset: { only: 'narrow' } }, icon('search')),
+        this.navBtn,
         h('button', { class: 'erp-iconbtn', type: 'button', title: 'Giao diện', 'aria-label': 'Giao diện', onclick: () => openSettingsPanel() }, icon('theme')),
         userBtn));
+  }
+
+  /** Bảng thông tin làm việc: công ty, MST, chi nhánh, kỳ, dữ liệu. @param {HTMLElement} anchor */
+  openContext(anchor) {
+    const keys = ['company', 'tax-code', 'branch', 'period', 'database', 'language'];
+    popupMenu(anchor, this.session.filter((x) => keys.includes(x.key)).map((x) => ({
+      icon: { company: 'building', 'tax-code': 'form', branch: 'warehouse', period: 'calendar', database: 'system', language: 'info' }[x.key] || 'info',
+      label: `${x.label}: ${x.text}`,
+    })));
   }
 
   buildStatusbar() {
@@ -150,7 +193,7 @@ export class Shell {
       ['user', this.sess('user'), null],
       ['key', 'Đổi mật khẩu', () => this.sessionLinks['change-password'] && this.open(this.sessionLinks['change-password'], { target: 'dialog' })],
       ['theme', 'Giao diện & hiển thị', () => openSettingsPanel()],
-      ['pin', getSettings().nav === 'ribbon' ? 'Dùng menu bên trái' : 'Dùng Ribbon', () => setSettings({ nav: getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon' })],
+      [getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon', getSettings().nav === 'ribbon' ? 'Dùng Sidebar (menu dọc)' : 'Dùng Ribbon (menu ngang)', () => setSettings({ nav: getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon' })],
       ['logout', 'Đăng xuất', () => this.logout(this.sessionLinks.logout)],
     ];
     popupMenu(anchor, items.map(([ic, label, fn]) => ({ icon: /** @type {string} */ (ic), label: /** @type {string} */ (label), onClick: /** @type {any} */ (fn) })));

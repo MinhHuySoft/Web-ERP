@@ -8,7 +8,7 @@
     --erp-font-size: 14px;
 
     /* Nền & bề mặt */
-    --erp-bg: #eef1f6;
+    --erp-bg: #f1f4f8;
     --erp-bg-image: none;
     --erp-surface: #ffffff;
     --erp-surface-2: #f6f8fb;
@@ -16,13 +16,13 @@
     --erp-overlay: rgba(15, 23, 42, .45);
 
     /* Chữ */
-    --erp-text: #1d2433;
+    --erp-text: #1b2333;
     --erp-text-muted: #556074;
-    --erp-text-faint: #7d8799;
+    --erp-text-faint: #7b8597;
 
     /* Viền */
-    --erp-border: #d5dbe5;
-    --erp-border-strong: #b7c0ce;
+    --erp-border: #e0e5ed;
+    --erp-border-strong: #c3ccd9;
 
     /* Màu nhấn & trạng thái */
     --erp-accent: #1f5fbf;
@@ -56,16 +56,27 @@
     --erp-ribbon-btn-hover: #e2ecfa;
     --erp-ribbon-btn-active: #cfe0f7;
     --erp-panel-bg: var(--erp-surface);
+    --erp-docbar-bg: var(--erp-surface-2);
+
+    /* Sidebar dọc */
+    --erp-sidebar-w: 268px;
+    --erp-rail-w: 60px;
+    --erp-sidebar-bg: var(--erp-panel-bg);
+    --erp-sidebar-text: var(--erp-text);
+    --erp-sidebar-icon: var(--erp-text-muted);
+    --erp-sidebar-hover: var(--erp-surface-2);
+    --erp-sidebar-active-bg: var(--erp-primary-soft);
+    --erp-sidebar-active-text: var(--erp-primary);
 
     /* Lưới dữ liệu — luôn nền đặc để dễ đọc số */
     --erp-grid-bg: #ffffff;
-    --erp-grid-head: #f0f3f8;
-    --erp-grid-head-text: #2b3446;
-    --erp-grid-alt: #fafbfd;
-    --erp-grid-hover: #edf3fc;
-    --erp-grid-selected: #d9e7fb;
-    --erp-grid-line: #e3e8ef;
-    --erp-grid-foot: #f4f6fa;
+    --erp-grid-head: #f6f8fb;
+    --erp-grid-head-text: #4a5468;
+    --erp-grid-alt: #fbfcfe;
+    --erp-grid-hover: #f0f5fd;
+    --erp-grid-selected: #dde9fb;
+    --erp-grid-line: #edf0f5;
+    --erp-grid-foot: #f6f8fb;
     --erp-grid-frozen-shadow: 3px 0 4px -2px rgba(15, 23, 42, .16);
 
     /* Ô nhập */
@@ -74,15 +85,15 @@
     --erp-input-readonly: #f3f5f9;
 
     /* Mật độ */
-    --erp-row-h: 30px;
-    --erp-ctl-h: 32px;
-    --erp-gap: 10px;
-    --erp-pad: 14px;
-    --erp-titlebar-h: 46px;
+    --erp-row-h: 34px;
+    --erp-ctl-h: 34px;
+    --erp-gap: 12px;
+    --erp-pad: 16px;
+    --erp-titlebar-h: 48px;
   }
 
-  :root[data-density="compact"] { --erp-row-h: 26px; --erp-ctl-h: 28px; --erp-gap: 6px; --erp-pad: 10px; --erp-titlebar-h: 40px; }
-  :root[data-density="comfortable"] { --erp-row-h: 38px; --erp-ctl-h: 38px; --erp-gap: 14px; --erp-pad: 18px; --erp-titlebar-h: 52px; }
+  :root[data-density="compact"] { --erp-row-h: 28px; --erp-ctl-h: 30px; --erp-gap: 8px; --erp-pad: 10px; --erp-titlebar-h: 42px; }
+  :root[data-density="comfortable"] { --erp-row-h: 40px; --erp-ctl-h: 40px; --erp-gap: 16px; --erp-pad: 20px; --erp-titlebar-h: 54px; }
 }
 
 /* Biến dẫn xuất — đặt ở lớp utilities để luôn tính theo giá trị theme/người dùng cuối cùng. */

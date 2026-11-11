@@ -91,6 +91,11 @@ const P = {
   'row-delete': '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9.5 15.5h5"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
+  sidebar: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M5.5 8h1M5.5 11h1M5.5 14h1"/>',
+  ribbon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M6.5 7h2.5M11 7h2.5"/>',
+  'chevrons-left': '<path d="m11 17-5-5 5-5M18 17l-5-5 5-5"/>',
+  'chevrons-right': '<path d="m13 17 5-5-5-5M6 17l5-5-5-5"/>',
+  building: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 21v-4h6v4M8 7h1M11.5 7h1M15 7h1M8 11h1M11.5 11h1M15 11h1"/>',
   dot: '<circle cx="12" cy="12" r="3"/>',
 };
 

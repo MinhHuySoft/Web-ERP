@@ -25,15 +25,22 @@ export function enhanceScreen(screen, ctx) {
   screen.classList.add('erp-screen', `erp-screen--${/** @type {any} */ (TYPE_CLASS)[type] || 'custom'}`, `is-mode-${mode}`);
   if (listLike) screen.classList.add('erp-screen--fill');
 
-  // Tiêu đề + trạng thái chế độ + yêu thích
+  // Đầu màn hình: breadcrumb (đường dẫn menu) + tiêu đề + trạng thái + yêu thích; các nút thao tác dồn sang phải cùng hàng
   const h1 = screen.querySelector(':scope > h1');
   if (h1) {
     const url = ctx.tab?.url || '';
     const fav = h('button', { type: 'button', class: 'erp-iconbtn erp-fav', 'aria-pressed': String(isFavorite(url)), title: 'Yêu thích',
-      onclick: () => { const on = toggleFavorite({ url, title: h1.textContent || '' }); fav.setAttribute('aria-pressed', String(on)); toast(on ? 'Đã thêm vào yêu thích' : 'Đã bỏ yêu thích', 'success', 1800); } }, icon('star'));
+      onclick: () => { const on = toggleFavorite({ url, title: h1.textContent || '' }); fav.setAttribute('aria-pressed', String(on)); toast(on ? 'Đã thêm vào yêu thích' : 'Đã bỏ yêu thích', 'success', 1800); ctx.shell?.sidebar?.renderFavorites(); } }, icon('star'));
     const badge = mode !== 'view' || type === 'EDIT' ? h('span', { class: `erp-badge erp-badge--mode-${mode}` }, /** @type {any} */ (MODE_LABEL)[mode] || mode) : null;
-    const head = h('div', { class: 'erp-screen__head' }, h('h1', { class: 'erp-screen__title' }, h1.textContent || ''), badge, fav);
+    const path = /** @type {string[]} */ (ctx.shell?.menuPath?.(screen.getAttribute('data-menu-id') || '', '') || []).slice(0, -1);
+    const crumbs = path.length ? h('nav', { class: 'erp-crumbs', 'aria-label': 'Vị trí' }, ...path.flatMap((p, i) => [i ? h('span', { class: 'erp-crumbs__sep', 'aria-hidden': 'true' }, '/') : null, h('span', {}, p)])) : null;
+    const actions = h('div', { class: 'erp-screen__actions' });
+    const head = h('div', { class: 'erp-screen__head' },
+      h('div', { class: 'erp-screen__titles' }, crumbs, h('div', { class: 'erp-screen__titleline' }, h('h1', { class: 'erp-screen__title' }, h1.textContent || ''), badge, fav)),
+      actions);
     h1.replaceWith(head);
+    const tb = screen.querySelector(':scope > [data-erp="toolbar"]');
+    if (tb) actions.append(tb);
   }
   enhanceFragment(screen, ctx);
 }
@@ -55,7 +62,13 @@ export function enhanceFragment(root, ctx) {
   enhanceMessages(root);
   enhanceDashboard(root);
   root.querySelectorAll('[data-erp="attachments"]').forEach((a) => a.classList.add('erp-attachments'));
-  root.querySelectorAll('section[data-erp="report-result"]').forEach((a) => a.classList.add('erp-report-result'));
+  root.querySelectorAll('section[data-erp="report-result"]').forEach((a) => {
+    a.classList.add('erp-report-result');
+    // Gọn: nút Xuất/In của kết quả báo cáo đưa lên thanh công cụ của lưới
+    const tb = a.querySelector(':scope > .erp-toolbar');
+    const bar = a.querySelector('.erp-grid__bar');
+    if (tb && bar) { tb.classList.add('erp-toolbar--inline'); bar.append(tb); }
+  });
   for (const b of Array.from(root.querySelectorAll('form:not([data-erp]) > button, [data-erp="dialog"] button, [data-erp="attachments"] button'))) {
     if (!b.classList.contains('erp-btn')) b.classList.add('erp-btn');
     const a = b.getAttribute('data-action');

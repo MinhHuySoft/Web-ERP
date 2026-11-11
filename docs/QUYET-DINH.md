@@ -115,6 +115,11 @@ WinForms.
   - nhóm = cấp 2;
   - nút = cấp 3+.
 - Mỗi form mở thành một tab tài liệu, giống MDI tab của WinForms.
+- Bổ sung 2026-11-11, theo yêu cầu chủ dự án — tùy chọn **Sidebar dọc** thay cho Ribbon:
+  - Chuyển bằng nút trên thanh tiêu đề, hoặc trong Giao diện & hiển thị.
+  - Sidebar thu gọn được thành thanh biểu tượng, có bảng nổi khi rê chuột.
+  - Tự đánh dấu màn hình đang mở.
+  - Ribbon vẫn là mặc định.
 - Điểm gãy responsive:
 
   | Màn hình | Ribbon | Menu khác | Lưới |
