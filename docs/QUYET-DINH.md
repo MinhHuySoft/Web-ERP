@@ -122,6 +122,12 @@ WinForms.
   - Thu gọn / mở rộng bằng nút ☰ trên thanh tiêu đề hoặc Ctrl+B. Sidebar không có nút riêng ở đầu/chân để giao diện gọn.
   - Tự đánh dấu màn hình đang mở.
   - Ribbon vẫn là mặc định.
+- Bổ sung 2026-11-11, theo yêu cầu chủ dự án — **người dùng tự chọn màu**:
+  - Chọn một màu chủ đạo (mẫu sẵn hoặc màu bất kỳ); mọi theme đổi màu nhuốm theo.
+  - Chọn gradient 2–3 màu, có chỉnh góc, cho thanh tiêu đề và/hoặc nền.
+  - Hoặc dùng màu mặc định của theme.
+  - Màu được tự chỉnh cho đủ tương phản. Theme Tương phản cao giữ màu cố định.
+  - Chi tiết: `docs/kien-truc/03-chuan-giao-dien.md` mục 2b.
 - Điểm gãy responsive:
 
   | Màn hình | Ribbon | Menu khác | Lưới |

@@ -59,7 +59,7 @@
   .erp-userbtn .erp-icon { width: 14px; height: 14px; opacity: .8; }
   .erp-avatar {
     display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font-weight: 700; font-size: var(--erp-fs-sm);
-    background: var(--erp-primary); color: var(--erp-accent-contrast); box-shadow: 0 0 0 2px color-mix(in srgb, var(--erp-chrome-text) 35%, transparent);
+    background: var(--erp-primary); color: var(--erp-on-primary); box-shadow: 0 0 0 2px color-mix(in srgb, var(--erp-chrome-text) 35%, transparent);
   }
   .erp-userbtn__name { white-space: nowrap; max-width: 18ch; overflow: hidden; text-overflow: ellipsis; }
 
@@ -278,9 +278,74 @@
   .erp-seg input { position: absolute; opacity: 0; pointer-events: none; }
   .erp-seg span { padding: 6px 14px; border-inline-end: 1px solid var(--erp-border); }
   .erp-seg label:last-child span { border-inline-end: 0; }
-  .erp-seg input:checked + span { background: var(--erp-primary); color: var(--erp-accent-contrast); }
+  .erp-seg input:checked + span { background: var(--erp-primary); color: var(--erp-on-primary); }
   .erp-seg input:focus-visible + span { box-shadow: inset 0 0 0 2px var(--erp-primary); }
   .erp-check { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+
+  /* ---------- Màu sắc người dùng (bảng Giao diện & hiển thị) ---------- */
+  .erp-colorset { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-lg); background: var(--erp-surface-2); }
+  .erp-colorset__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .erp-colorset__head h3 { margin: 0; }
+  .erp-colorset__row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: start; gap: 12px; }
+  .erp-colorset__label { padding-top: 6px; font-size: var(--erp-fs-sm); font-weight: 500; color: var(--erp-text-muted); }
+  .erp-colorset__note { display: flex; align-items: flex-start; gap: 8px; margin: 0; font-size: var(--erp-fs-sm); color: var(--erp-text-muted); }
+  .erp-colorset__note .erp-icon { width: 16px; height: 16px; margin-top: 1px; color: var(--erp-info); }
+  .erp-colorset__note.is-warning .erp-icon { color: var(--erp-warning); }
+
+  .erp-swatches { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .erp-swatches__sep { width: 1px; height: 22px; margin: 0 2px; background: var(--erp-border-strong); }
+  .erp-swatch { position: relative; display: inline-grid; cursor: pointer; }
+  .erp-swatch input[type=radio] { position: absolute; opacity: 0; pointer-events: none; }
+  .erp-swatch > span {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--sw);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 14%, transparent); transition: box-shadow var(--erp-dur-fast) ease;
+  }
+  .erp-swatch:hover > span { box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 14%, transparent), 0 0 0 3px var(--erp-surface), 0 0 0 4px var(--erp-border-strong); }
+  .erp-swatch input:checked + span, .erp-swatch--custom.is-checked > span { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-text); }
+  .erp-swatch input:focus-visible + span, .erp-swatch--custom:focus-within > span { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary); }
+  /* Ô "Màu khác…": vòng sắc màu, bấm mở bộ chọn màu của trình duyệt */
+  .erp-swatch--custom { background: conic-gradient(#e11d48, #f59e0b, #16a34a, #0ea5e9, #6d28d9, #e11d48); border-radius: 50%; }
+  .erp-swatch--custom > span { background: var(--sw); box-shadow: inset 0 0 0 4px transparent; }
+  .erp-swatch--custom input[type=color] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0; padding: 0; }
+
+  .erp-gradchips { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+  .erp-gradchip { position: relative; display: grid; gap: 4px; justify-items: center; cursor: pointer; }
+  .erp-gradchip input { position: absolute; opacity: 0; pointer-events: none; }
+  .erp-gradchip__tile {
+    display: grid; place-items: center; width: 100%; height: 34px; border-radius: var(--erp-radius); color: var(--erp-text-muted);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 12%, transparent); transition: box-shadow var(--erp-dur-fast) ease;
+  }
+  .erp-gradchip__tile .erp-icon { width: 16px; height: 16px; }
+  .erp-gradchip__name { font-size: var(--erp-fs-xs); color: var(--erp-text-muted); white-space: nowrap; }
+  .erp-gradchip:hover .erp-gradchip__tile { box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 12%, transparent), 0 0 0 2px var(--erp-surface), 0 0 0 3px var(--erp-border-strong); }
+  .erp-gradchip input:checked ~ .erp-gradchip__tile { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-text); }
+  .erp-gradchip input:checked ~ .erp-gradchip__name { color: var(--erp-text); font-weight: 600; }
+  .erp-gradchip input:focus-visible ~ .erp-gradchip__tile { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary); }
+
+  .erp-gradedit { display: grid; gap: 10px; margin-inline-start: 132px; padding: 12px; border-radius: var(--erp-radius); background: var(--erp-surface); border: 1px solid var(--erp-border); }
+  .erp-gradedit__stops { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .erp-gradedit__stop { display: inline-flex; align-items: center; gap: 2px; }
+  .erp-gradedit__stop input[type=color] { width: 40px; height: 30px; padding: 2px; border: 1px solid var(--erp-border-strong); border-radius: var(--erp-radius-sm); background: var(--erp-surface); cursor: pointer; }
+  .erp-gradedit__stop .erp-iconbtn { width: 26px; height: 26px; }
+  .erp-gradedit__angle { max-width: 360px; font-size: var(--erp-fs-sm); }
+  .erp-gradedit__angle output { min-width: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
+  .erp-gradedit__apply { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: var(--erp-fs-sm); }
+
+  /* Xem trước: dùng chính biến màu đang áp dụng */
+  .erp-colorprev { overflow: hidden; border: 1px solid var(--erp-border); border-radius: var(--erp-radius); background-color: var(--erp-bg); background-image: var(--erp-bg-image); background-size: cover; }
+  .erp-colorprev__bar { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 10px; background: var(--erp-chrome-bg); color: var(--erp-chrome-text); font-size: var(--erp-fs-sm); }
+  .erp-colorprev__logo { width: 18px; height: 18px; border-radius: 5px; background: color-mix(in srgb, var(--erp-chrome-text) 85%, transparent); }
+  .erp-colorprev__chip { margin-inline-start: auto; padding: 2px 8px; border-radius: 999px; background: var(--erp-chrome-hover); color: var(--erp-chrome-text); font-size: var(--erp-fs-xs); }
+  .erp-colorprev__body { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px; }
+  .erp-colorprev__body > span { font-size: var(--erp-fs-sm); }
+  .erp-colorprev__link { color: var(--erp-primary); text-decoration: underline; text-underline-offset: 2px; }
+  .erp-colorprev__sel { padding: 4px 10px; border-radius: var(--erp-radius-sm); background: var(--erp-sidebar-active-bg); color: var(--erp-sidebar-active-text); font-weight: 600; }
+  .erp-colorprev__row { padding: 4px 10px; border-radius: var(--erp-radius-sm); background: var(--erp-grid-selected); color: var(--erp-text); }
+  @media (max-width: 640px) {
+    .erp-colorset__row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .erp-colorset__label { padding-top: 0; }
+    .erp-gradedit { margin-inline-start: 0; }
+  }
 }
 
 /* Màu xem trước của từng theme trong bảng chọn (độc lập với theme đang dùng) */

@@ -2,18 +2,18 @@
 @layer themes {
   :root[data-theme="material-you"] {
     --erp-font: "Roboto", "Segoe UI", system-ui, sans-serif;
-    --erp-bg: #fef7ff; --erp-surface: #fffbff; --erp-surface-2: #f7f2fa; --erp-surface-3: #ece6f0; --erp-panel-bg: #f7f2fa;
+    --erp-bg: color-mix(in srgb, var(--erp-primary) 3%, #ffffff); --erp-surface: color-mix(in srgb, var(--erp-primary) 1%, #ffffff); --erp-surface-2: color-mix(in srgb, var(--erp-primary) 5%, #fbfbfb); --erp-surface-3: color-mix(in srgb, var(--erp-primary) 10%, #f0f0f0); --erp-panel-bg: var(--erp-surface-2);
     --erp-text: #1d1b20; --erp-text-muted: #49454f; --erp-text-faint: #67626f;
-    --erp-border: #e2dce8; --erp-border-strong: #cac4d0;
+    --erp-border: color-mix(in srgb, var(--erp-primary) 8%, #e4e4e6); --erp-border-strong: color-mix(in srgb, var(--erp-primary) 8%, #c8c8cc);
     --erp-accent: #6750a4; --erp-accent-contrast: #ffffff;
     --erp-success: #146c43; --erp-warning: #8a5300; --erp-danger: #b3261e; --erp-info: #1f62a8;
     --erp-radius: 12px; --erp-radius-sm: 8px; --erp-radius-lg: 18px;
     --erp-shadow-sm: 0 1px 2px rgba(0, 0, 0, .1); --erp-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06); --erp-shadow-lg: 0 8px 28px rgba(0, 0, 0, .18);
-    --erp-chrome-bg: #f3edf7; --erp-chrome-text: #1d1b20; --erp-chrome-muted: #49454f; --erp-chrome-hover: rgba(103, 80, 164, .08);
-    --erp-ribbon-bg: #fef7ff; --erp-ribbon-tabs-bg: #f3edf7; --erp-ribbon-tab-text: #49454f; --erp-ribbon-tab-active-bg: #e8def8;
-    --erp-ribbon-tab-active-text: #21005d; --erp-ribbon-border: #ece6f0; --erp-ribbon-btn-hover: #f3edf7; --erp-ribbon-btn-active: #e8def8;
-    --erp-grid-bg: #fffbff; --erp-grid-head: #f3edf7; --erp-grid-line: #ece6f0; --erp-grid-alt: #fcf8fe; --erp-grid-hover: #f5effa; --erp-grid-selected: #e8def8; --erp-grid-foot: #f3edf7;
-    --erp-input-bg: #fffbff; --erp-input-border: #79747e;
+    --erp-chrome-bg: color-mix(in srgb, var(--erp-primary) 7%, #fbfbfb); --erp-chrome-text: #1d1b20; --erp-chrome-muted: #49454f; --erp-chrome-hover: color-mix(in srgb, var(--erp-primary) 8%, transparent);
+    --erp-ribbon-bg: color-mix(in srgb, var(--erp-primary) 3%, #ffffff); --erp-ribbon-tabs-bg: color-mix(in srgb, var(--erp-primary) 7%, #fbfbfb); --erp-ribbon-tab-text: #49454f; --erp-ribbon-tab-active-bg: color-mix(in srgb, var(--erp-primary) 16%, #ffffff);
+    --erp-ribbon-tab-active-text: color-mix(in srgb, var(--erp-primary) 55%, #000000); --erp-ribbon-border: color-mix(in srgb, var(--erp-primary) 10%, #f0f0f0); --erp-ribbon-btn-hover: color-mix(in srgb, var(--erp-primary) 7%, #fbfbfb); --erp-ribbon-btn-active: color-mix(in srgb, var(--erp-primary) 16%, #ffffff);
+    --erp-grid-bg: color-mix(in srgb, var(--erp-primary) 1%, #ffffff); --erp-grid-head: color-mix(in srgb, var(--erp-primary) 7%, #fbfbfb); --erp-grid-line: color-mix(in srgb, var(--erp-primary) 10%, #f0f0f0); --erp-grid-alt: color-mix(in srgb, var(--erp-primary) 2%, #ffffff); --erp-grid-hover: color-mix(in srgb, var(--erp-primary) 6%, #ffffff); --erp-grid-selected: color-mix(in srgb, var(--erp-primary) 16%, #ffffff); --erp-grid-foot: color-mix(in srgb, var(--erp-primary) 7%, #fbfbfb);
+    --erp-input-bg: color-mix(in srgb, var(--erp-primary) 1%, #ffffff); --erp-input-border: #79747e;
   }
   :root[data-theme="material-you"] .erp-ribbon__tabsrow { padding: 4px 10px 0; }
   :root[data-theme="material-you"] .erp-ribbon__tab { border-radius: 999px; margin-bottom: 4px; padding: 6px 16px; }

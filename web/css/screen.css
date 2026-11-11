@@ -32,9 +32,9 @@
   }
   .erp-tbtn .erp-icon { width: 17px; height: 17px; color: var(--erp-primary); }
   .erp-tbtn:hover { background: var(--erp-primary-softer); border-color: color-mix(in srgb, var(--erp-primary) 25%, transparent); color: var(--erp-text); }
-  .erp-tbtn--primary { background: var(--erp-primary); color: var(--erp-accent-contrast); }
+  .erp-tbtn--primary { background: var(--erp-primary); color: var(--erp-on-primary); }
   .erp-tbtn--primary .erp-icon { color: currentColor; }
-  .erp-tbtn--primary:hover { background: var(--erp-primary-hover); color: var(--erp-accent-contrast); }
+  .erp-tbtn--primary:hover { background: var(--erp-primary-hover); color: var(--erp-on-primary); }
   .erp-tbtn--danger .erp-icon { color: var(--erp-danger); }
   .erp-tbtn--danger:hover { background: var(--erp-danger-soft); border-color: color-mix(in srgb, var(--erp-danger) 30%, transparent); }
   .erp-tbtn--success .erp-icon { color: var(--erp-success); }
