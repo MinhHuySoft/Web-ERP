@@ -14,39 +14,49 @@
   .erp-ribbon__collapse { color: var(--erp-ribbon-tab-text); width: 28px; height: 28px; margin-bottom: 2px; }
   .erp-ribbon__collapse:hover { background: var(--erp-chrome-hover); }
 
-  .erp-ribbon__body { overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; }
-  .erp-ribbon__panel { display: flex; align-items: stretch; gap: 0; padding: 6px 6px 0; min-height: 104px; }
-  .erp-ribbon.is-collapsed .erp-ribbon__body { display: none; }
-  .erp-ribbon.is-collapsed.is-peek .erp-ribbon__body {
+  .erp-ribbon__bodywrap { position: relative; }
+  .erp-ribbon__body { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  .erp-ribbon__body::-webkit-scrollbar { display: none; }
+  .erp-ribbon__scroll {
+    position: absolute; z-index: 2; top: 0; bottom: 0; width: 34px; display: grid; place-items: center; border: 0; cursor: pointer;
+    color: var(--erp-text-muted); background: linear-gradient(90deg, var(--erp-ribbon-bg) 55%, transparent);
+  }
+  .erp-ribbon__scroll--left { inset-inline-start: 0; }
+  .erp-ribbon__scroll--right { inset-inline-end: 0; background: linear-gradient(270deg, var(--erp-ribbon-bg) 55%, transparent); }
+  .erp-ribbon__scroll:hover { color: var(--erp-primary); }
+  .erp-ribbon__panel { display: flex; align-items: stretch; gap: 0; padding: 8px 10px 0; min-height: 108px; }
+  .erp-ribbon.is-collapsed .erp-ribbon__bodywrap { display: none; }
+  .erp-ribbon.is-collapsed.is-peek .erp-ribbon__bodywrap {
     display: block; position: absolute; inset-inline: 0; top: 100%; background: var(--erp-ribbon-bg);
     border-bottom: 1px solid var(--erp-ribbon-border); box-shadow: var(--erp-shadow-lg);
   }
 
   /* Nhóm */
-  .erp-rgroup { display: flex; flex-direction: column; padding: 0 8px; border-inline-end: 1px solid var(--erp-ribbon-border); flex: none; }
+  .erp-rgroup { display: flex; flex-direction: column; padding: 0 14px; border-inline-end: 1px solid var(--erp-ribbon-border); flex: none; }
+  .erp-rgroup:first-child { padding-inline-start: 4px; }
   .erp-rgroup:last-child { border-inline-end: 0; }
-  .erp-rgroup__items { flex: 1; display: flex; align-items: flex-start; gap: 2px; }
+  .erp-rgroup__items { flex: 1; display: flex; align-items: flex-start; gap: 4px; }
   .erp-rgroup--small .erp-rgroup__items, .erp-rgroup--mixed .erp-rgroup__items {
-    display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, auto); align-content: start; column-gap: 4px; row-gap: 1px;
+    display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, auto); align-content: start; column-gap: 8px; row-gap: 2px;
   }
   .erp-rgroup--mixed .erp-rbtn--large { grid-row: span 3; }
   .erp-rgroup__title {
-    font-size: .74em; font-weight: 500; color: var(--erp-text-faint); text-align: center; padding: 3px 0 4px; white-space: nowrap;
+    font-size: .76em; font-weight: 600; color: var(--erp-text-faint); text-align: center; padding: 4px 0 6px; white-space: nowrap;
     letter-spacing: .2px;
   }
 
   /* Nút ribbon */
   .erp-rbtn {
-    display: flex; align-items: center; gap: 6px; border: 1px solid transparent; border-radius: var(--erp-radius-sm);
-    background: transparent; color: var(--erp-text); cursor: pointer; text-align: start; font-size: .88em;
+    display: flex; align-items: center; gap: 8px; border: 1px solid transparent; border-radius: 6px;
+    background: transparent; color: var(--erp-text); cursor: pointer; text-align: start; font-size: .92em;
   }
-  .erp-rbtn:hover { background: var(--erp-ribbon-btn-hover); border-color: color-mix(in srgb, var(--erp-primary) 20%, transparent); }
+  .erp-rbtn:hover { background: var(--erp-ribbon-btn-hover); border-color: color-mix(in srgb, var(--erp-primary) 18%, transparent); }
   .erp-rbtn:active { background: var(--erp-ribbon-btn-active); }
   .erp-rbtn .erp-icon { color: var(--erp-primary); }
-  .erp-rbtn--small { padding: 2px 8px 2px 4px; height: 25px; max-width: 230px; }
-  .erp-rbtn--small .erp-icon { width: 16px; height: 16px; }
+  .erp-rbtn--small { padding: 0 10px 0 6px; height: 28px; max-width: 250px; }
+  .erp-rbtn--small .erp-icon { width: 17px; height: 17px; }
   .erp-rbtn--small span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .erp-rbtn--large { flex-direction: column; justify-content: flex-start; gap: 4px; width: 78px; min-height: 74px; padding: 6px 4px 4px; text-align: center; }
+  .erp-rbtn--large { flex-direction: column; justify-content: flex-start; gap: 5px; width: 84px; min-height: 78px; padding: 8px 4px 4px; text-align: center; }
   .erp-rbtn--large .erp-icon { width: 28px; height: 28px; stroke-width: 1.5; }
   .erp-rbtn--large span { line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .erp-rbtn--drop { position: relative; width: 92px; }

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Số dư hàng tồn kho</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_BalanceItemFrm" data-form-type="LISTEDIT" data-mode="edit" data-screen-key="GJ_BalanceItemFrm" data-menu-id="010502">
+<h1>Số dư hàng tồn kho</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_BalanceItemFrm" formaction="/mock/screens/GJ_BalanceItemFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_BalanceItemFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_BalanceItemFrm" method="post" action="/mock/screens/GJ_BalanceItemFrm.saved.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-GJ_BalanceItemFrm" data-total-rows="22">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="number" data-width="80" data-decimals="0" data-hidden data-editor="number">ID</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="140" data-frozen data-editor="select">Kho</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="100" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID">Mã hàng</th>
+<th scope="col" data-field="ItemName" data-type="text" data-width="250" data-readonly>Tên hàng</th>
+<th scope="col" data-field="Unit" data-type="text" data-width="70" data-readonly>ĐVT</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="90" data-editor="text">Số lô</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="100" data-editor="date">Hạn dùng</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="90" data-decimals="0" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="130" data-decimals="0" data-editor="money">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="130" data-decimals="0" data-sum="sum" data-editor="money">Thành tiền</th>
+</tr></thead>
+<tbody>
+<tr data-key="1"><td data-value="1">1</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0001</td><td>Máy đo huyết áp điện tử</td><td>Cái</td><td>L26100</td><td data-value="2027-01-28">28/01/2027</td><td data-value="215">215</td><td data-value="4800000">4.800.000</td><td data-value="1032000000">1.032.000.000</td></tr>
+<tr data-key="2"><td data-value="2">2</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0008</td><td>Hóa chất xét nghiệm Glucose</td><td>Hộp</td><td>L26107</td><td data-value="2028-02-28">28/02/2028</td><td data-value="164">164</td><td data-value="320000">320.000</td><td data-value="52480000">52.480.000</td></tr>
+<tr data-key="3"><td data-value="3">3</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0015</td><td>Nhiệt kế điện tử</td><td>Cái</td><td>L26114</td><td data-value="2029-03-28">28/03/2029</td><td data-value="163">163</td><td data-value="4800000">4.800.000</td><td data-value="782400000">782.400.000</td></tr>
+<tr data-key="4"><td data-value="4">4</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0002</td><td>Bơm tiêm 5ml</td><td>Hộp</td><td>L26121</td><td data-value="2027-04-28">28/04/2027</td><td data-value="214">214</td><td data-value="45000">45.000</td><td data-value="9630000">9.630.000</td></tr>
+<tr data-key="5"><td data-value="5">5</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0009</td><td>Khẩu trang y tế 4 lớp</td><td>Hộp</td><td>L26128</td><td data-value="2028-05-28">28/05/2028</td><td data-value="107">107</td><td data-value="12000">12.000</td><td data-value="1284000">1.284.000</td></tr>
+<tr data-key="6"><td data-value="6">6</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0016</td><td>Que thử đường huyết</td><td>Hộp</td><td>L26135</td><td data-value="2029-06-28">28/06/2029</td><td data-value="206">206</td><td data-value="12000">12.000</td><td data-value="2472000">2.472.000</td></tr>
+<tr data-key="7"><td data-value="7">7</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0003</td><td>Găng tay y tế không bột</td><td>Hộp</td><td>L26142</td><td data-value="2027-07-28">28/07/2027</td><td data-value="223">223</td><td data-value="1250000">1.250.000</td><td data-value="278750000">278.750.000</td></tr>
+<tr data-key="8"><td data-value="8">8</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0010</td><td>Máy siêu âm xách tay</td><td>Bộ</td><td>L26149</td><td data-value="2028-08-28">28/08/2028</td><td data-value="253">253</td><td data-value="85000">85.000</td><td data-value="21505000">21.505.000</td></tr>
+<tr data-key="9"><td data-value="9">9</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0017</td><td>Máy thở không xâm nhập</td><td>Bộ</td><td>L26156</td><td data-value="2029-09-28">28/09/2029</td><td data-value="193">193</td><td data-value="85000">85.000</td><td data-value="16405000">16.405.000</td></tr>
+<tr data-key="10"><td data-value="10">10</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0004</td><td>Máy monitor theo dõi bệnh nhân</td><td>Bộ</td><td>L26163</td><td data-value="2027-10-28">28/10/2027</td><td data-value="133">133</td><td data-value="320000">320.000</td><td data-value="42560000">42.560.000</td></tr>
+<tr data-key="11"><td data-value="11">11</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0011</td><td>Bông y tế 1kg</td><td>Gói</td><td>L26170</td><td data-value="2028-11-28">28/11/2028</td><td data-value="261">261</td><td data-value="320000">320.000</td><td data-value="83520000">83.520.000</td></tr>
+<tr data-key="12"><td data-value="12">12</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0018</td><td>Bộ dụng cụ phẫu thuật</td><td>Bộ</td><td>L26177</td><td data-value="2029-12-28">28/12/2029</td><td data-value="199">199</td><td data-value="1250000">1.250.000</td><td data-value="248750000">248.750.000</td></tr>
+<tr data-key="13"><td data-value="13">13</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0005</td><td>Kim luồn tĩnh mạch 22G</td><td>Cái</td><td>L26184</td><td data-value="2027-01-28">28/01/2027</td><td data-value="298">298</td><td data-value="320000">320.000</td><td data-value="95360000">95.360.000</td></tr>
+<tr data-key="14"><td data-value="14">14</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0012</td><td>Ống nghiệm EDTA</td><td>Hộp</td><td>L26191</td><td data-value="2028-02-28">28/02/2028</td><td data-value="223">223</td><td data-value="12000">12.000</td><td data-value="2676000">2.676.000</td></tr>
+<tr data-key="15"><td data-value="15">15</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0019</td><td>Gạc vô trùng 10x10</td><td>Gói</td><td>L26198</td><td data-value="2029-03-28">28/03/2029</td><td data-value="191">191</td><td data-value="150000">150.000</td><td data-value="28650000">28.650.000</td></tr>
+<tr data-key="16"><td data-value="16">16</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0006</td><td>Dây truyền dịch</td><td>Sợi</td><td>L26205</td><td data-value="2027-04-28">28/04/2027</td><td data-value="296">296</td><td data-value="1250000">1.250.000</td><td data-value="370000000">370.000.000</td></tr>
+<tr data-key="17"><td data-value="17">17</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0013</td><td>Đầu dò siêu âm</td><td>Cái</td><td>L26212</td><td data-value="2028-05-28">28/05/2028</td><td data-value="244">244</td><td data-value="1250000">1.250.000</td><td data-value="305000000">305.000.000</td></tr>
+<tr data-key="18"><td data-value="18">18</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0020</td><td>Cồn sát khuẩn 70 độ</td><td>Chai</td><td>L26219</td><td data-value="2029-06-28">28/06/2029</td><td data-value="103">103</td><td data-value="12000">12.000</td><td data-value="1236000">1.236.000</td></tr>
+<tr data-key="19"><td data-value="19">19</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0007</td><td>Máy xét nghiệm sinh hóa</td><td>Bộ</td><td>L26226</td><td data-value="2027-07-28">28/07/2027</td><td data-value="152">152</td><td data-value="85000">85.000</td><td data-value="12920000">12.920.000</td></tr>
+<tr data-key="20"><td data-value="20">20</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td>VT0014</td><td>Máy điện tim 12 kênh</td><td>Bộ</td><td>L26233</td><td data-value="2028-08-28">28/08/2028</td><td data-value="58">58</td><td data-value="150000">150.000</td><td data-value="8700000">8.700.000</td></tr>
+<tr data-key="21"><td data-value="21">21</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td>VT0001</td><td>Máy đo huyết áp điện tử</td><td>Cái</td><td>L26240</td><td data-value="2029-09-28">28/09/2029</td><td data-value="69">69</td><td data-value="1250000">1.250.000</td><td data-value="86250000">86.250.000</td></tr>
+<tr data-key="22"><td data-value="22">22</td><td data-value="KHO-HN">Kho Hà Nội</td><td>VT0008</td><td>Hóa chất xét nghiệm Glucose</td><td>Hộp</td><td>L26247</td><td data-value="2027-10-28">28/10/2027</td><td data-value="174">174</td><td data-value="150000">150.000</td><td data-value="26100000">26.100.000</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="4139">4139</td><td></td><td data-field="Amount" data-value="3508648000">3.508.648.000</td></tr></tfoot>
+</table>
+<template data-erp="options" data-field="StoreHouseID"><option value="KHO-HN">Kho Hà Nội</option><option value="KHO-HCM">Kho Hồ Chí Minh</option><option value="KHO-DN">Kho Đà Nẵng</option><option value="KHO-BH">Kho bảo hành</option></template>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

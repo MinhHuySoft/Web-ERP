@@ -1,11 +1,59 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Chương trình khuyến mãi ( Hóa đơn )</title></head>
 <body>
-<section data-erp="screen" data-screen-id="AR_ChieuKhauHopDongFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="AR_ChieuKhauHopDongFrm" data-menu-id="4003">
+<section data-erp="screen" data-screen-id="AR_ChieuKhauHopDongFrm" data-form-type="EDIT" data-mode="find" data-screen-key="AR_ChieuKhauHopDongFrm" data-menu-id="4003">
 <h1>Chương trình khuyến mãi ( Hóa đơn )</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_ChieuKhauHopDongFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
   <li><a data-action="reload" href="/mock/screens/AR_ChieuKhauHopDongFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/AR_ChieuKhauHopDongFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_ChieuKhauHopDongFrm-FromDate">Từ ngày</label><input id="flt-AR_ChieuKhauHopDongFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_ChieuKhauHopDongFrm-ToDate">Đến ngày</label><input id="flt-AR_ChieuKhauHopDongFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-AR_ChieuKhauHopDongFrm-BranchID">Chi nhánh</label><select id="flt-AR_ChieuKhauHopDongFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AR_ChieuKhauHopDongFrm-q">Tìm nhanh</label><input id="flt-AR_ChieuKhauHopDongFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="DocumentID" data-selectable="single" data-total-rows="24" data-sort="DocumentID:desc">
+<thead><tr>
+<th scope="col" data-field="DocumentID" data-type="link" data-width="110" data-frozen>Số chứng từ</th>
+<th scope="col" data-field="DocumentDate" data-type="date" data-width="95">Ngày chứng từ</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="110">Chi nhánh</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240">Diễn giải</th>
+<th scope="col" data-field="isLock" data-type="bool" data-width="60">Khóa</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+<th scope="col" data-field="ToDate" data-type="date" data-width="95">Đến ngày</th>
+</tr></thead>
+<tbody>
+<tr data-key="KM1126/0001"><td><a href="/mock/records/AR_ChieuKhauHopDongFrm/1.html" data-target="tab">KM1126/0001</a></td><td data-value="2026-07-15">15/07/2026</td><td data-value="HN">Hà Nội</td><td>Giao hàng trong tuần</td><td data-value="true">Có</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-10-11">11/10/2026</td><td data-value="2026-09-11">11/09/2026</td><td data-value="2026-07-19">19/07/2026</td></tr>
+<tr data-key="KM1126/0002"><td><a href="/mock/records/AR_ChieuKhauHopDongFrm/2.html" data-target="tab">KM1126/0002</a></td><td data-value="2026-07-23">23/07/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-08-22">22/08/2026</td><td data-value="2026-08-15">15/08/2026</td><td data-value="2026-10-23">23/10/2026</td></tr>
+<tr data-key="KM1126/0003"><td><a href="/mock/records/AR_ChieuKhauHopDongFrm/3.html" data-target="tab">KM1126/0003</a></td><td data-value="2026-10-18">18/10/2026</td><td data-value="DN">Đà Nẵng</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-17">17/10/2026</td><td data-value="2026-07-29">29/07/2026</td><td data-value="2026-09-22">22/09/2026</td></tr>
+<tr data-key="KM1126/0004"><td>KM1126/0004</td><td data-value="2026-09-02">02/09/2026</td><td data-value="HN">Hà Nội</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-11">11/09/2026</td><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-08-11">11/08/2026</td></tr>
+<tr data-key="KM1126/0005"><td>KM1126/0005</td><td data-value="2026-10-30">30/10/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-07-28">28/07/2026</td><td data-value="2026-09-16">16/09/2026</td><td data-value="2026-07-14">14/07/2026</td></tr>
+<tr data-key="KM1126/0006"><td>KM1126/0006</td><td data-value="2026-08-30">30/08/2026</td><td data-value="DN">Đà Nẵng</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="false"></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-07-26">26/07/2026</td><td data-value="2026-10-02">02/10/2026</td></tr>
+<tr data-key="KM1126/0007"><td>KM1126/0007</td><td data-value="2026-09-12">12/09/2026</td><td data-value="HN">Hà Nội</td><td>Giao hàng trong tuần</td><td data-value="false"></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-19">19/10/2026</td><td data-value="2026-09-29">29/09/2026</td><td data-value="2026-10-13">13/10/2026</td></tr>
+<tr data-key="KM1126/0008"><td>KM1126/0008</td><td data-value="2026-10-20">20/10/2026</td><td data-value="HCM">Hồ Chí Minh</td><td></td><td data-value="false"></td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-13">13/09/2026</td><td data-value="2026-10-28">28/10/2026</td><td data-value="2026-08-13">13/08/2026</td></tr>
+<tr data-key="KM1126/0009"><td>KM1126/0009</td><td data-value="2026-10-28">28/10/2026</td><td data-value="DN">Đà Nẵng</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-07-22">22/07/2026</td><td data-value="2026-07-31">31/07/2026</td><td data-value="2026-07-25">25/07/2026</td></tr>
+<tr data-key="KM1126/0010"><td>KM1126/0010</td><td data-value="2026-11-06">06/11/2026</td><td data-value="HN">Hà Nội</td><td>Giao hàng trong tuần</td><td data-value="false"></td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-08-13">13/08/2026</td><td data-value="2026-11-11">11/11/2026</td><td data-value="2026-10-20">20/10/2026</td></tr>
+<tr data-key="KM1126/0011"><td>KM1126/0011</td><td data-value="2026-09-09">09/09/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-11-03">03/11/2026</td><td data-value="2026-07-31">31/07/2026</td><td data-value="2026-10-25">25/10/2026</td></tr>
+<tr data-key="KM1126/0012"><td>KM1126/0012</td><td data-value="2026-11-07">07/11/2026</td><td data-value="DN">Đà Nẵng</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-08-31">31/08/2026</td><td data-value="2026-07-26">26/07/2026</td><td data-value="2026-07-19">19/07/2026</td></tr>
+<tr data-key="KM1126/0013"><td>KM1126/0013</td><td data-value="2026-08-31">31/08/2026</td><td data-value="HN">Hà Nội</td><td>Hàng nhập khẩu</td><td data-value="true">Có</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-03">03/08/2026</td><td data-value="2026-10-30">30/10/2026</td><td data-value="2026-09-15">15/09/2026</td></tr>
+<tr data-key="KM1126/0014"><td>KM1126/0014</td><td data-value="2026-10-09">09/10/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-07-28">28/07/2026</td><td data-value="2026-11-06">06/11/2026</td><td data-value="2026-08-07">07/08/2026</td></tr>
+<tr data-key="KM1126/0015"><td>KM1126/0015</td><td data-value="2026-10-17">17/10/2026</td><td data-value="DN">Đà Nẵng</td><td>Theo hợp đồng số 12/2026</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-11-03">03/11/2026</td><td data-value="2026-09-29">29/09/2026</td></tr>
+<tr data-key="KM1126/0016"><td>KM1126/0016</td><td data-value="2026-10-25">25/10/2026</td><td data-value="HN">Hà Nội</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-09-14">14/09/2026</td></tr>
+<tr data-key="KM1126/0017"><td>KM1126/0017</td><td data-value="2026-08-01">01/08/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-04">04/09/2026</td><td data-value="2026-10-21">21/10/2026</td><td data-value="2026-08-08">08/08/2026</td></tr>
+<tr data-key="KM1126/0018"><td>KM1126/0018</td><td data-value="2026-11-11">11/11/2026</td><td data-value="DN">Đà Nẵng</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-11-01">01/11/2026</td><td data-value="2026-09-19">19/09/2026</td><td data-value="2026-11-10">10/11/2026</td></tr>
+<tr data-key="KM1126/0019"><td>KM1126/0019</td><td data-value="2026-09-15">15/09/2026</td><td data-value="HN">Hà Nội</td><td></td><td data-value="false"></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-15">15/08/2026</td><td data-value="2026-07-22">22/07/2026</td><td data-value="2026-10-17">17/10/2026</td></tr>
+<tr data-key="KM1126/0020"><td>KM1126/0020</td><td data-value="2026-09-24">24/09/2026</td><td data-value="HCM">Hồ Chí Minh</td><td></td><td data-value="false"></td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-08-15">15/08/2026</td><td data-value="2026-08-18">18/08/2026</td><td data-value="2026-08-29">29/08/2026</td></tr>
+<tr data-key="KM1126/0021"><td>KM1126/0021</td><td data-value="2026-10-19">19/10/2026</td><td data-value="DN">Đà Nẵng</td><td>Hàng nhập khẩu</td><td data-value="true">Có</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-09-08">08/09/2026</td><td data-value="2026-08-28">28/08/2026</td><td data-value="2026-07-15">15/07/2026</td></tr>
+<tr data-key="KM1126/0022"><td>KM1126/0022</td><td data-value="2026-08-06">06/08/2026</td><td data-value="HN">Hà Nội</td><td>Giao hàng trong tuần</td><td data-value="true">Có</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-10-11">11/10/2026</td><td data-value="2026-08-06">06/08/2026</td><td data-value="2026-08-28">28/08/2026</td></tr>
+<tr data-key="KM1126/0023"><td>KM1126/0023</td><td data-value="2026-07-18">18/07/2026</td><td data-value="HCM">Hồ Chí Minh</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-08-09">09/08/2026</td><td data-value="2026-08-10">10/08/2026</td></tr>
+<tr data-key="KM1126/0024"><td>KM1126/0024</td><td data-value="2026-09-08">08/09/2026</td><td data-value="DN">Đà Nẵng</td><td></td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-29">29/10/2026</td><td data-value="2026-10-30">30/10/2026</td><td data-value="2026-07-29">29/07/2026</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

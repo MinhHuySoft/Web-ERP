@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Theo dõi trả thưởng theo hợp đồng — HN</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_ObjectContractTraThuongFrm" data-form-type="EDIT" data-mode="view" data-screen-key="AR_ObjectContractTraThuongFrm:HN" data-menu-id="400114">
+<h1>Theo dõi trả thưởng theo hợp đồng — HN</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu chứng từ (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_ObjectContractTraThuongFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/AR_ObjectContractTraThuongFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-AR_ObjectContractTraThuongFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/AR_ObjectContractTraThuongFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/AR_ObjectContractTraThuongFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/AR_ObjectContractTraThuongFrm/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/AR_ObjectContractTraThuongFrm/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-AR_ObjectContractTraThuongFrm-1" method="post" action="/mock/records/AR_ObjectContractTraThuongFrm/1.saved.html" data-key-field="BranchID" data-key="HN">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ObjectContractTraThuongFrm-1-MaHopDong">Dong Hop Ma</label><input id="f-rec-AR_ObjectContractTraThuongFrm-1-MaHopDong" name="MaHopDong" value="Dong Hop Ma 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ObjectContractTraThuongFrm-1-TenHopDong">Dong Hop Ten</label><input id="f-rec-AR_ObjectContractTraThuongFrm-1-TenHopDong" name="TenHopDong" value="Dong Hop Ten 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ObjectContractTraThuongFrm-1-Notes">Ghi chú</label><input id="f-rec-AR_ObjectContractTraThuongFrm-1-Notes" name="Notes" value="Khách yêu cầu xuất hóa đơn" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-AR_ObjectContractTraThuongFrm-1-BranchID">Chi nhánh</label><select id="f-rec-AR_ObjectContractTraThuongFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_ObjectContractTraThuongFrm-1-LoaiHopDong">Dong Hop Loai</label><input id="f-rec-AR_ObjectContractTraThuongFrm-1-LoaiHopDong" name="LoaiHopDong" value="Dong Hop Loai 1" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="4">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="4">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="MaHopDong" data-type="text" data-width="110" data-frozen>Dong Hop Ma</th>
+<th scope="col" data-field="SoHopDong" data-type="text" data-width="110">Dong Hop So</th>
+<th scope="col" data-field="NgayThamGia" data-type="date" data-width="95">Gia Tham Ngay</th>
+<th scope="col" data-field="NgayHetHan" data-type="date" data-width="95">Han Het Ngay</th>
+<th scope="col" data-field="MucThamGia" data-type="number" data-width="70" data-decimals="0">Gia Tham Muc</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+<th scope="col" data-field="TenChuNhaThuoc" data-type="text" data-width="110">Thuoc Nha Chu Ten</th>
+<th scope="col" data-field="PhanQuaDangKy" data-type="number" data-width="70" data-decimals="0">Ky Dang Qua Phan</th>
+<th scope="col" data-field="NgayDeXuat" data-type="date" data-width="95">Xuat De Ngay</th>
+<th scope="col" data-field="NgayNhanHopDong" data-type="date" data-width="95">Dong Hop Nhan Ngay</th>
+<th scope="col" data-field="NgayGoiTraHopDong" data-type="date" data-width="95">Dong Hop Tra Goi Ngay</th>
+<th scope="col" data-field="DeXuatQuaSMS" data-type="date" data-width="95" data-hidden>SMS Qua Xuat De</th>
+<th scope="col" data-field="GhiChu" data-type="text" data-width="110" data-hidden>Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>Dong Hop Ma 1</td><td>Dong Hop So 1</td><td data-value="2026-08-16">16/08/2026</td><td data-value="2026-07-21">21/07/2026</td><td data-value="92">92</td><td>KH0001</td><td>Thuoc Nha Chu Ten 1</td><td data-value="63">63</td><td data-value="2026-11-05">05/11/2026</td><td data-value="2026-10-29">29/10/2026</td><td data-value="2026-10-22">22/10/2026</td><td data-value="2026-08-09">09/08/2026</td><td>Ghi chú 1</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td></td><td>Dong Hop So 2</td><td data-value="2026-10-02">02/10/2026</td><td data-value="2026-07-29">29/07/2026</td><td data-value="86">86</td><td>KH0004</td><td></td><td data-value="87">87</td><td data-value="2026-07-25">25/07/2026</td><td data-value="2026-08-14">14/08/2026</td><td data-value="2026-07-31">31/07/2026</td><td data-value="2026-09-26">26/09/2026</td><td></td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>Dong Hop Ma 3</td><td>Dong Hop So 3</td><td data-value="2026-08-19">19/08/2026</td><td data-value="2026-09-10">10/09/2026</td><td data-value="40">40</td><td>KH0007</td><td>Thuoc Nha Chu Ten 3</td><td data-value="51">51</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-08-27">27/08/2026</td><td data-value="2026-10-18">18/10/2026</td><td data-value="2026-10-01">01/10/2026</td><td></td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>Dong Hop Ma 4</td><td>Dong Hop So 4</td><td data-value="2026-10-26">26/10/2026</td><td data-value="2026-11-09">09/11/2026</td><td data-value="47">47</td><td>KH0010</td><td>Thuoc Nha Chu Ten 4</td><td data-value="15">15</td><td data-value="2026-08-12">12/08/2026</td><td data-value="2026-09-21">21/09/2026</td><td data-value="2026-10-14">14/10/2026</td><td data-value="2026-10-27">27/10/2026</td><td>Ghi chú 4</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</body></html>

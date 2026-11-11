@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Lắp ghép - phân rã — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_StockAdjustFrm" data-form-type="EDIT" data-mode="new" data-screen-key="IV_StockAdjustFrm:new" data-menu-id="0706">
+<h1>Lắp ghép - phân rã — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_StockAdjustFrm-new" formaction="/mock/records/IV_StockAdjustFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_StockAdjustFrm-new" formaction="/mock/records/IV_StockAdjustFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/IV_StockAdjustFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_StockAdjustFrm-new" method="post" action="/mock/records/IV_StockAdjustFrm/1.saved.html" data-key-field="DocumentID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-new-DocumentID">Số chứng từ</label><input id="f-rec-IV_StockAdjustFrm-new-DocumentID" name="DocumentID" value="PL1126/0025" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-IV_StockAdjustFrm-new-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_StockAdjustFrm-new-DocumentDate" name="DocumentDate" type="date" value="2026-11-11" required></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-IV_StockAdjustFrm-new-Memo">Diễn giải</label><input id="f-rec-IV_StockAdjustFrm-new-Memo" name="Memo" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-new-Notes">Ghi chú</label><input id="f-rec-IV_StockAdjustFrm-new-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockAdjustFrm-new-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-IV_StockAdjustFrm-new-isLock" name="isLock" type="checkbox" value="true"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-IV_StockAdjustFrm-new-Status">Trạng thái</label><input id="f-rec-IV_StockAdjustFrm-new-Status" name="Status" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-IV_StockAdjustFrm-new-ObjectID">Mã đối tượng</label><input id="f-rec-IV_StockAdjustFrm-new-ObjectID" name="ObjectID" value="" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" required><output data-erp="lookup-text" for="f-rec-IV_StockAdjustFrm-new-ObjectID"></output></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-IV_StockAdjustFrm-new-BaseTotal">Tổng tiền</label><input id="f-rec-IV_StockAdjustFrm-new-BaseTotal" name="BaseTotal" inputmode="decimal" value="" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-new-ImpExpID">Mã Exp Imp</label><input id="f-rec-IV_StockAdjustFrm-new-ImpExpID" name="ImpExpID" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-new-DocBatch">Batch chứng từ</label><input id="f-rec-IV_StockAdjustFrm-new-DocBatch" name="DocBatch" value=""></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-IV_StockAdjustFrm-new-BranchID">Chi nhánh</label><select id="f-rec-IV_StockAdjustFrm-new-BranchID" name="BranchID" required><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_StockAdjustFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-editor="text">Số chứng từ</th>
+<th scope="col" data-field="Type" data-type="text" data-width="110" data-frozen data-editor="text">Loại</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID">Mã hàng</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110" data-editor="text">Số lô</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110" data-editor="select">Kho</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Thành tiền</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}">TK kho</th>
+<th scope="col" data-field="AdjustGroup" data-type="text" data-width="110" data-editor="text">Nhóm Adjust</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="Quantity2" data-type="number" data-width="70" data-decimals="0" data-editor="number">Số lượng 2</th>
+<th scope="col" data-field="Property" data-type="text" data-width="110" data-hidden data-editor="text">Property</th>
+<th scope="col" data-field="Property2" data-type="text" data-width="110" data-hidden data-editor="text">Property2</th>
+<th scope="col" data-field="IsFixPrice" data-type="bool" data-width="60" data-hidden data-editor="checkbox">Đơn giá Fix</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95" data-hidden data-editor="date">Hạn dùng</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="options" data-field="StoreHouseID"><option value="KHO-HN">Kho Hà Nội</option><option value="KHO-HCM">Kho Hồ Chí Minh</option><option value="KHO-DN">Kho Đà Nẵng</option><option value="KHO-BH">Kho bảo hành</option></template>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="2026-11-11"></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

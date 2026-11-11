@@ -23,11 +23,28 @@ import { popupMenu } from './shell.js';
  */
 
 export class TabManager {
-  /** @param {any} shell @param {HTMLElement} bar @param {HTMLElement} workspace */
-  constructor(shell, bar, workspace) {
+  /** @param {any} shell @param {HTMLElement} host thanh chứa tab (.erp-docbar) @param {HTMLElement} workspace */
+  constructor(shell, host, workspace) {
     this.shell = shell;
-    this.bar = bar;
     this.workspace = workspace;
+    // Thanh tab: vùng cuộn (ẩn thanh cuộn) + nút cuộn trái/phải + danh sách mọi tab đang mở
+    this.bar = h('div', { class: 'erp-docbar__tabs', role: 'tablist', 'aria-label': 'Màn hình đang mở' });
+    const scroll = (/** @type {number} */ d) => this.bar.scrollBy({ left: d * Math.max(200, this.bar.clientWidth * 0.6), behavior: 'smooth' });
+    this.prevBtn = h('button', { type: 'button', class: 'erp-docbar__nav', 'aria-label': 'Cuộn tab sang trái', onclick: () => scroll(-1) }, icon('prev'));
+    this.nextBtn = h('button', { type: 'button', class: 'erp-docbar__nav', 'aria-label': 'Cuộn tab sang phải', onclick: () => scroll(1) }, icon('next'));
+    this.listBtn = h('button', { type: 'button', class: 'erp-docbar__nav erp-docbar__list', title: 'Danh sách màn hình đang mở', 'aria-label': 'Danh sách màn hình đang mở',
+      onclick: () => this.showTabList(this.listBtn) }, icon('chevron-down'), h('span', { class: 'erp-docbar__count' }, '0'));
+    host.append(this.prevBtn, this.bar, this.nextBtn, this.listBtn);
+    const sync = () => {
+      const over = this.bar.scrollWidth > this.bar.clientWidth + 2;
+      host.classList.toggle('is-overflow', over);
+      this.prevBtn.toggleAttribute('disabled', this.bar.scrollLeft <= 0);
+      this.nextBtn.toggleAttribute('disabled', this.bar.scrollLeft + this.bar.clientWidth >= this.bar.scrollWidth - 2);
+    };
+    this.syncBar = sync;
+    this.bar.addEventListener('scroll', sync, { passive: true });
+    new ResizeObserver(sync).observe(this.bar);
+    this.bar.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { this.bar.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
     /** @type {Tab[]} */ this.tabs = [];
     /** @type {Tab|null} */ this.active = null;
     window.addEventListener('beforeunload', (ev) => { if (this.tabs.some((t) => t.dirty)) { ev.preventDefault(); ev.returnValue = ''; } });
@@ -77,6 +94,14 @@ export class TabManager {
       t.panel.hidden = !on;
     }
     tab.btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    this.syncCount();
+    this.shell.onActiveTab?.(tab);
+  }
+
+  syncCount() {
+    const c = this.listBtn?.querySelector('.erp-docbar__count');
+    if (c) c.textContent = String(this.tabs.length);
+    this.syncBar?.();
   }
 
   /** @param {string} key */
@@ -109,6 +134,7 @@ export class TabManager {
     tab.btn.remove();
     tab.panel.remove();
     if (this.active === tab) { const n = this.tabs[Math.min(i, this.tabs.length - 1)]; if (n) this.activate(n); else this.active = null; }
+    this.syncCount();
     return true;
   }
 
@@ -129,9 +155,13 @@ export class TabManager {
     ]);
   }
 
-  showTabList() {
-    const anchor = /** @type {HTMLElement} */ (document.querySelector('.erp-bottombar') || this.bar);
-    popupMenu(anchor, this.tabs.map((t) => ({ icon: t.pinned ? 'home' : 'form', label: t.title + (t.dirty ? ' •' : ''), checked: t === this.active, onClick: () => this.activate(t) })));
+  /** @param {HTMLElement} [anchorEl] */
+  showTabList(anchorEl) {
+    const anchor = anchorEl || /** @type {HTMLElement} */ (document.querySelector('.erp-bottombar') || this.bar);
+    popupMenu(anchor, [
+      ...this.tabs.map((t) => ({ icon: t.pinned ? 'home' : 'form', label: t.title + (t.dirty ? ' •' : ''), checked: t === this.active, onClick: () => this.activate(t) })),
+      ...(this.tabs.length > 2 ? [{ icon: 'close', label: 'Đóng tất cả (trừ Trang chủ)', onClick: () => this.closeAll() }] : []),
+    ]);
   }
 
   /** Phím tắt: phím của tab đang mở trước, rồi phím chung. @param {KeyboardEvent} ev */
@@ -209,6 +239,7 @@ export class TabManager {
     enhanceScreen(screen, ctx);
     if (!tab.pinned) pushRecent({ url, title, screenId: screen.getAttribute('data-screen-id') || '' });
     tab.panel.scrollTop = 0;
+    if (this.active === tab) this.shell.onActiveTab?.(tab);
   }
 
   /** @param {{text:string,type:string,field?:string}[]} msgs @param {boolean} modalForErrors @param {any} [dialog] */

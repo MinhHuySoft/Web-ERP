@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Khoá sổ / Mở sổ</title></head>
+<body>
+<section data-erp="screen" data-screen-id="PeriodSetupFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="PeriodSetupFrm" data-menu-id="0107">
+<h1>Khoá sổ / Mở sổ</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã mở sổ kỳ 10/2026 (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-PeriodSetupFrm" formaction="/mock/screens/PeriodSetupFrm.done.html" formmethod="post" data-action="lock" data-icon="lock" data-confirm="Khóa sổ kỳ 10/2026? Hệ thống sẽ chạy lần lượt các bước đã chọn rồi khóa kỳ.">Khóa sổ</button></li>
+  <li><button type="submit" form="rec-PeriodSetupFrm" formaction="/mock/screens/PeriodSetupFrm.opened.html" formmethod="post" data-action="unlock" data-icon="unlock" data-confirm="Mở lại sổ kỳ đã chọn? Chứng từ trong kỳ sẽ sửa được.">Mở sổ</button></li>
+  <li><a data-action="reload" href="/mock/screens/PeriodSetupFrm.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-PeriodSetupFrm" method="post" action="/mock/screens/PeriodSetupFrm.done.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Khóa sổ cuối kỳ</legend>
+<div data-erp="field" data-control="select" data-span="10"><label for="f-PeriodSetupFrm-FromPeriod">Từ kỳ</label><select id="f-PeriodSetupFrm-FromPeriod" name="FromPeriod"><option value=""></option><option value="202601">Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610" selected>Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="select" data-span="10"><label for="f-PeriodSetupFrm-ToPeriod">Đến kỳ</label><select id="f-PeriodSetupFrm-ToPeriod" name="ToPeriod"><option value=""></option><option value="202601">Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610" selected>Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-CheckBeforeClose">Kiểm tra dữ liệu trước khi khóa</label><input type="hidden" name="CheckBeforeClose" value="false"><input id="f-PeriodSetupFrm-CheckBeforeClose" name="CheckBeforeClose" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-StepDepreciate">Trích khấu hao TSCĐ</label><input type="hidden" name="StepDepreciate" value="false"><input id="f-PeriodSetupFrm-StepDepreciate" name="StepDepreciate" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-StepUnitCost">Tính giá xuất kho</label><input type="hidden" name="StepUnitCost" value="false"><input id="f-PeriodSetupFrm-StepUnitCost" name="StepUnitCost" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-StepAllocateEquip">Phân bổ công cụ dụng cụ</label><input type="hidden" name="StepAllocateEquip" value="false"><input id="f-PeriodSetupFrm-StepAllocateEquip" name="StepAllocateEquip" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-StepAllocateCost">Phân bổ chi phí trả trước</label><input type="hidden" name="StepAllocateCost" value="false"><input id="f-PeriodSetupFrm-StepAllocateCost" name="StepAllocateCost" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-PeriodSetupFrm-StepTransfer">Kết chuyển cuối kỳ</label><input type="hidden" name="StepTransfer" value="false"><input id="f-PeriodSetupFrm-StepTransfer" name="StepTransfer" type="checkbox" value="true" checked></div>
+</fieldset>
+</form>
+<table data-erp="grid" data-grid-id="R0" data-key-field="PeriodID" data-selectable="single" data-total-rows="12">
+<caption>Tình trạng các kỳ năm 2026</caption>
+<thead><tr>
+<th scope="col" data-field="PeriodID" data-type="text" data-width="90" data-frozen>Mã kỳ</th>
+<th scope="col" data-field="PeriodName" data-type="text" data-width="130">Kỳ</th>
+<th scope="col" data-field="FromDate" data-type="date" data-width="100">Từ ngày</th>
+<th scope="col" data-field="ToDate" data-type="date" data-width="100">Đến ngày</th>
+<th scope="col" data-field="Status" data-type="status" data-width="130">Trạng thái</th>
+<th scope="col" data-field="LockedBy" data-type="text" data-width="110">Người khóa</th>
+<th scope="col" data-field="LockedDate" data-type="datetime" data-width="135">Thời điểm khóa</th>
+</tr></thead>
+<tbody>
+<tr data-key="202601"><td>202601</td><td>Kỳ 01/2026</td><td data-value="2026-01-01">01/01/2026</td><td data-value="2026-01-31">31/01/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-02-08T17:30:00">08/02/2026 17:30</td></tr>
+<tr data-key="202602"><td>202602</td><td>Kỳ 02/2026</td><td data-value="2026-02-01">01/02/2026</td><td data-value="2026-02-28">28/02/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-03-09T17:30:00">09/03/2026 17:30</td></tr>
+<tr data-key="202603"><td>202603</td><td>Kỳ 03/2026</td><td data-value="2026-03-01">01/03/2026</td><td data-value="2026-03-31">31/03/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-04-08T17:30:00">08/04/2026 17:30</td></tr>
+<tr data-key="202604"><td>202604</td><td>Kỳ 04/2026</td><td data-value="2026-04-01">01/04/2026</td><td data-value="2026-04-30">30/04/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-05-07T17:30:00">07/05/2026 17:30</td></tr>
+<tr data-key="202605"><td>202605</td><td>Kỳ 05/2026</td><td data-value="2026-05-01">01/05/2026</td><td data-value="2026-05-31">31/05/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-06-06T17:30:00">06/06/2026 17:30</td></tr>
+<tr data-key="202606"><td>202606</td><td>Kỳ 06/2026</td><td data-value="2026-06-01">01/06/2026</td><td data-value="2026-06-30">30/06/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-07-04T17:30:00">04/07/2026 17:30</td></tr>
+<tr data-key="202607"><td>202607</td><td>Kỳ 07/2026</td><td data-value="2026-07-01">01/07/2026</td><td data-value="2026-07-31">31/07/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-08-04T17:30:00">04/08/2026 17:30</td></tr>
+<tr data-key="202608"><td>202608</td><td>Kỳ 08/2026</td><td data-value="2026-08-01">01/08/2026</td><td data-value="2026-08-31">31/08/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-09-03T17:30:00">03/09/2026 17:30</td></tr>
+<tr data-key="202609"><td>202609</td><td>Kỳ 09/2026</td><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-09-30">30/09/2026</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Đã khóa sổ</data></td><td>admin</td><td data-value="2026-10-03T17:30:00">03/10/2026 17:30</td></tr>
+<tr data-key="202610"><td>202610</td><td>Kỳ 10/2026</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-10-31">31/10/2026</td><td data-value="0"><data data-erp="status" value="0" data-tone="info">Đang mở</data></td><td></td><td data-value=""></td></tr>
+<tr data-key="202611"><td>202611</td><td>Kỳ 11/2026</td><td data-value="2026-11-01">01/11/2026</td><td data-value="2026-11-30">30/11/2026</td><td data-value="0"><data data-erp="status" value="0" data-tone="info">Đang mở</data></td><td></td><td data-value=""></td></tr>
+<tr data-key="202612"><td>202612</td><td>Kỳ 12/2026</td><td data-value="2026-12-01">01/12/2026</td><td data-value="2026-12-31">31/12/2026</td><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Chưa đến kỳ</data></td><td></td><td data-value=""></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

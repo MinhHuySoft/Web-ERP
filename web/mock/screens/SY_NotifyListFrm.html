@@ -1,11 +1,62 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thông báo</title></head>
 <body>
-<section data-erp="screen" data-screen-id="SY_NotifyListFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="SY_NotifyListFrm" data-menu-id="0112">
+<section data-erp="screen" data-screen-id="SY_NotifyListFrm" data-form-type="LIST" data-mode="view" data-screen-key="SY_NotifyListFrm" data-menu-id="0112">
 <h1>Thông báo</h1>
 <menu data-erp="toolbar">
+  <li><button type="submit" form="act-SY_NotifyListFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="check" data-requires-selection>Đánh dấu đã xem</button></li>
   <li><a data-action="reload" href="/mock/screens/SY_NotifyListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/SY_NotifyListFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-SY_NotifyListFrm-FromDate">Từ ngày</label><input id="flt-SY_NotifyListFrm-FromDate" name="FromDate" type="date" value="2026-11-04"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-SY_NotifyListFrm-ToDate">Đến ngày</label><input id="flt-SY_NotifyListFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="flt-SY_NotifyListFrm-OnlyUnread">Chỉ thông báo chưa xem</label><input type="hidden" name="OnlyUnread" value="false"><input id="flt-SY_NotifyListFrm-OnlyUnread" name="OnlyUnread" type="checkbox" value="true"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<form data-erp="record" id="act-SY_NotifyListFrm" method="post" action="/mock/actions/custom-ok.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"></form>
+<table data-erp="grid" data-grid-id="T0" data-selectable="multi" data-total-rows="30">
+<thead><tr>
+<th scope="col" data-field="MsgTime" data-type="datetime" data-width="135" data-frozen>Thời gian</th>
+<th scope="col" data-field="NotifyType" data-type="status" data-width="115">Loại</th>
+<th scope="col" data-field="Title" data-type="text" data-width="200">Tiêu đề</th>
+<th scope="col" data-field="Message" data-type="text" data-width="420" data-wrap>Nội dung</th>
+<th scope="col" data-field="FromUserID" data-type="text" data-width="110">Người gửi</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="125">Chứng từ</th>
+<th scope="col" data-field="IsView" data-type="bool" data-width="86">Đã xem</th>
+</tr></thead>
+<tbody>
+<tr ><td data-value="2026-11-11T17:00:00">11/11/2026 17:00</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đơn hàng chờ duyệt</td><td>Đơn hàng DH1126/0003 của Công ty TNHH Thiết bị Y tế An Phát đang chờ anh/chị duyệt.</td><td>annv</td><td>DH1126/0003</td><td data-value="false"></td></tr>
+<tr ><td data-value="2026-11-11T15:13:00">11/11/2026 15:13</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đề nghị thanh toán</td><td>Đề nghị thanh toán TT1126/0004 cần duyệt trước 17:00.</td><td>bichtt</td><td>TT1126/0004</td><td data-value="false"></td></tr>
+<tr ><td data-value="2026-11-11T13:26:00">11/11/2026 13:26</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Lô hàng sắp hết hạn</td><td>Lô L26102 của Găng tay y tế không bột còn 45 ngày hết hạn.</td><td>Hệ thống</td><td></td><td data-value="false"></td></tr>
+<tr ><td data-value="2026-11-11T11:39:00">11/11/2026 11:39</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Công nợ quá hạn</td><td>Công ty CP Dược phẩm Thành Đạt quá hạn thanh toán 12 ngày.</td><td>Hệ thống</td><td></td><td data-value="false"></td></tr>
+<tr ><td data-value="2026-11-11T09:52:00">11/11/2026 09:52</td><td data-value="2"><data data-erp="status" value="2" data-tone="info">Nhắc việc</data></td><td>Lịch giao hàng</td><td>Giao hàng cho Trung tâm Y tế Quận 3 lúc 14:00 ngày mai.</td><td>duchm</td><td>DH1126/0007</td><td data-value="false"></td></tr>
+<tr ><td data-value="2026-11-10T17:05:00">10/11/2026 17:05</td><td data-value="3"><data data-erp="status" value="3" data-tone="neutral">Hệ thống</data></td><td>Sao lưu dữ liệu</td><td>Sao lưu tự động lúc 06:00 thành công.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-10T15:18:00">10/11/2026 15:18</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đơn hàng chờ duyệt</td><td>Đơn hàng DH1126/0009 của Bệnh viện Phụ sản Ánh Dương đang chờ anh/chị duyệt.</td><td>annv</td><td>DH1126/0009</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-10T13:31:00">10/11/2026 13:31</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đề nghị thanh toán</td><td>Đề nghị thanh toán TT1126/0010 cần duyệt trước 17:00.</td><td>bichtt</td><td>TT1126/0010</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-10T11:44:00">10/11/2026 11:44</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Lô hàng sắp hết hạn</td><td>Lô L26108 của Khẩu trang y tế 4 lớp còn 45 ngày hết hạn.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-10T09:57:00">10/11/2026 09:57</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Công nợ quá hạn</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á quá hạn thanh toán 12 ngày.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-09T17:10:00">09/11/2026 17:10</td><td data-value="2"><data data-erp="status" value="2" data-tone="info">Nhắc việc</data></td><td>Lịch giao hàng</td><td>Giao hàng cho Bệnh viện Mắt Sao Mai lúc 14:00 ngày mai.</td><td>duchm</td><td>DH1126/0013</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-09T15:23:00">09/11/2026 15:23</td><td data-value="3"><data data-erp="status" value="3" data-tone="neutral">Hệ thống</data></td><td>Sao lưu dữ liệu</td><td>Sao lưu tự động lúc 06:00 thành công.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-09T13:36:00">09/11/2026 13:36</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đơn hàng chờ duyệt</td><td>Đơn hàng DH1126/0015 của Phòng xét nghiệm Hưng Thịnh đang chờ anh/chị duyệt.</td><td>annv</td><td>DH1126/0015</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-09T11:49:00">09/11/2026 11:49</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đề nghị thanh toán</td><td>Đề nghị thanh toán TT1126/0016 cần duyệt trước 17:00.</td><td>bichtt</td><td>TT1126/0016</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-09T09:02:00">09/11/2026 09:02</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Lô hàng sắp hết hạn</td><td>Lô L26114 của Nhiệt kế điện tử còn 45 ngày hết hạn.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-08T17:15:00">08/11/2026 17:15</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Công nợ quá hạn</td><td>Công ty TNHH Thiết bị Y tế An Phát quá hạn thanh toán 12 ngày.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-08T15:28:00">08/11/2026 15:28</td><td data-value="2"><data data-erp="status" value="2" data-tone="info">Nhắc việc</data></td><td>Lịch giao hàng</td><td>Giao hàng cho Bệnh viện Đa khoa Minh Tâm lúc 14:00 ngày mai.</td><td>duchm</td><td>DH1126/0019</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-08T13:41:00">08/11/2026 13:41</td><td data-value="3"><data data-erp="status" value="3" data-tone="neutral">Hệ thống</data></td><td>Sao lưu dữ liệu</td><td>Sao lưu tự động lúc 06:00 thành công.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-08T11:54:00">08/11/2026 11:54</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đơn hàng chờ duyệt</td><td>Đơn hàng DH1126/0021 của Công ty CP Dược phẩm Thành Đạt đang chờ anh/chị duyệt.</td><td>annv</td><td>DH1126/0021</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-08T09:07:00">08/11/2026 09:07</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đề nghị thanh toán</td><td>Đề nghị thanh toán TT1126/0022 cần duyệt trước 17:00.</td><td>bichtt</td><td>TT1126/0022</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-07T17:20:00">07/11/2026 17:20</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Lô hàng sắp hết hạn</td><td>Lô L26120 của Máy đo huyết áp điện tử còn 45 ngày hết hạn.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-07T15:33:00">07/11/2026 15:33</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Công nợ quá hạn</td><td>Bệnh viện Phụ sản Ánh Dương quá hạn thanh toán 12 ngày.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-07T13:46:00">07/11/2026 13:46</td><td data-value="2"><data data-erp="status" value="2" data-tone="info">Nhắc việc</data></td><td>Lịch giao hàng</td><td>Giao hàng cho Công ty CP Công nghệ Sinh học Việt Phát lúc 14:00 ngày mai.</td><td>duchm</td><td>DH1126/0025</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-07T11:59:00">07/11/2026 11:59</td><td data-value="3"><data data-erp="status" value="3" data-tone="neutral">Hệ thống</data></td><td>Sao lưu dữ liệu</td><td>Sao lưu tự động lúc 06:00 thành công.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-07T09:12:00">07/11/2026 09:12</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đơn hàng chờ duyệt</td><td>Đơn hàng DH1126/0027 của Công ty TNHH Thương mại Kỹ thuật Đông Á đang chờ anh/chị duyệt.</td><td>annv</td><td>DH1126/0027</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-06T17:25:00">06/11/2026 17:25</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>Đề nghị thanh toán</td><td>Đề nghị thanh toán TT1126/0028 cần duyệt trước 17:00.</td><td>bichtt</td><td>TT1126/0028</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-06T15:38:00">06/11/2026 15:38</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Lô hàng sắp hết hạn</td><td>Lô L26126 của Máy xét nghiệm sinh hóa còn 45 ngày hết hạn.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-06T13:51:00">06/11/2026 13:51</td><td data-value="4"><data data-erp="status" value="4" data-tone="danger">Cảnh báo</data></td><td>Công nợ quá hạn</td><td>Phòng xét nghiệm Hưng Thịnh quá hạn thanh toán 12 ngày.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-06T11:04:00">06/11/2026 11:04</td><td data-value="2"><data data-erp="status" value="2" data-tone="info">Nhắc việc</data></td><td>Lịch giao hàng</td><td>Giao hàng cho Công ty TNHH Medical Supply Sài Gòn lúc 14:00 ngày mai.</td><td>duchm</td><td>DH1126/0031</td><td data-value="true">Có</td></tr>
+<tr ><td data-value="2026-11-06T09:17:00">06/11/2026 09:17</td><td data-value="3"><data data-erp="status" value="3" data-tone="neutral">Hệ thống</data></td><td>Sao lưu dữ liệu</td><td>Sao lưu tự động lúc 06:00 thành công.</td><td>Hệ thống</td><td></td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

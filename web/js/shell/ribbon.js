@@ -49,7 +49,19 @@ export class Ribbon {
     const collapseBtn = h('button', { class: 'erp-iconbtn erp-ribbon__collapse', type: 'button', title: 'Thu gọn / mở rộng Ribbon (Ctrl+F1)',
       'aria-label': 'Thu gọn Ribbon', onclick: () => this.toggleCollapsed() }, icon('chevron-up'));
     this.collapseBtn = collapseBtn;
-    this.el = h('nav', { class: 'erp-ribbon erp-chrome', 'aria-label': 'Ribbon' }, h('div', { class: 'erp-ribbon__tabsrow' }, tabsRow, collapseBtn), body);
+    // Nút cuộn khi các nhóm vượt quá bề ngang (thay cho thanh cuộn)
+    const step = (/** @type {number} */ d) => body.scrollBy({ left: d * body.clientWidth * 0.7, behavior: 'smooth' });
+    const left = h('button', { type: 'button', class: 'erp-ribbon__scroll erp-ribbon__scroll--left', 'aria-label': 'Cuộn Ribbon sang trái', onclick: () => step(-1) }, icon('prev'));
+    const right = h('button', { type: 'button', class: 'erp-ribbon__scroll erp-ribbon__scroll--right', 'aria-label': 'Cuộn Ribbon sang phải', onclick: () => step(1) }, icon('next'));
+    const syncScroll = () => {
+      left.hidden = body.scrollLeft <= 2;
+      right.hidden = body.scrollLeft + body.clientWidth >= body.scrollWidth - 2;
+    };
+    this.syncScroll = syncScroll;
+    body.addEventListener('scroll', syncScroll, { passive: true });
+    new ResizeObserver(syncScroll).observe(body);
+    this.el = h('nav', { class: 'erp-ribbon erp-chrome', 'aria-label': 'Ribbon' }, h('div', { class: 'erp-ribbon__tabsrow' }, tabsRow, collapseBtn),
+      h('div', { class: 'erp-ribbon__bodywrap' }, left, body, right));
     this.host.replaceChildren(this.el);
     this.select(1 < roots.length ? 1 : 0, false);
     this.syncCollapsed();
@@ -64,6 +76,9 @@ export class Ribbon {
     this.active = i;
     this.tabBtns.forEach((b, j) => { b.setAttribute('aria-selected', String(i === j)); b.tabIndex = i === j ? 0 : -1; });
     this.panels.forEach((p, j) => { p.hidden = i !== j; });
+    const body = this.el?.querySelector('.erp-ribbon__body');
+    if (body) body.scrollLeft = 0;
+    requestAnimationFrame(() => this.syncScroll?.());
     if (user && getSettings().ribbonCollapsed) this.el?.classList.add('is-peek');
   }
 
@@ -90,7 +105,7 @@ export class Ribbon {
       ], 'large'),
       group('Giao diện', [
         big('theme', 'Theme & hiển thị', () => openSettingsPanel()),
-        big('columns', getSettings().nav === 'ribbon' ? 'Menu bên trái' : 'Dùng Ribbon', () => setSettings({ nav: getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon' })),
+        big('sidebar', 'Sidebar dọc', () => setSettings({ nav: 'sidebar' })),
       ], 'large'),
       group('Tài khoản', [
         big('key', 'Đổi mật khẩu', () => sh.sessionLinks['change-password'] && sh.open(sh.sessionLinks['change-password'], { target: 'dialog' })),

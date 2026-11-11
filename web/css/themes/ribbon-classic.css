@@ -2,6 +2,6 @@
    Giá trị gốc nằm ở tokens.css; file này chỉ tinh chỉnh. */
 @layer themes {
   :root[data-theme="ribbon-classic"] .erp-titlebar { background: linear-gradient(180deg, #2b6dcd 0%, #1f5fbf 100%); }
-  :root[data-theme="ribbon-classic"] .erp-ribbon__body { background: linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%); }
-  :root[data-theme="ribbon-classic"] .erp-rgroup__title { background: #edf1f7; margin: 0 -8px; border-top: 1px solid #e1e6ee; }
+  :root[data-theme="ribbon-classic"] .erp-ribbon__body { background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%); }
+  :root[data-theme="ribbon-classic"] { --erp-ribbon-bg: #fbfcfe; }
 }

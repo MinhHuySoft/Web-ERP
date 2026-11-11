@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập thông số hệ thống</title></head>
+<body>
+<section data-erp="screen" data-screen-id="SetupFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="SetupFrm" data-menu-id="010108">
+<h1>Thiết lập thông số hệ thống</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thiết lập (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/SetupFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="reload" href="/mock/screens/SetupFrm.html" data-target="self">Nạp lại</a></li>
+</menu>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Tham số hệ thống (SY_Setup / SY_InitSetup). Thay đổi có hiệu lực sau khi người dùng đăng nhập lại.</p></div>
+<form data-erp="record" id="rec-SetupFrm" method="post" action="/mock/screens/SetupFrm.saved.html" data-key-field="ID" data-key="1">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin công ty</legend>
+<div data-erp="field" data-control="text" data-span="40"><label for="f-SetupFrm-COM1">Tên công ty</label><input id="f-SetupFrm-COM1" name="COM1" value="CÔNG TY CỔ PHẦN DEMO MEDCOM" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-SetupFrm-COM2">Tên tiếng Anh</label><input id="f-SetupFrm-COM2" name="COM2" value="MEDCOM DEMO JOINT STOCK COMPANY" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-ShortName">Tên viết tắt</label><input id="f-SetupFrm-ShortName" name="ShortName" value="MEDCOM DEMO" readonly></div>
+<div data-erp="field" data-control="text" data-span="10" data-row-start><label for="f-SetupFrm-TaxCode">Mã số thuế</label><input id="f-SetupFrm-TaxCode" name="TaxCode" value="0300000000" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-ComPhone">Điện thoại</label><input id="f-SetupFrm-ComPhone" name="ComPhone" value="028 3800 0000" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-ComEmail">Email</label><input id="f-SetupFrm-ComEmail" name="ComEmail" value="info@example.vn" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-ComWeb">Website</label><input id="f-SetupFrm-ComWeb" name="ComWeb" value="www.example.vn" readonly></div>
+<div data-erp="field" data-control="text" data-span="40"><label for="f-SetupFrm-ComAddress">Địa chỉ</label><input id="f-SetupFrm-ComAddress" name="ComAddress" value="12 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-SetupFrm-Director">Giám đốc</label><input id="f-SetupFrm-Director" name="Director" value="Hoàng Minh Đức" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-SetupFrm-ChiefAccountant">Kế toán trưởng</label><input id="f-SetupFrm-ChiefAccountant" name="ChiefAccountant" value="Trần Thị Bích" readonly></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="2"><legend>Kiểm soát chứng từ</legend>
+<div data-erp="field" data-control="select" data-span="13"><label for="f-SetupFrm-CheckStockOut">Xuất vượt tồn kho</label><select id="f-SetupFrm-CheckStockOut" name="CheckStockOut" disabled><option value=""></option><option value="NoCheck">Không kiểm tra</option><option value="Warning" selected>Cảnh báo, vẫn cho lưu</option><option value="Cancel">Không cho lưu</option></select></div>
+<div data-erp="field" data-control="select" data-span="13"><label for="f-SetupFrm-CheckCashOut">Chi vượt tồn quỹ</label><select id="f-SetupFrm-CheckCashOut" name="CheckCashOut" disabled><option value=""></option><option value="NoCheck">Không kiểm tra</option><option value="Warning">Cảnh báo, vẫn cho lưu</option><option value="Cancel" selected>Không cho lưu</option></select></div>
+<div data-erp="field" data-control="text" data-span="14"><label for="f-SetupFrm-DocumentMask">Mẫu số chứng từ</label><input id="f-SetupFrm-DocumentMask" name="DocumentMask" value="{Prefix}{MM}{YY}/{0000}" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-CheckStockDate">Kiểm tra tồn theo ngày chứng từ</label><input type="hidden" name="CheckStockDate" value="false"><input id="f-SetupFrm-CheckStockDate" name="CheckStockDate" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-CheckCostCenter">Bắt buộc nhập bộ phận</label><input type="hidden" name="CheckCostCenter" value="false"><input id="f-SetupFrm-CheckCostCenter" name="CheckCostCenter" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-CheckCost">Bắt buộc nhập khoản mục phí</label><input type="hidden" name="CheckCost" value="false"><input id="f-SetupFrm-CheckCost" name="CheckCost" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isLotDate">Quản lý lô / hạn dùng</label><input type="hidden" name="isLotDate" value="false"><input id="f-SetupFrm-isLotDate" name="isLotDate" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isDiscountVoucher">Dùng phiếu chiết khấu</label><input type="hidden" name="isDiscountVoucher" value="false"><input id="f-SetupFrm-isDiscountVoucher" name="isDiscountVoucher" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isShowApproveDoc">Hiện chứng từ chờ duyệt</label><input type="hidden" name="isShowApproveDoc" value="false"><input id="f-SetupFrm-isShowApproveDoc" name="isShowApproveDoc" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isManagerCanEditDoc">Manager được sửa chứng từ người khác</label><input type="hidden" name="isManagerCanEditDoc" value="false"><input id="f-SetupFrm-isManagerCanEditDoc" name="isManagerCanEditDoc" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isManagerNotApproveDoc">Manager không được duyệt</label><input type="hidden" name="isManagerNotApproveDoc" value="false"><input id="f-SetupFrm-isManagerNotApproveDoc" name="isManagerNotApproveDoc" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isManagerNotDeApproveDoc">Manager không được bỏ duyệt</label><input type="hidden" name="isManagerNotDeApproveDoc" value="false"><input id="f-SetupFrm-isManagerNotDeApproveDoc" name="isManagerNotDeApproveDoc" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isReportPrintDate">In ngày in trên báo cáo</label><input type="hidden" name="isReportPrintDate" value="false"><input id="f-SetupFrm-isReportPrintDate" name="isReportPrintDate" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-SkipNoInvoice">Bỏ qua chứng từ không hóa đơn</label><input type="hidden" name="SkipNoInvoice" value="false"><input id="f-SetupFrm-SkipNoInvoice" name="SkipNoInvoice" type="checkbox" value="true" disabled></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="3"><legend>Giao diện &amp; xuất dữ liệu</legend>
+<div data-erp="field" data-control="number" data-span="10"><label for="f-SetupFrm-DashboardTime">Làm mới dashboard (phút)</label><input id="f-SetupFrm-DashboardTime" name="DashboardTime" inputmode="decimal" value="5" readonly></div>
+<div data-erp="field" data-control="number" data-span="10"><label for="f-SetupFrm-OverDeptDay">Cảnh báo nợ quá hạn (ngày)</label><input id="f-SetupFrm-OverDeptDay" name="OverDeptDay" inputmode="decimal" value="30" readonly></div>
+<div data-erp="field" data-control="number" data-span="10"><label for="f-SetupFrm-OverLotDay">Cảnh báo lô sắp hết hạn (ngày)</label><input id="f-SetupFrm-OverLotDay" name="OverLotDay" inputmode="decimal" value="90" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isManagerNotExcel">Manager không được xuất Excel</label><input type="hidden" name="isManagerNotExcel" value="false"><input id="f-SetupFrm-isManagerNotExcel" name="isManagerNotExcel" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-isUserNotExcel">Người dùng không được xuất Excel</label><input type="hidden" name="isUserNotExcel" value="false"><input id="f-SetupFrm-isUserNotExcel" name="isUserNotExcel" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-DisableTabMenu">Tắt menu dạng tab</label><input type="hidden" name="DisableTabMenu" value="false"><input id="f-SetupFrm-DisableTabMenu" name="DisableTabMenu" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-DisableRecentMenu">Tắt menu gần đây</label><input type="hidden" name="DisableRecentMenu" value="false"><input id="f-SetupFrm-DisableRecentMenu" name="DisableRecentMenu" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="f-SetupFrm-FullLogDefault">Ghi nhật ký đầy đủ (XML bản ghi)</label><input type="hidden" name="FullLogDefault" value="false"><input id="f-SetupFrm-FullLogDefault" name="FullLogDefault" type="checkbox" value="true" disabled></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="4"><legend>Sao lưu &amp; liên kết</legend>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-SetupFrm-AutoBackupPath">Thư mục sao lưu tự động</label><input id="f-SetupFrm-AutoBackupPath" name="AutoBackupPath" value="D:\Backup\ERP" readonly></div>
+<div data-erp="field" data-control="number" data-span="10"><label for="f-SetupFrm-AutoBackupTime">Chu kỳ sao lưu (phút)</label><input id="f-SetupFrm-AutoBackupTime" name="AutoBackupTime" inputmode="decimal" value="60" readonly></div>
+<div data-erp="field" data-control="number" data-span="10"><label for="f-SetupFrm-AutoBackupDay">Giữ số bản sao lưu</label><input id="f-SetupFrm-AutoBackupDay" name="AutoBackupDay" inputmode="decimal" value="7" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-SetupFrm-AutoDownLoadURL">URL tải bản sao lưu</label><input id="f-SetupFrm-AutoDownLoadURL" name="AutoDownLoadURL" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-LinkServer">Linked server</label><input id="f-SetupFrm-LinkServer" name="LinkServer" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-SetupFrm-LinkDatabase">CSDL liên kết</label><input id="f-SetupFrm-LinkDatabase" name="LinkDatabase" value="" readonly></div>
+</fieldset>
+<fieldset data-erp="tab" data-tab-id="5"><legend>Kỳ &amp; giá vốn</legend>
+<div data-erp="field" data-control="select" data-span="10"><label for="f-SetupFrm-PeriodID">Kỳ bắt đầu hạch toán</label><select id="f-SetupFrm-PeriodID" name="PeriodID" disabled><option value=""></option><option value="202601" selected>Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610">Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="select" data-span="10"><label for="f-SetupFrm-BalancePeriodID">Kỳ nhập số dư đầu</label><select id="f-SetupFrm-BalancePeriodID" name="BalancePeriodID" disabled><option value=""></option><option value="202601" selected>Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610">Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="date" data-span="8"><label for="f-SetupFrm-StartDate">Ngày bắt đầu sử dụng</label><input id="f-SetupFrm-StartDate" name="StartDate" type="date" value="2026-01-01" readonly></div>
+<div data-erp="field" data-control="select" data-span="12"><label for="f-SetupFrm-CostMethod">Phương pháp tính giá xuất</label><select id="f-SetupFrm-CostMethod" name="CostMethod" disabled><option value=""></option><option value="AVG" selected>Bình quân cuối kỳ</option><option value="AVGS">Bình quân cuối kỳ theo kho</option><option value="AVGD">Bình quân di động</option><option value="AVGDS">Bình quân di động theo kho</option><option value="LOT">Đích danh theo lô</option><option value="FIFO">Nhập trước xuất trước</option></select></div>
+</fieldset>
+</form>
+</section>
+</body></html>

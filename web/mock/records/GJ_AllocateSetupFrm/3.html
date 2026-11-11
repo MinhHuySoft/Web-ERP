@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Định nghĩa phân bổ chi phí trả trước — AID003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_AllocateSetupFrm" data-form-type="EDIT" data-mode="view" data-screen-key="GJ_AllocateSetupFrm:AID003" data-menu-id="160801">
+<h1>Định nghĩa phân bổ chi phí trả trước — AID003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/GJ_AllocateSetupFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/GJ_AllocateSetupFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-GJ_AllocateSetupFrm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/GJ_AllocateSetupFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/GJ_AllocateSetupFrm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/GJ_AllocateSetupFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/GJ_AllocateSetupFrm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_AllocateSetupFrm-3" method="post" action="/mock/records/GJ_AllocateSetupFrm/1.saved.html" data-key-field="AllocateID" data-key="AID003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-AllocateID">Mã phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-3-AllocateID" name="AllocateID" value="AID003" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-GJ_AllocateSetupFrm-3-AllocateName">Nội dung phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-3-AllocateName" name="AllocateName" value="Nội dung phân bổ 3" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-3-AllocateDate">Ngày Allocate</label><input id="f-rec-GJ_AllocateSetupFrm-3-AllocateDate" name="AllocateDate" type="date" value="2026-09-27" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-RefDoc">Chứng từ gốc</label><input id="f-rec-GJ_AllocateSetupFrm-3-RefDoc" name="RefDoc" value="Chứng từ gốc 3" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-RefSourceID">Mã nguồn tham chiếu</label><input id="f-rec-GJ_AllocateSetupFrm-3-RefSourceID" name="RefSourceID" value="RSI003" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-3-ItemID">Mã hàng</label><input id="f-rec-GJ_AllocateSetupFrm-3-ItemID" name="ItemID" value="VT0015" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-3-ItemID">Nhiệt kế điện tử</output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-3-AccountID">Tài khoản</label><input id="f-rec-GJ_AllocateSetupFrm-3-AccountID" name="AccountID" value="421" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-3-AccountID">Lợi nhuận chưa phân phối</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-ExpenseAccID">TK chi phí</label><input id="f-rec-GJ_AllocateSetupFrm-3-ExpenseAccID" name="ExpenseAccID" value="EAI003" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-3-AllocateAmount">Số tiền phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-3-AllocateAmount" name="AllocateAmount" inputmode="decimal" value="6530000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-3-OpenAllocate">Đã phân bổ đầu kỳ</label><input id="f-rec-GJ_AllocateSetupFrm-3-OpenAllocate" name="OpenAllocate" inputmode="decimal" value="19" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-3-MonthUse">Số tháng</label><input id="f-rec-GJ_AllocateSetupFrm-3-MonthUse" name="MonthUse" inputmode="decimal" value="85" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-3-CostCenterID">Bộ phận</label><input id="f-rec-GJ_AllocateSetupFrm-3-CostCenterID" name="CostCenterID" value="KHO" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-3-CostCenterID">Bộ phận Kho</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-CostID">Khoản mục</label><input id="f-rec-GJ_AllocateSetupFrm-3-CostID" name="CostID" value="CID003" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-Notes">Ghi chú</label><input id="f-rec-GJ_AllocateSetupFrm-3-Notes" name="Notes" value="Hàng nhập khẩu" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-3-ObjectID">Mã đối tượng</label><input id="f-rec-GJ_AllocateSetupFrm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-3-StopDate">Ngày Stop</label><input id="f-rec-GJ_AllocateSetupFrm-3-StopDate" name="StopDate" type="date" value="2026-07-25" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-3-BranchID">Chi nhánh</label><select id="f-rec-GJ_AllocateSetupFrm-3-BranchID" name="BranchID" disabled><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN" selected>Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-3-NgayChungTu">Tu Chung Ngay</label><input id="f-rec-GJ_AllocateSetupFrm-3-NgayChungTu" name="NgayChungTu" type="date" value="2026-07-25" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-3-DepartmentID">Phòng ban</label><input id="f-rec-GJ_AllocateSetupFrm-3-DepartmentID" name="DepartmentID" value="DID003" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="6">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="AllocateID" data-type="text" data-width="110" data-frozen>Mã phân bổ</th>
+<th scope="col" data-field="PeriodID" data-type="text" data-width="110">Kỳ</th>
+<th scope="col" data-field="isStopAllocate" data-type="bool" data-width="60">Allocate Stop</th>
+<th scope="col" data-field="FixAllocateAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền Allocate Fix</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110">Khoản mục</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110">Bộ phận</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+<th scope="col" data-field="ExpenseAccID" data-type="text" data-width="110">TK chi phí</th>
+<th scope="col" data-field="PrepayAccountID" data-type="text" data-width="110">TK chờ phân bổ</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>AID001</td><td>PID001</td><td data-value="false"></td><td data-value="116500000">116.500.000</td><td>CID001</td><td>KD</td><td>KH0001</td><td>EAI001</td><td>PAI001</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>AID002</td><td>PID002</td><td data-value="false"></td><td data-value="6330000">6.330.000</td><td>CID002</td><td>KT</td><td>KH0004</td><td>EAI002</td><td>PAI002</td><td>Hàng nhập khẩu</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>AID003</td><td>PID003</td><td data-value="true">Có</td><td data-value="5460000">5.460.000</td><td>CID003</td><td>KHO</td><td>KH0007</td><td>EAI003</td><td>PAI003</td><td></td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>AID004</td><td>PID004</td><td data-value="false"></td><td data-value="124000000">124.000.000</td><td>CID004</td><td>KTH</td><td>KH0010</td><td>EAI004</td><td>PAI004</td><td>Giao hàng trong tuần</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>AID005</td><td>PID005</td><td data-value="true">Có</td><td data-value="47700000">47.700.000</td><td>CID005</td><td>HC</td><td>KH0013</td><td>EAI005</td><td>PAI005</td><td>Hàng nhập khẩu</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>AID006</td><td>PID006</td><td data-value="true">Có</td><td data-value="16850000">16.850.000</td><td>CID006</td><td>KD</td><td>KH0001</td><td>EAI006</td><td>PAI006</td><td>Hàng nhập khẩu</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="FixAllocateAmount" data-value="316840000">316.840.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

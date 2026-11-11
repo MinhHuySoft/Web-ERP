@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phân bổ chi phí</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_AllocateFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="GJ_AllocateFrm" data-menu-id="160802">
+<h1>Phân bổ chi phí</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã phân bổ chi phí trả trước kỳ 10/2026 và sinh phiếu kế toán PK1026/0031 (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_AllocateFrm" formaction="/mock/screens/GJ_AllocateFrm.done.html" formmethod="post" data-action="custom" data-icon="run">Tính phân bổ</button></li>
+  <li><a data-action="reload" href="/mock/screens/GJ_AllocateFrm.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_AllocateFrm" method="post" action="/mock/screens/GJ_AllocateFrm.done.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Tham số</legend>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-GJ_AllocateFrm-PeriodID">Kỳ</label><select id="f-GJ_AllocateFrm-PeriodID" name="PeriodID"><option value=""></option><option value="202601">Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610" selected>Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-GJ_AllocateFrm-BranchID">Chi nhánh</label><select id="f-GJ_AllocateFrm-BranchID" name="BranchID"><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-GJ_AllocateFrm-DocumentDate">Ngày hạch toán</label><input id="f-GJ_AllocateFrm-DocumentDate" name="DocumentDate" type="date" value="2026-10-31"></div>
+</fieldset>
+</form>
+<table data-erp="grid" data-grid-id="R0" data-key-field="AllocateID" data-selectable="single" data-total-rows="7">
+<caption>Bảng phân bổ chi phí trả trước kỳ 10/2026</caption>
+<thead><tr>
+<th scope="col" data-field="AllocateID" data-type="text" data-width="95" data-frozen>Mã phân bổ</th>
+<th scope="col" data-field="AllocateName" data-type="text" data-width="260">Nội dung</th>
+<th scope="col" data-field="DocumentDate" data-type="date" data-width="100">Ngày ghi nhận</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="MonthUse" data-type="number" data-width="80" data-decimals="0">Số kỳ</th>
+<th scope="col" data-field="OpenAllocate" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Đã phân bổ đầu kỳ</th>
+<th scope="col" data-field="PeriodAmount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Phân bổ kỳ này</th>
+<th scope="col" data-field="EndAllocate" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Lũy kế</th>
+<th scope="col" data-field="RemainAmount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Còn lại</th>
+<th scope="col" data-field="ExpenseAccID" data-type="text" data-width="90">TK chi phí</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="140">Bộ phận</th>
+</tr></thead>
+<tbody>
+<tr data-key="PB001"><td>PB001</td><td>Thuê văn phòng Hà Nội 12 tháng</td><td data-value="2026-01-01">01/01/2026</td><td data-value="360000000">360.000.000</td><td data-value="12">12</td><td data-value="90000000">90.000.000</td><td data-value="30000000">30.000.000</td><td data-value="120000000">120.000.000</td><td data-value="240000000">240.000.000</td><td>6427</td><td data-value="HC">Phòng Hành chính</td></tr>
+<tr data-key="PB002"><td>PB002</td><td>Bản quyền phần mềm ERP 36 tháng</td><td data-value="2026-02-01">01/02/2026</td><td data-value="288000000">288.000.000</td><td data-value="36">36</td><td data-value="32000000">32.000.000</td><td data-value="8000000">8.000.000</td><td data-value="40000000">40.000.000</td><td data-value="248000000">248.000.000</td><td>6428</td><td data-value="KT">Phòng Kế toán</td></tr>
+<tr data-key="PB003"><td>PB003</td><td>Bảo hiểm tài sản năm 2026</td><td data-value="2026-03-01">01/03/2026</td><td data-value="54000000">54.000.000</td><td data-value="12">12</td><td data-value="22500000">22.500.000</td><td data-value="4500000">4.500.000</td><td data-value="27000000">27.000.000</td><td data-value="27000000">27.000.000</td><td>6427</td><td data-value="HC">Phòng Hành chính</td></tr>
+<tr data-key="PB004"><td>PB004</td><td>Sửa chữa kho Hồ Chí Minh</td><td data-value="2026-04-01">01/04/2026</td><td data-value="126000000">126.000.000</td><td data-value="18">18</td><td data-value="42000000">42.000.000</td><td data-value="7000000">7.000.000</td><td data-value="49000000">49.000.000</td><td data-value="77000000">77.000.000</td><td>6417</td><td data-value="KHO">Bộ phận Kho</td></tr>
+<tr data-key="PB005"><td>PB005</td><td>Chi phí hội chợ thiết bị y tế</td><td data-value="2026-05-01">01/05/2026</td><td data-value="96000000">96.000.000</td><td data-value="6">6</td><td data-value="80000000">80.000.000</td><td data-value="16000000">16.000.000</td><td data-value="96000000">96.000.000</td><td data-value="0">0</td><td>6418</td><td data-value="KD">Phòng Kinh doanh</td></tr>
+<tr data-key="PB006"><td>PB006</td><td>Đồng phục nhân viên</td><td data-value="2026-06-01">01/06/2026</td><td data-value="42000000">42.000.000</td><td data-value="12">12</td><td data-value="28000000">28.000.000</td><td data-value="3500000">3.500.000</td><td data-value="31500000">31.500.000</td><td data-value="10500000">10.500.000</td><td>6421</td><td data-value="HC">Phòng Hành chính</td></tr>
+<tr data-key="PB007"><td>PB007</td><td>Thuê kho Đà Nẵng 24 tháng</td><td data-value="2026-01-01">01/01/2026</td><td data-value="432000000">432.000.000</td><td data-value="24">24</td><td data-value="162000000">162.000.000</td><td data-value="18000000">18.000.000</td><td data-value="180000000">180.000.000</td><td data-value="252000000">252.000.000</td><td>6417</td><td data-value="KHO">Bộ phận Kho</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td data-field="Amount" data-value="1398000000">1.398.000.000</td><td></td><td data-field="OpenAllocate" data-value="456500000">456.500.000</td><td data-field="PeriodAmount" data-value="87000000">87.000.000</td><td data-field="EndAllocate" data-value="543500000">543.500.000</td><td data-field="RemainAmount" data-value="854500000">854.500.000</td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</body></html>

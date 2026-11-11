@@ -1,11 +1,60 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Bảng phần trăm chiết khấu (Đại lý)</title></head>
 <body>
-<section data-erp="screen" data-screen-id="AR_PhanTramChietKhauFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="AR_PhanTramChietKhauFrm" data-menu-id="060003">
+<section data-erp="screen" data-screen-id="AR_PhanTramChietKhauFrm" data-form-type="EDIT" data-mode="find" data-screen-key="AR_PhanTramChietKhauFrm" data-menu-id="060003">
 <h1>Bảng phần trăm chiết khấu (Đại lý)</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_PhanTramChietKhauFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
   <li><a data-action="reload" href="/mock/screens/AR_PhanTramChietKhauFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/AR_PhanTramChietKhauFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_PhanTramChietKhauFrm-FromDate">Từ ngày</label><input id="flt-AR_PhanTramChietKhauFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_PhanTramChietKhauFrm-ToDate">Đến ngày</label><input id="flt-AR_PhanTramChietKhauFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-AR_PhanTramChietKhauFrm-BranchID">Chi nhánh</label><select id="flt-AR_PhanTramChietKhauFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AR_PhanTramChietKhauFrm-q">Tìm nhanh</label><input id="flt-AR_PhanTramChietKhauFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="DocumentID" data-selectable="single" data-total-rows="24" data-sort="DocumentID:desc">
+<thead><tr>
+<th scope="col" data-field="DocumentID" data-type="link" data-width="110" data-frozen>Số chứng từ</th>
+<th scope="col" data-field="FromDate" data-type="date" data-width="95">Từ ngày</th>
+<th scope="col" data-field="ToDate" data-type="date" data-width="95">Đến ngày</th>
+<th scope="col" data-field="AgencyID" data-type="text" data-width="110">Đại lý</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240">Diễn giải</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="isLock" data-type="bool" data-width="60">Khóa</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="PTC1126/0001"><td><a href="/mock/records/AR_PhanTramChietKhauFrm/1.html" data-target="tab">PTC1126/0001</a></td><td data-value="2026-11-02">02/11/2026</td><td data-value="2026-11-11">11/11/2026</td><td>AID001</td><td>Giao hàng trong tuần</td><td></td><td data-value="true">Có</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-08">08/08/2026</td><td data-value="2026-11-05">05/11/2026</td></tr>
+<tr data-key="PTC1126/0002"><td><a href="/mock/records/AR_PhanTramChietKhauFrm/2.html" data-target="tab">PTC1126/0002</a></td><td data-value="2026-07-20">20/07/2026</td><td data-value="2026-08-09">09/08/2026</td><td>AID002</td><td></td><td></td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-11-03">03/11/2026</td><td data-value="2026-08-29">29/08/2026</td></tr>
+<tr data-key="PTC1126/0003"><td><a href="/mock/records/AR_PhanTramChietKhauFrm/3.html" data-target="tab">PTC1126/0003</a></td><td data-value="2026-07-19">19/07/2026</td><td data-value="2026-09-06">06/09/2026</td><td>AID003</td><td>Khách yêu cầu xuất hóa đơn</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-25">25/10/2026</td><td data-value="2026-08-14">14/08/2026</td></tr>
+<tr data-key="PTC1126/0004"><td>PTC1126/0004</td><td data-value="2026-07-14">14/07/2026</td><td data-value="2026-09-29">29/09/2026</td><td>AID004</td><td>Khách yêu cầu xuất hóa đơn</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-12">12/09/2026</td><td data-value="2026-10-23">23/10/2026</td></tr>
+<tr data-key="PTC1126/0005"><td>PTC1126/0005</td><td data-value="2026-10-31">31/10/2026</td><td data-value="2026-09-24">24/09/2026</td><td>AID005</td><td>Giao hàng trong tuần</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-27">27/08/2026</td><td data-value="2026-10-27">27/10/2026</td></tr>
+<tr data-key="PTC1126/0006"><td>PTC1126/0006</td><td data-value="2026-10-10">10/10/2026</td><td data-value="2026-08-14">14/08/2026</td><td>AID006</td><td>Kiểm tra kỹ trước khi nhận</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-02">02/08/2026</td><td data-value="2026-08-20">20/08/2026</td></tr>
+<tr data-key="PTC1126/0007"><td>PTC1126/0007</td><td data-value="2026-09-06">06/09/2026</td><td data-value="2026-10-28">28/10/2026</td><td>AID007</td><td>Hàng nhập khẩu</td><td></td><td data-value="false"></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-04">04/08/2026</td><td data-value="2026-11-11">11/11/2026</td></tr>
+<tr data-key="PTC1126/0008"><td>PTC1126/0008</td><td data-value="2026-09-13">13/09/2026</td><td data-value="2026-08-05">05/08/2026</td><td>AID008</td><td></td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="false"></td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-12">12/09/2026</td><td data-value="2026-08-26">26/08/2026</td></tr>
+<tr data-key="PTC1126/0009"><td>PTC1126/0009</td><td data-value="2026-10-04">04/10/2026</td><td data-value="2026-11-09">09/11/2026</td><td>AID009</td><td>Khách yêu cầu xuất hóa đơn</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-09-08">08/09/2026</td><td data-value="2026-08-24">24/08/2026</td></tr>
+<tr data-key="PTC1126/0010"><td>PTC1126/0010</td><td data-value="2026-07-22">22/07/2026</td><td data-value="2026-10-06">06/10/2026</td><td>AID010</td><td></td><td>Hàng nhập khẩu</td><td data-value="true">Có</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-07-21">21/07/2026</td></tr>
+<tr data-key="PTC1126/0011"><td>PTC1126/0011</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-08-30">30/08/2026</td><td>AID011</td><td></td><td>Giao hàng trong tuần</td><td data-value="true">Có</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-08-23">23/08/2026</td><td data-value="2026-08-05">05/08/2026</td></tr>
+<tr data-key="PTC1126/0012"><td>PTC1126/0012</td><td data-value="2026-08-11">11/08/2026</td><td data-value="2026-07-22">22/07/2026</td><td>AID012</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-08">08/10/2026</td><td data-value="2026-09-16">16/09/2026</td></tr>
+<tr data-key="PTC1126/0013"><td>PTC1126/0013</td><td data-value="2026-08-23">23/08/2026</td><td data-value="2026-08-26">26/08/2026</td><td>AID013</td><td>Khách yêu cầu xuất hóa đơn</td><td></td><td data-value="false"></td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-09-12">12/09/2026</td><td data-value="2026-08-06">06/08/2026</td></tr>
+<tr data-key="PTC1126/0014"><td>PTC1126/0014</td><td data-value="2026-07-25">25/07/2026</td><td data-value="2026-10-29">29/10/2026</td><td>AID014</td><td>Giao hàng trong tuần</td><td>Hàng nhập khẩu</td><td data-value="false"></td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-08-01">01/08/2026</td><td data-value="2026-08-18">18/08/2026</td></tr>
+<tr data-key="PTC1126/0015"><td>PTC1126/0015</td><td data-value="2026-10-06">06/10/2026</td><td data-value="2026-08-21">21/08/2026</td><td>AID015</td><td>Giao hàng trong tuần</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="false"></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-24">24/09/2026</td><td data-value="2026-11-06">06/11/2026</td></tr>
+<tr data-key="PTC1126/0016"><td>PTC1126/0016</td><td data-value="2026-09-05">05/09/2026</td><td data-value="2026-08-30">30/08/2026</td><td>AID016</td><td>Khách yêu cầu xuất hóa đơn</td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-08-20">20/08/2026</td><td data-value="2026-11-04">04/11/2026</td></tr>
+<tr data-key="PTC1126/0017"><td>PTC1126/0017</td><td data-value="2026-09-18">18/09/2026</td><td data-value="2026-09-14">14/09/2026</td><td>AID017</td><td>Hàng nhập khẩu</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="false"></td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-09-26">26/09/2026</td></tr>
+<tr data-key="PTC1126/0018"><td>PTC1126/0018</td><td data-value="2026-10-30">30/10/2026</td><td data-value="2026-08-12">12/08/2026</td><td>AID018</td><td></td><td></td><td data-value="false"></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-09-24">24/09/2026</td><td data-value="2026-08-25">25/08/2026</td></tr>
+<tr data-key="PTC1126/0019"><td>PTC1126/0019</td><td data-value="2026-08-24">24/08/2026</td><td data-value="2026-10-14">14/10/2026</td><td>AID019</td><td></td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-18">18/08/2026</td><td data-value="2026-09-15">15/09/2026</td></tr>
+<tr data-key="PTC1126/0020"><td>PTC1126/0020</td><td data-value="2026-07-29">29/07/2026</td><td data-value="2026-07-18">18/07/2026</td><td>AID020</td><td>Hàng nhập khẩu</td><td>Giao hàng trong tuần</td><td data-value="false"></td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-09-18">18/09/2026</td><td data-value="2026-08-09">09/08/2026</td></tr>
+<tr data-key="PTC1126/0021"><td>PTC1126/0021</td><td data-value="2026-09-14">14/09/2026</td><td data-value="2026-08-26">26/08/2026</td><td>AID021</td><td></td><td>Theo hợp đồng số 12/2026</td><td data-value="true">Có</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-11-09">09/11/2026</td><td data-value="2026-10-01">01/10/2026</td></tr>
+<tr data-key="PTC1126/0022"><td>PTC1126/0022</td><td data-value="2026-08-03">03/08/2026</td><td data-value="2026-08-06">06/08/2026</td><td>AID022</td><td>Khách yêu cầu xuất hóa đơn</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-10-15">15/10/2026</td><td data-value="2026-10-22">22/10/2026</td></tr>
+<tr data-key="PTC1126/0023"><td>PTC1126/0023</td><td data-value="2026-10-11">11/10/2026</td><td data-value="2026-09-10">10/09/2026</td><td>AID023</td><td></td><td></td><td data-value="false"></td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-07-29">29/07/2026</td><td data-value="2026-11-04">04/11/2026</td></tr>
+<tr data-key="PTC1126/0024"><td>PTC1126/0024</td><td data-value="2026-07-21">21/07/2026</td><td data-value="2026-09-22">22/09/2026</td><td>AID024</td><td>Hàng nhập khẩu</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="true">Có</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-10-08">08/10/2026</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Định nghĩa phân bổ chi phí trả trước — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_AllocateSetupFrm" data-form-type="EDIT" data-mode="new" data-screen-key="GJ_AllocateSetupFrm:new" data-menu-id="160801">
+<h1>Định nghĩa phân bổ chi phí trả trước — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_AllocateSetupFrm-new" formaction="/mock/records/GJ_AllocateSetupFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-GJ_AllocateSetupFrm-new" formaction="/mock/records/GJ_AllocateSetupFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_AllocateSetupFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_AllocateSetupFrm-new" method="post" action="/mock/records/GJ_AllocateSetupFrm/1.saved.html" data-key-field="AllocateID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-AllocateID">Mã phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-new-AllocateID" name="AllocateID" value="" required></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-GJ_AllocateSetupFrm-new-AllocateName">Nội dung phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-new-AllocateName" name="AllocateName" value="" required></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-new-AllocateDate">Ngày Allocate</label><input id="f-rec-GJ_AllocateSetupFrm-new-AllocateDate" name="AllocateDate" type="date" value="" required></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-RefDoc">Chứng từ gốc</label><input id="f-rec-GJ_AllocateSetupFrm-new-RefDoc" name="RefDoc" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-RefSourceID">Mã nguồn tham chiếu</label><input id="f-rec-GJ_AllocateSetupFrm-new-RefSourceID" name="RefSourceID" value=""></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-new-ItemID">Mã hàng</label><input id="f-rec-GJ_AllocateSetupFrm-new-ItemID" name="ItemID" value="" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID"><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-new-ItemID"></output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-new-AccountID">Tài khoản</label><input id="f-rec-GJ_AllocateSetupFrm-new-AccountID" name="AccountID" value="" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" required><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-new-AccountID"></output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-ExpenseAccID">TK chi phí</label><input id="f-rec-GJ_AllocateSetupFrm-new-ExpenseAccID" name="ExpenseAccID" value="" required></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-new-AllocateAmount">Số tiền phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-new-AllocateAmount" name="AllocateAmount" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-new-OpenAllocate">Đã phân bổ đầu kỳ</label><input id="f-rec-GJ_AllocateSetupFrm-new-OpenAllocate" name="OpenAllocate" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-new-MonthUse">Số tháng</label><input id="f-rec-GJ_AllocateSetupFrm-new-MonthUse" name="MonthUse" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-new-CostCenterID">Bộ phận</label><input id="f-rec-GJ_AllocateSetupFrm-new-CostCenterID" name="CostCenterID" value="" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}"><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-new-CostCenterID"></output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-CostID">Khoản mục</label><input id="f-rec-GJ_AllocateSetupFrm-new-CostID" name="CostID" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-Notes">Ghi chú</label><input id="f-rec-GJ_AllocateSetupFrm-new-Notes" name="Notes" value=""></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-new-ObjectID">Mã đối tượng</label><input id="f-rec-GJ_AllocateSetupFrm-new-ObjectID" name="ObjectID" value="" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" required><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-new-ObjectID"></output></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-new-StopDate">Ngày Stop</label><input id="f-rec-GJ_AllocateSetupFrm-new-StopDate" name="StopDate" type="date" value=""></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-new-BranchID">Chi nhánh</label><select id="f-rec-GJ_AllocateSetupFrm-new-BranchID" name="BranchID" required><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-new-NgayChungTu">Tu Chung Ngay</label><input id="f-rec-GJ_AllocateSetupFrm-new-NgayChungTu" name="NgayChungTu" type="date" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-new-DepartmentID">Phòng ban</label><input id="f-rec-GJ_AllocateSetupFrm-new-DepartmentID" name="DepartmentID" value=""></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-GJ_AllocateSetupFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="AllocateID" data-type="text" data-width="110" data-frozen data-editor="text">Mã phân bổ</th>
+<th scope="col" data-field="PeriodID" data-type="text" data-width="110" data-editor="text">Kỳ</th>
+<th scope="col" data-field="isStopAllocate" data-type="bool" data-width="60" data-editor="checkbox">Allocate Stop</th>
+<th scope="col" data-field="FixAllocateAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Tiền Allocate Fix</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-editor="text">Khoản mục</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}">Bộ phận</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode">Mã đối tượng</th>
+<th scope="col" data-field="ExpenseAccID" data-type="text" data-width="110" data-editor="text">TK chi phí</th>
+<th scope="col" data-field="PrepayAccountID" data-type="text" data-width="110" data-editor="text">TK chờ phân bổ</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

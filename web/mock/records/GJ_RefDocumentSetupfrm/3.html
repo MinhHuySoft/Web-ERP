@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Đối trừ chứng từ công nợ — TC1126/0003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_RefDocumentSetupfrm" data-form-type="EDIT" data-mode="view" data-screen-key="GJ_RefDocumentSetupfrm:TC1126/0003" data-menu-id="1607">
+<h1>Đối trừ chứng từ công nợ — TC1126/0003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/GJ_RefDocumentSetupfrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/GJ_RefDocumentSetupfrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-GJ_RefDocumentSetupfrm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/GJ_RefDocumentSetupfrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/GJ_RefDocumentSetupfrm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/GJ_RefDocumentSetupfrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/GJ_RefDocumentSetupfrm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_RefDocumentSetupfrm-3" method="post" action="/mock/records/GJ_RefDocumentSetupfrm/1.saved.html" data-key-field="DocumentID" data-key="TC1126/0003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_RefDocumentSetupfrm-3-DocumentID">Số chứng từ</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-DocumentID" name="DocumentID" value="TC1126/0003" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_RefDocumentSetupfrm-3-DocumentDate">Ngày chứng từ</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-DocumentDate" name="DocumentDate" type="date" value="2026-09-26" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_RefDocumentSetupfrm-3-ObjectID">Mã đối tượng</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-GJ_RefDocumentSetupfrm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-GJ_RefDocumentSetupfrm-3-Memo">Diễn giải</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-Memo" name="Memo" value="Hàng nhập khẩu" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_RefDocumentSetupfrm-3-AccountID">Tài khoản</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-AccountID" name="AccountID" value="421" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-GJ_RefDocumentSetupfrm-3-AccountID">Lợi nhuận chưa phân phối</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_RefDocumentSetupfrm-3-RefDebit">Debit tham chiếu</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-RefDebit" name="RefDebit" value="Debit tham chiếu 3" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_RefDocumentSetupfrm-3-RefCredit">Credit tham chiếu</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-RefCredit" name="RefCredit" value="" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_RefDocumentSetupfrm-3-SourceAmount">Tiền nguyên tệ</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-SourceAmount" name="SourceAmount" inputmode="decimal" value="41000000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_RefDocumentSetupfrm-3-Amount">Thành tiền</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-Amount" name="Amount" inputmode="decimal" value="12880000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_RefDocumentSetupfrm-3-ItemID">Mã hàng</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-ItemID" name="ItemID" value="VT0015" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID" readonly><output data-erp="lookup-text" for="f-rec-GJ_RefDocumentSetupfrm-3-ItemID">Nhiệt kế điện tử</output></div>
+<div data-erp="field" data-control="quantity" data-span="6"><label for="f-rec-GJ_RefDocumentSetupfrm-3-Quantity">Số lượng</label><input id="f-rec-GJ_RefDocumentSetupfrm-3-Quantity" name="Quantity" inputmode="decimal" value="62" data-decimals="2" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-GJ_RefDocumentSetupfrm-3-BranchID">Chi nhánh</label><select id="f-rec-GJ_RefDocumentSetupfrm-3-BranchID" name="BranchID" disabled><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN" selected>Đà Nẵng</option></select></div>
+</fieldset>
+</form>
+</section>
+</body></html>

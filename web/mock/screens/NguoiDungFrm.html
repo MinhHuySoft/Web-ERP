@@ -1,11 +1,49 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh sách người dùng</title></head>
 <body>
-<section data-erp="screen" data-screen-id="NguoiDungFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="NguoiDungFrm" data-menu-id="010101">
+<section data-erp="screen" data-screen-id="NguoiDungFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="NguoiDungFrm" data-menu-id="010101">
 <h1>Danh sách người dùng</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/NguoiDungFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="act-NguoiDungFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="key" data-confirm="Đặt lại mật khẩu cho người dùng đang chọn? Người dùng phải đổi mật khẩu ở lần đăng nhập sau." data-requires-selection>Đặt lại mật khẩu</button></li>
   <li><a data-action="reload" href="/mock/screens/NguoiDungFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Mật khẩu không bao giờ hiển thị hay gửi về trình duyệt; chỉ đặt lại qua nút “Đặt lại mật khẩu”.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/NguoiDungFrm.html">
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-NguoiDungFrm-BranchID">Chi nhánh</label><select id="flt-NguoiDungFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="flt-NguoiDungFrm-ShowDisabled">Hiện người dùng ngừng dùng</label><input type="hidden" name="ShowDisabled" value="false"><input id="flt-NguoiDungFrm-ShowDisabled" name="ShowDisabled" type="checkbox" value="true"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<form data-erp="record" id="act-NguoiDungFrm" method="post" action="/mock/actions/custom-ok.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserName" data-selectable="multi" data-total-rows="13">
+<thead><tr>
+<th scope="col" data-field="UserName" data-type="text" data-width="130" data-frozen>Tên đăng nhập</th>
+<th scope="col" data-field="HoTen" data-type="text" data-width="200">Họ tên</th>
+<th scope="col" data-field="TenNgan" data-type="text" data-width="100">Tên ngắn</th>
+<th scope="col" data-field="UserGroupID" data-type="text" data-width="170">Nhóm</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="120">Chi nhánh</th>
+<th scope="col" data-field="EmployeeID" data-type="text" data-width="110">Mã nhân viên</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="140">Kho mặc định</th>
+<th scope="col" data-field="Manager" data-type="bool" data-width="86">Quản lý</th>
+<th scope="col" data-field="Disable" data-type="bool" data-width="86">Ngừng dùng</th>
+<th scope="col" data-field="LastLogin" data-type="datetime" data-width="135" data-readonly>Đăng nhập gần nhất</th>
+</tr></thead>
+<tbody>
+<tr data-key="admin"><td>admin</td><td>Quản trị hệ thống</td><td>Admin</td><td data-value="ADMIN">Quản trị hệ thống</td><td></td><td></td><td></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="2026-11-09T08:40:00">09/11/2026 08:40</td></tr>
+<tr data-key="annv"><td>annv</td><td>Nguyễn Văn An</td><td>An</td><td data-value="KETOAN">Kế toán</td><td data-value="HN">Hà Nội</td><td>NV001</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="2026-11-08T08:20:00">08/11/2026 08:20</td></tr>
+<tr data-key="bichtt"><td>bichtt</td><td>Trần Thị Bích</td><td>Bích</td><td data-value="KINHDOANH">Kinh doanh</td><td data-value="HCM">Hồ Chí Minh</td><td>NV002</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-11-04T16:20:00">04/11/2026 16:20</td></tr>
+<tr data-key="cuonglh"><td>cuonglh</td><td>Lê Hoàng Cường</td><td>Cường</td><td data-value="ADMIN">Quản trị hệ thống</td><td data-value="DN">Đà Nẵng</td><td>NV003</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="2026-10-30T09:40:00">30/10/2026 09:40</td></tr>
+<tr data-key="dungpt"><td>dungpt</td><td>Phạm Thu Dung</td><td>Dung</td><td data-value="KHO">Thủ kho</td><td data-value="HN">Hà Nội</td><td>NV004</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-11-01T17:40:00">01/11/2026 17:40</td></tr>
+<tr data-key="duchm"><td>duchm</td><td>Hoàng Minh Đức</td><td>Đức</td><td data-value="DAILY">Đại lý (Web)</td><td data-value="HCM">Hồ Chí Minh</td><td>NV005</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-10-28T08:20:00">28/10/2026 08:20</td></tr>
+<tr data-key="havt"><td>havt</td><td>Vũ Thị Hà</td><td>Hà</td><td data-value="KETOAN-HCM">Kế toán chi nhánh HCM</td><td data-value="DN">Đà Nẵng</td><td>NV006</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-10-25T15:40:00">25/10/2026 15:40</td></tr>
+<tr data-key="huydq"><td>huydq</td><td>Đặng Quốc Huy</td><td>Huy</td><td data-value="KYTHUAT">Kỹ thuật – bảo hành</td><td data-value="HN">Hà Nội</td><td>NV007</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-10-26T08:05:00">26/10/2026 08:05</td></tr>
+<tr data-key="lanbt"><td>lanbt</td><td>Bùi Thanh Lan</td><td>Lan</td><td data-value="GIAMDOC">Ban giám đốc</td><td data-value="HCM">Hồ Chí Minh</td><td>NV008</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="2026-10-27T15:05:00">27/10/2026 15:05</td></tr>
+<tr data-key="minhdv"><td>minhdv</td><td>Đỗ Văn Minh</td><td>Minh</td><td data-value="MUAHANG">Mua hàng</td><td data-value="DN">Đà Nẵng</td><td>NV009</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="2026-10-25T11:40:00">25/10/2026 11:40</td></tr>
+<tr data-key="ngocnt"><td>ngocnt</td><td>Ngô Thị Ngọc</td><td>Ngọc</td><td data-value="NHANSU">Hành chính – nhân sự</td><td data-value="HN">Hà Nội</td><td>NV010</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-11-04T09:40:00">04/11/2026 09:40</td></tr>
+<tr data-key="phucdv"><td>phucdv</td><td>Dương Văn Phúc</td><td>Phúc</td><td data-value="THUQUY">Thủ quỹ</td><td data-value="HCM">Hồ Chí Minh</td><td>NV011</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-11-08T12:05:00">08/11/2026 12:05</td></tr>
+<tr data-key="quynhlt"><td>quynhlt</td><td>Lý Thị Quỳnh</td><td>Quỳnh</td><td data-value="CSKH">Chăm sóc khách hàng</td><td data-value="DN">Đà Nẵng</td><td>NV012</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="2026-10-28T11:40:00">28/10/2026 11:40</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

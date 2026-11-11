@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Hóa đơn bán ra — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_InvoiceOutFrm" data-form-type="EDIT" data-mode="new" data-screen-key="GJ_InvoiceOutFrm:new" data-menu-id="160020">
+<h1>Hóa đơn bán ra — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_InvoiceOutFrm-new" formaction="/mock/records/GJ_InvoiceOutFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-GJ_InvoiceOutFrm-new" formaction="/mock/records/GJ_InvoiceOutFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_InvoiceOutFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_InvoiceOutFrm-new" method="post" action="/mock/records/GJ_InvoiceOutFrm/1.saved.html" data-key-field="InvoiceID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-InvoiceID">Mã hóa đơn</label><input id="f-rec-GJ_InvoiceOutFrm-new-InvoiceID" name="InvoiceID" value="" required></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-tdlap">Ngày lập</label><input id="f-rec-GJ_InvoiceOutFrm-new-tdlap" name="tdlap" type="date" value="" required></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-khhdon">Ký hiệu HĐ</label><input id="f-rec-GJ_InvoiceOutFrm-new-khhdon" name="khhdon" value="" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-shdon">Số HĐ</label><input id="f-rec-GJ_InvoiceOutFrm-new-shdon" name="shdon" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_InvoiceOutFrm-new-tgtcthue">Tiền trước thuế</label><input id="f-rec-GJ_InvoiceOutFrm-new-tgtcthue" name="tgtcthue" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_InvoiceOutFrm-new-tgtthue">Tiền thuế</label><input id="f-rec-GJ_InvoiceOutFrm-new-tgtthue" name="tgtthue" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_InvoiceOutFrm-new-tgtttbso">Tổng thanh toán</label><input id="f-rec-GJ_InvoiceOutFrm-new-tgtttbso" name="tgtttbso" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-DocumentID">Số chứng từ</label><input id="f-rec-GJ_InvoiceOutFrm-new-DocumentID" name="DocumentID" value="HD1126/0025" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-SourceID">Loại chứng từ</label><input id="f-rec-GJ_InvoiceOutFrm-new-SourceID" name="SourceID" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-nmten">Tên người mua</label><input id="f-rec-GJ_InvoiceOutFrm-new-nmten" name="nmten" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-nmdchi">Địa chỉ người mua</label><input id="f-rec-GJ_InvoiceOutFrm-new-nmdchi" name="nmdchi" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-nmmst">MST người mua</label><input id="f-rec-GJ_InvoiceOutFrm-new-nmmst" name="nmmst" value=""></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-khmshdon">Mẫu số HĐ</label><input id="f-rec-GJ_InvoiceOutFrm-new-khmshdon" name="khmshdon" value="" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-tthai">Trạng thái HĐ</label><input id="f-rec-GJ_InvoiceOutFrm-new-tthai" name="tthai" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-ttxly">Trạng thái xử lý</label><input id="f-rec-GJ_InvoiceOutFrm-new-ttxly" name="ttxly" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-nky">Nky</label><input id="f-rec-GJ_InvoiceOutFrm-new-nky" name="nky" type="date" value=""></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-ncma">Ncma</label><input id="f-rec-GJ_InvoiceOutFrm-new-ncma" name="ncma" type="date" value=""></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_InvoiceOutFrm-new-NguonHD">HD Nguon</label><input id="f-rec-GJ_InvoiceOutFrm-new-NguonHD" name="NguonHD" inputmode="decimal" value="" data-decimals="0"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_InvoiceOutFrm-new-Notes">Ghi chú</label><input id="f-rec-GJ_InvoiceOutFrm-new-Notes" name="Notes" value=""></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="0">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-GJ_InvoiceOutFrm-new" data-total-rows="0">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="InvoiceID" data-type="text" data-width="110" data-frozen data-editor="text">Mã hóa đơn</th>
+<th scope="col" data-field="stt" data-type="number" data-width="70" data-decimals="0" data-editor="number">STT</th>
+<th scope="col" data-field="tchat" data-type="number" data-width="70" data-decimals="0" data-editor="number">Tính chất</th>
+<th scope="col" data-field="ten" data-type="text" data-width="110" data-editor="text">Tên hàng hóa, dịch vụ</th>
+<th scope="col" data-field="dvtinh" data-type="text" data-width="110" data-editor="text">ĐVT</th>
+<th scope="col" data-field="sluong" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="dgia" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Đơn giá</th>
+<th scope="col" data-field="thtien" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Thành tiền</th>
+<th scope="col" data-field="ltsuat" data-type="text" data-width="110" data-editor="text">Loại thuế suất</th>
+<th scope="col" data-field="tsuat" data-type="number" data-width="70" data-decimals="0" data-editor="number">Thuế suất</th>
+<th scope="col" data-field="tlckhau" data-type="number" data-width="70" data-decimals="0" data-editor="number">% chiết khấu</th>
+<th scope="col" data-field="tienckhau" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum" data-editor="money">Tiền chiết khấu</th>
+<th scope="col" data-field="tienthue" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum" data-editor="money">Tiền thuế</th>
+<th scope="col" data-field="tongtien" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum" data-editor="money">Tongtien</th>
+</tr></thead>
+<tbody>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

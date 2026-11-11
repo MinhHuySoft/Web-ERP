@@ -1,8 +1,8 @@
 /* Điểm gãy (QĐ-04): ≥1280 đầy đủ · 768–1279 Ribbon thu gọn · <768 ngăn kéo menu + thanh dưới + lưới dạng thẻ */
 @layer components {
   @media (max-width: 1279px) {
-    .erp-titlebar__chips { display: none; }
     .erp-searchbtn { width: min(300px, 30vw); }
+    .erp-ctxbtn span { display: none; }
     .erp-rbtn--large { width: 64px; min-height: 64px; font-size: .82em; }
     .erp-rbtn--large .erp-icon { width: 24px; height: 24px; }
     .erp-ribbon__panel { min-height: 92px; }
@@ -36,6 +36,7 @@
       transform: translateX(-102%); transition: transform .22s ease; box-shadow: var(--erp-shadow-lg); background: var(--erp-surface);
     }
     .erp-app.is-drawer-open .erp-sidebar { transform: none; }
+    .erp-sidebar__resizer, .erp-snav__foldall { display: none; }
     .erp-sidebar__close { display: inline-grid; }
     .erp-app.is-drawer-open .erp-scrim { display: block; position: fixed; inset: 0; z-index: 55; background: var(--erp-overlay); }
 
@@ -63,6 +64,12 @@
     .erp-filter__toggle { display: inline-flex; grid-column: 1 / -1; justify-self: start; }
     .erp-filter > .erp-field, .erp-filter > .erp-field-gap, .erp-filter > .erp-filter__submit { display: none; }
     .erp-filter.is-open > .erp-field, .erp-filter.is-open > .erp-filter__submit { display: flex; }
+    .erp-filter > .erp-field, .erp-filter > .erp-field--date, .erp-filter > .erp-field--lookup, .erp-filter > .erp-field--search { flex: 1 1 100%; max-width: none; }
+    .erp-filter > .erp-filter__submit { margin-inline-start: 0; width: 100%; }
+    .erp-screen__head { align-items: flex-start; }
+    .erp-screen__actions { width: 100%; }
+    .erp-screen__actions .erp-toolbar { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; }
+    .erp-titlebar [data-only="wide"], .erp-ctxbtn { display: none; }
     .erp-fieldset { padding: 12px; }
     .erp-grid__bar { padding: 6px; }
     .erp-grid__search { flex: 1; width: auto; min-width: 120px; }

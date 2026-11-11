@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Số dư tài khoản</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_BalanceAccountFrm" data-form-type="LISTEDIT" data-mode="edit" data-screen-key="GJ_BalanceAccountFrm" data-menu-id="010506">
+<h1>Số dư tài khoản</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_BalanceAccountFrm" formaction="/mock/screens/GJ_BalanceAccountFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_BalanceAccountFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_BalanceAccountFrm" method="post" action="/mock/screens/GJ_BalanceAccountFrm.saved.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="AccountID" data-selectable="multi" data-editable data-form="rec-GJ_BalanceAccountFrm" data-total-rows="16">
+<thead><tr>
+<th scope="col" data-field="AccountID" data-type="text" data-width="100" data-frozen data-editor="lookup" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}">Tài khoản</th>
+<th scope="col" data-field="AccountName" data-type="text" data-width="280" data-readonly>Tên tài khoản</th>
+<th scope="col" data-field="DebitBalance" data-type="money" data-width="130" data-decimals="0" data-sum="sum" data-editor="money">Dư Nợ đầu kỳ</th>
+<th scope="col" data-field="CreditBalance" data-type="money" data-width="130" data-decimals="0" data-sum="sum" data-editor="money">Dư Có đầu kỳ</th>
+<th scope="col" data-field="DebitBalanceFC" data-type="money" data-width="130" data-decimals="0" data-editor="money">Dư Nợ nguyên tệ</th>
+<th scope="col" data-field="CreditBalanceFC" data-type="money" data-width="130" data-decimals="0" data-editor="money">Dư Có nguyên tệ</th>
+</tr></thead>
+<tbody>
+<tr data-key="111"><td>111</td><td>Tiền mặt</td><td data-value="717000000">717.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="112"><td>112</td><td>Tiền gửi ngân hàng</td><td data-value="385000000">385.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="131"><td>131</td><td>Phải thu của khách hàng</td><td data-value="484000000">484.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="1331"><td>1331</td><td>Thuế GTGT được khấu trừ</td><td data-value="825000000">825.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="152"><td>152</td><td>Nguyên liệu, vật liệu</td><td data-value="724000000">724.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="153"><td>153</td><td>Công cụ, dụng cụ</td><td data-value="823000000">823.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="156"><td>156</td><td>Hàng hóa</td><td data-value="788000000">788.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="211"><td>211</td><td>Tài sản cố định hữu hình</td><td data-value="637000000">637.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="214"><td>214</td><td>Hao mòn TSCĐ</td><td data-value="0">0</td><td data-value="673000000">673.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="242"><td>242</td><td>Chi phí trả trước</td><td data-value="329000000">329.000.000</td><td data-value="0">0</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="331"><td>331</td><td>Phải trả cho người bán</td><td data-value="0">0</td><td data-value="55000000">55.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="3331"><td>3331</td><td>Thuế GTGT phải nộp</td><td data-value="0">0</td><td data-value="391000000">391.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="334"><td>334</td><td>Phải trả người lao động</td><td data-value="0">0</td><td data-value="348000000">348.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="338"><td>338</td><td>Phải trả, phải nộp khác</td><td data-value="0">0</td><td data-value="786000000">786.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="411"><td>411</td><td>Vốn đầu tư của chủ sở hữu</td><td data-value="0">0</td><td data-value="3286000000">3.286.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+<tr data-key="421"><td>421</td><td>Lợi nhuận chưa phân phối</td><td data-value="0">0</td><td data-value="173000000">173.000.000</td><td data-value=""></td><td data-value=""></td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td data-field="DebitBalance" data-value="5712000000">5.712.000.000</td><td data-field="CreditBalance" data-value="5712000000">5.712.000.000</td><td></td><td></td></tr></tfoot>
+</table>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

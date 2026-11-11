@@ -1,11 +1,61 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Sơ đồ tổ chức kinh doanh</title></head>
 <body>
-<section data-erp="screen" data-screen-id="AR_OpListFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="AR_OpListFrm" data-menu-id="4000">
+<section data-erp="screen" data-screen-id="AR_OpListFrm" data-form-type="EDIT" data-mode="find" data-screen-key="AR_OpListFrm" data-menu-id="4000">
 <h1>Sơ đồ tổ chức kinh doanh</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AR_OpListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
   <li><a data-action="reload" href="/mock/screens/AR_OpListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/AR_OpListFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_OpListFrm-FromDate">Từ ngày</label><input id="flt-AR_OpListFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_OpListFrm-ToDate">Đến ngày</label><input id="flt-AR_OpListFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-AR_OpListFrm-BranchID">Chi nhánh</label><select id="flt-AR_OpListFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-AR_OpListFrm-q">Tìm nhanh</label><input id="flt-AR_OpListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="OpID" data-selectable="single" data-total-rows="24" data-sort="OpID:desc">
+<thead><tr>
+<th scope="col" data-field="OpID" data-type="link" data-width="70" data-decimals="0" data-frozen>Mã đơn vị</th>
+<th scope="col" data-field="OpCode" data-type="text" data-width="110">Mã hiệu</th>
+<th scope="col" data-field="OpName" data-type="text" data-width="240">Tên đơn vị kinh doanh</th>
+<th scope="col" data-field="UpLeveID" data-type="number" data-width="70" data-decimals="0">Đơn vị cấp trên</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="LevelCount" data-type="number" data-width="70" data-decimals="0">Cấp</th>
+<th scope="col" data-field="LevelSub" data-type="bool" data-width="60">Sub cấp</th>
+<th scope="col" data-field="SortBy" data-type="text" data-width="110">Sort theo</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="1"><td><a href="/mock/records/AR_OpListFrm/1.html" data-target="tab">1</a></td><td>OC001</td><td>Tên đơn vị kinh doanh 1</td><td data-value="93">93</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="18">18</td><td data-value="false"></td><td>Sort theo 1</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-09-25">25/09/2026</td><td data-value="2026-08-08">08/08/2026</td></tr>
+<tr data-key="2"><td><a href="/mock/records/AR_OpListFrm/2.html" data-target="tab">2</a></td><td>OC002</td><td>Tên đơn vị kinh doanh 2</td><td data-value="1">1</td><td>Giao hàng trong tuần</td><td data-value="34">34</td><td data-value="false"></td><td>Sort theo 2</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-13">13/09/2026</td><td data-value="2026-07-20">20/07/2026</td></tr>
+<tr data-key="3"><td><a href="/mock/records/AR_OpListFrm/3.html" data-target="tab">3</a></td><td>OC003</td><td>Tên đơn vị kinh doanh 3</td><td data-value="74">74</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="34">34</td><td data-value="true">Có</td><td></td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-02">02/08/2026</td><td data-value="2026-10-24">24/10/2026</td></tr>
+<tr data-key="4"><td>4</td><td>OC004</td><td>Tên đơn vị kinh doanh 4</td><td data-value="21">21</td><td>Giao hàng trong tuần</td><td data-value="90">90</td><td data-value="true">Có</td><td></td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-08-08">08/08/2026</td><td data-value="2026-08-07">07/08/2026</td></tr>
+<tr data-key="5"><td>5</td><td>OC005</td><td>Tên đơn vị kinh doanh 5</td><td data-value="3">3</td><td>Giao hàng trong tuần</td><td data-value="38">38</td><td data-value="true">Có</td><td>Sort theo 5</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-03">03/09/2026</td><td data-value="2026-10-29">29/10/2026</td></tr>
+<tr data-key="6"><td>6</td><td>OC006</td><td>Tên đơn vị kinh doanh 6</td><td data-value="49">49</td><td>Hàng nhập khẩu</td><td data-value="20">20</td><td data-value="false"></td><td>Sort theo 6</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-15">15/08/2026</td><td data-value="2026-08-15">15/08/2026</td></tr>
+<tr data-key="7"><td>7</td><td>OC007</td><td>Tên đơn vị kinh doanh 7</td><td data-value="87">87</td><td>Theo hợp đồng số 12/2026</td><td data-value="22">22</td><td data-value="false"></td><td></td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-09-22">22/09/2026</td><td data-value="2026-08-01">01/08/2026</td></tr>
+<tr data-key="8"><td>8</td><td>OC008</td><td>Tên đơn vị kinh doanh 8</td><td data-value="32">32</td><td>Giao hàng trong tuần</td><td data-value="97">97</td><td data-value="false"></td><td>Sort theo 8</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-08-20">20/08/2026</td><td data-value="2026-07-14">14/07/2026</td></tr>
+<tr data-key="9"><td>9</td><td>OC009</td><td>Tên đơn vị kinh doanh 9</td><td data-value="44">44</td><td></td><td data-value="10">10</td><td data-value="false"></td><td></td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-22">22/10/2026</td><td data-value="2026-11-11">11/11/2026</td></tr>
+<tr data-key="10"><td>10</td><td>OC010</td><td>Tên đơn vị kinh doanh 10</td><td data-value="43">43</td><td></td><td data-value="90">90</td><td data-value="false"></td><td>Sort theo 10</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-08-26">26/08/2026</td><td data-value="2026-10-02">02/10/2026</td></tr>
+<tr data-key="11"><td>11</td><td>OC011</td><td>Tên đơn vị kinh doanh 11</td><td data-value="77">77</td><td></td><td data-value="5">5</td><td data-value="false"></td><td>Sort theo 11</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-07-16">16/07/2026</td><td data-value="2026-07-23">23/07/2026</td></tr>
+<tr data-key="12"><td>12</td><td>OC012</td><td>Tên đơn vị kinh doanh 12</td><td data-value="14">14</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="4">4</td><td data-value="false"></td><td>Sort theo 12</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-08-07">07/08/2026</td><td data-value="2026-09-15">15/09/2026</td></tr>
+<tr data-key="13"><td>13</td><td>OC013</td><td>Tên đơn vị kinh doanh 13</td><td data-value="33">33</td><td>Hàng nhập khẩu</td><td data-value="11">11</td><td data-value="true">Có</td><td>Sort theo 13</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-07-14">14/07/2026</td><td data-value="2026-08-07">07/08/2026</td></tr>
+<tr data-key="14"><td>14</td><td>OC014</td><td>Tên đơn vị kinh doanh 14</td><td data-value="16">16</td><td>Hàng nhập khẩu</td><td data-value="61">61</td><td data-value="false"></td><td>Sort theo 14</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-11">11/09/2026</td><td data-value="2026-08-05">05/08/2026</td></tr>
+<tr data-key="15"><td>15</td><td>OC015</td><td>Tên đơn vị kinh doanh 15</td><td data-value="45">45</td><td></td><td data-value="18">18</td><td data-value="false"></td><td>Sort theo 15</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-09-13">13/09/2026</td><td data-value="2026-07-19">19/07/2026</td></tr>
+<tr data-key="16"><td>16</td><td>OC016</td><td>Tên đơn vị kinh doanh 16</td><td data-value="62">62</td><td>Giao hàng trong tuần</td><td data-value="7">7</td><td data-value="false"></td><td>Sort theo 16</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-09-08">08/09/2026</td><td data-value="2026-09-05">05/09/2026</td></tr>
+<tr data-key="17"><td>17</td><td>OC017</td><td>Tên đơn vị kinh doanh 17</td><td data-value="23">23</td><td></td><td data-value="45">45</td><td data-value="false"></td><td>Sort theo 17</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-09-30">30/09/2026</td><td data-value="2026-10-18">18/10/2026</td></tr>
+<tr data-key="18"><td>18</td><td>OC018</td><td>Tên đơn vị kinh doanh 18</td><td data-value="21">21</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="34">34</td><td data-value="false"></td><td></td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-08-04">04/08/2026</td><td data-value="2026-08-18">18/08/2026</td></tr>
+<tr data-key="19"><td>19</td><td>OC019</td><td>Tên đơn vị kinh doanh 19</td><td data-value="31">31</td><td>Giao hàng trong tuần</td><td data-value="82">82</td><td data-value="false"></td><td>Sort theo 19</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-09-15">15/09/2026</td><td data-value="2026-10-21">21/10/2026</td></tr>
+<tr data-key="20"><td>20</td><td>OC020</td><td>Tên đơn vị kinh doanh 20</td><td data-value="5">5</td><td>Kiểm tra kỹ trước khi nhận</td><td data-value="6">6</td><td data-value="false"></td><td>Sort theo 20</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-08-07">07/08/2026</td><td data-value="2026-09-30">30/09/2026</td></tr>
+<tr data-key="21"><td>21</td><td>OC021</td><td>Tên đơn vị kinh doanh 21</td><td data-value="3">3</td><td>Giao hàng trong tuần</td><td data-value="20">20</td><td data-value="false"></td><td>Sort theo 21</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-10-17">17/10/2026</td><td data-value="2026-07-26">26/07/2026</td></tr>
+<tr data-key="22"><td>22</td><td>OC022</td><td>Tên đơn vị kinh doanh 22</td><td data-value="1">1</td><td></td><td data-value="88">88</td><td data-value="false"></td><td>Sort theo 22</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-07-27">27/07/2026</td><td data-value="2026-08-24">24/08/2026</td></tr>
+<tr data-key="23"><td>23</td><td>OC023</td><td>Tên đơn vị kinh doanh 23</td><td data-value="54">54</td><td></td><td data-value="50">50</td><td data-value="false"></td><td>Sort theo 23</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-07-18">18/07/2026</td><td data-value="2026-10-29">29/10/2026</td></tr>
+<tr data-key="24"><td>24</td><td>OC024</td><td>Tên đơn vị kinh doanh 24</td><td data-value="14">14</td><td></td><td data-value="49">49</td><td data-value="true">Có</td><td></td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-09-29">29/09/2026</td><td data-value="2026-10-06">06/10/2026</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

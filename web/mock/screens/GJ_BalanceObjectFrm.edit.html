@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Số dư công nợ đối tượng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_BalanceObjectFrm" data-form-type="LISTEDIT" data-mode="edit" data-screen-key="GJ_BalanceObjectFrm" data-menu-id="010504">
+<h1>Số dư công nợ đối tượng</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-GJ_BalanceObjectFrm" formaction="/mock/screens/GJ_BalanceObjectFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/GJ_BalanceObjectFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_BalanceObjectFrm" method="post" action="/mock/screens/GJ_BalanceObjectFrm.saved.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-GJ_BalanceObjectFrm" data-total-rows="18">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="number" data-width="80" data-decimals="0" data-hidden data-editor="number">ID</th>
+<th scope="col" data-field="AccountID" data-type="text" data-width="90" data-frozen data-editor="lookup" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}">Tài khoản</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode">Mã đối tượng</th>
+<th scope="col" data-field="ObjectName" data-type="text" data-width="280" data-readonly>Tên đối tượng</th>
+<th scope="col" data-field="DebitBalance" data-type="money" data-width="130" data-decimals="0" data-sum="sum" data-editor="money">Dư Nợ</th>
+<th scope="col" data-field="CreditBalance" data-type="money" data-width="130" data-decimals="0" data-sum="sum" data-editor="money">Dư Có</th>
+<th scope="col" data-field="CurrencyID" data-type="text" data-width="80" data-editor="select">Loại tiền</th>
+<th scope="col" data-field="DueDate" data-type="date" data-width="100" data-editor="date">Hạn thanh toán</th>
+</tr></thead>
+<tbody>
+<tr data-key="1"><td data-value="1">1</td><td>131</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td data-value="40000000">40.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-02-25">25/02/2026</td></tr>
+<tr data-key="2"><td data-value="2">2</td><td>131</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td data-value="112000000">112.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-02-26">26/02/2026</td></tr>
+<tr data-key="3"><td data-value="3">3</td><td>131</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td data-value="316000000">316.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-03-25">25/03/2026</td></tr>
+<tr data-key="4"><td data-value="4">4</td><td>131</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td data-value="70000000">70.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-03-13">13/03/2026</td></tr>
+<tr data-key="5"><td data-value="5">5</td><td>131</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td data-value="76000000">76.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-02-19">19/02/2026</td></tr>
+<tr data-key="6"><td data-value="6">6</td><td>131</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td data-value="313000000">313.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-01-21">21/01/2026</td></tr>
+<tr data-key="7"><td data-value="7">7</td><td>131</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td data-value="340000000">340.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-03-03">03/03/2026</td></tr>
+<tr data-key="8"><td data-value="8">8</td><td>131</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td data-value="344000000">344.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-02-23">23/02/2026</td></tr>
+<tr data-key="9"><td data-value="9">9</td><td>131</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td data-value="21000000">21.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-01-26">26/01/2026</td></tr>
+<tr data-key="10"><td data-value="10">10</td><td>131</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td data-value="145000000">145.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-01-18">18/01/2026</td></tr>
+<tr data-key="11"><td data-value="11">11</td><td>131</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td data-value="343000000">343.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-03-16">16/03/2026</td></tr>
+<tr data-key="12"><td data-value="12">12</td><td>131</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td data-value="85000000">85.000.000</td><td data-value="0">0</td><td>VND</td><td data-value="2026-03-28">28/03/2026</td></tr>
+<tr data-key="13"><td data-value="13">13</td><td>331</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td data-value="0">0</td><td data-value="296000000">296.000.000</td><td>VND</td><td data-value="2026-02-18">18/02/2026</td></tr>
+<tr data-key="14"><td data-value="14">14</td><td>331</td><td>KH0010</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td data-value="0">0</td><td data-value="182000000">182.000.000</td><td>VND</td><td data-value="2026-02-13">13/02/2026</td></tr>
+<tr data-key="15"><td data-value="15">15</td><td>331</td><td>KH0013</td><td>Phòng xét nghiệm Hưng Thịnh</td><td data-value="0">0</td><td data-value="127000000">127.000.000</td><td>VND</td><td data-value="2026-02-21">21/02/2026</td></tr>
+<tr data-key="16"><td data-value="16">16</td><td>331</td><td>KH0001</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td data-value="0">0</td><td data-value="239000000">239.000.000</td><td>VND</td><td data-value="2026-01-20">20/01/2026</td></tr>
+<tr data-key="17"><td data-value="17">17</td><td>331</td><td>KH0004</td><td>Công ty CP Dược phẩm Thành Đạt</td><td data-value="0">0</td><td data-value="380000000">380.000.000</td><td>VND</td><td data-value="2026-02-23">23/02/2026</td></tr>
+<tr data-key="18"><td data-value="18">18</td><td>331</td><td>KH0007</td><td>Bệnh viện Phụ sản Ánh Dương</td><td data-value="0">0</td><td data-value="19000000">19.000.000</td><td>VND</td><td data-value="2026-03-01">01/03/2026</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="DebitBalance" data-value="2205000000">2.205.000.000</td><td data-field="CreditBalance" data-value="1243000000">1.243.000.000</td><td></td><td></td></tr></tfoot>
+</table>
+<template data-erp="options" data-field="CurrencyID"><option value="VND">VND</option><option value="USD">USD</option><option value="EUR">EUR</option></template>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

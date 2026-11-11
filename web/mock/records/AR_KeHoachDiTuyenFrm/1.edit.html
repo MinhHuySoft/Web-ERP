@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Lập kế hoạch đi tuyến — KHD1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_KeHoachDiTuyenFrm" data-form-type="EDIT" data-mode="edit" data-screen-key="AR_KeHoachDiTuyenFrm:KHD1126/0001" data-menu-id="4010">
+<h1>Lập kế hoạch đi tuyến — KHD1126/0001</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-AR_KeHoachDiTuyenFrm-1" formaction="/mock/records/AR_KeHoachDiTuyenFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-AR_KeHoachDiTuyenFrm-1" formaction="/mock/records/AR_KeHoachDiTuyenFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/AR_KeHoachDiTuyenFrm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-AR_KeHoachDiTuyenFrm-1" method="post" action="/mock/records/AR_KeHoachDiTuyenFrm/1.saved.html" data-key-field="DocumentID" data-key="KHD1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_KeHoachDiTuyenFrm-1-DocumentID">Số chứng từ</label><input id="f-rec-AR_KeHoachDiTuyenFrm-1-DocumentID" name="DocumentID" value="KHD1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AR_KeHoachDiTuyenFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-AR_KeHoachDiTuyenFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-09-01" required></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-AR_KeHoachDiTuyenFrm-1-BranchID">Chi nhánh</label><select id="f-rec-AR_KeHoachDiTuyenFrm-1-BranchID" name="BranchID" required><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-AR_KeHoachDiTuyenFrm-1-Memo">Diễn giải</label><input id="f-rec-AR_KeHoachDiTuyenFrm-1-Memo" name="Memo" value="Theo hợp đồng số 12/2026"></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="4">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-AR_KeHoachDiTuyenFrm-1" data-total-rows="4">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-editor="text">Số chứng từ</th>
+<th scope="col" data-field="StatusID" data-type="status" data-width="120" data-frozen data-editor="none">Trạng thái</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode">Mã đối tượng</th>
+<th scope="col" data-field="ThuDiCall" data-type="text" data-width="110" data-editor="text">Call Di Thu</th>
+<th scope="col" data-field="ParentID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Parent</th>
+<th scope="col" data-field="ManagerID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}">Quản lý</th>
+<th scope="col" data-field="EmployeeID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName">Nhân viên</th>
+<th scope="col" data-field="GhiChuDiCall" data-type="text" data-width="110" data-editor="text">Call Di Chu Ghi</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>KHD1126/0001</td><td data-value="1"><data data-erp="status" value="1" data-tone="warning">Chờ duyệt</data></td><td>KH0001</td><td>Call Di Thu 1</td><td>PID001</td><td>NV001</td><td>NV001</td><td>Call Di Chu Ghi 1</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>KHD1126/0002</td><td data-value="3"><data data-erp="status" value="3" data-tone="info">Hoàn thành</data></td><td>KH0004</td><td>Call Di Thu 2</td><td>PID002</td><td>NV002</td><td>NV002</td><td>Call Di Chu Ghi 2</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>KHD1126/0003</td><td data-value="0"><data data-erp="status" value="0" data-tone="neutral">Nháp</data></td><td>KH0007</td><td></td><td>PID003</td><td>NV003</td><td>NV003</td><td></td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>KHD1126/0004</td><td data-value="2"><data data-erp="status" value="2" data-tone="success">Đã duyệt</data></td><td>KH0010</td><td>Call Di Thu 4</td><td>PID004</td><td>NV004</td><td>NV004</td><td>Call Di Chu Ghi 4</td></tr>
+</tbody>
+</table>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

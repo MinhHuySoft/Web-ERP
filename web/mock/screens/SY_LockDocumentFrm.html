@@ -1,11 +1,86 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Duyệt / Khóa chứng từ</title></head>
 <body>
-<section data-erp="screen" data-screen-id="SY_LockDocumentFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="SY_LockDocumentFrm" data-menu-id="1605">
+<section data-erp="screen" data-screen-id="SY_LockDocumentFrm" data-form-type="LIST" data-mode="view" data-screen-key="SY_LockDocumentFrm" data-menu-id="1605">
 <h1>Duyệt / Khóa chứng từ</h1>
 <menu data-erp="toolbar">
+  <li><button type="submit" form="act-SY_LockDocumentFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="approve" data-icon="approve" data-requires-selection>Duyệt</button></li>
+  <li><button type="submit" form="act-SY_LockDocumentFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="lock" data-icon="lock" data-confirm="Khóa các chứng từ đang chọn?" data-requires-selection>Khóa</button></li>
+  <li><button type="submit" form="act-SY_LockDocumentFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="unlock" data-icon="unlock" data-confirm="Mở khóa các chứng từ đang chọn?" data-requires-selection>Mở khóa</button></li>
   <li><a data-action="reload" href="/mock/screens/SY_LockDocumentFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Nút Khóa / Mở khóa chỉ dành cho người có quyền Manager.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/SY_LockDocumentFrm.html">
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-SY_LockDocumentFrm-PeriodID">Kỳ</label><select id="flt-SY_LockDocumentFrm-PeriodID" name="PeriodID"><option value=""></option><option value="*">Tất cả kỳ</option><option value="202601">Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610" selected>Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="select" data-span="10"><label for="flt-SY_LockDocumentFrm-SourceID">Loại chứng từ</label><select id="flt-SY_LockDocumentFrm-SourceID" name="SourceID"><option value=""></option><option value="SI">Hóa đơn bán hàng</option><option value="PI">Mua hàng</option><option value="PN">Phiếu nhập kho</option><option value="PX">Phiếu xuất kho</option><option value="PT">Phiếu thu</option><option value="PC">Phiếu chi</option><option value="PK">Phiếu kế toán</option></select></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-SY_LockDocumentFrm-LockState">Tình trạng</label><select id="flt-SY_LockDocumentFrm-LockState" name="LockState"><option value=""></option><option value="0">Chưa khóa</option><option value="1">Đã khóa</option></select></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<form data-erp="record" id="act-SY_LockDocumentFrm" method="post" action="/mock/actions/custom-ok.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"></form>
+<section data-erp="tabs"><section data-erp="tab-panel" data-tab-id="T0" data-title="Chứng từ" data-badge="36"><table data-erp="grid" data-grid-id="T0" data-key-field="DocumentID" data-selectable="multi" data-total-rows="36">
+<thead><tr>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="125" data-frozen>Số chứng từ</th>
+<th scope="col" data-field="SourceName" data-type="text" data-width="150">Loại chứng từ</th>
+<th scope="col" data-field="DocumentDate" data-type="date" data-width="100">Ngày</th>
+<th scope="col" data-field="ObjectName" data-type="text" data-width="260">Đối tượng</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="220">Diễn giải</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Số tiền</th>
+<th scope="col" data-field="IsApprove" data-type="bool" data-width="86">Đã duyệt</th>
+<th scope="col" data-field="IsLock" data-type="bool" data-width="86">Đã khóa</th>
+</tr></thead>
+<tbody>
+<tr data-key="SI1026/0001"><td>SI1026/0001</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-18">18/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Bán hàng theo đơn</td><td data-value="74100000">74.100.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PI1026/0002"><td>PI1026/0002</td><td>Mua hàng</td><td data-value="2026-10-06">06/10/2026</td><td>Trung tâm Y tế Quận 3</td><td>Nhập hàng NCC</td><td data-value="60800000">60.800.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PN1026/0003"><td>PN1026/0003</td><td>Phiếu nhập kho</td><td data-value="2026-10-30">30/10/2026</td><td>Nhà thuốc Phúc Khang</td><td>Thu tiền khách hàng</td><td data-value="72300000">72.300.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PX1026/0004"><td>PX1026/0004</td><td>Phiếu xuất kho</td><td data-value="2026-10-21">21/10/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Chi trả nhà cung cấp</td><td data-value="32300000">32.300.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PT1026/0005"><td>PT1026/0005</td><td>Phiếu thu</td><td data-value="2026-10-29">29/10/2026</td><td>Bệnh viện Đa khoa Minh Tâm</td><td>Xuất kho bán</td><td data-value="33400000">33.400.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PC1026/0006"><td>PC1026/0006</td><td>Phiếu chi</td><td data-value="2026-10-21">21/10/2026</td><td>Công ty TNHH Vật tư Y khoa Bình Minh</td><td>Bán hàng theo đơn</td><td data-value="45500000">45.500.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PK1026/0007"><td>PK1026/0007</td><td>Phiếu kế toán</td><td data-value="2026-10-04">04/10/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Nhập hàng NCC</td><td data-value="40700000">40.700.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="SI1026/0008"><td>SI1026/0008</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-31">31/10/2026</td><td>Công ty TNHH Medical Supply Sài Gòn</td><td>Thu tiền khách hàng</td><td data-value="61100000">61.100.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PI1026/0009"><td>PI1026/0009</td><td>Mua hàng</td><td data-value="2026-10-16">16/10/2026</td><td>Phòng khám Đa khoa Hòa Bình</td><td>Chi trả nhà cung cấp</td><td data-value="36900000">36.900.000</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="PN1026/0010"><td>PN1026/0010</td><td>Phiếu nhập kho</td><td data-value="2026-10-30">30/10/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Xuất kho bán</td><td data-value="38600000">38.600.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PX1026/0011"><td>PX1026/0011</td><td>Phiếu xuất kho</td><td data-value="2026-10-09">09/10/2026</td><td>Bệnh viện Mắt Sao Mai</td><td>Bán hàng theo đơn</td><td data-value="15300000">15.300.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PT1026/0012"><td>PT1026/0012</td><td>Phiếu thu</td><td data-value="2026-10-25">25/10/2026</td><td>Bệnh viện Nhi Hạnh Phúc</td><td>Nhập hàng NCC</td><td data-value="16900000">16.900.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PC1026/0013"><td>PC1026/0013</td><td>Phiếu chi</td><td data-value="2026-10-25">25/10/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Thu tiền khách hàng</td><td data-value="30800000">30.800.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PK1026/0014"><td>PK1026/0014</td><td>Phiếu kế toán</td><td data-value="2026-10-24">24/10/2026</td><td>Công ty CP Công nghệ Sinh học Việt Phát</td><td>Chi trả nhà cung cấp</td><td data-value="81700000">81.700.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="SI1026/0015"><td>SI1026/0015</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-21">21/10/2026</td><td>Công ty CP Thiết bị Khoa học Tân Tiến</td><td>Xuất kho bán</td><td data-value="44200000">44.200.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PI1026/0016"><td>PI1026/0016</td><td>Mua hàng</td><td data-value="2026-10-15">15/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Bán hàng theo đơn</td><td data-value="20800000">20.800.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PN1026/0017"><td>PN1026/0017</td><td>Phiếu nhập kho</td><td data-value="2026-10-12">12/10/2026</td><td>Trung tâm Y tế Quận 3</td><td>Nhập hàng NCC</td><td data-value="26800000">26.800.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PX1026/0018"><td>PX1026/0018</td><td>Phiếu xuất kho</td><td data-value="2026-10-25">25/10/2026</td><td>Nhà thuốc Phúc Khang</td><td>Thu tiền khách hàng</td><td data-value="13500000">13.500.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PT1026/0019"><td>PT1026/0019</td><td>Phiếu thu</td><td data-value="2026-10-08">08/10/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Chi trả nhà cung cấp</td><td data-value="27600000">27.600.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PC1026/0020"><td>PC1026/0020</td><td>Phiếu chi</td><td data-value="2026-10-27">27/10/2026</td><td>Bệnh viện Đa khoa Minh Tâm</td><td>Xuất kho bán</td><td data-value="71000000">71.000.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PK1026/0021"><td>PK1026/0021</td><td>Phiếu kế toán</td><td data-value="2026-10-26">26/10/2026</td><td>Công ty TNHH Vật tư Y khoa Bình Minh</td><td>Bán hàng theo đơn</td><td data-value="39200000">39.200.000</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="SI1026/0022"><td>SI1026/0022</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-20">20/10/2026</td><td>Công ty TNHH Thương mại Kỹ thuật Đông Á</td><td>Nhập hàng NCC</td><td data-value="7700000">7.700.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PI1026/0023"><td>PI1026/0023</td><td>Mua hàng</td><td data-value="2026-10-04">04/10/2026</td><td>Công ty TNHH Medical Supply Sài Gòn</td><td>Thu tiền khách hàng</td><td data-value="57300000">57.300.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PN1026/0024"><td>PN1026/0024</td><td>Phiếu nhập kho</td><td data-value="2026-10-30">30/10/2026</td><td>Phòng khám Đa khoa Hòa Bình</td><td>Chi trả nhà cung cấp</td><td data-value="16800000">16.800.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PX1026/0025"><td>PX1026/0025</td><td>Phiếu xuất kho</td><td data-value="2026-10-14">14/10/2026</td><td>Bệnh viện Phụ sản Ánh Dương</td><td>Xuất kho bán</td><td data-value="20400000">20.400.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PT1026/0026"><td>PT1026/0026</td><td>Phiếu thu</td><td data-value="2026-10-02">02/10/2026</td><td>Bệnh viện Mắt Sao Mai</td><td>Bán hàng theo đơn</td><td data-value="7300000">7.300.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PC1026/0027"><td>PC1026/0027</td><td>Phiếu chi</td><td data-value="2026-10-23">23/10/2026</td><td>Bệnh viện Nhi Hạnh Phúc</td><td>Nhập hàng NCC</td><td data-value="60100000">60.100.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PK1026/0028"><td>PK1026/0028</td><td>Phiếu kế toán</td><td data-value="2026-10-11">11/10/2026</td><td>Công ty CP Dược phẩm Thành Đạt</td><td>Thu tiền khách hàng</td><td data-value="62700000">62.700.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="SI1026/0029"><td>SI1026/0029</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-13">13/10/2026</td><td>Công ty CP Công nghệ Sinh học Việt Phát</td><td>Chi trả nhà cung cấp</td><td data-value="29000000">29.000.000</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="PI1026/0030"><td>PI1026/0030</td><td>Mua hàng</td><td data-value="2026-10-26">26/10/2026</td><td>Công ty CP Thiết bị Khoa học Tân Tiến</td><td>Xuất kho bán</td><td data-value="86200000">86.200.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="PN1026/0031"><td>PN1026/0031</td><td>Phiếu nhập kho</td><td data-value="2026-10-19">19/10/2026</td><td>Công ty TNHH Thiết bị Y tế An Phát</td><td>Bán hàng theo đơn</td><td data-value="40900000">40.900.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PX1026/0032"><td>PX1026/0032</td><td>Phiếu xuất kho</td><td data-value="2026-10-24">24/10/2026</td><td>Trung tâm Y tế Quận 3</td><td>Nhập hàng NCC</td><td data-value="16200000">16.200.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PT1026/0033"><td>PT1026/0033</td><td>Phiếu thu</td><td data-value="2026-10-06">06/10/2026</td><td>Nhà thuốc Phúc Khang</td><td>Thu tiền khách hàng</td><td data-value="73200000">73.200.000</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="PC1026/0034"><td>PC1026/0034</td><td>Phiếu chi</td><td data-value="2026-10-22">22/10/2026</td><td>Phòng xét nghiệm Hưng Thịnh</td><td>Chi trả nhà cung cấp</td><td data-value="43600000">43.600.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="PK1026/0035"><td>PK1026/0035</td><td>Phiếu kế toán</td><td data-value="2026-10-05">05/10/2026</td><td>Bệnh viện Đa khoa Minh Tâm</td><td>Xuất kho bán</td><td data-value="82200000">82.200.000</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="SI1026/0036"><td>SI1026/0036</td><td>Hóa đơn bán hàng</td><td data-value="2026-10-24">24/10/2026</td><td>Công ty TNHH Vật tư Y khoa Bình Minh</td><td>Bán hàng theo đơn</td><td data-value="82500000">82.500.000</td><td data-value="false"></td><td data-value="false"></td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="Amount" data-value="1569600000">1.569.600.000</td><td></td><td></td></tr></tfoot>
+</table></section><section data-erp="tab-panel" data-tab-id="T1" data-title="Định khoản chứng từ đang chọn" data-badge="3"><table data-erp="grid" data-grid-id="T1" data-selectable="multi" data-total-rows="3">
+<thead><tr>
+<th scope="col" data-field="DebitAccID" data-type="text" data-width="90">TK Nợ</th>
+<th scope="col" data-field="CreditAccID" data-type="text" data-width="90">TK Có</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Số tiền</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="300">Diễn giải</th>
+</tr></thead>
+<tbody>
+<tr ><td>131</td><td>5111</td><td data-value="48500000">48.500.000</td><td>Doanh thu bán hàng</td></tr>
+<tr ><td>131</td><td>33311</td><td data-value="3880000">3.880.000</td><td>Thuế GTGT đầu ra 8%</td></tr>
+<tr ><td>632</td><td>156</td><td data-value="36120000">36.120.000</td><td>Giá vốn hàng bán</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td data-field="Amount" data-value="88500000">88.500.000</td><td></td></tr></tfoot>
+</table></section></section>
 </section>
 </body></html>

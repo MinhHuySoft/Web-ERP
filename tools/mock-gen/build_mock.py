@@ -155,7 +155,20 @@ FIELD_VI = {
     'Position': 'Chức vụ', 'Birthday': 'Ngày sinh', 'Sex': 'Giới tính', 'IDCard': 'CCCD', 'Specification': 'Quy cách',
     'MinStock': 'Tồn tối thiểu', 'MaxStock': 'Tồn tối đa', 'SalePrice': 'Giá bán', 'PurchasePrice': 'Giá mua',
     'ExportTax': 'Thuế XK', 'ImportTax': 'Thuế NK', 'Warranty': 'Bảo hành', 'WarrantyMonth': 'Số tháng bảo hành',
+    'tdlap': 'Ngày lập', 'khhdon': 'Ký hiệu HĐ', 'shdon': 'Số HĐ', 'khmshdon': 'Mẫu số HĐ', 'tgtcthue': 'Tiền trước thuế',
+    'tgtthue': 'Tiền thuế', 'tgtttbso': 'Tổng thanh toán', 'nbten': 'Tên người bán', 'nbdchi': 'Địa chỉ người bán', 'nbmst': 'MST người bán',
+    'nmten': 'Tên người mua', 'nmdchi': 'Địa chỉ người mua', 'nmmst': 'MST người mua', 'tthai': 'Trạng thái HĐ', 'ttxly': 'Trạng thái xử lý',
+    'tentthai': 'Trạng thái HĐ', 'tenttxly': 'Trạng thái xử lý', 'stt': 'STT', 'tchat': 'Tính chất', 'ten': 'Tên hàng hóa, dịch vụ',
+    'dvtinh': 'ĐVT', 'sluong': 'Số lượng', 'dgia': 'Đơn giá', 'thtien': 'Thành tiền', 'ltsuat': 'Loại thuế suất', 'tsuat': 'Thuế suất',
+    'tlckhau': '% chiết khấu', 'tienckhau': 'Tiền chiết khấu', 'tienthue': 'Tiền thuế', 'InvoiceID': 'Mã hóa đơn', 'SourceID': 'Loại chứng từ',
+    'AgencyID': 'Đại lý', 'QRCODE': 'Mã QR', 'SL': 'Số lượng', 'OrderQuantity': 'SL đặt', 'OpID': 'Mã đơn vị', 'OpCode': 'Mã hiệu',
+    'OpName': 'Tên đơn vị kinh doanh', 'UpLeveID': 'Đơn vị cấp trên', 'LevelCount': 'Cấp', 'ViTriHoTro': 'Vị trí hỗ trợ',
+    'LocationID': 'Mã tỉnh/TP', 'LocationName': 'Tên tỉnh/TP', 'LocationGroup': 'Vùng', 'QuanHuyen': 'Quận/huyện', 'GhiChu': 'Ghi chú',
+    'ZoneID': 'Khu vực', 'DiemSanPham': 'Điểm sản phẩm', 'AllocateID': 'Mã phân bổ', 'AllocateName': 'Nội dung phân bổ',
+    'AllocateAmount': 'Số tiền phân bổ', 'OpenAllocate': 'Đã phân bổ đầu kỳ', 'ExpenseAccID': 'TK chi phí', 'PrepayAccountID': 'TK chờ phân bổ',
 }
+KIND_HINT = {'tgtcthue': 'money', 'tgtthue': 'money', 'tgtttbso': 'money', 'thtien': 'money', 'dgia': 'money', 'tienckhau': 'money',
+             'tienthue': 'money', 'sluong': 'quantity', 'SL': 'quantity'}
 WORD_VI = {
     'total': 'tổng', 'quantity': 'số lượng', 'qty': 'số lượng', 'real': 'thực tế', 'document': 'chứng từ', 'date': 'ngày',
     'pallet': 'pallet', 'barrel': 'thùng', 'weight': 'trọng lượng', 'package': 'kiện', 'damage': 'hư hỏng',
@@ -260,6 +273,7 @@ def caption(field, local=None, fid=None):
 # ---------------------------------------------------------------------------------------------------------------
 # Kiểu cột và dữ liệu giả
 # ---------------------------------------------------------------------------------------------------------------
+SECRET_COL = re.compile(r'^(password|passwd|pwd|token|secret|api_?key)$', re.I)   # không bao giờ đưa vào mock
 SYSTEM_HIDDEN = {'UserAutoID', 'SearchField', 'UID', 'LinkID', 'ParentID', 'rowguid', 'SSMA_TimeStamp', 'BackColor'}
 AUDIT = {'UserCreate', 'DateCreate', 'UserUpdate', 'DateUpdate'}
 MONEY_HINT = re.compile(r'(Amount|Price|Total|Cost|Tien|Value|Balance|Debit|Credit|Money|Fee|Phi)', re.I)
@@ -268,6 +282,8 @@ QTY_HINT = re.compile(r'(Quantity|Qty|SoLuong|Number)$', re.I)
 
 def col_kind(c):
     t, n = c['data_type'], c['column_name']
+    if n in KIND_HINT and t not in ('nvarchar', 'varchar', 'nchar', 'char'):
+        return KIND_HINT[n]
     if t in ('bit',):
         return 'bool'
     if t in ('datetime', 'smalldatetime', 'date', 'datetime2'):
@@ -378,7 +394,7 @@ class Gen:
         if n in ('ObjectID',):
             v = f'KH{(i * 3) % len(COMPANIES) + 1:04d}'
             return v, v, None
-        if n in ('ObjectName', 'NCC', 'CustomerName', 'SupplierName'):
+        if n in ('ObjectName', 'NCC', 'CustomerName', 'SupplierName', 'nbten', 'nmten'):
             v = COMPANIES[(i * 3) % len(COMPANIES)]
             return v, v, None
         if n == 'ItemID':
@@ -537,6 +553,12 @@ def grid_html(grid_id, cols, rows, key_field=None, caption_text=None, editable=F
                 tds.append('<td></td>')
         out.append('<tfoot><tr>' + ''.join(tds) + '</tr></tfoot>')
     out.append('</table>')
+    if editable:
+        for c in cols:
+            if c.get('editor') == 'select':
+                opts = c.get('options') or SELECTS.get(c['field']) or []
+                out.append(f'<template data-erp="options" data-field="{e(c["field"])}">' +
+                           ''.join(f'<option value="{e(v)}">{e(t)}</option>' for v, t in opts) + '</template>')
     if template_row is not None:
         out.append(f'<template data-erp="row-template" data-grid-id="{e(grid_id)}">{template_row}</template>')
     return '\n'.join(out)
@@ -583,11 +605,17 @@ def field_html(fid, f, value=None, display=None, mode='view', idp='f'):
         if not opts and f.get('options'):
             opts = ''.join(f'<option value="{e(o[0])}"{" selected" if str(o[0]) == str(v) else ""}>{e(o[1])}</option>' for o in f['options'])
         ctrl = f'<select {common}{flags}><option value=""></option>{opts}</select>'
+    elif ctl == 'multiselect':
+        vs = set(str(v).split(',')) if v else set()
+        opts = ''.join(f'<option value="{e(o[0])}"{" selected" if str(o[0]) in vs else ""}>{e(o[1])}</option>' for o in f.get('options') or [])
+        ctrl = f'<select {common} multiple{flags}>{opts}</select>'
     elif ctl == 'lookup':
         src, fill = f['lookup']
         ctrl = (f'<input {common} value="{e(v)}" data-lookup-src="{BASE}/lookups/{src}.html?q={{q}}"'
                 + (f' data-lookup-fill="{",".join(fill)}"' if fill else '') + f'{flags}>'
                 + f'<output data-erp="lookup-text" for="{_id}">{e(display or "")}</output>')
+    elif ctl == 'password':
+        ctrl = f'<input {common} type="password" autocomplete="new-password" value=""{flags}>'
     elif ctl == 'textarea':
         ctrl = f'<textarea {common} rows="{f.get("rows", 2)}"{flags}>{e(v)}</textarea>'
     elif ctl == 'label':
@@ -673,7 +701,7 @@ def master_fields(fid, table, statuses):
                     continue
                 col = cols.get(sub)
                 kind = col_kind(col) if col else 'text'
-                if kind == 'skip':
+                if kind == 'skip' or SECRET_COL.match(sub):
                     continue
                 control = CTRL_MAP.get(ct, 'text')
                 if control == 'text' and sy > 1:
@@ -705,7 +733,7 @@ def master_fields(fid, table, statuses):
     for c in table_cols(table):
         n = c['column_name']
         kind = col_kind(c)
-        if kind == 'skip' or n in SYSTEM_HIDDEN or n in AUDIT:
+        if kind == 'skip' or n in SYSTEM_HIDDEN or n in AUDIT or SECRET_COL.match(n):
             continue
         control = kind_to_control(n, kind, c)
         span = {'date': 6, 'datetime': 8, 'checkbox': 6, 'money': 8, 'quantity': 6, 'number': 6, 'percent': 5,
@@ -749,7 +777,7 @@ def grid_cols_for(fid, slot, table, editable=False, max_visible=12):
     for n in names:
         c = by.get(n)
         kind = col_kind(c) if c else ('status' if n == 'StatusName' else 'text')
-        if kind == 'skip':
+        if kind == 'skip' or SECRET_COL.match(n):
             continue
         if n == 'StatusID' and 'StatusName' in names:
             continue
@@ -789,9 +817,12 @@ def gen_rows(g, cols, n, key_field, statuses, prefix, href_fn=None, offset=0):
         cells = {}
         for c in cols:
             f = c['field']
-            kind = c['type'] if c['type'] != 'link' else 'text'
+            kind = c['type'] if c['type'] != 'link' else c.get('base_type', 'text')
             if f == 'StatusName':
                 kind = 'status'
+            if f == key_field and kind in ('number', 'quantity'):
+                cells[f] = (str(i + 1), str(i + 1), None)   # khóa số: duy nhất, tăng dần
+                continue
             cells[f] = g.value(f, kind, i, statuses, prefix)
         # thành tiền = số lượng × đơn giá nếu có
         if 'Quantity' in cells and 'UnitPrice' in cells and 'Amount' in cells:
@@ -909,11 +940,20 @@ def detail_slots(fid, table_detail_fallback=None):
     return slots
 
 
-def build_edit(menu, sid, title, table, details, prefix, para=''):
+def guess_pk(table):
+    names = [c['column_name'] for c in table_cols(table)]
+    for n in names:
+        if n.endswith('ID') and n != 'UserAutoID':
+            return n
+    return names[0] if names else 'UserAutoID'
+
+
+def build_edit(menu, sid, title, table, details, prefix, para='', pk=None):
     """Chứng từ master–detail: danh sách (find) + bản ghi xem/sửa/thêm."""
     g = Gen(sid + para)
-    pk = 'DocumentID' if any(c['column_name'] == 'DocumentID' for c in table_cols(table)) else (
-        (forms.get(sid.upper()) or {}).get('PrimaryKey') or 'DocumentID')
+    if not pk:
+        pk = 'DocumentID' if any(c['column_name'] == 'DocumentID' for c in table_cols(table)) else (
+            (forms.get(sid.upper()) or {}).get('PrimaryKey') or guess_pk(table))
     statuses = statuses_for(cfg_get(cfg_of(sid), 'T0', 'TN2'))
     tabs = master_fields(sid, table, statuses)
     slots = detail_slots(sid, details)
@@ -922,10 +962,11 @@ def build_edit(menu, sid, title, table, details, prefix, para=''):
     n_records = 3
     # --- danh sách chứng từ
     gcols = grid_cols_for(sid, 'T0', table, max_visible=9)
-    if not gcols:
-        gcols = [dict(field=pk, caption=caption(pk), type='text', width=120)]
+    if not any(c['field'] == pk for c in gcols):
+        gcols.insert(0, dict(field=pk, caption=caption(pk), type='text', width=120))
     for c in gcols:
         if c['field'] == pk:
+            c['base_type'] = c['type']   # giữ kiểu gốc để sinh giá trị đúng (khóa số vẫn là số)
             c['type'] = 'link'
             c['hidden'] = False
     lrows = gen_rows(g, gcols, 24, pk, statuses, prefix,
@@ -1124,6 +1165,998 @@ def build_custom(menu, note):
 
 
 # ---------------------------------------------------------------------------------------------------------------
+# Màn còn lại: (1) suy bảng nguồn từ tên form / loại chứng từ, (2) mock viết tay cho màn hệ thống & xử lý
+# ---------------------------------------------------------------------------------------------------------------
+TABLE_OVERRIDE = {   # form -> (bảng master, [bảng chi tiết], tiền tố, khóa chính)
+    'AR_STOCKINPUTFRM': ('IV_InputTbl', ['IV_InputDetailTbl'], 'PN', None),
+    'AR_STOCKOUTFRM': ('IV_OutputTbl', ['IV_OutputDetailTbl'], 'PX', None),
+    'AR_CHIEUKHAUHOPDONGFRM': ('AR_ChietKhauHopDongTbl', ['AR_ChietKhauHopDongDetailTbl'], 'KM', None),
+    'AR_OPLISTFRM': ('AR_OpListTbl', ['AR_OpListEmployeeTbl', 'AR_OpListDetailTbl'], 'OP', 'OpID'),
+    'AR_STANDARDPRICEZONEFRM': ('AR_PriceTbl', ['AR_PriceDetailTbl'], 'BG', None),
+    'AR_STANDARDPRICE2017FRM': ('AR_PriceTbl', ['AR_PriceDetailTbl', 'AR_PriceObjectTbl'], 'BG', None),
+    'LOCATIONLISTFRM': ('CF_LocationTbl', ['CF_LocationDetailTbl'], 'TT', 'LocationID'),
+    'AG_XUATKHOBANLEORDERFRM': ('AG_XuatKhoCuaHangTbl', ['AG_XuatKhoCuaHangDetailTbl'], 'XL', None),
+    'AG_SUAQRCODEDAILYFRM': ('AG_XuatKhoDeleteTbl', ['AG_XuatKhoDeleteDetailTbl'], 'QR', None),
+    'GJ_INVOICEINFRM': ('GJ_InvoiceInTbl', ['GJ_InvoiceInDetailTbl'], 'HD', 'InvoiceID'),
+    'GJ_INVOICEOUTFRM': ('GJ_InvoiceOutTbl', ['GJ_InvoiceOutDetailTbl'], 'HD', 'InvoiceID'),
+    'GJ_ALLOCATESETUPFRM': ('GJ_AllocateSetupTbl', ['GJ_AllocatePeriodSetupTbl'], 'PB', 'AllocateID'),
+}
+NO_RESOLVE = {'IV_UNITCOSTPROCESSFRM'}   # tên form khớp nhầm bảng (CF_UnitTbl) — dùng mock viết tay
+
+
+def real_name(table):
+    tc = table_cols(table)
+    return tc[0]['object_name'] if tc else table
+
+
+def detail_of(table):
+    b = re.sub(r'Tbl$', '', table, flags=re.I)
+    for c in (b + 'DetailTbl', b + 'DetailsTbl'):
+        if table_cols(c):
+            return [real_name(c)]
+    return []
+
+
+def doc_prefix(fn, words_):
+    p = cfg_get(cfg_of(fn), 'DPR')
+    if p:
+        return p
+    ini = ''.join(w[0] for w in words_ if w[:1].isalpha()).upper()
+    if len(ini) < 2 and words_:
+        ini = words_[0][:2].upper()
+    return ini[:3] or 'CT'
+
+
+def resolve_tables(fn, para=''):
+    """Trả (bảng master, [chi tiết], tiền tố, khóa) hoặc None."""
+    u = fn.upper()
+    if u in NO_RESOLVE:
+        return None
+    if u in TABLE_OVERRIDE:
+        t, d, pre, pk = TABLE_OVERRIDE[u]
+        return (real_name(t), [real_name(x) for x in d if table_cols(x)], pre, pk) if table_cols(t) else None
+    dt = doc_types.get((fn + ('_' + para if para else '')).upper()) or doc_types.get(u)
+    if dt and table_cols(dt.get('TableName')):
+        t = real_name(dt['TableName'])
+        d = [real_name(dt['TableDetail'])] if dt.get('TableDetail') and table_cols(dt['TableDetail']) else detail_of(t)
+        return t, d, dt.get('PreFix') or 'CT', None
+    base = re.sub(r'(List)?Frm$', '', fn, flags=re.I)
+    pre, _, rest = base.partition('_')
+    if not rest:
+        return None
+    rest = re.sub(r'_?QRCode$', '', rest, flags=re.I)
+    w = re.findall(r'[A-Z][a-z0-9]*|[a-z0-9]+|[A-Z]+(?![a-z])', rest)
+    for k in range(len(w), 0, -1):
+        stem = ''.join(w[:k])
+        for s in dict.fromkeys([stem, re.sub(r'\d+$', '', stem)]):
+            for cand in (f'{pre}_{s}Tbl', f'{pre}_{s}sTbl', f'{s}Tbl', f'CF_{s}Tbl'):
+                if table_cols(cand):
+                    t = real_name(cand)
+                    return t, detail_of(t), doc_prefix(fn, w), None
+    return None
+
+
+# ---- khối dựng chung cho mock viết tay -------------------------------------------------------------------------
+EDITOR_OF = {'money': 'money', 'quantity': 'number', 'number': 'number', 'percent': 'number', 'date': 'date',
+             'datetime': 'date', 'bool': 'checkbox', 'status': 'none', 'text': 'text', 'link': 'none'}
+
+
+def col(field, cap, type='text', width=None, **kw):
+    d = dict(field=field, caption=cap, type=type, decimals=decimals_for(type))
+    d['width'] = width or {'date': 100, 'datetime': 135, 'money': 130, 'quantity': 90, 'number': 80, 'percent': 70,
+                           'bool': 86, 'status': 130}.get(type, 140)
+    if type == 'money':
+        d['sum'] = 'sum'
+    d.update(kw)
+    return d
+
+
+def fv(type, v):
+    """Giá trị Python -> (raw bất biến, chữ hiển thị, tone)."""
+    if isinstance(v, tuple):
+        return tuple(str(x) if i == 0 else x for i, x in enumerate(v)) + ((None,) if len(v) == 2 else ())
+    if v is None or v == '':
+        return ('', '', None)
+    if type == 'money':
+        n = int(round(v))
+        return (str(n), f'{n:,}'.replace(',', '.'), None)
+    if type in ('quantity', 'number', 'percent'):
+        s = f'{v:g}' if isinstance(v, float) else str(v)
+        return (s, s.replace('.', ','), None)
+    if type == 'date':
+        return (v.isoformat(), v.strftime('%d/%m/%Y'), None)
+    if type == 'datetime':
+        return (v.strftime('%Y-%m-%dT%H:%M:00'), v.strftime('%d/%m/%Y %H:%M'), None)
+    if type == 'bool':
+        return ('true', 'Có', None) if v else ('false', '', None)
+    return (str(v), str(v), None)
+
+
+def mkrows(cols, data, key=None):
+    out = []
+    for i, d in enumerate(data):
+        cells = {c['field']: fv(c['type'], d.get(c['field'])) for c in cols}
+        k = d.get(key) if key else None
+        if isinstance(k, tuple):
+            k = k[0]
+        row = dict(key=(str(k) if k not in (None, '') else str(i + 1)) if key else None, cells=cells)
+        for a in ('tone', 'href'):
+            if d.get('_' + a):
+                row[a] = d['_' + a]
+        out.append(row)
+    return out
+
+
+def msgs(*items):
+    return '<div data-erp="messages">' + ''.join(
+        f'<p data-erp="message" data-msg-type="{t}">{e(m)}</p>' for t, m in items) + '</div>'
+
+
+def F(field, cap, control='text', span=10, **kw):
+    d = dict(field=field, caption=cap, control=control, span=span)
+    d.update(kw)
+    return d
+
+
+def screen_name(menu):
+    return slug(menu['FormName'] + ('_' + menu['Para'] if menu.get('Para') else ''))
+
+
+def put_screen(menu, name, form_type, mode, parts, key=None):
+    sid, title = menu['FormName'], menu['CaptionVN']
+    body = [screen_open(sid, form_type, mode, key or sid, title, menu['MenuID'], menu.get('Para') or '')]
+    body += [p for p in parts if p]
+    body.append('</section>')
+    write(f'screens/{name}.html', page(title, '\n'.join(body)))
+    written['curated'] += 1
+    return f'{BASE}/screens/{name}.html'
+
+
+def sel_filter(name, fields):
+    """Thanh lọc GET về chính màn hình, fields: list field dict (luôn sửa được)."""
+    fs = [field_html(name, f, f.get('value', ''), f.get('display', ''), mode='edit', idp='flt') for f in fields]
+    return filter_form(f'{BASE}/screens/{name}.html', fs)
+
+
+def edit_cols(cols):
+    out = []
+    for c in cols:
+        c2 = dict(c)
+        if not c.get('readonly') and 'editor' not in c:
+            if c['field'] in LOOKUPS and c['type'] == 'text':
+                c2['editor'], c2['lookup'] = 'lookup', LOOKUPS[c['field']]
+            elif c.get('options') or c['field'] in SELECTS:
+                c2['editor'] = 'select'
+            else:
+                c2['editor'] = EDITOR_OF.get(c['type'], 'text')
+        out.append(c2)
+    return out
+
+
+def panels_html(panels, editable=False, form_id=None, add_row=True):
+    """panels: list (grid_id, tiêu đề, cols, data, key[, caption]). Một panel: lưới trần; nhiều panel: tab."""
+    html_ = []
+    for p in panels:
+        gid, title, cols, data, key = p[:5]
+        cap = p[5] if len(p) > 5 else None
+        rows = mkrows(cols, data, key)
+        if editable:
+            tmpl = ('<tr data-key="">' + ''.join('<td></td>' for _ in cols) + '</tr>') if add_row else None
+            g = grid_html(gid, edit_cols(cols), rows, key, cap, editable=True, form_id=form_id, selectable='multi', template_row=tmpl)
+        else:
+            g = grid_html(gid, cols, rows, key, cap, selectable='multi')
+        html_.append((gid, title, len(rows), g))
+    if len(html_) == 1:
+        return html_[0][3]
+    return ('<section data-erp="tabs">' + ''.join(
+        f'<section data-erp="tab-panel" data-tab-id="{e(gid)}" data-title="{e(t)}" data-badge="{n}">{g}</section>'
+        for gid, t, n, g in html_) + '</section>')
+
+
+def grid_screen(menu, panels, *, form_type='LISTEDIT', editable=True, filt=None, tools=(), notes=(), add_row=True,
+                sel_tools=()):
+    """Màn lưới: xem (+ sửa trực tiếp + sau khi lưu). sel_tools: nút POST áp cho các dòng đang chọn."""
+    name = screen_name(menu)
+    url = f'{BASE}/screens/{name}.html'
+    act_id = f'act-{name}'
+    if editable:   # lưới sửa được cần khóa dòng: thêm cột khóa ẩn
+        panels = [p if p[4] else (p[0], p[1], [col('UserAutoID', 'ID', 'number', hidden=True)] + p[2],
+                                  [dict(d, UserAutoID=i + 1) for i, d in enumerate(p[3])], 'UserAutoID') + tuple(p[5:])
+                  for p in panels]
+    tb = []
+    if editable:
+        tb.append(a_btn('edit', f'{BASE}/screens/{name}.edit.html', 'Sửa', data_target='self', data_shortcut='F3'))
+    for action, label, icon_, confirm_ in sel_tools:
+        tb.append(s_btn(action, act_id, f'{BASE}/actions/custom-ok.html', label, data_icon=icon_, data_confirm=confirm_,
+                        data_requires_selection=True))
+    tb += list(tools)
+    tb += [a_btn('reload', url, 'Nạp lại', data_target='self'),
+           a_btn('export', f'{BASE}/actions/export.html', 'Xuất Excel', data_target='_blank')]
+    need_act = sel_tools or any(f'form="{act_id}"' in t for t in tools)
+    act_form = f'<form data-erp="record" id="{act_id}" method="post" action="{BASE}/actions/custom-ok.html">{TOKEN}</form>' if need_act else ''
+    view = [toolbar(tb), msgs(*notes) if notes else '', filt or '', act_form, panels_html(panels)]
+    put_screen(menu, name, form_type, 'view', view)
+    if editable:
+        fid = f'rec-{name}'
+        saved = f'{BASE}/screens/{name}.saved.html'
+        ed = [toolbar([s_btn('save', fid, saved, 'Lưu', data_shortcut='Ctrl+S'), a_btn('cancel', url, 'Hủy', data_target='self')]),
+              f'<form data-erp="record" id="{fid}" method="post" action="{saved}">{TOKEN}'
+              f'<input type="hidden" name="__version" value="{TODAY.isoformat()}T09:15:00.000"></form>',
+              panels_html(panels, editable=True, form_id=fid, add_row=add_row)]
+        put_screen(menu, f'{name}.edit', form_type, 'edit', ed)
+        put_screen(menu, f'{name}.saved', form_type, 'view', [msgs(('success', 'Đã lưu thay đổi (mock).'))] + view)
+    return url
+
+
+def fields_block(name, tabs, values, mode):
+    out = []
+    for tid, tcap, fl in tabs:
+        out.append(f'<fieldset data-erp="tab" data-tab-id="{e(tid)}"><legend>{e(tcap)}</legend>')
+        for f in fl:
+            v = values.get(f['field'], '')
+            raw, disp = (v[0], v[1]) if isinstance(v, tuple) else (v, v)
+            out.append(field_html(name, f, raw, disp, mode))
+        out.append('</fieldset>')
+    return out
+
+
+def record_screen(menu, tabs, values, *, tools=(), notes=(), below=None):
+    """Màn thiết lập một bản ghi: xem / sửa / đã lưu."""
+    name = screen_name(menu)
+    url = f'{BASE}/screens/{name}.html'
+    rid = f'rec-{name}'
+    saved = f'{BASE}/screens/{name}.saved.html'
+
+    def render(mode, extra=None):
+        if mode == 'view':
+            tb = [a_btn('edit', f'{BASE}/screens/{name}.edit.html', 'Sửa', data_target='self', data_shortcut='F3')]
+            tb += [s_btn(a, rid, f'{BASE}/actions/custom-ok.html', lab, data_icon=ic) for a, lab, ic in tools]
+            tb.append(a_btn('reload', url, 'Nạp lại', data_target='self'))
+        else:
+            tb = [s_btn('save', rid, saved, 'Lưu', data_shortcut='Ctrl+S'), a_btn('cancel', url, 'Hủy', data_target='self')]
+        p = [extra, toolbar(tb), msgs(*notes) if notes and mode == 'view' else '',
+             f'<form data-erp="record" id="{rid}" method="post" action="{saved}" data-key-field="ID" data-key="1">', TOKEN]
+        if mode == 'edit':
+            p.append(f'<input type="hidden" name="__version" value="{TODAY.isoformat()}T09:15:00.000">')
+        p += fields_block(name, tabs, values, mode)
+        p.append('</form>')
+        if below and mode == 'view':
+            p.append(below)
+        return p
+    put_screen(menu, name, 'CUSTOM', 'view', render('view'))
+    put_screen(menu, f'{name}.edit', 'CUSTOM', 'edit', render('edit'))
+    put_screen(menu, f'{name}.saved', 'CUSTOM', 'view', render('view', msgs(('success', 'Đã lưu thiết lập (mock).'))))
+    return url
+
+
+def process_screen(menu, fields, values, runs, *, result=None, notes=(), legend='Tham số'):
+    """Màn xử lý: form tham số + nút chạy (POST) + lưới kết quả.
+       runs: list (action, nhãn, icon, câu xác nhận, hậu tố trang kết quả, thông báo xong)."""
+    name = screen_name(menu)
+    url = f'{BASE}/screens/{name}.html'
+    rid = f'rec-{name}'
+
+    def render(done_msg):
+        p = [msgs(('success', done_msg)) if done_msg else '']
+        tb = [s_btn(a, rid, f'{BASE}/screens/{name}.{suf}.html', lab, data_icon=ic, data_confirm=cf)
+              for a, lab, ic, cf, suf, _ in runs]
+        tb.append(a_btn('reload', url, 'Nạp lại', data_target='self'))
+        p.append(toolbar(tb))
+        if notes and not done_msg:
+            p.append(msgs(*notes))
+        p.append(f'<form data-erp="record" id="{rid}" method="post" action="{BASE}/screens/{name}.{runs[0][4]}.html">{TOKEN}')
+        p += fields_block(name, [('1', legend, fields)], values, 'edit')
+        p.append('</form>')
+        if result:
+            cap, cols, data, key = result
+            p.append(grid_html('R0', cols, mkrows(cols, data, key), key, cap if done_msg else f'{cap} — lần chạy gần nhất',
+                               selectable='single'))
+        return p
+    put_screen(menu, name, 'CUSTOM', 'view', render(None))
+    for a, lab, ic, cf, suf, done in runs:
+        put_screen(menu, f'{name}.{suf}', 'CUSTOM', 'view', render(done))
+    return url
+
+
+# ---- dữ liệu dùng chung ------------------------------------------------------------------------------------------
+def ascii_vi(s):
+    import unicodedata
+    s = s.replace('Đ', 'D').replace('đ', 'd')
+    return ''.join(ch for ch in unicodedata.normalize('NFD', s) if unicodedata.category(ch) != 'Mn')
+
+
+def login_of(name):
+    parts = ascii_vi(name).lower().split()
+    return parts[-1] + ''.join(x[0] for x in parts[:-1])
+
+
+def month_end(y, m):
+    return (datetime.date(y + (m == 12), m % 12 + 1, 1) - datetime.timedelta(days=1))
+
+
+PERIODS_2026 = [(f'2026{m:02d}', f'Kỳ {m:02d}/2026', datetime.date(2026, m, 1), month_end(2026, m)) for m in range(1, 13)]
+PERIOD_OPTS = [(p[0], p[1]) for p in PERIODS_2026]
+USER_GROUPS = [('ADMIN', 'Quản trị hệ thống', ''), ('GIAMDOC', 'Ban giám đốc', ''), ('KETOAN', 'Kế toán', 'HN'),
+               ('KETOAN-HCM', 'Kế toán chi nhánh HCM', 'HCM'), ('THUQUY', 'Thủ quỹ', 'HN'), ('KHO', 'Thủ kho', ''),
+               ('MUAHANG', 'Mua hàng', 'HN'), ('KINHDOANH', 'Kinh doanh', ''), ('KYTHUAT', 'Kỹ thuật – bảo hành', ''),
+               ('CSKH', 'Chăm sóc khách hàng', 'HCM'), ('DAILY', 'Đại lý (Web)', ''), ('NHANSU', 'Hành chính – nhân sự', 'HN')]
+GROUP_OPTS = [(g[0], g[1]) for g in USER_GROUPS]
+BRANCH_NAME = dict(BRANCHES)
+USERS = [('admin', 'Quản trị hệ thống', 'Admin', 'ADMIN', '', '')] + [
+    (login_of(n), n, n.split()[-1], USER_GROUPS[(i * 5 + 2) % len(USER_GROUPS)][0], BRANCHES[i % 3][0], f'NV{i + 1:03d}')
+    for i, n in enumerate(PEOPLE)]
+
+
+def br(code):
+    return (code, BRANCH_NAME.get(code, '(Tất cả)'), None) if code else ('', '', None)
+
+
+def B(field, cap, value=False, span=13):
+    return F(field, cap, 'checkbox', span), ('true' if value else 'false')
+
+
+# ---- 1. Hệ thống -------------------------------------------------------------------------------------------------
+def c_user_groups(menu):
+    cols = [col('UserGroupID', 'Mã nhóm', width=120, frozen=True), col('UserGroupName', 'Tên nhóm', width=260),
+            col('BranchID', 'Chi nhánh', width=130), col('UserCount', 'Số người dùng', 'number', readonly=True),
+            col('IsDisable', 'Ngừng dùng', 'bool')]
+    cnt = collections.Counter(u[3] for u in USERS)
+    data = [dict(UserGroupID=g, UserGroupName=n, BranchID=br(b), UserCount=cnt.get(g, 0), IsDisable=g == 'NHANSU')
+            for g, n, b in USER_GROUPS]
+    perm = next((r for r in menu_rows if r['FormName'] == 'NguoiDungPhanQuyenFrm'), None)
+    tools = [a_btn('custom', f'{BASE}/screens/NguoiDungPhanQuyenFrm.html', 'Phân quyền nhóm', data_icon='key', data_target='tab')] if perm else []
+    return grid_screen(menu, [('T0', 'Nhóm', cols, data, 'UserGroupID')], tools=tools,
+                       notes=[('info', 'Nhóm người dùng (SY_UserGroup). Lưu nhóm sẽ đồng bộ ma trận quyền (SY_Update_Permission): menu mới mặc định được truy cập.')])
+
+
+def c_users(menu):
+    g = Gen('users')
+    cols = [col('UserName', 'Tên đăng nhập', width=130, frozen=True), col('HoTen', 'Họ tên', width=200),
+            col('TenNgan', 'Tên ngắn', width=100), col('UserGroupID', 'Nhóm', width=170, options=GROUP_OPTS),
+            col('BranchID', 'Chi nhánh', width=120), col('EmployeeID', 'Mã nhân viên', width=110),
+            col('StoreHouseID', 'Kho mặc định', width=140), col('Manager', 'Quản lý', 'bool'),
+            col('Disable', 'Ngừng dùng', 'bool'), col('LastLogin', 'Đăng nhập gần nhất', 'datetime', readonly=True)]
+    gname = dict(GROUP_OPTS)
+    data = []
+    for i, (u, n, short, grp, b, emp) in enumerate(USERS):
+        last = datetime.datetime.combine(TODAY - datetime.timedelta(days=g.r.randint(0, 20)), datetime.time(g.r.randint(7, 17), g.r.choice([5, 20, 40])))
+        data.append(dict(UserName=u, HoTen=n, TenNgan=short, UserGroupID=(grp, gname[grp], None), BranchID=br(b), EmployeeID=emp,
+                         StoreHouseID=STORES[i % 3] + (None,) if i else ('', '', None), Manager=grp in ('ADMIN', 'GIAMDOC', 'KETOAN'),
+                         Disable=i == 9, LastLogin=last))
+    return grid_screen(menu, [('T0', 'Người dùng', cols, data, 'UserName')],
+                       sel_tools=[('custom', 'Đặt lại mật khẩu', 'key', 'Đặt lại mật khẩu cho người dùng đang chọn? Người dùng phải đổi mật khẩu ở lần đăng nhập sau.')],
+                       filt=sel_filter(screen_name(menu), [F('BranchID', 'Chi nhánh', 'select', 8), B('ShowDisabled', 'Hiện người dùng ngừng dùng')[0]]),
+                       notes=[('info', 'Mật khẩu không bao giờ hiển thị hay gửi về trình duyệt; chỉ đặt lại qua nút “Đặt lại mật khẩu”.')])
+
+
+PERM_FLAGS = [('IsRun', 'Truy cập'), ('IsAdd', 'Thêm'), ('IsUpdate', 'Sửa'), ('IsDelete', 'Xóa'), ('isManager', 'Manager'),
+              ('isAdmin', 'Admin'), ('isAutoLock', 'Tự khóa'), ('isHideAmount', 'Ẩn số tiền'), ('isExportExcel', 'Xuất Excel'),
+              ('isLockDoc', 'Khóa CT'), ('isUnLockDoc', 'Mở khóa CT')]
+
+
+def perm_screen(menu, items, flags):
+    g = Gen('perm' + menu['FormName'])
+    cols = [col('MenuID', 'Mã menu', width=95, frozen=True, readonly=True), col('MenuName', 'Chức năng', width=330, readonly=True)]
+    cols += [col(f, c, 'bool', width=78) for f, c in flags]
+    data = []
+    for mid, cap, level, is_group in items:
+        d = dict(MenuID=mid, MenuName=('  ' * max(level - 1, 0)) + cap)   # em-space: không bị gộp khoảng trắng
+        run = is_group or g.r.random() < 0.85
+        for j, (f, _) in enumerate(flags):
+            d[f] = run if f == 'IsRun' else (run and not is_group and g.r.random() < (0.7 if j < 4 else 0.15))
+        data.append(d)
+    name = screen_name(menu)
+    filt = sel_filter(name, [F('UserGroupID', 'Nhóm người dùng', 'select', 12, options=GROUP_OPTS, value='KETOAN'),
+                             F('ModuleID', 'Phân hệ', 'select', 10, options=[('', '(Tất cả)')] + [(r['MenuID'], r['CaptionVN']) for r in menu_rows if r['Level'] == '1' and r['EffectiveEnabled'] == '1'][:14])])
+    tools = [a_btn('copy', f'{BASE}/actions/copy-permission.html', 'Sao chép quyền…', data_target='dialog')]
+    return grid_screen(menu, [('T0', 'Quyền', cols, data, 'MenuID')], filt=filt, tools=tools, add_row=False,
+                       notes=[('info', 'Ma trận quyền nhóm × menu. Nhóm ADMIN luôn có toàn quyền (chống tự khóa). Đánh dấu dòng nhóm menu để áp cho mọi chức năng con.')])
+
+
+def c_permissions(menu):
+    rows = sorted([r for r in menu_rows if r['EffectiveEnabled'] == '1'], key=lambda r: r['MenuID'])[:140]
+    return perm_screen(menu, [(r['MenuID'], r['CaptionVN'], int(r['Level'] or 1), not r['FormName']) for r in rows], PERM_FLAGS)
+
+
+def c_permissions_web(menu):
+    web = [('WA01', 'Trang tổng quan', 1, True), ('WA0101', 'Bảng điều khiển', 2, False), ('WA0102', 'Thông báo', 2, False),
+           ('WA02', 'Bán hàng', 1, True), ('WA0201', 'Đơn đặt hàng', 2, False), ('WA0202', 'Duyệt đơn hàng', 2, False),
+           ('WA0203', 'Đề nghị thu tiền', 2, False), ('WA0204', 'Bảng giá', 2, False), ('WA0205', 'Tồn kho khả dụng', 2, False),
+           ('WA03', 'Khách hàng', 1, True), ('WA0301', 'Danh sách khách hàng', 2, False), ('WA0302', 'Yêu cầu thêm khách hàng', 2, False),
+           ('WA0303', 'Hợp đồng tham gia', 2, False), ('WA0304', 'Đổi điểm / trả thưởng', 2, False),
+           ('WA04', 'Thị trường', 1, True), ('WA0401', 'Kế hoạch đi tuyến', 2, False), ('WA0402', 'Báo cáo ngày', 2, False),
+           ('WA0403', 'Check-in khách hàng', 2, False), ('WA05', 'Đại lý', 1, True), ('WA0501', 'Nhập kho đại lý (QR)', 2, False),
+           ('WA0502', 'Xuất bán lẻ (QR)', 2, False), ('WA0503', 'Tra cứu mã QR', 2, False)]
+    return perm_screen(menu, web, PERM_FLAGS[:6])
+
+
+def c_fiscal(menu):
+    cols = [col('PeriodID', 'Mã kỳ', width=90, frozen=True, readonly=True), col('PeriodName', 'Tên kỳ', width=150),
+            col('PeriodName2', 'Tên kỳ (EN)', width=150), col('QuarterID', 'Quý', width=80, readonly=True),
+            col('FromDate', 'Từ ngày', 'date'), col('ToDate', 'Đến ngày', 'date'), col('PeriodNo', 'Số thứ tự', 'number', readonly=True),
+            col('isUse', 'Sử dụng', 'bool'), col('isLock', 'Đã khóa sổ', 'bool', readonly=True)]
+    data = [dict(PeriodID=p, PeriodName=n, PeriodName2=f'Period {i + 1:02d}/2026', QuarterID=f'2026Q{i // 3 + 1}', FromDate=a, ToDate=b,
+                 PeriodNo=i + 1, isUse=True, isLock=i < 9) for i, (p, n, a, b) in enumerate(PERIODS_2026)]
+    filt = sel_filter(screen_name(menu), [F('YearID', 'Năm tài chính', 'select', 8, options=[('2025', '2025'), ('2026', '2026'), ('2027', '2027')], value='2026')])
+    tools = [a_btn('new', f'{BASE}/actions/fiscal-new-year.html', 'Khai báo năm mới…', data_target='dialog')]
+    return grid_screen(menu, [('T0', 'Kỳ kế toán', cols, data, 'PeriodID')], filt=filt, tools=tools, add_row=False,
+                       notes=[('info', 'Năm 2026: 4 quý, 12 kỳ (SY_Year / SY_Quarter / SY_Period). Kỳ hiện hành luôn theo tháng của ngày máy chủ.')])
+
+
+def c_setup(menu):
+    sel_check = [('NoCheck', 'Không kiểm tra'), ('Warning', 'Cảnh báo, vẫn cho lưu'), ('Cancel', 'Không cho lưu')]
+    cost = [('AVG', 'Bình quân cuối kỳ'), ('AVGS', 'Bình quân cuối kỳ theo kho'), ('AVGD', 'Bình quân di động'),
+            ('AVGDS', 'Bình quân di động theo kho'), ('LOT', 'Đích danh theo lô'), ('FIFO', 'Nhập trước xuất trước')]
+    t1 = [F('COM1', 'Tên công ty', span=40), F('COM2', 'Tên tiếng Anh', span=20), F('ShortName', 'Tên viết tắt', span=10),
+          F('TaxCode', 'Mã số thuế', span=10, row_start=True), F('ComPhone', 'Điện thoại', span=10), F('ComEmail', 'Email', span=10),
+          F('ComWeb', 'Website', span=10), F('ComAddress', 'Địa chỉ', span=40), F('Director', 'Giám đốc', span=20),
+          F('ChiefAccountant', 'Kế toán trưởng', span=20)]
+    t2 = [F('CheckStockOut', 'Xuất vượt tồn kho', 'select', 13, options=sel_check), F('CheckCashOut', 'Chi vượt tồn quỹ', 'select', 13, options=sel_check),
+          F('DocumentMask', 'Mẫu số chứng từ', span=14)]
+    vals = {'COM1': 'CÔNG TY CỔ PHẦN DEMO MEDCOM', 'COM2': 'MEDCOM DEMO JOINT STOCK COMPANY', 'ShortName': 'MEDCOM DEMO',
+            'TaxCode': '0300000000', 'ComPhone': '028 3800 0000', 'ComEmail': 'info@example.vn', 'ComWeb': 'www.example.vn',
+            'ComAddress': '12 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh', 'Director': PEOPLE[4], 'ChiefAccountant': PEOPLE[1],
+            'CheckStockOut': 'Warning', 'CheckCashOut': 'Cancel', 'DocumentMask': '{Prefix}{MM}{YY}/{0000}'}
+    for f, cap, v in [('CheckStockDate', 'Kiểm tra tồn theo ngày chứng từ', True), ('CheckCostCenter', 'Bắt buộc nhập bộ phận', False),
+                      ('CheckCost', 'Bắt buộc nhập khoản mục phí', False), ('isLotDate', 'Quản lý lô / hạn dùng', True),
+                      ('isDiscountVoucher', 'Dùng phiếu chiết khấu', False), ('isShowApproveDoc', 'Hiện chứng từ chờ duyệt', True),
+                      ('isManagerCanEditDoc', 'Manager được sửa chứng từ người khác', True), ('isManagerNotApproveDoc', 'Manager không được duyệt', False),
+                      ('isManagerNotDeApproveDoc', 'Manager không được bỏ duyệt', False), ('isReportPrintDate', 'In ngày in trên báo cáo', True),
+                      ('SkipNoInvoice', 'Bỏ qua chứng từ không hóa đơn', False)]:
+        fd, val = B(f, cap, v)
+        t2.append(fd)
+        vals[f] = val
+    t3 = [F('DashboardTime', 'Làm mới dashboard (phút)', 'number', 10), F('OverDeptDay', 'Cảnh báo nợ quá hạn (ngày)', 'number', 10),
+          F('OverLotDay', 'Cảnh báo lô sắp hết hạn (ngày)', 'number', 10)]
+    vals.update(DashboardTime='5', OverDeptDay='30', OverLotDay='90')
+    for f, cap, v in [('isManagerNotExcel', 'Manager không được xuất Excel', False), ('isUserNotExcel', 'Người dùng không được xuất Excel', True),
+                      ('DisableTabMenu', 'Tắt menu dạng tab', False), ('DisableRecentMenu', 'Tắt menu gần đây', False),
+                      ('FullLogDefault', 'Ghi nhật ký đầy đủ (XML bản ghi)', False)]:
+        fd, val = B(f, cap, v)
+        t3.append(fd)
+        vals[f] = val
+    t4 = [F('AutoBackupPath', 'Thư mục sao lưu tự động', span=20), F('AutoBackupTime', 'Chu kỳ sao lưu (phút)', 'number', 10),
+          F('AutoBackupDay', 'Giữ số bản sao lưu', 'number', 10), F('AutoDownLoadURL', 'URL tải bản sao lưu', span=20),
+          F('LinkServer', 'Linked server', span=10), F('LinkDatabase', 'CSDL liên kết', span=10)]
+    vals.update(AutoBackupPath='D:\\Backup\\ERP', AutoBackupTime='60', AutoBackupDay='7')
+    t5 = [F('PeriodID', 'Kỳ bắt đầu hạch toán', 'select', 10, options=PERIOD_OPTS), F('BalancePeriodID', 'Kỳ nhập số dư đầu', 'select', 10, options=PERIOD_OPTS),
+          F('StartDate', 'Ngày bắt đầu sử dụng', 'date', 8), F('CostMethod', 'Phương pháp tính giá xuất', 'select', 12, options=cost)]
+    vals.update(PeriodID='202601', BalancePeriodID='202601', StartDate='2026-01-01', CostMethod='AVG')
+    tabs = [('1', 'Thông tin công ty', t1), ('2', 'Kiểm soát chứng từ', t2), ('3', 'Giao diện & xuất dữ liệu', t3),
+            ('4', 'Sao lưu & liên kết', t4), ('5', 'Kỳ & giá vốn', t5)]
+    return record_screen(menu, tabs, vals, notes=[('info', 'Tham số hệ thống (SY_Setup / SY_InitSetup). Thay đổi có hiệu lực sau khi người dùng đăng nhập lại.')])
+
+
+LANG_STRINGS = [('isSystemLanguage2', 'True', 'True', 'True', 'True'), ('SystemLanguage2', '', 'Tiếng Anh', 'English', '英语'),
+                ('SystemLanguage3', '', 'Tiếng Trung', 'Chinese', '中文'), ('MsgSaveOK', '', 'Đã lưu dữ liệu', 'Data saved', '数据已保存'),
+                ('MsgDeleteConfirm', '', 'Bạn có chắc muốn xóa?', 'Are you sure you want to delete?', '确定要删除吗？'),
+                ('MsgLockedPeriod', '{0}', 'Kỳ {0} đã khóa sổ', 'Period {0} is closed', '期间 {0} 已结账'),
+                ('MsgStockOut', '{0};{1}', 'Xuất vượt tồn: tồn {0}, xuất {1}', 'Exceeds stock: on hand {0}, issue {1}', '超出库存：库存 {0}，出库 {1}'),
+                ('MsgRequired', '{0}', 'Chưa nhập {0}', '{0} is required', '{0} 为必填项'), ('BtnNew', '', 'Thêm', 'New', '新增'),
+                ('BtnEdit', '', 'Sửa', 'Edit', '编辑'), ('BtnSave', '', 'Lưu', 'Save', '保存'), ('BtnDelete', '', 'Xóa', 'Delete', '删除'),
+                ('BtnPrint', '', 'In', 'Print', '打印'), ('BtnApprove', '', 'Duyệt', 'Approve', '审批'), ('BtnCancel', '', 'Hủy', 'Cancel', '取消'),
+                ('BtnExport', '', 'Xuất Excel', 'Export to Excel', '导出 Excel')]
+FIELD_EN = {'DocumentID': ('Document No.', '单据号'), 'DocumentDate': ('Document date', '单据日期'), 'ObjectID': ('Customer/Vendor', '往来单位'),
+            'ObjectName': ('Name', '名称'), 'ItemID': ('Item code', '物料编码'), 'ItemName': ('Item name', '物料名称'), 'Unit': ('Unit', '单位'),
+            'Quantity': ('Quantity', '数量'), 'UnitPrice': ('Unit price', '单价'), 'Amount': ('Amount', '金额'), 'VATPercent': ('VAT %', '税率'),
+            'VATAmount': ('VAT amount', '税额'), 'TotalAmount': ('Total', '合计'), 'Notes': ('Notes', '备注'), 'BranchID': ('Branch', '分公司'),
+            'StoreHouseID': ('Warehouse', '仓库'), 'Lot': ('Lot', '批号'), 'ExpireDate': ('Expiry date', '有效期'), 'EmployeeID': ('Employee', '员工'),
+            'AccountID': ('Account', '科目')}
+
+
+def c_lang(menu):
+    c1 = [col('StringID', 'Mã chuỗi', width=170, frozen=True), col('StringParam', 'Tham số', width=90), col('StringVN', 'Tiếng Việt', width=260),
+          col('StringEN', 'Tiếng Anh', width=260), col('StringCH', 'Tiếng Trung', width=200)]
+    d1 = [dict(StringID=a, StringParam=b, StringVN=c, StringEN=d, StringCH=x) for a, b, c, d, x in LANG_STRINGS]
+    c2 = [col('FieldName', 'Tên trường', width=150, frozen=True), col('CaptionVN', 'Nhãn tiếng Việt', width=200),
+          col('CaptionEN', 'Nhãn tiếng Anh', width=200), col('CaptionCH', 'Nhãn tiếng Trung', width=150),
+          col('MinWidth', 'Rộng tối thiểu', 'number'), col('FormatID', 'Định dạng', width=100)]
+    d2 = [dict(FieldName=f, CaptionVN=FIELD_VI.get(f, f), CaptionEN=en, CaptionCH=ch, MinWidth=80 + (i % 4) * 20,
+               FormatID={'Quantity': 'QTY', 'UnitPrice': 'PRICE', 'Amount': 'AMT', 'VATAmount': 'AMT', 'TotalAmount': 'AMT', 'DocumentDate': 'DATE', 'ExpireDate': 'DATE'}.get(f, ''))
+          for i, (f, (en, ch)) in enumerate(FIELD_EN.items())]
+    return grid_screen(menu, [('S', 'Thông điệp & cờ (SY_StTbl)', c1, d1, 'StringID'), ('L', 'Nhãn trường (SY_FmtFldTbl)', c2, d2, 'FieldName')],
+                       notes=[('info', 'Ngôn ngữ hiển thị: VN / EN / CH. Đa ngữ chỉ bật khi chuỗi isSystemLanguage2 = True.')])
+
+
+def c_userlog(menu):
+    g = Gen('userlog')
+    c1 = [col('LogID', 'Mã phiên', 'number', width=85, frozen=True), col('UserName', 'Người dùng', width=110),
+          col('ComputerName', 'Máy tính', width=130), col('LoginDate', 'Đăng nhập', 'datetime'), col('LogoutDate', 'Đăng xuất', 'datetime'),
+          col('Duration', 'Thời lượng', width=95), col('AppVer', 'Phiên bản', width=110)]
+    d1 = []
+    for i in range(40):
+        u = USERS[(i * 7) % len(USERS)]
+        a = datetime.datetime.combine(TODAY - datetime.timedelta(days=i // 4), datetime.time(7 + (i * 3) % 10, (i * 17) % 60))
+        mins = g.r.randint(12, 420)
+        b = a + datetime.timedelta(minutes=mins) if i > 2 else None
+        d1.append(dict(LogID=58210 - i, UserName=u[0], ComputerName=f'PC-{["KT", "KHO", "KD", "GD"][i % 4]}-{(i % 9) + 1:02d}', LoginDate=a,
+                       LogoutDate=b, Duration=f'{mins // 60} giờ {mins % 60:02d} phút' if b else 'Đang làm việc', AppVer='26.10.19.1'))
+    forms_ = [('AR_InvoiceFrm', 'Bán hàng'), ('IV_StockInputFrm', 'Nhập kho'), ('CS_ReceiptFrm', 'Phiếu thu'), ('AP_PurchaseFrm', 'Mua hàng')]
+    c2 = [col('LogDate', 'Thời gian', 'datetime', frozen=True), col('FormID', 'Màn hình', width=150), col('Para', 'Thao tác', width=150),
+          col('PrimaryValue', 'Khóa bản ghi', width=130), col('Note', 'Ghi chú', width=320)]
+    d2 = []
+    for i in range(24):
+        f, cap = forms_[i % 4]
+        t = datetime.datetime.combine(TODAY, datetime.time(8 + i // 4, (i * 11) % 60))
+        op = ['Open', 'Thêm', 'Sửa', 'In', 'Xóa'][i % 5]
+        d2.append(dict(LogDate=t, FormID=f, Para=op if op == 'Open' else f'{op} {cap.lower()}', PrimaryValue='' if op == 'Open' else f'{["SI", "PN", "PT", "PI"][i % 4]}{TODAY:%m%y}/{i + 1:04d}',
+                       Note=f'Thời gian nạp {g.r.randint(120, 900)} ms' if op == 'Open' else ('Giá trị cũ: số lượng 10 → 12' if op == 'Sửa' else '')))
+    filt = sel_filter(screen_name(menu), [F('FromDate', 'Từ ngày', 'date', 6, value=(TODAY - datetime.timedelta(days=10)).isoformat()),
+                                          F('ToDate', 'Đến ngày', 'date', 6, value=TODAY.isoformat()),
+                                          F('UserName', 'Người dùng', 'select', 8, options=[(u[0], u[1]) for u in USERS]),
+                                          B('ShowSystem', 'Hiện log hệ thống')[0]])
+    return grid_screen(menu, [('T0', 'Phiên đăng nhập', c1, d1, 'LogID'), ('T1', 'Chi tiết phiên 58210', c2, d2, None)],
+                       editable=False, form_type='LIST', filt=filt)
+
+
+BACKUPS = [(f'MedData_{(TODAY - datetime.timedelta(days=d)):%Y%m%d}_{h:02d}00.bak', datetime.datetime.combine(TODAY - datetime.timedelta(days=d), datetime.time(h, 0)), s, t)
+           for d, h, s, t in [(0, 6, 1843.6, 'Tự động'), (1, 18, 1841.2, 'Thủ công'), (1, 6, 1839.9, 'Tự động'), (2, 6, 1836.4, 'Tự động'),
+                              (3, 6, 1832.0, 'Tự động'), (4, 6, 1829.7, 'Tự động'), (5, 6, 1826.1, 'Tự động')]]
+
+
+def c_backup(menu):
+    fn = f'MedData_{TODAY:%Y%m%d}_0930.bak'
+    fields = [F('Database', 'Cơ sở dữ liệu', 'label', 10), F('BackupPath', 'Thư mục sao lưu (trên máy chủ)', span=20),
+              F('FileName', 'Tên tệp', span=20, row_start=True), B('Compression', 'Nén bản sao lưu', span=10)[0], B('CopyOnly', 'Sao lưu COPY_ONLY', span=10)[0]]
+    vals = dict(Database='MedData', BackupPath='D:\\Backup\\ERP\\', FileName=fn, Compression='true', CopyOnly='false')
+    cols = [col('FileName', 'Tệp sao lưu', width=250, frozen=True), col('BackupDate', 'Thời gian', 'datetime'), col('SizeMB', 'Dung lượng (MB)', 'number', decimals=1),
+            col('Type', 'Kiểu', width=100), col('UserName', 'Người thực hiện', width=120), col('Status', 'Kết quả', 'status')]
+    data = [dict(FileName=f, BackupDate=t, SizeMB=s, Type=ty, UserName='admin' if ty == 'Thủ công' else 'Hệ thống', Status=('1', 'Thành công', 'success'))
+            for f, t, s, ty in BACKUPS]
+    return process_screen(menu, fields, vals, [('custom', 'Sao lưu ngay', 'export', None, 'done', f'Đã sao lưu MedData vào D:\\Backup\\ERP\\{fn} (mock).')],
+                          result=('Lịch sử sao lưu', cols, data, 'FileName'),
+                          notes=[('info', 'Sao lưu tự động: mỗi 60 phút, giữ 7 bản gần nhất (thiết lập ở Tham số hệ thống).'),
+                                 ('warning', 'Tùy chọn nâng cao (sao lưu từ xa, tải về máy) chỉ dành cho tài khoản quản trị.')])
+
+
+def c_restore(menu):
+    fields = [F('BackupFile', 'Tệp sao lưu', 'select', 20, options=[(b[0], f'{b[0]} — {b[2]:.0f} MB') for b in BACKUPS]),
+              F('TargetDatabase', 'Phục hồi vào CSDL', span=12), B('ReplaceExisting', 'Ghi đè nếu đã tồn tại', span=8)[0]]
+    vals = dict(BackupFile=BACKUPS[0][0], TargetDatabase='MedData_Restore', ReplaceExisting='false')
+    cols = [col('LogicalName', 'Tên logic', width=160, frozen=True), col('Type', 'Loại', width=70), col('PhysicalName', 'Đường dẫn khi phục hồi', width=380),
+            col('SizeMB', 'Dung lượng (MB)', 'number', decimals=1)]
+    data = [dict(LogicalName='MedData', Type='D', PhysicalName='D:\\SQLData\\MedData_Restore.mdf', SizeMB=1612.0),
+            dict(LogicalName='MedData_log', Type='L', PhysicalName='D:\\SQLData\\MedData_Restore_log.ldf', SizeMB=231.6)]
+    return process_screen(menu, fields, vals, [('custom', 'Phục hồi', 'import', 'Phục hồi sẽ đưa CSDL đích về chế độ một người dùng và ngắt mọi kết nối. Tiếp tục?', 'done',
+                                                'Đã phục hồi MedData_Restore từ tệp sao lưu (mock).')],
+                          result=('Nội dung tệp sao lưu', cols, data, 'LogicalName'),
+                          notes=[('warning', 'Phục hồi ghi đè toàn bộ dữ liệu của CSDL đích. Nên phục hồi vào CSDL mới rồi kiểm tra trước.')])
+
+
+def c_epost(menu):
+    services = [('VCN', 'Chuyển phát nhanh'), ('VTK', 'Chuyển phát tiết kiệm'), ('VHT', 'Hỏa tốc')]
+    t1 = [F('ApiUrl', 'Địa chỉ API', span=30), F('ApiVersion', 'Phiên bản', span=10), F('ApiUser', 'Tài khoản API', span=15),
+          F('ApiPassword', 'Mật khẩu API', 'password', 15), B('IsSandbox', 'Môi trường thử nghiệm', span=10)[0]]
+    t2 = [F('SenderName', 'Tên người gửi', span=20), F('SenderPhone', 'Điện thoại', span=10), F('SenderProvince', 'Tỉnh/TP', 'select', 10,
+          options=[(c, c) for c in CITIES]), F('SenderAddress', 'Địa chỉ lấy hàng', span=40),
+          F('DefaultService', 'Dịch vụ mặc định', 'select', 14, options=services),
+          F('DefaultPayer', 'Người trả cước', 'select', 13, options=[('1', 'Người gửi trả'), ('2', 'Người nhận trả')]),
+          B('CODDefault', 'Thu hộ (COD) mặc định', span=13)[0]]
+    vals = dict(ApiUrl='https://partner-api.example.vn/v2', ApiVersion='2.0', ApiUser='demo-api', IsSandbox='true',
+                SenderName='CÔNG TY CỔ PHẦN DEMO MEDCOM', SenderPhone='028 3800 0000', SenderProvince='TP. Hồ Chí Minh',
+                SenderAddress='Kho Hồ Chí Minh, 25 Điện Biên Phủ, Quận Bình Thạnh', DefaultService='VCN', DefaultPayer='1', CODDefault='false')
+    return record_screen(menu, [('1', 'Kết nối API', t1), ('2', 'Người gửi & dịch vụ', t2)], vals,
+                         tools=[('custom', 'Kiểm tra kết nối', 'check')],
+                         notes=[('info', 'Mật khẩu/token API chỉ lưu ở máy chủ, không hiển thị lại. Để trống ô mật khẩu khi lưu nghĩa là giữ nguyên.')])
+
+
+def c_change_password(menu):
+    name = screen_name(menu)
+    rid = f'rec-{name}'
+    saved = f'{BASE}/screens/{name}.saved.html'
+    starts = [('', '(Trang chủ)')] + [(r['FormName'], r['CaptionVN']) for r in menu_rows if r['FormName'] in
+                                      ('AR_InvoiceFrm', 'IV_StockInputFrm', 'CS_ReceiptFrm', 'AP_PurchaseFrm', 'IV_InboundRequestFrm')]
+    fl = [F('UserName', 'Tên đăng nhập', 'label', 20), F('HoTen', 'Họ tên', span=20, required=True),
+          F('OldPassword', 'Mật khẩu hiện tại', 'password', 20, row_start=True, required=True),
+          F('NewPassword', 'Mật khẩu mới', 'password', 20, row_start=True, required=True),
+          F('ConfirmPassword', 'Nhập lại mật khẩu mới', 'password', 20, required=True),
+          F('StartupForm', 'Màn hình mở khi đăng nhập', 'select', 20, row_start=True, options=starts)]
+    vals = dict(UserName='admin', HoTen='Quản trị hệ thống', StartupForm='')
+    parts = [toolbar([s_btn('save', rid, saved, 'Lưu', data_shortcut='Ctrl+S')]),
+             msgs(('info', 'Mật khẩu mới tối thiểu 8 ký tự, gồm chữ hoa, chữ thường và chữ số.')),
+             f'<form data-erp="record" id="{rid}" method="post" action="{saved}" data-key-field="UserName" data-key="admin">{TOKEN}'
+             f'<input type="hidden" name="__version" value="{TODAY.isoformat()}T09:15:00.000">']
+    parts += fields_block(name, [('1', 'Tài khoản', fl)], vals, 'edit')
+    parts.append('</form>')
+    url = put_screen(menu, name, 'CUSTOM', 'edit', parts, key=f'{menu["FormName"]}:admin')
+    done = [msgs(('success', 'Đã đổi mật khẩu. Lần đăng nhập sau dùng mật khẩu mới (mock).')),
+            toolbar([a_btn('reload', url, 'Đổi lại', data_target='self')]),
+            f'<form data-erp="record" id="{rid}" method="post" action="{saved}">{TOKEN}']
+    done += fields_block(name, [('1', 'Tài khoản', [f for f in fl if f['control'] != 'password'])], vals, 'view')
+    done.append('</form>')
+    put_screen(menu, f'{name}.saved', 'CUSTOM', 'view', done)
+    return url
+
+
+def period_rows(lock_upto=9, lock_data_upto=8):
+    g = Gen('periods')
+    out = []
+    for i, (p, n, a, b) in enumerate(PERIODS_2026):
+        locked = i < lock_upto
+        out.append(dict(PeriodID=p, PeriodName=n, FromDate=a, ToDate=b,
+                        isLock=locked, isLockData=i < lock_data_upto,
+                        Status=('1', 'Đã khóa sổ', 'success') if locked else (('0', 'Đang mở', 'info') if i <= TODAY.month - 1 else ('0', 'Chưa đến kỳ', 'neutral')),
+                        LockedBy='admin' if locked else '', LockedDate=datetime.datetime.combine(b + datetime.timedelta(days=g.r.randint(3, 9)), datetime.time(17, 30)) if locked else None))
+    return out
+
+
+def c_period_close(menu):
+    fields = [F('FromPeriod', 'Từ kỳ', 'select', 10, options=PERIOD_OPTS), F('ToPeriod', 'Đến kỳ', 'select', 10, options=PERIOD_OPTS)]
+    vals = dict(FromPeriod='202610', ToPeriod='202610')
+    for f, cap, v in [('CheckBeforeClose', 'Kiểm tra dữ liệu trước khi khóa', True), ('StepDepreciate', 'Trích khấu hao TSCĐ', True),
+                      ('StepUnitCost', 'Tính giá xuất kho', True), ('StepAllocateEquip', 'Phân bổ công cụ dụng cụ', True),
+                      ('StepAllocateCost', 'Phân bổ chi phí trả trước', True), ('StepTransfer', 'Kết chuyển cuối kỳ', True)]:
+        fd, val = B(f, cap, v, span=13)
+        fields.append(fd)
+        vals[f] = val
+    cols = [col('PeriodID', 'Mã kỳ', width=90, frozen=True), col('PeriodName', 'Kỳ', width=130), col('FromDate', 'Từ ngày', 'date'),
+            col('ToDate', 'Đến ngày', 'date'), col('Status', 'Trạng thái', 'status'), col('LockedBy', 'Người khóa', width=110),
+            col('LockedDate', 'Thời điểm khóa', 'datetime')]
+    return process_screen(menu, fields, vals, [
+        ('lock', 'Khóa sổ', 'lock', 'Khóa sổ kỳ 10/2026? Hệ thống sẽ chạy lần lượt các bước đã chọn rồi khóa kỳ.', 'done', 'Đã khóa sổ kỳ 10/2026: khấu hao, giá vốn, phân bổ và kết chuyển đã chạy xong (mock).'),
+        ('unlock', 'Mở sổ', 'unlock', 'Mở lại sổ kỳ đã chọn? Chứng từ trong kỳ sẽ sửa được.', 'opened', 'Đã mở sổ kỳ 10/2026 (mock).')],
+        result=('Tình trạng các kỳ năm 2026', cols, period_rows(), 'PeriodID'), legend='Khóa sổ cuối kỳ')
+
+
+def c_period_lock_data(menu):
+    cols = [col('PeriodID', 'Mã kỳ', width=90, frozen=True, readonly=True), col('PeriodName', 'Kỳ', width=130, readonly=True),
+            col('FromDate', 'Từ ngày', 'date', readonly=True), col('ToDate', 'Đến ngày', 'date', readonly=True),
+            col('isLockData', 'Khóa dữ liệu', 'bool'), col('isLock', 'Đã khóa sổ', 'bool', readonly=True),
+            col('LockedBy', 'Người khóa', width=110, readonly=True)]
+    return grid_screen(menu, [('T0', 'Kỳ', cols, period_rows(), 'PeriodID')], form_type='LISTEDIT', add_row=False,
+                       notes=[('info', 'Kỳ khóa dữ liệu: không ai được thêm / sửa / xóa chứng từ có ngày thuộc kỳ (trừ chế độ quản trị).')])
+
+
+DOC_SOURCES = [('SI', 'Hóa đơn bán hàng'), ('PI', 'Mua hàng'), ('PN', 'Phiếu nhập kho'), ('PX', 'Phiếu xuất kho'), ('PT', 'Phiếu thu'),
+               ('PC', 'Phiếu chi'), ('PK', 'Phiếu kế toán')]
+
+
+def c_lock_documents(menu):
+    g = Gen('lockdoc')
+    cols = [col('DocumentID', 'Số chứng từ', width=125, frozen=True), col('SourceName', 'Loại chứng từ', width=150), col('DocumentDate', 'Ngày', 'date'),
+            col('ObjectName', 'Đối tượng', width=260), col('Memo', 'Diễn giải', width=220), col('Amount', 'Số tiền', 'money'),
+            col('IsApprove', 'Đã duyệt', 'bool'), col('IsLock', 'Đã khóa', 'bool')]
+    data = []
+    for i in range(36):
+        s, sn = DOC_SOURCES[i % len(DOC_SOURCES)]
+        d = TODAY.replace(day=1) - datetime.timedelta(days=g.r.randint(1, 30))
+        data.append(dict(DocumentID=f'{s}{d:%m%y}/{i + 1:04d}', SourceName=sn, DocumentDate=d, ObjectName=COMPANIES[(i * 4) % len(COMPANIES)],
+                         Memo=['Bán hàng theo đơn', 'Nhập hàng NCC', 'Thu tiền khách hàng', 'Chi trả nhà cung cấp', 'Xuất kho bán'][i % 5],
+                         Amount=g.r.randint(5, 900) * 100000, IsApprove=i % 3 != 2, IsLock=i % 4 == 0))
+    c2 = [col('DebitAccID', 'TK Nợ', width=90), col('CreditAccID', 'TK Có', width=90), col('Amount', 'Số tiền', 'money'), col('Memo', 'Diễn giải', width=300)]
+    d2 = [dict(DebitAccID='131', CreditAccID='5111', Amount=48500000, Memo='Doanh thu bán hàng'),
+          dict(DebitAccID='131', CreditAccID='33311', Amount=3880000, Memo='Thuế GTGT đầu ra 8%'),
+          dict(DebitAccID='632', CreditAccID='156', Amount=36120000, Memo='Giá vốn hàng bán')]
+    filt = sel_filter(screen_name(menu), [F('PeriodID', 'Kỳ', 'select', 8, options=[('*', 'Tất cả kỳ')] + PERIOD_OPTS, value='202610'),
+                                          F('SourceID', 'Loại chứng từ', 'select', 10, options=DOC_SOURCES),
+                                          F('LockState', 'Tình trạng', 'select', 8, options=[('0', 'Chưa khóa'), ('1', 'Đã khóa')])])
+    return grid_screen(menu, [('T0', 'Chứng từ', cols, data, 'DocumentID'), ('T1', 'Định khoản chứng từ đang chọn', c2, d2, None)],
+                       editable=False, form_type='LIST', filt=filt,
+                       sel_tools=[('approve', 'Duyệt', 'approve', None), ('lock', 'Khóa', 'lock', 'Khóa các chứng từ đang chọn?'),
+                                  ('unlock', 'Mở khóa', 'unlock', 'Mở khóa các chứng từ đang chọn?')],
+                       notes=[('info', 'Nút Khóa / Mở khóa chỉ dành cho người có quyền Manager.')])
+
+
+def c_notify(menu):
+    kinds = [('1', 'Chờ duyệt', 'warning'), ('2', 'Nhắc việc', 'info'), ('3', 'Hệ thống', 'neutral'), ('4', 'Cảnh báo', 'danger')]
+    titles = [('Đơn hàng chờ duyệt', 'Đơn hàng {d} của {o} đang chờ anh/chị duyệt.', 0), ('Đề nghị thanh toán', 'Đề nghị thanh toán {d} cần duyệt trước 17:00.', 0),
+              ('Lô hàng sắp hết hạn', 'Lô L26{n} của {i} còn 45 ngày hết hạn.', 3), ('Công nợ quá hạn', '{o} quá hạn thanh toán 12 ngày.', 3),
+              ('Lịch giao hàng', 'Giao hàng cho {o} lúc 14:00 ngày mai.', 1), ('Sao lưu dữ liệu', 'Sao lưu tự động lúc 06:00 thành công.', 2)]
+    cols = [col('MsgTime', 'Thời gian', 'datetime', frozen=True), col('NotifyType', 'Loại', 'status', width=115), col('Title', 'Tiêu đề', width=200),
+            col('Message', 'Nội dung', width=420, wrap=True), col('FromUserID', 'Người gửi', width=110), col('DocumentID', 'Chứng từ', width=125),
+            col('IsView', 'Đã xem', 'bool')]
+    data = []
+    for i in range(30):
+        t, m, k = titles[i % len(titles)]
+        doc = f'{["DH", "TT", "", "", "DH", ""][i % 6]}{TODAY:%m%y}/{i + 3:04d}' if i % 6 in (0, 1, 4) else ''
+        data.append(dict(MsgTime=datetime.datetime.combine(TODAY - datetime.timedelta(days=i // 5), datetime.time(17 - (i % 5) * 2, (i * 13) % 60)),
+                         NotifyType=kinds[k], Title=t, Message=m.format(d=doc, o=COMPANIES[i % len(COMPANIES)], n=100 + i, i=ITEMS[i % len(ITEMS)][0]),
+                         FromUserID='Hệ thống' if k >= 2 else USERS[1 + i % 6][0], DocumentID=doc, IsView=i > 4))
+    return grid_screen(menu, [('T0', 'Thông báo', cols, data, None)], editable=False, form_type='LIST',
+                       sel_tools=[('custom', 'Đánh dấu đã xem', 'check', None)],
+                       filt=sel_filter(screen_name(menu), [F('FromDate', 'Từ ngày', 'date', 6, value=(TODAY - datetime.timedelta(days=7)).isoformat()),
+                                                           F('ToDate', 'Đến ngày', 'date', 6, value=TODAY.isoformat()),
+                                                           B('OnlyUnread', 'Chỉ thông báo chưa xem')[0]]))
+
+
+# ---- 2. Kế toán: số dư đầu kỳ, thiết lập báo cáo tài chính, phân bổ, khấu hao, giá vốn -------------------------
+BAL_FILTER = [F('PeriodID', 'Kỳ nhập số dư', 'select', 8, options=PERIOD_OPTS, value='202601'), F('BranchID', 'Chi nhánh', 'select', 8)]
+
+
+def c_balance_account(menu):
+    credit_side = {'214', '331', '3331', '334', '338', '411', '421'}
+    g = Gen('balacc')
+    data = []
+    for a, n in ACCOUNTS:
+        if a[0] in '56789':
+            continue
+        v = g.r.randint(20, 900) * 1000000
+        data.append(dict(AccountID=a, AccountName=n, DebitBalance=0 if a in credit_side else v, CreditBalance=v if a in credit_side else 0))
+    diff = sum(d['DebitBalance'] for d in data) - sum(d['CreditBalance'] for d in data)
+    for d in data:   # cân đối tổng dư Nợ = tổng dư Có
+        if diff >= 0 and d['AccountID'] == '411':
+            d['CreditBalance'] += diff
+        elif diff < 0 and d['AccountID'] == '111':
+            d['DebitBalance'] -= diff
+    cols = [col('AccountID', 'Tài khoản', width=100, frozen=True), col('AccountName', 'Tên tài khoản', width=280, readonly=True),
+            col('DebitBalance', 'Dư Nợ đầu kỳ', 'money'), col('CreditBalance', 'Dư Có đầu kỳ', 'money'),
+            col('DebitBalanceFC', 'Dư Nợ nguyên tệ', 'money', sum=None), col('CreditBalanceFC', 'Dư Có nguyên tệ', 'money', sum=None)]
+    return grid_screen(menu, [('T0', 'Số dư tài khoản', cols, data, 'AccountID')], filt=sel_filter(screen_name(menu), BAL_FILTER),
+                       notes=[('info', 'Tổng dư Nợ phải bằng tổng dư Có. Tài khoản có chi tiết đối tượng / hàng tồn nhập ở màn số dư công nợ và số dư hàng tồn.')])
+
+
+def c_balance_object(menu):
+    g = Gen('balobj')
+    data = []
+    for i in range(18):
+        acc = '131' if i < 12 else '331'
+        v = g.r.randint(5, 400) * 1000000
+        data.append(dict(AccountID=acc, ObjectID=f'KH{(i * 3) % len(COMPANIES) + 1:04d}', ObjectName=COMPANIES[(i * 3) % len(COMPANIES)],
+                         DebitBalance=v if acc == '131' else 0, CreditBalance=v if acc == '331' else 0, CurrencyID=('VND', 'VND', None),
+                         DueDate=datetime.date(2026, 1, 1) + datetime.timedelta(days=g.r.randint(10, 90))))
+    cols = [col('AccountID', 'Tài khoản', width=90, frozen=True), col('ObjectID', 'Mã đối tượng', width=110), col('ObjectName', 'Tên đối tượng', width=280, readonly=True),
+            col('DebitBalance', 'Dư Nợ', 'money'), col('CreditBalance', 'Dư Có', 'money'), col('CurrencyID', 'Loại tiền', width=80),
+            col('DueDate', 'Hạn thanh toán', 'date')]
+    return grid_screen(menu, [('T0', 'Số dư công nợ', cols, data, None)], filt=sel_filter(screen_name(menu), BAL_FILTER + [
+        F('AccountID', 'Tài khoản', 'lookup', 10, lookup=LOOKUPS['AccountID'])]))
+
+
+def c_balance_item(menu):
+    g = Gen('balitem')
+    data = []
+    for i in range(22):
+        it, unit = ITEMS[(i * 7) % len(ITEMS)]
+        q = g.r.randint(5, 300)
+        p = g.r.choice([12, 45, 85, 150, 320, 1250, 4800]) * 1000
+        data.append(dict(StoreHouseID=STORES[i % 3] + (None,), ItemID=f'VT{(i * 7) % len(ITEMS) + 1:04d}', ItemName=it, Unit=unit,
+                         Lot=f'L26{100 + i * 7}', ExpireDate=datetime.date(2027 + i % 3, 1 + i % 12, 28), Quantity=q, UnitPrice=p, Amount=q * p))
+    cols = [col('StoreHouseID', 'Kho', width=140, frozen=True), col('ItemID', 'Mã hàng', width=100), col('ItemName', 'Tên hàng', width=250, readonly=True),
+            col('Unit', 'ĐVT', width=70, readonly=True), col('Lot', 'Số lô', width=90), col('ExpireDate', 'Hạn dùng', 'date'),
+            col('Quantity', 'Số lượng', 'quantity', sum='sum', decimals=0), col('UnitPrice', 'Đơn giá', 'money', sum=None), col('Amount', 'Thành tiền', 'money')]
+    return grid_screen(menu, [('T0', 'Số dư hàng tồn', cols, data, None)], filt=sel_filter(screen_name(menu), BAL_FILTER + [
+        F('StoreHouseID', 'Kho', 'select', 10)]))
+
+
+B01 = [('100', 'A. TÀI SẢN NGẮN HẠN', '', '110+120+130+140+150', 1), ('110', 'I. Tiền và các khoản tương đương tiền', '', '111+112', 1),
+       ('111', '1. Tiền', 'V.01', 'Dư Nợ 111, 112, 113', 0), ('112', '2. Các khoản tương đương tiền', '', 'Dư Nợ 1281, 1288', 0),
+       ('120', 'II. Đầu tư tài chính ngắn hạn', 'V.02', '121+122+123', 1), ('130', 'III. Các khoản phải thu ngắn hạn', '', '131+132+136+137', 1),
+       ('131', '1. Phải thu ngắn hạn của khách hàng', '', 'Dư Nợ chi tiết 131', 0), ('132', '2. Trả trước cho người bán ngắn hạn', '', 'Dư Nợ chi tiết 331', 0),
+       ('136', '6. Phải thu ngắn hạn khác', 'V.03', 'Dư Nợ 1388, 141, 244', 0), ('137', '7. Dự phòng phải thu ngắn hạn khó đòi (*)', '', 'Dư Có 2293 (ghi âm)', 0),
+       ('140', 'IV. Hàng tồn kho', '', '141+149', 1), ('141', '1. Hàng tồn kho', 'V.04', 'Dư Nợ 151, 152, 153, 154, 155, 156, 157', 0),
+       ('149', '2. Dự phòng giảm giá hàng tồn kho (*)', '', 'Dư Có 2294 (ghi âm)', 0), ('150', 'V. Tài sản ngắn hạn khác', '', '151+152+153', 1),
+       ('151', '1. Chi phí trả trước ngắn hạn', '', 'Dư Nợ 242 (ngắn hạn)', 0), ('152', '2. Thuế GTGT được khấu trừ', '', 'Dư Nợ 133', 0),
+       ('200', 'B. TÀI SẢN DÀI HẠN', '', '210+220+240+250+260', 1), ('220', 'II. Tài sản cố định', '', '221+224+227', 1),
+       ('221', '1. Tài sản cố định hữu hình', 'V.05', '222+223', 0), ('222', '   - Nguyên giá', '', 'Dư Nợ 211', 0),
+       ('223', '   - Giá trị hao mòn lũy kế (*)', '', 'Dư Có 2141 (ghi âm)', 0), ('270', 'TỔNG CỘNG TÀI SẢN (270 = 100 + 200)', '', '100+200', 1),
+       ('300', 'C. NỢ PHẢI TRẢ', '', '310+330', 1), ('310', 'I. Nợ ngắn hạn', '', '311+...+324', 1),
+       ('311', '1. Phải trả người bán ngắn hạn', '', 'Dư Có chi tiết 331', 0), ('312', '2. Người mua trả tiền trước ngắn hạn', '', 'Dư Có chi tiết 131', 0),
+       ('313', '3. Thuế và các khoản phải nộp Nhà nước', 'V.06', 'Dư Có 333', 0), ('314', '4. Phải trả người lao động', '', 'Dư Có 334', 0),
+       ('319', '9. Phải trả ngắn hạn khác', '', 'Dư Có 338, 344', 0), ('400', 'D. VỐN CHỦ SỞ HỮU', '', '410+430', 1),
+       ('410', 'I. Vốn chủ sở hữu', 'V.07', '411+...+422', 1), ('411', '1. Vốn góp của chủ sở hữu', '', 'Dư Có 4111', 0),
+       ('421', '11. Lợi nhuận sau thuế chưa phân phối', '', 'Dư Có 421 (Dư Nợ ghi âm)', 0), ('440', 'TỔNG CỘNG NGUỒN VỐN (440 = 300 + 400)', '', '300+400', 1)]
+B02 = [('01', '1. Doanh thu bán hàng và cung cấp dịch vụ', 'VI.01', 'PS Có 511 / Nợ 911', 0), ('02', '2. Các khoản giảm trừ doanh thu', '', 'PS Nợ 511 / Có 521', 0),
+       ('10', '3. Doanh thu thuần về bán hàng và cung cấp dịch vụ (10 = 01 - 02)', '', '01-02', 1), ('11', '4. Giá vốn hàng bán', 'VI.02', 'PS Có 632 / Nợ 911', 0),
+       ('20', '5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ (20 = 10 - 11)', '', '10-11', 1), ('21', '6. Doanh thu hoạt động tài chính', 'VI.03', 'PS Nợ 515 / Có 911', 0),
+       ('22', '7. Chi phí tài chính', 'VI.04', 'PS Có 635 / Nợ 911', 0), ('23', '   - Trong đó: Chi phí lãi vay', '', 'PS Nợ 635 chi tiết lãi vay', 0),
+       ('25', '8. Chi phí bán hàng', '', 'PS Có 641 / Nợ 911', 0), ('26', '9. Chi phí quản lý doanh nghiệp', '', 'PS Có 642 / Nợ 911', 0),
+       ('30', '10. Lợi nhuận thuần từ hoạt động kinh doanh (30 = 20 + 21 - 22 - 25 - 26)', '', '20+21-22-25-26', 1),
+       ('31', '11. Thu nhập khác', '', 'PS Nợ 711 / Có 911', 0), ('32', '12. Chi phí khác', '', 'PS Có 811 / Nợ 911', 0),
+       ('40', '13. Lợi nhuận khác (40 = 31 - 32)', '', '31-32', 1), ('50', '14. Tổng lợi nhuận kế toán trước thuế (50 = 30 + 40)', '', '30+40', 1),
+       ('51', '15. Chi phí thuế TNDN hiện hành', 'VI.05', 'PS Có 8211 / Nợ 911', 0), ('52', '16. Chi phí thuế TNDN hoãn lại', '', 'PS Có 8212 / Nợ 911', 0),
+       ('60', '17. Lợi nhuận sau thuế thu nhập doanh nghiệp (60 = 50 - 51 - 52)', '', '50-51-52', 1)]
+B03 = [('01', '1. Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác', '', 'Nợ 111, 112 / Có 511, 131, 3331', 0),
+       ('02', '2. Tiền chi trả cho người cung cấp hàng hóa và dịch vụ', '', 'Có 111, 112 / Nợ 331, 152, 156, 133', 0),
+       ('03', '3. Tiền chi trả cho người lao động', '', 'Có 111, 112 / Nợ 334', 0), ('04', '4. Tiền lãi vay đã trả', '', 'Có 111, 112 / Nợ 635, 335', 0),
+       ('05', '5. Thuế thu nhập doanh nghiệp đã nộp', '', 'Có 111, 112 / Nợ 3334', 0), ('06', '6. Tiền thu khác từ hoạt động kinh doanh', '', 'Nợ 111, 112 / Có 711, 138, 344', 0),
+       ('07', '7. Tiền chi khác cho hoạt động kinh doanh', '', 'Có 111, 112 / Nợ 811, 138, 338', 0),
+       ('20', 'Lưu chuyển tiền thuần từ hoạt động kinh doanh', '', '01+02+...+07', 1),
+       ('21', '1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác', '', 'Có 111, 112 / Nợ 211, 213, 241', 0),
+       ('30', 'Lưu chuyển tiền thuần từ hoạt động đầu tư', '', '21+22+...+27', 1), ('33', '3. Tiền thu từ đi vay', '', 'Nợ 111, 112 / Có 341', 0),
+       ('34', '4. Tiền trả nợ gốc vay', '', 'Có 111, 112 / Nợ 341', 0), ('40', 'Lưu chuyển tiền thuần từ hoạt động tài chính', '', '31+32+...+36', 1),
+       ('50', 'Lưu chuyển tiền thuần trong kỳ (50 = 20 + 30 + 40)', '', '20+30+40', 1), ('60', 'Tiền và tương đương tiền đầu kỳ', '', 'Dư Nợ đầu kỳ 111, 112, 1281', 0),
+       ('70', 'Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61)', 'VII.34', '50+60+61', 1)]
+
+
+def fin_setup_screen(menu, lines, detail_cols, detail_data, note):
+    cols = [col('CodeID', 'Mã số', width=80, frozen=True), col('CodeName', 'Chỉ tiêu', width=430, wrap=True),
+            col('Statement', 'Thuyết minh', width=100), col('Formula', 'Cách lấy số liệu', width=300),
+            col('IsBold', 'In đậm', 'bool'), col('IsNotPrint', 'Không in', 'bool')]
+    data = [dict(CodeID=c, CodeName=n, Statement=s, Formula=f, IsBold=bool(b), IsNotPrint=False) for c, n, s, f, b in lines]
+    return grid_screen(menu, [('T0', 'Chỉ tiêu', cols, data, 'CodeID'), ('T1', 'Công thức chỉ tiêu đang chọn', detail_cols, detail_data, None)],
+                       notes=[('info', note)])
+
+
+def c_bs_setup(menu):
+    dc = [col('AccountID', 'Tài khoản', width=100), col('IsDebitBal', 'Lấy dư Nợ', 'bool'), col('IsObject', 'Chi tiết theo đối tượng', 'bool', width=150),
+          col('SumID', 'Cộng vào mã', width=100), col('ReverseSign', 'Đổi dấu', 'bool')]
+    dd = [dict(AccountID='131', IsDebitBal=True, IsObject=True, SumID='130', ReverseSign=False),
+          dict(AccountID='1388', IsDebitBal=True, IsObject=False, SumID='130', ReverseSign=False)]
+    return fin_setup_screen(menu, B01, dc, dd, 'Bảng cân đối kế toán mẫu B01-DN (Thông tư 200). Chỉ tiêu tổng cộng lấy theo công thức mã số; chỉ tiêu chi tiết lấy số dư tài khoản.')
+
+
+def c_pl_setup(menu):
+    dc = [col('DebitAccID', 'TK Nợ', width=100), col('CreditAccID', 'TK Có', width=100), col('SumID', 'Cộng vào mã', width=100), col('ReverseSign', 'Đổi dấu', 'bool')]
+    dd = [dict(DebitAccID='511', CreditAccID='911', SumID='10', ReverseSign=False)]
+    return fin_setup_screen(menu, B02, dc, dd, 'Báo cáo kết quả hoạt động kinh doanh mẫu B02-DN: lấy phát sinh đối ứng giữa tài khoản doanh thu/chi phí và TK 911.')
+
+
+def c_cf_setup(menu):
+    dc = [col('DebitAccIDs', 'Các TK Nợ', width=140), col('CreditAccIDs', 'Các TK Có', width=160), col('SumID', 'Cộng vào mã', width=100),
+          col('ReverseSign', 'Đổi dấu', 'bool'), col('Type', 'Kiểu lấy', width=120)]
+    dd = [dict(DebitAccIDs='111;112', CreditAccIDs='511;131;3331', SumID='20', ReverseSign=False, Type='Phát sinh đối ứng')]
+    return fin_setup_screen(menu, B03, dc, dd, 'Báo cáo lưu chuyển tiền tệ mẫu B03-DN (phương pháp trực tiếp): lấy phát sinh đối ứng của tài khoản tiền.')
+
+
+def run_fields(period='202610', extra=()):
+    fields = [F('PeriodID', 'Kỳ', 'select', 8, options=PERIOD_OPTS), F('BranchID', 'Chi nhánh', 'select', 8),
+              F('DocumentDate', 'Ngày hạch toán', 'date', 6)] + list(extra)
+    p = next(x for x in PERIODS_2026 if x[0] == period)
+    return fields, dict(PeriodID=period, BranchID='HN', DocumentDate=p[3].isoformat())
+
+
+def c_allocate_cost(menu):
+    items = [('PB001', 'Thuê văn phòng Hà Nội 12 tháng', 360000000, 12, '6427', 'HC'), ('PB002', 'Bản quyền phần mềm ERP 36 tháng', 288000000, 36, '6428', 'KT'),
+             ('PB003', 'Bảo hiểm tài sản năm 2026', 54000000, 12, '6427', 'HC'), ('PB004', 'Sửa chữa kho Hồ Chí Minh', 126000000, 18, '6417', 'KHO'),
+             ('PB005', 'Chi phí hội chợ thiết bị y tế', 96000000, 6, '6418', 'KD'), ('PB006', 'Đồng phục nhân viên', 42000000, 12, '6421', 'HC'),
+             ('PB007', 'Thuê kho Đà Nẵng 24 tháng', 432000000, 24, '6417', 'KHO')]
+    data = []
+    for i, (aid, n, amt, mu, acc, cc) in enumerate(items):
+        per = round(amt / mu)
+        used = min(mu - 1, 3 + i)
+        data.append(dict(AllocateID=aid, AllocateName=n, DocumentDate=datetime.date(2026, 1 + i % 6, 1), Amount=amt, MonthUse=mu, OpenAllocate=per * used,
+                         PeriodAmount=per, EndAllocate=per * (used + 1), RemainAmount=amt - per * (used + 1), ExpenseAccID=acc,
+                         CostCenterID=(cc, dict(COSTCENTERS)[cc], None)))
+    cols = [col('AllocateID', 'Mã phân bổ', width=95, frozen=True), col('AllocateName', 'Nội dung', width=260), col('DocumentDate', 'Ngày ghi nhận', 'date'),
+            col('Amount', 'Tổng tiền', 'money'), col('MonthUse', 'Số kỳ', 'number'), col('OpenAllocate', 'Đã phân bổ đầu kỳ', 'money'),
+            col('PeriodAmount', 'Phân bổ kỳ này', 'money'), col('EndAllocate', 'Lũy kế', 'money'), col('RemainAmount', 'Còn lại', 'money'),
+            col('ExpenseAccID', 'TK chi phí', width=90), col('CostCenterID', 'Bộ phận', width=140)]
+    fields, vals = run_fields()
+    return process_screen(menu, fields, vals, [('custom', 'Tính phân bổ', 'run', None, 'done', 'Đã phân bổ chi phí trả trước kỳ 10/2026 và sinh phiếu kế toán PK1026/0031 (mock).')],
+                          result=('Bảng phân bổ chi phí trả trước kỳ 10/2026', cols, data, 'AllocateID'),
+                          notes=[('info', 'Phân bổ theo định nghĩa ở màn “Định nghĩa phân bổ chi phí trả trước” (GJ_AllocateSetupTbl). Chạy lại sẽ thay bút toán phân bổ cũ của kỳ.')])
+
+
+def depreciation_rows(items, acc_credit):
+    out = []
+    for i, (aid, n, cost_, months, acc, cc, used) in enumerate(items):
+        per = round(cost_ / months)
+        out.append(dict(AssetID=aid, AssetName=n, CostCenterID=(cc, dict(COSTCENTERS)[cc], None), OriginalCost=cost_, MonthUse=months,
+                        MonthlyAmount=per, Accumulated=per * (used + 1), Remaining=cost_ - per * (used + 1), DebitAccID=acc, CreditAccID=acc_credit))
+    return out
+
+
+def c_depreciate(menu):
+    items = [('TS001', 'Máy siêu âm trình diễn GE', 1250000000, 60, '6414', 'KD', 21), ('TS002', 'Xe tải giao hàng 1,5 tấn', 680000000, 96, '6414', 'KHO', 33),
+             ('TS003', 'Máy chủ ERP và lưu trữ', 245000000, 36, '6424', 'KT', 14), ('TS004', 'Hệ thống phòng cháy kho Hà Nội', 318000000, 120, '6424', 'KHO', 40),
+             ('TS005', 'Máy xét nghiệm sinh hóa trưng bày', 890000000, 60, '6414', 'KTH', 9), ('TS006', 'Kệ kho tự động', 420000000, 84, '6424', 'KHO', 27),
+             ('TS007', 'Xe ô tô 7 chỗ', 1150000000, 120, '6424', 'HC', 52)]
+    cols = [col('AssetID', 'Mã tài sản', width=90, frozen=True), col('AssetName', 'Tên tài sản', width=250), col('CostCenterID', 'Bộ phận sử dụng', width=150),
+            col('OriginalCost', 'Nguyên giá', 'money'), col('MonthUse', 'Số tháng KH', 'number'), col('MonthlyAmount', 'Khấu hao kỳ này', 'money'),
+            col('Accumulated', 'Hao mòn lũy kế', 'money'), col('Remaining', 'Giá trị còn lại', 'money'), col('DebitAccID', 'TK chi phí', width=90),
+            col('CreditAccID', 'TK hao mòn', width=90)]
+    fields, vals = run_fields(extra=[F('Memo', 'Diễn giải', span=20)])
+    vals['Memo'] = 'Trích khấu hao TSCĐ tháng 10/2026'
+    return process_screen(menu, fields, vals, [('custom', 'Trích khấu hao', 'run', None, 'done', 'Đã trích khấu hao 7 tài sản, sinh phiếu kế toán KH1026/0001 (mock).'),
+                                               ('delete', 'Xóa khấu hao kỳ', 'delete', 'Xóa bút toán khấu hao đã trích của kỳ đã chọn?', 'deleted', 'Đã xóa bút toán khấu hao kỳ 10/2026 (mock).')],
+                          result=('Bảng tính khấu hao kỳ 10/2026', cols, depreciation_rows(items, '2141'), 'AssetID'))
+
+
+def c_allocate_equip(menu):
+    items = [('CC001', 'Máy tính xách tay nhân viên kinh doanh', 186000000, 24, '6413', 'KD', 7), ('CC002', 'Bàn ghế văn phòng', 64000000, 24, '6423', 'HC', 11),
+             ('CC003', 'Máy in mã vạch kho', 38500000, 12, '6413', 'KHO', 5), ('CC004', 'Dụng cụ sửa chữa thiết bị', 52000000, 18, '6273', 'KTH', 8),
+             ('CC005', 'Máy quét QR cầm tay', 27600000, 12, '6413', 'KHO', 3), ('CC006', 'Điều hòa phòng mẫu', 45000000, 36, '6423', 'HC', 16)]
+    cols = [col('AssetID', 'Mã CCDC', width=90, frozen=True), col('AssetName', 'Tên công cụ dụng cụ', width=260), col('CostCenterID', 'Bộ phận sử dụng', width=150),
+            col('OriginalCost', 'Giá trị', 'money'), col('MonthUse', 'Số kỳ phân bổ', 'number'), col('MonthlyAmount', 'Phân bổ kỳ này', 'money'),
+            col('Accumulated', 'Đã phân bổ lũy kế', 'money'), col('Remaining', 'Còn lại', 'money'), col('DebitAccID', 'TK chi phí', width=90),
+            col('CreditAccID', 'TK chờ phân bổ', width=110)]
+    fields, vals = run_fields()
+    return process_screen(menu, fields, vals, [('custom', 'Phân bổ CCDC', 'run', None, 'done', 'Đã phân bổ 6 công cụ dụng cụ kỳ 10/2026, sinh phiếu PB1026/0002 (mock).')],
+                          result=('Bảng phân bổ công cụ dụng cụ kỳ 10/2026', cols, depreciation_rows(items, '242'), 'AssetID'))
+
+
+def c_unit_cost(menu):
+    g = Gen('unitcost')
+    data = []
+    for i in range(18):
+        it, unit = ITEMS[(i * 7) % len(ITEMS)]
+        oq, iq = g.r.randint(0, 120), g.r.randint(10, 300)
+        op, ip = g.r.choice([12, 45, 85, 150, 320, 1250]) * 1000, 0
+        ip = round(op * g.r.uniform(0.95, 1.08) / 100) * 100
+        oa, ia = oq * op, iq * ip
+        uc = round((oa + ia) / (oq + iq)) if oq + iq else 0
+        xq = min(oq + iq, g.r.randint(5, 250))
+        xa = xq * uc
+        data.append(dict(ItemID=f'VT{(i * 7) % len(ITEMS) + 1:04d}', ItemName=it, Unit=unit, OpenQty=oq, OpenAmount=oa, InQty=iq, InAmount=ia,
+                         UnitCost=uc, OutQty=xq, OutAmount=xa, EndQty=oq + iq - xq, EndAmount=oa + ia - xa))
+    cols = [col('ItemID', 'Mã hàng', width=95, frozen=True), col('ItemName', 'Tên hàng', width=240), col('Unit', 'ĐVT', width=65),
+            col('OpenQty', 'Tồn đầu SL', 'quantity', sum='sum', decimals=0), col('OpenAmount', 'Tồn đầu tiền', 'money'), col('InQty', 'Nhập SL', 'quantity', sum='sum', decimals=0),
+            col('InAmount', 'Nhập tiền', 'money'), col('UnitCost', 'Đơn giá xuất', 'money', sum=None), col('OutQty', 'Xuất SL', 'quantity', sum='sum', decimals=0),
+            col('OutAmount', 'Giá vốn xuất', 'money'), col('EndQty', 'Tồn cuối SL', 'quantity', sum='sum', decimals=0), col('EndAmount', 'Tồn cuối tiền', 'money')]
+    cost = [('AVG', 'Bình quân cuối kỳ'), ('AVGS', 'Bình quân cuối kỳ theo kho'), ('AVGD', 'Bình quân di động'), ('FIFO', 'Nhập trước xuất trước')]
+    fields = [F('FromPeriod', 'Từ kỳ', 'select', 8, options=PERIOD_OPTS), F('ToPeriod', 'Đến kỳ', 'select', 8, options=PERIOD_OPTS),
+              F('CostMethod', 'Phương pháp', 'select', 12, options=cost), F('StoreHouseID', 'Kho', 'select', 10),
+              F('ItemID', 'Mặt hàng (để trống = tất cả)', 'lookup', 14, lookup=LOOKUPS['ItemID'], row_start=True),
+              B('UpdateOutput', 'Cập nhật giá vốn vào phiếu xuất', span=13)[0]]
+    vals = dict(FromPeriod='202610', ToPeriod='202610', CostMethod='AVG', StoreHouseID='', UpdateOutput='true')
+    return process_screen(menu, fields, vals, [('custom', 'Tính giá xuất kho', 'run', 'Tính lại giá vốn kỳ 10/2026? Giá vốn trên phiếu xuất sẽ được cập nhật.', 'done',
+                                                'Đã tính giá xuất kho kỳ 10/2026 cho 18 mặt hàng; cập nhật 214 dòng phiếu xuất (mock).')],
+                          result=('Bảng tính giá xuất kho kỳ 10/2026', cols, data, 'ItemID'),
+                          notes=[('info', 'Phương pháp mặc định lấy từ Tham số hệ thống (SY_InitSetup.CostMethod). Kỳ đã khóa sổ không tính lại được.')])
+
+
+# ---- 3. Kinh doanh -----------------------------------------------------------------------------------------------
+def c_daily_sales(menu):
+    g = Gen('dailysales')
+    data = []
+    for i in range(24):
+        e_ = i % 8
+        d = TODAY - datetime.timedelta(days=i // 8)
+        orders = g.r.randint(1, 9)
+        rev = orders * g.r.randint(3, 60) * 500000
+        data.append(dict(DocumentDate=d, EmployeeID=f'NV{e_ + 1:03d}', EmployeeName=PEOPLE[e_], Route=f'Tuyến {["Q1-Q3", "Q5-Q10", "Thủ Đức", "Bình Thạnh", "Gò Vấp", "Hoàn Kiếm", "Cầu Giấy", "Hải Châu"][e_]}',
+                         NewCustomers=g.r.randint(0, 4), VisitedCustomers=g.r.randint(4, 16), Orders=orders, Revenue=rev,
+                         Collected=round(rev * g.r.choice([0, 0.3, 0.5, 1]) / 1000) * 1000, Notes=g.r.choice(['', '', 'Khách hẹn tuần sau', 'Đề xuất giảm giá 3%', 'Cần hỗ trợ kỹ thuật demo'])))
+    cols = [col('DocumentDate', 'Ngày', 'date', frozen=True), col('EmployeeID', 'Mã NV', width=80), col('EmployeeName', 'Nhân viên', width=170),
+            col('Route', 'Tuyến', width=140), col('NewCustomers', 'Khách mới', 'number', sum='sum'), col('VisitedCustomers', 'Khách cũ ghé thăm', 'number', sum='sum', width=110),
+            col('Orders', 'Số đơn', 'number', sum='sum'), col('Revenue', 'Doanh số', 'money'), col('Collected', 'Đã thu', 'money'), col('Notes', 'Ghi chú', width=220)]
+    filt = sel_filter(screen_name(menu), [F('FromDate', 'Từ ngày', 'date', 6, value=(TODAY - datetime.timedelta(days=2)).isoformat()),
+                                          F('ToDate', 'Đến ngày', 'date', 6, value=TODAY.isoformat()),
+                                          F('EmployeeID', 'Nhân viên', 'lookup', 12, lookup=LOOKUPS['EmployeeID']), F('BranchID', 'Chi nhánh', 'select', 8)])
+    return grid_screen(menu, [('T0', 'Báo cáo ngày', cols, data, None)], editable=False, form_type='LIST', filt=filt)
+
+def c_invoice_log(menu):
+    g = Gen('invlog')
+    kinds = ['Đồng bộ HĐ đầu vào', 'Đồng bộ HĐ đầu ra', 'Tải XML hóa đơn', 'Đối chiếu chứng từ']
+    data = []
+    for i in range(32):
+        err = i % 9 == 4
+        k = kinds[i % 4]
+        n = g.r.randint(3, 60)
+        t = datetime.datetime.combine(TODAY - datetime.timedelta(days=i // 6), datetime.time(22 - (i % 6) * 3, (i * 7) % 60))
+        memo = (f'{k}: lỗi kết nối cổng hóa đơn (hết thời gian chờ), sẽ thử lại lần sau' if err else
+                f'{k} từ {t - datetime.timedelta(days=1):%d/%m/%Y} đến {t:%d/%m/%Y}: {n} hóa đơn, {g.r.randint(0, n // 4)} hóa đơn mới')
+        data.append(dict(Logtime=t, LogType=k, Memo=memo, UserName='Hệ thống' if i % 3 else 'admin',
+                         isError=('1', 'Lỗi', 'danger') if err else ('0', 'Thành công', 'success'), _tone='danger' if err else None))
+    cols = [col('Logtime', 'Thời gian', 'datetime', frozen=True), col('LogType', 'Loại đồng bộ', width=170), col('Memo', 'Nội dung', width=460, wrap=True),
+            col('UserName', 'Người chạy', width=110), col('isError', 'Kết quả', 'status', width=110)]
+    filt = sel_filter(screen_name(menu), [F('FromDate', 'Từ ngày', 'date', 6, value=(TODAY - datetime.timedelta(days=7)).isoformat()),
+                                          F('ToDate', 'Đến ngày', 'date', 6, value=TODAY.isoformat()),
+                                          F('LogType', 'Loại', 'select', 10, options=[(k, k) for k in kinds]), B('OnlyError', 'Chỉ dòng lỗi')[0]])
+    return grid_screen(menu, [('T0', 'Lịch sử', cols, data, None)], editable=False, form_type='LIST', filt=filt,
+                       tools=[s_btn('custom', f'act-{screen_name(menu)}', f'{BASE}/actions/custom-ok.html', 'Đồng bộ ngay', data_icon='reload')],
+                       sel_tools=[])
+
+
+
+CURATED = {
+    'NGUOIDUNGNHOMFRM': c_user_groups, 'NGUOIDUNGFRM': c_users, 'NGUOIDUNGPHANQUYENFRM': c_permissions,
+    'NGUOIDUNGPHANQUYENWAFRM': c_permissions_web, 'FISCALFRM': c_fiscal, 'SETUPFRM': c_setup, 'SYSTEMLANGSETUPFRM': c_lang,
+    'USERLOGFRM': c_userlog, 'BACKUPDATAFRM': c_backup, 'RESTOREDATAFRM': c_restore, 'EPOSTSETTINGVIETTELFRM': c_epost,
+    'CHANGEPASSWORDFRM': c_change_password, 'PERIODSETUPFRM': c_period_close, 'PERIODLOCKDATAFRM': c_period_lock_data,
+    'SY_LOCKDOCUMENTFRM': c_lock_documents, 'SY_NOTIFYLISTFRM': c_notify,
+    'GJ_BALANCEACCOUNTFRM': c_balance_account, 'GJ_BALANCEOBJECTFRM': c_balance_object, 'GJ_BALANCEITEMFRM': c_balance_item,
+    'GJ_BALANCESHEETSETUPFRM': c_bs_setup, 'GJ_PROFITLOSSSETUPFRM': c_pl_setup, 'GJ_CASHFLOWSETUPFRM': c_cf_setup,
+    'GJ_ALLOCATEFRM': c_allocate_cost, 'FA_DEPRECIATEFRM': c_depreciate, 'EQ_ALLOCATEFRM': c_allocate_equip,
+    'IV_UNITCOSTPROCESSFRM': c_unit_cost, 'AR_BAOCAONGAYTONGHOPFRM': c_daily_sales, 'GJ_INVOICELOGFRM': c_invoice_log,
+}
+
+
+def build_dialogs():
+    """Hộp thoại phụ của các màn viết tay."""
+    write('actions/copy-permission.html', page('Sao chép quyền', f'''<section data-erp="dialog" data-size="sm"><h1>Sao chép quyền từ nhóm khác</h1>
+<form data-erp="record" id="dlg-copyperm" method="post" action="{BASE}/actions/custom-ok.html">{TOKEN}
+{field_html('dlg', F('FromGroup', 'Sao chép từ nhóm', 'select', 40, options=GROUP_OPTS), 'KINHDOANH', mode='edit')}
+{field_html('dlg', F('ToGroups', 'Áp cho các nhóm', 'multiselect', 40, options=GROUP_OPTS), '', mode='edit')}
+{field_html('dlg', F('Overwrite', 'Ghi đè quyền đang có', 'checkbox', 40), 'false', mode='edit')}
+<button type="submit" data-action="save">Sao chép</button> <button type="button" data-action="close">Đóng</button></form></section>'''))
+    write('actions/fiscal-new-year.html', page('Khai báo năm', f'''<section data-erp="dialog" data-size="sm"><h1>Khai báo năm tài chính</h1>
+<form data-erp="record" id="dlg-fiscal" method="post" action="{BASE}/actions/custom-ok.html">{TOKEN}
+{field_html('dlg', F('YearID', 'Năm', 'number', 20, decimals=0), '2027', mode='edit')}
+{field_html('dlg', F('StartMonth', 'Tháng bắt đầu', 'select', 20, options=[(str(m), f'Tháng {m}') for m in range(1, 13)]), '1', mode='edit')}
+{field_html('dlg', F('CopyFrom', 'Sao chép cấu trúc từ năm', 'select', 40, options=[('', '(Không)'), ('2026', '2026'), ('2025', '2025')]), '', mode='edit')}
+<button type="submit" data-action="save">Tạo 4 quý, 12 kỳ</button> <button type="button" data-action="close">Đóng</button></form></section>'''))
+
+# ---------------------------------------------------------------------------------------------------------------
 # Lookup, phiên, đăng nhập, trang chủ, hành động
 # ---------------------------------------------------------------------------------------------------------------
 def build_lookups():
@@ -1266,6 +2299,8 @@ def main():
                 urls[key] = build_report(r)
             elif kind == 'lenh-he-thong':
                 urls[key] = f'{BASE}/login.html'
+            elif fn.upper() in CURATED:
+                urls[key] = CURATED[fn.upper()](r)
             elif kind == 'dong' and form and form['FormType'] in ('LIST', 'LISTEDIT') and table_cols(form['TableName']):
                 urls[key] = build_list(r, form)
             elif kind == 'dong' and form and form['FormType'] == 'EDIT' and table_cols(cfg_get(cfg_of(fn), 'T0', 'TN') or form['TableName']):
@@ -1278,6 +2313,14 @@ def main():
                 if dt:
                     t, d, pre = dt['TableName'] or t, [dt['TableDetail']] if dt.get('TableDetail') else d, dt.get('PreFix') or pre
                 urls[key] = build_edit(r, fn, r['CaptionVN'], t, d, pre, r['Para'])
+            elif resolve_tables(fn, r['Para']):
+                t, d, pre, pk = resolve_tables(fn, r['Para'])
+                ft = (form or {}).get('FormType', '')
+                if ft in ('LIST', 'LISTEDIT') and not d:
+                    urls[key] = build_list(r, dict(FormID=fn, TableName=t, PrimaryKey=pk or guess_pk(t), FormType=ft, CaptionVN=r['CaptionVN']))
+                else:
+                    urls[key] = build_edit(r, fn, r['CaptionVN'], t, d, pre, r['Para'], pk=pk)
+                written['resolved'] += 1
             else:
                 note = ('Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.'
                         if kind == 'viet-tay' else 'Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.')
@@ -1316,6 +2359,7 @@ def main():
     build_lookups()
     build_session_login_home(first_screens)
     build_actions()
+    build_dialogs()
     total = sum(len(fs) for _, _, fs in os.walk(OUT))
     size = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk(OUT) for f in fs)
     print(f'Đã sinh {total} file, {size / 1024 / 1024:.1f} MB vào {OUT}')

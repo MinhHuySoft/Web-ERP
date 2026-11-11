@@ -1,11 +1,59 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Báo cáo ngày tổng hợp ( Khách mới + Khách cũ )</title></head>
 <body>
-<section data-erp="screen" data-screen-id="AR_BaoCaoNgayTongHopFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="AR_BaoCaoNgayTongHopFrm" data-menu-id="4080">
+<section data-erp="screen" data-screen-id="AR_BaoCaoNgayTongHopFrm" data-form-type="LIST" data-mode="view" data-screen-key="AR_BaoCaoNgayTongHopFrm" data-menu-id="4080">
 <h1>Báo cáo ngày tổng hợp ( Khách mới + Khách cũ )</h1>
 <menu data-erp="toolbar">
   <li><a data-action="reload" href="/mock/screens/AR_BaoCaoNgayTongHopFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/AR_BaoCaoNgayTongHopFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_BaoCaoNgayTongHopFrm-FromDate">Từ ngày</label><input id="flt-AR_BaoCaoNgayTongHopFrm-FromDate" name="FromDate" type="date" value="2026-11-09"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-AR_BaoCaoNgayTongHopFrm-ToDate">Đến ngày</label><input id="flt-AR_BaoCaoNgayTongHopFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="lookup" data-span="12"><label for="flt-AR_BaoCaoNgayTongHopFrm-EmployeeID">Nhân viên</label><input id="flt-AR_BaoCaoNgayTongHopFrm-EmployeeID" name="EmployeeID" value="" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName"><output data-erp="lookup-text" for="flt-AR_BaoCaoNgayTongHopFrm-EmployeeID"></output></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-AR_BaoCaoNgayTongHopFrm-BranchID">Chi nhánh</label><select id="flt-AR_BaoCaoNgayTongHopFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-selectable="multi" data-total-rows="24">
+<thead><tr>
+<th scope="col" data-field="DocumentDate" data-type="date" data-width="100" data-frozen>Ngày</th>
+<th scope="col" data-field="EmployeeID" data-type="text" data-width="80">Mã NV</th>
+<th scope="col" data-field="EmployeeName" data-type="text" data-width="170">Nhân viên</th>
+<th scope="col" data-field="Route" data-type="text" data-width="140">Tuyến</th>
+<th scope="col" data-field="NewCustomers" data-type="number" data-width="80" data-decimals="0" data-sum="sum">Khách mới</th>
+<th scope="col" data-field="VisitedCustomers" data-type="number" data-width="110" data-decimals="0" data-sum="sum">Khách cũ ghé thăm</th>
+<th scope="col" data-field="Orders" data-type="number" data-width="80" data-decimals="0" data-sum="sum">Số đơn</th>
+<th scope="col" data-field="Revenue" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Doanh số</th>
+<th scope="col" data-field="Collected" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Đã thu</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="220">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV001</td><td>Nguyễn Văn An</td><td>Tuyến Q1-Q3</td><td data-value="3">3</td><td data-value="7">7</td><td data-value="1">1</td><td data-value="3000000">3.000.000</td><td data-value="1500000">1.500.000</td><td></td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV002</td><td>Trần Thị Bích</td><td>Tuyến Q5-Q10</td><td data-value="2">2</td><td data-value="6">6</td><td data-value="7">7</td><td data-value="175000000">175.000.000</td><td data-value="0">0</td><td>Cần hỗ trợ kỹ thuật demo</td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV003</td><td>Lê Hoàng Cường</td><td>Tuyến Thủ Đức</td><td data-value="0">0</td><td data-value="11">11</td><td data-value="3">3</td><td data-value="21000000">21.000.000</td><td data-value="0">0</td><td></td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV004</td><td>Phạm Thu Dung</td><td>Tuyến Bình Thạnh</td><td data-value="0">0</td><td data-value="12">12</td><td data-value="8">8</td><td data-value="124000000">124.000.000</td><td data-value="37200000">37.200.000</td><td>Cần hỗ trợ kỹ thuật demo</td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV005</td><td>Hoàng Minh Đức</td><td>Tuyến Gò Vấp</td><td data-value="1">1</td><td data-value="12">12</td><td data-value="9">9</td><td data-value="270000000">270.000.000</td><td data-value="0">0</td><td>Cần hỗ trợ kỹ thuật demo</td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV006</td><td>Vũ Thị Hà</td><td>Tuyến Hoàn Kiếm</td><td data-value="2">2</td><td data-value="10">10</td><td data-value="7">7</td><td data-value="140000000">140.000.000</td><td data-value="42000000">42.000.000</td><td></td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV007</td><td>Đặng Quốc Huy</td><td>Tuyến Cầu Giấy</td><td data-value="3">3</td><td data-value="12">12</td><td data-value="8">8</td><td data-value="188000000">188.000.000</td><td data-value="188000000">188.000.000</td><td>Khách hẹn tuần sau</td></tr>
+<tr ><td data-value="2026-11-11">11/11/2026</td><td>NV008</td><td>Bùi Thanh Lan</td><td>Tuyến Hải Châu</td><td data-value="1">1</td><td data-value="7">7</td><td data-value="4">4</td><td data-value="28000000">28.000.000</td><td data-value="14000000">14.000.000</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV001</td><td>Nguyễn Văn An</td><td>Tuyến Q1-Q3</td><td data-value="0">0</td><td data-value="13">13</td><td data-value="5">5</td><td data-value="100000000">100.000.000</td><td data-value="100000000">100.000.000</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV002</td><td>Trần Thị Bích</td><td>Tuyến Q5-Q10</td><td data-value="1">1</td><td data-value="9">9</td><td data-value="1">1</td><td data-value="16500000">16.500.000</td><td data-value="16500000">16.500.000</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV003</td><td>Lê Hoàng Cường</td><td>Tuyến Thủ Đức</td><td data-value="1">1</td><td data-value="9">9</td><td data-value="7">7</td><td data-value="210000000">210.000.000</td><td data-value="0">0</td><td>Khách hẹn tuần sau</td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV004</td><td>Phạm Thu Dung</td><td>Tuyến Bình Thạnh</td><td data-value="3">3</td><td data-value="10">10</td><td data-value="4">4</td><td data-value="116000000">116.000.000</td><td data-value="0">0</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV005</td><td>Hoàng Minh Đức</td><td>Tuyến Gò Vấp</td><td data-value="0">0</td><td data-value="12">12</td><td data-value="6">6</td><td data-value="84000000">84.000.000</td><td data-value="0">0</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV006</td><td>Vũ Thị Hà</td><td>Tuyến Hoàn Kiếm</td><td data-value="0">0</td><td data-value="8">8</td><td data-value="3">3</td><td data-value="88500000">88.500.000</td><td data-value="0">0</td><td>Khách hẹn tuần sau</td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV007</td><td>Đặng Quốc Huy</td><td>Tuyến Cầu Giấy</td><td data-value="4">4</td><td data-value="9">9</td><td data-value="1">1</td><td data-value="23500000">23.500.000</td><td data-value="7050000">7.050.000</td><td></td></tr>
+<tr ><td data-value="2026-11-10">10/11/2026</td><td>NV008</td><td>Bùi Thanh Lan</td><td>Tuyến Hải Châu</td><td data-value="3">3</td><td data-value="9">9</td><td data-value="5">5</td><td data-value="80000000">80.000.000</td><td data-value="80000000">80.000.000</td><td></td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV001</td><td>Nguyễn Văn An</td><td>Tuyến Q1-Q3</td><td data-value="2">2</td><td data-value="15">15</td><td data-value="9">9</td><td data-value="103500000">103.500.000</td><td data-value="31050000">31.050.000</td><td></td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV002</td><td>Trần Thị Bích</td><td>Tuyến Q5-Q10</td><td data-value="3">3</td><td data-value="9">9</td><td data-value="2">2</td><td data-value="58000000">58.000.000</td><td data-value="58000000">58.000.000</td><td>Đề xuất giảm giá 3%</td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV003</td><td>Lê Hoàng Cường</td><td>Tuyến Thủ Đức</td><td data-value="2">2</td><td data-value="15">15</td><td data-value="2">2</td><td data-value="49000000">49.000.000</td><td data-value="49000000">49.000.000</td><td>Khách hẹn tuần sau</td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV004</td><td>Phạm Thu Dung</td><td>Tuyến Bình Thạnh</td><td data-value="0">0</td><td data-value="12">12</td><td data-value="2">2</td><td data-value="29000000">29.000.000</td><td data-value="0">0</td><td></td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV005</td><td>Hoàng Minh Đức</td><td>Tuyến Gò Vấp</td><td data-value="3">3</td><td data-value="12">12</td><td data-value="4">4</td><td data-value="82000000">82.000.000</td><td data-value="41000000">41.000.000</td><td>Đề xuất giảm giá 3%</td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV006</td><td>Vũ Thị Hà</td><td>Tuyến Hoàn Kiếm</td><td data-value="4">4</td><td data-value="15">15</td><td data-value="3">3</td><td data-value="84000000">84.000.000</td><td data-value="42000000">42.000.000</td><td>Đề xuất giảm giá 3%</td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV007</td><td>Đặng Quốc Huy</td><td>Tuyến Cầu Giấy</td><td data-value="3">3</td><td data-value="9">9</td><td data-value="2">2</td><td data-value="47000000">47.000.000</td><td data-value="47000000">47.000.000</td><td></td></tr>
+<tr ><td data-value="2026-11-09">09/11/2026</td><td>NV008</td><td>Bùi Thanh Lan</td><td>Tuyến Hải Châu</td><td data-value="0">0</td><td data-value="13">13</td><td data-value="3">3</td><td data-value="60000000">60.000.000</td><td data-value="30000000">30.000.000</td><td>Cần hỗ trợ kỹ thuật demo</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="NewCustomers" data-value="41">41</td><td data-field="VisitedCustomers" data-value="256">256</td><td data-field="Orders" data-value="106">106</td><td data-field="Revenue" data-value="2180000000">2.180.000.000</td><td data-field="Collected" data-value="784300000">784.300.000</td><td></td></tr></tfoot>
+</table>
 </section>
 </body></html>

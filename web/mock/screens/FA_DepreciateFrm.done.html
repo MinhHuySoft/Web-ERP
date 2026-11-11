@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Trích khấu hao tài sản</title></head>
+<body>
+<section data-erp="screen" data-screen-id="FA_DepreciateFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="FA_DepreciateFrm" data-menu-id="1216">
+<h1>Trích khấu hao tài sản</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã trích khấu hao 7 tài sản, sinh phiếu kế toán KH1026/0001 (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-FA_DepreciateFrm" formaction="/mock/screens/FA_DepreciateFrm.done.html" formmethod="post" data-action="custom" data-icon="run">Trích khấu hao</button></li>
+  <li><button type="submit" form="rec-FA_DepreciateFrm" formaction="/mock/screens/FA_DepreciateFrm.deleted.html" formmethod="post" data-action="delete" data-icon="delete" data-confirm="Xóa bút toán khấu hao đã trích của kỳ đã chọn?">Xóa khấu hao kỳ</button></li>
+  <li><a data-action="reload" href="/mock/screens/FA_DepreciateFrm.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-FA_DepreciateFrm" method="post" action="/mock/screens/FA_DepreciateFrm.done.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Tham số</legend>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-FA_DepreciateFrm-PeriodID">Kỳ</label><select id="f-FA_DepreciateFrm-PeriodID" name="PeriodID"><option value=""></option><option value="202601">Kỳ 01/2026</option><option value="202602">Kỳ 02/2026</option><option value="202603">Kỳ 03/2026</option><option value="202604">Kỳ 04/2026</option><option value="202605">Kỳ 05/2026</option><option value="202606">Kỳ 06/2026</option><option value="202607">Kỳ 07/2026</option><option value="202608">Kỳ 08/2026</option><option value="202609">Kỳ 09/2026</option><option value="202610" selected>Kỳ 10/2026</option><option value="202611">Kỳ 11/2026</option><option value="202612">Kỳ 12/2026</option></select></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-FA_DepreciateFrm-BranchID">Chi nhánh</label><select id="f-FA_DepreciateFrm-BranchID" name="BranchID"><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-FA_DepreciateFrm-DocumentDate">Ngày hạch toán</label><input id="f-FA_DepreciateFrm-DocumentDate" name="DocumentDate" type="date" value="2026-10-31"></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-FA_DepreciateFrm-Memo">Diễn giải</label><input id="f-FA_DepreciateFrm-Memo" name="Memo" value="Trích khấu hao TSCĐ tháng 10/2026"></div>
+</fieldset>
+</form>
+<table data-erp="grid" data-grid-id="R0" data-key-field="AssetID" data-selectable="single" data-total-rows="7">
+<caption>Bảng tính khấu hao kỳ 10/2026</caption>
+<thead><tr>
+<th scope="col" data-field="AssetID" data-type="text" data-width="90" data-frozen>Mã tài sản</th>
+<th scope="col" data-field="AssetName" data-type="text" data-width="250">Tên tài sản</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="150">Bộ phận sử dụng</th>
+<th scope="col" data-field="OriginalCost" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Nguyên giá</th>
+<th scope="col" data-field="MonthUse" data-type="number" data-width="80" data-decimals="0">Số tháng KH</th>
+<th scope="col" data-field="MonthlyAmount" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Khấu hao kỳ này</th>
+<th scope="col" data-field="Accumulated" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Hao mòn lũy kế</th>
+<th scope="col" data-field="Remaining" data-type="money" data-width="130" data-decimals="0" data-sum="sum">Giá trị còn lại</th>
+<th scope="col" data-field="DebitAccID" data-type="text" data-width="90">TK chi phí</th>
+<th scope="col" data-field="CreditAccID" data-type="text" data-width="90">TK hao mòn</th>
+</tr></thead>
+<tbody>
+<tr data-key="TS001"><td>TS001</td><td>Máy siêu âm trình diễn GE</td><td data-value="KD">Phòng Kinh doanh</td><td data-value="1250000000">1.250.000.000</td><td data-value="60">60</td><td data-value="20833333">20.833.333</td><td data-value="458333326">458.333.326</td><td data-value="791666674">791.666.674</td><td>6414</td><td>2141</td></tr>
+<tr data-key="TS002"><td>TS002</td><td>Xe tải giao hàng 1,5 tấn</td><td data-value="KHO">Bộ phận Kho</td><td data-value="680000000">680.000.000</td><td data-value="96">96</td><td data-value="7083333">7.083.333</td><td data-value="240833322">240.833.322</td><td data-value="439166678">439.166.678</td><td>6414</td><td>2141</td></tr>
+<tr data-key="TS003"><td>TS003</td><td>Máy chủ ERP và lưu trữ</td><td data-value="KT">Phòng Kế toán</td><td data-value="245000000">245.000.000</td><td data-value="36">36</td><td data-value="6805556">6.805.556</td><td data-value="102083340">102.083.340</td><td data-value="142916660">142.916.660</td><td>6424</td><td>2141</td></tr>
+<tr data-key="TS004"><td>TS004</td><td>Hệ thống phòng cháy kho Hà Nội</td><td data-value="KHO">Bộ phận Kho</td><td data-value="318000000">318.000.000</td><td data-value="120">120</td><td data-value="2650000">2.650.000</td><td data-value="108650000">108.650.000</td><td data-value="209350000">209.350.000</td><td>6424</td><td>2141</td></tr>
+<tr data-key="TS005"><td>TS005</td><td>Máy xét nghiệm sinh hóa trưng bày</td><td data-value="KTH">Phòng Kỹ thuật</td><td data-value="890000000">890.000.000</td><td data-value="60">60</td><td data-value="14833333">14.833.333</td><td data-value="148333330">148.333.330</td><td data-value="741666670">741.666.670</td><td>6414</td><td>2141</td></tr>
+<tr data-key="TS006"><td>TS006</td><td>Kệ kho tự động</td><td data-value="KHO">Bộ phận Kho</td><td data-value="420000000">420.000.000</td><td data-value="84">84</td><td data-value="5000000">5.000.000</td><td data-value="140000000">140.000.000</td><td data-value="280000000">280.000.000</td><td>6424</td><td>2141</td></tr>
+<tr data-key="TS007"><td>TS007</td><td>Xe ô tô 7 chỗ</td><td data-value="HC">Phòng Hành chính</td><td data-value="1150000000">1.150.000.000</td><td data-value="120">120</td><td data-value="9583333">9.583.333</td><td data-value="507916649">507.916.649</td><td data-value="642083351">642.083.351</td><td>6424</td><td>2141</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td data-field="OriginalCost" data-value="4953000000">4.953.000.000</td><td></td><td data-field="MonthlyAmount" data-value="66788888">66.788.888</td><td data-field="Accumulated" data-value="1706149967">1.706.149.967</td><td data-field="Remaining" data-value="3246850033">3.246.850.033</td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</body></html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Định nghĩa phân bổ chi phí trả trước — AID002</title></head>
+<body>
+<section data-erp="screen" data-screen-id="GJ_AllocateSetupFrm" data-form-type="EDIT" data-mode="view" data-screen-key="GJ_AllocateSetupFrm:AID002" data-menu-id="160801">
+<h1>Định nghĩa phân bổ chi phí trả trước — AID002</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/GJ_AllocateSetupFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/GJ_AllocateSetupFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-GJ_AllocateSetupFrm-2" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/GJ_AllocateSetupFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/GJ_AllocateSetupFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/GJ_AllocateSetupFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/GJ_AllocateSetupFrm/2.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-GJ_AllocateSetupFrm-2" method="post" action="/mock/records/GJ_AllocateSetupFrm/1.saved.html" data-key-field="AllocateID" data-key="AID002">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-AllocateID">Mã phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-2-AllocateID" name="AllocateID" value="AID002" readonly></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-GJ_AllocateSetupFrm-2-AllocateName">Nội dung phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-2-AllocateName" name="AllocateName" value="Nội dung phân bổ 2" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-2-AllocateDate">Ngày Allocate</label><input id="f-rec-GJ_AllocateSetupFrm-2-AllocateDate" name="AllocateDate" type="date" value="2026-10-01" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-RefDoc">Chứng từ gốc</label><input id="f-rec-GJ_AllocateSetupFrm-2-RefDoc" name="RefDoc" value="Chứng từ gốc 2" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-RefSourceID">Mã nguồn tham chiếu</label><input id="f-rec-GJ_AllocateSetupFrm-2-RefSourceID" name="RefSourceID" value="RSI002" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-2-ItemID">Mã hàng</label><input id="f-rec-GJ_AllocateSetupFrm-2-ItemID" name="ItemID" value="VT0008" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-2-ItemID">Hóa chất xét nghiệm Glucose</output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-2-AccountID">Tài khoản</label><input id="f-rec-GJ_AllocateSetupFrm-2-AccountID" name="AccountID" value="334" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-2-AccountID">Phải trả người lao động</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-ExpenseAccID">TK chi phí</label><input id="f-rec-GJ_AllocateSetupFrm-2-ExpenseAccID" name="ExpenseAccID" value="EAI002" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-2-AllocateAmount">Số tiền phân bổ</label><input id="f-rec-GJ_AllocateSetupFrm-2-AllocateAmount" name="AllocateAmount" inputmode="decimal" value="42750000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-2-OpenAllocate">Đã phân bổ đầu kỳ</label><input id="f-rec-GJ_AllocateSetupFrm-2-OpenAllocate" name="OpenAllocate" inputmode="decimal" value="45" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-2-MonthUse">Số tháng</label><input id="f-rec-GJ_AllocateSetupFrm-2-MonthUse" name="MonthUse" inputmode="decimal" value="24" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-2-CostCenterID">Bộ phận</label><input id="f-rec-GJ_AllocateSetupFrm-2-CostCenterID" name="CostCenterID" value="KT" data-lookup-src="/mock/lookups/CF_CostCenterTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-2-CostCenterID">Phòng Kế toán</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-CostID">Khoản mục</label><input id="f-rec-GJ_AllocateSetupFrm-2-CostID" name="CostID" value="CID002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-Notes">Ghi chú</label><input id="f-rec-GJ_AllocateSetupFrm-2-Notes" name="Notes" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-GJ_AllocateSetupFrm-2-ObjectID">Mã đối tượng</label><input id="f-rec-GJ_AllocateSetupFrm-2-ObjectID" name="ObjectID" value="KH0004" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-GJ_AllocateSetupFrm-2-ObjectID">Công ty CP Dược phẩm Thành Đạt</output></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-2-StopDate">Ngày Stop</label><input id="f-rec-GJ_AllocateSetupFrm-2-StopDate" name="StopDate" type="date" value="2026-09-09" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-GJ_AllocateSetupFrm-2-BranchID">Chi nhánh</label><select id="f-rec-GJ_AllocateSetupFrm-2-BranchID" name="BranchID" disabled><option value=""></option><option value="HN">Hà Nội</option><option value="HCM" selected>Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-GJ_AllocateSetupFrm-2-NgayChungTu">Tu Chung Ngay</label><input id="f-rec-GJ_AllocateSetupFrm-2-NgayChungTu" name="NgayChungTu" type="date" value="2026-07-30" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-GJ_AllocateSetupFrm-2-DepartmentID">Phòng ban</label><input id="f-rec-GJ_AllocateSetupFrm-2-DepartmentID" name="DepartmentID" value="DID002" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="4">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="4">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="AllocateID" data-type="text" data-width="110" data-frozen>Mã phân bổ</th>
+<th scope="col" data-field="PeriodID" data-type="text" data-width="110">Kỳ</th>
+<th scope="col" data-field="isStopAllocate" data-type="bool" data-width="60">Allocate Stop</th>
+<th scope="col" data-field="FixAllocateAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền Allocate Fix</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110">Khoản mục</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110">Bộ phận</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+<th scope="col" data-field="ExpenseAccID" data-type="text" data-width="110">TK chi phí</th>
+<th scope="col" data-field="PrepayAccountID" data-type="text" data-width="110">TK chờ phân bổ</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>AID001</td><td>PID001</td><td data-value="false"></td><td data-value="17060000">17.060.000</td><td>CID001</td><td>KD</td><td>KH0001</td><td>EAI001</td><td>PAI001</td><td></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>AID002</td><td>PID002</td><td data-value="false"></td><td data-value="7180000">7.180.000</td><td>CID002</td><td>KT</td><td>KH0004</td><td>EAI002</td><td>PAI002</td><td>Kiểm tra kỹ trước khi nhận</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>AID003</td><td>PID003</td><td data-value="false"></td><td data-value="1840000">1.840.000</td><td>CID003</td><td>KHO</td><td>KH0007</td><td>EAI003</td><td>PAI003</td><td>Hàng nhập khẩu</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>AID004</td><td>PID004</td><td data-value="false"></td><td data-value="1160000">1.160.000</td><td>CID004</td><td>KTH</td><td>KH0010</td><td>EAI004</td><td>PAI004</td><td>Khách yêu cầu xuất hóa đơn</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td data-field="FixAllocateAmount" data-value="27240000">27.240.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>
