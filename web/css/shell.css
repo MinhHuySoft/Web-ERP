@@ -193,6 +193,8 @@
   }
   .erp-doctab__main .erp-icon { width: 15px; height: 15px; }
   .erp-doctab__label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Tab đang ngủ (đã nhả bộ nhớ): chữ nhạt hơn, bấm vào sẽ tải lại */
+  .erp-doctab.is-asleep:not(.is-active):not(:hover) .erp-doctab__label { color: var(--erp-text-faint); font-style: italic; }
   .erp-doctab__dirty { width: 7px; height: 7px; border-radius: 50%; background: var(--erp-warning); display: none; flex: none; }
   .erp-doctab.is-dirty .erp-doctab__dirty { display: block; }
   .erp-doctab__close {

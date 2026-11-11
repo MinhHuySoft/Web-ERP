@@ -7,11 +7,17 @@ import { pushRecent, toggleFavorite, isFavorite } from '../core/settings.js';
 import { enhanceScreen, enhanceFragment } from '../enhance/screen.js';
 import { readMessages } from '../enhance/messages.js';
 import { collectFormData, isEmptyResponse, validateRecord } from '../enhance/forms.js';
+import { disposeGrids } from '../enhance/grid.js';
 import { popupMenu } from './shell.js';
 
+const cfg = /** @type {any} */ (window).ERP_CONFIG || {};
+
 /**
+ * asleep: tab "ngủ" — đã nhả màn hình khỏi bộ nhớ, tải lại từ reloadUrl khi được chọn.
+ * reloadUrl: URL GET tải lại được màn hiện tại ('' = không tải lại an toàn được ⇒ không cho ngủ).
  * @typedef {{ id:string, url:string, key:string, title:string, btn:HTMLElement, panel:HTMLElement, dirty:boolean,
- *   pinned:boolean, keys: Map<string, (ev:KeyboardEvent)=>void>, ctrl: TabContext|null }} Tab
+ *   pinned:boolean, keys: Map<string, (ev:KeyboardEvent)=>void>, ctrl: TabContext|null,
+ *   lastActive:number, asleep:boolean, reloadUrl:string, scrollTop:number }} Tab
  */
 
 /**
@@ -76,7 +82,8 @@ export class TabManager {
     btn.addEventListener('contextmenu', (ev) => { ev.preventDefault(); this.tabMenu(tab, btn); });
     const panel = h('section', { class: 'erp-tabpanel', id, role: 'tabpanel', 'aria-labelledby': `${id}-btn`, hidden: true });
     /** @type {Tab} */
-    const tab = { id, url: '', key: '', title, btn, panel, dirty: false, pinned, keys: new Map(), ctrl: null };
+    const tab = { id, url: '', key: '', title, btn, panel, dirty: false, pinned, keys: new Map(), ctrl: null,
+      lastActive: Date.now(), asleep: false, reloadUrl: '', scrollTop: 0 };
     this.bar.append(btn);
     this.workspace.append(panel);
     this.tabs.push(tab);
@@ -87,6 +94,7 @@ export class TabManager {
   /** @param {Tab} tab */
   activate(tab) {
     this.active = tab;
+    tab.lastActive = Date.now();
     for (const t of this.tabs) {
       const on = t === tab;
       t.btn.setAttribute('aria-selected', String(on));
@@ -95,7 +103,45 @@ export class TabManager {
     }
     tab.btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     this.syncCount();
-    this.shell.onActiveTab?.(tab);
+    if (tab.asleep) this.wake(tab);
+    else this.shell.onActiveTab?.(tab);
+    this.sleepOld();
+  }
+
+  /* ---- Tab ngủ: chỉ giữ "sống" maxLiveTabs tab dùng gần nhất (config.js), tab cũ hơn nhả màn hình khỏi bộ nhớ ---- */
+
+  /** Cho ngủ các tab ít dùng nhất khi số tab đang giữ màn vượt giới hạn. Không ngủ: tab đang xem, Trang chủ, tab có thay đổi chưa lưu,
+   *  tab không tải lại được bằng GET (màn sinh ra từ POST không redirect). */
+  sleepOld() {
+    const max = Number(cfg.maxLiveTabs ?? 12);
+    if (!(max > 0)) return;
+    const live = this.tabs.filter((t) => !t.asleep && !t.pinned);
+    if (live.length <= max) return;
+    live.filter((t) => t !== this.active && !t.dirty && t.reloadUrl)
+      .sort((a, b) => a.lastActive - b.lastActive)
+      .slice(0, live.length - max)
+      .forEach((t) => this.sleep(t));
+  }
+
+  /** @param {Tab} tab */
+  sleep(tab) {
+    tab.scrollTop = tab.panel.scrollTop;
+    disposeGrids(tab.panel);
+    tab.panel.replaceChildren();
+    tab.keys.clear();
+    tab.ctrl = null;
+    tab.asleep = true;
+    tab.btn.classList.add('is-asleep');
+    tab.btn.title = `${tab.title} — đang ngủ để tiết kiệm bộ nhớ; bấm để mở lại`;
+  }
+
+  /** Tải lại màn của tab đang ngủ (vị trí cuộn được giữ). @param {Tab} tab */
+  async wake(tab) {
+    tab.asleep = false;
+    tab.btn.classList.remove('is-asleep');
+    tab.btn.removeAttribute('title');
+    await this.load(tab, tab.reloadUrl || tab.url, true);
+    tab.panel.scrollTop = tab.scrollTop;
   }
 
   syncCount() {
@@ -131,6 +177,9 @@ export class TabManager {
     if (tab.dirty && !(await confirmBox(`"${tab.title}" có thay đổi chưa lưu. Đóng và bỏ thay đổi?`, { ok: 'Đóng, bỏ thay đổi', tone: 'danger' }))) return false;
     const i = this.tabs.indexOf(tab);
     this.tabs.splice(i, 1);
+    disposeGrids(tab.panel);
+    tab.keys.clear();
+    tab.ctrl = null;
     tab.btn.remove();
     tab.panel.remove();
     if (this.active === tab) { const n = this.tabs[Math.min(i, this.tabs.length - 1)]; if (n) this.activate(n); else this.active = null; }
@@ -159,7 +208,7 @@ export class TabManager {
   showTabList(anchorEl) {
     const anchor = anchorEl || /** @type {HTMLElement} */ (document.querySelector('.erp-bottombar') || this.bar);
     popupMenu(anchor, [
-      ...this.tabs.map((t) => ({ icon: t.pinned ? 'home' : 'form', label: t.title + (t.dirty ? ' •' : ''), checked: t === this.active, onClick: () => this.activate(t) })),
+      ...this.tabs.map((t) => ({ icon: t.pinned ? 'home' : 'form', label: t.title + (t.dirty ? ' •' : '') + (t.asleep ? ' (đang ngủ)' : ''), checked: t === this.active, onClick: () => this.activate(t) })),
       ...(this.tabs.length > 2 ? [{ icon: 'close', label: 'Đóng tất cả (trừ Trang chủ)', onClick: () => this.closeAll() }] : []),
     ]);
   }
@@ -214,7 +263,9 @@ export class TabManager {
       const dup = o.fresh ? this.tabs.find((t) => t !== tab && t.key && t.key === key) : null;
       if (dup) { this.close(tab); this.activate(dup); return; }
       if (o.dialog) o.dialog.close();
-      this.render(tab, adopt(screen), res.url);
+      // Màn sinh từ POST không redirect thì GET lại URL đó không an toàn ⇒ chỉ tải lại được nếu BE cho data-refresh-src
+      const viaPost = !!(o.form || o.formData);
+      this.render(tab, adopt(screen), res.url, viaPost && !res.redirected);
     } else if (o.fresh && !tab.key) {
       // tab mới mà không có màn hình ⇒ không giữ tab rỗng
       this.close(tab);
@@ -225,13 +276,15 @@ export class TabManager {
     if (screen && !res.ok && !msgs.length) toast(`Backend trả mã ${res.status}`, 'warning');
   }
 
-  /** @param {Tab} tab @param {HTMLElement} screen @param {string} url */
-  render(tab, screen, url) {
+  /** @param {Tab} tab @param {HTMLElement} screen @param {string} url @param {boolean} [postResult] màn là kết quả POST (không redirect) */
+  render(tab, screen, url, postResult = false) {
     tab.keys.clear();
     tab.url = url;
     tab.key = screen.getAttribute('data-screen-key') || url;
+    tab.reloadUrl = screen.getAttribute('data-refresh-src') || (postResult ? '' : url);
     const title = screen.querySelector('h1')?.textContent?.trim() || 'Màn hình';
     this.setTitle(tab, title);
+    disposeGrids(tab.panel);
     tab.panel.replaceChildren(screen);
     const ctx = this.ctx(tab);
     tab.ctrl = ctx;
@@ -321,7 +374,7 @@ export class TabManager {
       const screen = pick(res.doc, 'screen');
       if (screen) {
         const s = adopt(screen);
-        const d = openDialog({ title: s.querySelector('h1')?.textContent || '', body: s, size: 'lg' });
+        const d = openDialog({ title: s.querySelector('h1')?.textContent || '', body: s, size: 'lg', onClose: () => disposeGrids(s) });
         s.querySelector('h1')?.remove();
         enhanceFragment(s, this.dialogCtx(origin, d));
         return;
@@ -335,8 +388,11 @@ export class TabManager {
     const title = section.querySelector(':scope > h1')?.textContent?.trim() || '';
     section.querySelector(':scope > h1')?.remove();
     const size = /** @type {any} */ (section.getAttribute('data-size') || 'md');
-    if (existing) { existing.body.replaceChildren(section); existing.setTitle?.(title); enhanceFragment(section, this.dialogCtx(origin, existing)); return; }
-    const d = openDialog({ title, body: section, size });
+    if (existing) {
+      disposeGrids(existing.body);
+      existing.body.replaceChildren(section); existing.setTitle?.(title); enhanceFragment(section, this.dialogCtx(origin, existing)); return;
+    }
+    const d = openDialog({ title, body: section, size, onClose: () => disposeGrids(d.body) });
     enhanceFragment(section, this.dialogCtx(origin, d));
   }
 
@@ -372,6 +428,7 @@ export class TabManager {
   /** @param {Tab} tab @param {any} err @param {string} url */
   renderError(tab, err, url) {
     if (!tab.key) this.setTitle(tab, 'Lỗi');
+    disposeGrids(tab.panel);
     tab.panel.replaceChildren(h('div', { class: 'erp-empty erp-empty--error' }, icon('error'), h('h2', {}, 'Không tải được màn hình'),
       h('p', {}, String(err?.message || err)), h('button', { class: 'erp-btn', type: 'button', onclick: () => this.load(tab, url, true) }, icon('reload'), 'Thử lại')));
   }

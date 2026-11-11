@@ -11,4 +11,6 @@ window.ERP_CONFIG = {
   contractVersion: '1.0',
   // Theme mặc định khi người dùng chưa chọn.
   defaultTheme: 'ribbon-classic',
+  // Số tab giữ màn hình trong bộ nhớ. Tab ít dùng hơn sẽ "ngủ" (nhả bộ nhớ) và tự tải lại khi được chọn. 0 = không giới hạn.
+  maxLiveTabs: 12,
 };

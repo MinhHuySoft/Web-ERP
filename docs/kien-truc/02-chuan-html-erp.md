@@ -2,6 +2,8 @@
 
 Trạng thái: **bản 1.0, chờ đội backend duyệt** (CQ-06). Chủ sở hữu: đội frontend Web-ERP.
 Liên quan: [QUYET-DINH.md](../QUYET-DINH.md) QĐ-06. Mock mẫu theo chuẩn này: `web/mock/`.
+Bản hướng dẫn thực hành cho BE (mẫu chép dùng, bảng tra, mức hỗ trợ hiện tại của FE):
+[../huong-dan/be-tra-html-cho-fe.md](../huong-dan/be-tra-html-cho-fe.md).
 
 Quy ước từ ngữ: **PHẢI** = bắt buộc; **NÊN** = khuyến nghị; **CÓ THỂ** = tùy chọn.
 

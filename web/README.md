@@ -8,7 +8,9 @@ Frontend nhận **HTML thô theo chuẩn ERP-HTML** từ backend (QĐ-06) rồi 
 
 Không build, không npm, không framework. Sửa file, tải lại trang là thấy.
 
+- Cấu trúc, luồng chạy, "muốn sửa X mở file Y", công thức mở rộng: [../docs/huong-dan/fe-cau-truc-va-to-chuc.md](../docs/huong-dan/fe-cau-truc-va-to-chuc.md)
 - Chuẩn giao tiếp với backend: [../docs/kien-truc/02-chuan-html-erp.md](../docs/kien-truc/02-chuan-html-erp.md)
+  (bản thực hành cho BE: [../docs/huong-dan/be-tra-html-cho-fe.md](../docs/huong-dan/be-tra-html-cho-fe.md))
 - Chuẩn giao diện (token, danh sách cấm, kiểm tra trước khi merge): [../docs/kien-truc/03-chuan-giao-dien.md](../docs/kien-truc/03-chuan-giao-dien.md)
 - Quyết định liên quan: [../docs/QUYET-DINH.md](../docs/QUYET-DINH.md) (QĐ-04 giao diện, QĐ-05 công nghệ, QĐ-06 phạm vi)
 
@@ -35,6 +37,7 @@ Sửa `config.js`:
 
 - `loginUrl`, `sessionUrl`, `menuUrl`, `homeUrl` — 4 điểm vào, chuẩn mục 3.4;
 - `allowedOrigins` nếu backend khác origin.
+- `maxLiveTabs` (mặc định 12): số tab giữ màn trong bộ nhớ; tab ít dùng hơn "ngủ" (nhả bộ nhớ) và tự tải lại khi được chọn.
 
 Backend có thể phục vụ thư mục `web/` như file tĩnh, cùng origin là đơn giản nhất. Mọi URL khác nằm trong HTML backend trả về.
 
