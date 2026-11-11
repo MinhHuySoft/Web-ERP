@@ -50,7 +50,6 @@
   .erp-titlebar__actions { display: flex; align-items: center; gap: 2px; }
   .erp-titlebar .erp-iconbtn:hover { background: var(--erp-chrome-hover); }
   .erp-titlebar [data-only="narrow"] { display: none; }
-  .erp-settings__sub { margin-top: 10px; font-size: var(--erp-fs-sm); }
   .erp-userbtn {
     display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 6px 0 3px; border-radius: 999px; border: 0;
     background: transparent; color: inherit; cursor: pointer;
@@ -254,13 +253,7 @@
   .erp-fatal .erp-icon { width: 44px; height: 44px; color: var(--erp-danger); }
 
   /* ---------- Bảng cài đặt giao diện ---------- */
-  .erp-settings { display: grid; gap: 22px; }
-  .erp-settings h3 { font-size: var(--erp-fs-md); margin-bottom: 10px; }
-  .erp-settings__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
-  .erp-settings__row { display: flex; align-items: center; gap: 10px; }
-  .erp-settings__row input[type=range] { flex: 1; accent-color: var(--erp-primary); }
-  .erp-settings__row input[type=color] { width: 44px; height: 32px; border: 1px solid var(--erp-border); border-radius: var(--erp-radius); padding: 2px; background: var(--erp-surface); }
-  .erp-themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .erp-themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
   .erp-themecard {
     display: grid; gap: 4px; padding: 8px; border-radius: var(--erp-radius-lg); border: 2px solid var(--erp-border);
     background: var(--erp-surface); color: var(--erp-text); text-align: start; cursor: pointer;
@@ -282,69 +275,109 @@
   .erp-seg input:focus-visible + span { box-shadow: inset 0 0 0 2px var(--erp-primary); }
   .erp-check { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
 
-  /* ---------- Màu sắc người dùng (bảng Giao diện & hiển thị) ---------- */
-  .erp-colorset { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-lg); background: var(--erp-surface-2); }
-  .erp-colorset__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .erp-colorset__head h3 { margin: 0; }
-  .erp-colorset__row { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: start; gap: 12px; }
-  .erp-colorset__label { padding-top: 6px; font-size: var(--erp-fs-sm); font-weight: 500; color: var(--erp-text-muted); }
-  .erp-colorset__note { display: flex; align-items: flex-start; gap: 8px; margin: 0; font-size: var(--erp-fs-sm); color: var(--erp-text-muted); }
-  .erp-colorset__note .erp-icon { width: 16px; height: 16px; margin-top: 1px; color: var(--erp-info); }
-  .erp-colorset__note.is-warning .erp-icon { color: var(--erp-warning); }
+  /* ---------- Bảng Giao diện & hiển thị: menu trái + nội dung (một lưới nhãn – điều khiển, không khung lồng) ---------- */
+  .erp-setdlg { height: min(88vh, 720px); }
+  .erp-setdlg .erp-dialog__body { display: flex; padding: 0; min-height: 0; overflow: hidden; }
+  .erp-setdlg__body { display: grid; grid-template-columns: 196px minmax(0, 1fr); flex: 1; min-height: 0; }
+  .erp-setnav { display: flex; flex-direction: column; gap: 2px; padding: 14px 10px; border-inline-end: 1px solid var(--erp-border); background: var(--erp-surface-2); }
+  .erp-setnav button {
+    display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 12px; border: 0; border-radius: var(--erp-radius);
+    background: transparent; color: var(--erp-text); font-weight: 500; text-align: start; cursor: pointer; white-space: nowrap;
+  }
+  .erp-setnav button:hover { background: var(--erp-sidebar-hover); }
+  .erp-setnav button[aria-selected="true"] { background: var(--erp-sidebar-active-bg); color: var(--erp-sidebar-active-text); font-weight: 600; }
+  .erp-setnav button .erp-icon { width: 18px; height: 18px; }
+  .erp-setpane { min-width: 0; overflow: auto; padding: 20px 24px 28px; }
+  .erp-setpane__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+  .erp-setpane__head h3 { margin: 0 0 4px; font-size: var(--erp-fs-lg); font-weight: 650; }
+  .erp-setpane__head p { margin: 0; max-width: 62ch; font-size: var(--erp-fs-sm); color: var(--erp-text-muted); }
+  .erp-setpane__head .erp-btn { flex: none; }
 
+  /* Nhóm nhãn – điều khiển xếp dọc: nhãn ngay trên điều khiển, điều khiển dùng trọn chiều ngang, các nhóm cách đều */
+  .erp-formrows { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 8px; align-items: start; }
+  .erp-formrows__label { font-size: var(--erp-fs-sm); font-weight: 600; color: var(--erp-text); }
+  .erp-formrows__ctl { display: grid; gap: 8px; justify-items: start; min-width: 0; margin-bottom: 16px; }
+  .erp-formrows__ctl:last-child { margin-bottom: 0; }
+  .erp-formrows__hint { font-size: var(--erp-fs-xs); color: var(--erp-text-muted); line-height: 1.45; }
+  .erp-range { display: flex; align-items: center; gap: 12px; width: min(100%, 320px); }
+  .erp-range input[type=range] { flex: 1; accent-color: var(--erp-primary); }
+  .erp-range output { min-width: 4ch; text-align: end; font-size: var(--erp-fs-sm); font-variant-numeric: tabular-nums; }
+  .erp-setnote { display: flex; align-items: flex-start; gap: 8px; margin: 0; font-size: var(--erp-fs-xs); line-height: 1.45; color: var(--erp-text-muted); }
+  .erp-setnote .erp-icon { width: 15px; height: 15px; margin-top: 1px; color: var(--erp-info); }
+  .erp-setnote.is-warning .erp-icon { color: var(--erp-warning); }
+
+  /* Ô màu chủ đạo */
   .erp-swatches { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
   .erp-swatches__sep { width: 1px; height: 22px; margin: 0 2px; background: var(--erp-border-strong); }
   .erp-swatch { position: relative; display: inline-grid; cursor: pointer; }
   .erp-swatch input[type=radio] { position: absolute; opacity: 0; pointer-events: none; }
   .erp-swatch > span {
-    width: 28px; height: 28px; border-radius: 50%; background: var(--sw);
+    width: 26px; height: 26px; border-radius: 50%; background: var(--sw);
     box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 14%, transparent); transition: box-shadow var(--erp-dur-fast) ease;
   }
   .erp-swatch:hover > span { box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 14%, transparent), 0 0 0 3px var(--erp-surface), 0 0 0 4px var(--erp-border-strong); }
   .erp-swatch input:checked + span, .erp-swatch--custom.is-checked > span { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-text); }
   .erp-swatch input:focus-visible + span, .erp-swatch--custom:focus-within > span { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary); }
-  /* Ô "Màu khác…": vòng sắc màu, bấm mở bộ chọn màu của trình duyệt */
   .erp-swatch--custom { background: conic-gradient(#e11d48, #f59e0b, #16a34a, #0ea5e9, #6d28d9, #e11d48); border-radius: 50%; }
-  .erp-swatch--custom > span { background: var(--sw); box-shadow: inset 0 0 0 4px transparent; }
+  .erp-swatch--custom > span { background: var(--sw); }
   .erp-swatch--custom input[type=color] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0; padding: 0; }
 
-  .erp-gradchips { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+  /* Ô gradient mẫu */
+  .erp-gradchips { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 10px 8px; width: 100%; }
   .erp-gradchip { position: relative; display: grid; gap: 4px; justify-items: center; cursor: pointer; }
   .erp-gradchip input { position: absolute; opacity: 0; pointer-events: none; }
   .erp-gradchip__tile {
-    display: grid; place-items: center; width: 100%; height: 34px; border-radius: var(--erp-radius); color: var(--erp-text-muted);
+    display: grid; place-items: center; width: 100%; height: 30px; border-radius: var(--erp-radius); color: var(--erp-text-muted);
     box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 12%, transparent); transition: box-shadow var(--erp-dur-fast) ease;
   }
-  .erp-gradchip__tile .erp-icon { width: 16px; height: 16px; }
+  .erp-gradchip__tile .erp-icon { width: 15px; height: 15px; }
   .erp-gradchip__name { font-size: var(--erp-fs-xs); color: var(--erp-text-muted); white-space: nowrap; }
   .erp-gradchip:hover .erp-gradchip__tile { box-shadow: inset 0 0 0 1px color-mix(in srgb, #000 12%, transparent), 0 0 0 2px var(--erp-surface), 0 0 0 3px var(--erp-border-strong); }
   .erp-gradchip input:checked ~ .erp-gradchip__tile { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-text); }
   .erp-gradchip input:checked ~ .erp-gradchip__name { color: var(--erp-text); font-weight: 600; }
   .erp-gradchip input:focus-visible ~ .erp-gradchip__tile { box-shadow: 0 0 0 2px var(--erp-surface), 0 0 0 4px var(--erp-primary); }
+  .erp-gradstops { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .erp-gradstop { display: inline-flex; align-items: center; gap: 2px; }
+  .erp-gradstop input[type=color] { width: 40px; height: 30px; padding: 2px; border: 1px solid var(--erp-border-strong); border-radius: var(--erp-radius-sm); background: var(--erp-surface); cursor: pointer; }
+  .erp-gradstop .erp-iconbtn { width: 26px; height: 26px; }
 
-  .erp-gradedit { display: grid; gap: 10px; margin-inline-start: 132px; padding: 12px; border-radius: var(--erp-radius); background: var(--erp-surface); border: 1px solid var(--erp-border); }
-  .erp-gradedit__stops { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-  .erp-gradedit__stop { display: inline-flex; align-items: center; gap: 2px; }
-  .erp-gradedit__stop input[type=color] { width: 40px; height: 30px; padding: 2px; border: 1px solid var(--erp-border-strong); border-radius: var(--erp-radius-sm); background: var(--erp-surface); cursor: pointer; }
-  .erp-gradedit__stop .erp-iconbtn { width: 26px; height: 26px; }
-  .erp-gradedit__angle { max-width: 360px; font-size: var(--erp-fs-sm); }
-  .erp-gradedit__angle output { min-width: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
-  .erp-gradedit__apply { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: var(--erp-fs-sm); }
+  /* Màu sắc: điều khiển bên trái, xem trước cố định bên phải */
+  .erp-colortab { display: grid; grid-template-columns: minmax(0, 1fr) 264px; gap: 32px; align-items: start; }
+  .erp-cprev { position: sticky; top: 0; margin: 0; display: grid; gap: 8px; }
+  .erp-cprev figcaption { font-size: var(--erp-fs-sm); font-weight: 500; color: var(--erp-text-muted); }
+  .erp-cprev__app {
+    overflow: hidden; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-lg); box-shadow: var(--erp-shadow-sm);
+    background-color: var(--erp-bg); background-image: var(--erp-bg-image); background-size: cover; font-size: var(--erp-fs-xs);
+  }
+  .erp-cprev__bar { display: flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px; background: var(--erp-chrome-bg); color: var(--erp-chrome-text); }
+  .erp-cprev__logo { width: 16px; height: 16px; border-radius: 4px; background: color-mix(in srgb, var(--erp-chrome-text) 85%, transparent); }
+  .erp-cprev__chip { margin-inline-start: auto; padding: 1px 7px; border-radius: 999px; background: var(--erp-chrome-hover); color: var(--erp-chrome-muted); }
+  .erp-cprev__main { display: grid; grid-template-columns: 86px minmax(0, 1fr); min-height: 170px; }
+  .erp-cprev__side { display: grid; align-content: start; gap: 2px; padding: 8px 6px; background: var(--erp-sidebar-bg); border-inline-end: 1px solid var(--erp-border); }
+  .erp-cprev__side span { display: flex; align-items: center; gap: 5px; padding: 4px 6px; border-radius: var(--erp-radius-sm); color: var(--erp-sidebar-text); white-space: nowrap; }
+  .erp-cprev__side .erp-icon { width: 12px; height: 12px; color: var(--erp-sidebar-icon); }
+  .erp-cprev__side .is-active { background: var(--erp-sidebar-active-bg); color: var(--erp-sidebar-active-text); font-weight: 600; }
+  .erp-cprev__side .is-active .erp-icon { color: var(--erp-sidebar-active-text); }
+  .erp-cprev__content { display: grid; align-content: start; gap: 8px; padding: 10px; min-width: 0; }
+  .erp-cprev__title { display: flex; align-items: center; gap: 6px; color: var(--erp-text); }
+  .erp-cprev__badge { padding: 0 6px; border-radius: 999px; background: var(--erp-warning-soft); color: var(--erp-text); font-size: .9em; }
+  .erp-cprev__actions { display: flex; gap: 6px; }
+  .erp-cprev__actions .erp-btn { min-height: 24px; padding: 0 8px; font-size: 1em; gap: 4px; }
+  .erp-cprev__actions .erp-icon { width: 12px; height: 12px; }
+  .erp-cprev__table { overflow: hidden; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-sm); background: var(--erp-grid-bg); }
+  .erp-cprev__tr { display: flex; justify-content: space-between; gap: 8px; padding: 4px 8px; color: var(--erp-text); font-variant-numeric: tabular-nums; }
+  .erp-cprev__tr + .erp-cprev__tr { border-top: 1px solid var(--erp-grid-line); }
+  .erp-cprev__tr.is-selected { background: var(--erp-grid-selected); }
+  .erp-cprev__link { color: var(--erp-primary); text-decoration: underline; text-underline-offset: 2px; }
 
-  /* Xem trước: dùng chính biến màu đang áp dụng */
-  .erp-colorprev { overflow: hidden; border: 1px solid var(--erp-border); border-radius: var(--erp-radius); background-color: var(--erp-bg); background-image: var(--erp-bg-image); background-size: cover; }
-  .erp-colorprev__bar { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 10px; background: var(--erp-chrome-bg); color: var(--erp-chrome-text); font-size: var(--erp-fs-sm); }
-  .erp-colorprev__logo { width: 18px; height: 18px; border-radius: 5px; background: color-mix(in srgb, var(--erp-chrome-text) 85%, transparent); }
-  .erp-colorprev__chip { margin-inline-start: auto; padding: 2px 8px; border-radius: 999px; background: var(--erp-chrome-hover); color: var(--erp-chrome-text); font-size: var(--erp-fs-xs); }
-  .erp-colorprev__body { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px; }
-  .erp-colorprev__body > span { font-size: var(--erp-fs-sm); }
-  .erp-colorprev__link { color: var(--erp-primary); text-decoration: underline; text-underline-offset: 2px; }
-  .erp-colorprev__sel { padding: 4px 10px; border-radius: var(--erp-radius-sm); background: var(--erp-sidebar-active-bg); color: var(--erp-sidebar-active-text); font-weight: 600; }
-  .erp-colorprev__row { padding: 4px 10px; border-radius: var(--erp-radius-sm); background: var(--erp-grid-selected); color: var(--erp-text); }
-  @media (max-width: 640px) {
-    .erp-colorset__row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-    .erp-colorset__label { padding-top: 0; }
-    .erp-gradedit { margin-inline-start: 0; }
+  /* Hộp thoại hẹp: menu thành hàng tab ngang, xem trước lên trên */
+  @container erp-dialog (max-width: 720px) {
+    .erp-setdlg__body { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+    .erp-setnav { flex-direction: row; overflow-x: auto; padding: 8px; border-inline-end: 0; border-bottom: 1px solid var(--erp-border); }
+    .erp-setnav button { height: 34px; flex: none; }
+    .erp-setpane { padding: 16px; }
+    .erp-colortab { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .erp-cprev { position: static; order: -1; }
   }
 }
 
