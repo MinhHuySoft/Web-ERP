@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phân quyền sử dụng ( Web )</title></head>
+<body>
+<section data-erp="screen" data-screen-id="NguoiDungPhanQuyenWAFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="NguoiDungPhanQuyenWAFrm" data-menu-id="010106">
+<h1>Phân quyền sử dụng ( Web )</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu thay đổi (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/NguoiDungPhanQuyenWAFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><a data-action="copy" href="/mock/actions/copy-permission.html" data-target="dialog">Sao chép quyền…</a></li>
+  <li><a data-action="reload" href="/mock/screens/NguoiDungPhanQuyenWAFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
+</menu>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Ma trận quyền nhóm × menu. Nhóm ADMIN luôn có toàn quyền (chống tự khóa). Đánh dấu dòng nhóm menu để áp cho mọi chức năng con.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/NguoiDungPhanQuyenWAFrm.html">
+<div data-erp="field" data-control="select" data-span="12"><label for="flt-NguoiDungPhanQuyenWAFrm-UserGroupID">Nhóm người dùng</label><select id="flt-NguoiDungPhanQuyenWAFrm-UserGroupID" name="UserGroupID"><option value=""></option><option value="ADMIN">Quản trị hệ thống</option><option value="GIAMDOC">Ban giám đốc</option><option value="KETOAN" selected>Kế toán</option><option value="KETOAN-HCM">Kế toán chi nhánh HCM</option><option value="THUQUY">Thủ quỹ</option><option value="KHO">Thủ kho</option><option value="MUAHANG">Mua hàng</option><option value="KINHDOANH">Kinh doanh</option><option value="KYTHUAT">Kỹ thuật – bảo hành</option><option value="CSKH">Chăm sóc khách hàng</option><option value="DAILY">Đại lý (Web)</option><option value="NHANSU">Hành chính – nhân sự</option></select></div>
+<div data-erp="field" data-control="select" data-span="10"><label for="flt-NguoiDungPhanQuyenWAFrm-ModuleID">Phân hệ</label><select id="flt-NguoiDungPhanQuyenWAFrm-ModuleID" name="ModuleID"><option value=""></option><option value="" selected>(Tất cả)</option><option value="01">Hệ thống</option><option value="02">Danh mục</option><option value="05">Mua hàng</option><option value="06">Bán hàng</option><option value="07">Quản lý kho</option><option value="08">Kho thực tế</option><option value="09">Thu chi</option><option value="11">Quản lý dụng cụ</option><option value="12">Tài sản</option><option value="16">Tổng hợp</option><option value="40">Kinh doanh</option><option value="60">Nhân sự</option></select></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="MenuID" data-selectable="multi" data-total-rows="22">
+<thead><tr>
+<th scope="col" data-field="MenuID" data-type="text" data-width="95" data-frozen data-readonly>Mã menu</th>
+<th scope="col" data-field="MenuName" data-type="text" data-width="330" data-readonly>Chức năng</th>
+<th scope="col" data-field="IsRun" data-type="bool" data-width="78">Truy cập</th>
+<th scope="col" data-field="IsAdd" data-type="bool" data-width="78">Thêm</th>
+<th scope="col" data-field="IsUpdate" data-type="bool" data-width="78">Sửa</th>
+<th scope="col" data-field="IsDelete" data-type="bool" data-width="78">Xóa</th>
+<th scope="col" data-field="isManager" data-type="bool" data-width="78">Manager</th>
+<th scope="col" data-field="isAdmin" data-type="bool" data-width="78">Admin</th>
+</tr></thead>
+<tbody>
+<tr data-key="WA01"><td>WA01</td><td>Trang tổng quan</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0101"><td>WA0101</td><td>  Bảng điều khiển</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0102"><td>WA0102</td><td>  Thông báo</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA02"><td>WA02</td><td>Bán hàng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0201"><td>WA0201</td><td>  Đơn đặt hàng</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="WA0202"><td>WA0202</td><td>  Duyệt đơn hàng</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td></tr>
+<tr data-key="WA0203"><td>WA0203</td><td>  Đề nghị thu tiền</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="WA0204"><td>WA0204</td><td>  Bảng giá</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0205"><td>WA0205</td><td>  Tồn kho khả dụng</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA03"><td>WA03</td><td>Khách hàng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0301"><td>WA0301</td><td>  Danh sách khách hàng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0302"><td>WA0302</td><td>  Yêu cầu thêm khách hàng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0303"><td>WA0303</td><td>  Hợp đồng tham gia</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="WA0304"><td>WA0304</td><td>  Đổi điểm / trả thưởng</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="WA04"><td>WA04</td><td>Thị trường</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0401"><td>WA0401</td><td>  Kế hoạch đi tuyến</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td></tr>
+<tr data-key="WA0402"><td>WA0402</td><td>  Báo cáo ngày</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0403"><td>WA0403</td><td>  Check-in khách hàng</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA05"><td>WA05</td><td>Đại lý</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0501"><td>WA0501</td><td>  Nhập kho đại lý (QR)</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0502"><td>WA0502</td><td>  Xuất bán lẻ (QR)</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="WA0503"><td>WA0503</td><td>  Tra cứu mã QR</td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td><td data-value="false"></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>

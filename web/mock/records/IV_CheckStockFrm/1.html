@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Kiểm kê hàng hóa — KK1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_CheckStockFrm" data-form-type="EDIT" data-mode="view" data-screen-key="IV_CheckStockFrm:KK1126/0001" data-menu-id="0708">
+<h1>Kiểm kê hàng hóa — KK1126/0001</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/IV_CheckStockFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/IV_CheckStockFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-IV_CheckStockFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/IV_CheckStockFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/IV_CheckStockFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/IV_CheckStockFrm/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/IV_CheckStockFrm/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_CheckStockFrm-1" method="post" action="/mock/records/IV_CheckStockFrm/1.saved.html" data-key-field="DocumentID" data-key="KK1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_CheckStockFrm-1-DocumentID">Số chứng từ</label><input id="f-rec-IV_CheckStockFrm-1-DocumentID" name="DocumentID" value="KK1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-IV_CheckStockFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_CheckStockFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-09-12" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-IV_CheckStockFrm-1-BranchID">Chi nhánh</label><select id="f-rec-IV_CheckStockFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-IV_CheckStockFrm-1-EmployeeID">Nhân viên</label><input id="f-rec-IV_CheckStockFrm-1-EmployeeID" name="EmployeeID" value="NV001" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-IV_CheckStockFrm-1-EmployeeID">Nguyễn Văn An</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-IV_CheckStockFrm-1-Memo">Diễn giải</label><input id="f-rec-IV_CheckStockFrm-1-Memo" name="Memo" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_CheckStockFrm-1-Notes">Ghi chú</label><input id="f-rec-IV_CheckStockFrm-1-Notes" name="Notes" value="Giao hàng trong tuần" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-IV_CheckStockFrm-1-StoreHouseID">Kho</label><select id="f-rec-IV_CheckStockFrm-1-StoreHouseID" name="StoreHouseID" disabled><option value=""></option><option value="KHO-HN" selected>Kho Hà Nội</option><option value="KHO-HCM">Kho Hồ Chí Minh</option><option value="KHO-DN">Kho Đà Nẵng</option><option value="KHO-BH">Kho bảo hành</option></select></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_CheckStockFrm-1-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-IV_CheckStockFrm-1-isLock" name="isLock" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_CheckStockFrm-1-CategoryID">Nhóm hàng</label><input id="f-rec-IV_CheckStockFrm-1-CategoryID" name="CategoryID" value="CID001" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-IV_CheckStockFrm-1-ItemID">Mã hàng</label><input id="f-rec-IV_CheckStockFrm-1-ItemID" name="ItemID" value="VT0001" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID" readonly><output data-erp="lookup-text" for="f-rec-IV_CheckStockFrm-1-ItemID">Máy đo huyết áp điện tử</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_CheckStockFrm-1-TKDCNhap">Nhap TKDC</label><input id="f-rec-IV_CheckStockFrm-1-TKDCNhap" name="TKDCNhap" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_CheckStockFrm-1-TKDCXuat">Xuat TKDC</label><input id="f-rec-IV_CheckStockFrm-1-TKDCXuat" name="TKDCXuat" value="Xuat TKDC 1" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_CheckStockFrm-1-CalPriceIN">IN đơn giá Cal</label><input type="hidden" name="CalPriceIN" value="false"><input id="f-rec-IV_CheckStockFrm-1-CalPriceIN" name="CalPriceIN" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_CheckStockFrm-1-CalPriceOUT">OUT đơn giá Cal</label><input type="hidden" name="CalPriceOUT" value="false"><input id="f-rec-IV_CheckStockFrm-1-CalPriceOUT" name="CalPriceOUT" type="checkbox" value="true" disabled></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="7">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="7">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110">Số lô</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110">TK kho</th>
+<th scope="col" data-field="CheckQuantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng Check</th>
+<th scope="col" data-field="StockQuantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng tồn kho</th>
+<th scope="col" data-field="DiffQuantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng Diff</th>
+<th scope="col" data-field="CheckQuantity2" data-type="number" data-width="70" data-decimals="0">Quantity2 Check</th>
+<th scope="col" data-field="StockQuantity2" data-type="number" data-width="70" data-decimals="0">Quantity2 tồn kho</th>
+<th scope="col" data-field="DiffQuantity2" data-type="number" data-width="70" data-decimals="0">Quantity2 Diff</th>
+<th scope="col" data-field="Property" data-type="text" data-width="110">Property</th>
+<th scope="col" data-field="Property2" data-type="text" data-width="110">Property2</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95" data-hidden>Hạn dùng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>KK1126/0001</td><td>VT0001</td><td>L26851</td><td>214</td><td data-value="121">121</td><td data-value="96">96</td><td data-value="85">85</td><td data-value="64">64</td><td data-value="6">6</td><td data-value="39">39</td><td></td><td>Property2 1</td><td data-value="2026-10-03">03/10/2026</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>KK1126/0002</td><td>VT0008</td><td>L26806</td><td>3331</td><td data-value="125">125</td><td data-value="79">79</td><td data-value="12">12</td><td data-value="71">71</td><td data-value="56">56</td><td data-value="50">50</td><td></td><td></td><td data-value="2026-10-10">10/10/2026</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>KK1126/0003</td><td>VT0015</td><td>L26562</td><td>411</td><td data-value="18">18</td><td data-value="50">50</td><td data-value="101">101</td><td data-value="13">13</td><td data-value="7">7</td><td data-value="47">47</td><td>Property 3</td><td></td><td data-value="2026-08-02">02/08/2026</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>KK1126/0004</td><td>VT0002</td><td>L26970</td><td>515</td><td data-value="75">75</td><td data-value="126">126</td><td data-value="80">80</td><td data-value="71">71</td><td data-value="82">82</td><td data-value="30">30</td><td></td><td></td><td data-value="2026-07-19">19/07/2026</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>KK1126/0005</td><td>VT0009</td><td>L26777</td><td>641</td><td data-value="181">181</td><td data-value="104">104</td><td data-value="90">90</td><td data-value="60">60</td><td data-value="79">79</td><td data-value="56">56</td><td></td><td></td><td data-value="2026-09-12">12/09/2026</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>KK1126/0006</td><td>VT0016</td><td>L26477</td><td>811</td><td data-value="121">121</td><td data-value="54">54</td><td data-value="153">153</td><td data-value="57">57</td><td data-value="76">76</td><td data-value="63">63</td><td>Property 6</td><td></td><td data-value="2026-10-18">18/10/2026</td></tr>
+<tr data-key="UAI007"><td>UAI007</td><td>KK1126/0007</td><td>VT0003</td><td>L26238</td><td>112</td><td data-value="107">107</td><td data-value="66">66</td><td data-value="146">146</td><td data-value="85">85</td><td data-value="69">69</td><td data-value="14">14</td><td></td><td>Property2 7</td><td data-value="2026-09-17">17/09/2026</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="CheckQuantity" data-value="748">748</td><td data-field="StockQuantity" data-value="575">575</td><td data-field="DiffQuantity" data-value="667">667</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

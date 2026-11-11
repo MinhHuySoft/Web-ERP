@@ -1,11 +1,71 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập ngôn ngữ hiển thị</title></head>
 <body>
-<section data-erp="screen" data-screen-id="SystemLangSetupFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="SystemLangSetupFrm" data-menu-id="0101080">
+<section data-erp="screen" data-screen-id="SystemLangSetupFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="SystemLangSetupFrm" data-menu-id="0101080">
 <h1>Thiết lập ngôn ngữ hiển thị</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/SystemLangSetupFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
   <li><a data-action="reload" href="/mock/screens/SystemLangSetupFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Ngôn ngữ hiển thị: VN / EN / CH. Đa ngữ chỉ bật khi chuỗi isSystemLanguage2 = True.</p></div>
+<section data-erp="tabs"><section data-erp="tab-panel" data-tab-id="S" data-title="Thông điệp &amp; cờ (SY_StTbl)" data-badge="16"><table data-erp="grid" data-grid-id="S" data-key-field="StringID" data-selectable="multi" data-total-rows="16">
+<thead><tr>
+<th scope="col" data-field="StringID" data-type="text" data-width="170" data-frozen>Mã chuỗi</th>
+<th scope="col" data-field="StringParam" data-type="text" data-width="90">Tham số</th>
+<th scope="col" data-field="StringVN" data-type="text" data-width="260">Tiếng Việt</th>
+<th scope="col" data-field="StringEN" data-type="text" data-width="260">Tiếng Anh</th>
+<th scope="col" data-field="StringCH" data-type="text" data-width="200">Tiếng Trung</th>
+</tr></thead>
+<tbody>
+<tr data-key="isSystemLanguage2"><td>isSystemLanguage2</td><td>True</td><td>True</td><td>True</td><td>True</td></tr>
+<tr data-key="SystemLanguage2"><td>SystemLanguage2</td><td></td><td>Tiếng Anh</td><td>English</td><td>英语</td></tr>
+<tr data-key="SystemLanguage3"><td>SystemLanguage3</td><td></td><td>Tiếng Trung</td><td>Chinese</td><td>中文</td></tr>
+<tr data-key="MsgSaveOK"><td>MsgSaveOK</td><td></td><td>Đã lưu dữ liệu</td><td>Data saved</td><td>数据已保存</td></tr>
+<tr data-key="MsgDeleteConfirm"><td>MsgDeleteConfirm</td><td></td><td>Bạn có chắc muốn xóa?</td><td>Are you sure you want to delete?</td><td>确定要删除吗？</td></tr>
+<tr data-key="MsgLockedPeriod"><td>MsgLockedPeriod</td><td>{0}</td><td>Kỳ {0} đã khóa sổ</td><td>Period {0} is closed</td><td>期间 {0} 已结账</td></tr>
+<tr data-key="MsgStockOut"><td>MsgStockOut</td><td>{0};{1}</td><td>Xuất vượt tồn: tồn {0}, xuất {1}</td><td>Exceeds stock: on hand {0}, issue {1}</td><td>超出库存：库存 {0}，出库 {1}</td></tr>
+<tr data-key="MsgRequired"><td>MsgRequired</td><td>{0}</td><td>Chưa nhập {0}</td><td>{0} is required</td><td>{0} 为必填项</td></tr>
+<tr data-key="BtnNew"><td>BtnNew</td><td></td><td>Thêm</td><td>New</td><td>新增</td></tr>
+<tr data-key="BtnEdit"><td>BtnEdit</td><td></td><td>Sửa</td><td>Edit</td><td>编辑</td></tr>
+<tr data-key="BtnSave"><td>BtnSave</td><td></td><td>Lưu</td><td>Save</td><td>保存</td></tr>
+<tr data-key="BtnDelete"><td>BtnDelete</td><td></td><td>Xóa</td><td>Delete</td><td>删除</td></tr>
+<tr data-key="BtnPrint"><td>BtnPrint</td><td></td><td>In</td><td>Print</td><td>打印</td></tr>
+<tr data-key="BtnApprove"><td>BtnApprove</td><td></td><td>Duyệt</td><td>Approve</td><td>审批</td></tr>
+<tr data-key="BtnCancel"><td>BtnCancel</td><td></td><td>Hủy</td><td>Cancel</td><td>取消</td></tr>
+<tr data-key="BtnExport"><td>BtnExport</td><td></td><td>Xuất Excel</td><td>Export to Excel</td><td>导出 Excel</td></tr>
+</tbody>
+</table></section><section data-erp="tab-panel" data-tab-id="L" data-title="Nhãn trường (SY_FmtFldTbl)" data-badge="20"><table data-erp="grid" data-grid-id="L" data-key-field="FieldName" data-selectable="multi" data-total-rows="20">
+<thead><tr>
+<th scope="col" data-field="FieldName" data-type="text" data-width="150" data-frozen>Tên trường</th>
+<th scope="col" data-field="CaptionVN" data-type="text" data-width="200">Nhãn tiếng Việt</th>
+<th scope="col" data-field="CaptionEN" data-type="text" data-width="200">Nhãn tiếng Anh</th>
+<th scope="col" data-field="CaptionCH" data-type="text" data-width="150">Nhãn tiếng Trung</th>
+<th scope="col" data-field="MinWidth" data-type="number" data-width="80" data-decimals="0">Rộng tối thiểu</th>
+<th scope="col" data-field="FormatID" data-type="text" data-width="100">Định dạng</th>
+</tr></thead>
+<tbody>
+<tr data-key="DocumentID"><td>DocumentID</td><td>Số chứng từ</td><td>Document No.</td><td>单据号</td><td data-value="80">80</td><td></td></tr>
+<tr data-key="DocumentDate"><td>DocumentDate</td><td>Ngày chứng từ</td><td>Document date</td><td>单据日期</td><td data-value="100">100</td><td>DATE</td></tr>
+<tr data-key="ObjectID"><td>ObjectID</td><td>Mã đối tượng</td><td>Customer/Vendor</td><td>往来单位</td><td data-value="120">120</td><td></td></tr>
+<tr data-key="ObjectName"><td>ObjectName</td><td>Tên đối tượng</td><td>Name</td><td>名称</td><td data-value="140">140</td><td></td></tr>
+<tr data-key="ItemID"><td>ItemID</td><td>Mã hàng</td><td>Item code</td><td>物料编码</td><td data-value="80">80</td><td></td></tr>
+<tr data-key="ItemName"><td>ItemName</td><td>Tên hàng</td><td>Item name</td><td>物料名称</td><td data-value="100">100</td><td></td></tr>
+<tr data-key="Unit"><td>Unit</td><td>ĐVT</td><td>Unit</td><td>单位</td><td data-value="120">120</td><td></td></tr>
+<tr data-key="Quantity"><td>Quantity</td><td>Số lượng</td><td>Quantity</td><td>数量</td><td data-value="140">140</td><td>QTY</td></tr>
+<tr data-key="UnitPrice"><td>UnitPrice</td><td>Đơn giá</td><td>Unit price</td><td>单价</td><td data-value="80">80</td><td>PRICE</td></tr>
+<tr data-key="Amount"><td>Amount</td><td>Thành tiền</td><td>Amount</td><td>金额</td><td data-value="100">100</td><td>AMT</td></tr>
+<tr data-key="VATPercent"><td>VATPercent</td><td>% VAT</td><td>VAT %</td><td>税率</td><td data-value="120">120</td><td></td></tr>
+<tr data-key="VATAmount"><td>VATAmount</td><td>Tiền VAT</td><td>VAT amount</td><td>税额</td><td data-value="140">140</td><td>AMT</td></tr>
+<tr data-key="TotalAmount"><td>TotalAmount</td><td>Tổng tiền</td><td>Total</td><td>合计</td><td data-value="80">80</td><td>AMT</td></tr>
+<tr data-key="Notes"><td>Notes</td><td>Ghi chú</td><td>Notes</td><td>备注</td><td data-value="100">100</td><td></td></tr>
+<tr data-key="BranchID"><td>BranchID</td><td>Chi nhánh</td><td>Branch</td><td>分公司</td><td data-value="120">120</td><td></td></tr>
+<tr data-key="StoreHouseID"><td>StoreHouseID</td><td>Kho</td><td>Warehouse</td><td>仓库</td><td data-value="140">140</td><td></td></tr>
+<tr data-key="Lot"><td>Lot</td><td>Số lô</td><td>Lot</td><td>批号</td><td data-value="80">80</td><td></td></tr>
+<tr data-key="ExpireDate"><td>ExpireDate</td><td>Hạn dùng</td><td>Expiry date</td><td>有效期</td><td data-value="100">100</td><td>DATE</td></tr>
+<tr data-key="EmployeeID"><td>EmployeeID</td><td>Nhân viên</td><td>Employee</td><td>员工</td><td data-value="120">120</td><td></td></tr>
+<tr data-key="AccountID"><td>AccountID</td><td>Tài khoản</td><td>Account</td><td>科目</td><td data-value="140">140</td><td></td></tr>
+</tbody>
+</table></section></section>
 </section>
 </body></html>

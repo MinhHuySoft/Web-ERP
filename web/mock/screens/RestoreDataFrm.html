@@ -4,8 +4,29 @@
 <section data-erp="screen" data-screen-id="RestoreDataFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="RestoreDataFrm" data-menu-id="010119">
 <h1>Phục hồi dữ liệu</h1>
 <menu data-erp="toolbar">
+  <li><button type="submit" form="rec-RestoreDataFrm" formaction="/mock/screens/RestoreDataFrm.done.html" formmethod="post" data-action="custom" data-icon="import" data-confirm="Phục hồi sẽ đưa CSDL đích về chế độ một người dùng và ngắt mọi kết nối. Tiếp tục?">Phục hồi</button></li>
   <li><a data-action="reload" href="/mock/screens/RestoreDataFrm.html" data-target="self">Nạp lại</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="warning">Phục hồi ghi đè toàn bộ dữ liệu của CSDL đích. Nên phục hồi vào CSDL mới rồi kiểm tra trước.</p></div>
+<form data-erp="record" id="rec-RestoreDataFrm" method="post" action="/mock/screens/RestoreDataFrm.done.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Tham số</legend>
+<div data-erp="field" data-control="select" data-span="20"><label for="f-RestoreDataFrm-BackupFile">Tệp sao lưu</label><select id="f-RestoreDataFrm-BackupFile" name="BackupFile"><option value=""></option><option value="MedData_20261111_0600.bak" selected>MedData_20261111_0600.bak — 1844 MB</option><option value="MedData_20261110_1800.bak">MedData_20261110_1800.bak — 1841 MB</option><option value="MedData_20261110_0600.bak">MedData_20261110_0600.bak — 1840 MB</option><option value="MedData_20261109_0600.bak">MedData_20261109_0600.bak — 1836 MB</option><option value="MedData_20261108_0600.bak">MedData_20261108_0600.bak — 1832 MB</option><option value="MedData_20261107_0600.bak">MedData_20261107_0600.bak — 1830 MB</option><option value="MedData_20261106_0600.bak">MedData_20261106_0600.bak — 1826 MB</option></select></div>
+<div data-erp="field" data-control="text" data-span="12"><label for="f-RestoreDataFrm-TargetDatabase">Phục hồi vào CSDL</label><input id="f-RestoreDataFrm-TargetDatabase" name="TargetDatabase" value="MedData_Restore"></div>
+<div data-erp="field" data-control="checkbox" data-span="8"><label for="f-RestoreDataFrm-ReplaceExisting">Ghi đè nếu đã tồn tại</label><input type="hidden" name="ReplaceExisting" value="false"><input id="f-RestoreDataFrm-ReplaceExisting" name="ReplaceExisting" type="checkbox" value="true"></div>
+</fieldset>
+</form>
+<table data-erp="grid" data-grid-id="R0" data-key-field="LogicalName" data-selectable="single" data-total-rows="2">
+<caption>Nội dung tệp sao lưu — lần chạy gần nhất</caption>
+<thead><tr>
+<th scope="col" data-field="LogicalName" data-type="text" data-width="160" data-frozen>Tên logic</th>
+<th scope="col" data-field="Type" data-type="text" data-width="70">Loại</th>
+<th scope="col" data-field="PhysicalName" data-type="text" data-width="380">Đường dẫn khi phục hồi</th>
+<th scope="col" data-field="SizeMB" data-type="number" data-width="80" data-decimals="1">Dung lượng (MB)</th>
+</tr></thead>
+<tbody>
+<tr data-key="MedData"><td>MedData</td><td>D</td><td>D:\SQLData\MedData_Restore.mdf</td><td data-value="1612">1612</td></tr>
+<tr data-key="MedData_log"><td>MedData_log</td><td>L</td><td>D:\SQLData\MedData_Restore_log.ldf</td><td data-value="231.6">231,6</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

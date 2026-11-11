@@ -1,11 +1,38 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Khoá dữ liệu ( Không cho thêm/sửa/xóa )</title></head>
 <body>
-<section data-erp="screen" data-screen-id="PeriodLockDataFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="PeriodLockDataFrm" data-menu-id="0108">
+<section data-erp="screen" data-screen-id="PeriodLockDataFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="PeriodLockDataFrm" data-menu-id="0108">
 <h1>Khoá dữ liệu ( Không cho thêm/sửa/xóa )</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/PeriodLockDataFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
   <li><a data-action="reload" href="/mock/screens/PeriodLockDataFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Kỳ khóa dữ liệu: không ai được thêm / sửa / xóa chứng từ có ngày thuộc kỳ (trừ chế độ quản trị).</p></div>
+<table data-erp="grid" data-grid-id="T0" data-key-field="PeriodID" data-selectable="multi" data-total-rows="12">
+<thead><tr>
+<th scope="col" data-field="PeriodID" data-type="text" data-width="90" data-frozen data-readonly>Mã kỳ</th>
+<th scope="col" data-field="PeriodName" data-type="text" data-width="130" data-readonly>Kỳ</th>
+<th scope="col" data-field="FromDate" data-type="date" data-width="100" data-readonly>Từ ngày</th>
+<th scope="col" data-field="ToDate" data-type="date" data-width="100" data-readonly>Đến ngày</th>
+<th scope="col" data-field="isLockData" data-type="bool" data-width="86">Khóa dữ liệu</th>
+<th scope="col" data-field="isLock" data-type="bool" data-width="86" data-readonly>Đã khóa sổ</th>
+<th scope="col" data-field="LockedBy" data-type="text" data-width="110" data-readonly>Người khóa</th>
+</tr></thead>
+<tbody>
+<tr data-key="202601"><td>202601</td><td>Kỳ 01/2026</td><td data-value="2026-01-01">01/01/2026</td><td data-value="2026-01-31">31/01/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202602"><td>202602</td><td>Kỳ 02/2026</td><td data-value="2026-02-01">01/02/2026</td><td data-value="2026-02-28">28/02/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202603"><td>202603</td><td>Kỳ 03/2026</td><td data-value="2026-03-01">01/03/2026</td><td data-value="2026-03-31">31/03/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202604"><td>202604</td><td>Kỳ 04/2026</td><td data-value="2026-04-01">01/04/2026</td><td data-value="2026-04-30">30/04/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202605"><td>202605</td><td>Kỳ 05/2026</td><td data-value="2026-05-01">01/05/2026</td><td data-value="2026-05-31">31/05/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202606"><td>202606</td><td>Kỳ 06/2026</td><td data-value="2026-06-01">01/06/2026</td><td data-value="2026-06-30">30/06/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202607"><td>202607</td><td>Kỳ 07/2026</td><td data-value="2026-07-01">01/07/2026</td><td data-value="2026-07-31">31/07/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202608"><td>202608</td><td>Kỳ 08/2026</td><td data-value="2026-08-01">01/08/2026</td><td data-value="2026-08-31">31/08/2026</td><td data-value="true">Có</td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202609"><td>202609</td><td>Kỳ 09/2026</td><td data-value="2026-09-01">01/09/2026</td><td data-value="2026-09-30">30/09/2026</td><td data-value="false"></td><td data-value="true">Có</td><td>admin</td></tr>
+<tr data-key="202610"><td>202610</td><td>Kỳ 10/2026</td><td data-value="2026-10-01">01/10/2026</td><td data-value="2026-10-31">31/10/2026</td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+<tr data-key="202611"><td>202611</td><td>Kỳ 11/2026</td><td data-value="2026-11-01">01/11/2026</td><td data-value="2026-11-30">30/11/2026</td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+<tr data-key="202612"><td>202612</td><td>Kỳ 12/2026</td><td data-value="2026-12-01">01/12/2026</td><td data-value="2026-12-31">31/12/2026</td><td data-value="false"></td><td data-value="false"></td><td></td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

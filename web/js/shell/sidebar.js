@@ -1,7 +1,7 @@
 // @ts-check
 import { h, fold } from '../core/dom.js';
 import { icon } from '../core/icons.js';
-import { getSettings, setSettings, getFavorites } from '../core/settings.js';
+import { getSettings, setSettings, getFavorites, SIDEBAR_W } from '../core/settings.js';
 
 /** @typedef {import('./menu-model.js').MenuNode} MenuNode */
 
@@ -32,15 +32,55 @@ export class Sidebar {
       this.homeItem(), ...menu.map((m) => this.module(m)));
     this.favBox = h('div', { class: 'erp-snav__favs' });
     this.collapseBtn = h('button', { class: 'erp-iconbtn erp-snav__collapse', type: 'button', onclick: () => this.toggleCollapsed() });
+    this.resizer = h('div', { class: 'erp-sidebar__resizer', role: 'separator', tabindex: '0', 'aria-orientation': 'vertical',
+      'aria-label': 'Kéo để đổi độ rộng menu (nhấp đúp: mặc định)', title: 'Kéo để đổi độ rộng · nhấp đúp để về mặc định',
+      'aria-valuemin': String(SIDEBAR_W.min), 'aria-valuemax': String(SIDEBAR_W.max) });
+    this.bindResize(this.resizer);
     this.host.replaceChildren(
       h('div', { class: 'erp-sidebar__head' },
         h('span', { class: 'erp-snav__searchwrap' }, icon('search'), this.search),
+        h('button', { class: 'erp-iconbtn erp-snav__foldall', type: 'button', title: 'Thu gọn tất cả nhóm', 'aria-label': 'Thu gọn tất cả nhóm',
+          onclick: () => this.list?.querySelectorAll('.erp-snav__module.is-open').forEach((li) => this.setOpen(/** @type {HTMLElement} */ (li), false)) }, icon('collapse')),
         h('button', { class: 'erp-iconbtn erp-sidebar__close', type: 'button', 'aria-label': 'Đóng menu', onclick: () => this.shell.toggleDrawer(false) }, icon('close'))),
       h('div', { class: 'erp-sidebar__scroll' }, this.favBox, this.list),
       h('div', { class: 'erp-sidebar__foot' }, this.collapseBtn,
-        h('button', { class: 'erp-snav__switch', type: 'button', title: 'Chuyển sang Ribbon', onclick: () => setSettings({ nav: 'ribbon' }) }, icon('ribbon'), h('span', {}, 'Dùng Ribbon'))));
+        h('button', { class: 'erp-snav__switch', type: 'button', title: 'Chuyển sang Ribbon', onclick: () => setSettings({ nav: 'ribbon' }) }, icon('ribbon'), h('span', {}, 'Dùng Ribbon'))),
+      this.resizer);
     this.syncCollapsed();
     this.renderFavorites();
+  }
+
+  /** Kéo mép phải để đổi độ rộng; phím ←/→ chỉnh 16px; nhấp đúp về mặc định. Độ rộng lưu theo người dùng. @param {HTMLElement} handle */
+  bindResize(handle) {
+    const set = (/** @type {number} */ w, /** @type {boolean} */ save) => {
+      const v = Math.round(Math.max(SIDEBAR_W.min, Math.min(SIDEBAR_W.max, w)));
+      document.documentElement.style.setProperty('--erp-sidebar-w', `${v}px`);
+      handle.setAttribute('aria-valuenow', String(v));
+      if (save) setSettings({ sidebarWidth: v });
+    };
+    handle.setAttribute('aria-valuenow', String(getSettings().sidebarWidth || SIDEBAR_W.def));
+    handle.addEventListener('pointerdown', (e) => {
+      if (this.isRail()) return;
+      e.preventDefault();
+      const startX = e.clientX, startW = this.host.getBoundingClientRect().width;
+      document.documentElement.classList.add('is-resizing-sidebar');
+      handle.setPointerCapture(e.pointerId);
+      const move = (/** @type {PointerEvent} */ ev) => set(startW + ev.clientX - startX, false);
+      const up = (/** @type {PointerEvent} */ ev) => {
+        handle.removeEventListener('pointermove', move);
+        handle.removeEventListener('pointerup', up);
+        document.documentElement.classList.remove('is-resizing-sidebar');
+        set(startW + ev.clientX - startX, true);
+      };
+      handle.addEventListener('pointermove', move);
+      handle.addEventListener('pointerup', up);
+    });
+    handle.addEventListener('dblclick', () => set(SIDEBAR_W.def, true));
+    handle.addEventListener('keydown', (e) => {
+      const cur = this.host.getBoundingClientRect().width;
+      if (e.key === 'ArrowLeft') { e.preventDefault(); set(cur - 16, true); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); set(cur + 16, true); }
+    });
   }
 
   homeItem() {

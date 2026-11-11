@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Đề nghị thu tiền ( Web Kinh Doanh ) — RP1126/0003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CS_ReceiptPlan2Frm" data-form-type="EDIT" data-mode="view" data-screen-key="CS_ReceiptPlan2Frm:RP1126/0003" data-menu-id="0912">
+<h1>Đề nghị thu tiền ( Web Kinh Doanh ) — RP1126/0003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/CS_ReceiptPlan2Frm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/CS_ReceiptPlan2Frm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-CS_ReceiptPlan2Frm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/CS_ReceiptPlan2Frm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/CS_ReceiptPlan2Frm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/CS_ReceiptPlan2Frm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/CS_ReceiptPlan2Frm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-CS_ReceiptPlan2Frm-3" method="post" action="/mock/records/CS_ReceiptPlan2Frm/1.saved.html" data-key-field="DocumentID" data-key="RP1126/0003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_ReceiptPlan2Frm-3-DocumentID">Số chứng từ</label><input id="f-rec-CS_ReceiptPlan2Frm-3-DocumentID" name="DocumentID" value="RP1126/0003" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-CS_ReceiptPlan2Frm-3-DocumentDate">Ngày chứng từ</label><input id="f-rec-CS_ReceiptPlan2Frm-3-DocumentDate" name="DocumentDate" type="date" value="2026-10-31" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-CS_ReceiptPlan2Frm-3-ObjectID">Mã đối tượng</label><input id="f-rec-CS_ReceiptPlan2Frm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-CS_ReceiptPlan2Frm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-CS_ReceiptPlan2Frm-3-Memo">Diễn giải</label><input id="f-rec-CS_ReceiptPlan2Frm-3-Memo" name="Memo" value="Kiểm tra kỹ trước khi nhận" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_ReceiptPlan2Frm-3-Notes">Ghi chú</label><input id="f-rec-CS_ReceiptPlan2Frm-3-Notes" name="Notes" value="Theo hợp đồng số 12/2026" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-CS_ReceiptPlan2Frm-3-BaseTotal">Tổng tiền</label><input id="f-rec-CS_ReceiptPlan2Frm-3-BaseTotal" name="BaseTotal" inputmode="decimal" value="155000000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_ReceiptPlan2Frm-3-CashAccountID">Mã Account Cash</label><input id="f-rec-CS_ReceiptPlan2Frm-3-CashAccountID" name="CashAccountID" value="CAI003" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-CS_ReceiptPlan2Frm-3-isBank">Bank</label><input type="hidden" name="isBank" value="false"><input id="f-rec-CS_ReceiptPlan2Frm-3-isBank" name="isBank" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-CS_ReceiptPlan2Frm-3-isCash">Cash</label><input type="hidden" name="isCash" value="false"><input id="f-rec-CS_ReceiptPlan2Frm-3-isCash" name="isCash" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-CS_ReceiptPlan2Frm-3-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-CS_ReceiptPlan2Frm-3-isLock" name="isLock" type="checkbox" value="true" checked disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_ReceiptPlan2Frm-3-Receiver">Người nhận</label><input id="f-rec-CS_ReceiptPlan2Frm-3-Receiver" name="Receiver" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-CS_ReceiptPlan2Frm-3-BranchID">Chi nhánh</label><select id="f-rec-CS_ReceiptPlan2Frm-3-BranchID" name="BranchID" disabled><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN" selected>Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-CS_ReceiptPlan2Frm-3-StatusID">Trạng thái</label><select id="f-rec-CS_ReceiptPlan2Frm-3-StatusID" name="StatusID" disabled><option value=""></option><option value="0" selected>Nháp</option><option value="1">Chờ duyệt</option><option value="2">Đã duyệt</option><option value="3">Hoàn thành</option><option value="9">Hủy</option></select></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-CS_ReceiptPlan2Frm-3-EmployeeID">Nhân viên</label><input id="f-rec-CS_ReceiptPlan2Frm-3-EmployeeID" name="EmployeeID" value="NV003" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-CS_ReceiptPlan2Frm-3-EmployeeID">Lê Hoàng Cường</output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-CS_ReceiptPlan2Frm-3-ManagerID">Quản lý</label><input id="f-rec-CS_ReceiptPlan2Frm-3-ManagerID" name="ManagerID" value="NV003" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-CS_ReceiptPlan2Frm-3-ManagerID">Lê Hoàng Cường</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CS_ReceiptPlan2Frm-3-LocationID">Mã tỉnh/TP</label><input id="f-rec-CS_ReceiptPlan2Frm-3-LocationID" name="LocationID" value="LID003" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="6">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="AccountID" data-type="text" data-width="110" data-frozen>Tài khoản</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="240">Diễn giải</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110">Mã hàng</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="TotalAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="RefDoc" data-type="text" data-width="110">Chứng từ gốc</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110">Khoản mục</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110">Bộ phận</th>
+<th scope="col" data-field="ObjectID" data-type="text" data-width="110">Mã đối tượng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>RP1126/0001</td><td>242</td><td>Khách yêu cầu xuất hóa đơn</td><td>VT0001</td><td data-value="14">14</td><td data-value="1590000">1.590.000</td><td data-value="22260000">22.260.000</td><td data-value="101750000">101.750.000</td><td></td><td>CID001</td><td>KD</td><td>KH0001</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>RP1126/0002</td><td>334</td><td>Khách yêu cầu xuất hóa đơn</td><td>VT0008</td><td data-value="119">119</td><td data-value="328000">328.000</td><td data-value="39032000">39.032.000</td><td data-value="74200000">74.200.000</td><td></td><td>CID002</td><td>KT</td><td>KH0004</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>RP1126/0003</td><td>421</td><td>Khách yêu cầu xuất hóa đơn</td><td>VT0015</td><td data-value="14">14</td><td data-value="650000">650.000</td><td data-value="9100000">9.100.000</td><td data-value="71300000">71.300.000</td><td>Chứng từ gốc 3</td><td>CID003</td><td>KHO</td><td>KH0007</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>RP1126/0004</td><td>632</td><td>Kiểm tra kỹ trước khi nhận</td><td>VT0002</td><td data-value="181">181</td><td data-value="30900">30.900</td><td data-value="5592900">5.592.900</td><td data-value="3240000">3.240.000</td><td></td><td>CID004</td><td>KTH</td><td>KH0010</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>RP1126/0005</td><td>642</td><td>Kiểm tra kỹ trước khi nhận</td><td>VT0009</td><td data-value="123">123</td><td data-value="77500">77.500</td><td data-value="9532500">9.532.500</td><td data-value="351500000">351.500.000</td><td>Chứng từ gốc 5</td><td>CID005</td><td>HC</td><td>KH0013</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>RP1126/0006</td><td>911</td><td></td><td>VT0016</td><td data-value="155">155</td><td data-value="50900">50.900</td><td data-value="7889500">7.889.500</td><td data-value="218500000">218.500.000</td><td></td><td>CID006</td><td>KD</td><td>KH0001</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="606">606</td><td data-field="UnitPrice" data-value="2727300">2.727.300</td><td data-field="Amount" data-value="93406900">93.406.900</td><td data-field="TotalAmount" data-value="820490000">820.490.000</td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

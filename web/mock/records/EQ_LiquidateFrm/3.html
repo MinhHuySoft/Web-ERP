@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thanh lý / Hủy công cụ dụng cụ — TLDC1126/0003</title></head>
+<body>
+<section data-erp="screen" data-screen-id="EQ_LiquidateFrm" data-form-type="EDIT" data-mode="view" data-screen-key="EQ_LiquidateFrm:TLDC1126/0003" data-menu-id="1106">
+<h1>Thanh lý / Hủy công cụ dụng cụ — TLDC1126/0003</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/EQ_LiquidateFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/EQ_LiquidateFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-EQ_LiquidateFrm-3" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/EQ_LiquidateFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/EQ_LiquidateFrm/2.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/EQ_LiquidateFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/EQ_LiquidateFrm/3.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-EQ_LiquidateFrm-3" method="post" action="/mock/records/EQ_LiquidateFrm/1.saved.html" data-key-field="DocumentID" data-key="TLDC1126/0003">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-EQ_LiquidateFrm-3-DocumentID">Số chứng từ</label><input id="f-rec-EQ_LiquidateFrm-3-DocumentID" name="DocumentID" value="TLDC1126/0003" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-EQ_LiquidateFrm-3-DocumentDate">Ngày chứng từ</label><input id="f-rec-EQ_LiquidateFrm-3-DocumentDate" name="DocumentDate" type="date" value="2026-07-24" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-EQ_LiquidateFrm-3-ObjectID">Mã đối tượng</label><input id="f-rec-EQ_LiquidateFrm-3-ObjectID" name="ObjectID" value="KH0007" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-EQ_LiquidateFrm-3-ObjectID">Bệnh viện Phụ sản Ánh Dương</output></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-EQ_LiquidateFrm-3-EmployeeID">Nhân viên</label><input id="f-rec-EQ_LiquidateFrm-3-EmployeeID" name="EmployeeID" value="NV003" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName" readonly><output data-erp="lookup-text" for="f-rec-EQ_LiquidateFrm-3-EmployeeID">Lê Hoàng Cường</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-EQ_LiquidateFrm-3-Memo">Diễn giải</label><input id="f-rec-EQ_LiquidateFrm-3-Memo" name="Memo" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-EQ_LiquidateFrm-3-Notes">Ghi chú</label><input id="f-rec-EQ_LiquidateFrm-3-Notes" name="Notes" value="Khách yêu cầu xuất hóa đơn" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-EQ_LiquidateFrm-3-BaseTotal">Tổng tiền</label><input id="f-rec-EQ_LiquidateFrm-3-BaseTotal" name="BaseTotal" inputmode="decimal" value="750000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-EQ_LiquidateFrm-3-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-EQ_LiquidateFrm-3-isLock" name="isLock" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-EQ_LiquidateFrm-3-RefDoc">Chứng từ gốc</label><input id="f-rec-EQ_LiquidateFrm-3-RefDoc" name="RefDoc" value="Chứng từ gốc 3" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="3">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="3">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="EquipID" data-type="text" data-width="110" data-frozen>Mã CCDC</th>
+<th scope="col" data-field="RemainAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền Remain</th>
+<th scope="col" data-field="LiquidateAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền Liquidate</th>
+<th scope="col" data-field="IncomeAccID" data-type="text" data-width="110">Mã tài khoản Income</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240">Ghi chú</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>TLDC1126/0001</td><td>EID001</td><td data-value="8880000">8.880.000</td><td data-value="60900000">60.900.000</td><td>IAI001</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="174">174</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>TLDC1126/0002</td><td>EID002</td><td data-value="35250000">35.250.000</td><td data-value="482500000">482.500.000</td><td>IAI002</td><td>Hàng nhập khẩu</td><td data-value="9">9</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>TLDC1126/0003</td><td>EID003</td><td data-value="16140000">16.140.000</td><td data-value="2080000">2.080.000</td><td>IAI003</td><td>Giao hàng trong tuần</td><td data-value="178">178</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td data-field="RemainAmount" data-value="60270000">60.270.000</td><td data-field="LiquidateAmount" data-value="545480000">545.480.000</td><td></td><td></td><td data-field="Quantity" data-value="361">361</td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Quản lý hình ảnh khách hàng — KH0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="CF_ObjectImageListFrm" data-form-type="EDIT" data-mode="view" data-screen-key="CF_ObjectImageListFrm:KH0001" data-menu-id="021040">
+<h1>Quản lý hình ảnh khách hàng — KH0001</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu chứng từ (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/CF_ObjectImageListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/CF_ObjectImageListFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-CF_ObjectImageListFrm-1" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/CF_ObjectImageListFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/CF_ObjectImageListFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/CF_ObjectImageListFrm/2.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/CF_ObjectImageListFrm/1.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-CF_ObjectImageListFrm-1" method="post" action="/mock/records/CF_ObjectImageListFrm/1.saved.html" data-key-field="ObjectID" data-key="KH0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-CF_ObjectImageListFrm-1-ObjectID">Mã đối tượng</label><input id="f-rec-CF_ObjectImageListFrm-1-ObjectID" name="ObjectID" value="KH0001" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-CF_ObjectImageListFrm-1-ObjectID">Công ty TNHH Thiết bị Y tế An Phát</output></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-CF_ObjectImageListFrm-1-BranchID">Chi nhánh</label><select id="f-rec-CF_ObjectImageListFrm-1-BranchID" name="BranchID" disabled><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-CF_ObjectImageListFrm-1-ObjectName">Tên đối tượng</label><input id="f-rec-CF_ObjectImageListFrm-1-ObjectName" name="ObjectName" value="Công ty TNHH Thiết bị Y tế An Phát" readonly></div>
+<div data-erp="field" data-control="textarea" data-span="20" data-rows="2"><label for="f-rec-CF_ObjectImageListFrm-1-Address">Địa chỉ</label><textarea id="f-rec-CF_ObjectImageListFrm-1-Address" name="Address" rows="2" readonly>80 Nguyễn Huệ, Hải Phòng</textarea></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-TaxCode">Mã số thuế</label><input id="f-rec-CF_ObjectImageListFrm-1-TaxCode" name="TaxCode" value="0330169272" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-CCCD">CCCD</label><input id="f-rec-CF_ObjectImageListFrm-1-CCCD" name="CCCD" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-Phone">Điện thoại</label><input id="f-rec-CF_ObjectImageListFrm-1-Phone" name="Phone" value="0966793156" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-ObjectGroupID">Nhóm đối tượng</label><input id="f-rec-CF_ObjectImageListFrm-1-ObjectGroupID" name="ObjectGroupID" value="OGI001" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-LocationID">Mã tỉnh/TP</label><input id="f-rec-CF_ObjectImageListFrm-1-LocationID" name="LocationID" value="LID001" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-QuanHuyen">Quận/huyện</label><input id="f-rec-CF_ObjectImageListFrm-1-QuanHuyen" name="QuanHuyen" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-XaPhuong">Phuong Xa</label><input id="f-rec-CF_ObjectImageListFrm-1-XaPhuong" name="XaPhuong" value="Phuong Xa 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-ChuyenKhoa">Khoa Chuyen</label><input id="f-rec-CF_ObjectImageListFrm-1-ChuyenKhoa" name="ChuyenKhoa" value="Khoa Chuyen 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-ZoneID">Khu vực</label><input id="f-rec-CF_ObjectImageListFrm-1-ZoneID" name="ZoneID" value="ZID001" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-NguoiMuaHang">Hang Mua Nguoi</label><input id="f-rec-CF_ObjectImageListFrm-1-NguoiMuaHang" name="NguoiMuaHang" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-ObjectNameHD">HD tên đối tượng</label><input id="f-rec-CF_ObjectImageListFrm-1-ObjectNameHD" name="ObjectNameHD" value="HD tên đối tượng 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-AddressHD">HD địa chỉ</label><input id="f-rec-CF_ObjectImageListFrm-1-AddressHD" name="AddressHD" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-DonViNhanHang">Hang Nhan Vi Don</label><input id="f-rec-CF_ObjectImageListFrm-1-DonViNhanHang" name="DonViNhanHang" value="Hang Nhan Vi Don 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-DiaChiNhanHang">Hang Nhan Chi Dia</label><input id="f-rec-CF_ObjectImageListFrm-1-DiaChiNhanHang" name="DiaChiNhanHang" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-NguoiNhanHang">Hang Nhan Nguoi</label><input id="f-rec-CF_ObjectImageListFrm-1-NguoiNhanHang" name="NguoiNhanHang" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-DienThoaiNguoiNhanHang">Hang Nhan Nguoi Thoai Dien</label><input id="f-rec-CF_ObjectImageListFrm-1-DienThoaiNguoiNhanHang" name="DienThoaiNguoiNhanHang" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-NguoiDoiChieuCN">CN Chieu Doi Nguoi</label><input id="f-rec-CF_ObjectImageListFrm-1-NguoiDoiChieuCN" name="NguoiDoiChieuCN" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-DienThoaiNguoiDoiChieuCN">CN Chieu Doi Nguoi Thoai Dien</label><input id="f-rec-CF_ObjectImageListFrm-1-DienThoaiNguoiDoiChieuCN" name="DienThoaiNguoiDoiChieuCN" value="CN Chieu Doi Nguoi Thoai Dien 1" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-ThoiGianDoiChieuCN">CN Chieu Doi Gian Thoi</label><input id="f-rec-CF_ObjectImageListFrm-1-ThoiGianDoiChieuCN" name="ThoiGianDoiChieuCN" value="" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-CF_ObjectImageListFrm-1-PhuTrachCN">CN Trach Phu</label><input id="f-rec-CF_ObjectImageListFrm-1-PhuTrachCN" name="PhuTrachCN" value="CN Trach Phu 1" readonly></div>
+</fieldset>
+</form>
+</section>
+</body></html>

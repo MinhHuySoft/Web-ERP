@@ -1,11 +1,63 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Lịch sử đồng bộ</title></head>
 <body>
-<section data-erp="screen" data-screen-id="GJ_InvoiceLogFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="GJ_InvoiceLogFrm" data-menu-id="160060">
+<section data-erp="screen" data-screen-id="GJ_InvoiceLogFrm" data-form-type="LIST" data-mode="view" data-screen-key="GJ_InvoiceLogFrm" data-menu-id="160060">
 <h1>Lịch sử đồng bộ</h1>
 <menu data-erp="toolbar">
+  <li><button type="submit" form="act-GJ_InvoiceLogFrm" formaction="/mock/actions/custom-ok.html" formmethod="post" data-action="custom" data-icon="reload">Đồng bộ ngay</button></li>
   <li><a data-action="reload" href="/mock/screens/GJ_InvoiceLogFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/GJ_InvoiceLogFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-GJ_InvoiceLogFrm-FromDate">Từ ngày</label><input id="flt-GJ_InvoiceLogFrm-FromDate" name="FromDate" type="date" value="2026-11-04"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-GJ_InvoiceLogFrm-ToDate">Đến ngày</label><input id="flt-GJ_InvoiceLogFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="10"><label for="flt-GJ_InvoiceLogFrm-LogType">Loại</label><select id="flt-GJ_InvoiceLogFrm-LogType" name="LogType"><option value=""></option><option value="Đồng bộ HĐ đầu vào">Đồng bộ HĐ đầu vào</option><option value="Đồng bộ HĐ đầu ra">Đồng bộ HĐ đầu ra</option><option value="Tải XML hóa đơn">Tải XML hóa đơn</option><option value="Đối chiếu chứng từ">Đối chiếu chứng từ</option></select></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="flt-GJ_InvoiceLogFrm-OnlyError">Chỉ dòng lỗi</label><input type="hidden" name="OnlyError" value="false"><input id="flt-GJ_InvoiceLogFrm-OnlyError" name="OnlyError" type="checkbox" value="true"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<form data-erp="record" id="act-GJ_InvoiceLogFrm" method="post" action="/mock/actions/custom-ok.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"></form>
+<table data-erp="grid" data-grid-id="T0" data-selectable="multi" data-total-rows="32">
+<thead><tr>
+<th scope="col" data-field="Logtime" data-type="datetime" data-width="135" data-frozen>Thời gian</th>
+<th scope="col" data-field="LogType" data-type="text" data-width="170">Loại đồng bộ</th>
+<th scope="col" data-field="Memo" data-type="text" data-width="460" data-wrap>Nội dung</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="110">Người chạy</th>
+<th scope="col" data-field="isError" data-type="status" data-width="110">Kết quả</th>
+</tr></thead>
+<tbody>
+<tr ><td data-value="2026-11-11T22:00:00">11/11/2026 22:00</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 10/11/2026 đến 11/11/2026: 39 hóa đơn, 4 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-11T19:07:00">11/11/2026 19:07</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 10/11/2026 đến 11/11/2026: 52 hóa đơn, 8 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-11T16:14:00">11/11/2026 16:14</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 10/11/2026 đến 11/11/2026: 39 hóa đơn, 5 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-11T13:21:00">11/11/2026 13:21</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 10/11/2026 đến 11/11/2026: 13 hóa đơn, 3 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr data-tone="danger"><td data-value="2026-11-11T10:28:00">11/11/2026 10:28</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào: lỗi kết nối cổng hóa đơn (hết thời gian chờ), sẽ thử lại lần sau</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="danger">Lỗi</data></td></tr>
+<tr ><td data-value="2026-11-11T07:35:00">11/11/2026 07:35</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 10/11/2026 đến 11/11/2026: 54 hóa đơn, 11 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T22:42:00">10/11/2026 22:42</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 09/11/2026 đến 10/11/2026: 38 hóa đơn, 6 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T19:49:00">10/11/2026 19:49</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 09/11/2026 đến 10/11/2026: 55 hóa đơn, 2 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T16:56:00">10/11/2026 16:56</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 09/11/2026 đến 10/11/2026: 30 hóa đơn, 6 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T13:03:00">10/11/2026 13:03</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 09/11/2026 đến 10/11/2026: 49 hóa đơn, 11 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T10:10:00">10/11/2026 10:10</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 09/11/2026 đến 10/11/2026: 17 hóa đơn, 0 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-10T07:17:00">10/11/2026 07:17</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 09/11/2026 đến 10/11/2026: 60 hóa đơn, 0 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-09T22:24:00">09/11/2026 22:24</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 08/11/2026 đến 09/11/2026: 47 hóa đơn, 6 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr data-tone="danger"><td data-value="2026-11-09T19:31:00">09/11/2026 19:31</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra: lỗi kết nối cổng hóa đơn (hết thời gian chờ), sẽ thử lại lần sau</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="danger">Lỗi</data></td></tr>
+<tr ><td data-value="2026-11-09T16:38:00">09/11/2026 16:38</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 08/11/2026 đến 09/11/2026: 26 hóa đơn, 3 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-09T13:45:00">09/11/2026 13:45</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 08/11/2026 đến 09/11/2026: 21 hóa đơn, 2 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-09T10:52:00">09/11/2026 10:52</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 08/11/2026 đến 09/11/2026: 45 hóa đơn, 10 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-09T07:59:00">09/11/2026 07:59</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 08/11/2026 đến 09/11/2026: 53 hóa đơn, 8 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-08T22:06:00">08/11/2026 22:06</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 07/11/2026 đến 08/11/2026: 5 hóa đơn, 0 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-08T19:13:00">08/11/2026 19:13</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 07/11/2026 đến 08/11/2026: 44 hóa đơn, 2 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-08T16:20:00">08/11/2026 16:20</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 07/11/2026 đến 08/11/2026: 30 hóa đơn, 4 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-08T13:27:00">08/11/2026 13:27</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 07/11/2026 đến 08/11/2026: 3 hóa đơn, 0 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr data-tone="danger"><td data-value="2026-11-08T10:34:00">08/11/2026 10:34</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn: lỗi kết nối cổng hóa đơn (hết thời gian chờ), sẽ thử lại lần sau</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="danger">Lỗi</data></td></tr>
+<tr ><td data-value="2026-11-08T07:41:00">08/11/2026 07:41</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 07/11/2026 đến 08/11/2026: 60 hóa đơn, 15 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T22:48:00">07/11/2026 22:48</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 06/11/2026 đến 07/11/2026: 30 hóa đơn, 1 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T19:55:00">07/11/2026 19:55</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 06/11/2026 đến 07/11/2026: 42 hóa đơn, 3 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T16:02:00">07/11/2026 16:02</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 06/11/2026 đến 07/11/2026: 7 hóa đơn, 0 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T13:09:00">07/11/2026 13:09</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ từ 06/11/2026 đến 07/11/2026: 3 hóa đơn, 0 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T10:16:00">07/11/2026 10:16</td><td>Đồng bộ HĐ đầu vào</td><td>Đồng bộ HĐ đầu vào từ 06/11/2026 đến 07/11/2026: 53 hóa đơn, 0 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-07T07:23:00">07/11/2026 07:23</td><td>Đồng bộ HĐ đầu ra</td><td>Đồng bộ HĐ đầu ra từ 06/11/2026 đến 07/11/2026: 37 hóa đơn, 3 hóa đơn mới</td><td>Hệ thống</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr ><td data-value="2026-11-06T22:30:00">06/11/2026 22:30</td><td>Tải XML hóa đơn</td><td>Tải XML hóa đơn từ 05/11/2026 đến 06/11/2026: 38 hóa đơn, 0 hóa đơn mới</td><td>admin</td><td data-value="0"><data data-erp="status" value="0" data-tone="success">Thành công</data></td></tr>
+<tr data-tone="danger"><td data-value="2026-11-06T19:37:00">06/11/2026 19:37</td><td>Đối chiếu chứng từ</td><td>Đối chiếu chứng từ: lỗi kết nối cổng hóa đơn (hết thời gian chờ), sẽ thử lại lần sau</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="danger">Lỗi</data></td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

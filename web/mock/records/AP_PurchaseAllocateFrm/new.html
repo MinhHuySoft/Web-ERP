@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Phân bổ chi phí mua hàng — Thêm mới</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_PurchaseAllocateFrm" data-form-type="EDIT" data-mode="new" data-screen-key="AP_PurchaseAllocateFrm:new" data-menu-id="0509">
+<h1>Phân bổ chi phí mua hàng — Thêm mới</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-AP_PurchaseAllocateFrm-new" formaction="/mock/records/AP_PurchaseAllocateFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-AP_PurchaseAllocateFrm-new" formaction="/mock/records/AP_PurchaseAllocateFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/screens/AP_PurchaseAllocateFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-AP_PurchaseAllocateFrm-new" method="post" action="/mock/records/AP_PurchaseAllocateFrm/1.saved.html" data-key-field="DocumentID" data-key="">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseAllocateFrm-new-DocumentID">Số chứng từ</label><input id="f-rec-AP_PurchaseAllocateFrm-new-DocumentID" name="DocumentID" value="PA1126/0025" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseAllocateFrm-new-CostSourceID">Mã nguồn chi phí</label><input id="f-rec-AP_PurchaseAllocateFrm-new-CostSourceID" name="CostSourceID" value="" required></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseAllocateFrm-new-PurchaseDetailID">Mã Detail Purchase</label><input id="f-rec-AP_PurchaseAllocateFrm-new-PurchaseDetailID" name="PurchaseDetailID" value="" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AP_PurchaseAllocateFrm-new-AllocationBase">Base Allocation</label><input id="f-rec-AP_PurchaseAllocateFrm-new-AllocationBase" name="AllocationBase" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AP_PurchaseAllocateFrm-new-AllocationRate">Tỷ lệ Allocation</label><input id="f-rec-AP_PurchaseAllocateFrm-new-AllocationRate" name="AllocationRate" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AP_PurchaseAllocateFrm-new-SourceAmount">Tiền nguyên tệ</label><input id="f-rec-AP_PurchaseAllocateFrm-new-SourceAmount" name="SourceAmount" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AP_PurchaseAllocateFrm-new-Amount">Thành tiền</label><input id="f-rec-AP_PurchaseAllocateFrm-new-Amount" name="Amount" inputmode="decimal" value="" data-decimals="0" required></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-AP_PurchaseAllocateFrm-new-IsActive">Đang dùng</label><input type="hidden" name="IsActive" value="false"><input id="f-rec-AP_PurchaseAllocateFrm-new-IsActive" name="IsActive" type="checkbox" value="true"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseAllocateFrm-new-UserInactive">Inactive người dùng</label><input id="f-rec-AP_PurchaseAllocateFrm-new-UserInactive" name="UserInactive" value=""></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AP_PurchaseAllocateFrm-new-DateInactive">Inactive ngày</label><input id="f-rec-AP_PurchaseAllocateFrm-new-DateInactive" name="DateInactive" type="date" value=""></div>
+</fieldset>
+</form>
+</section>
+</body></html>

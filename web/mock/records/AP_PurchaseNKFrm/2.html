@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Mua hàng nhập khẩu — PNK1126/0002</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AP_PurchaseNKFrm" data-form-type="EDIT" data-mode="view" data-screen-key="AP_PurchaseNKFrm:PNK1126/0002" data-menu-id="0505">
+<h1>Mua hàng nhập khẩu — PNK1126/0002</h1>
+<menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/AP_PurchaseNKFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
+  <li><a data-action="edit" href="/mock/records/AP_PurchaseNKFrm/1.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
+  <li><button type="submit" form="rec-AP_PurchaseNKFrm-2" formaction="/mock/actions/deleted.html" formmethod="post" data-action="delete" data-confirm="Xóa chứng từ này?">Xóa</button></li>
+  <li><a data-action="copy" href="/mock/records/AP_PurchaseNKFrm/new.html" data-target="tab">Sao chép</a></li>
+  <li><a data-action="print" href="/mock/actions/print.html" data-target="_blank" data-shortcut="Ctrl+P">In</a></li>
+  <li><a data-action="attach" href="/mock/actions/attachments.html" data-target="dialog">Đính kèm</a></li>
+  <li><a data-action="prev" href="/mock/records/AP_PurchaseNKFrm/1.html" data-target="self">Trước</a></li>
+  <li><a data-action="next" href="/mock/records/AP_PurchaseNKFrm/3.html" data-target="self">Sau</a></li>
+  <li><a data-action="reload" href="/mock/records/AP_PurchaseNKFrm/2.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-AP_PurchaseNKFrm-2" method="post" action="/mock/records/AP_PurchaseNKFrm/1.saved.html" data-key-field="DocumentID" data-key="PNK1126/0002">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-DocumentID">Số chứng từ</label><input id="f-rec-AP_PurchaseNKFrm-2-DocumentID" name="DocumentID" value="PNK1126/0002" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-DocumentDate">Ngày chứng từ</label><input id="f-rec-AP_PurchaseNKFrm-2-DocumentDate" name="DocumentDate" type="date" value="2026-10-18" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-PostingDate">Ngày Posting</label><input id="f-rec-AP_PurchaseNKFrm-2-PostingDate" name="PostingDate" type="date" value="2026-09-08" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-AP_PurchaseNKFrm-2-ObjectID">Mã đối tượng</label><input id="f-rec-AP_PurchaseNKFrm-2-ObjectID" name="ObjectID" value="KH0004" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" readonly><output data-erp="lookup-text" for="f-rec-AP_PurchaseNKFrm-2-ObjectID">Công ty CP Dược phẩm Thành Đạt</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-AP_PurchaseNKFrm-2-Memo">Diễn giải</label><input id="f-rec-AP_PurchaseNKFrm-2-Memo" name="Memo" value="Khách yêu cầu xuất hóa đơn" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-Notes">Ghi chú</label><input id="f-rec-AP_PurchaseNKFrm-2-Notes" name="Notes" value="Theo hợp đồng số 12/2026" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-Deliver">Người giao</label><input id="f-rec-AP_PurchaseNKFrm-2-Deliver" name="Deliver" value="" readonly></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-AP_PurchaseNKFrm-2-CurrencyID">Loại tiền</label><select id="f-rec-AP_PurchaseNKFrm-2-CurrencyID" name="CurrencyID" disabled><option value=""></option><option value="VND">VND</option><option value="USD" selected>USD</option><option value="EUR">EUR</option></select></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-RateExchange">Tỷ giá</label><input id="f-rec-AP_PurchaseNKFrm-2-RateExchange" name="RateExchange" inputmode="decimal" value="1" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-RateExchange2">Exchange2 tỷ lệ</label><input id="f-rec-AP_PurchaseNKFrm-2-RateExchange2" name="RateExchange2" inputmode="decimal" value="98" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-PaymentTypeID">Hình thức thanh toán</label><input id="f-rec-AP_PurchaseNKFrm-2-PaymentTypeID" name="PaymentTypeID" value="PTI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-PaymentTermID">Điều khoản thanh toán</label><input id="f-rec-AP_PurchaseNKFrm-2-PaymentTermID" name="PaymentTermID" value="PTI002" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-DueDate">Hạn thanh toán</label><input id="f-rec-AP_PurchaseNKFrm-2-DueDate" name="DueDate" type="date" value="2026-09-03" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-PONo">Số đơn mua</label><input id="f-rec-AP_PurchaseNKFrm-2-PONo" name="PONo" value="PON002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-ContractID">Hợp đồng</label><input id="f-rec-AP_PurchaseNKFrm-2-ContractID" name="ContractID" value="CID002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-RefDoc">Chứng từ gốc</label><input id="f-rec-AP_PurchaseNKFrm-2-RefDoc" name="RefDoc" value="" readonly></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-AP_PurchaseNKFrm-2-BaseTotal">Tổng tiền</label><input id="f-rec-AP_PurchaseNKFrm-2-BaseTotal" name="BaseTotal" inputmode="decimal" value="19560000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-AP_PurchaseNKFrm-2-PayAccID">TK thanh toán</label><input id="f-rec-AP_PurchaseNKFrm-2-PayAccID" name="PayAccID" value="3331" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}" readonly><output data-erp="lookup-text" for="f-rec-AP_PurchaseNKFrm-2-PayAccID">Thuế GTGT phải nộp</output></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-VATAccID">TK thuế GTGT</label><input id="f-rec-AP_PurchaseNKFrm-2-VATAccID" name="VATAccID" value="VAT002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-ImportAccID">Mã tài khoản nhập khẩu</label><input id="f-rec-AP_PurchaseNKFrm-2-ImportAccID" name="ImportAccID" value="IAI002" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-ImportAccID2">ID2 tài khoản nhập khẩu</label><input id="f-rec-AP_PurchaseNKFrm-2-ImportAccID2" name="ImportAccID2" value="" readonly></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-isImport">Nhập khẩu</label><input type="hidden" name="isImport" value="false"><input id="f-rec-AP_PurchaseNKFrm-2-isImport" name="isImport" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-AP_PurchaseNKFrm-2-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-AP_PurchaseNKFrm-2-isLock" name="isLock" type="checkbox" value="true" disabled></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AP_PurchaseNKFrm-2-InvoiceNo">Số hóa đơn</label><input id="f-rec-AP_PurchaseNKFrm-2-InvoiceNo" name="InvoiceNo" value="00006622" readonly></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="6">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="single" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden>Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden>Số chứng từ</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-frozen>Mã hàng</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110">Số lô</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95">Hạn dùng</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110">Kho</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá</th>
+<th scope="col" data-field="SourceAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền nguyên tệ</th>
+<th scope="col" data-field="FOBPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Đơn giá FOB</th>
+<th scope="col" data-field="FOBAmount" data-type="money" data-width="120" data-decimals="0" data-sum="sum">Tiền FOB</th>
+<th scope="col" data-field="PreCustomsFeeFC" data-type="money" data-width="120" data-decimals="0" data-sum="sum">FC Fee Customs Pre</th>
+<th scope="col" data-field="PreCustomsFeeLC" data-type="money" data-width="120" data-decimals="0" data-sum="sum">LC Fee Customs Pre</th>
+<th scope="col" data-field="CustomsValue" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Giá trị Customs</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Thành tiền</th>
+<th scope="col" data-field="VATValue" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Giá trị VAT</th>
+<th scope="col" data-field="ImportPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>Phần trăm nhập khẩu</th>
+<th scope="col" data-field="ImportAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tiền nhập khẩu</th>
+<th scope="col" data-field="GTGTPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>Phần trăm GTGT</th>
+<th scope="col" data-field="GTGTAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tiền GTGT</th>
+<th scope="col" data-field="VATID" data-type="text" data-width="110" data-hidden>VATID</th>
+<th scope="col" data-field="VATPercent" data-type="percent" data-width="60" data-decimals="2" data-hidden>% VAT</th>
+<th scope="col" data-field="VATAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tiền VAT</th>
+<th scope="col" data-field="TotalAmount" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Tổng tiền</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-hidden>Ghi chú</th>
+<th scope="col" data-field="CostCenterID" data-type="text" data-width="110" data-hidden>Bộ phận</th>
+<th scope="col" data-field="CostID" data-type="text" data-width="110" data-hidden>Khoản mục</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110" data-hidden>TK kho</th>
+<th scope="col" data-field="PurchaseCost" data-type="money" data-width="120" data-decimals="0" data-hidden data-sum="sum">Chi phí Purchase</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>PNK1126/0001</td><td>VT0001</td><td>L26635</td><td data-value="2026-07-16">16/07/2026</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="99">99</td><td data-value="182000">182.000</td><td data-value="4900000">4.900.000</td><td data-value="5860000">5.860.000</td><td data-value="13650000">13.650.000</td><td data-value="83000000">83.000.000</td><td data-value="16780000">16.780.000</td><td data-value="19460000">19.460.000</td><td data-value="18018000">18.018.000</td><td data-value="8900000">8.900.000</td><td data-value="0">0</td><td data-value="10700000">10.700.000</td><td data-value="5">5</td><td data-value="21450000">21.450.000</td><td>VAT001</td><td data-value="5">5</td><td data-value="208500000">208.500.000</td><td data-value="7950000">7.950.000</td><td>Theo hợp đồng số 12/2026</td><td>KD</td><td>CID001</td><td>214</td><td data-value="780000">780.000</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>PNK1126/0002</td><td>VT0008</td><td>L26752</td><td data-value="2026-10-29">29/10/2026</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="14">14</td><td data-value="81000">81.000</td><td data-value="435000000">435.000.000</td><td data-value="11220000">11.220.000</td><td data-value="1250000">1.250.000</td><td data-value="93100000">93.100.000</td><td data-value="9360000">9.360.000</td><td data-value="221250000">221.250.000</td><td data-value="1134000">1.134.000</td><td data-value="2670000">2.670.000</td><td data-value="0">0</td><td data-value="3000000">3.000.000</td><td data-value="10">10</td><td data-value="6200000">6.200.000</td><td>VAT002</td><td data-value="5">5</td><td data-value="139500000">139.500.000</td><td data-value="14740000">14.740.000</td><td>Khách yêu cầu xuất hóa đơn</td><td>KT</td><td>CID002</td><td>3331</td><td data-value="58500000">58.500.000</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>PNK1126/0003</td><td>VT0015</td><td>L26517</td><td data-value="2026-07-16">16/07/2026</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="179">179</td><td data-value="888000">888.000</td><td data-value="7700000">7.700.000</td><td data-value="8020000">8.020.000</td><td data-value="28550000">28.550.000</td><td data-value="131000000">131.000.000</td><td data-value="91200000">91.200.000</td><td data-value="33000000">33.000.000</td><td data-value="158952000">158.952.000</td><td data-value="22200000">22.200.000</td><td data-value="8">8</td><td data-value="49600000">49.600.000</td><td data-value="8">8</td><td data-value="8440000">8.440.000</td><td>VAT003</td><td data-value="0">0</td><td data-value="47200000">47.200.000</td><td data-value="22900000">22.900.000</td><td>Giao hàng trong tuần</td><td>KHO</td><td>CID003</td><td>411</td><td data-value="91250000">91.250.000</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>PNK1126/0004</td><td>VT0002</td><td>L26144</td><td data-value="2026-10-18">18/10/2026</td><td data-value="KHO-BH">Kho bảo hành</td><td data-value="66">66</td><td data-value="76000">76.000</td><td data-value="177750000">177.750.000</td><td data-value="9250000">9.250.000</td><td data-value="27800000">27.800.000</td><td data-value="124500000">124.500.000</td><td data-value="19220000">19.220.000</td><td data-value="18000000">18.000.000</td><td data-value="5016000">5.016.000</td><td data-value="73000000">73.000.000</td><td data-value="8">8</td><td data-value="75000000">75.000.000</td><td data-value="10">10</td><td data-value="8280000">8.280.000</td><td>VAT004</td><td data-value="0">0</td><td data-value="15900000">15.900.000</td><td data-value="491000000">491.000.000</td><td></td><td>KTH</td><td>CID004</td><td>515</td><td data-value="15140000">15.140.000</td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td>PNK1126/0005</td><td>VT0009</td><td>L26190</td><td data-value="2026-10-15">15/10/2026</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="77">77</td><td data-value="442500">442.500</td><td data-value="362500000">362.500.000</td><td data-value="9820000">9.820.000</td><td data-value="489500000">489.500.000</td><td data-value="90500000">90.500.000</td><td data-value="59750000">59.750.000</td><td data-value="10800000">10.800.000</td><td data-value="34072500">34.072.500</td><td data-value="2720000">2.720.000</td><td data-value="10">10</td><td data-value="283000000">283.000.000</td><td data-value="0">0</td><td data-value="172500000">172.500.000</td><td>VAT005</td><td data-value="8">8</td><td data-value="4620000">4.620.000</td><td data-value="177500000">177.500.000</td><td>Hàng nhập khẩu</td><td>HC</td><td>CID005</td><td>641</td><td data-value="54000000">54.000.000</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td>PNK1126/0006</td><td>VT0016</td><td>L26612</td><td data-value="2026-07-25">25/07/2026</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="191">191</td><td data-value="66400">66.400</td><td data-value="10050000">10.050.000</td><td data-value="29750000">29.750.000</td><td data-value="41500000">41.500.000</td><td data-value="10600000">10.600.000</td><td data-value="407000000">407.000.000</td><td data-value="51600000">51.600.000</td><td data-value="12682400">12.682.400</td><td data-value="19850000">19.850.000</td><td data-value="8">8</td><td data-value="481500000">481.500.000</td><td data-value="8">8</td><td data-value="1890000">1.890.000</td><td>VAT006</td><td data-value="5">5</td><td data-value="223000000">223.000.000</td><td data-value="440000">440.000</td><td>Kiểm tra kỹ trước khi nhận</td><td>KD</td><td>CID006</td><td>811</td><td data-value="21500000">21.500.000</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="626">626</td><td data-field="UnitPrice" data-value="1735900">1.735.900</td><td data-field="SourceAmount" data-value="997900000">997.900.000</td><td data-field="FOBPrice" data-value="73920000">73.920.000</td><td data-field="FOBAmount" data-value="602250000">602.250.000</td><td data-field="PreCustomsFeeFC" data-value="532700000">532.700.000</td><td data-field="PreCustomsFeeLC" data-value="603310000">603.310.000</td><td data-field="CustomsValue" data-value="354110000">354.110.000</td><td data-field="Amount" data-value="229874900">229.874.900</td><td data-field="VATValue" data-value="129340000">129.340.000</td><td></td><td data-field="ImportAmount" data-value="902800000">902.800.000</td><td></td><td data-field="GTGTAmount" data-value="218760000">218.760.000</td><td></td><td></td><td data-field="VATAmount" data-value="638720000">638.720.000</td><td data-field="TotalAmount" data-value="714530000">714.530.000</td><td></td><td></td><td></td><td></td><td data-field="PurchaseCost" data-value="241170000">241.170.000</td></tr></tfoot>
+</table>
+</section>
+</section>
+</section>
+</body></html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Lắp ghép - phân rã — PL1126/0001</title></head>
+<body>
+<section data-erp="screen" data-screen-id="IV_StockAdjustFrm" data-form-type="EDIT" data-mode="edit" data-screen-key="IV_StockAdjustFrm:PL1126/0001" data-menu-id="0706">
+<h1>Lắp ghép - phân rã — PL1126/0001</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-IV_StockAdjustFrm-1" formaction="/mock/records/IV_StockAdjustFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-IV_StockAdjustFrm-1" formaction="/mock/records/IV_StockAdjustFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/IV_StockAdjustFrm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-IV_StockAdjustFrm-1" method="post" action="/mock/records/IV_StockAdjustFrm/1.saved.html" data-key-field="DocumentID" data-key="PL1126/0001">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-1-DocumentID">Số chứng từ</label><input id="f-rec-IV_StockAdjustFrm-1-DocumentID" name="DocumentID" value="PL1126/0001" readonly></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="f-rec-IV_StockAdjustFrm-1-DocumentDate">Ngày chứng từ</label><input id="f-rec-IV_StockAdjustFrm-1-DocumentDate" name="DocumentDate" type="date" value="2026-08-29" required></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-IV_StockAdjustFrm-1-Memo">Diễn giải</label><input id="f-rec-IV_StockAdjustFrm-1-Memo" name="Memo" value="Giao hàng trong tuần"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-1-Notes">Ghi chú</label><input id="f-rec-IV_StockAdjustFrm-1-Notes" name="Notes" value="Giao hàng trong tuần"></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-IV_StockAdjustFrm-1-isLock">Khóa</label><input type="hidden" name="isLock" value="false"><input id="f-rec-IV_StockAdjustFrm-1-isLock" name="isLock" type="checkbox" value="true"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-IV_StockAdjustFrm-1-Status">Trạng thái</label><input id="f-rec-IV_StockAdjustFrm-1-Status" name="Status" inputmode="decimal" value="25" data-decimals="0" required></div>
+<div data-erp="field" data-control="lookup" data-span="14"><label for="f-rec-IV_StockAdjustFrm-1-ObjectID">Mã đối tượng</label><input id="f-rec-IV_StockAdjustFrm-1-ObjectID" name="ObjectID" value="KH0001" data-lookup-src="/mock/lookups/CF_ObjectTbl.html?q={q}" data-lookup-fill="ObjectName,Address,TaxCode" required><output data-erp="lookup-text" for="f-rec-IV_StockAdjustFrm-1-ObjectID">Công ty TNHH Thiết bị Y tế An Phát</output></div>
+<div data-erp="field" data-control="money" data-span="8"><label for="f-rec-IV_StockAdjustFrm-1-BaseTotal">Tổng tiền</label><input id="f-rec-IV_StockAdjustFrm-1-BaseTotal" name="BaseTotal" inputmode="decimal" value="17250000" data-decimals="0" readonly></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-1-ImpExpID">Mã Exp Imp</label><input id="f-rec-IV_StockAdjustFrm-1-ImpExpID" name="ImpExpID" value="IEI001"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-IV_StockAdjustFrm-1-DocBatch">Batch chứng từ</label><input id="f-rec-IV_StockAdjustFrm-1-DocBatch" name="DocBatch" value="Batch chứng từ 1"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="f-rec-IV_StockAdjustFrm-1-BranchID">Chi nhánh</label><select id="f-rec-IV_StockAdjustFrm-1-BranchID" name="BranchID" required><option value=""></option><option value="HN" selected>Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="4">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-IV_StockAdjustFrm-1" data-total-rows="4">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="DocumentID" data-type="text" data-width="110" data-hidden data-editor="text">Số chứng từ</th>
+<th scope="col" data-field="Type" data-type="text" data-width="110" data-frozen data-editor="text">Loại</th>
+<th scope="col" data-field="ItemID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ItemTbl.html?q={q}" data-lookup-fill="ItemName,Unit,UnitID">Mã hàng</th>
+<th scope="col" data-field="Lot" data-type="text" data-width="110" data-editor="text">Số lô</th>
+<th scope="col" data-field="StoreHouseID" data-type="text" data-width="110" data-editor="select">Kho</th>
+<th scope="col" data-field="Quantity" data-type="quantity" data-width="80" data-decimals="2" data-sum="sum" data-editor="number">Số lượng</th>
+<th scope="col" data-field="UnitPrice" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Đơn giá</th>
+<th scope="col" data-field="Amount" data-type="money" data-width="120" data-decimals="0" data-sum="sum" data-editor="money">Thành tiền</th>
+<th scope="col" data-field="InvAccID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_ChartAccTbl.html?q={q}">TK kho</th>
+<th scope="col" data-field="AdjustGroup" data-type="text" data-width="110" data-editor="text">Nhóm Adjust</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="Quantity2" data-type="number" data-width="70" data-decimals="0" data-editor="number">Số lượng 2</th>
+<th scope="col" data-field="Property" data-type="text" data-width="110" data-hidden data-editor="text">Property</th>
+<th scope="col" data-field="Property2" data-type="text" data-width="110" data-hidden data-editor="text">Property2</th>
+<th scope="col" data-field="IsFixPrice" data-type="bool" data-width="60" data-hidden data-editor="checkbox">Đơn giá Fix</th>
+<th scope="col" data-field="ExpireDate" data-type="date" data-width="95" data-hidden data-editor="date">Hạn dùng</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td>PL1126/0001</td><td>Loại 1</td><td>VT0001</td><td>L26889</td><td data-value="KHO-HN">Kho Hà Nội</td><td data-value="79">79</td><td data-value="36000">36.000</td><td data-value="2844000">2.844.000</td><td>214</td><td>Nhóm Adjust 1</td><td>Giao hàng trong tuần</td><td data-value="21">21</td><td></td><td>Property2 1</td><td data-value="false"></td><td data-value="2026-10-10">10/10/2026</td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td>PL1126/0002</td><td>Loại 2</td><td>VT0008</td><td>L26237</td><td data-value="KHO-HCM">Kho Hồ Chí Minh</td><td data-value="56">56</td><td data-value="3125000">3.125.000</td><td data-value="175000000">175.000.000</td><td>3331</td><td></td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="59">59</td><td>Property 2</td><td>Property2 2</td><td data-value="false"></td><td data-value="2026-10-01">01/10/2026</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td>PL1126/0003</td><td>Loại 3</td><td>VT0015</td><td>L26483</td><td data-value="KHO-DN">Kho Đà Nẵng</td><td data-value="24">24</td><td data-value="1195000">1.195.000</td><td data-value="28680000">28.680.000</td><td>411</td><td>Nhóm Adjust 3</td><td>Theo hợp đồng số 12/2026</td><td data-value="49">49</td><td></td><td></td><td data-value="false"></td><td data-value="2026-10-30">30/10/2026</td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td>PL1126/0004</td><td>Loại 4</td><td>VT0002</td><td>L26669</td><td data-value="KHO-BH">Kho bảo hành</td><td data-value="67">67</td><td data-value="2055000">2.055.000</td><td data-value="137685000">137.685.000</td><td>515</td><td>Nhóm Adjust 4</td><td>Giao hàng trong tuần</td><td data-value="78">78</td><td>Property 4</td><td></td><td data-value="false"></td><td data-value="2026-07-23">23/07/2026</td></tr>
+</tbody>
+<tfoot><tr><td>Tổng cộng</td><td></td><td></td><td></td><td></td><td></td><td data-field="Quantity" data-value="226">226</td><td data-field="UnitPrice" data-value="6411000">6.411.000</td><td data-field="Amount" data-value="344209000">344.209.000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+</table>
+<template data-erp="options" data-field="StoreHouseID"><option value="KHO-HN">Kho Hà Nội</option><option value="KHO-HCM">Kho Hồ Chí Minh</option><option value="KHO-DN">Kho Đà Nẵng</option><option value="KHO-BH">Kho bảo hành</option></template>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value="0"></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="2026-11-11"></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

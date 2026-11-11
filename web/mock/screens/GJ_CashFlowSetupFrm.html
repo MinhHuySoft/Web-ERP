@@ -1,11 +1,53 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập bảng lưu chuyển tiền tệ</title></head>
 <body>
-<section data-erp="screen" data-screen-id="GJ_CashFlowSetupFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="GJ_CashFlowSetupFrm" data-menu-id="166405">
+<section data-erp="screen" data-screen-id="GJ_CashFlowSetupFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="GJ_CashFlowSetupFrm" data-menu-id="166405">
 <h1>Thiết lập bảng lưu chuyển tiền tệ</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/GJ_CashFlowSetupFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
   <li><a data-action="reload" href="/mock/screens/GJ_CashFlowSetupFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Báo cáo lưu chuyển tiền tệ mẫu B03-DN (phương pháp trực tiếp): lấy phát sinh đối ứng của tài khoản tiền.</p></div>
+<section data-erp="tabs"><section data-erp="tab-panel" data-tab-id="T0" data-title="Chỉ tiêu" data-badge="16"><table data-erp="grid" data-grid-id="T0" data-key-field="CodeID" data-selectable="multi" data-total-rows="16">
+<thead><tr>
+<th scope="col" data-field="CodeID" data-type="text" data-width="80" data-frozen>Mã số</th>
+<th scope="col" data-field="CodeName" data-type="text" data-width="430" data-wrap>Chỉ tiêu</th>
+<th scope="col" data-field="Statement" data-type="text" data-width="100">Thuyết minh</th>
+<th scope="col" data-field="Formula" data-type="text" data-width="300">Cách lấy số liệu</th>
+<th scope="col" data-field="IsBold" data-type="bool" data-width="86">In đậm</th>
+<th scope="col" data-field="IsNotPrint" data-type="bool" data-width="86">Không in</th>
+</tr></thead>
+<tbody>
+<tr data-key="01"><td>01</td><td>1. Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác</td><td></td><td>Nợ 111, 112 / Có 511, 131, 3331</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="02"><td>02</td><td>2. Tiền chi trả cho người cung cấp hàng hóa và dịch vụ</td><td></td><td>Có 111, 112 / Nợ 331, 152, 156, 133</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="03"><td>03</td><td>3. Tiền chi trả cho người lao động</td><td></td><td>Có 111, 112 / Nợ 334</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="04"><td>04</td><td>4. Tiền lãi vay đã trả</td><td></td><td>Có 111, 112 / Nợ 635, 335</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="05"><td>05</td><td>5. Thuế thu nhập doanh nghiệp đã nộp</td><td></td><td>Có 111, 112 / Nợ 3334</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="06"><td>06</td><td>6. Tiền thu khác từ hoạt động kinh doanh</td><td></td><td>Nợ 111, 112 / Có 711, 138, 344</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="07"><td>07</td><td>7. Tiền chi khác cho hoạt động kinh doanh</td><td></td><td>Có 111, 112 / Nợ 811, 138, 338</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="20"><td>20</td><td>Lưu chuyển tiền thuần từ hoạt động kinh doanh</td><td></td><td>01+02+...+07</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="21"><td>21</td><td>1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác</td><td></td><td>Có 111, 112 / Nợ 211, 213, 241</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="30"><td>30</td><td>Lưu chuyển tiền thuần từ hoạt động đầu tư</td><td></td><td>21+22+...+27</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="33"><td>33</td><td>3. Tiền thu từ đi vay</td><td></td><td>Nợ 111, 112 / Có 341</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="34"><td>34</td><td>4. Tiền trả nợ gốc vay</td><td></td><td>Có 111, 112 / Nợ 341</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="40"><td>40</td><td>Lưu chuyển tiền thuần từ hoạt động tài chính</td><td></td><td>31+32+...+36</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="50"><td>50</td><td>Lưu chuyển tiền thuần trong kỳ (50 = 20 + 30 + 40)</td><td></td><td>20+30+40</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="60"><td>60</td><td>Tiền và tương đương tiền đầu kỳ</td><td></td><td>Dư Nợ đầu kỳ 111, 112, 1281</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="70"><td>70</td><td>Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61)</td><td>VII.34</td><td>50+60+61</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+</tbody>
+</table></section><section data-erp="tab-panel" data-tab-id="T1" data-title="Công thức chỉ tiêu đang chọn" data-badge="1"><table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-total-rows="1">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="number" data-width="80" data-decimals="0" data-hidden>ID</th>
+<th scope="col" data-field="DebitAccIDs" data-type="text" data-width="140">Các TK Nợ</th>
+<th scope="col" data-field="CreditAccIDs" data-type="text" data-width="160">Các TK Có</th>
+<th scope="col" data-field="SumID" data-type="text" data-width="100">Cộng vào mã</th>
+<th scope="col" data-field="ReverseSign" data-type="bool" data-width="86">Đổi dấu</th>
+<th scope="col" data-field="Type" data-type="text" data-width="120">Kiểu lấy</th>
+</tr></thead>
+<tbody>
+<tr data-key="1"><td data-value="1">1</td><td>111;112</td><td>511;131;3331</td><td>20</td><td data-value="false"></td><td>Phát sinh đối ứng</td></tr>
+</tbody>
+</table></section></section>
 </section>
 </body></html>

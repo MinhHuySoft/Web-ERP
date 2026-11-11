@@ -1,11 +1,105 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>User log</title></head>
 <body>
-<section data-erp="screen" data-screen-id="UserLogFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="UserLogFrm" data-menu-id="0101081">
+<section data-erp="screen" data-screen-id="UserLogFrm" data-form-type="LIST" data-mode="view" data-screen-key="UserLogFrm" data-menu-id="0101081">
 <h1>User log</h1>
 <menu data-erp="toolbar">
   <li><a data-action="reload" href="/mock/screens/UserLogFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/UserLogFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-UserLogFrm-FromDate">Từ ngày</label><input id="flt-UserLogFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-UserLogFrm-ToDate">Đến ngày</label><input id="flt-UserLogFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-UserLogFrm-UserName">Người dùng</label><select id="flt-UserLogFrm-UserName" name="UserName"><option value=""></option><option value="admin">Quản trị hệ thống</option><option value="annv">Nguyễn Văn An</option><option value="bichtt">Trần Thị Bích</option><option value="cuonglh">Lê Hoàng Cường</option><option value="dungpt">Phạm Thu Dung</option><option value="duchm">Hoàng Minh Đức</option><option value="havt">Vũ Thị Hà</option><option value="huydq">Đặng Quốc Huy</option><option value="lanbt">Bùi Thanh Lan</option><option value="minhdv">Đỗ Văn Minh</option><option value="ngocnt">Ngô Thị Ngọc</option><option value="phucdv">Dương Văn Phúc</option><option value="quynhlt">Lý Thị Quỳnh</option></select></div>
+<div data-erp="field" data-control="checkbox" data-span="13"><label for="flt-UserLogFrm-ShowSystem">Hiện log hệ thống</label><input type="hidden" name="ShowSystem" value="false"><input id="flt-UserLogFrm-ShowSystem" name="ShowSystem" type="checkbox" value="true"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<section data-erp="tabs"><section data-erp="tab-panel" data-tab-id="T0" data-title="Phiên đăng nhập" data-badge="40"><table data-erp="grid" data-grid-id="T0" data-key-field="LogID" data-selectable="multi" data-total-rows="40">
+<thead><tr>
+<th scope="col" data-field="LogID" data-type="number" data-width="85" data-decimals="0" data-frozen>Mã phiên</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="110">Người dùng</th>
+<th scope="col" data-field="ComputerName" data-type="text" data-width="130">Máy tính</th>
+<th scope="col" data-field="LoginDate" data-type="datetime" data-width="135">Đăng nhập</th>
+<th scope="col" data-field="LogoutDate" data-type="datetime" data-width="135">Đăng xuất</th>
+<th scope="col" data-field="Duration" data-type="text" data-width="95">Thời lượng</th>
+<th scope="col" data-field="AppVer" data-type="text" data-width="110">Phiên bản</th>
+</tr></thead>
+<tbody>
+<tr data-key="58210"><td data-value="58210">58210</td><td>admin</td><td>PC-KT-01</td><td data-value="2026-11-11T07:00:00">11/11/2026 07:00</td><td data-value=""></td><td>Đang làm việc</td><td>26.10.19.1</td></tr>
+<tr data-key="58209"><td data-value="58209">58209</td><td>huydq</td><td>PC-KHO-02</td><td data-value="2026-11-11T10:17:00">11/11/2026 10:17</td><td data-value=""></td><td>Đang làm việc</td><td>26.10.19.1</td></tr>
+<tr data-key="58208"><td data-value="58208">58208</td><td>annv</td><td>PC-KD-03</td><td data-value="2026-11-11T13:34:00">11/11/2026 13:34</td><td data-value=""></td><td>Đang làm việc</td><td>26.10.19.1</td></tr>
+<tr data-key="58207"><td data-value="58207">58207</td><td>lanbt</td><td>PC-GD-04</td><td data-value="2026-11-11T16:51:00">11/11/2026 16:51</td><td data-value="2026-11-11T20:17:00">11/11/2026 20:17</td><td>3 giờ 26 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58206"><td data-value="58206">58206</td><td>bichtt</td><td>PC-KT-05</td><td data-value="2026-11-10T09:08:00">10/11/2026 09:08</td><td data-value="2026-11-10T09:24:00">10/11/2026 09:24</td><td>0 giờ 16 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58205"><td data-value="58205">58205</td><td>minhdv</td><td>PC-KHO-06</td><td data-value="2026-11-10T12:25:00">10/11/2026 12:25</td><td data-value="2026-11-10T16:18:00">10/11/2026 16:18</td><td>3 giờ 53 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58204"><td data-value="58204">58204</td><td>cuonglh</td><td>PC-KD-07</td><td data-value="2026-11-10T15:42:00">10/11/2026 15:42</td><td data-value="2026-11-10T16:30:00">10/11/2026 16:30</td><td>0 giờ 48 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58203"><td data-value="58203">58203</td><td>ngocnt</td><td>PC-GD-08</td><td data-value="2026-11-10T08:59:00">10/11/2026 08:59</td><td data-value="2026-11-10T12:26:00">10/11/2026 12:26</td><td>3 giờ 27 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58202"><td data-value="58202">58202</td><td>dungpt</td><td>PC-KT-09</td><td data-value="2026-11-09T11:16:00">09/11/2026 11:16</td><td data-value="2026-11-09T17:35:00">09/11/2026 17:35</td><td>6 giờ 19 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58201"><td data-value="58201">58201</td><td>phucdv</td><td>PC-KHO-01</td><td data-value="2026-11-09T14:33:00">09/11/2026 14:33</td><td data-value="2026-11-09T19:06:00">09/11/2026 19:06</td><td>4 giờ 33 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58200"><td data-value="58200">58200</td><td>duchm</td><td>PC-KD-02</td><td data-value="2026-11-09T07:50:00">09/11/2026 07:50</td><td data-value="2026-11-09T14:49:00">09/11/2026 14:49</td><td>6 giờ 59 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58199"><td data-value="58199">58199</td><td>quynhlt</td><td>PC-GD-03</td><td data-value="2026-11-09T10:07:00">09/11/2026 10:07</td><td data-value="2026-11-09T13:45:00">09/11/2026 13:45</td><td>3 giờ 38 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58198"><td data-value="58198">58198</td><td>havt</td><td>PC-KT-04</td><td data-value="2026-11-08T13:24:00">08/11/2026 13:24</td><td data-value="2026-11-08T19:07:00">08/11/2026 19:07</td><td>5 giờ 43 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58197"><td data-value="58197">58197</td><td>admin</td><td>PC-KHO-05</td><td data-value="2026-11-08T16:41:00">08/11/2026 16:41</td><td data-value="2026-11-08T18:20:00">08/11/2026 18:20</td><td>1 giờ 39 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58196"><td data-value="58196">58196</td><td>huydq</td><td>PC-KD-06</td><td data-value="2026-11-08T09:58:00">08/11/2026 09:58</td><td data-value="2026-11-08T13:27:00">08/11/2026 13:27</td><td>3 giờ 29 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58195"><td data-value="58195">58195</td><td>annv</td><td>PC-GD-07</td><td data-value="2026-11-08T12:15:00">08/11/2026 12:15</td><td data-value="2026-11-08T18:42:00">08/11/2026 18:42</td><td>6 giờ 27 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58194"><td data-value="58194">58194</td><td>lanbt</td><td>PC-KT-08</td><td data-value="2026-11-07T15:32:00">07/11/2026 15:32</td><td data-value="2026-11-07T21:41:00">07/11/2026 21:41</td><td>6 giờ 09 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58193"><td data-value="58193">58193</td><td>bichtt</td><td>PC-KHO-09</td><td data-value="2026-11-07T08:49:00">07/11/2026 08:49</td><td data-value="2026-11-07T09:30:00">07/11/2026 09:30</td><td>0 giờ 41 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58192"><td data-value="58192">58192</td><td>minhdv</td><td>PC-KD-01</td><td data-value="2026-11-07T11:06:00">07/11/2026 11:06</td><td data-value="2026-11-07T17:46:00">07/11/2026 17:46</td><td>6 giờ 40 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58191"><td data-value="58191">58191</td><td>cuonglh</td><td>PC-GD-02</td><td data-value="2026-11-07T14:23:00">07/11/2026 14:23</td><td data-value="2026-11-07T20:09:00">07/11/2026 20:09</td><td>5 giờ 46 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58190"><td data-value="58190">58190</td><td>ngocnt</td><td>PC-KT-03</td><td data-value="2026-11-06T07:40:00">06/11/2026 07:40</td><td data-value="2026-11-06T12:11:00">06/11/2026 12:11</td><td>4 giờ 31 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58189"><td data-value="58189">58189</td><td>dungpt</td><td>PC-KHO-04</td><td data-value="2026-11-06T10:57:00">06/11/2026 10:57</td><td data-value="2026-11-06T11:29:00">06/11/2026 11:29</td><td>0 giờ 32 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58188"><td data-value="58188">58188</td><td>phucdv</td><td>PC-KD-05</td><td data-value="2026-11-06T13:14:00">06/11/2026 13:14</td><td data-value="2026-11-06T14:56:00">06/11/2026 14:56</td><td>1 giờ 42 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58187"><td data-value="58187">58187</td><td>duchm</td><td>PC-GD-06</td><td data-value="2026-11-06T16:31:00">06/11/2026 16:31</td><td data-value="2026-11-06T22:21:00">06/11/2026 22:21</td><td>5 giờ 50 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58186"><td data-value="58186">58186</td><td>quynhlt</td><td>PC-KT-07</td><td data-value="2026-11-05T09:48:00">05/11/2026 09:48</td><td data-value="2026-11-05T16:02:00">05/11/2026 16:02</td><td>6 giờ 14 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58185"><td data-value="58185">58185</td><td>havt</td><td>PC-KHO-08</td><td data-value="2026-11-05T12:05:00">05/11/2026 12:05</td><td data-value="2026-11-05T18:33:00">05/11/2026 18:33</td><td>6 giờ 28 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58184"><td data-value="58184">58184</td><td>admin</td><td>PC-KD-09</td><td data-value="2026-11-05T15:22:00">05/11/2026 15:22</td><td data-value="2026-11-05T17:32:00">05/11/2026 17:32</td><td>2 giờ 10 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58183"><td data-value="58183">58183</td><td>huydq</td><td>PC-GD-01</td><td data-value="2026-11-05T08:39:00">05/11/2026 08:39</td><td data-value="2026-11-05T13:37:00">05/11/2026 13:37</td><td>4 giờ 58 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58182"><td data-value="58182">58182</td><td>annv</td><td>PC-KT-02</td><td data-value="2026-11-04T11:56:00">04/11/2026 11:56</td><td data-value="2026-11-04T15:27:00">04/11/2026 15:27</td><td>3 giờ 31 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58181"><td data-value="58181">58181</td><td>lanbt</td><td>PC-KHO-03</td><td data-value="2026-11-04T14:13:00">04/11/2026 14:13</td><td data-value="2026-11-04T16:29:00">04/11/2026 16:29</td><td>2 giờ 16 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58180"><td data-value="58180">58180</td><td>bichtt</td><td>PC-KD-04</td><td data-value="2026-11-04T07:30:00">04/11/2026 07:30</td><td data-value="2026-11-04T11:51:00">04/11/2026 11:51</td><td>4 giờ 21 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58179"><td data-value="58179">58179</td><td>minhdv</td><td>PC-GD-05</td><td data-value="2026-11-04T10:47:00">04/11/2026 10:47</td><td data-value="2026-11-04T13:48:00">04/11/2026 13:48</td><td>3 giờ 01 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58178"><td data-value="58178">58178</td><td>cuonglh</td><td>PC-KT-06</td><td data-value="2026-11-03T13:04:00">03/11/2026 13:04</td><td data-value="2026-11-03T19:23:00">03/11/2026 19:23</td><td>6 giờ 19 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58177"><td data-value="58177">58177</td><td>ngocnt</td><td>PC-KHO-07</td><td data-value="2026-11-03T16:21:00">03/11/2026 16:21</td><td data-value="2026-11-03T18:35:00">03/11/2026 18:35</td><td>2 giờ 14 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58176"><td data-value="58176">58176</td><td>dungpt</td><td>PC-KD-08</td><td data-value="2026-11-03T09:38:00">03/11/2026 09:38</td><td data-value="2026-11-03T13:40:00">03/11/2026 13:40</td><td>4 giờ 02 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58175"><td data-value="58175">58175</td><td>phucdv</td><td>PC-GD-09</td><td data-value="2026-11-03T12:55:00">03/11/2026 12:55</td><td data-value="2026-11-03T16:33:00">03/11/2026 16:33</td><td>3 giờ 38 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58174"><td data-value="58174">58174</td><td>duchm</td><td>PC-KT-01</td><td data-value="2026-11-02T15:12:00">02/11/2026 15:12</td><td data-value="2026-11-02T20:36:00">02/11/2026 20:36</td><td>5 giờ 24 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58173"><td data-value="58173">58173</td><td>quynhlt</td><td>PC-KHO-02</td><td data-value="2026-11-02T08:29:00">02/11/2026 08:29</td><td data-value="2026-11-02T11:57:00">02/11/2026 11:57</td><td>3 giờ 28 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58172"><td data-value="58172">58172</td><td>havt</td><td>PC-KD-03</td><td data-value="2026-11-02T11:46:00">02/11/2026 11:46</td><td data-value="2026-11-02T17:02:00">02/11/2026 17:02</td><td>5 giờ 16 phút</td><td>26.10.19.1</td></tr>
+<tr data-key="58171"><td data-value="58171">58171</td><td>admin</td><td>PC-GD-04</td><td data-value="2026-11-02T14:03:00">02/11/2026 14:03</td><td data-value="2026-11-02T20:14:00">02/11/2026 20:14</td><td>6 giờ 11 phút</td><td>26.10.19.1</td></tr>
+</tbody>
+</table></section><section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết phiên 58210" data-badge="24"><table data-erp="grid" data-grid-id="T1" data-selectable="multi" data-total-rows="24">
+<thead><tr>
+<th scope="col" data-field="LogDate" data-type="datetime" data-width="135" data-frozen>Thời gian</th>
+<th scope="col" data-field="FormID" data-type="text" data-width="150">Màn hình</th>
+<th scope="col" data-field="Para" data-type="text" data-width="150">Thao tác</th>
+<th scope="col" data-field="PrimaryValue" data-type="text" data-width="130">Khóa bản ghi</th>
+<th scope="col" data-field="Note" data-type="text" data-width="320">Ghi chú</th>
+</tr></thead>
+<tbody>
+<tr ><td data-value="2026-11-11T08:00:00">11/11/2026 08:00</td><td>AR_InvoiceFrm</td><td>Open</td><td></td><td>Thời gian nạp 777 ms</td></tr>
+<tr ><td data-value="2026-11-11T08:11:00">11/11/2026 08:11</td><td>IV_StockInputFrm</td><td>Thêm nhập kho</td><td>PN1126/0002</td><td></td></tr>
+<tr ><td data-value="2026-11-11T08:22:00">11/11/2026 08:22</td><td>CS_ReceiptFrm</td><td>Sửa phiếu thu</td><td>PT1126/0003</td><td>Giá trị cũ: số lượng 10 → 12</td></tr>
+<tr ><td data-value="2026-11-11T08:33:00">11/11/2026 08:33</td><td>AP_PurchaseFrm</td><td>In mua hàng</td><td>PI1126/0004</td><td></td></tr>
+<tr ><td data-value="2026-11-11T09:44:00">11/11/2026 09:44</td><td>AR_InvoiceFrm</td><td>Xóa bán hàng</td><td>SI1126/0005</td><td></td></tr>
+<tr ><td data-value="2026-11-11T09:55:00">11/11/2026 09:55</td><td>IV_StockInputFrm</td><td>Open</td><td></td><td>Thời gian nạp 276 ms</td></tr>
+<tr ><td data-value="2026-11-11T09:06:00">11/11/2026 09:06</td><td>CS_ReceiptFrm</td><td>Thêm phiếu thu</td><td>PT1126/0007</td><td></td></tr>
+<tr ><td data-value="2026-11-11T09:17:00">11/11/2026 09:17</td><td>AP_PurchaseFrm</td><td>Sửa mua hàng</td><td>PI1126/0008</td><td>Giá trị cũ: số lượng 10 → 12</td></tr>
+<tr ><td data-value="2026-11-11T10:28:00">11/11/2026 10:28</td><td>AR_InvoiceFrm</td><td>In bán hàng</td><td>SI1126/0009</td><td></td></tr>
+<tr ><td data-value="2026-11-11T10:39:00">11/11/2026 10:39</td><td>IV_StockInputFrm</td><td>Xóa nhập kho</td><td>PN1126/0010</td><td></td></tr>
+<tr ><td data-value="2026-11-11T10:50:00">11/11/2026 10:50</td><td>CS_ReceiptFrm</td><td>Open</td><td></td><td>Thời gian nạp 304 ms</td></tr>
+<tr ><td data-value="2026-11-11T10:01:00">11/11/2026 10:01</td><td>AP_PurchaseFrm</td><td>Thêm mua hàng</td><td>PI1126/0012</td><td></td></tr>
+<tr ><td data-value="2026-11-11T11:12:00">11/11/2026 11:12</td><td>AR_InvoiceFrm</td><td>Sửa bán hàng</td><td>SI1126/0013</td><td>Giá trị cũ: số lượng 10 → 12</td></tr>
+<tr ><td data-value="2026-11-11T11:23:00">11/11/2026 11:23</td><td>IV_StockInputFrm</td><td>In nhập kho</td><td>PN1126/0014</td><td></td></tr>
+<tr ><td data-value="2026-11-11T11:34:00">11/11/2026 11:34</td><td>CS_ReceiptFrm</td><td>Xóa phiếu thu</td><td>PT1126/0015</td><td></td></tr>
+<tr ><td data-value="2026-11-11T11:45:00">11/11/2026 11:45</td><td>AP_PurchaseFrm</td><td>Open</td><td></td><td>Thời gian nạp 615 ms</td></tr>
+<tr ><td data-value="2026-11-11T12:56:00">11/11/2026 12:56</td><td>AR_InvoiceFrm</td><td>Thêm bán hàng</td><td>SI1126/0017</td><td></td></tr>
+<tr ><td data-value="2026-11-11T12:07:00">11/11/2026 12:07</td><td>IV_StockInputFrm</td><td>Sửa nhập kho</td><td>PN1126/0018</td><td>Giá trị cũ: số lượng 10 → 12</td></tr>
+<tr ><td data-value="2026-11-11T12:18:00">11/11/2026 12:18</td><td>CS_ReceiptFrm</td><td>In phiếu thu</td><td>PT1126/0019</td><td></td></tr>
+<tr ><td data-value="2026-11-11T12:29:00">11/11/2026 12:29</td><td>AP_PurchaseFrm</td><td>Xóa mua hàng</td><td>PI1126/0020</td><td></td></tr>
+<tr ><td data-value="2026-11-11T13:40:00">11/11/2026 13:40</td><td>AR_InvoiceFrm</td><td>Open</td><td></td><td>Thời gian nạp 572 ms</td></tr>
+<tr ><td data-value="2026-11-11T13:51:00">11/11/2026 13:51</td><td>IV_StockInputFrm</td><td>Thêm nhập kho</td><td>PN1126/0022</td><td></td></tr>
+<tr ><td data-value="2026-11-11T13:02:00">11/11/2026 13:02</td><td>CS_ReceiptFrm</td><td>Sửa phiếu thu</td><td>PT1126/0023</td><td>Giá trị cũ: số lượng 10 → 12</td></tr>
+<tr ><td data-value="2026-11-11T13:13:00">11/11/2026 13:13</td><td>AP_PurchaseFrm</td><td>In mua hàng</td><td>PI1126/0024</td><td></td></tr>
+</tbody>
+</table></section></section>
 </section>
 </body></html>

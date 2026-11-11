@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh sách nhóm người dùng</title></head>
+<body>
+<section data-erp="screen" data-screen-id="NguoiDungNhomFrm" data-form-type="LISTEDIT" data-mode="edit" data-screen-key="NguoiDungNhomFrm" data-menu-id="010100">
+<h1>Danh sách nhóm người dùng</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-NguoiDungNhomFrm" formaction="/mock/screens/NguoiDungNhomFrm.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><a data-action="cancel" href="/mock/screens/NguoiDungNhomFrm.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-NguoiDungNhomFrm" method="post" action="/mock/screens/NguoiDungNhomFrm.saved.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token"><input type="hidden" name="__version" value="2026-11-11T09:15:00.000"></form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="UserGroupID" data-selectable="multi" data-editable data-form="rec-NguoiDungNhomFrm" data-total-rows="12">
+<thead><tr>
+<th scope="col" data-field="UserGroupID" data-type="text" data-width="120" data-frozen data-editor="text">Mã nhóm</th>
+<th scope="col" data-field="UserGroupName" data-type="text" data-width="260" data-editor="text">Tên nhóm</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="130" data-editor="select">Chi nhánh</th>
+<th scope="col" data-field="UserCount" data-type="number" data-width="80" data-decimals="0" data-readonly>Số người dùng</th>
+<th scope="col" data-field="IsDisable" data-type="bool" data-width="86" data-editor="checkbox">Ngừng dùng</th>
+</tr></thead>
+<tbody>
+<tr data-key="ADMIN"><td>ADMIN</td><td>Quản trị hệ thống</td><td></td><td data-value="2">2</td><td data-value="false"></td></tr>
+<tr data-key="GIAMDOC"><td>GIAMDOC</td><td>Ban giám đốc</td><td></td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="KETOAN"><td>KETOAN</td><td>Kế toán</td><td data-value="HN">Hà Nội</td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="KETOAN-HCM"><td>KETOAN-HCM</td><td>Kế toán chi nhánh HCM</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="THUQUY"><td>THUQUY</td><td>Thủ quỹ</td><td data-value="HN">Hà Nội</td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="KHO"><td>KHO</td><td>Thủ kho</td><td></td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="MUAHANG"><td>MUAHANG</td><td>Mua hàng</td><td data-value="HN">Hà Nội</td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="KINHDOANH"><td>KINHDOANH</td><td>Kinh doanh</td><td></td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="KYTHUAT"><td>KYTHUAT</td><td>Kỹ thuật – bảo hành</td><td></td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="CSKH"><td>CSKH</td><td>Chăm sóc khách hàng</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="DAILY"><td>DAILY</td><td>Đại lý (Web)</td><td></td><td data-value="1">1</td><td data-value="false"></td></tr>
+<tr data-key="NHANSU"><td>NHANSU</td><td>Hành chính – nhân sự</td><td data-value="HN">Hà Nội</td><td data-value="1">1</td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
+<template data-erp="options" data-field="BranchID"><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></template>
+<template data-erp="row-template" data-grid-id="T0"><tr data-key=""><td></td><td></td><td></td><td></td><td></td></tr></template>
+</section>
+</body></html>

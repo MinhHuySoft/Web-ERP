@@ -138,7 +138,7 @@ export class Shell {
       h('span', { class: 'erp-avatar', 'aria-hidden': 'true' }, (user?.text || '?').trim().charAt(0).toUpperCase()),
       h('span', { class: 'erp-userbtn__name' }, user?.text || ''), icon('chevron-down'));
     return h('header', { class: 'erp-titlebar erp-chrome' },
-      h('button', { class: 'erp-iconbtn erp-titlebar__menu', type: 'button', 'aria-label': 'Mở menu', onclick: () => this.toggleDrawer() }, icon('menu')),
+      h('button', { class: 'erp-iconbtn erp-titlebar__menu', type: 'button', 'aria-label': 'Thu gọn / mở rộng menu', title: 'Thu gọn / mở rộng menu (Ctrl+B)', onclick: () => this.toggleNavPanel() }, icon('menu')),
       h('div', { class: 'erp-brand' }, h('span', { class: 'erp-brand__logo', 'aria-hidden': 'true' }),
         h('span', { class: 'erp-brand__text' }, h('strong', {}, cfg.appName || 'ERP'), h('small', {}, company))),
       h('button', { class: 'erp-searchbtn', type: 'button', onclick: () => this.palette(), title: 'Tìm chức năng (Ctrl+K)' },
@@ -178,6 +178,13 @@ export class Shell {
       b('search', 'Tìm', () => this.palette()),
       b('columns', 'Đang mở', () => this.tabs?.showTabList()),
       b('theme', 'Giao diện', () => openSettingsPanel()));
+  }
+
+  /** Nút ☰ / Ctrl+B: điện thoại ⇒ ngăn kéo menu; Sidebar ⇒ thu gọn/mở rộng; Ribbon ⇒ thu gọn/mở Ribbon. */
+  toggleNavPanel() {
+    if (innerWidth < 768) { this.toggleDrawer(); return; }
+    if (getSettings().nav === 'sidebar') setSettings({ sidebarCollapsed: !getSettings().sidebarCollapsed });
+    else this.ribbon?.toggleCollapsed();
   }
 
   /** @param {boolean} [force] */
@@ -257,6 +264,7 @@ export class Shell {
     document.addEventListener('keydown', (ev) => {
       const k = ev.key.toLowerCase();
       if ((ev.ctrlKey || ev.metaKey) && k === 'k') { ev.preventDefault(); this.palette(); return; }
+      if ((ev.ctrlKey || ev.metaKey) && k === 'b' && !ev.shiftKey) { ev.preventDefault(); this.toggleNavPanel(); return; }
       if (ev.altKey && k === 'w') { ev.preventDefault(); this.tabs?.closeActive(); return; }
       if ((ev.ctrlKey) && ev.key === 'Tab') { ev.preventDefault(); this.tabs?.cycle(ev.shiftKey ? -1 : 1); return; }
       this.tabs?.handleKey(ev);

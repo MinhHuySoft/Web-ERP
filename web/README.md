@@ -87,7 +87,8 @@ assets/               favicon/logo
 | Ctrl+Tab / Ctrl+Shift+Tab | Chuyển tab |
 | Alt+W | Đóng tab |
 | Ctrl+F1 | Thu gọn / mở Ribbon |
-| (nút trên thanh tiêu đề) | Chuyển Ribbon (ngang) ↔ Sidebar (dọc); Sidebar thu gọn bằng nút « ở chân sidebar |
+| Ctrl+B / nút ☰ | Thu gọn / mở rộng Sidebar (hoặc Ribbon khi đang dùng Ribbon) |
+| (nút trên thanh tiêu đề) | Chuyển Ribbon (ngang) ↔ Sidebar (dọc); kéo mép phải Sidebar để đổi độ rộng, nhấp đúp để về mặc định |
 | F2 / F3 | Thêm / Sửa |
 | Ctrl+S | Lưu |
 | Esc | Hủy |

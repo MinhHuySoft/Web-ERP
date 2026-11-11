@@ -20,7 +20,7 @@
     display: flex; align-items: center; gap: 12px; height: var(--erp-titlebar-h); padding: 0 10px 0 12px;
     background: var(--erp-chrome-bg); color: var(--erp-chrome-text); position: relative; z-index: 30;
   }
-  .erp-titlebar__menu { display: none; }
+  .erp-titlebar__menu { display: inline-grid; margin-inline-end: -4px; }
   .erp-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
   .erp-brand__text { display: grid; line-height: 1.15; min-width: 0; }
   .erp-brand__text strong { font-size: 1.02em; letter-spacing: .2px; }
@@ -73,7 +73,21 @@
   .erp-snav__searchwrap { position: relative; flex: 1; display: flex; align-items: center; }
   .erp-snav__searchwrap > .erp-icon { position: absolute; inset-inline-start: 10px; width: 16px; height: 16px; color: var(--erp-text-faint); pointer-events: none; }
   .erp-snav__searchwrap .erp-snav__search { padding-inline-start: 34px; height: 34px; border-radius: 8px; background: var(--erp-surface-2); }
-  .erp-sidebar__scroll { overflow: auto; padding: 4px 10px 12px; flex: 1; scrollbar-width: thin; }
+  .erp-sidebar { position: relative; }
+  .erp-sidebar__scroll { overflow-x: hidden; overflow-y: auto; padding: 4px 10px 12px; flex: 1; scrollbar-width: thin; min-width: 0; }
+  /* Tay kéo đổi độ rộng ở mép phải */
+  .erp-sidebar__resizer {
+    position: absolute; z-index: 5; top: 0; bottom: 0; inset-inline-end: -3px; width: 7px; cursor: col-resize; touch-action: none;
+  }
+  .erp-sidebar__resizer::after {
+    content: ""; position: absolute; top: 0; bottom: 0; inset-inline-start: 3px; width: 1px; background: transparent; transition: background-color .15s, width .15s;
+  }
+  .erp-sidebar__resizer:hover::after, .erp-sidebar__resizer:focus-visible::after, .is-resizing-sidebar .erp-sidebar__resizer::after {
+    width: 3px; inset-inline-start: 2px; background: var(--erp-primary);
+  }
+  .is-resizing-sidebar, .is-resizing-sidebar * { cursor: col-resize !important; user-select: none !important; }
+  .is-resizing-sidebar .erp-sidebar { transition: none; }
+  .erp-snav__foldall { width: 34px; height: 34px; flex: none; color: var(--erp-text-muted); }
   .erp-sidebar__foot { display: flex; align-items: center; gap: 6px; padding: 8px 10px; border-top: 1px solid var(--erp-border); }
   .erp-snav__switch {
     flex: 1; display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 10px; border: 0; border-radius: 8px;
@@ -83,7 +97,9 @@
   .erp-snav__switch .erp-icon { width: 17px; height: 17px; }
 
   .erp-snav, .erp-snav ul { list-style: none; margin: 0; padding: 0; }
-  .erp-snav { display: grid; gap: 2px; }
+  /* minmax(0,1fr): cột không tự nở theo dòng chữ dài nhất ⇒ không tràn ngang, chữ dài hiện "…" */
+  .erp-snav { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; min-width: 0; }
+  .erp-snav li, .erp-snav__group, .erp-snav__body { min-width: 0; }
   .erp-snav__title { display: flex; align-items: center; gap: 8px; padding: 10px 10px 4px; font-size: .74em; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--erp-text-faint); }
   .erp-snav__title .erp-icon { width: 14px; height: 14px; color: #e3a008; fill: #e3a008; }
   .erp-snav__favs:not(:empty) { margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px dashed var(--erp-border); }
@@ -131,7 +147,8 @@
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__body,
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__favs,
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__switch span { display: none !important; }
-  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__head { padding: 8px; }
+  :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__head { padding: 8px; justify-content: center; }
+  :root[data-sidebar="rail"] .erp-sidebar .erp-snav__foldall, :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__resizer { display: none; }
   :root[data-sidebar="rail"] .erp-sidebar .erp-sidebar__scroll { padding: 4px 8px; }
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__mhead { justify-content: center; padding: 0; height: 42px; }
   :root[data-sidebar="rail"] .erp-sidebar .erp-snav__mhead > .erp-icon:first-child { width: 21px; height: 21px; }

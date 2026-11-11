@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Sơ đồ tổ chức kinh doanh — 1</title></head>
+<body>
+<section data-erp="screen" data-screen-id="AR_OpListFrm" data-form-type="EDIT" data-mode="edit" data-screen-key="AR_OpListFrm:1" data-menu-id="4000">
+<h1>Sơ đồ tổ chức kinh doanh — 1</h1>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-AR_OpListFrm-1" formaction="/mock/records/AR_OpListFrm/1.saved.html" formmethod="post" data-action="save" data-shortcut="Ctrl+S">Lưu</button></li>
+  <li><button type="submit" form="rec-AR_OpListFrm-1" formaction="/mock/records/AR_OpListFrm/new.html" formmethod="post" data-action="save-new">Lưu &amp; thêm</button></li>
+  <li><a data-action="cancel" href="/mock/records/AR_OpListFrm/1.html" data-target="self">Hủy</a></li>
+</menu>
+<form data-erp="record" id="rec-AR_OpListFrm-1" method="post" action="/mock/records/AR_OpListFrm/1.saved.html" data-key-field="OpID" data-key="1">
+<input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<input type="hidden" name="__version" value="2026-11-11T09:15:00.000">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Thông tin chung</legend>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AR_OpListFrm-1-OpID">Mã đơn vị</label><input id="f-rec-AR_OpListFrm-1-OpID" name="OpID" inputmode="decimal" value="1" data-decimals="0" required></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_OpListFrm-1-OpCode">Mã hiệu</label><input id="f-rec-AR_OpListFrm-1-OpCode" name="OpCode" value="OC001" required></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-rec-AR_OpListFrm-1-OpName">Tên đơn vị kinh doanh</label><input id="f-rec-AR_OpListFrm-1-OpName" name="OpName" value="Tên đơn vị kinh doanh 1" required></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AR_OpListFrm-1-UpLeveID">Đơn vị cấp trên</label><input id="f-rec-AR_OpListFrm-1-UpLeveID" name="UpLeveID" inputmode="decimal" value="93" data-decimals="0"></div>
+<div data-erp="field" data-control="text" data-span="10"><label for="f-rec-AR_OpListFrm-1-Notes">Ghi chú</label><input id="f-rec-AR_OpListFrm-1-Notes" name="Notes" value="Khách yêu cầu xuất hóa đơn"></div>
+<div data-erp="field" data-control="number" data-span="6"><label for="f-rec-AR_OpListFrm-1-LevelCount">Cấp</label><input id="f-rec-AR_OpListFrm-1-LevelCount" name="LevelCount" inputmode="decimal" value="18" data-decimals="0"></div>
+<div data-erp="field" data-control="checkbox" data-span="6"><label for="f-rec-AR_OpListFrm-1-LevelSub">Sub cấp</label><input type="hidden" name="LevelSub" value="false"><input id="f-rec-AR_OpListFrm-1-LevelSub" name="LevelSub" type="checkbox" value="true"></div>
+<div data-erp="field" data-control="textarea" data-span="40" data-rows="2"><label for="f-rec-AR_OpListFrm-1-SortBy">Sort theo</label><textarea id="f-rec-AR_OpListFrm-1-SortBy" name="SortBy" rows="2">Sort theo 1</textarea></div>
+</fieldset>
+</form>
+<section data-erp="tabs">
+<section data-erp="tab-panel" data-tab-id="T1" data-title="Chi tiết" data-badge="6">
+<table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-AR_OpListFrm-1" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="OpID" data-type="number" data-width="70" data-decimals="0" data-frozen data-editor="number">Mã đơn vị</th>
+<th scope="col" data-field="ManagerID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}">Quản lý</th>
+<th scope="col" data-field="EmployeeID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName">Nhân viên</th>
+<th scope="col" data-field="ObjectGroupID" data-type="text" data-width="110" data-editor="text">Nhóm đối tượng</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="110" data-editor="select">Chi nhánh</th>
+<th scope="col" data-field="ViTriHoTro" data-type="bool" data-width="60" data-editor="checkbox">Vị trí hỗ trợ</th>
+<th scope="col" data-field="isDirect" data-type="bool" data-width="60" data-editor="checkbox">Direct</th>
+<th scope="col" data-field="LevelCount" data-type="number" data-width="70" data-decimals="0" data-editor="number">Cấp</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="isDisable" data-type="bool" data-width="60" data-editor="checkbox">Disable</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td data-value="68">68</td><td>NV001</td><td>NV001</td><td>OGI001</td><td data-value="HN">Hà Nội</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="21">21</td><td></td><td data-value="false"></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td data-value="62">62</td><td>NV002</td><td>NV002</td><td>OGI002</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="72">72</td><td></td><td data-value="false"></td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td data-value="3">3</td><td>NV003</td><td>NV003</td><td>OGI003</td><td data-value="DN">Đà Nẵng</td><td data-value="false"></td><td data-value="false"></td><td data-value="92">92</td><td></td><td data-value="false"></td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td data-value="70">70</td><td>NV004</td><td>NV004</td><td>OGI004</td><td data-value="HN">Hà Nội</td><td data-value="false"></td><td data-value="false"></td><td data-value="55">55</td><td></td><td data-value="false"></td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td data-value="38">38</td><td>NV005</td><td>NV005</td><td>OGI005</td><td data-value="HCM">Hồ Chí Minh</td><td data-value="false"></td><td data-value="false"></td><td data-value="67">67</td><td>Giao hàng trong tuần</td><td data-value="false"></td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td data-value="8">8</td><td>NV006</td><td>NV006</td><td>OGI006</td><td data-value="DN">Đà Nẵng</td><td data-value="true">Có</td><td data-value="false"></td><td data-value="48">48</td><td></td><td data-value="true">Có</td></tr>
+</tbody>
+</table>
+<template data-erp="options" data-field="BranchID"><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></template>
+<template data-erp="row-template" data-grid-id="T1"><tr data-key=""><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+<section data-erp="tab-panel" data-tab-id="T2" data-title="Chi tiết 2" data-badge="6">
+<table data-erp="grid" data-grid-id="T2" data-key-field="UserAutoID" data-selectable="multi" data-editable data-form="rec-AR_OpListFrm-1" data-total-rows="6">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="text" data-width="110" data-hidden data-editor="text">Mã Auto người dùng</th>
+<th scope="col" data-field="OpID" data-type="number" data-width="70" data-decimals="0" data-frozen data-editor="number">Mã đơn vị</th>
+<th scope="col" data-field="EmployeeID" data-type="text" data-width="110" data-editor="lookup" data-lookup-src="/mock/lookups/CF_EmployeeTbl.html?q={q}" data-lookup-fill="EmployeeName">Nhân viên</th>
+<th scope="col" data-field="ObjectGroupID" data-type="text" data-width="110" data-editor="text">Nhóm đối tượng</th>
+<th scope="col" data-field="ViTriHoTro" data-type="bool" data-width="60" data-editor="checkbox">Vị trí hỗ trợ</th>
+<th scope="col" data-field="BranchID" data-type="text" data-width="110" data-editor="select">Chi nhánh</th>
+<th scope="col" data-field="Notes" data-type="text" data-width="240" data-editor="text">Ghi chú</th>
+<th scope="col" data-field="isDisable" data-type="bool" data-width="60" data-editor="checkbox">Disable</th>
+</tr></thead>
+<tbody>
+<tr data-key="UAI001"><td>UAI001</td><td data-value="76">76</td><td>NV001</td><td>OGI001</td><td data-value="false"></td><td data-value="HN">Hà Nội</td><td></td><td data-value="false"></td></tr>
+<tr data-key="UAI002"><td>UAI002</td><td data-value="64">64</td><td>NV002</td><td>OGI002</td><td data-value="false"></td><td data-value="HCM">Hồ Chí Minh</td><td>Hàng nhập khẩu</td><td data-value="true">Có</td></tr>
+<tr data-key="UAI003"><td>UAI003</td><td data-value="53">53</td><td>NV003</td><td>OGI003</td><td data-value="false"></td><td data-value="DN">Đà Nẵng</td><td>Hàng nhập khẩu</td><td data-value="false"></td></tr>
+<tr data-key="UAI004"><td>UAI004</td><td data-value="31">31</td><td>NV004</td><td>OGI004</td><td data-value="false"></td><td data-value="HN">Hà Nội</td><td>Khách yêu cầu xuất hóa đơn</td><td data-value="false"></td></tr>
+<tr data-key="UAI005"><td>UAI005</td><td data-value="91">91</td><td>NV005</td><td>OGI005</td><td data-value="false"></td><td data-value="HCM">Hồ Chí Minh</td><td></td><td data-value="true">Có</td></tr>
+<tr data-key="UAI006"><td>UAI006</td><td data-value="91">91</td><td>NV006</td><td>OGI006</td><td data-value="false"></td><td data-value="DN">Đà Nẵng</td><td>Hàng nhập khẩu</td><td data-value="false"></td></tr>
+</tbody>
+</table>
+<template data-erp="options" data-field="BranchID"><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></template>
+<template data-erp="row-template" data-grid-id="T2"><tr data-key=""><td data-value=""></td><td data-value="0"></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td><td data-value=""></td></tr></template>
+</section>
+</section>
+</section>
+</body></html>

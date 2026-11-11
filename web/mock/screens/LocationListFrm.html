@@ -1,11 +1,57 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Danh mục tỉnh thành - Quận huyện</title></head>
 <body>
-<section data-erp="screen" data-screen-id="LocationListFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="LocationListFrm" data-menu-id="021016">
+<section data-erp="screen" data-screen-id="LocationListFrm" data-form-type="EDIT" data-mode="find" data-screen-key="LocationListFrm" data-menu-id="021016">
 <h1>Danh mục tỉnh thành - Quận huyện</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="new" href="/mock/records/LocationListFrm/new.html" data-target="tab" data-shortcut="F2">Thêm</a></li>
   <li><a data-action="reload" href="/mock/screens/LocationListFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Form động chưa có dữ liệu cấu hình/bảng trong snapshot — mock chưa dựng.</p></div>
+<form data-erp="filter" method="get" action="/mock/screens/LocationListFrm.html">
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-LocationListFrm-FromDate">Từ ngày</label><input id="flt-LocationListFrm-FromDate" name="FromDate" type="date" value="2026-11-01"></div>
+<div data-erp="field" data-control="date" data-span="6"><label for="flt-LocationListFrm-ToDate">Đến ngày</label><input id="flt-LocationListFrm-ToDate" name="ToDate" type="date" value="2026-11-11"></div>
+<div data-erp="field" data-control="select" data-span="8"><label for="flt-LocationListFrm-BranchID">Chi nhánh</label><select id="flt-LocationListFrm-BranchID" name="BranchID"><option value=""></option><option value="HN">Hà Nội</option><option value="HCM">Hồ Chí Minh</option><option value="DN">Đà Nẵng</option></select></div>
+<div data-erp="field" data-control="search" data-span="14"><label for="flt-LocationListFrm-q">Tìm nhanh</label><input id="flt-LocationListFrm-q" name="q" type="search" placeholder="Nhập mã, tên, số chứng từ…"></div>
+<button type="submit" data-action="find">Lọc</button>
+</form>
+<table data-erp="grid" data-grid-id="T0" data-key-field="LocationID" data-selectable="single" data-total-rows="24" data-sort="LocationID:desc">
+<thead><tr>
+<th scope="col" data-field="LocationID" data-type="link" data-width="110" data-frozen>Mã tỉnh/TP</th>
+<th scope="col" data-field="LocationName" data-type="text" data-width="240">Tên tỉnh/TP</th>
+<th scope="col" data-field="LocationGroup" data-type="text" data-width="110">Vùng</th>
+<th scope="col" data-field="STT" data-type="number" data-width="70" data-decimals="0">STT</th>
+<th scope="col" data-field="UserCreate" data-type="text" data-width="110" data-hidden>Người tạo</th>
+<th scope="col" data-field="UserUpdate" data-type="text" data-width="110" data-hidden>Người sửa</th>
+<th scope="col" data-field="DateUpdate" data-type="date" data-width="95" data-hidden>Ngày sửa</th>
+<th scope="col" data-field="DateCreate" data-type="date" data-width="95" data-hidden>Ngày tạo</th>
+</tr></thead>
+<tbody>
+<tr data-key="LID001"><td><a href="/mock/records/LocationListFrm/1.html" data-target="tab">LID001</a></td><td>Tên tỉnh/TP 1</td><td>Vùng 1</td><td data-value="87">87</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-11-02">02/11/2026</td><td data-value="2026-10-07">07/10/2026</td></tr>
+<tr data-key="LID002"><td><a href="/mock/records/LocationListFrm/2.html" data-target="tab">LID002</a></td><td>Tên tỉnh/TP 2</td><td>Vùng 2</td><td data-value="67">67</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-09-16">16/09/2026</td><td data-value="2026-08-12">12/08/2026</td></tr>
+<tr data-key="LID003"><td><a href="/mock/records/LocationListFrm/3.html" data-target="tab">LID003</a></td><td>Tên tỉnh/TP 3</td><td></td><td data-value="44">44</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-10-23">23/10/2026</td><td data-value="2026-09-06">06/09/2026</td></tr>
+<tr data-key="LID004"><td>LID004</td><td>Tên tỉnh/TP 4</td><td></td><td data-value="49">49</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-10-18">18/10/2026</td><td data-value="2026-08-18">18/08/2026</td></tr>
+<tr data-key="LID005"><td>LID005</td><td>Tên tỉnh/TP 5</td><td></td><td data-value="2">2</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-23">23/08/2026</td><td data-value="2026-11-05">05/11/2026</td></tr>
+<tr data-key="LID006"><td>LID006</td><td>Tên tỉnh/TP 6</td><td>Vùng 6</td><td data-value="24">24</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-10-14">14/10/2026</td></tr>
+<tr data-key="LID007"><td>LID007</td><td>Tên tỉnh/TP 7</td><td></td><td data-value="91">91</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-08-01">01/08/2026</td><td data-value="2026-08-16">16/08/2026</td></tr>
+<tr data-key="LID008"><td>LID008</td><td>Tên tỉnh/TP 8</td><td>Vùng 8</td><td data-value="3">3</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-05">05/10/2026</td><td data-value="2026-07-14">14/07/2026</td></tr>
+<tr data-key="LID009"><td>LID009</td><td>Tên tỉnh/TP 9</td><td></td><td data-value="87">87</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-08-06">06/08/2026</td><td data-value="2026-09-21">21/09/2026</td></tr>
+<tr data-key="LID010"><td>LID010</td><td>Tên tỉnh/TP 10</td><td>Vùng 10</td><td data-value="54">54</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-08-21">21/08/2026</td><td data-value="2026-07-16">16/07/2026</td></tr>
+<tr data-key="LID011"><td>LID011</td><td>Tên tỉnh/TP 11</td><td></td><td data-value="38">38</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-09-29">29/09/2026</td><td data-value="2026-09-04">04/09/2026</td></tr>
+<tr data-key="LID012"><td>LID012</td><td>Tên tỉnh/TP 12</td><td>Vùng 12</td><td data-value="45">45</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-08-06">06/08/2026</td><td data-value="2026-07-23">23/07/2026</td></tr>
+<tr data-key="LID013"><td>LID013</td><td>Tên tỉnh/TP 13</td><td>Vùng 13</td><td data-value="70">70</td><td>Dương Văn Phúc</td><td>Dương Văn Phúc</td><td data-value="2026-08-18">18/08/2026</td><td data-value="2026-07-20">20/07/2026</td></tr>
+<tr data-key="LID014"><td>LID014</td><td>Tên tỉnh/TP 14</td><td>Vùng 14</td><td data-value="93">93</td><td>Phạm Thu Dung</td><td>Phạm Thu Dung</td><td data-value="2026-08-30">30/08/2026</td><td data-value="2026-11-06">06/11/2026</td></tr>
+<tr data-key="LID015"><td>LID015</td><td>Tên tỉnh/TP 15</td><td>Vùng 15</td><td data-value="86">86</td><td>Đỗ Văn Minh</td><td>Đỗ Văn Minh</td><td data-value="2026-08-31">31/08/2026</td><td data-value="2026-08-16">16/08/2026</td></tr>
+<tr data-key="LID016"><td>LID016</td><td>Tên tỉnh/TP 16</td><td></td><td data-value="30">30</td><td>Trần Thị Bích</td><td>Trần Thị Bích</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-11-04">04/11/2026</td></tr>
+<tr data-key="LID017"><td>LID017</td><td>Tên tỉnh/TP 17</td><td></td><td data-value="94">94</td><td>Đặng Quốc Huy</td><td>Đặng Quốc Huy</td><td data-value="2026-08-18">18/08/2026</td><td data-value="2026-10-03">03/10/2026</td></tr>
+<tr data-key="LID018"><td>LID018</td><td>Tên tỉnh/TP 18</td><td>Vùng 18</td><td data-value="72">72</td><td>Lý Thị Quỳnh</td><td>Lý Thị Quỳnh</td><td data-value="2026-11-07">07/11/2026</td><td data-value="2026-09-23">23/09/2026</td></tr>
+<tr data-key="LID019"><td>LID019</td><td>Tên tỉnh/TP 19</td><td></td><td data-value="74">74</td><td>Hoàng Minh Đức</td><td>Hoàng Minh Đức</td><td data-value="2026-10-07">07/10/2026</td><td data-value="2026-07-15">15/07/2026</td></tr>
+<tr data-key="LID020"><td>LID020</td><td>Tên tỉnh/TP 20</td><td></td><td data-value="13">13</td><td>Ngô Thị Ngọc</td><td>Ngô Thị Ngọc</td><td data-value="2026-10-29">29/10/2026</td><td data-value="2026-10-23">23/10/2026</td></tr>
+<tr data-key="LID021"><td>LID021</td><td>Tên tỉnh/TP 21</td><td></td><td data-value="82">82</td><td>Lê Hoàng Cường</td><td>Lê Hoàng Cường</td><td data-value="2026-09-05">05/09/2026</td><td data-value="2026-09-07">07/09/2026</td></tr>
+<tr data-key="LID022"><td>LID022</td><td>Tên tỉnh/TP 22</td><td>Vùng 22</td><td data-value="55">55</td><td>Bùi Thanh Lan</td><td>Bùi Thanh Lan</td><td data-value="2026-07-22">22/07/2026</td><td data-value="2026-08-21">21/08/2026</td></tr>
+<tr data-key="LID023"><td>LID023</td><td>Tên tỉnh/TP 23</td><td></td><td data-value="32">32</td><td>Nguyễn Văn An</td><td>Nguyễn Văn An</td><td data-value="2026-07-28">28/07/2026</td><td data-value="2026-09-20">20/09/2026</td></tr>
+<tr data-key="LID024"><td>LID024</td><td>Tên tỉnh/TP 24</td><td>Vùng 24</td><td data-value="42">42</td><td>Vũ Thị Hà</td><td>Vũ Thị Hà</td><td data-value="2026-10-25">25/10/2026</td><td data-value="2026-10-11">11/10/2026</td></tr>
+</tbody>
+</table>
 </section>
 </body></html>

@@ -1,11 +1,72 @@
 <!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Thiết lập bảng cân đối kê toán</title></head>
 <body>
-<section data-erp="screen" data-screen-id="GJ_BalanceSheetSetupFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="GJ_BalanceSheetSetupFrm" data-menu-id="166402">
+<section data-erp="screen" data-screen-id="GJ_BalanceSheetSetupFrm" data-form-type="LISTEDIT" data-mode="view" data-screen-key="GJ_BalanceSheetSetupFrm" data-menu-id="166402">
 <h1>Thiết lập bảng cân đối kê toán</h1>
 <menu data-erp="toolbar">
+  <li><a data-action="edit" href="/mock/screens/GJ_BalanceSheetSetupFrm.edit.html" data-target="self" data-shortcut="F3">Sửa</a></li>
   <li><a data-action="reload" href="/mock/screens/GJ_BalanceSheetSetupFrm.html" data-target="self">Nạp lại</a></li>
+  <li><a data-action="export" href="/mock/actions/export.html" data-target="_blank">Xuất Excel</a></li>
 </menu>
-<div data-erp="messages"><p data-erp="message" data-msg-type="info">Màn hình viết tay trong ERP.NET — mock chưa dựng. Backend thật sẽ trả HTML theo chuẩn ERP-HTML.</p></div>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Bảng cân đối kế toán mẫu B01-DN (Thông tư 200). Chỉ tiêu tổng cộng lấy theo công thức mã số; chỉ tiêu chi tiết lấy số dư tài khoản.</p></div>
+<section data-erp="tabs"><section data-erp="tab-panel" data-tab-id="T0" data-title="Chỉ tiêu" data-badge="34"><table data-erp="grid" data-grid-id="T0" data-key-field="CodeID" data-selectable="multi" data-total-rows="34">
+<thead><tr>
+<th scope="col" data-field="CodeID" data-type="text" data-width="80" data-frozen>Mã số</th>
+<th scope="col" data-field="CodeName" data-type="text" data-width="430" data-wrap>Chỉ tiêu</th>
+<th scope="col" data-field="Statement" data-type="text" data-width="100">Thuyết minh</th>
+<th scope="col" data-field="Formula" data-type="text" data-width="300">Cách lấy số liệu</th>
+<th scope="col" data-field="IsBold" data-type="bool" data-width="86">In đậm</th>
+<th scope="col" data-field="IsNotPrint" data-type="bool" data-width="86">Không in</th>
+</tr></thead>
+<tbody>
+<tr data-key="100"><td>100</td><td>A. TÀI SẢN NGẮN HẠN</td><td></td><td>110+120+130+140+150</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="110"><td>110</td><td>I. Tiền và các khoản tương đương tiền</td><td></td><td>111+112</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="111"><td>111</td><td>1. Tiền</td><td>V.01</td><td>Dư Nợ 111, 112, 113</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="112"><td>112</td><td>2. Các khoản tương đương tiền</td><td></td><td>Dư Nợ 1281, 1288</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="120"><td>120</td><td>II. Đầu tư tài chính ngắn hạn</td><td>V.02</td><td>121+122+123</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="130"><td>130</td><td>III. Các khoản phải thu ngắn hạn</td><td></td><td>131+132+136+137</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="131"><td>131</td><td>1. Phải thu ngắn hạn của khách hàng</td><td></td><td>Dư Nợ chi tiết 131</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="132"><td>132</td><td>2. Trả trước cho người bán ngắn hạn</td><td></td><td>Dư Nợ chi tiết 331</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="136"><td>136</td><td>6. Phải thu ngắn hạn khác</td><td>V.03</td><td>Dư Nợ 1388, 141, 244</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="137"><td>137</td><td>7. Dự phòng phải thu ngắn hạn khó đòi (*)</td><td></td><td>Dư Có 2293 (ghi âm)</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="140"><td>140</td><td>IV. Hàng tồn kho</td><td></td><td>141+149</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="141"><td>141</td><td>1. Hàng tồn kho</td><td>V.04</td><td>Dư Nợ 151, 152, 153, 154, 155, 156, 157</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="149"><td>149</td><td>2. Dự phòng giảm giá hàng tồn kho (*)</td><td></td><td>Dư Có 2294 (ghi âm)</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="150"><td>150</td><td>V. Tài sản ngắn hạn khác</td><td></td><td>151+152+153</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="151"><td>151</td><td>1. Chi phí trả trước ngắn hạn</td><td></td><td>Dư Nợ 242 (ngắn hạn)</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="152"><td>152</td><td>2. Thuế GTGT được khấu trừ</td><td></td><td>Dư Nợ 133</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="200"><td>200</td><td>B. TÀI SẢN DÀI HẠN</td><td></td><td>210+220+240+250+260</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="220"><td>220</td><td>II. Tài sản cố định</td><td></td><td>221+224+227</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="221"><td>221</td><td>1. Tài sản cố định hữu hình</td><td>V.05</td><td>222+223</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="222"><td>222</td><td>   - Nguyên giá</td><td></td><td>Dư Nợ 211</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="223"><td>223</td><td>   - Giá trị hao mòn lũy kế (*)</td><td></td><td>Dư Có 2141 (ghi âm)</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="270"><td>270</td><td>TỔNG CỘNG TÀI SẢN (270 = 100 + 200)</td><td></td><td>100+200</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="300"><td>300</td><td>C. NỢ PHẢI TRẢ</td><td></td><td>310+330</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="310"><td>310</td><td>I. Nợ ngắn hạn</td><td></td><td>311+...+324</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="311"><td>311</td><td>1. Phải trả người bán ngắn hạn</td><td></td><td>Dư Có chi tiết 331</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="312"><td>312</td><td>2. Người mua trả tiền trước ngắn hạn</td><td></td><td>Dư Có chi tiết 131</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="313"><td>313</td><td>3. Thuế và các khoản phải nộp Nhà nước</td><td>V.06</td><td>Dư Có 333</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="314"><td>314</td><td>4. Phải trả người lao động</td><td></td><td>Dư Có 334</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="319"><td>319</td><td>9. Phải trả ngắn hạn khác</td><td></td><td>Dư Có 338, 344</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="400"><td>400</td><td>D. VỐN CHỦ SỞ HỮU</td><td></td><td>410+430</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="410"><td>410</td><td>I. Vốn chủ sở hữu</td><td>V.07</td><td>411+...+422</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+<tr data-key="411"><td>411</td><td>1. Vốn góp của chủ sở hữu</td><td></td><td>Dư Có 4111</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="421"><td>421</td><td>11. Lợi nhuận sau thuế chưa phân phối</td><td></td><td>Dư Có 421 (Dư Nợ ghi âm)</td><td data-value="false"></td><td data-value="false"></td></tr>
+<tr data-key="440"><td>440</td><td>TỔNG CỘNG NGUỒN VỐN (440 = 300 + 400)</td><td></td><td>300+400</td><td data-value="true">Có</td><td data-value="false"></td></tr>
+</tbody>
+</table></section><section data-erp="tab-panel" data-tab-id="T1" data-title="Công thức chỉ tiêu đang chọn" data-badge="2"><table data-erp="grid" data-grid-id="T1" data-key-field="UserAutoID" data-selectable="multi" data-total-rows="2">
+<thead><tr>
+<th scope="col" data-field="UserAutoID" data-type="number" data-width="80" data-decimals="0" data-hidden>ID</th>
+<th scope="col" data-field="AccountID" data-type="text" data-width="100">Tài khoản</th>
+<th scope="col" data-field="IsDebitBal" data-type="bool" data-width="86">Lấy dư Nợ</th>
+<th scope="col" data-field="IsObject" data-type="bool" data-width="150">Chi tiết theo đối tượng</th>
+<th scope="col" data-field="SumID" data-type="text" data-width="100">Cộng vào mã</th>
+<th scope="col" data-field="ReverseSign" data-type="bool" data-width="86">Đổi dấu</th>
+</tr></thead>
+<tbody>
+<tr data-key="1"><td data-value="1">1</td><td>131</td><td data-value="true">Có</td><td data-value="true">Có</td><td>130</td><td data-value="false"></td></tr>
+<tr data-key="2"><td data-value="2">2</td><td>1388</td><td data-value="true">Có</td><td data-value="false"></td><td>130</td><td data-value="false"></td></tr>
+</tbody>
+</table></section></section>
 </section>
 </body></html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="erp-contract" content="1.0"><title>Sao lưu dữ liệu</title></head>
+<body>
+<section data-erp="screen" data-screen-id="BackupDataFrm" data-form-type="CUSTOM" data-mode="view" data-screen-key="BackupDataFrm" data-menu-id="010118">
+<h1>Sao lưu dữ liệu</h1>
+<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã sao lưu MedData vào D:\Backup\ERP\MedData_20261111_0930.bak (mock).</p></div>
+<menu data-erp="toolbar">
+  <li><button type="submit" form="rec-BackupDataFrm" formaction="/mock/screens/BackupDataFrm.done.html" formmethod="post" data-action="custom" data-icon="export">Sao lưu ngay</button></li>
+  <li><a data-action="reload" href="/mock/screens/BackupDataFrm.html" data-target="self">Nạp lại</a></li>
+</menu>
+<form data-erp="record" id="rec-BackupDataFrm" method="post" action="/mock/screens/BackupDataFrm.done.html"><input type="hidden" name="__RequestVerificationToken" value="mock-token">
+<fieldset data-erp="tab" data-tab-id="1"><legend>Tham số</legend>
+<div data-erp="field" data-control="label" data-span="10"><label for="f-BackupDataFrm-Database">Cơ sở dữ liệu</label><output id="f-BackupDataFrm-Database" name="Database">MedData</output></div>
+<div data-erp="field" data-control="text" data-span="20"><label for="f-BackupDataFrm-BackupPath">Thư mục sao lưu (trên máy chủ)</label><input id="f-BackupDataFrm-BackupPath" name="BackupPath" value="D:\Backup\ERP\"></div>
+<div data-erp="field" data-control="text" data-span="20" data-row-start><label for="f-BackupDataFrm-FileName">Tên tệp</label><input id="f-BackupDataFrm-FileName" name="FileName" value="MedData_20261111_0930.bak"></div>
+<div data-erp="field" data-control="checkbox" data-span="10"><label for="f-BackupDataFrm-Compression">Nén bản sao lưu</label><input type="hidden" name="Compression" value="false"><input id="f-BackupDataFrm-Compression" name="Compression" type="checkbox" value="true" checked></div>
+<div data-erp="field" data-control="checkbox" data-span="10"><label for="f-BackupDataFrm-CopyOnly">Sao lưu COPY_ONLY</label><input type="hidden" name="CopyOnly" value="false"><input id="f-BackupDataFrm-CopyOnly" name="CopyOnly" type="checkbox" value="true"></div>
+</fieldset>
+</form>
+<table data-erp="grid" data-grid-id="R0" data-key-field="FileName" data-selectable="single" data-total-rows="7">
+<caption>Lịch sử sao lưu</caption>
+<thead><tr>
+<th scope="col" data-field="FileName" data-type="text" data-width="250" data-frozen>Tệp sao lưu</th>
+<th scope="col" data-field="BackupDate" data-type="datetime" data-width="135">Thời gian</th>
+<th scope="col" data-field="SizeMB" data-type="number" data-width="80" data-decimals="1">Dung lượng (MB)</th>
+<th scope="col" data-field="Type" data-type="text" data-width="100">Kiểu</th>
+<th scope="col" data-field="UserName" data-type="text" data-width="120">Người thực hiện</th>
+<th scope="col" data-field="Status" data-type="status" data-width="130">Kết quả</th>
+</tr></thead>
+<tbody>
+<tr data-key="MedData_20261111_0600.bak"><td>MedData_20261111_0600.bak</td><td data-value="2026-11-11T06:00:00">11/11/2026 06:00</td><td data-value="1843.6">1843,6</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261110_1800.bak"><td>MedData_20261110_1800.bak</td><td data-value="2026-11-10T18:00:00">10/11/2026 18:00</td><td data-value="1841.2">1841,2</td><td>Thủ công</td><td>admin</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261110_0600.bak"><td>MedData_20261110_0600.bak</td><td data-value="2026-11-10T06:00:00">10/11/2026 06:00</td><td data-value="1839.9">1839,9</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261109_0600.bak"><td>MedData_20261109_0600.bak</td><td data-value="2026-11-09T06:00:00">09/11/2026 06:00</td><td data-value="1836.4">1836,4</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261108_0600.bak"><td>MedData_20261108_0600.bak</td><td data-value="2026-11-08T06:00:00">08/11/2026 06:00</td><td data-value="1832">1832</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261107_0600.bak"><td>MedData_20261107_0600.bak</td><td data-value="2026-11-07T06:00:00">07/11/2026 06:00</td><td data-value="1829.7">1829,7</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+<tr data-key="MedData_20261106_0600.bak"><td>MedData_20261106_0600.bak</td><td data-value="2026-11-06T06:00:00">06/11/2026 06:00</td><td data-value="1826.1">1826,1</td><td>Tự động</td><td>Hệ thống</td><td data-value="1"><data data-erp="status" value="1" data-tone="success">Thành công</data></td></tr>
+</tbody>
+</table>
+</section>
+</body></html>
