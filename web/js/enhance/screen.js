@@ -43,6 +43,91 @@ export function enhanceScreen(screen, ctx) {
     if (tb) actions.append(tb);
   }
   enhanceFragment(screen, ctx);
+  if (listLike && type !== 'REPORT') compactFilter(screen);
+}
+
+/**
+ * Màn danh sách: một ô tìm duy nhất và thanh lọc gọn.
+ * - Ô "Tìm nhanh" của BE (data-control=search, tìm trên DB) thay ô "Tìm trong lưới" trên thanh của lưới; Enter = lọc lại.
+ *   Ô vẫn thuộc form lọc (thuộc tính form), nên giá trị vẫn gửi cùng các ô lọc khác.
+ * - Các ô lọc còn lại gộp vào nút "Lọc" cạnh nút Nạp lại, bấm mới mở bảng lọc; nút ghi tóm tắt điều kiện đang lọc.
+ * Báo cáo không gộp (tham số là phần chính của màn).
+ * @param {HTMLElement} screen
+ */
+function compactFilter(screen) {
+  const form = /** @type {HTMLFormElement|null} */ (screen.querySelector(':scope > form[data-erp="filter"]'));
+  if (!form) return;
+  if (!form.id) form.id = uid('flt');
+  form.querySelector(':scope > .erp-filter__toggle')?.remove();
+
+  const searchField = form.querySelector(':scope > [data-erp="field"][data-control="search"]');
+  const search = /** @type {HTMLInputElement|null} */ (searchField?.querySelector('input'));
+  const bar = screen.querySelector('.erp-grid__bar');
+  if (searchField && search && bar) {
+    search.setAttribute('form', form.id);
+    search.classList.add('erp-input', 'erp-grid__search', 'erp-grid__search--server');
+    search.setAttribute('aria-label', searchField.querySelector('label')?.textContent?.trim() || 'Tìm');
+    if (!search.placeholder) search.placeholder = 'Tìm mã, số chứng từ…';
+    search.title = 'Nhấn Enter để tìm trên toàn bộ dữ liệu';
+    const local = bar.querySelector('.erp-grid__search');
+    if (local) local.replaceWith(search); else bar.prepend(search);
+    search.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); form.requestSubmit(); } });
+    // Nút × của ô search: xóa xong thì lọc lại ngay.
+    search.addEventListener('search', () => { if (!search.value) form.requestSubmit(); });
+    searchField.remove();
+  }
+
+  const actions = screen.querySelector('.erp-screen__actions');
+  const fields = Array.from(form.querySelectorAll(':scope > [data-erp="field"]'));
+  if (!fields.length) { form.hidden = true; return; }
+  if (!actions) return;
+  form.classList.add('erp-filter--panel', 'is-open');
+  form.hidden = true;
+  const summary = h('span', { class: 'erp-filter__summary' }, filterSummary(form));
+  const btn = /** @type {HTMLButtonElement} */ (h('button', { type: 'button', class: 'erp-btn erp-filter__open', 'aria-expanded': 'false', 'aria-controls': form.id,
+    title: 'Bộ lọc' }, icon('filter'), h('span', {}, 'Lọc'), summary));
+  const outside = (/** @type {Event} */ e) => { if (!form.contains(/** @type {Node} */ (e.target)) && !btn.contains(/** @type {Node} */ (e.target))) close(); };
+  const close = () => {
+    form.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('pointerdown', outside, true);
+  };
+  const open = () => {
+    form.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    /** @type {HTMLElement|null} */ (form.querySelector('input:not([type=hidden]), select, textarea'))?.focus();
+    document.addEventListener('pointerdown', outside, true);
+  };
+  btn.addEventListener('click', () => (form.hidden ? open() : close()));
+  form.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.stopPropagation(); close(); btn.focus(); } });
+  form.addEventListener('submit', close);
+  actions.prepend(btn);
+  actions.append(form);
+}
+
+/** Tóm tắt điều kiện lọc đang áp, vd "13/10 – 12/11/2026 · HN — Hà Nội". @param {HTMLFormElement} form */
+function filterSummary(form) {
+  const dmy = (/** @type {string} */ v) => (/^\d{4}-\d{2}-\d{2}/.test(v) ? v.slice(0, 10).split('-').reverse().join('/') : v);
+  /** @type {string[]} */ const dates = [];
+  /** @type {string[]} */ const parts = [];
+  for (const f of Array.from(form.querySelectorAll(':scope > [data-erp="field"]'))) {
+    const ctl = f.getAttribute('data-control');
+    if (ctl === 'date' || ctl === 'datetime') {
+      // Ô ngày đã nâng cấp: giá trị ISO nằm ở input ẩn mang name, ô hiển thị là text dd/mm/yyyy.
+      const v = /** @type {HTMLInputElement|null} */ (f.querySelector('input[name]'))?.value;
+      if (v) dates.push(dmy(v));
+      continue;
+    }
+    const sel = f.querySelector('select');
+    const cb = /** @type {HTMLInputElement|null} */ (f.querySelector('input[type=checkbox]'));
+    const text = /** @type {HTMLInputElement|null} */ (f.querySelector('input:not([type=hidden]):not([type=checkbox])'));
+    if (sel) { if (sel.value) parts.push(sel.selectedOptions[0]?.textContent?.trim() || sel.value); }
+    else if (cb) { if (cb.checked) parts.push(f.querySelector('label')?.textContent?.trim() || cb.name); }
+    else if (text?.value) parts.push(text.value);
+  }
+  const [a, b] = dates;
+  const range = dates.length === 2 ? (a.slice(6) === b.slice(6) ? `${a.slice(0, 5)} – ${b}` : `${a} – ${b}`) : dates.join(' · ');
+  return [range, ...parts].filter(Boolean).join(' · ');
 }
 
 /**
