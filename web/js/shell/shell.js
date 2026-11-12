@@ -231,7 +231,12 @@ export class Shell {
     try {
       const res = await fetchHtml(url || cfg.loginUrl);
       const form = pick(res.doc, 'login');
-      if (!form) throw new Error('Backend không trả form đăng nhập (data-erp="login").');
+      if (!form) {
+        // BE từ chối có lý do (domain chưa gắn công ty, đang bảo trì…) ⇒ hiện đúng thông điệp đó.
+        const msg = readMessages(res.doc).find((m) => m.type === 'error' || m.type === 'warning');
+        if (msg) throw Object.assign(new Error(msg.text), { name: 'ErpMessage', msgType: msg.type });
+        throw new Error('Backend không trả form đăng nhập (data-erp="login").');
+      }
       const el = adopt(form);
       this.root.replaceChildren();
       this.root.className = 'erp-app erp-app--login';
@@ -299,8 +304,10 @@ export class Shell {
     // Mất mạng (thường gặp khi mở app đã cài): nói rõ và tự thử lại khi có mạng.
     const offline = navigator.onLine === false;
     if (offline) addEventListener('online', () => location.reload(), { once: true });
-    this.root.replaceChildren(h('div', { class: 'erp-fatal' }, icon(offline ? 'warning' : 'error'),
-      h('h1', {}, offline ? 'Máy đang mất mạng' : 'Không kết nối được backend'),
+    // Thông điệp do BE gửi (đã kết nối được, nhưng BE từ chối): không gọi là "không kết nối được".
+    const fromBe = err?.name === 'ErpMessage';
+    this.root.replaceChildren(h('div', { class: 'erp-fatal' }, icon(offline || err?.msgType === 'warning' ? 'warning' : 'error'),
+      h('h1', {}, offline ? 'Máy đang mất mạng' : fromBe ? 'Chưa vào được ứng dụng' : 'Không kết nối được backend'),
       h('p', {}, offline ? 'Ứng dụng cần mạng để làm việc với dữ liệu ERP. Kiểm tra Wi-Fi / 4G, khi có mạng trang sẽ tự tải lại.'
         : err instanceof TypeError && /fetch|network|load failed/i.test(err.message) ? 'Không liên lạc được máy chủ ERP. Kiểm tra mạng hoặc thử lại sau ít phút.' : String(err?.message || err)),
       h('button', { class: 'erp-btn erp-btn--primary', type: 'button', onclick: () => location.reload() }, 'Thử lại')));
