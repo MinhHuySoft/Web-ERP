@@ -46,7 +46,8 @@ export const GRADIENT_PRESETS = [
 
 /** @typedef {{ theme:string, density:'compact'|'standard'|'comfortable', fontSize:number, nav:'ribbon'|'sidebar',
  *   accent:string, gradColors:string[], gradAngle:number, gradChrome:boolean, gradBg:boolean,
- *   reduceMotion:boolean, ribbonCollapsed:boolean, sidebarCollapsed:boolean, sidebarWidth:number }} Settings */
+ *   reduceMotion:boolean, ribbonCollapsed:boolean, sidebarCollapsed:boolean, sidebarWidth:number,
+ *   recordLayout:'compact'|'erp' }} Settings */
 
 export const SIDEBAR_W = { min: 200, max: 480, def: 268 };
 
@@ -55,6 +56,8 @@ const DEFAULTS = {
   theme: cfg.defaultTheme || 'ribbon-classic', density: 'standard', fontSize: 14, nav: cfg.defaultNav || 'ribbon', accent: '',
   gradColors: [], gradAngle: 135, gradChrome: true, gradBg: true,
   reduceMotion: false, ribbonCollapsed: false, sidebarCollapsed: false, sidebarWidth: SIDEBAR_W.def,
+  // Bố cục chứng từ: 'compact' = các ô xếp nối nhau lấp đầy chiều ngang; 'erp' = giữ xuống dòng như form WinForms.
+  recordLayout: 'compact',
 };
 
 /** @param {string} key */
@@ -94,6 +97,7 @@ export function applySettings() {
   const sw = Math.max(SIDEBAR_W.min, Math.min(SIDEBAR_W.max, Number(current.sidebarWidth) || SIDEBAR_W.def));
   root.style.setProperty('--erp-sidebar-w', `${sw}px`);
   root.dataset.motion = current.reduceMotion ? 'reduce' : 'auto';
+  root.dataset.recordLayout = current.recordLayout === 'erp' ? 'erp' : 'compact';
   root.style.setProperty('--erp-font-size', `${current.fontSize}px`);
   const meta = THEMES.find((t) => t.id === theme);
   root.style.colorScheme = meta?.dark ? 'dark' : 'light';

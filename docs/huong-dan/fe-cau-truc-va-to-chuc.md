@@ -253,6 +253,7 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Cách mở tab / xử lý response / gửi form / xác nhận / hộp thoại | `js/shell/tabs.js` |
 | Kéo đổi vị trí tab (chuột), menu tab "Chuyển sang trái/phải", Ctrl+Shift+PageUp/PageDown | `js/shell/tabs.js` (`moveTab`, `dragTab`), `shell.js` (phím) |
 | Màn danh sách: một ô tìm (tìm trên DB) + nút "Lọc" gộp thanh lọc | `js/enhance/screen.js` (`compactFilter`), `css/screen.css` |
+| Bố cục chứng từ "Gọn" (mặc định; ô xếp nối nhau lấp kín chiều ngang) / "Theo ERP" | `core/settings.js` (`recordLayout`), `css/fields.css`, `shell/settings-panel.js` |
 | Ribbon / Sidebar / bảng lệnh Ctrl+K | `js/shell/ribbon.js`, `sidebar.js`, `palette.js` (+ `menu-model.js`) |
 | Bảng "Giao diện & hiển thị" | `js/shell/settings-panel.js`, `css/shell.css` |
 | Nút toolbar (icon, phím tắt mặc định, màu nút chính) | `js/enhance/toolbar.js` (`ACTION_TONE`, `DEFAULT_KEYS`) |
