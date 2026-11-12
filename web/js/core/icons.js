@@ -42,6 +42,7 @@ const P = {
   print: '<path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/>',
   export: '<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
   import: '<path d="M12 15V3M7 8l5-5 5 5M4 21h16"/>',
+  install: '<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 6v8M9 11l3 3 3-3M10 18h4"/>',
   attach: '<path d="m21 11.5-8.5 8.5a5.5 5.5 0 0 1-7.8-7.8l8.6-8.6a3.7 3.7 0 0 1 5.2 5.2l-8.6 8.6a1.8 1.8 0 0 1-2.6-2.6l7.9-7.9"/>',
   approve: '<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
   unapprove: '<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',

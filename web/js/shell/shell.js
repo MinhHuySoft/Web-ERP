@@ -10,6 +10,7 @@ import { Sidebar } from './sidebar.js';
 import { TabManager } from './tabs.js';
 import { openPalette } from './palette.js';
 import { openSettingsPanel } from './settings-panel.js';
+import { installMode, install, onInstallChange } from '../core/pwa.js';
 import { enhanceFields } from '../enhance/fields.js';
 import { readMessages } from '../enhance/messages.js';
 
@@ -200,6 +201,7 @@ export class Shell {
       ['user', this.sess('user'), null],
       ['key', 'Đổi mật khẩu', () => this.sessionLinks['change-password'] && this.open(this.sessionLinks['change-password'], { target: 'dialog' })],
       ['theme', 'Giao diện & hiển thị', () => openSettingsPanel()],
+      ...(installMode() ? [['install', 'Cài ứng dụng lên máy', () => install()]] : []),
       [getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon', getSettings().nav === 'ribbon' ? 'Dùng Sidebar (menu dọc)' : 'Dùng Ribbon (menu ngang)', () => setSettings({ nav: getSettings().nav === 'ribbon' ? 'sidebar' : 'ribbon' })],
       ['logout', 'Đăng xuất', () => this.logout(this.sessionLinks.logout)],
     ];
@@ -241,7 +243,7 @@ export class Shell {
       const card = h('div', { class: 'erp-login' },
         h('div', { class: 'erp-login__brand' }, h('span', { class: 'erp-brand__logo', 'aria-hidden': 'true' }),
           h('div', {}, h('strong', {}, cfg.appName || 'ERP'), h('small', {}, 'Đăng nhập bằng tài khoản ERP'))),
-        el);
+        el, this.installButton());
       this.root.append(h('div', { class: 'erp-login-page' }, card));
       el.addEventListener('submit', async (ev) => {
         ev.preventDefault();
@@ -274,12 +276,34 @@ export class Shell {
     });
   }
 
+  /**
+   * Nút "Cài ứng dụng" dưới form đăng nhập: chỉ hiện khi trình duyệt cho cài (sự kiện có thể đến sau khi trang đã vẽ).
+   * Tự gỡ theo dõi khi màn đăng nhập bị thay.
+   */
+  installButton() {
+    const btn = h('button', { class: 'erp-btn erp-btn--block', type: 'button', onclick: () => install() }, icon('install'), h('span', {}, 'Cài ứng dụng lên máy'));
+    const sync = () => {
+      if (!btn.isConnected && btn.dataset.shown) { off(); return; }
+      btn.hidden = !installMode();
+      btn.dataset.shown = '1';
+    };
+    const off = onInstallChange(sync);
+    sync();
+    return btn;
+  }
+
   /** @param {any} err */
   fatal(err) {
     console.error(err);
     this.root.removeAttribute('aria-busy');
-    this.root.replaceChildren(h('div', { class: 'erp-fatal' }, icon('error'), h('h1', {}, 'Không kết nối được backend'),
-      h('p', {}, String(err?.message || err)), h('button', { class: 'erp-btn erp-btn--primary', type: 'button', onclick: () => location.reload() }, 'Thử lại')));
+    // Mất mạng (thường gặp khi mở app đã cài): nói rõ và tự thử lại khi có mạng.
+    const offline = navigator.onLine === false;
+    if (offline) addEventListener('online', () => location.reload(), { once: true });
+    this.root.replaceChildren(h('div', { class: 'erp-fatal' }, icon(offline ? 'warning' : 'error'),
+      h('h1', {}, offline ? 'Máy đang mất mạng' : 'Không kết nối được backend'),
+      h('p', {}, offline ? 'Ứng dụng cần mạng để làm việc với dữ liệu ERP. Kiểm tra Wi-Fi / 4G, khi có mạng trang sẽ tự tải lại.'
+        : err instanceof TypeError && /fetch|network|load failed/i.test(err.message) ? 'Không liên lạc được máy chủ ERP. Kiểm tra mạng hoặc thử lại sau ít phút.' : String(err?.message || err)),
+      h('button', { class: 'erp-btn erp-btn--primary', type: 'button', onclick: () => location.reload() }, 'Thử lại')));
   }
 }
 

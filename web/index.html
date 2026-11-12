@@ -6,6 +6,14 @@
   <meta name="color-scheme" content="light dark">
   <title>ERP Web</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- PWA: cài thành ứng dụng (manifest + sw.js, đăng ký trong js/core/pwa.js). theme-color đổi theo theme lúc chạy. -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#1f5fbf">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ERP Web">
   <!-- Thứ tự lớp CSS: reset → tokens → base → components → themes → utilities -->
   <link rel="stylesheet" href="css/layers.css">
   <link rel="stylesheet" href="css/tokens.css">

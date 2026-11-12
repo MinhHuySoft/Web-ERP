@@ -59,13 +59,16 @@ css/
   themes/*.css        12 theme, mỗi theme chỉ ghi đè token + hiệu ứng lớp vỏ
 js/
   app.js              khởi động
-  core/               dom, http (fetch + làm sạch HTML), sanitize, format (số/ngày VN), settings, icons, ui (toast, dialog)
+  core/               dom, http (fetch + làm sạch HTML), sanitize, format (số/ngày VN), settings, icons, ui (toast, dialog),
+                      pwa (cài thành ứng dụng)
   shell/              shell (vỏ), ribbon, sidebar, tabs (điều hướng + xử lý response), palette (Ctrl+K), settings-panel
   enhance/            "nâng cấp" HTML theo vai trò data-erp: screen, toolbar, fields, lookup, grid, forms, messages, dashboard
   tools/validate.js   bộ kiểm tra chuẩn ERP-HTML
 tools/validate.html   trang kiểm tra cho đội backend
 mock/                 HTML mẫu do tools/mock-gen sinh (đóng vai backend)
-assets/               favicon/logo
+assets/               favicon/logo; icons/ = icon PWA (tools/icons/build_icons.py sinh)
+manifest.webmanifest  PWA: tên, icon, màu, standalone
+sw.js                 service worker: chỉ giữ vỏ tĩnh FE (xem docs/huong-dan/fe-cau-truc-va-to-chuc.md mục 6.1)
 ```
 
 ## Quy ước code
