@@ -5,6 +5,10 @@
   }
   .erp-field { grid-column: span var(--span, 10); display: flex; flex-direction: column; gap: 4px; min-width: 0; }
   .erp-field.is-row-start { grid-column: 1 / span var(--span, 10); }
+  /* Bố cục chứng từ "Gọn" (mặc định): bỏ các chỗ xuống dòng của form WinForms để ô xếp nối nhau, lấp đầy chiều ngang.
+     Ô vẫn giữ độ rộng tương đối như ERP; ô rộng cả dòng (span 40) vẫn chiếm cả dòng. "Theo ERP" giữ nguyên xuống dòng. */
+  :root[data-record-layout="compact"] .erp-record .erp-field.is-row-start { grid-column: auto / span var(--span, 10); }
+  :root[data-record-layout="compact"] .erp-record .erp-field-gap { display: none; }
   .erp-field-gap { grid-column: span var(--span, 1); }
   .erp-fields > button, .erp-fields > .erp-filter__submit { grid-column: span 5; }
   .erp-field__label { font-size: var(--erp-fs-sm); font-weight: 550; color: var(--erp-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -93,6 +97,7 @@
     .erp-fields { grid-template-columns: repeat(20, minmax(0, 1fr)); }
     .erp-field { grid-column: span var(--span-md, 10); }
     .erp-field.is-row-start { grid-column: 1 / span var(--span-md, 10); }
+    :root[data-record-layout="compact"] .erp-record .erp-field.is-row-start { grid-column: auto / span var(--span-md, 10); }
     .erp-field-gap { display: none; }
   }
   @container (max-width: 560px) {
