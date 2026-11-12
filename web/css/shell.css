@@ -183,6 +183,9 @@
     content: ""; position: absolute; inset-inline-start: -2px; top: 9px; bottom: 9px; width: 1px; background: var(--erp-border);
   }
   .erp-doctab:hover { background: color-mix(in srgb, var(--erp-surface) 70%, transparent); color: var(--erp-text); }
+  /* Kéo đổi vị trí tab */
+  .erp-docbar__tabs.is-reordering { cursor: grabbing; user-select: none; }
+  .erp-doctab.is-dragging { background: var(--erp-surface); color: var(--erp-text); box-shadow: var(--erp-shadow); z-index: 2; }
   .erp-doctab.is-active {
     background: var(--erp-surface); color: var(--erp-text); border-color: var(--erp-border); font-weight: 600;
     box-shadow: inset 0 2px 0 var(--erp-primary);

@@ -277,6 +277,7 @@ export class Shell {
       if ((ev.ctrlKey || ev.metaKey) && k === 'b' && !ev.shiftKey) { ev.preventDefault(); this.toggleNavPanel(); return; }
       if (ev.altKey && k === 'w') { ev.preventDefault(); this.tabs?.closeActive(); return; }
       if ((ev.ctrlKey) && ev.key === 'Tab') { ev.preventDefault(); this.tabs?.cycle(ev.shiftKey ? -1 : 1); return; }
+      if (ev.ctrlKey && ev.shiftKey && (ev.key === 'PageUp' || ev.key === 'PageDown')) { ev.preventDefault(); this.tabs?.moveActive(ev.key === 'PageUp' ? -1 : 1); return; }
       this.tabs?.handleKey(ev);
     });
   }

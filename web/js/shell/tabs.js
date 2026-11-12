@@ -80,6 +80,7 @@ export class TabManager {
         pinned ? icon('home') : null, label, h('span', { class: 'erp-doctab__dirty', title: 'Có thay đổi chưa lưu', 'aria-hidden': 'true' })),
       pinned ? null : h('button', { type: 'button', class: 'erp-doctab__close', 'aria-label': `Đóng ${title}`, onclick: () => this.close(tab) }, icon('close')));
     btn.addEventListener('contextmenu', (ev) => { ev.preventDefault(); this.tabMenu(tab, btn); });
+    if (!pinned) btn.addEventListener('pointerdown', (ev) => this.dragTab(ev, tab));
     const panel = h('section', { class: 'erp-tabpanel', id, role: 'tabpanel', 'aria-labelledby': `${id}-btn`, hidden: true });
     /** @type {Tab} */
     const tab = { id, url: '', key: '', title, btn, panel, dirty: false, pinned, keys: new Map(), ctrl: null,
@@ -196,12 +197,75 @@ export class TabManager {
 
   /** @param {Tab} tab @param {HTMLElement} anchor */
   tabMenu(tab, anchor) {
+    const i = this.tabs.indexOf(tab), first = this.tabs.filter((t) => t.pinned).length;
     popupMenu(anchor, [
       { icon: 'reload', label: 'Nạp lại', onClick: () => this.load(tab, tab.url) },
+      { icon: 'prev', label: 'Chuyển sang trái', onClick: () => this.moveTab(tab, i - 1), disabled: tab.pinned || i <= first },
+      { icon: 'next', label: 'Chuyển sang phải', onClick: () => this.moveTab(tab, i + 1), disabled: tab.pinned || i >= this.tabs.length - 1 },
       { icon: 'star', label: isFavorite(tab.url) ? 'Bỏ yêu thích' : 'Thêm vào yêu thích', onClick: () => { toast(toggleFavorite({ url: tab.url, title: tab.title }) ? 'Đã thêm vào yêu thích' : 'Đã bỏ yêu thích', 'success', 2000); } },
       { icon: 'close', label: 'Đóng', onClick: () => this.close(tab), disabled: tab.pinned },
       { icon: 'close', label: 'Đóng các tab khác', onClick: async () => { for (const t of [...this.tabs]) if (t !== tab && !t.pinned && !(await this.close(t))) break; } },
     ]);
+  }
+
+  /**
+   * Đổi vị trí tab (Trang chủ ghim luôn đứng đầu). Chỉ đổi thứ tự trên thanh tab, không tải lại màn.
+   * @param {Tab} tab @param {number} index vị trí mới trong this.tabs
+   */
+  moveTab(tab, index) {
+    if (tab.pinned) return;
+    const first = this.tabs.filter((t) => t.pinned).length;
+    const to = Math.max(first, Math.min(index, this.tabs.length - 1));
+    const from = this.tabs.indexOf(tab);
+    if (from < 0 || from === to) return;
+    this.tabs.splice(from, 1);
+    this.tabs.splice(to, 0, tab);
+    this.bar.insertBefore(tab.btn, this.tabs[to + 1]?.btn || null);
+    tab.btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+
+  /** Ctrl+Shift+PageUp / PageDown: dời tab đang mở sang trái / phải. @param {number} dir */
+  moveActive(dir) { if (this.active) this.moveTab(this.active, this.tabs.indexOf(this.active) + dir); }
+
+  /**
+   * Kéo tab bằng chuột để đổi vị trí: qua nửa tab bên cạnh thì đổi chỗ. Cảm ứng không kéo (thanh tab cuộn ngang bằng tay):
+   * dùng menu giữ lâu → Chuyển sang trái / phải.
+   * @param {PointerEvent} ev @param {Tab} tab
+   */
+  dragTab(ev, tab) {
+    if (ev.pointerType !== 'mouse' || ev.button !== 0 || /** @type {HTMLElement} */ (ev.target).closest('.erp-doctab__close')) return;
+    const startX = ev.clientX;
+    let dragging = false;
+    const move = (/** @type {PointerEvent} */ e) => {
+      if (!dragging) {
+        if (Math.abs(e.clientX - startX) < 6) return;
+        dragging = true;
+        tab.btn.classList.add('is-dragging');
+        this.bar.classList.add('is-reordering');
+      }
+      const i = this.tabs.indexOf(tab);
+      const prev = this.tabs[i - 1], next = this.tabs[i + 1];
+      if (next && e.clientX > next.btn.getBoundingClientRect().left + next.btn.offsetWidth / 2) this.moveTab(tab, i + 1);
+      else if (prev && !prev.pinned && e.clientX < prev.btn.getBoundingClientRect().left + prev.btn.offsetWidth / 2) this.moveTab(tab, i - 1);
+      // Gần mép thanh tab thì cuộn để kéo tiếp được sang tab đang khuất.
+      const r = this.bar.getBoundingClientRect();
+      if (e.clientX < r.left + 24) this.bar.scrollLeft -= 12;
+      else if (e.clientX > r.right - 24) this.bar.scrollLeft += 12;
+    };
+    const end = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', end);
+      window.removeEventListener('pointercancel', end);
+      if (!dragging) return;
+      tab.btn.classList.remove('is-dragging');
+      this.bar.classList.remove('is-reordering');
+      // Thả chuột sau khi kéo không tính là bấm vào tab.
+      tab.btn.addEventListener('click', (c) => { c.stopPropagation(); c.preventDefault(); }, { capture: true, once: true });
+      this.activate(tab);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
   }
 
   /** @param {HTMLElement} [anchorEl] */

@@ -127,6 +127,17 @@ việc) · `status`. Vùng nào ẩn (Ribbon khi dùng Sidebar, thanh trạng th
 
 ### 4.2 Mở một màn hình
 
+**Màn danh sách** (LIST / LISTEDIT / EDIT ở chế độ `find`, trừ REPORT) được gọn lại sau khi nâng cấp (`compactFilter` trong
+`screen.js`):
+
+- **Một ô tìm duy nhất:** ô `data-control="search"` của `form[data-erp=filter]` (thường là `q`) chuyển lên thanh của lưới, thay
+  ô "Tìm trong lưới". Enter (hoặc bấm × xóa) gửi lại form lọc, nên BE tìm trên **toàn bộ dữ liệu**, không chỉ các dòng đang có.
+  Ô vẫn thuộc form lọc nhờ thuộc tính `form`. BE chỉ nên gửi **một** ô search trong form lọc.
+- **Nút "Lọc"** đứng cạnh các nút của toolbar (Nạp lại…). Nút ghi tóm tắt điều kiện đang lọc, vd `01/11 – 11/11/2026 · Hà Nội`.
+  Bấm mới mở bảng lọc nổi. Esc, bấm ra ngoài, hoặc bấm Lọc thì bảng đóng.
+- Lưới trong tab chi tiết và lưới không có form lọc vẫn giữ ô "Tìm trong lưới" (lọc tại chỗ).
+
+
 1. Người dùng bấm menu / link → `interceptNavigation` (forms.js) chặn, đọc `data-target` → `ctx.navigate(url, target)`.
 2. `TabManager.open(url, {target})`: `tab` (mặc định; trùng URL thì chuyển tab), `self`, `dialog`, `_blank` (tải file).
 3. `load()` → `fetchHtml(url)`: gửi `X-ERP-Request: fragment`, `X-ERP-Contract`; **sanitize + absolutize** HTML.
@@ -240,6 +251,8 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Đổi URL backend, origin cho phép | `web/config.js` |
 | Thanh tiêu đề, thanh trạng thái, phím tắt toàn cục, đăng nhập | `js/shell/shell.js`, `css/shell.css` |
 | Cách mở tab / xử lý response / gửi form / xác nhận / hộp thoại | `js/shell/tabs.js` |
+| Kéo đổi vị trí tab (chuột), menu tab "Chuyển sang trái/phải", Ctrl+Shift+PageUp/PageDown | `js/shell/tabs.js` (`moveTab`, `dragTab`), `shell.js` (phím) |
+| Màn danh sách: một ô tìm (tìm trên DB) + nút "Lọc" gộp thanh lọc | `js/enhance/screen.js` (`compactFilter`), `css/screen.css` |
 | Ribbon / Sidebar / bảng lệnh Ctrl+K | `js/shell/ribbon.js`, `sidebar.js`, `palette.js` (+ `menu-model.js`) |
 | Bảng "Giao diện & hiển thị" | `js/shell/settings-panel.js`, `css/shell.css` |
 | Nút toolbar (icon, phím tắt mặc định, màu nút chính) | `js/enhance/toolbar.js` (`ACTION_TONE`, `DEFAULT_KEYS`) |

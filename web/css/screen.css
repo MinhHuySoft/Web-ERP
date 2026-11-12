@@ -75,6 +75,18 @@
   .erp-filter > .erp-field-gap { display: none; }
   .erp-filter > .erp-filter__submit { margin-inline-start: auto; min-width: 140px; }
   .erp-filter__toggle { display: none; }
+  /* Màn danh sách: thanh lọc gộp vào nút "Lọc" cạnh Nạp lại, bấm mới mở thành bảng nổi (screen.js compactFilter) */
+  .erp-screen__actions { position: relative; align-items: center; gap: 8px; }
+  .erp-filter__open { gap: 6px; max-width: 100%; }
+  .erp-filter__summary { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--erp-text-muted); font-weight: 400; }
+  .erp-filter__summary:empty { display: none; }
+  .erp-filter__summary::before { content: "·"; margin-inline-end: 6px; }
+  .erp-filter.erp-filter--panel {
+    position: absolute; z-index: 30; top: calc(100% + 6px); inset-inline-end: 0; width: min(760px, calc(100vw - 32px));
+    background: var(--erp-surface); box-shadow: var(--erp-shadow-lg);
+  }
+  .erp-filter--panel > .erp-filter__submit { margin-inline-start: auto; }
+  .erp-grid__search--server { border-color: var(--erp-border-strong); }
 
   /* ---------- Bản ghi ---------- */
   .erp-record { display: grid; gap: 0; }
