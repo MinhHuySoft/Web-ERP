@@ -41,7 +41,9 @@ python -I tools/mock-gen/build_mock.py              # sinh lại web/mock/ từ 
 web/
   index.html              khung trang: nạp CSS theo lớp, config.js, js/app.js; #erp-app là gốc ứng dụng
   config.js               window.ERP_CONFIG: 4 điểm vào BE, allowedOrigins, contractVersion, defaultTheme, maxLiveTabs
-  assets/                 favicon / logo
+  manifest.webmanifest    PWA: tên app, icon, màu, display standalone (cài thành ứng dụng — mục 6.1)
+  sw.js                   service worker: chỉ giữ vỏ tĩnh của FE, không giữ dữ liệu nghiệp vụ (mục 6.1)
+  assets/                 favicon / logo; icons/ = icon PNG cho PWA do tools/icons/build_icons.py sinh
   css/
     layers.css            @layer reset, tokens, base, components, themes, utilities  (thứ tự ưu tiên toàn dự án)
     tokens.css            token --erp-* (mặc định = ribbon-classic), thang chữ, chuyển động, mật độ;
@@ -59,7 +61,7 @@ web/
     print.css             in
     themes/<tên>.css      12 theme: chỉ ghi đè token + vài hiệu ứng riêng, dẫn xuất màu từ --erp-primary
   js/
-    app.js                khởi động: applySettings() → new Shell(#erp-app).start()
+    app.js                khởi động: applySettings() → initPwa() → new Shell(#erp-app).start()
     core/                 hạ tầng dùng chung, không biết gì về màn hình
       dom.js              h() tạo phần tử, $() và $$() chọn phần tử, fold() bỏ dấu tiếng Việt, debounce(), uid(), closestRole()
       http.js             fetchHtml(): fetch + header chuẩn + sanitize + absolutize; pick()/pickAll() lấy vai trò; adopt()
@@ -70,6 +72,7 @@ web/
       settings.js         cài đặt người dùng (theme, mật độ, cỡ chữ, kiểu menu, màu, gradient…), THEMES,
                           applySettings() → data-* trên <html> + biến CSS; bố cục lưới, gần đây, yêu thích
       color.js            tương phản WCAG, tự chỉnh màu đủ 4.5:1, chọn chữ trắng/đen, sinh màu phụ
+      pwa.js              initPwa(): đăng ký sw.js, nút "Cài ứng dụng" (installMode / install), meta theme-color theo theme
     shell/                vỏ ứng dụng (tồn tại suốt phiên)
       shell.js            class Shell: nạp phiên + menu, dựng thanh tiêu đề / Ribbon / Sidebar / thanh trạng thái,
                           phím tắt toàn cục, đăng nhập / đăng xuất, popupMenu()
@@ -94,7 +97,8 @@ web/
   tools/validate.html     trang kiểm tra cho đội BE
   mock/                   HTML mẫu (BE giả) do tools/mock-gen/build_mock.py sinh — KHÔNG sửa tay
 
-tools/                    (ngoài web/) dev-server.py, mock-gen/build_mock.py, metadata-export/, legacy-decompile/
+tools/                    (ngoài web/) dev-server.py, mock-gen/build_mock.py, icons/build_icons.py, metadata-export/,
+                          legacy-decompile/
 docs/                     phân tích hệ thống cũ (legacy-analysis/), kiến trúc & chuẩn (kien-truc/), hướng dẫn (huong-dan/)
 ```
 
@@ -108,6 +112,7 @@ sequenceDiagram
   participant S as Shell
   participant BE as Backend / mock
   A->>A: applySettings() — theme, mật độ, cỡ chữ, màu lên <html>
+  A->>A: initPwa() — đăng ký sw.js, theo dõi "cài được", theme-color (mục 6.1)
   A->>S: new Shell(#erp-app).start()
   S->>BE: GET sessionUrl
   alt 401 hoặc không có [data-erp=session]
@@ -210,6 +215,24 @@ Hộp thoại dùng ngữ cảnh tương tự (`dialogCtx`) — enhancer không 
 
 Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read()` / `store()` trong `core/settings.js`.
 
+### 6.1 Cài thành ứng dụng (PWA) và service worker
+
+- **Cài được khi** trang chạy qua **HTTPS** (hoặc `localhost` / `127.0.0.1` lúc phát triển). Android / Chrome / Edge:
+  nút **"Cài ứng dụng lên máy"** ở menu tài khoản và dưới form đăng nhập (chỉ hiện khi trình duyệt cho cài).
+  iPhone / iPad: cùng nút đó mở hướng dẫn *Chia sẻ → Thêm vào MH chính* (iOS không có hộp cài).
+- **`sw.js` chỉ đụng tới vỏ tĩnh của FE:** `index.html` (gốc), `config.js`, `manifest.webmanifest`, `css/`, `js/`,
+  `assets/`. Mọi request khác — HTML của BE, POST, `mock/`, `tools/`, origin khác — đi thẳng mạng, **không bao giờ
+  vào cache**. Vì vậy BE không được đặt nội dung động dưới các đường dẫn trên.
+- **Cách lấy: mạng trước** (bắt kiểm lại với máy chủ, ETag → 304), lỗi mạng hoặc BE trả lỗi (vd 503 lúc đang cập nhật)
+  thì dùng bản đã giữ ⇒ sau mỗi lần triển khai người dùng nhận FE mới ngay; mất mạng vẫn mở được vỏ và thấy thông báo
+  "Máy đang mất mạng" (tự tải lại khi có mạng).
+- Cache Storage tên `erp-fe-v<n>`. **Đổi danh sách `SHELL` / đường dẫn được giữ / cách xử lý trong `sw.js` ⇒ tăng
+  `VERSION`** (bản cũ tự bị xóa khi bản mới chạy). Sửa CSS/JS thông thường thì không cần.
+- Icon: sửa `assets/favicon.svg` và hằng số trong `tools/icons/build_icons.py` cho khớp, chạy
+  `python -I tools/icons/build_icons.py` (sinh `assets/icons/*.png`: thường, maskable cho Android, apple-touch-icon).
+- Tên app trên màn hình chính: Android lấy `name` trong `manifest.webmanifest` (tĩnh); iOS lấy
+  `apple-mobile-web-app-title` (FE đặt theo `ERP_CONFIG.appName` lúc chạy).
+
 ## 7. Muốn sửa X thì mở file Y
 
 | Việc | File |
@@ -230,6 +253,7 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Danh sách thẻ / thuộc tính được phép từ BE | `js/core/sanitize.js` |
 | Luật kiểm tra chuẩn | `js/tools/validate.js` |
 | Mock (BE giả) | `tools/mock-gen/build_mock.py` → chạy lại → `web/mock/` |
+| Cài thành ứng dụng (PWA): manifest, icon, service worker, nút cài | `web/manifest.webmanifest`, `web/sw.js`, `js/core/pwa.js`, `tools/icons/build_icons.py` (mục 6.1) |
 
 ## 8. Công thức mở rộng
 
@@ -275,3 +299,5 @@ thêm ảnh xem trước `[data-theme-preview="<tên>"]` cuối `css/shell.css`.
 - [ ] Nếu đổi `build_mock.py`: chạy lại generator, `validate` toàn bộ `web/mock/` → **0 lỗi**.
 - [ ] Đối chiếu [chuẩn giao diện](../kien-truc/03-chuan-giao-dien.md) mục 3–4 (danh sách cấm, tương phản, trạng thái, bố cục).
 - [ ] Đổi hành vi giao tiếp với BE → cập nhật đặc tả + hướng dẫn BE cùng lúc.
+- [ ] Đổi `sw.js` (danh sách giữ / cách xử lý) → tăng `VERSION`; thử mở app khi tắt dev server: vỏ vẫn hiện, không
+      có HTML của BE / mock trong Cache Storage.

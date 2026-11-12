@@ -24,7 +24,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     extensions_map = {**http.server.SimpleHTTPRequestHandler.extensions_map,
                       '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
                       '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
-                      '.svg': 'image/svg+xml', '.json': 'application/json; charset=utf-8'}
+                      '.svg': 'image/svg+xml', '.json': 'application/json; charset=utf-8',
+                      '.png': 'image/png', '.webmanifest': 'application/manifest+json'}
 
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store')
@@ -61,7 +62,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().send_error(code, message, explain)
 
     def log_message(self, fmt, *args):
-        if self.command == 'GET' and ('/vendor/' in self.path or self.path.endswith(('.css', '.js', '.svg'))):
+        if self.command == 'GET' and ('/vendor/' in self.path or self.path.endswith(('.css', '.js', '.svg', '.png', '.webmanifest'))):
             return
         sys.stdout.write('%s %s\n' % (self.command, fmt % args))
 
