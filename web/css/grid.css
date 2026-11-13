@@ -117,6 +117,13 @@
   }
   .erp-grid__table tfoot td.is-frozen { z-index: 3; }
   .erp-grid__status { padding: 4px 10px; font-size: var(--erp-fs-xs); color: var(--erp-text-muted); border-top: 1px solid var(--erp-grid-line); background: var(--erp-grid-bg); }
+  /* Phân trang của BE (nav[data-erp=pager]) gắn ở cuối lưới */
+  .erp-pager {
+    display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 4px 6px; padding: 4px 10px;
+    border-top: 1px solid var(--erp-grid-line); background: var(--erp-grid-bg);
+  }
+  .erp-pager .erp-gbtn { height: 28px; text-decoration: none; }
+  .erp-pager__info { color: var(--erp-text-muted); font-size: var(--erp-fs-sm); padding-inline: 4px; font-variant-numeric: tabular-nums; }
 
   /* Dạng thẻ (màn hẹp) */
   .erp-grid__cards { display: grid; gap: 8px; padding: 8px; overflow: auto; min-height: 0; flex: 1; background: var(--erp-surface-2); align-content: start; }

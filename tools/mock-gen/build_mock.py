@@ -906,7 +906,11 @@ def build_list(menu, form):
                 a_btn('print', f'{BASE}/actions/print.html', 'In', data_target='_blank'),
             ]))
             parts.append(std_filter(sid, url, with_dates=False, with_branch='BranchID' in [c['field'] for c in cols]))
-            parts.append(grid_html('T0', cols, rows, pk, None, selectable='multi', total_rows=n))
+            parts.append(grid_html('T0', cols, rows, pk, None, selectable='multi', total_rows=2345 if big else n))
+            if big:   # danh mục lớn: BE phân trang 1.000 dòng/trang (chuẩn 11.5)
+                parts.append(f'<nav data-erp="pager" data-page="1" data-page-size="1000" data-total="2345" aria-label="Phân trang">'
+                             f'<span>Trang 1 / 3 · dòng 1–1.000 / 2.345</span> <a rel="next" href="{url}?page=2" data-target="self">Sau</a> '
+                             f'<a rel="last" href="{url}?page=3" data-target="self">Cuối</a></nav>')
         else:
             parts.append(toolbar([
                 s_btn('save', form_id, f'{BASE}/screens/{sid}.saved.html', 'Lưu', data_shortcut='Ctrl+S'),

@@ -143,6 +143,7 @@ export function enhanceFragment(root, ctx) {
   root.querySelectorAll('form[data-erp="record"]').forEach((f) => enhanceRecord(/** @type {HTMLFormElement} */ (f)));
   enhanceFields(root, ctx);
   root.querySelectorAll('table[data-erp="grid"]').forEach((t) => enhanceGrid(/** @type {HTMLTableElement} */ (t), ctx));
+  root.querySelectorAll('nav[data-erp="pager"]').forEach((n) => enhancePager(/** @type {HTMLElement} */ (n)));
   root.querySelectorAll('section[data-erp="tabs"]').forEach((t) => enhanceDetailTabs(/** @type {HTMLElement} */ (t), ctx));
   enhanceMessages(root);
   enhanceDashboard(root);
@@ -159,6 +160,28 @@ export function enhanceFragment(root, ctx) {
     const a = b.getAttribute('data-action');
     if (a === 'save' || a === 'approve' || a === 'attach' || a === 'login' || a === 'confirm-yes') b.classList.add('erp-btn--primary');
   }
+}
+
+/** @type {Record<string, string>} */
+const PAGER_ICON = { first: 'first', prev: 'prev', next: 'next', last: 'last' };
+
+/**
+ * Phân trang (chuẩn 11.5): gắn vào cuối lưới đứng ngay trước nó; các liên kết mở trang khác trong cùng tab (giữ bộ lọc vì BE đặt sẵn
+ * trong href). FE không tự ghép URL trang.
+ * @param {HTMLElement} nav
+ */
+function enhancePager(nav) {
+  nav.classList.add('erp-pager');
+  for (const a of Array.from(nav.querySelectorAll('a[href]'))) {
+    const rel = a.getAttribute('rel') || '';
+    if (!a.hasAttribute('data-target')) a.setAttribute('data-target', 'self');
+    a.classList.add('erp-gbtn');
+    a.setAttribute('title', a.textContent?.trim() || rel);
+    if (PAGER_ICON[rel]) a.prepend(icon(PAGER_ICON[rel]));
+  }
+  nav.querySelector(':scope > span')?.classList.add('erp-pager__info');
+  const grid = nav.previousElementSibling;
+  if (grid?.classList.contains('erp-grid')) grid.append(nav);
 }
 
 /** Thanh lọc: gọn trên màn hẹp, nút Lọc nổi bật. @param {HTMLFormElement} form */
