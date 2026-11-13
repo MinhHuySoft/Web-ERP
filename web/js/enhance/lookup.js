@@ -99,6 +99,36 @@ export async function openLookup(input, src, q, onPick) {
   }
 }
 
+/** @type {CanvasRenderingContext2D|null} */
+let measureCtx = null;
+
+/** Độ rộng chữ theo font của ô (px). @param {string} text @param {CSSStyleDeclaration} cs */
+function textWidth(text, cs) {
+  measureCtx ||= document.createElement('canvas').getContext('2d');
+  if (!measureCtx) return 0;
+  measureCtx.font = cs.font || `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  return measureCtx.measureText(text).width;
+}
+
+/**
+ * Đặt chữ tra cứu (`output[data-erp=lookup-text]`) vào trong ô, ngay sau mã: vị trí = viền + lề trong + độ rộng mã.
+ * Tính lại khi đổi giá trị và khi ô đổi kích thước (hiện ra từ tab ẩn, đổi cỡ chữ).
+ * @param {HTMLElement} wrap @param {HTMLInputElement} input @param {HTMLOutputElement} out
+ */
+function inlineText(wrap, input, out) {
+  wrap.classList.add('erp-lookup--text');
+  input.after(out);
+  const place = () => {
+    if (!input.isConnected) return;
+    const cs = getComputedStyle(input);
+    const x = (parseFloat(cs.borderInlineStartWidth) || 0) + (parseFloat(cs.paddingInlineStart) || 0) + textWidth(input.value, cs);
+    wrap.style.setProperty('--erp-lk-x', `${Math.ceil(x)}px`);
+  };
+  for (const ev of ['input', 'change', 'erp:set']) input.addEventListener(ev, place);
+  new ResizeObserver(place).observe(wrap);
+  document.fonts?.ready.then(place);
+}
+
 /**
  * Gắn tra cứu F4 cho ô nhập trong form (data-control=lookup).
  * @param {HTMLInputElement} input @param {(name:string, value:string)=>void} fill
@@ -126,6 +156,8 @@ export function attachLookup(input, fill) {
   const wrap = h('span', { class: 'erp-lookup' });
   input.replaceWith(wrap);
   wrap.append(input, btn);
+  // Tên kèm mã nằm ngay trong ô, sau mã (như ô chọn nhiều cột của ERP). Ô lọc có cách riêng (screen.css).
+  if (out && !input.closest('[data-erp="filter"]')) inlineText(wrap, input, out);
   const typed = debounce(() => { if (input.value.length >= min && document.activeElement === input) open(input.value); }, 250);
   input.addEventListener('keydown', (e) => {
     if (e.key === 'F4' || (e.altKey && e.key === 'ArrowDown')) { e.preventDefault(); open(''); }
