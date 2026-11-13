@@ -11,7 +11,7 @@ import { fetchHtml, pick, isAllowedUrl } from '../core/http.js';
 import { toast, messageBox } from '../core/ui.js';
 import { applyTextStyle, renderPages, domMeasure } from './render.js';
 import { buildDocument } from './engine.js';
-import { loadTemplate, readGrid, readParams } from './viewer.js';
+import { loadTemplate, readGrid, readParams, PAPERS } from './viewer.js';
 import { convertRpx, TEMPLATE_SCHEMA } from './rpx.js';
 import { check } from './expr.js';
 import { fakeData, referencedFields } from './fake.js';
@@ -19,7 +19,6 @@ import { fakeData, referencedFields } from './fake.js';
 /** @typedef {Record<string, any>} Obj */
 
 const PX_PER_MM = 96 / 25.4;
-const PAPERS = /** @type {Record<string, [number, number]>} */ ({ A4: [210, 297], A5: [148, 210], A3: [297, 420], Letter: [215.9, 279.4], Legal: [215.9, 355.6] });
 const FONTS = ['Arial', 'Times New Roman', 'Tahoma', 'Arial Narrow', 'Microsoft Sans Serif', 'Calibri', 'Arial Unicode MS'];
 const FORMATS = ['#,##0', '#,##0.##', '#,###', '#,###.##', '#,##0.00', '#,##0.####', 'dd/MM/yyyy', 'dd/MM/yyyy HH:mm', 'HH:mm', 'MM/yyyy', 'N0', 'N2', '#,##0.00 %'];
 const BAND_LABEL = /** @type {Record<string,string>} */ ({ reportHeader: 'Đầu báo cáo', pageHeader: 'Đầu trang', groupHeader: 'Đầu nhóm', detail: 'Chi tiết',

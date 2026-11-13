@@ -112,6 +112,9 @@
   }
   .erp-dtabs { display: flex; flex-direction: column; min-width: 0; }
   .erp-dtabs__panel { min-width: 0; }
+  /* Ô của chứng từ trên trang chi tiết (LYT5…13): khung như tab của bản ghi; lưới nạp lười (nếu có) đứng sau. */
+  .erp-dtabs__panel > .erp-fieldset:first-child { border-top-left-radius: 0; }
+  .erp-dtabs__lazy { margin-top: var(--erp-gap); }
 
   /* ---------- Kết quả báo cáo ---------- */
   .erp-report-result { display: flex; flex-direction: column; gap: var(--erp-gap); flex: 1; min-height: 0; }

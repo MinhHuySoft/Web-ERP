@@ -244,7 +244,8 @@ function enhanceRecord(form) {
 }
 
 /**
- * Tab chi tiết (chuẩn ERP-HTML mục 12): panel có data-src nạp khi mở lần đầu.
+ * Tab chi tiết (chuẩn ERP-HTML mục 12): panel có data-src nạp khi mở lần đầu. Panel có sẵn nội dung (ô của chứng từ đặt
+ * trên trang chi tiết, LYT5…13 của ERP) thì giữ nội dung đó, phần nạp về đặt phía sau.
  * @param {HTMLElement} section @param {import('../shell/tabs.js').TabContext} ctx
  */
 function enhanceDetailTabs(section, ctx) {
@@ -258,13 +259,14 @@ function enhanceDetailTabs(section, ctx) {
     const src = p.getAttribute('data-src');
     if (src && !p.dataset.loaded) {
       p.dataset.loaded = '1';
-      p.replaceChildren(h('div', { class: 'erp-empty' }, 'Đang tải…'));
+      const box = p.children.length ? p.appendChild(h('div', { class: 'erp-dtabs__lazy' })) : p;
+      box.replaceChildren(h('div', { class: 'erp-empty' }, 'Đang tải…'));
       try {
         const res = await fetchHtml(src, { tabId: ctx.tab?.id });
         const content = pick(res.doc, 'tab-panel') || res.doc.body;
-        p.replaceChildren(...Array.from(content.childNodes).map((n) => adopt(n)));
-        enhanceFragment(p, ctx);
-      } catch (err) { p.replaceChildren(h('div', { class: 'erp-empty erp-empty--error' }, `Không tải được: ${String(/** @type {any} */ (err)?.message || err)}`)); }
+        box.replaceChildren(...Array.from(content.childNodes).map((n) => adopt(n)));
+        enhanceFragment(box, ctx);
+      } catch (err) { box.replaceChildren(h('div', { class: 'erp-empty erp-empty--error' }, `Không tải được: ${String(/** @type {any} */ (err)?.message || err)}`)); }
     }
   };
   panels.forEach((p, i) => {
@@ -272,6 +274,7 @@ function enhanceDetailTabs(section, ctx) {
     p.id = id;
     p.setAttribute('role', 'tabpanel');
     p.classList.add('erp-dtabs__panel');
+    p.querySelectorAll(':scope > fieldset').forEach((f) => f.classList.add('erp-fieldset'));
     const badge = p.getAttribute('data-badge');
     bar.append(h('button', { type: 'button', role: 'tab', class: 'erp-subtab', 'aria-controls': id, onclick: () => select(i) },
       p.getAttribute('data-title') || `Chi tiết ${i + 1}`, badge && badge !== '0' ? h('span', { class: 'erp-count' }, badge) : null));
