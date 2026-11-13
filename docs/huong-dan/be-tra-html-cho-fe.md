@@ -78,6 +78,8 @@ gợi ý — BE được đặt tùy ý.
 | Báo cáo | GET | `/erp/reports/{FormName}?…tham số` | `screen` `REPORT` |
 | Tab chi tiết nạp lười | GET | `…/{key}/tabs/{T2}` | nội dung panel (vd `table[data-erp="grid"]`) |
 | Xuất Excel / In | GET | `…&format=xlsx|pdf` | file (`Content-Disposition`) |
+| In theo mẫu (chứng từ / báo cáo) | GET | `/erp/print/{Report}?DocumentID=a;b&Template=…` | `screen` `REPORT` + `print-document` (mục 5.4b) |
+| Mẫu in của `data-template-src` | GET | `/erp/print/templates/{Report}/{Template}.rpx` hoặc `.json` | XML `.rpx` (bản mới nhất `SY_RpFTbl`, không có thì thư mục `Reports`) hoặc JSON `erp-print-template/1` |
 
 ## 4. Bảng tra vai trò `data-erp`
 
@@ -316,6 +318,48 @@ Ghi nhớ cho lưới:
 - Tham số filter lấy từ tham số của SP `<FormName>Stp` (`@FromDate`, `@ToDate`, `@BranchID`, `@Template`…).
 - SP trả nhiều result set → mỗi bảng thêm 1 `table[data-erp=grid]` có `caption`. Bảng `Msg/Type` → `messages`.
 
+### 5.4b In theo mẫu (`print-document`, chuẩn 15.1)
+
+```html
+<section data-erp="screen" data-screen-id="AR_InvoiceReport" data-form-type="REPORT" data-mode="view"
+         data-screen-key="print:AR_InvoiceReport:HD1126/0001">
+  <h1>Hóa đơn bán hàng</h1>
+  <form data-erp="filter" method="get" action="/erp/print/AR_InvoiceReport">
+    <input type="hidden" name="DocumentID" value="HD1126/0001;HD1126/0002">
+    <div data-erp="field" data-control="select" data-span="12"><label for="pt">Mẫu in</label>
+      <select id="pt" name="Template"><option value="AR_InvoiceReport" selected>Hóa đơn</option></select></div>
+    <button type="submit" data-action="find">Xem</button>
+  </form>
+  <section data-erp="print-document" data-template-src="/erp/print/templates/AR_InvoiceReport/AR_InvoiceReport.rpx"
+           data-template-format="rpx" data-number-group="." data-number-decimal="," data-title="Hóa đơn HD1126/0001">
+    <dl data-erp="print-params">
+      <dd data-name="Template">AR_InvoiceReport</dd>
+      <dd data-name="Sys.SysCom1">CÔNG TY …</dd><dd data-name="Sys.ReportLocation">TP. Hồ Chí Minh</dd>
+    </dl>
+    <table data-erp="grid" data-grid-id="R0">
+      <thead><tr><th data-field="DocumentID" data-type="text">DocumentID</th><th data-field="Amount" data-type="money">Amount</th></tr></thead>
+      <tbody><tr><td>HD1126/0001</td><td data-value="1850000">1.850.000</td></tr></tbody>
+    </table>
+  </section>
+</section>
+```
+
+Cách làm như WinForms (`ReportViewerFrm`, xem `docs/kien-truc/06-mau-in.md`):
+
+1. **Tên báo cáo**: `<Form bỏ "Frm">Report` (nút In của chứng từ; `BPRN` trong `SY_FrmCfg` đè). Nút In trên chứng từ:
+   `<a data-action="print" href="/erp/print/AR_InvoiceReport?DocumentID=…">In</a>` (mở tab mới, không `_blank`).
+2. **Mẫu**: danh sách lấy từ `SY_RpDTbl` (`RpName` = báo cáo, `PName = 'Template'`, giá trị "tệp;Tên;…"); mặc định là
+   mẫu đầu. Nội dung mẫu: bản mới nhất (`FileDate`) của `SY_RpFTbl` cho `FileName`, không có thì tệp trong thư mục
+   `Reports` của công ty; mẫu đã "tách sang web" thì JSON trong `web.PrintTemplateVersion`.
+3. **Dữ liệu**: chạy `<Report>Stp` với `@Template` + `@DocumentID` (nhiều chứng từ nối bằng `;`) và các tham số khác của
+   SP, trong giao dịch chỉ đọc. Mỗi result set → một lưới `R0`, `R1`…; giá trị máy như mục 6 (số bất biến, ngày ISO,
+   `td[data-null]` cho NULL). Không đổi mã thành tên (in đúng cột SP trả).
+4. **Tham số in**: tham số của SP (tên trơn), `Sys.*` = `GetSysParam` (ít nhất `SysCom1..4`, `ReportLocation`,
+   `ReportPrintDate`, `ServerDate`, `SubTitle`), `Lang.*` cho nhãn `Lng*` có trong mẫu, `Caption.*` cho nhãn `PAR*`,
+   `Image.logo` (logo công ty). BE có thể quét tên control trong `.rpx` (`Name="Lng…"`, `"SysCom…"`) để chỉ gửi phần cần.
+5. **Quyền**: mở màn in theo quyền in của form; `data-design-href` chỉ khi được sửa mẫu (`EPER`, Admin luôn được).
+6. Sau khi in (GĐ sau): ghi `LanIn/PrintCount`, `AutoLock` như WinForms.
+
 ### 5.5 Tra cứu F4 (response của `data-lookup-src`)
 
 ```html
@@ -444,6 +488,7 @@ __RequestVerificationToken=…&__version=2026-11-10T16:05:11.320&DocumentDate=20
 | Tô màu theo **ô** (`td[data-tone]`), `tr[data-tone="info"]` | Chưa — dùng `tr[data-tone]` `danger`/`warning`/`success`/`muted`, hoặc `data[data-erp=status]` trong ô |
 | Lỗi theo ô lưới do BE trả (`td[data-invalid][title]`) | Chưa hiển thị — gửi `messages` `error` nêu rõ dòng |
 | `data-lookup-add`, `data-lookup-free`, `data-label-width`, `data-begin-group` (menu) | Chưa — FE bỏ qua, gửi cũng không sao |
+| `print-document` (mẫu `.rpx` hoặc JSON, dựng trang, in đúng khổ) | **Đã hỗ trợ** (2026-11-13). Chưa: subreport, QR, tem nhiều cột, crossLine, biểu đồ (cảnh báo trên màn in) |
 
 FE **bỏ qua** thuộc tính/vai trò không biết (tương thích tiến). Cần tính năng mới → đề xuất bổ sung đặc tả (tăng 1.x).
 
@@ -488,3 +533,4 @@ FE **bỏ qua** thuộc tính/vai trò không biết (tương thích tiến). C�
 | Màn xử lý (tham số + chạy + kết quả) | `screens/IV_UnitCostProcessFrm.html`, `.done.html` |
 | Tra cứu | `lookups/CF_ObjectTbl.html`, `CF_ItemTbl.html` |
 | Kết quả hành động, đính kèm, hộp thoại | `actions/custom-ok.html`, `deleted.html`, `locked.html`, `attachments.html`, `change-password.html` |
+| In theo mẫu (JSON / `.rpx`) | `print/CS_ReceiptReport.html`, `print/AR_InvoiceReport.html`, mẫu ở `print/templates/` |

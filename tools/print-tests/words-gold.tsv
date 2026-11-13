@@ -1,0 +1,2268 @@
+0	VND	VN	Không đồng ./.
+0	VND	EN	No VND.
+0	USD	VN	Không đô la Mỹ.
+0	USD	EN	No Dollars
+0	EUR	VN	Không EURO.
+0	JPY	VN	Không JPY.
+0	JPY	EN	No JPY
+1	VND	VN	Một đồng ./.
+1	VND	EN	One VND.
+1	USD	VN	Một đô la Mỹ.
+1	USD	EN	One Dollars Only.
+1	EUR	VN	Một EURO.
+1	JPY	VN	Một JPY.
+1	JPY	EN	One JPY Only.
+2	VND	VN	Hai đồng ./.
+2	VND	EN	Two VND.
+2	USD	VN	Hai đô la Mỹ.
+2	USD	EN	Two Dollars Only.
+2	EUR	VN	Hai EURO.
+2	JPY	VN	Hai JPY.
+2	JPY	EN	Two JPY Only.
+3	VND	VN	Ba đồng ./.
+3	VND	EN	Three VND.
+3	USD	VN	Ba đô la Mỹ.
+3	USD	EN	Three Dollars Only.
+3	EUR	VN	Ba EURO.
+3	JPY	VN	Ba JPY.
+3	JPY	EN	Three JPY Only.
+4	VND	VN	Bốn đồng ./.
+4	VND	EN	Four VND.
+4	USD	VN	Bốn đô la Mỹ.
+4	USD	EN	Four Dollars Only.
+4	EUR	VN	Bốn EURO.
+4	JPY	VN	Bốn JPY.
+4	JPY	EN	Four JPY Only.
+5	VND	VN	Năm đồng ./.
+5	VND	EN	Five VND.
+5	USD	VN	Năm đô la Mỹ.
+5	USD	EN	Five Dollars Only.
+5	EUR	VN	Năm EURO.
+5	JPY	VN	Năm JPY.
+5	JPY	EN	Five JPY Only.
+6	VND	VN	Sáu đồng ./.
+6	VND	EN	Six VND.
+6	USD	VN	Sáu đô la Mỹ.
+6	USD	EN	Six Dollars Only.
+6	EUR	VN	Sáu EURO.
+6	JPY	VN	Sáu JPY.
+6	JPY	EN	Six JPY Only.
+7	VND	VN	Bảy đồng ./.
+7	VND	EN	Seven VND.
+7	USD	VN	Bảy đô la Mỹ.
+7	USD	EN	Seven Dollars Only.
+7	EUR	VN	Bảy EURO.
+7	JPY	VN	Bảy JPY.
+7	JPY	EN	Seven JPY Only.
+8	VND	VN	Tám đồng ./.
+8	VND	EN	Eight VND.
+8	USD	VN	Tám đô la Mỹ.
+8	USD	EN	Eight Dollars Only.
+8	EUR	VN	Tám EURO.
+8	JPY	VN	Tám JPY.
+8	JPY	EN	Eight JPY Only.
+9	VND	VN	Chín đồng ./.
+9	VND	EN	Nine VND.
+9	USD	VN	Chín đô la Mỹ.
+9	USD	EN	Nine Dollars Only.
+9	EUR	VN	Chín EURO.
+9	JPY	VN	Chín JPY.
+9	JPY	EN	Nine JPY Only.
+10	VND	VN	Mười đồng ./.
+10	VND	EN	Ten VND.
+10	USD	VN	Mười đô la Mỹ.
+10	USD	EN	Ten Dollars Only.
+10	EUR	VN	Mười EURO.
+10	JPY	VN	Mười JPY.
+10	JPY	EN	Ten JPY Only.
+11	VND	VN	Mười một đồng ./.
+11	VND	EN	Eleven VND.
+11	USD	VN	Mười một đô la Mỹ.
+11	USD	EN	Eleven Dollars Only.
+11	EUR	VN	Mười một EURO.
+11	JPY	VN	Mười một JPY.
+11	JPY	EN	Eleven JPY Only.
+12	VND	VN	Mười hai đồng ./.
+12	VND	EN	Twelve VND.
+12	USD	VN	Mười hai đô la Mỹ.
+12	USD	EN	Twelve Dollars Only.
+12	EUR	VN	Mười hai EURO.
+12	JPY	VN	Mười hai JPY.
+12	JPY	EN	Twelve JPY Only.
+13	VND	VN	Mười ba đồng ./.
+13	VND	EN	Thirteen VND.
+13	USD	VN	Mười ba đô la Mỹ.
+13	USD	EN	Thirteen Dollars Only.
+13	EUR	VN	Mười ba EURO.
+13	JPY	VN	Mười ba JPY.
+13	JPY	EN	Thirteen JPY Only.
+14	VND	VN	Mười bốn đồng ./.
+14	VND	EN	Fourteen VND.
+14	USD	VN	Mười bốn đô la Mỹ.
+14	USD	EN	Fourteen Dollars Only.
+14	EUR	VN	Mười bốn EURO.
+14	JPY	VN	Mười bốn JPY.
+14	JPY	EN	Fourteen JPY Only.
+15	VND	VN	Mười lăm đồng ./.
+15	VND	EN	Fifteen VND.
+15	USD	VN	Mười lăm đô la Mỹ.
+15	USD	EN	Fifteen Dollars Only.
+15	EUR	VN	Mười lăm EURO.
+15	JPY	VN	Mười lăm JPY.
+15	JPY	EN	Fifteen JPY Only.
+16	VND	VN	Mười sáu đồng ./.
+16	VND	EN	Sixteen VND.
+16	USD	VN	Mười sáu đô la Mỹ.
+16	USD	EN	Sixteen Dollars Only.
+16	EUR	VN	Mười sáu EURO.
+16	JPY	VN	Mười sáu JPY.
+16	JPY	EN	Sixteen JPY Only.
+17	VND	VN	Mười bảy đồng ./.
+17	VND	EN	Seventeen VND.
+17	USD	VN	Mười bảy đô la Mỹ.
+17	USD	EN	Seventeen Dollars Only.
+17	EUR	VN	Mười bảy EURO.
+17	JPY	VN	Mười bảy JPY.
+17	JPY	EN	Seventeen JPY Only.
+18	VND	VN	Mười tám đồng ./.
+18	VND	EN	Eighteen VND.
+18	USD	VN	Mười tám đô la Mỹ.
+18	USD	EN	Eighteen Dollars Only.
+18	EUR	VN	Mười tám EURO.
+18	JPY	VN	Mười tám JPY.
+18	JPY	EN	Eighteen JPY Only.
+19	VND	VN	Mười chín đồng ./.
+19	VND	EN	Nineteen VND.
+19	USD	VN	Mười chín đô la Mỹ.
+19	USD	EN	Nineteen Dollars Only.
+19	EUR	VN	Mười chín EURO.
+19	JPY	VN	Mười chín JPY.
+19	JPY	EN	Nineteen JPY Only.
+20	VND	VN	Hai mươi đồng ./.
+20	VND	EN	Twenty VND.
+20	USD	VN	Hai mươi đô la Mỹ.
+20	USD	EN	Twenty Dollars Only.
+20	EUR	VN	Hai mươi EURO.
+20	JPY	VN	Hai mươi JPY.
+20	JPY	EN	Twenty JPY Only.
+21	VND	VN	Hai mươi mốt đồng ./.
+21	VND	EN	Twenty One VND.
+21	USD	VN	Hai mươi mốt đô la Mỹ.
+21	USD	EN	Twenty One Dollars Only.
+21	EUR	VN	Hai mươi mốt EURO.
+21	JPY	VN	Hai mươi mốt JPY.
+21	JPY	EN	Twenty One JPY Only.
+22	VND	VN	Hai mươi hai đồng ./.
+22	VND	EN	Twenty Two VND.
+22	USD	VN	Hai mươi hai đô la Mỹ.
+22	USD	EN	Twenty Two Dollars Only.
+22	EUR	VN	Hai mươi hai EURO.
+22	JPY	VN	Hai mươi hai JPY.
+22	JPY	EN	Twenty Two JPY Only.
+23	VND	VN	Hai mươi ba đồng ./.
+23	VND	EN	Twenty Three VND.
+23	USD	VN	Hai mươi ba đô la Mỹ.
+23	USD	EN	Twenty Three Dollars Only.
+23	EUR	VN	Hai mươi ba EURO.
+23	JPY	VN	Hai mươi ba JPY.
+23	JPY	EN	Twenty Three JPY Only.
+24	VND	VN	Hai mươi bốn đồng ./.
+24	VND	EN	Twenty Four VND.
+24	USD	VN	Hai mươi bốn đô la Mỹ.
+24	USD	EN	Twenty Four Dollars Only.
+24	EUR	VN	Hai mươi bốn EURO.
+24	JPY	VN	Hai mươi bốn JPY.
+24	JPY	EN	Twenty Four JPY Only.
+25	VND	VN	Hai mươi lăm đồng ./.
+25	VND	EN	Twenty Five VND.
+25	USD	VN	Hai mươi lăm đô la Mỹ.
+25	USD	EN	Twenty Five Dollars Only.
+25	EUR	VN	Hai mươi lăm EURO.
+25	JPY	VN	Hai mươi lăm JPY.
+25	JPY	EN	Twenty Five JPY Only.
+26	VND	VN	Hai mươi sáu đồng ./.
+26	VND	EN	Twenty Six VND.
+26	USD	VN	Hai mươi sáu đô la Mỹ.
+26	USD	EN	Twenty Six Dollars Only.
+26	EUR	VN	Hai mươi sáu EURO.
+26	JPY	VN	Hai mươi sáu JPY.
+26	JPY	EN	Twenty Six JPY Only.
+27	VND	VN	Hai mươi bảy đồng ./.
+27	VND	EN	Twenty Seven VND.
+27	USD	VN	Hai mươi bảy đô la Mỹ.
+27	USD	EN	Twenty Seven Dollars Only.
+27	EUR	VN	Hai mươi bảy EURO.
+27	JPY	VN	Hai mươi bảy JPY.
+27	JPY	EN	Twenty Seven JPY Only.
+28	VND	VN	Hai mươi tám đồng ./.
+28	VND	EN	Twenty Eight VND.
+28	USD	VN	Hai mươi tám đô la Mỹ.
+28	USD	EN	Twenty Eight Dollars Only.
+28	EUR	VN	Hai mươi tám EURO.
+28	JPY	VN	Hai mươi tám JPY.
+28	JPY	EN	Twenty Eight JPY Only.
+29	VND	VN	Hai mươi chín đồng ./.
+29	VND	EN	Twenty Nine VND.
+29	USD	VN	Hai mươi chín đô la Mỹ.
+29	USD	EN	Twenty Nine Dollars Only.
+29	EUR	VN	Hai mươi chín EURO.
+29	JPY	VN	Hai mươi chín JPY.
+29	JPY	EN	Twenty Nine JPY Only.
+30	VND	VN	Ba mươi đồng ./.
+30	VND	EN	Thirty VND.
+30	USD	VN	Ba mươi đô la Mỹ.
+30	USD	EN	Thirty Dollars Only.
+30	EUR	VN	Ba mươi EURO.
+30	JPY	VN	Ba mươi JPY.
+30	JPY	EN	Thirty JPY Only.
+31	VND	VN	Ba mươi mốt đồng ./.
+31	VND	EN	Thirty One VND.
+31	USD	VN	Ba mươi mốt đô la Mỹ.
+31	USD	EN	Thirty One Dollars Only.
+31	EUR	VN	Ba mươi mốt EURO.
+31	JPY	VN	Ba mươi mốt JPY.
+31	JPY	EN	Thirty One JPY Only.
+32	VND	VN	Ba mươi hai đồng ./.
+32	VND	EN	Thirty Two VND.
+32	USD	VN	Ba mươi hai đô la Mỹ.
+32	USD	EN	Thirty Two Dollars Only.
+32	EUR	VN	Ba mươi hai EURO.
+32	JPY	VN	Ba mươi hai JPY.
+32	JPY	EN	Thirty Two JPY Only.
+33	VND	VN	Ba mươi ba đồng ./.
+33	VND	EN	Thirty Three VND.
+33	USD	VN	Ba mươi ba đô la Mỹ.
+33	USD	EN	Thirty Three Dollars Only.
+33	EUR	VN	Ba mươi ba EURO.
+33	JPY	VN	Ba mươi ba JPY.
+33	JPY	EN	Thirty Three JPY Only.
+34	VND	VN	Ba mươi bốn đồng ./.
+34	VND	EN	Thirty Four VND.
+34	USD	VN	Ba mươi bốn đô la Mỹ.
+34	USD	EN	Thirty Four Dollars Only.
+34	EUR	VN	Ba mươi bốn EURO.
+34	JPY	VN	Ba mươi bốn JPY.
+34	JPY	EN	Thirty Four JPY Only.
+35	VND	VN	Ba mươi lăm đồng ./.
+35	VND	EN	Thirty Five VND.
+35	USD	VN	Ba mươi lăm đô la Mỹ.
+35	USD	EN	Thirty Five Dollars Only.
+35	EUR	VN	Ba mươi lăm EURO.
+35	JPY	VN	Ba mươi lăm JPY.
+35	JPY	EN	Thirty Five JPY Only.
+36	VND	VN	Ba mươi sáu đồng ./.
+36	VND	EN	Thirty Six VND.
+36	USD	VN	Ba mươi sáu đô la Mỹ.
+36	USD	EN	Thirty Six Dollars Only.
+36	EUR	VN	Ba mươi sáu EURO.
+36	JPY	VN	Ba mươi sáu JPY.
+36	JPY	EN	Thirty Six JPY Only.
+37	VND	VN	Ba mươi bảy đồng ./.
+37	VND	EN	Thirty Seven VND.
+37	USD	VN	Ba mươi bảy đô la Mỹ.
+37	USD	EN	Thirty Seven Dollars Only.
+37	EUR	VN	Ba mươi bảy EURO.
+37	JPY	VN	Ba mươi bảy JPY.
+37	JPY	EN	Thirty Seven JPY Only.
+38	VND	VN	Ba mươi tám đồng ./.
+38	VND	EN	Thirty Eight VND.
+38	USD	VN	Ba mươi tám đô la Mỹ.
+38	USD	EN	Thirty Eight Dollars Only.
+38	EUR	VN	Ba mươi tám EURO.
+38	JPY	VN	Ba mươi tám JPY.
+38	JPY	EN	Thirty Eight JPY Only.
+39	VND	VN	Ba mươi chín đồng ./.
+39	VND	EN	Thirty Nine VND.
+39	USD	VN	Ba mươi chín đô la Mỹ.
+39	USD	EN	Thirty Nine Dollars Only.
+39	EUR	VN	Ba mươi chín EURO.
+39	JPY	VN	Ba mươi chín JPY.
+39	JPY	EN	Thirty Nine JPY Only.
+40	VND	VN	Bốn mươi đồng ./.
+40	VND	EN	Forty VND.
+40	USD	VN	Bốn mươi đô la Mỹ.
+40	USD	EN	Forty Dollars Only.
+40	EUR	VN	Bốn mươi EURO.
+40	JPY	VN	Bốn mươi JPY.
+40	JPY	EN	Forty JPY Only.
+41	VND	VN	Bốn mươi mốt đồng ./.
+41	VND	EN	Forty One VND.
+41	USD	VN	Bốn mươi mốt đô la Mỹ.
+41	USD	EN	Forty One Dollars Only.
+41	EUR	VN	Bốn mươi mốt EURO.
+41	JPY	VN	Bốn mươi mốt JPY.
+41	JPY	EN	Forty One JPY Only.
+42	VND	VN	Bốn mươi hai đồng ./.
+42	VND	EN	Forty Two VND.
+42	USD	VN	Bốn mươi hai đô la Mỹ.
+42	USD	EN	Forty Two Dollars Only.
+42	EUR	VN	Bốn mươi hai EURO.
+42	JPY	VN	Bốn mươi hai JPY.
+42	JPY	EN	Forty Two JPY Only.
+43	VND	VN	Bốn mươi ba đồng ./.
+43	VND	EN	Forty Three VND.
+43	USD	VN	Bốn mươi ba đô la Mỹ.
+43	USD	EN	Forty Three Dollars Only.
+43	EUR	VN	Bốn mươi ba EURO.
+43	JPY	VN	Bốn mươi ba JPY.
+43	JPY	EN	Forty Three JPY Only.
+44	VND	VN	Bốn mươi bốn đồng ./.
+44	VND	EN	Forty Four VND.
+44	USD	VN	Bốn mươi bốn đô la Mỹ.
+44	USD	EN	Forty Four Dollars Only.
+44	EUR	VN	Bốn mươi bốn EURO.
+44	JPY	VN	Bốn mươi bốn JPY.
+44	JPY	EN	Forty Four JPY Only.
+45	VND	VN	Bốn mươi lăm đồng ./.
+45	VND	EN	Forty Five VND.
+45	USD	VN	Bốn mươi lăm đô la Mỹ.
+45	USD	EN	Forty Five Dollars Only.
+45	EUR	VN	Bốn mươi lăm EURO.
+45	JPY	VN	Bốn mươi lăm JPY.
+45	JPY	EN	Forty Five JPY Only.
+46	VND	VN	Bốn mươi sáu đồng ./.
+46	VND	EN	Forty Six VND.
+46	USD	VN	Bốn mươi sáu đô la Mỹ.
+46	USD	EN	Forty Six Dollars Only.
+46	EUR	VN	Bốn mươi sáu EURO.
+46	JPY	VN	Bốn mươi sáu JPY.
+46	JPY	EN	Forty Six JPY Only.
+47	VND	VN	Bốn mươi bảy đồng ./.
+47	VND	EN	Forty Seven VND.
+47	USD	VN	Bốn mươi bảy đô la Mỹ.
+47	USD	EN	Forty Seven Dollars Only.
+47	EUR	VN	Bốn mươi bảy EURO.
+47	JPY	VN	Bốn mươi bảy JPY.
+47	JPY	EN	Forty Seven JPY Only.
+48	VND	VN	Bốn mươi tám đồng ./.
+48	VND	EN	Forty Eight VND.
+48	USD	VN	Bốn mươi tám đô la Mỹ.
+48	USD	EN	Forty Eight Dollars Only.
+48	EUR	VN	Bốn mươi tám EURO.
+48	JPY	VN	Bốn mươi tám JPY.
+48	JPY	EN	Forty Eight JPY Only.
+49	VND	VN	Bốn mươi chín đồng ./.
+49	VND	EN	Forty Nine VND.
+49	USD	VN	Bốn mươi chín đô la Mỹ.
+49	USD	EN	Forty Nine Dollars Only.
+49	EUR	VN	Bốn mươi chín EURO.
+49	JPY	VN	Bốn mươi chín JPY.
+49	JPY	EN	Forty Nine JPY Only.
+50	VND	VN	Năm mươi đồng ./.
+50	VND	EN	Fifty VND.
+50	USD	VN	Năm mươi đô la Mỹ.
+50	USD	EN	Fifty Dollars Only.
+50	EUR	VN	Năm mươi EURO.
+50	JPY	VN	Năm mươi JPY.
+50	JPY	EN	Fifty JPY Only.
+51	VND	VN	Năm mươi mốt đồng ./.
+51	VND	EN	Fifty One VND.
+51	USD	VN	Năm mươi mốt đô la Mỹ.
+51	USD	EN	Fifty One Dollars Only.
+51	EUR	VN	Năm mươi mốt EURO.
+51	JPY	VN	Năm mươi mốt JPY.
+51	JPY	EN	Fifty One JPY Only.
+52	VND	VN	Năm mươi hai đồng ./.
+52	VND	EN	Fifty Two VND.
+52	USD	VN	Năm mươi hai đô la Mỹ.
+52	USD	EN	Fifty Two Dollars Only.
+52	EUR	VN	Năm mươi hai EURO.
+52	JPY	VN	Năm mươi hai JPY.
+52	JPY	EN	Fifty Two JPY Only.
+53	VND	VN	Năm mươi ba đồng ./.
+53	VND	EN	Fifty Three VND.
+53	USD	VN	Năm mươi ba đô la Mỹ.
+53	USD	EN	Fifty Three Dollars Only.
+53	EUR	VN	Năm mươi ba EURO.
+53	JPY	VN	Năm mươi ba JPY.
+53	JPY	EN	Fifty Three JPY Only.
+54	VND	VN	Năm mươi bốn đồng ./.
+54	VND	EN	Fifty Four VND.
+54	USD	VN	Năm mươi bốn đô la Mỹ.
+54	USD	EN	Fifty Four Dollars Only.
+54	EUR	VN	Năm mươi bốn EURO.
+54	JPY	VN	Năm mươi bốn JPY.
+54	JPY	EN	Fifty Four JPY Only.
+55	VND	VN	Năm mươi lăm đồng ./.
+55	VND	EN	Fifty Five VND.
+55	USD	VN	Năm mươi lăm đô la Mỹ.
+55	USD	EN	Fifty Five Dollars Only.
+55	EUR	VN	Năm mươi lăm EURO.
+55	JPY	VN	Năm mươi lăm JPY.
+55	JPY	EN	Fifty Five JPY Only.
+56	VND	VN	Năm mươi sáu đồng ./.
+56	VND	EN	Fifty Six VND.
+56	USD	VN	Năm mươi sáu đô la Mỹ.
+56	USD	EN	Fifty Six Dollars Only.
+56	EUR	VN	Năm mươi sáu EURO.
+56	JPY	VN	Năm mươi sáu JPY.
+56	JPY	EN	Fifty Six JPY Only.
+57	VND	VN	Năm mươi bảy đồng ./.
+57	VND	EN	Fifty Seven VND.
+57	USD	VN	Năm mươi bảy đô la Mỹ.
+57	USD	EN	Fifty Seven Dollars Only.
+57	EUR	VN	Năm mươi bảy EURO.
+57	JPY	VN	Năm mươi bảy JPY.
+57	JPY	EN	Fifty Seven JPY Only.
+58	VND	VN	Năm mươi tám đồng ./.
+58	VND	EN	Fifty Eight VND.
+58	USD	VN	Năm mươi tám đô la Mỹ.
+58	USD	EN	Fifty Eight Dollars Only.
+58	EUR	VN	Năm mươi tám EURO.
+58	JPY	VN	Năm mươi tám JPY.
+58	JPY	EN	Fifty Eight JPY Only.
+59	VND	VN	Năm mươi chín đồng ./.
+59	VND	EN	Fifty Nine VND.
+59	USD	VN	Năm mươi chín đô la Mỹ.
+59	USD	EN	Fifty Nine Dollars Only.
+59	EUR	VN	Năm mươi chín EURO.
+59	JPY	VN	Năm mươi chín JPY.
+59	JPY	EN	Fifty Nine JPY Only.
+60	VND	VN	Sáu mươi đồng ./.
+60	VND	EN	Sixty VND.
+60	USD	VN	Sáu mươi đô la Mỹ.
+60	USD	EN	Sixty Dollars Only.
+60	EUR	VN	Sáu mươi EURO.
+60	JPY	VN	Sáu mươi JPY.
+60	JPY	EN	Sixty JPY Only.
+61	VND	VN	Sáu mươi mốt đồng ./.
+61	VND	EN	Sixty One VND.
+61	USD	VN	Sáu mươi mốt đô la Mỹ.
+61	USD	EN	Sixty One Dollars Only.
+61	EUR	VN	Sáu mươi mốt EURO.
+61	JPY	VN	Sáu mươi mốt JPY.
+61	JPY	EN	Sixty One JPY Only.
+62	VND	VN	Sáu mươi hai đồng ./.
+62	VND	EN	Sixty Two VND.
+62	USD	VN	Sáu mươi hai đô la Mỹ.
+62	USD	EN	Sixty Two Dollars Only.
+62	EUR	VN	Sáu mươi hai EURO.
+62	JPY	VN	Sáu mươi hai JPY.
+62	JPY	EN	Sixty Two JPY Only.
+63	VND	VN	Sáu mươi ba đồng ./.
+63	VND	EN	Sixty Three VND.
+63	USD	VN	Sáu mươi ba đô la Mỹ.
+63	USD	EN	Sixty Three Dollars Only.
+63	EUR	VN	Sáu mươi ba EURO.
+63	JPY	VN	Sáu mươi ba JPY.
+63	JPY	EN	Sixty Three JPY Only.
+64	VND	VN	Sáu mươi bốn đồng ./.
+64	VND	EN	Sixty Four VND.
+64	USD	VN	Sáu mươi bốn đô la Mỹ.
+64	USD	EN	Sixty Four Dollars Only.
+64	EUR	VN	Sáu mươi bốn EURO.
+64	JPY	VN	Sáu mươi bốn JPY.
+64	JPY	EN	Sixty Four JPY Only.
+65	VND	VN	Sáu mươi lăm đồng ./.
+65	VND	EN	Sixty Five VND.
+65	USD	VN	Sáu mươi lăm đô la Mỹ.
+65	USD	EN	Sixty Five Dollars Only.
+65	EUR	VN	Sáu mươi lăm EURO.
+65	JPY	VN	Sáu mươi lăm JPY.
+65	JPY	EN	Sixty Five JPY Only.
+66	VND	VN	Sáu mươi sáu đồng ./.
+66	VND	EN	Sixty Six VND.
+66	USD	VN	Sáu mươi sáu đô la Mỹ.
+66	USD	EN	Sixty Six Dollars Only.
+66	EUR	VN	Sáu mươi sáu EURO.
+66	JPY	VN	Sáu mươi sáu JPY.
+66	JPY	EN	Sixty Six JPY Only.
+67	VND	VN	Sáu mươi bảy đồng ./.
+67	VND	EN	Sixty Seven VND.
+67	USD	VN	Sáu mươi bảy đô la Mỹ.
+67	USD	EN	Sixty Seven Dollars Only.
+67	EUR	VN	Sáu mươi bảy EURO.
+67	JPY	VN	Sáu mươi bảy JPY.
+67	JPY	EN	Sixty Seven JPY Only.
+68	VND	VN	Sáu mươi tám đồng ./.
+68	VND	EN	Sixty Eight VND.
+68	USD	VN	Sáu mươi tám đô la Mỹ.
+68	USD	EN	Sixty Eight Dollars Only.
+68	EUR	VN	Sáu mươi tám EURO.
+68	JPY	VN	Sáu mươi tám JPY.
+68	JPY	EN	Sixty Eight JPY Only.
+69	VND	VN	Sáu mươi chín đồng ./.
+69	VND	EN	Sixty Nine VND.
+69	USD	VN	Sáu mươi chín đô la Mỹ.
+69	USD	EN	Sixty Nine Dollars Only.
+69	EUR	VN	Sáu mươi chín EURO.
+69	JPY	VN	Sáu mươi chín JPY.
+69	JPY	EN	Sixty Nine JPY Only.
+70	VND	VN	Bảy mươi đồng ./.
+70	VND	EN	Seventy VND.
+70	USD	VN	Bảy mươi đô la Mỹ.
+70	USD	EN	Seventy Dollars Only.
+70	EUR	VN	Bảy mươi EURO.
+70	JPY	VN	Bảy mươi JPY.
+70	JPY	EN	Seventy JPY Only.
+71	VND	VN	Bảy mươi mốt đồng ./.
+71	VND	EN	Seventy One VND.
+71	USD	VN	Bảy mươi mốt đô la Mỹ.
+71	USD	EN	Seventy One Dollars Only.
+71	EUR	VN	Bảy mươi mốt EURO.
+71	JPY	VN	Bảy mươi mốt JPY.
+71	JPY	EN	Seventy One JPY Only.
+72	VND	VN	Bảy mươi hai đồng ./.
+72	VND	EN	Seventy Two VND.
+72	USD	VN	Bảy mươi hai đô la Mỹ.
+72	USD	EN	Seventy Two Dollars Only.
+72	EUR	VN	Bảy mươi hai EURO.
+72	JPY	VN	Bảy mươi hai JPY.
+72	JPY	EN	Seventy Two JPY Only.
+73	VND	VN	Bảy mươi ba đồng ./.
+73	VND	EN	Seventy Three VND.
+73	USD	VN	Bảy mươi ba đô la Mỹ.
+73	USD	EN	Seventy Three Dollars Only.
+73	EUR	VN	Bảy mươi ba EURO.
+73	JPY	VN	Bảy mươi ba JPY.
+73	JPY	EN	Seventy Three JPY Only.
+74	VND	VN	Bảy mươi bốn đồng ./.
+74	VND	EN	Seventy Four VND.
+74	USD	VN	Bảy mươi bốn đô la Mỹ.
+74	USD	EN	Seventy Four Dollars Only.
+74	EUR	VN	Bảy mươi bốn EURO.
+74	JPY	VN	Bảy mươi bốn JPY.
+74	JPY	EN	Seventy Four JPY Only.
+75	VND	VN	Bảy mươi lăm đồng ./.
+75	VND	EN	Seventy Five VND.
+75	USD	VN	Bảy mươi lăm đô la Mỹ.
+75	USD	EN	Seventy Five Dollars Only.
+75	EUR	VN	Bảy mươi lăm EURO.
+75	JPY	VN	Bảy mươi lăm JPY.
+75	JPY	EN	Seventy Five JPY Only.
+76	VND	VN	Bảy mươi sáu đồng ./.
+76	VND	EN	Seventy Six VND.
+76	USD	VN	Bảy mươi sáu đô la Mỹ.
+76	USD	EN	Seventy Six Dollars Only.
+76	EUR	VN	Bảy mươi sáu EURO.
+76	JPY	VN	Bảy mươi sáu JPY.
+76	JPY	EN	Seventy Six JPY Only.
+77	VND	VN	Bảy mươi bảy đồng ./.
+77	VND	EN	Seventy Seven VND.
+77	USD	VN	Bảy mươi bảy đô la Mỹ.
+77	USD	EN	Seventy Seven Dollars Only.
+77	EUR	VN	Bảy mươi bảy EURO.
+77	JPY	VN	Bảy mươi bảy JPY.
+77	JPY	EN	Seventy Seven JPY Only.
+78	VND	VN	Bảy mươi tám đồng ./.
+78	VND	EN	Seventy Eight VND.
+78	USD	VN	Bảy mươi tám đô la Mỹ.
+78	USD	EN	Seventy Eight Dollars Only.
+78	EUR	VN	Bảy mươi tám EURO.
+78	JPY	VN	Bảy mươi tám JPY.
+78	JPY	EN	Seventy Eight JPY Only.
+79	VND	VN	Bảy mươi chín đồng ./.
+79	VND	EN	Seventy Nine VND.
+79	USD	VN	Bảy mươi chín đô la Mỹ.
+79	USD	EN	Seventy Nine Dollars Only.
+79	EUR	VN	Bảy mươi chín EURO.
+79	JPY	VN	Bảy mươi chín JPY.
+79	JPY	EN	Seventy Nine JPY Only.
+80	VND	VN	Tám mươi đồng ./.
+80	VND	EN	Eighty VND.
+80	USD	VN	Tám mươi đô la Mỹ.
+80	USD	EN	Eighty Dollars Only.
+80	EUR	VN	Tám mươi EURO.
+80	JPY	VN	Tám mươi JPY.
+80	JPY	EN	Eighty JPY Only.
+81	VND	VN	Tám mươi mốt đồng ./.
+81	VND	EN	Eighty One VND.
+81	USD	VN	Tám mươi mốt đô la Mỹ.
+81	USD	EN	Eighty One Dollars Only.
+81	EUR	VN	Tám mươi mốt EURO.
+81	JPY	VN	Tám mươi mốt JPY.
+81	JPY	EN	Eighty One JPY Only.
+82	VND	VN	Tám mươi hai đồng ./.
+82	VND	EN	Eighty Two VND.
+82	USD	VN	Tám mươi hai đô la Mỹ.
+82	USD	EN	Eighty Two Dollars Only.
+82	EUR	VN	Tám mươi hai EURO.
+82	JPY	VN	Tám mươi hai JPY.
+82	JPY	EN	Eighty Two JPY Only.
+83	VND	VN	Tám mươi ba đồng ./.
+83	VND	EN	Eighty Three VND.
+83	USD	VN	Tám mươi ba đô la Mỹ.
+83	USD	EN	Eighty Three Dollars Only.
+83	EUR	VN	Tám mươi ba EURO.
+83	JPY	VN	Tám mươi ba JPY.
+83	JPY	EN	Eighty Three JPY Only.
+84	VND	VN	Tám mươi bốn đồng ./.
+84	VND	EN	Eighty Four VND.
+84	USD	VN	Tám mươi bốn đô la Mỹ.
+84	USD	EN	Eighty Four Dollars Only.
+84	EUR	VN	Tám mươi bốn EURO.
+84	JPY	VN	Tám mươi bốn JPY.
+84	JPY	EN	Eighty Four JPY Only.
+85	VND	VN	Tám mươi lăm đồng ./.
+85	VND	EN	Eighty Five VND.
+85	USD	VN	Tám mươi lăm đô la Mỹ.
+85	USD	EN	Eighty Five Dollars Only.
+85	EUR	VN	Tám mươi lăm EURO.
+85	JPY	VN	Tám mươi lăm JPY.
+85	JPY	EN	Eighty Five JPY Only.
+86	VND	VN	Tám mươi sáu đồng ./.
+86	VND	EN	Eighty Six VND.
+86	USD	VN	Tám mươi sáu đô la Mỹ.
+86	USD	EN	Eighty Six Dollars Only.
+86	EUR	VN	Tám mươi sáu EURO.
+86	JPY	VN	Tám mươi sáu JPY.
+86	JPY	EN	Eighty Six JPY Only.
+87	VND	VN	Tám mươi bảy đồng ./.
+87	VND	EN	Eighty Seven VND.
+87	USD	VN	Tám mươi bảy đô la Mỹ.
+87	USD	EN	Eighty Seven Dollars Only.
+87	EUR	VN	Tám mươi bảy EURO.
+87	JPY	VN	Tám mươi bảy JPY.
+87	JPY	EN	Eighty Seven JPY Only.
+88	VND	VN	Tám mươi tám đồng ./.
+88	VND	EN	Eighty Eight VND.
+88	USD	VN	Tám mươi tám đô la Mỹ.
+88	USD	EN	Eighty Eight Dollars Only.
+88	EUR	VN	Tám mươi tám EURO.
+88	JPY	VN	Tám mươi tám JPY.
+88	JPY	EN	Eighty Eight JPY Only.
+89	VND	VN	Tám mươi chín đồng ./.
+89	VND	EN	Eighty Nine VND.
+89	USD	VN	Tám mươi chín đô la Mỹ.
+89	USD	EN	Eighty Nine Dollars Only.
+89	EUR	VN	Tám mươi chín EURO.
+89	JPY	VN	Tám mươi chín JPY.
+89	JPY	EN	Eighty Nine JPY Only.
+90	VND	VN	Chín mươi đồng ./.
+90	VND	EN	Ninety VND.
+90	USD	VN	Chín mươi đô la Mỹ.
+90	USD	EN	Ninety Dollars Only.
+90	EUR	VN	Chín mươi EURO.
+90	JPY	VN	Chín mươi JPY.
+90	JPY	EN	Ninety JPY Only.
+91	VND	VN	Chín mươi mốt đồng ./.
+91	VND	EN	Ninety One VND.
+91	USD	VN	Chín mươi mốt đô la Mỹ.
+91	USD	EN	Ninety One Dollars Only.
+91	EUR	VN	Chín mươi mốt EURO.
+91	JPY	VN	Chín mươi mốt JPY.
+91	JPY	EN	Ninety One JPY Only.
+92	VND	VN	Chín mươi hai đồng ./.
+92	VND	EN	Ninety Two VND.
+92	USD	VN	Chín mươi hai đô la Mỹ.
+92	USD	EN	Ninety Two Dollars Only.
+92	EUR	VN	Chín mươi hai EURO.
+92	JPY	VN	Chín mươi hai JPY.
+92	JPY	EN	Ninety Two JPY Only.
+93	VND	VN	Chín mươi ba đồng ./.
+93	VND	EN	Ninety Three VND.
+93	USD	VN	Chín mươi ba đô la Mỹ.
+93	USD	EN	Ninety Three Dollars Only.
+93	EUR	VN	Chín mươi ba EURO.
+93	JPY	VN	Chín mươi ba JPY.
+93	JPY	EN	Ninety Three JPY Only.
+94	VND	VN	Chín mươi bốn đồng ./.
+94	VND	EN	Ninety Four VND.
+94	USD	VN	Chín mươi bốn đô la Mỹ.
+94	USD	EN	Ninety Four Dollars Only.
+94	EUR	VN	Chín mươi bốn EURO.
+94	JPY	VN	Chín mươi bốn JPY.
+94	JPY	EN	Ninety Four JPY Only.
+95	VND	VN	Chín mươi lăm đồng ./.
+95	VND	EN	Ninety Five VND.
+95	USD	VN	Chín mươi lăm đô la Mỹ.
+95	USD	EN	Ninety Five Dollars Only.
+95	EUR	VN	Chín mươi lăm EURO.
+95	JPY	VN	Chín mươi lăm JPY.
+95	JPY	EN	Ninety Five JPY Only.
+96	VND	VN	Chín mươi sáu đồng ./.
+96	VND	EN	Ninety Six VND.
+96	USD	VN	Chín mươi sáu đô la Mỹ.
+96	USD	EN	Ninety Six Dollars Only.
+96	EUR	VN	Chín mươi sáu EURO.
+96	JPY	VN	Chín mươi sáu JPY.
+96	JPY	EN	Ninety Six JPY Only.
+97	VND	VN	Chín mươi bảy đồng ./.
+97	VND	EN	Ninety Seven VND.
+97	USD	VN	Chín mươi bảy đô la Mỹ.
+97	USD	EN	Ninety Seven Dollars Only.
+97	EUR	VN	Chín mươi bảy EURO.
+97	JPY	VN	Chín mươi bảy JPY.
+97	JPY	EN	Ninety Seven JPY Only.
+98	VND	VN	Chín mươi tám đồng ./.
+98	VND	EN	Ninety Eight VND.
+98	USD	VN	Chín mươi tám đô la Mỹ.
+98	USD	EN	Ninety Eight Dollars Only.
+98	EUR	VN	Chín mươi tám EURO.
+98	JPY	VN	Chín mươi tám JPY.
+98	JPY	EN	Ninety Eight JPY Only.
+99	VND	VN	Chín mươi chín đồng ./.
+99	VND	EN	Ninety Nine VND.
+99	USD	VN	Chín mươi chín đô la Mỹ.
+99	USD	EN	Ninety Nine Dollars Only.
+99	EUR	VN	Chín mươi chín EURO.
+99	JPY	VN	Chín mươi chín JPY.
+99	JPY	EN	Ninety Nine JPY Only.
+100	VND	VN	Một trăm đồng ./.
+100	VND	EN	One Hundred VND.
+100	USD	VN	Một trăm đô la Mỹ.
+100	USD	EN	One Hundred Dollars Only.
+100	EUR	VN	Một trăm EURO.
+100	JPY	VN	Một trăm JPY.
+100	JPY	EN	One Hundred JPY Only.
+101	VND	VN	Một trăm lẻ một đồng ./.
+101	VND	EN	One Hundred One VND.
+101	USD	VN	Một trăm lẻ một đô la Mỹ.
+101	USD	EN	One Hundred One Dollars Only.
+101	EUR	VN	Một trăm lẻ một EURO.
+101	JPY	VN	Một trăm lẻ một JPY.
+101	JPY	EN	One Hundred One JPY Only.
+102	VND	VN	Một trăm lẻ hai đồng ./.
+102	VND	EN	One Hundred Two VND.
+102	USD	VN	Một trăm lẻ hai đô la Mỹ.
+102	USD	EN	One Hundred Two Dollars Only.
+102	EUR	VN	Một trăm lẻ hai EURO.
+102	JPY	VN	Một trăm lẻ hai JPY.
+102	JPY	EN	One Hundred Two JPY Only.
+103	VND	VN	Một trăm lẻ ba đồng ./.
+103	VND	EN	One Hundred Three VND.
+103	USD	VN	Một trăm lẻ ba đô la Mỹ.
+103	USD	EN	One Hundred Three Dollars Only.
+103	EUR	VN	Một trăm lẻ ba EURO.
+103	JPY	VN	Một trăm lẻ ba JPY.
+103	JPY	EN	One Hundred Three JPY Only.
+104	VND	VN	Một trăm lẻ bốn đồng ./.
+104	VND	EN	One Hundred Four VND.
+104	USD	VN	Một trăm lẻ bốn đô la Mỹ.
+104	USD	EN	One Hundred Four Dollars Only.
+104	EUR	VN	Một trăm lẻ bốn EURO.
+104	JPY	VN	Một trăm lẻ bốn JPY.
+104	JPY	EN	One Hundred Four JPY Only.
+105	VND	VN	Một trăm lẻ năm đồng ./.
+105	VND	EN	One Hundred Five VND.
+105	USD	VN	Một trăm lẻ năm đô la Mỹ.
+105	USD	EN	One Hundred Five Dollars Only.
+105	EUR	VN	Một trăm lẻ năm EURO.
+105	JPY	VN	Một trăm lẻ năm JPY.
+105	JPY	EN	One Hundred Five JPY Only.
+106	VND	VN	Một trăm lẻ sáu đồng ./.
+106	VND	EN	One Hundred Six VND.
+106	USD	VN	Một trăm lẻ sáu đô la Mỹ.
+106	USD	EN	One Hundred Six Dollars Only.
+106	EUR	VN	Một trăm lẻ sáu EURO.
+106	JPY	VN	Một trăm lẻ sáu JPY.
+106	JPY	EN	One Hundred Six JPY Only.
+107	VND	VN	Một trăm lẻ bảy đồng ./.
+107	VND	EN	One Hundred Seven VND.
+107	USD	VN	Một trăm lẻ bảy đô la Mỹ.
+107	USD	EN	One Hundred Seven Dollars Only.
+107	EUR	VN	Một trăm lẻ bảy EURO.
+107	JPY	VN	Một trăm lẻ bảy JPY.
+107	JPY	EN	One Hundred Seven JPY Only.
+108	VND	VN	Một trăm lẻ tám đồng ./.
+108	VND	EN	One Hundred Eight VND.
+108	USD	VN	Một trăm lẻ tám đô la Mỹ.
+108	USD	EN	One Hundred Eight Dollars Only.
+108	EUR	VN	Một trăm lẻ tám EURO.
+108	JPY	VN	Một trăm lẻ tám JPY.
+108	JPY	EN	One Hundred Eight JPY Only.
+109	VND	VN	Một trăm lẻ chín đồng ./.
+109	VND	EN	One Hundred Nine VND.
+109	USD	VN	Một trăm lẻ chín đô la Mỹ.
+109	USD	EN	One Hundred Nine Dollars Only.
+109	EUR	VN	Một trăm lẻ chín EURO.
+109	JPY	VN	Một trăm lẻ chín JPY.
+109	JPY	EN	One Hundred Nine JPY Only.
+110	VND	VN	Một trăm mười đồng ./.
+110	VND	EN	One Hundred Ten VND.
+110	USD	VN	Một trăm mười đô la Mỹ.
+110	USD	EN	One Hundred Ten Dollars Only.
+110	EUR	VN	Một trăm mười EURO.
+110	JPY	VN	Một trăm mười JPY.
+110	JPY	EN	One Hundred Ten JPY Only.
+111	VND	VN	Một trăm mười một đồng ./.
+111	VND	EN	One Hundred Eleven VND.
+111	USD	VN	Một trăm mười một đô la Mỹ.
+111	USD	EN	One Hundred Eleven Dollars Only.
+111	EUR	VN	Một trăm mười một EURO.
+111	JPY	VN	Một trăm mười một JPY.
+111	JPY	EN	One Hundred Eleven JPY Only.
+112	VND	VN	Một trăm mười hai đồng ./.
+112	VND	EN	One Hundred Twelve VND.
+112	USD	VN	Một trăm mười hai đô la Mỹ.
+112	USD	EN	One Hundred Twelve Dollars Only.
+112	EUR	VN	Một trăm mười hai EURO.
+112	JPY	VN	Một trăm mười hai JPY.
+112	JPY	EN	One Hundred Twelve JPY Only.
+113	VND	VN	Một trăm mười ba đồng ./.
+113	VND	EN	One Hundred Thirteen VND.
+113	USD	VN	Một trăm mười ba đô la Mỹ.
+113	USD	EN	One Hundred Thirteen Dollars Only.
+113	EUR	VN	Một trăm mười ba EURO.
+113	JPY	VN	Một trăm mười ba JPY.
+113	JPY	EN	One Hundred Thirteen JPY Only.
+114	VND	VN	Một trăm mười bốn đồng ./.
+114	VND	EN	One Hundred Fourteen VND.
+114	USD	VN	Một trăm mười bốn đô la Mỹ.
+114	USD	EN	One Hundred Fourteen Dollars Only.
+114	EUR	VN	Một trăm mười bốn EURO.
+114	JPY	VN	Một trăm mười bốn JPY.
+114	JPY	EN	One Hundred Fourteen JPY Only.
+115	VND	VN	Một trăm mười lăm đồng ./.
+115	VND	EN	One Hundred Fifteen VND.
+115	USD	VN	Một trăm mười lăm đô la Mỹ.
+115	USD	EN	One Hundred Fifteen Dollars Only.
+115	EUR	VN	Một trăm mười lăm EURO.
+115	JPY	VN	Một trăm mười lăm JPY.
+115	JPY	EN	One Hundred Fifteen JPY Only.
+116	VND	VN	Một trăm mười sáu đồng ./.
+116	VND	EN	One Hundred Sixteen VND.
+116	USD	VN	Một trăm mười sáu đô la Mỹ.
+116	USD	EN	One Hundred Sixteen Dollars Only.
+116	EUR	VN	Một trăm mười sáu EURO.
+116	JPY	VN	Một trăm mười sáu JPY.
+116	JPY	EN	One Hundred Sixteen JPY Only.
+117	VND	VN	Một trăm mười bảy đồng ./.
+117	VND	EN	One Hundred Seventeen VND.
+117	USD	VN	Một trăm mười bảy đô la Mỹ.
+117	USD	EN	One Hundred Seventeen Dollars Only.
+117	EUR	VN	Một trăm mười bảy EURO.
+117	JPY	VN	Một trăm mười bảy JPY.
+117	JPY	EN	One Hundred Seventeen JPY Only.
+118	VND	VN	Một trăm mười tám đồng ./.
+118	VND	EN	One Hundred Eighteen VND.
+118	USD	VN	Một trăm mười tám đô la Mỹ.
+118	USD	EN	One Hundred Eighteen Dollars Only.
+118	EUR	VN	Một trăm mười tám EURO.
+118	JPY	VN	Một trăm mười tám JPY.
+118	JPY	EN	One Hundred Eighteen JPY Only.
+119	VND	VN	Một trăm mười chín đồng ./.
+119	VND	EN	One Hundred Nineteen VND.
+119	USD	VN	Một trăm mười chín đô la Mỹ.
+119	USD	EN	One Hundred Nineteen Dollars Only.
+119	EUR	VN	Một trăm mười chín EURO.
+119	JPY	VN	Một trăm mười chín JPY.
+119	JPY	EN	One Hundred Nineteen JPY Only.
+120	VND	VN	Một trăm hai mươi đồng ./.
+120	VND	EN	One Hundred Twenty VND.
+120	USD	VN	Một trăm hai mươi đô la Mỹ.
+120	USD	EN	One Hundred Twenty Dollars Only.
+120	EUR	VN	Một trăm hai mươi EURO.
+120	JPY	VN	Một trăm hai mươi JPY.
+120	JPY	EN	One Hundred Twenty JPY Only.
+121	VND	VN	Một trăm hai mươi mốt đồng ./.
+121	VND	EN	One Hundred Twenty One VND.
+121	USD	VN	Một trăm hai mươi mốt đô la Mỹ.
+121	USD	EN	One Hundred Twenty One Dollars Only.
+121	EUR	VN	Một trăm hai mươi mốt EURO.
+121	JPY	VN	Một trăm hai mươi mốt JPY.
+121	JPY	EN	One Hundred Twenty One JPY Only.
+122	VND	VN	Một trăm hai mươi hai đồng ./.
+122	VND	EN	One Hundred Twenty Two VND.
+122	USD	VN	Một trăm hai mươi hai đô la Mỹ.
+122	USD	EN	One Hundred Twenty Two Dollars Only.
+122	EUR	VN	Một trăm hai mươi hai EURO.
+122	JPY	VN	Một trăm hai mươi hai JPY.
+122	JPY	EN	One Hundred Twenty Two JPY Only.
+123	VND	VN	Một trăm hai mươi ba đồng ./.
+123	VND	EN	One Hundred Twenty Three VND.
+123	USD	VN	Một trăm hai mươi ba đô la Mỹ.
+123	USD	EN	One Hundred Twenty Three Dollars Only.
+123	EUR	VN	Một trăm hai mươi ba EURO.
+123	JPY	VN	Một trăm hai mươi ba JPY.
+123	JPY	EN	One Hundred Twenty Three JPY Only.
+124	VND	VN	Một trăm hai mươi bốn đồng ./.
+124	VND	EN	One Hundred Twenty Four VND.
+124	USD	VN	Một trăm hai mươi bốn đô la Mỹ.
+124	USD	EN	One Hundred Twenty Four Dollars Only.
+124	EUR	VN	Một trăm hai mươi bốn EURO.
+124	JPY	VN	Một trăm hai mươi bốn JPY.
+124	JPY	EN	One Hundred Twenty Four JPY Only.
+125	VND	VN	Một trăm hai mươi lăm đồng ./.
+125	VND	EN	One Hundred Twenty Five VND.
+125	USD	VN	Một trăm hai mươi lăm đô la Mỹ.
+125	USD	EN	One Hundred Twenty Five Dollars Only.
+125	EUR	VN	Một trăm hai mươi lăm EURO.
+125	JPY	VN	Một trăm hai mươi lăm JPY.
+125	JPY	EN	One Hundred Twenty Five JPY Only.
+126	VND	VN	Một trăm hai mươi sáu đồng ./.
+126	VND	EN	One Hundred Twenty Six VND.
+126	USD	VN	Một trăm hai mươi sáu đô la Mỹ.
+126	USD	EN	One Hundred Twenty Six Dollars Only.
+126	EUR	VN	Một trăm hai mươi sáu EURO.
+126	JPY	VN	Một trăm hai mươi sáu JPY.
+126	JPY	EN	One Hundred Twenty Six JPY Only.
+127	VND	VN	Một trăm hai mươi bảy đồng ./.
+127	VND	EN	One Hundred Twenty Seven VND.
+127	USD	VN	Một trăm hai mươi bảy đô la Mỹ.
+127	USD	EN	One Hundred Twenty Seven Dollars Only.
+127	EUR	VN	Một trăm hai mươi bảy EURO.
+127	JPY	VN	Một trăm hai mươi bảy JPY.
+127	JPY	EN	One Hundred Twenty Seven JPY Only.
+128	VND	VN	Một trăm hai mươi tám đồng ./.
+128	VND	EN	One Hundred Twenty Eight VND.
+128	USD	VN	Một trăm hai mươi tám đô la Mỹ.
+128	USD	EN	One Hundred Twenty Eight Dollars Only.
+128	EUR	VN	Một trăm hai mươi tám EURO.
+128	JPY	VN	Một trăm hai mươi tám JPY.
+128	JPY	EN	One Hundred Twenty Eight JPY Only.
+129	VND	VN	Một trăm hai mươi chín đồng ./.
+129	VND	EN	One Hundred Twenty Nine VND.
+129	USD	VN	Một trăm hai mươi chín đô la Mỹ.
+129	USD	EN	One Hundred Twenty Nine Dollars Only.
+129	EUR	VN	Một trăm hai mươi chín EURO.
+129	JPY	VN	Một trăm hai mươi chín JPY.
+129	JPY	EN	One Hundred Twenty Nine JPY Only.
+130	VND	VN	Một trăm ba mươi đồng ./.
+130	VND	EN	One Hundred Thirty VND.
+130	USD	VN	Một trăm ba mươi đô la Mỹ.
+130	USD	EN	One Hundred Thirty Dollars Only.
+130	EUR	VN	Một trăm ba mươi EURO.
+130	JPY	VN	Một trăm ba mươi JPY.
+130	JPY	EN	One Hundred Thirty JPY Only.
+0.5	VND	VN	!ERR ArgumentException
+0.5	VND	EN	No VND.
+0.5	USD	VN	Không đô la Mỹ và năm mươi xu
+0.5	USD	EN	No Dollars And Fifty  cent.
+0.5	EUR	VN	Không EURO và năm mươi xu
+0.5	JPY	VN	Không JPY và năm mươi xu
+0.5	JPY	EN	No JPY And Fifty  xu.
+0.01	VND	VN	!ERR ArgumentException
+0.01	VND	EN	No VND.
+0.01	USD	VN	Không đô la Mỹ và một xu
+0.01	USD	EN	No Dollars And One cent.
+0.01	EUR	VN	Không EURO và một xu
+0.01	JPY	VN	Không JPY và một xu
+0.01	JPY	EN	No JPY And One xu.
+0.1	VND	VN	!ERR ArgumentException
+0.1	VND	EN	No VND.
+0.1	USD	VN	Không đô la Mỹ và mười xu
+0.1	USD	EN	No Dollars And Ten cent.
+0.1	EUR	VN	Không EURO và mười xu
+0.1	JPY	VN	Không JPY và mười xu
+0.1	JPY	EN	No JPY And Ten xu.
+0.99	VND	VN	!ERR ArgumentException
+0.99	VND	EN	No VND.
+0.99	USD	VN	Không đô la Mỹ và chín mươi chín xu
+0.99	USD	EN	No Dollars And Ninety Nine cent.
+0.99	EUR	VN	Không EURO và chín mươi chín xu
+0.99	JPY	VN	Không JPY và chín mươi chín xu
+0.99	JPY	EN	No JPY And Ninety Nine xu.
+1.05	VND	VN	Một đồng ./.
+1.05	VND	EN	One VND.
+1.05	USD	VN	Một đô la Mỹ và năm xu
+1.05	USD	EN	One Dollars And Five cent.
+1.05	EUR	VN	Một EURO và năm xu
+1.05	JPY	VN	Một JPY và năm xu
+1.05	JPY	EN	One JPY And Five xu.
+12.34	VND	VN	Mười hai đồng ./.
+12.34	VND	EN	Twelve VND.
+12.34	USD	VN	Mười hai đô la Mỹ và ba mươi bốn xu
+12.34	USD	EN	Twelve Dollars And Thirty Four cent.
+12.34	EUR	VN	Mười hai EURO và ba mươi bốn xu
+12.34	JPY	VN	Mười hai JPY và ba mươi bốn xu
+12.34	JPY	EN	Twelve JPY And Thirty Four xu.
+25.25	VND	VN	Hai mươi lăm đồng ./.
+25.25	VND	EN	Twenty Five VND.
+25.25	USD	VN	Hai mươi lăm đô la Mỹ và hai mươi lăm xu
+25.25	USD	EN	Twenty Five Dollars And Twenty Five cent.
+25.25	EUR	VN	Hai mươi lăm EURO và hai mươi lăm xu
+25.25	JPY	VN	Hai mươi lăm JPY và hai mươi lăm xu
+25.25	JPY	EN	Twenty Five JPY And Twenty Five xu.
+1234.555	VND	VN	Một nghìn hai trăm ba mươi bốn đồng ./.
+1234.555	VND	EN	One Thousand Two Hundred Thirty Four VND.
+1234.555	USD	VN	Một nghìn, hai trăm ba mươi bốn đô la Mỹ và năm mươi sáu xu
+1234.555	USD	EN	One Thousand Two Hundred Thirty Four Dollars And Fifty Five cent.
+1234.555	EUR	VN	Một nghìn, hai trăm ba mươi bốn EURO và năm mươi sáu xu
+1234.555	JPY	VN	Một nghìn, hai trăm ba mươi bốn JPY và năm mươi sáu xu
+1234.555	JPY	EN	One Thousand Two Hundred Thirty Four JPY And Fifty Five xu.
+1.005	VND	VN	Một đồng ./.
+1.005	VND	EN	One VND.
+1.005	USD	VN	Một đô la Mỹ và một xu
+1.005	USD	EN	One Dollars Only.
+1.005	EUR	VN	Một EURO và một xu
+1.005	JPY	VN	Một JPY và một xu
+1.005	JPY	EN	One JPY Only.
+150	VND	VN	Một trăm năm mươi đồng ./.
+150	VND	EN	One Hundred Fifty VND.
+150	USD	VN	Một trăm năm mươi đô la Mỹ.
+150	USD	EN	One Hundred Fifty Dollars Only.
+150	EUR	VN	Một trăm năm mươi EURO.
+150	JPY	VN	Một trăm năm mươi JPY.
+150	JPY	EN	One Hundred Fifty JPY Only.
+201	VND	VN	Hai trăm lẻ một đồng ./.
+201	VND	EN	Two Hundred One VND.
+201	USD	VN	Hai trăm lẻ một đô la Mỹ.
+201	USD	EN	Two Hundred One Dollars Only.
+201	EUR	VN	Hai trăm lẻ một EURO.
+201	JPY	VN	Hai trăm lẻ một JPY.
+201	JPY	EN	Two Hundred One JPY Only.
+205	VND	VN	Hai trăm lẻ năm đồng ./.
+205	VND	EN	Two Hundred Five VND.
+205	USD	VN	Hai trăm lẻ năm đô la Mỹ.
+205	USD	EN	Two Hundred Five Dollars Only.
+205	EUR	VN	Hai trăm lẻ năm EURO.
+205	JPY	VN	Hai trăm lẻ năm JPY.
+205	JPY	EN	Two Hundred Five JPY Only.
+210	VND	VN	Hai trăm mười đồng ./.
+210	VND	EN	Two Hundred Ten VND.
+210	USD	VN	Hai trăm mười đô la Mỹ.
+210	USD	EN	Two Hundred Ten Dollars Only.
+210	EUR	VN	Hai trăm mười EURO.
+210	JPY	VN	Hai trăm mười JPY.
+210	JPY	EN	Two Hundred Ten JPY Only.
+211	VND	VN	Hai trăm mười một đồng ./.
+211	VND	EN	Two Hundred Eleven VND.
+211	USD	VN	Hai trăm mười một đô la Mỹ.
+211	USD	EN	Two Hundred Eleven Dollars Only.
+211	EUR	VN	Hai trăm mười một EURO.
+211	JPY	VN	Hai trăm mười một JPY.
+211	JPY	EN	Two Hundred Eleven JPY Only.
+215	VND	VN	Hai trăm mười lăm đồng ./.
+215	VND	EN	Two Hundred Fifteen VND.
+215	USD	VN	Hai trăm mười lăm đô la Mỹ.
+215	USD	EN	Two Hundred Fifteen Dollars Only.
+215	EUR	VN	Hai trăm mười lăm EURO.
+215	JPY	VN	Hai trăm mười lăm JPY.
+215	JPY	EN	Two Hundred Fifteen JPY Only.
+221	VND	VN	Hai trăm hai mươi mốt đồng ./.
+221	VND	EN	Two Hundred Twenty One VND.
+221	USD	VN	Hai trăm hai mươi mốt đô la Mỹ.
+221	USD	EN	Two Hundred Twenty One Dollars Only.
+221	EUR	VN	Hai trăm hai mươi mốt EURO.
+221	JPY	VN	Hai trăm hai mươi mốt JPY.
+221	JPY	EN	Two Hundred Twenty One JPY Only.
+225	VND	VN	Hai trăm hai mươi lăm đồng ./.
+225	VND	EN	Two Hundred Twenty Five VND.
+225	USD	VN	Hai trăm hai mươi lăm đô la Mỹ.
+225	USD	EN	Two Hundred Twenty Five Dollars Only.
+225	EUR	VN	Hai trăm hai mươi lăm EURO.
+225	JPY	VN	Hai trăm hai mươi lăm JPY.
+225	JPY	EN	Two Hundred Twenty Five JPY Only.
+251	VND	VN	Hai trăm năm mươi mốt đồng ./.
+251	VND	EN	Two Hundred Fifty One VND.
+251	USD	VN	Hai trăm năm mươi mốt đô la Mỹ.
+251	USD	EN	Two Hundred Fifty One Dollars Only.
+251	EUR	VN	Hai trăm năm mươi mốt EURO.
+251	JPY	VN	Hai trăm năm mươi mốt JPY.
+251	JPY	EN	Two Hundred Fifty One JPY Only.
+255	VND	VN	Hai trăm năm mươi lăm đồng ./.
+255	VND	EN	Two Hundred Fifty Five VND.
+255	USD	VN	Hai trăm năm mươi lăm đô la Mỹ.
+255	USD	EN	Two Hundred Fifty Five Dollars Only.
+255	EUR	VN	Hai trăm năm mươi lăm EURO.
+255	JPY	VN	Hai trăm năm mươi lăm JPY.
+255	JPY	EN	Two Hundred Fifty Five JPY Only.
+305	VND	VN	Ba trăm lẻ năm đồng ./.
+305	VND	EN	Three Hundred Five VND.
+305	USD	VN	Ba trăm lẻ năm đô la Mỹ.
+305	USD	EN	Three Hundred Five Dollars Only.
+305	EUR	VN	Ba trăm lẻ năm EURO.
+305	JPY	VN	Ba trăm lẻ năm JPY.
+305	JPY	EN	Three Hundred Five JPY Only.
+999	VND	VN	Chín trăm chín mươi chín đồng ./.
+999	VND	EN	Nine Hundred Ninety Nine VND.
+999	USD	VN	Chín trăm chín mươi chín đô la Mỹ.
+999	USD	EN	Nine Hundred Ninety Nine Dollars Only.
+999	EUR	VN	Chín trăm chín mươi chín EURO.
+999	JPY	VN	Chín trăm chín mươi chín JPY.
+999	JPY	EN	Nine Hundred Ninety Nine JPY Only.
+1000	VND	VN	Một nghìn đồng ./.
+1000	VND	EN	One Thousand  VND.
+1000	USD	VN	Một nghìn đô la Mỹ.
+1000	USD	EN	One Thousand  Dollars Only.
+1000	EUR	VN	Một nghìn EURO.
+1000	JPY	VN	Một nghìn JPY.
+1000	JPY	EN	One Thousand  JPY Only.
+1001	VND	VN	Một nghìn không trăm lẻ một đồng ./.
+1001	VND	EN	One Thousand One VND.
+1001	USD	VN	Một nghìn, không trăm lẻ một đô la Mỹ.
+1001	USD	EN	One Thousand One Dollars Only.
+1001	EUR	VN	Một nghìn, không trăm lẻ một EURO.
+1001	JPY	VN	Một nghìn, không trăm lẻ một JPY.
+1001	JPY	EN	One Thousand One JPY Only.
+1005	VND	VN	Một nghìn không trăm lẻ năm đồng ./.
+1005	VND	EN	One Thousand Five VND.
+1005	USD	VN	Một nghìn, không trăm lẻ năm đô la Mỹ.
+1005	USD	EN	One Thousand Five Dollars Only.
+1005	EUR	VN	Một nghìn, không trăm lẻ năm EURO.
+1005	JPY	VN	Một nghìn, không trăm lẻ năm JPY.
+1005	JPY	EN	One Thousand Five JPY Only.
+1010	VND	VN	Một nghìn không trăm mười đồng ./.
+1010	VND	EN	One Thousand Ten VND.
+1010	USD	VN	Một nghìn, không trăm mười đô la Mỹ.
+1010	USD	EN	One Thousand Ten Dollars Only.
+1010	EUR	VN	Một nghìn, không trăm mười EURO.
+1010	JPY	VN	Một nghìn, không trăm mười JPY.
+1010	JPY	EN	One Thousand Ten JPY Only.
+1011	VND	VN	Một nghìn không trăm mười một đồng ./.
+1011	VND	EN	One Thousand Eleven VND.
+1011	USD	VN	Một nghìn, không trăm mười một đô la Mỹ.
+1011	USD	EN	One Thousand Eleven Dollars Only.
+1011	EUR	VN	Một nghìn, không trăm mười một EURO.
+1011	JPY	VN	Một nghìn, không trăm mười một JPY.
+1011	JPY	EN	One Thousand Eleven JPY Only.
+1015	VND	VN	Một nghìn không trăm mười lăm đồng ./.
+1015	VND	EN	One Thousand Fifteen VND.
+1015	USD	VN	Một nghìn, không trăm mười lăm đô la Mỹ.
+1015	USD	EN	One Thousand Fifteen Dollars Only.
+1015	EUR	VN	Một nghìn, không trăm mười lăm EURO.
+1015	JPY	VN	Một nghìn, không trăm mười lăm JPY.
+1015	JPY	EN	One Thousand Fifteen JPY Only.
+1021	VND	VN	Một nghìn không trăm hai mươi mốt đồng ./.
+1021	VND	EN	One Thousand Twenty One VND.
+1021	USD	VN	Một nghìn, không trăm hai mươi mốt đô la Mỹ.
+1021	USD	EN	One Thousand Twenty One Dollars Only.
+1021	EUR	VN	Một nghìn, không trăm hai mươi mốt EURO.
+1021	JPY	VN	Một nghìn, không trăm hai mươi mốt JPY.
+1021	JPY	EN	One Thousand Twenty One JPY Only.
+1100	VND	VN	Một nghìn một trăm đồng ./.
+1100	VND	EN	One Thousand One Hundred VND.
+1100	USD	VN	Một nghìn, một trăm đô la Mỹ.
+1100	USD	EN	One Thousand One Hundred Dollars Only.
+1100	EUR	VN	Một nghìn, một trăm EURO.
+1100	JPY	VN	Một nghìn, một trăm JPY.
+1100	JPY	EN	One Thousand One Hundred JPY Only.
+1105	VND	VN	Một nghìn một trăm lẻ năm đồng ./.
+1105	VND	EN	One Thousand One Hundred Five VND.
+1105	USD	VN	Một nghìn, một trăm lẻ năm đô la Mỹ.
+1105	USD	EN	One Thousand One Hundred Five Dollars Only.
+1105	EUR	VN	Một nghìn, một trăm lẻ năm EURO.
+1105	JPY	VN	Một nghìn, một trăm lẻ năm JPY.
+1105	JPY	EN	One Thousand One Hundred Five JPY Only.
+2015	VND	VN	Hai nghìn không trăm mười lăm đồng ./.
+2015	VND	EN	Two Thousand Fifteen VND.
+2015	USD	VN	Hai nghìn, không trăm mười lăm đô la Mỹ.
+2015	USD	EN	Two Thousand Fifteen Dollars Only.
+2015	EUR	VN	Hai nghìn, không trăm mười lăm EURO.
+2015	JPY	VN	Hai nghìn, không trăm mười lăm JPY.
+2015	JPY	EN	Two Thousand Fifteen JPY Only.
+10000	VND	VN	Mười nghìn đồng ./.
+10000	VND	EN	Ten Thousand  VND.
+10000	USD	VN	Mười nghìn đô la Mỹ.
+10000	USD	EN	Ten Thousand  Dollars Only.
+10000	EUR	VN	Mười nghìn EURO.
+10000	JPY	VN	Mười nghìn JPY.
+10000	JPY	EN	Ten Thousand  JPY Only.
+10005	VND	VN	Mười nghìn không trăm lẻ năm đồng ./.
+10005	VND	EN	Ten Thousand Five VND.
+10005	USD	VN	Mười nghìn, không trăm lẻ năm đô la Mỹ.
+10005	USD	EN	Ten Thousand Five Dollars Only.
+10005	EUR	VN	Mười nghìn, không trăm lẻ năm EURO.
+10005	JPY	VN	Mười nghìn, không trăm lẻ năm JPY.
+10005	JPY	EN	Ten Thousand Five JPY Only.
+10500	VND	VN	Mười nghìn năm trăm đồng ./.
+10500	VND	EN	Ten Thousand Five Hundred VND.
+10500	USD	VN	Mười nghìn, năm trăm đô la Mỹ.
+10500	USD	EN	Ten Thousand Five Hundred Dollars Only.
+10500	EUR	VN	Mười nghìn, năm trăm EURO.
+10500	JPY	VN	Mười nghìn, năm trăm JPY.
+10500	JPY	EN	Ten Thousand Five Hundred JPY Only.
+15000	VND	VN	Mười lăm nghìn đồng ./.
+15000	VND	EN	Fifteen Thousand  VND.
+15000	USD	VN	Mười lăm nghìn đô la Mỹ.
+15000	USD	EN	Fifteen Thousand  Dollars Only.
+15000	EUR	VN	Mười lăm nghìn EURO.
+15000	JPY	VN	Mười lăm nghìn JPY.
+15000	JPY	EN	Fifteen Thousand  JPY Only.
+21000	VND	VN	Hai mươi mốt nghìn đồng ./.
+21000	VND	EN	Twenty One Thousand  VND.
+21000	USD	VN	Hai mươi mốt nghìn đô la Mỹ.
+21000	USD	EN	Twenty One Thousand  Dollars Only.
+21000	EUR	VN	Hai mươi mốt nghìn EURO.
+21000	JPY	VN	Hai mươi mốt nghìn JPY.
+21000	JPY	EN	Twenty One Thousand  JPY Only.
+25000	VND	VN	Hai mươi lăm nghìn đồng ./.
+25000	VND	EN	Twenty Five Thousand  VND.
+25000	USD	VN	Hai mươi lăm nghìn đô la Mỹ.
+25000	USD	EN	Twenty Five Thousand  Dollars Only.
+25000	EUR	VN	Hai mươi lăm nghìn EURO.
+25000	JPY	VN	Hai mươi lăm nghìn JPY.
+25000	JPY	EN	Twenty Five Thousand  JPY Only.
+100000	VND	VN	Một trăm nghìn đồng ./.
+100000	VND	EN	One Hundred Thousand  VND.
+100000	USD	VN	Một trăm nghìn đô la Mỹ.
+100000	USD	EN	One Hundred Thousand  Dollars Only.
+100000	EUR	VN	Một trăm nghìn EURO.
+100000	JPY	VN	Một trăm nghìn JPY.
+100000	JPY	EN	One Hundred Thousand  JPY Only.
+100001	VND	VN	Một trăm nghìn không trăm lẻ một đồng ./.
+100001	VND	EN	One Hundred Thousand One VND.
+100001	USD	VN	Một trăm nghìn, không trăm lẻ một đô la Mỹ.
+100001	USD	EN	One Hundred Thousand One Dollars Only.
+100001	EUR	VN	Một trăm nghìn, không trăm lẻ một EURO.
+100001	JPY	VN	Một trăm nghìn, không trăm lẻ một JPY.
+100001	JPY	EN	One Hundred Thousand One JPY Only.
+100100	VND	VN	Một trăm nghìn một trăm đồng ./.
+100100	VND	EN	One Hundred Thousand One Hundred VND.
+100100	USD	VN	Một trăm nghìn, một trăm đô la Mỹ.
+100100	USD	EN	One Hundred Thousand One Hundred Dollars Only.
+100100	EUR	VN	Một trăm nghìn, một trăm EURO.
+100100	JPY	VN	Một trăm nghìn, một trăm JPY.
+100100	JPY	EN	One Hundred Thousand One Hundred JPY Only.
+101000	VND	VN	Một trăm lẻ một nghìn đồng ./.
+101000	VND	EN	One Hundred One Thousand  VND.
+101000	USD	VN	Một trăm lẻ một nghìn đô la Mỹ.
+101000	USD	EN	One Hundred One Thousand  Dollars Only.
+101000	EUR	VN	Một trăm lẻ một nghìn EURO.
+101000	JPY	VN	Một trăm lẻ một nghìn JPY.
+101000	JPY	EN	One Hundred One Thousand  JPY Only.
+105000	VND	VN	Một trăm lẻ năm nghìn đồng ./.
+105000	VND	EN	One Hundred Five Thousand  VND.
+105000	USD	VN	Một trăm lẻ năm nghìn đô la Mỹ.
+105000	USD	EN	One Hundred Five Thousand  Dollars Only.
+105000	EUR	VN	Một trăm lẻ năm nghìn EURO.
+105000	JPY	VN	Một trăm lẻ năm nghìn JPY.
+105000	JPY	EN	One Hundred Five Thousand  JPY Only.
+110000	VND	VN	Một trăm mười nghìn đồng ./.
+110000	VND	EN	One Hundred Ten Thousand  VND.
+110000	USD	VN	Một trăm mười nghìn đô la Mỹ.
+110000	USD	EN	One Hundred Ten Thousand  Dollars Only.
+110000	EUR	VN	Một trăm mười nghìn EURO.
+110000	JPY	VN	Một trăm mười nghìn JPY.
+110000	JPY	EN	One Hundred Ten Thousand  JPY Only.
+1000000	VND	VN	Một triệu đồng ./.
+1000000	VND	EN	One Million  VND.
+1000000	USD	VN	Một triệu đô la Mỹ.
+1000000	USD	EN	One Million  Dollars Only.
+1000000	EUR	VN	Một triệu EURO.
+1000000	JPY	VN	Một triệu JPY.
+1000000	JPY	EN	One Million  JPY Only.
+1000001	VND	VN	Một triệu không trăm lẻ một đồng ./.
+1000001	VND	EN	One Million One VND.
+1000001	USD	VN	Một triệu, , không trăm lẻ một đô la Mỹ.
+1000001	USD	EN	One Million One Dollars Only.
+1000001	EUR	VN	Một triệu, , không trăm lẻ một EURO.
+1000001	JPY	VN	Một triệu, , không trăm lẻ một JPY.
+1000001	JPY	EN	One Million One JPY Only.
+1000500	VND	VN	Một triệu năm trăm đồng ./.
+1000500	VND	EN	One Million Five Hundred VND.
+1000500	USD	VN	Một triệu, , năm trăm đô la Mỹ.
+1000500	USD	EN	One Million Five Hundred Dollars Only.
+1000500	EUR	VN	Một triệu, , năm trăm EURO.
+1000500	JPY	VN	Một triệu, , năm trăm JPY.
+1000500	JPY	EN	One Million Five Hundred JPY Only.
+1005000	VND	VN	Một triệu không trăm lẻ năm nghìn đồng ./.
+1005000	VND	EN	One Million Five Thousand  VND.
+1005000	USD	VN	Một triệu, không trăm lẻ năm nghìn đô la Mỹ.
+1005000	USD	EN	One Million Five Thousand  Dollars Only.
+1005000	EUR	VN	Một triệu, không trăm lẻ năm nghìn EURO.
+1005000	JPY	VN	Một triệu, không trăm lẻ năm nghìn JPY.
+1005000	JPY	EN	One Million Five Thousand  JPY Only.
+1050000	VND	VN	Một triệu không trăm năm mươi nghìn đồng ./.
+1050000	VND	EN	One Million Fifty Thousand  VND.
+1050000	USD	VN	Một triệu, không trăm năm mươi nghìn đô la Mỹ.
+1050000	USD	EN	One Million Fifty Thousand  Dollars Only.
+1050000	EUR	VN	Một triệu, không trăm năm mươi nghìn EURO.
+1050000	JPY	VN	Một triệu, không trăm năm mươi nghìn JPY.
+1050000	JPY	EN	One Million Fifty Thousand  JPY Only.
+1500000	VND	VN	Một triệu năm trăm nghìn đồng ./.
+1500000	VND	EN	One Million Five Hundred Thousand  VND.
+1500000	USD	VN	Một triệu, năm trăm nghìn đô la Mỹ.
+1500000	USD	EN	One Million Five Hundred Thousand  Dollars Only.
+1500000	EUR	VN	Một triệu, năm trăm nghìn EURO.
+1500000	JPY	VN	Một triệu, năm trăm nghìn JPY.
+1500000	JPY	EN	One Million Five Hundred Thousand  JPY Only.
+2000500	VND	VN	Hai triệu năm trăm đồng ./.
+2000500	VND	EN	Two Million Five Hundred VND.
+2000500	USD	VN	Hai triệu, , năm trăm đô la Mỹ.
+2000500	USD	EN	Two Million Five Hundred Dollars Only.
+2000500	EUR	VN	Hai triệu, , năm trăm EURO.
+2000500	JPY	VN	Hai triệu, , năm trăm JPY.
+2000500	JPY	EN	Two Million Five Hundred JPY Only.
+10000000	VND	VN	Mười triệu đồng ./.
+10000000	VND	EN	Ten Million  VND.
+10000000	USD	VN	Mười triệu đô la Mỹ.
+10000000	USD	EN	Ten Million  Dollars Only.
+10000000	EUR	VN	Mười triệu EURO.
+10000000	JPY	VN	Mười triệu JPY.
+10000000	JPY	EN	Ten Million  JPY Only.
+10000500	VND	VN	Mười triệu năm trăm đồng ./.
+10000500	VND	EN	Ten Million Five Hundred VND.
+10000500	USD	VN	Mười triệu, , năm trăm đô la Mỹ.
+10000500	USD	EN	Ten Million Five Hundred Dollars Only.
+10000500	EUR	VN	Mười triệu, , năm trăm EURO.
+10000500	JPY	VN	Mười triệu, , năm trăm JPY.
+10000500	JPY	EN	Ten Million Five Hundred JPY Only.
+15500000	VND	VN	Mười lăm triệu năm trăm nghìn đồng ./.
+15500000	VND	EN	Fifteen Million Five Hundred Thousand  VND.
+15500000	USD	VN	Mười lăm triệu, năm trăm nghìn đô la Mỹ.
+15500000	USD	EN	Fifteen Million Five Hundred Thousand  Dollars Only.
+15500000	EUR	VN	Mười lăm triệu, năm trăm nghìn EURO.
+15500000	JPY	VN	Mười lăm triệu, năm trăm nghìn JPY.
+15500000	JPY	EN	Fifteen Million Five Hundred Thousand  JPY Only.
+100000000	VND	VN	Một trăm triệu đồng ./.
+100000000	VND	EN	One Hundred Million  VND.
+100000000	USD	VN	Một trăm triệu đô la Mỹ.
+100000000	USD	EN	One Hundred Million  Dollars Only.
+100000000	EUR	VN	Một trăm triệu EURO.
+100000000	JPY	VN	Một trăm triệu JPY.
+100000000	JPY	EN	One Hundred Million  JPY Only.
+100000005	VND	VN	Một trăm triệu không trăm lẻ năm đồng ./.
+100000005	VND	EN	One Hundred Million Five VND.
+100000005	USD	VN	Một trăm triệu, , không trăm lẻ năm đô la Mỹ.
+100000005	USD	EN	One Hundred Million Five Dollars Only.
+100000005	EUR	VN	Một trăm triệu, , không trăm lẻ năm EURO.
+100000005	JPY	VN	Một trăm triệu, , không trăm lẻ năm JPY.
+100000005	JPY	EN	One Hundred Million Five JPY Only.
+105000000	VND	VN	Một trăm lẻ năm triệu đồng ./.
+105000000	VND	EN	One Hundred Five Million  VND.
+105000000	USD	VN	Một trăm lẻ năm triệu đô la Mỹ.
+105000000	USD	EN	One Hundred Five Million  Dollars Only.
+105000000	EUR	VN	Một trăm lẻ năm triệu EURO.
+105000000	JPY	VN	Một trăm lẻ năm triệu JPY.
+105000000	JPY	EN	One Hundred Five Million  JPY Only.
+1000000000	VND	VN	Một tỷ đồng ./.
+1000000000	VND	EN	OneBillion  VND.
+1000000000	USD	VN	Một tỷ đô la Mỹ.
+1000000000	USD	EN	OneBillion  Dollars Only.
+1000000000	EUR	VN	Một tỷ EURO.
+1000000000	JPY	VN	Một tỷ JPY.
+1000000000	JPY	EN	OneBillion  JPY Only.
+1000000001	VND	VN	Một tỷ không trăm lẻ một đồng ./.
+1000000001	VND	EN	OneBillion One VND.
+1000000001	USD	VN	Một tỷ, , , không trăm lẻ một đô la Mỹ.
+1000000001	USD	EN	OneBillion One Dollars Only.
+1000000001	EUR	VN	Một tỷ, , , không trăm lẻ một EURO.
+1000000001	JPY	VN	Một tỷ, , , không trăm lẻ một JPY.
+1000000001	JPY	EN	OneBillion One JPY Only.
+1000500000	VND	VN	Một tỷ năm trăm nghìn đồng ./.
+1000500000	VND	EN	OneBillion Five Hundred Thousand  VND.
+1000500000	USD	VN	Một tỷ, , năm trăm nghìn đô la Mỹ.
+1000500000	USD	EN	OneBillion Five Hundred Thousand  Dollars Only.
+1000500000	EUR	VN	Một tỷ, , năm trăm nghìn EURO.
+1000500000	JPY	VN	Một tỷ, , năm trăm nghìn JPY.
+1000500000	JPY	EN	OneBillion Five Hundred Thousand  JPY Only.
+1001000000	VND	VN	Một tỷ không trăm lẻ một triệu đồng ./.
+1001000000	VND	EN	OneBillion One Million  VND.
+1001000000	USD	VN	Một tỷ, không trăm lẻ một triệu đô la Mỹ.
+1001000000	USD	EN	OneBillion One Million  Dollars Only.
+1001000000	EUR	VN	Một tỷ, không trăm lẻ một triệu EURO.
+1001000000	JPY	VN	Một tỷ, không trăm lẻ một triệu JPY.
+1001000000	JPY	EN	OneBillion One Million  JPY Only.
+1234567890	VND	VN	Một tỷ hai trăm ba mươi bốn triệu năm trăm sáu mươi bảy nghìn tám trăm chín mươi đồng ./.
+1234567890	VND	EN	OneBillion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety VND.
+1234567890	USD	VN	Một tỷ, hai trăm ba mươi bốn triệu, năm trăm sáu mươi bảy nghìn, tám trăm chín mươi đô la Mỹ.
+1234567890	USD	EN	OneBillion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety Dollars Only.
+1234567890	EUR	VN	Một tỷ, hai trăm ba mươi bốn triệu, năm trăm sáu mươi bảy nghìn, tám trăm chín mươi EURO.
+1234567890	JPY	VN	Một tỷ, hai trăm ba mươi bốn triệu, năm trăm sáu mươi bảy nghìn, tám trăm chín mươi JPY.
+1234567890	JPY	EN	OneBillion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety JPY Only.
+12345678901	VND	VN	Mười hai tỷ ba trăm bốn mươi lăm triệu sáu trăm bảy mươi tám nghìn chín trăm lẻ một đồng ./.
+12345678901	VND	EN	TwelveBillion Three Hundred Forty Five Million Six Hundred Seventy Eight Thousand Nine Hundred One VND.
+12345678901	USD	VN	Mười hai tỷ, ba trăm bốn mươi lăm triệu, sáu trăm bảy mươi tám nghìn, chín trăm lẻ một đô la Mỹ.
+12345678901	USD	EN	TwelveBillion Three Hundred Forty Five Million Six Hundred Seventy Eight Thousand Nine Hundred One Dollars Only.
+12345678901	EUR	VN	Mười hai tỷ, ba trăm bốn mươi lăm triệu, sáu trăm bảy mươi tám nghìn, chín trăm lẻ một EURO.
+12345678901	JPY	VN	Mười hai tỷ, ba trăm bốn mươi lăm triệu, sáu trăm bảy mươi tám nghìn, chín trăm lẻ một JPY.
+12345678901	JPY	EN	TwelveBillion Three Hundred Forty Five Million Six Hundred Seventy Eight Thousand Nine Hundred One JPY Only.
+100000000000	VND	VN	Một trăm tỷ đồng ./.
+100000000000	VND	EN	One HundredBillion  VND.
+100000000000	USD	VN	Một trăm tỷ đô la Mỹ.
+100000000000	USD	EN	One HundredBillion  Dollars Only.
+100000000000	EUR	VN	Một trăm tỷ EURO.
+100000000000	JPY	VN	Một trăm tỷ JPY.
+100000000000	JPY	EN	One HundredBillion  JPY Only.
+999999999999	VND	VN	Chín trăm chín mươi chín tỷ chín trăm chín mươi chín triệu chín trăm chín mươi chín nghìn chín trăm chín mươi chín đồng ./.
+999999999999	VND	EN	Nine Hundred Ninety NineBillion Nine Hundred Ninety Nine Million Nine Hundred Ninety Nine Thousand Nine Hundred Ninety Nine VND.
+999999999999	USD	VN	Chín trăm chín mươi chín tỷ, chín trăm chín mươi chín triệu, chín trăm chín mươi chín nghìn, chín trăm chín mươi chín đô la Mỹ.
+999999999999	USD	EN	Nine Hundred Ninety NineBillion Nine Hundred Ninety Nine Million Nine Hundred Ninety Nine Thousand Nine Hundred Ninety Nine Dollars Only.
+999999999999	EUR	VN	Chín trăm chín mươi chín tỷ, chín trăm chín mươi chín triệu, chín trăm chín mươi chín nghìn, chín trăm chín mươi chín EURO.
+999999999999	JPY	VN	Chín trăm chín mươi chín tỷ, chín trăm chín mươi chín triệu, chín trăm chín mươi chín nghìn, chín trăm chín mươi chín JPY.
+999999999999	JPY	EN	Nine Hundred Ninety NineBillion Nine Hundred Ninety Nine Million Nine Hundred Ninety Nine Thousand Nine Hundred Ninety Nine JPY Only.
+1000000000000	VND	VN	Một nghìn tỷ đồng ./.
+1000000000000	VND	EN	One Trillion  VND.
+1000000000000	USD	VN	Một nghìn đô la Mỹ.
+1000000000000	USD	EN	One Trillion  Dollars Only.
+1000000000000	EUR	VN	Một nghìn EURO.
+1000000000000	JPY	VN	Một nghìn JPY.
+1000000000000	JPY	EN	One Trillion  JPY Only.
+1234567.89	VND	VN	Một triệu hai trăm ba mươi bốn nghìn năm trăm sáu mươi bảy đồng ./.
+1234567.89	VND	EN	One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven VND.
+1234567.89	USD	VN	Một triệu, hai trăm ba mươi bốn nghìn, năm trăm sáu mươi bảy đô la Mỹ và tám mươi chín xu
+1234567.89	USD	EN	One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven Dollars And Eighty Nine cent.
+1234567.89	EUR	VN	Một triệu, hai trăm ba mươi bốn nghìn, năm trăm sáu mươi bảy EURO và tám mươi chín xu
+1234567.89	JPY	VN	Một triệu, hai trăm ba mươi bốn nghìn, năm trăm sáu mươi bảy JPY và tám mươi chín xu
+1234567.89	JPY	EN	One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven JPY And Eighty Nine xu.
+1000.5	VND	VN	Một nghìn đồng ./.
+1000.5	VND	EN	One Thousand  VND.
+1000.5	USD	VN	Một nghìn đô la Mỹ và năm mươi xu
+1000.5	USD	EN	One Thousand  Dollars And Fifty  cent.
+1000.5	EUR	VN	Một nghìn EURO và năm mươi xu
+1000.5	JPY	VN	Một nghìn JPY và năm mươi xu
+1000.5	JPY	EN	One Thousand  JPY And Fifty  xu.
+2500000.75	VND	VN	Hai triệu năm trăm nghìn đồng ./.
+2500000.75	VND	EN	Two Million Five Hundred Thousand  VND.
+2500000.75	USD	VN	Hai triệu, năm trăm nghìn đô la Mỹ và bảy mươi lăm xu
+2500000.75	USD	EN	Two Million Five Hundred Thousand  Dollars And Seventy Five cent.
+2500000.75	EUR	VN	Hai triệu, năm trăm nghìn EURO và bảy mươi lăm xu
+2500000.75	JPY	VN	Hai triệu, năm trăm nghìn JPY và bảy mươi lăm xu
+2500000.75	JPY	EN	Two Million Five Hundred Thousand  JPY And Seventy Five xu.
+-1234	VND	VN	Âm Một nghìn hai trăm ba mươi bốn đồng ./.
+-1234	VND	EN	One Thousand Two Hundred Thirty Four VND.
+-1234	USD	VN	Âm Một nghìn, hai trăm ba mươi bốn đô la Mỹ.
+-1234	USD	EN	One Thousand Two Hundred Thirty Four Dollars Only.
+-1234	EUR	VN	Âm Một nghìn, hai trăm ba mươi bốn EURO.
+-1234	JPY	VN	Âm Một nghìn, hai trăm ba mươi bốn JPY.
+-1234	JPY	EN	One Thousand Two Hundred Thirty Four JPY Only.
+-0.5	VND	VN	!ERR ArgumentException
+-0.5	VND	EN	No VND.
+-0.5	USD	VN	Âm Không đô la Mỹ và năm mươi xu
+-0.5	USD	EN	No Dollars And Fifty  cent.
+-0.5	EUR	VN	Âm Không EURO và năm mươi xu
+-0.5	JPY	VN	Âm Không JPY và năm mươi xu
+-0.5	JPY	EN	No JPY And Fifty  xu.
+-1000000	VND	VN	Âm Một triệu đồng ./.
+-1000000	VND	EN	One Million  VND.
+-1000000	USD	VN	Âm Một triệu đô la Mỹ.
+-1000000	USD	EN	One Million  Dollars Only.
+-1000000	EUR	VN	Âm Một triệu EURO.
+-1000000	JPY	VN	Âm Một triệu JPY.
+-1000000	JPY	EN	One Million  JPY Only.
+-15000.25	VND	VN	Âm Mười lăm nghìn đồng ./.
+-15000.25	VND	EN	Hundred Fifteen Thousand  VND.
+-15000.25	USD	VN	Âm Mười lăm nghìn đô la Mỹ và hai mươi lăm xu
+-15000.25	USD	EN	Hundred Fifteen Thousand  Dollars And Twenty Five cent.
+-15000.25	EUR	VN	Âm Mười lăm nghìn EURO và hai mươi lăm xu
+-15000.25	JPY	VN	Âm Mười lăm nghìn JPY và hai mươi lăm xu
+-15000.25	JPY	EN	Hundred Fifteen Thousand  JPY And Twenty Five xu.
+123456789012.34	VND	VN	Một trăm hai mươi ba tỷ bốn trăm năm mươi sáu triệu bảy trăm tám mươi chín nghìn không trăm mười hai đồng ./.
+123456789012.34	VND	EN	One Hundred Twenty ThreeBillion Four Hundred Fifty Six Million Seven Hundred Eighty Nine Thousand Twelve VND.
+123456789012.34	USD	VN	Một trăm hai mươi ba tỷ, bốn trăm năm mươi sáu triệu, bảy trăm tám mươi chín nghìn, không trăm mười hai đô la Mỹ và ba mươi bốn xu
+123456789012.34	USD	EN	One Hundred Twenty ThreeBillion Four Hundred Fifty Six Million Seven Hundred Eighty Nine Thousand Twelve Dollars And Thirty Four cent.
+123456789012.34	EUR	VN	Một trăm hai mươi ba tỷ, bốn trăm năm mươi sáu triệu, bảy trăm tám mươi chín nghìn, không trăm mười hai EURO và ba mươi bốn xu
+123456789012.34	JPY	VN	Một trăm hai mươi ba tỷ, bốn trăm năm mươi sáu triệu, bảy trăm tám mươi chín nghìn, không trăm mười hai JPY và ba mươi bốn xu
+123456789012.34	JPY	EN	One Hundred Twenty ThreeBillion Four Hundred Fifty Six Million Seven Hundred Eighty Nine Thousand Twelve JPY And Thirty Four xu.
+5108979.5	VND	VN	Năm triệu một trăm lẻ tám nghìn chín trăm bảy mươi chín đồng ./.
+5108979.5	VND	EN	Five Million One Hundred Eight Thousand Nine Hundred Seventy Nine VND.
+5108979.5	USD	VN	Năm triệu, một trăm lẻ tám nghìn, chín trăm bảy mươi chín đô la Mỹ và năm mươi xu
+5108979.5	USD	EN	Five Million One Hundred Eight Thousand Nine Hundred Seventy Nine Dollars And Fifty  cent.
+5108979.5	EUR	VN	Năm triệu, một trăm lẻ tám nghìn, chín trăm bảy mươi chín EURO và năm mươi xu
+5108979.5	JPY	VN	Năm triệu, một trăm lẻ tám nghìn, chín trăm bảy mươi chín JPY và năm mươi xu
+5108979.5	JPY	EN	Five Million One Hundred Eight Thousand Nine Hundred Seventy Nine JPY And Fifty  xu.
+8938040555.89	VND	VN	Tám tỷ chín trăm ba mươi tám triệu không trăm bốn mươi nghìn năm trăm năm mươi lăm đồng ./.
+8938040555.89	VND	EN	EightBillion Nine Hundred Thirty Eight Million Forty Thousand Five Hundred Fifty Five VND.
+8938040555.89	USD	VN	Tám tỷ, chín trăm ba mươi tám triệu, không trăm bốn mươi nghìn, năm trăm năm mươi lăm đô la Mỹ và tám mươi chín xu
+8938040555.89	USD	EN	EightBillion Nine Hundred Thirty Eight Million Forty Thousand Five Hundred Fifty Five Dollars And Eighty Nine cent.
+8938040555.89	EUR	VN	Tám tỷ, chín trăm ba mươi tám triệu, không trăm bốn mươi nghìn, năm trăm năm mươi lăm EURO và tám mươi chín xu
+8938040555.89	JPY	VN	Tám tỷ, chín trăm ba mươi tám triệu, không trăm bốn mươi nghìn, năm trăm năm mươi lăm JPY và tám mươi chín xu
+8938040555.89	JPY	EN	EightBillion Nine Hundred Thirty Eight Million Forty Thousand Five Hundred Fifty Five JPY And Eighty Nine xu.
+2862732836	VND	VN	Hai tỷ tám trăm sáu mươi hai triệu bảy trăm ba mươi hai nghìn tám trăm ba mươi sáu đồng ./.
+2862732836	VND	EN	TwoBillion Eight Hundred Sixty Two Million Seven Hundred Thirty Two Thousand Eight Hundred Thirty Six VND.
+2862732836	USD	VN	Hai tỷ, tám trăm sáu mươi hai triệu, bảy trăm ba mươi hai nghìn, tám trăm ba mươi sáu đô la Mỹ.
+2862732836	USD	EN	TwoBillion Eight Hundred Sixty Two Million Seven Hundred Thirty Two Thousand Eight Hundred Thirty Six Dollars Only.
+2862732836	EUR	VN	Hai tỷ, tám trăm sáu mươi hai triệu, bảy trăm ba mươi hai nghìn, tám trăm ba mươi sáu EURO.
+2862732836	JPY	VN	Hai tỷ, tám trăm sáu mươi hai triệu, bảy trăm ba mươi hai nghìn, tám trăm ba mươi sáu JPY.
+2862732836	JPY	EN	TwoBillion Eight Hundred Sixty Two Million Seven Hundred Thirty Two Thousand Eight Hundred Thirty Six JPY Only.
+9319078154	VND	VN	Chín tỷ ba trăm mười chín triệu không trăm bảy mươi tám nghìn một trăm năm mươi bốn đồng ./.
+9319078154	VND	EN	NineBillion Three Hundred Nineteen Million Seventy Eight Thousand One Hundred Fifty Four VND.
+9319078154	USD	VN	Chín tỷ, ba trăm mười chín triệu, không trăm bảy mươi tám nghìn, một trăm năm mươi bốn đô la Mỹ.
+9319078154	USD	EN	NineBillion Three Hundred Nineteen Million Seventy Eight Thousand One Hundred Fifty Four Dollars Only.
+9319078154	EUR	VN	Chín tỷ, ba trăm mười chín triệu, không trăm bảy mươi tám nghìn, một trăm năm mươi bốn EURO.
+9319078154	JPY	VN	Chín tỷ, ba trăm mười chín triệu, không trăm bảy mươi tám nghìn, một trăm năm mươi bốn JPY.
+9319078154	JPY	EN	NineBillion Three Hundred Nineteen Million Seventy Eight Thousand One Hundred Fifty Four JPY Only.
+2181	VND	VN	Hai nghìn một trăm tám mươi mốt đồng ./.
+2181	VND	EN	Two Thousand One Hundred Eighty One VND.
+2181	USD	VN	Hai nghìn, một trăm tám mươi mốt đô la Mỹ.
+2181	USD	EN	Two Thousand One Hundred Eighty One Dollars Only.
+2181	EUR	VN	Hai nghìn, một trăm tám mươi mốt EURO.
+2181	JPY	VN	Hai nghìn, một trăm tám mươi mốt JPY.
+2181	JPY	EN	Two Thousand One Hundred Eighty One JPY Only.
+481030.2	VND	VN	Bốn trăm tám mươi mốt nghìn không trăm ba mươi đồng ./.
+481030.2	VND	EN	Four Hundred Eighty One Thousand Thirty VND.
+481030.2	USD	VN	Bốn trăm tám mươi mốt nghìn, không trăm ba mươi đô la Mỹ và hai mươi xu
+481030.2	USD	EN	Four Hundred Eighty One Thousand Thirty Dollars And Twenty  cent.
+481030.2	EUR	VN	Bốn trăm tám mươi mốt nghìn, không trăm ba mươi EURO và hai mươi xu
+481030.2	JPY	VN	Bốn trăm tám mươi mốt nghìn, không trăm ba mươi JPY và hai mươi xu
+481030.2	JPY	EN	Four Hundred Eighty One Thousand Thirty JPY And Twenty  xu.
+833.93	VND	VN	Tám trăm ba mươi ba đồng ./.
+833.93	VND	EN	Eight Hundred Thirty Three VND.
+833.93	USD	VN	Tám trăm ba mươi ba đô la Mỹ và chín mươi ba xu
+833.93	USD	EN	Eight Hundred Thirty Three Dollars And Ninety Three cent.
+833.93	EUR	VN	Tám trăm ba mươi ba EURO và chín mươi ba xu
+833.93	JPY	VN	Tám trăm ba mươi ba JPY và chín mươi ba xu
+833.93	JPY	EN	Eight Hundred Thirty Three JPY And Ninety Three xu.
+40018170.6	VND	VN	Bốn mươi triệu không trăm mười tám nghìn một trăm bảy mươi đồng ./.
+40018170.6	VND	EN	Forty Million Eighteen Thousand One Hundred Seventy VND.
+40018170.6	USD	VN	Bốn mươi triệu, không trăm mười tám nghìn, một trăm bảy mươi đô la Mỹ và sáu mươi xu
+40018170.6	USD	EN	Forty Million Eighteen Thousand One Hundred Seventy Dollars And Sixty  cent.
+40018170.6	EUR	VN	Bốn mươi triệu, không trăm mười tám nghìn, một trăm bảy mươi EURO và sáu mươi xu
+40018170.6	JPY	VN	Bốn mươi triệu, không trăm mười tám nghìn, một trăm bảy mươi JPY và sáu mươi xu
+40018170.6	JPY	EN	Forty Million Eighteen Thousand One Hundred Seventy JPY And Sixty  xu.
+535	VND	VN	Năm trăm ba mươi lăm đồng ./.
+535	VND	EN	Five Hundred Thirty Five VND.
+535	USD	VN	Năm trăm ba mươi lăm đô la Mỹ.
+535	USD	EN	Five Hundred Thirty Five Dollars Only.
+535	EUR	VN	Năm trăm ba mươi lăm EURO.
+535	JPY	VN	Năm trăm ba mươi lăm JPY.
+535	JPY	EN	Five Hundred Thirty Five JPY Only.
+5747.37	VND	VN	Năm nghìn bảy trăm bốn mươi bảy đồng ./.
+5747.37	VND	EN	Five Thousand Seven Hundred Forty Seven VND.
+5747.37	USD	VN	Năm nghìn, bảy trăm bốn mươi bảy đô la Mỹ và ba mươi bảy xu
+5747.37	USD	EN	Five Thousand Seven Hundred Forty Seven Dollars And Thirty Seven cent.
+5747.37	EUR	VN	Năm nghìn, bảy trăm bốn mươi bảy EURO và ba mươi bảy xu
+5747.37	JPY	VN	Năm nghìn, bảy trăm bốn mươi bảy JPY và ba mươi bảy xu
+5747.37	JPY	EN	Five Thousand Seven Hundred Forty Seven JPY And Thirty Seven xu.
+12749919580.6	VND	VN	Mười hai tỷ bảy trăm bốn mươi chín triệu chín trăm mười chín nghìn năm trăm tám mươi đồng ./.
+12749919580.6	VND	EN	TwelveBillion Seven Hundred Forty Nine Million Nine Hundred Nineteen Thousand Five Hundred Eighty VND.
+12749919580.6	USD	VN	Mười hai tỷ, bảy trăm bốn mươi chín triệu, chín trăm mười chín nghìn, năm trăm tám mươi đô la Mỹ và sáu mươi xu
+12749919580.6	USD	EN	TwelveBillion Seven Hundred Forty Nine Million Nine Hundred Nineteen Thousand Five Hundred Eighty Dollars And Sixty  cent.
+12749919580.6	EUR	VN	Mười hai tỷ, bảy trăm bốn mươi chín triệu, chín trăm mười chín nghìn, năm trăm tám mươi EURO và sáu mươi xu
+12749919580.6	JPY	VN	Mười hai tỷ, bảy trăm bốn mươi chín triệu, chín trăm mười chín nghìn, năm trăm tám mươi JPY và sáu mươi xu
+12749919580.6	JPY	EN	TwelveBillion Seven Hundred Forty Nine Million Nine Hundred Nineteen Thousand Five Hundred Eighty JPY And Sixty  xu.
+724	VND	VN	Bảy trăm hai mươi bốn đồng ./.
+724	VND	EN	Seven Hundred Twenty Four VND.
+724	USD	VN	Bảy trăm hai mươi bốn đô la Mỹ.
+724	USD	EN	Seven Hundred Twenty Four Dollars Only.
+724	EUR	VN	Bảy trăm hai mươi bốn EURO.
+724	JPY	VN	Bảy trăm hai mươi bốn JPY.
+724	JPY	EN	Seven Hundred Twenty Four JPY Only.
+926139736048	VND	VN	Chín trăm hai mươi sáu tỷ một trăm ba mươi chín triệu bảy trăm ba mươi sáu nghìn không trăm bốn mươi tám đồng ./.
+926139736048	VND	EN	Nine Hundred Twenty SixBillion One Hundred Thirty Nine Million Seven Hundred Thirty Six Thousand Forty Eight VND.
+926139736048	USD	VN	Chín trăm hai mươi sáu tỷ, một trăm ba mươi chín triệu, bảy trăm ba mươi sáu nghìn, không trăm bốn mươi tám đô la Mỹ.
+926139736048	USD	EN	Nine Hundred Twenty SixBillion One Hundred Thirty Nine Million Seven Hundred Thirty Six Thousand Forty Eight Dollars Only.
+926139736048	EUR	VN	Chín trăm hai mươi sáu tỷ, một trăm ba mươi chín triệu, bảy trăm ba mươi sáu nghìn, không trăm bốn mươi tám EURO.
+926139736048	JPY	VN	Chín trăm hai mươi sáu tỷ, một trăm ba mươi chín triệu, bảy trăm ba mươi sáu nghìn, không trăm bốn mươi tám JPY.
+926139736048	JPY	EN	Nine Hundred Twenty SixBillion One Hundred Thirty Nine Million Seven Hundred Thirty Six Thousand Forty Eight JPY Only.
+2946256046.62	VND	VN	Hai tỷ chín trăm bốn mươi sáu triệu hai trăm năm mươi sáu nghìn không trăm bốn mươi sáu đồng ./.
+2946256046.62	VND	EN	TwoBillion Nine Hundred Forty Six Million Two Hundred Fifty Six Thousand Forty Six VND.
+2946256046.62	USD	VN	Hai tỷ, chín trăm bốn mươi sáu triệu, hai trăm năm mươi sáu nghìn, không trăm bốn mươi sáu đô la Mỹ và sáu mươi hai xu
+2946256046.62	USD	EN	TwoBillion Nine Hundred Forty Six Million Two Hundred Fifty Six Thousand Forty Six Dollars And Sixty Two cent.
+2946256046.62	EUR	VN	Hai tỷ, chín trăm bốn mươi sáu triệu, hai trăm năm mươi sáu nghìn, không trăm bốn mươi sáu EURO và sáu mươi hai xu
+2946256046.62	JPY	VN	Hai tỷ, chín trăm bốn mươi sáu triệu, hai trăm năm mươi sáu nghìn, không trăm bốn mươi sáu JPY và sáu mươi hai xu
+2946256046.62	JPY	EN	TwoBillion Nine Hundred Forty Six Million Two Hundred Fifty Six Thousand Forty Six JPY And Sixty Two xu.
+3254350369.4	VND	VN	Ba tỷ hai trăm năm mươi bốn triệu ba trăm năm mươi nghìn ba trăm sáu mươi chín đồng ./.
+3254350369.4	VND	EN	ThreeBillion Two Hundred Fifty Four Million Three Hundred Fifty Thousand Three Hundred Sixty Nine VND.
+3254350369.4	USD	VN	Ba tỷ, hai trăm năm mươi bốn triệu, ba trăm năm mươi nghìn, ba trăm sáu mươi chín đô la Mỹ và bốn mươi xu
+3254350369.4	USD	EN	ThreeBillion Two Hundred Fifty Four Million Three Hundred Fifty Thousand Three Hundred Sixty Nine Dollars And Forty  cent.
+3254350369.4	EUR	VN	Ba tỷ, hai trăm năm mươi bốn triệu, ba trăm năm mươi nghìn, ba trăm sáu mươi chín EURO và bốn mươi xu
+3254350369.4	JPY	VN	Ba tỷ, hai trăm năm mươi bốn triệu, ba trăm năm mươi nghìn, ba trăm sáu mươi chín JPY và bốn mươi xu
+3254350369.4	JPY	EN	ThreeBillion Two Hundred Fifty Four Million Three Hundred Fifty Thousand Three Hundred Sixty Nine JPY And Forty  xu.
+55.52	VND	VN	Năm mươi lăm đồng ./.
+55.52	VND	EN	Fifty Five VND.
+55.52	USD	VN	Năm mươi lăm đô la Mỹ và năm mươi hai xu
+55.52	USD	EN	Fifty Five Dollars And Fifty Two cent.
+55.52	EUR	VN	Năm mươi lăm EURO và năm mươi hai xu
+55.52	JPY	VN	Năm mươi lăm JPY và năm mươi hai xu
+55.52	JPY	EN	Fifty Five JPY And Fifty Two xu.
+4290534329.74	VND	VN	Bốn tỷ hai trăm chín mươi triệu năm trăm ba mươi bốn nghìn ba trăm hai mươi chín đồng ./.
+4290534329.74	VND	EN	FourBillion Two Hundred Ninety Million Five Hundred Thirty Four Thousand Three Hundred Twenty Nine VND.
+4290534329.74	USD	VN	Bốn tỷ, hai trăm chín mươi triệu, năm trăm ba mươi bốn nghìn, ba trăm hai mươi chín đô la Mỹ và bảy mươi bốn xu
+4290534329.74	USD	EN	FourBillion Two Hundred Ninety Million Five Hundred Thirty Four Thousand Three Hundred Twenty Nine Dollars And Seventy Four cent.
+4290534329.74	EUR	VN	Bốn tỷ, hai trăm chín mươi triệu, năm trăm ba mươi bốn nghìn, ba trăm hai mươi chín EURO và bảy mươi bốn xu
+4290534329.74	JPY	VN	Bốn tỷ, hai trăm chín mươi triệu, năm trăm ba mươi bốn nghìn, ba trăm hai mươi chín JPY và bảy mươi bốn xu
+4290534329.74	JPY	EN	FourBillion Two Hundred Ninety Million Five Hundred Thirty Four Thousand Three Hundred Twenty Nine JPY And Seventy Four xu.
+5.5	VND	VN	Năm đồng ./.
+5.5	VND	EN	Five VND.
+5.5	USD	VN	Năm đô la Mỹ và năm mươi xu
+5.5	USD	EN	Five Dollars And Fifty  cent.
+5.5	EUR	VN	Năm EURO và năm mươi xu
+5.5	JPY	VN	Năm JPY và năm mươi xu
+5.5	JPY	EN	Five JPY And Fifty  xu.
+2350443.84	VND	VN	Hai triệu ba trăm năm mươi nghìn bốn trăm bốn mươi ba đồng ./.
+2350443.84	VND	EN	Two Million Three Hundred Fifty Thousand Four Hundred Forty Three VND.
+2350443.84	USD	VN	Hai triệu, ba trăm năm mươi nghìn, bốn trăm bốn mươi ba đô la Mỹ và tám mươi bốn xu
+2350443.84	USD	EN	Two Million Three Hundred Fifty Thousand Four Hundred Forty Three Dollars And Eighty Four cent.
+2350443.84	EUR	VN	Hai triệu, ba trăm năm mươi nghìn, bốn trăm bốn mươi ba EURO và tám mươi bốn xu
+2350443.84	JPY	VN	Hai triệu, ba trăm năm mươi nghìn, bốn trăm bốn mươi ba JPY và tám mươi bốn xu
+2350443.84	JPY	EN	Two Million Three Hundred Fifty Thousand Four Hundred Forty Three JPY And Eighty Four xu.
+5899.3	VND	VN	Năm nghìn tám trăm chín mươi chín đồng ./.
+5899.3	VND	EN	Five Thousand Eight Hundred Ninety Nine VND.
+5899.3	USD	VN	Năm nghìn, tám trăm chín mươi chín đô la Mỹ và ba mươi xu
+5899.3	USD	EN	Five Thousand Eight Hundred Ninety Nine Dollars And Thirty  cent.
+5899.3	EUR	VN	Năm nghìn, tám trăm chín mươi chín EURO và ba mươi xu
+5899.3	JPY	VN	Năm nghìn, tám trăm chín mươi chín JPY và ba mươi xu
+5899.3	JPY	EN	Five Thousand Eight Hundred Ninety Nine JPY And Thirty  xu.
+751748139.4	VND	VN	Bảy trăm năm mươi mốt triệu bảy trăm bốn mươi tám nghìn một trăm ba mươi chín đồng ./.
+751748139.4	VND	EN	Seven Hundred Fifty One Million Seven Hundred Forty Eight Thousand One Hundred Thirty Nine VND.
+751748139.4	USD	VN	Bảy trăm năm mươi mốt triệu, bảy trăm bốn mươi tám nghìn, một trăm ba mươi chín đô la Mỹ và bốn mươi xu
+751748139.4	USD	EN	Seven Hundred Fifty One Million Seven Hundred Forty Eight Thousand One Hundred Thirty Nine Dollars And Forty  cent.
+751748139.4	EUR	VN	Bảy trăm năm mươi mốt triệu, bảy trăm bốn mươi tám nghìn, một trăm ba mươi chín EURO và bốn mươi xu
+751748139.4	JPY	VN	Bảy trăm năm mươi mốt triệu, bảy trăm bốn mươi tám nghìn, một trăm ba mươi chín JPY và bốn mươi xu
+751748139.4	JPY	EN	Seven Hundred Fifty One Million Seven Hundred Forty Eight Thousand One Hundred Thirty Nine JPY And Forty  xu.
+2705481645.05	VND	VN	Hai tỷ bảy trăm lẻ năm triệu bốn trăm tám mươi mốt nghìn sáu trăm bốn mươi lăm đồng ./.
+2705481645.05	VND	EN	TwoBillion Seven Hundred Five Million Four Hundred Eighty One Thousand Six Hundred Forty Five VND.
+2705481645.05	USD	VN	Hai tỷ, bảy trăm lẻ năm triệu, bốn trăm tám mươi mốt nghìn, sáu trăm bốn mươi lăm đô la Mỹ và năm xu
+2705481645.05	USD	EN	TwoBillion Seven Hundred Five Million Four Hundred Eighty One Thousand Six Hundred Forty Five Dollars And Five cent.
+2705481645.05	EUR	VN	Hai tỷ, bảy trăm lẻ năm triệu, bốn trăm tám mươi mốt nghìn, sáu trăm bốn mươi lăm EURO và năm xu
+2705481645.05	JPY	VN	Hai tỷ, bảy trăm lẻ năm triệu, bốn trăm tám mươi mốt nghìn, sáu trăm bốn mươi lăm JPY và năm xu
+2705481645.05	JPY	EN	TwoBillion Seven Hundred Five Million Four Hundred Eighty One Thousand Six Hundred Forty Five JPY And Five xu.
+640580	VND	VN	Sáu trăm bốn mươi nghìn năm trăm tám mươi đồng ./.
+640580	VND	EN	Six Hundred Forty Thousand Five Hundred Eighty VND.
+640580	USD	VN	Sáu trăm bốn mươi nghìn, năm trăm tám mươi đô la Mỹ.
+640580	USD	EN	Six Hundred Forty Thousand Five Hundred Eighty Dollars Only.
+640580	EUR	VN	Sáu trăm bốn mươi nghìn, năm trăm tám mươi EURO.
+640580	JPY	VN	Sáu trăm bốn mươi nghìn, năm trăm tám mươi JPY.
+640580	JPY	EN	Six Hundred Forty Thousand Five Hundred Eighty JPY Only.
+8353436	VND	VN	Tám triệu ba trăm năm mươi ba nghìn bốn trăm ba mươi sáu đồng ./.
+8353436	VND	EN	Eight Million Three Hundred Fifty Three Thousand Four Hundred Thirty Six VND.
+8353436	USD	VN	Tám triệu, ba trăm năm mươi ba nghìn, bốn trăm ba mươi sáu đô la Mỹ.
+8353436	USD	EN	Eight Million Three Hundred Fifty Three Thousand Four Hundred Thirty Six Dollars Only.
+8353436	EUR	VN	Tám triệu, ba trăm năm mươi ba nghìn, bốn trăm ba mươi sáu EURO.
+8353436	JPY	VN	Tám triệu, ba trăm năm mươi ba nghìn, bốn trăm ba mươi sáu JPY.
+8353436	JPY	EN	Eight Million Three Hundred Fifty Three Thousand Four Hundred Thirty Six JPY Only.
+7987571.8	VND	VN	Bảy triệu chín trăm tám mươi bảy nghìn năm trăm bảy mươi mốt đồng ./.
+7987571.8	VND	EN	Seven Million Nine Hundred Eighty Seven Thousand Five Hundred Seventy One VND.
+7987571.8	USD	VN	Bảy triệu, chín trăm tám mươi bảy nghìn, năm trăm bảy mươi mốt đô la Mỹ và tám mươi xu
+7987571.8	USD	EN	Seven Million Nine Hundred Eighty Seven Thousand Five Hundred Seventy One Dollars And Eighty  cent.
+7987571.8	EUR	VN	Bảy triệu, chín trăm tám mươi bảy nghìn, năm trăm bảy mươi mốt EURO và tám mươi xu
+7987571.8	JPY	VN	Bảy triệu, chín trăm tám mươi bảy nghìn, năm trăm bảy mươi mốt JPY và tám mươi xu
+7987571.8	JPY	EN	Seven Million Nine Hundred Eighty Seven Thousand Five Hundred Seventy One JPY And Eighty  xu.
+92244.84	VND	VN	Chín mươi hai nghìn hai trăm bốn mươi bốn đồng ./.
+92244.84	VND	EN	Ninety Two Thousand Two Hundred Forty Four VND.
+92244.84	USD	VN	Chín mươi hai nghìn, hai trăm bốn mươi bốn đô la Mỹ và tám mươi bốn xu
+92244.84	USD	EN	Ninety Two Thousand Two Hundred Forty Four Dollars And Eighty Four cent.
+92244.84	EUR	VN	Chín mươi hai nghìn, hai trăm bốn mươi bốn EURO và tám mươi bốn xu
+92244.84	JPY	VN	Chín mươi hai nghìn, hai trăm bốn mươi bốn JPY và tám mươi bốn xu
+92244.84	JPY	EN	Ninety Two Thousand Two Hundred Forty Four JPY And Eighty Four xu.
+742879.26	VND	VN	Bảy trăm bốn mươi hai nghìn tám trăm bảy mươi chín đồng ./.
+742879.26	VND	EN	Seven Hundred Forty Two Thousand Eight Hundred Seventy Nine VND.
+742879.26	USD	VN	Bảy trăm bốn mươi hai nghìn, tám trăm bảy mươi chín đô la Mỹ và hai mươi sáu xu
+742879.26	USD	EN	Seven Hundred Forty Two Thousand Eight Hundred Seventy Nine Dollars And Twenty Six cent.
+742879.26	EUR	VN	Bảy trăm bốn mươi hai nghìn, tám trăm bảy mươi chín EURO và hai mươi sáu xu
+742879.26	JPY	VN	Bảy trăm bốn mươi hai nghìn, tám trăm bảy mươi chín JPY và hai mươi sáu xu
+742879.26	JPY	EN	Seven Hundred Forty Two Thousand Eight Hundred Seventy Nine JPY And Twenty Six xu.
+9.6	VND	VN	Chín đồng ./.
+9.6	VND	EN	Nine VND.
+9.6	USD	VN	Chín đô la Mỹ và sáu mươi xu
+9.6	USD	EN	Nine Dollars And Sixty  cent.
+9.6	EUR	VN	Chín EURO và sáu mươi xu
+9.6	JPY	VN	Chín JPY và sáu mươi xu
+9.6	JPY	EN	Nine JPY And Sixty  xu.
+680378.15	VND	VN	Sáu trăm tám mươi nghìn ba trăm bảy mươi tám đồng ./.
+680378.15	VND	EN	Six Hundred Eighty Thousand Three Hundred Seventy Eight VND.
+680378.15	USD	VN	Sáu trăm tám mươi nghìn, ba trăm bảy mươi tám đô la Mỹ và mười lăm xu
+680378.15	USD	EN	Six Hundred Eighty Thousand Three Hundred Seventy Eight Dollars And Fifteen cent.
+680378.15	EUR	VN	Sáu trăm tám mươi nghìn, ba trăm bảy mươi tám EURO và mười lăm xu
+680378.15	JPY	VN	Sáu trăm tám mươi nghìn, ba trăm bảy mươi tám JPY và mười lăm xu
+680378.15	JPY	EN	Six Hundred Eighty Thousand Three Hundred Seventy Eight JPY And Fifteen xu.
+947864042.6	VND	VN	Chín trăm bốn mươi bảy triệu tám trăm sáu mươi bốn nghìn không trăm bốn mươi hai đồng ./.
+947864042.6	VND	EN	Nine Hundred Forty Seven Million Eight Hundred Sixty Four Thousand Forty Two VND.
+947864042.6	USD	VN	Chín trăm bốn mươi bảy triệu, tám trăm sáu mươi bốn nghìn, không trăm bốn mươi hai đô la Mỹ và sáu mươi xu
+947864042.6	USD	EN	Nine Hundred Forty Seven Million Eight Hundred Sixty Four Thousand Forty Two Dollars And Sixty  cent.
+947864042.6	EUR	VN	Chín trăm bốn mươi bảy triệu, tám trăm sáu mươi bốn nghìn, không trăm bốn mươi hai EURO và sáu mươi xu
+947864042.6	JPY	VN	Chín trăm bốn mươi bảy triệu, tám trăm sáu mươi bốn nghìn, không trăm bốn mươi hai JPY và sáu mươi xu
+947864042.6	JPY	EN	Nine Hundred Forty Seven Million Eight Hundred Sixty Four Thousand Forty Two JPY And Sixty  xu.
+23470457095.4	VND	VN	Hai mươi ba tỷ bốn trăm bảy mươi triệu bốn trăm năm mươi bảy nghìn không trăm chín mươi lăm đồng ./.
+23470457095.4	VND	EN	Twenty ThreeBillion Four Hundred Seventy Million Four Hundred Fifty Seven Thousand Ninety Five VND.
+23470457095.4	USD	VN	Hai mươi ba tỷ, bốn trăm bảy mươi triệu, bốn trăm năm mươi bảy nghìn, không trăm chín mươi lăm đô la Mỹ và bốn mươi xu
+23470457095.4	USD	EN	Twenty ThreeBillion Four Hundred Seventy Million Four Hundred Fifty Seven Thousand Ninety Five Dollars And Forty  cent.
+23470457095.4	EUR	VN	Hai mươi ba tỷ, bốn trăm bảy mươi triệu, bốn trăm năm mươi bảy nghìn, không trăm chín mươi lăm EURO và bốn mươi xu
+23470457095.4	JPY	VN	Hai mươi ba tỷ, bốn trăm bảy mươi triệu, bốn trăm năm mươi bảy nghìn, không trăm chín mươi lăm JPY và bốn mươi xu
+23470457095.4	JPY	EN	Twenty ThreeBillion Four Hundred Seventy Million Four Hundred Fifty Seven Thousand Ninety Five JPY And Forty  xu.
+56290	VND	VN	Năm mươi sáu nghìn hai trăm chín mươi đồng ./.
+56290	VND	EN	Fifty Six Thousand Two Hundred Ninety VND.
+56290	USD	VN	Năm mươi sáu nghìn, hai trăm chín mươi đô la Mỹ.
+56290	USD	EN	Fifty Six Thousand Two Hundred Ninety Dollars Only.
+56290	EUR	VN	Năm mươi sáu nghìn, hai trăm chín mươi EURO.
+56290	JPY	VN	Năm mươi sáu nghìn, hai trăm chín mươi JPY.
+56290	JPY	EN	Fifty Six Thousand Two Hundred Ninety JPY Only.
+3366499568	VND	VN	Ba tỷ ba trăm sáu mươi sáu triệu bốn trăm chín mươi chín nghìn năm trăm sáu mươi tám đồng ./.
+3366499568	VND	EN	ThreeBillion Three Hundred Sixty Six Million Four Hundred Ninety Nine Thousand Five Hundred Sixty Eight VND.
+3366499568	USD	VN	Ba tỷ, ba trăm sáu mươi sáu triệu, bốn trăm chín mươi chín nghìn, năm trăm sáu mươi tám đô la Mỹ.
+3366499568	USD	EN	ThreeBillion Three Hundred Sixty Six Million Four Hundred Ninety Nine Thousand Five Hundred Sixty Eight Dollars Only.
+3366499568	EUR	VN	Ba tỷ, ba trăm sáu mươi sáu triệu, bốn trăm chín mươi chín nghìn, năm trăm sáu mươi tám EURO.
+3366499568	JPY	VN	Ba tỷ, ba trăm sáu mươi sáu triệu, bốn trăm chín mươi chín nghìn, năm trăm sáu mươi tám JPY.
+3366499568	JPY	EN	ThreeBillion Three Hundred Sixty Six Million Four Hundred Ninety Nine Thousand Five Hundred Sixty Eight JPY Only.
+69894.98	VND	VN	Sáu mươi chín nghìn tám trăm chín mươi bốn đồng ./.
+69894.98	VND	EN	Sixty Nine Thousand Eight Hundred Ninety Four VND.
+69894.98	USD	VN	Sáu mươi chín nghìn, tám trăm chín mươi bốn đô la Mỹ và chín mươi tám xu
+69894.98	USD	EN	Sixty Nine Thousand Eight Hundred Ninety Four Dollars And Ninety Eight cent.
+69894.98	EUR	VN	Sáu mươi chín nghìn, tám trăm chín mươi bốn EURO và chín mươi tám xu
+69894.98	JPY	VN	Sáu mươi chín nghìn, tám trăm chín mươi bốn JPY và chín mươi tám xu
+69894.98	JPY	EN	Sixty Nine Thousand Eight Hundred Ninety Four JPY And Ninety Eight xu.
+84618097	VND	VN	Tám mươi bốn triệu sáu trăm mười tám nghìn không trăm chín mươi bảy đồng ./.
+84618097	VND	EN	Eighty Four Million Six Hundred Eighteen Thousand Ninety Seven VND.
+84618097	USD	VN	Tám mươi bốn triệu, sáu trăm mười tám nghìn, không trăm chín mươi bảy đô la Mỹ.
+84618097	USD	EN	Eighty Four Million Six Hundred Eighteen Thousand Ninety Seven Dollars Only.
+84618097	EUR	VN	Tám mươi bốn triệu, sáu trăm mười tám nghìn, không trăm chín mươi bảy EURO.
+84618097	JPY	VN	Tám mươi bốn triệu, sáu trăm mười tám nghìn, không trăm chín mươi bảy JPY.
+84618097	JPY	EN	Eighty Four Million Six Hundred Eighteen Thousand Ninety Seven JPY Only.
+1438098196.6	VND	VN	Một tỷ bốn trăm ba mươi tám triệu không trăm chín mươi tám nghìn một trăm chín mươi sáu đồng ./.
+1438098196.6	VND	EN	OneBillion Four Hundred Thirty Eight Million Ninety Eight Thousand One Hundred Ninety Six VND.
+1438098196.6	USD	VN	Một tỷ, bốn trăm ba mươi tám triệu, không trăm chín mươi tám nghìn, một trăm chín mươi sáu đô la Mỹ và sáu mươi xu
+1438098196.6	USD	EN	OneBillion Four Hundred Thirty Eight Million Ninety Eight Thousand One Hundred Ninety Six Dollars And Sixty  cent.
+1438098196.6	EUR	VN	Một tỷ, bốn trăm ba mươi tám triệu, không trăm chín mươi tám nghìn, một trăm chín mươi sáu EURO và sáu mươi xu
+1438098196.6	JPY	VN	Một tỷ, bốn trăm ba mươi tám triệu, không trăm chín mươi tám nghìn, một trăm chín mươi sáu JPY và sáu mươi xu
+1438098196.6	JPY	EN	OneBillion Four Hundred Thirty Eight Million Ninety Eight Thousand One Hundred Ninety Six JPY And Sixty  xu.
+9	VND	VN	Chín đồng ./.
+9	VND	EN	Nine VND.
+9	USD	VN	Chín đô la Mỹ.
+9	USD	EN	Nine Dollars Only.
+9	EUR	VN	Chín EURO.
+9	JPY	VN	Chín JPY.
+9	JPY	EN	Nine JPY Only.
+2558.54	VND	VN	Hai nghìn năm trăm năm mươi tám đồng ./.
+2558.54	VND	EN	Two Thousand Five Hundred Fifty Eight VND.
+2558.54	USD	VN	Hai nghìn, năm trăm năm mươi tám đô la Mỹ và năm mươi bốn xu
+2558.54	USD	EN	Two Thousand Five Hundred Fifty Eight Dollars And Fifty Four cent.
+2558.54	EUR	VN	Hai nghìn, năm trăm năm mươi tám EURO và năm mươi bốn xu
+2558.54	JPY	VN	Hai nghìn, năm trăm năm mươi tám JPY và năm mươi bốn xu
+2558.54	JPY	EN	Two Thousand Five Hundred Fifty Eight JPY And Fifty Four xu.
+67394802	VND	VN	Sáu mươi bảy triệu ba trăm chín mươi bốn nghìn tám trăm lẻ hai đồng ./.
+67394802	VND	EN	Sixty Seven Million Three Hundred Ninety Four Thousand Eight Hundred Two VND.
+67394802	USD	VN	Sáu mươi bảy triệu, ba trăm chín mươi bốn nghìn, tám trăm lẻ hai đô la Mỹ.
+67394802	USD	EN	Sixty Seven Million Three Hundred Ninety Four Thousand Eight Hundred Two Dollars Only.
+67394802	EUR	VN	Sáu mươi bảy triệu, ba trăm chín mươi bốn nghìn, tám trăm lẻ hai EURO.
+67394802	JPY	VN	Sáu mươi bảy triệu, ba trăm chín mươi bốn nghìn, tám trăm lẻ hai JPY.
+67394802	JPY	EN	Sixty Seven Million Three Hundred Ninety Four Thousand Eight Hundred Two JPY Only.
+60	VND	VN	Sáu mươi đồng ./.
+60	VND	EN	Sixty VND.
+60	USD	VN	Sáu mươi đô la Mỹ.
+60	USD	EN	Sixty Dollars Only.
+60	EUR	VN	Sáu mươi EURO.
+60	JPY	VN	Sáu mươi JPY.
+60	JPY	EN	Sixty JPY Only.
+117112563.05	VND	VN	Một trăm mười bảy triệu một trăm mười hai nghìn năm trăm sáu mươi ba đồng ./.
+117112563.05	VND	EN	One Hundred Seventeen Million One Hundred Twelve Thousand Five Hundred Sixty Three VND.
+117112563.05	USD	VN	Một trăm mười bảy triệu, một trăm mười hai nghìn, năm trăm sáu mươi ba đô la Mỹ và năm xu
+117112563.05	USD	EN	One Hundred Seventeen Million One Hundred Twelve Thousand Five Hundred Sixty Three Dollars And Five cent.
+117112563.05	EUR	VN	Một trăm mười bảy triệu, một trăm mười hai nghìn, năm trăm sáu mươi ba EURO và năm xu
+117112563.05	JPY	VN	Một trăm mười bảy triệu, một trăm mười hai nghìn, năm trăm sáu mươi ba JPY và năm xu
+117112563.05	JPY	EN	One Hundred Seventeen Million One Hundred Twelve Thousand Five Hundred Sixty Three JPY And Five xu.
+53563385.44	VND	VN	Năm mươi ba triệu năm trăm sáu mươi ba nghìn ba trăm tám mươi lăm đồng ./.
+53563385.44	VND	EN	Fifty Three Million Five Hundred Sixty Three Thousand Three Hundred Eighty Five VND.
+53563385.44	USD	VN	Năm mươi ba triệu, năm trăm sáu mươi ba nghìn, ba trăm tám mươi lăm đô la Mỹ và bốn mươi bốn xu
+53563385.44	USD	EN	Fifty Three Million Five Hundred Sixty Three Thousand Three Hundred Eighty Five Dollars And Forty Four cent.
+53563385.44	EUR	VN	Năm mươi ba triệu, năm trăm sáu mươi ba nghìn, ba trăm tám mươi lăm EURO và bốn mươi bốn xu
+53563385.44	JPY	VN	Năm mươi ba triệu, năm trăm sáu mươi ba nghìn, ba trăm tám mươi lăm JPY và bốn mươi bốn xu
+53563385.44	JPY	EN	Fifty Three Million Five Hundred Sixty Three Thousand Three Hundred Eighty Five JPY And Forty Four xu.
+9598512504.99	VND	VN	Chín tỷ năm trăm chín mươi tám triệu năm trăm mười hai nghìn năm trăm lẻ bốn đồng ./.
+9598512504.99	VND	EN	NineBillion Five Hundred Ninety Eight Million Five Hundred Twelve Thousand Five Hundred Four VND.
+9598512504.99	USD	VN	Chín tỷ, năm trăm chín mươi tám triệu, năm trăm mười hai nghìn, năm trăm lẻ bốn đô la Mỹ và chín mươi chín xu
+9598512504.99	USD	EN	NineBillion Five Hundred Ninety Eight Million Five Hundred Twelve Thousand Five Hundred Four Dollars And Ninety Nine cent.
+9598512504.99	EUR	VN	Chín tỷ, năm trăm chín mươi tám triệu, năm trăm mười hai nghìn, năm trăm lẻ bốn EURO và chín mươi chín xu
+9598512504.99	JPY	VN	Chín tỷ, năm trăm chín mươi tám triệu, năm trăm mười hai nghìn, năm trăm lẻ bốn JPY và chín mươi chín xu
+9598512504.99	JPY	EN	NineBillion Five Hundred Ninety Eight Million Five Hundred Twelve Thousand Five Hundred Four JPY And Ninety Nine xu.
+28634472.4	VND	VN	Hai mươi tám triệu sáu trăm ba mươi bốn nghìn bốn trăm bảy mươi hai đồng ./.
+28634472.4	VND	EN	Twenty Eight Million Six Hundred Thirty Four Thousand Four Hundred Seventy Two VND.
+28634472.4	USD	VN	Hai mươi tám triệu, sáu trăm ba mươi bốn nghìn, bốn trăm bảy mươi hai đô la Mỹ và bốn mươi xu
+28634472.4	USD	EN	Twenty Eight Million Six Hundred Thirty Four Thousand Four Hundred Seventy Two Dollars And Forty  cent.
+28634472.4	EUR	VN	Hai mươi tám triệu, sáu trăm ba mươi bốn nghìn, bốn trăm bảy mươi hai EURO và bốn mươi xu
+28634472.4	JPY	VN	Hai mươi tám triệu, sáu trăm ba mươi bốn nghìn, bốn trăm bảy mươi hai JPY và bốn mươi xu
+28634472.4	JPY	EN	Twenty Eight Million Six Hundred Thirty Four Thousand Four Hundred Seventy Two JPY And Forty  xu.
+6	VND	VN	Sáu đồng ./.
+6	VND	EN	Six VND.
+6	USD	VN	Sáu đô la Mỹ.
+6	USD	EN	Six Dollars Only.
+6	EUR	VN	Sáu EURO.
+6	JPY	VN	Sáu JPY.
+6	JPY	EN	Six JPY Only.
+197.5	VND	VN	Một trăm chín mươi bảy đồng ./.
+197.5	VND	EN	One Hundred Ninety Seven VND.
+197.5	USD	VN	Một trăm chín mươi bảy đô la Mỹ và năm mươi xu
+197.5	USD	EN	One Hundred Ninety Seven Dollars And Fifty  cent.
+197.5	EUR	VN	Một trăm chín mươi bảy EURO và năm mươi xu
+197.5	JPY	VN	Một trăm chín mươi bảy JPY và năm mươi xu
+197.5	JPY	EN	One Hundred Ninety Seven JPY And Fifty  xu.
+258469114200.43	VND	VN	Hai trăm năm mươi tám tỷ bốn trăm sáu mươi chín triệu một trăm mười bốn nghìn hai trăm đồng ./.
+258469114200.43	VND	EN	Two Hundred Fifty EightBillion Four Hundred Sixty Nine Million One Hundred Fourteen Thousand Two Hundred VND.
+258469114200.43	USD	VN	Hai trăm năm mươi tám tỷ, bốn trăm sáu mươi chín triệu, một trăm mười bốn nghìn, hai trăm đô la Mỹ và bốn mươi ba xu
+258469114200.43	USD	EN	Two Hundred Fifty EightBillion Four Hundred Sixty Nine Million One Hundred Fourteen Thousand Two Hundred Dollars And Forty Three cent.
+258469114200.43	EUR	VN	Hai trăm năm mươi tám tỷ, bốn trăm sáu mươi chín triệu, một trăm mười bốn nghìn, hai trăm EURO và bốn mươi ba xu
+258469114200.43	JPY	VN	Hai trăm năm mươi tám tỷ, bốn trăm sáu mươi chín triệu, một trăm mười bốn nghìn, hai trăm JPY và bốn mươi ba xu
+258469114200.43	JPY	EN	Two Hundred Fifty EightBillion Four Hundred Sixty Nine Million One Hundred Fourteen Thousand Two Hundred JPY And Forty Three xu.
+31972987499.1	VND	VN	Ba mươi mốt tỷ chín trăm bảy mươi hai triệu chín trăm tám mươi bảy nghìn bốn trăm chín mươi chín đồng ./.
+31972987499.1	VND	EN	Thirty OneBillion Nine Hundred Seventy Two Million Nine Hundred Eighty Seven Thousand Four Hundred Ninety Nine VND.
+31972987499.1	USD	VN	Ba mươi mốt tỷ, chín trăm bảy mươi hai triệu, chín trăm tám mươi bảy nghìn, bốn trăm chín mươi chín đô la Mỹ và mười xu
+31972987499.1	USD	EN	Thirty OneBillion Nine Hundred Seventy Two Million Nine Hundred Eighty Seven Thousand Four Hundred Ninety Nine Dollars And Ten cent.
+31972987499.1	EUR	VN	Ba mươi mốt tỷ, chín trăm bảy mươi hai triệu, chín trăm tám mươi bảy nghìn, bốn trăm chín mươi chín EURO và mười xu
+31972987499.1	JPY	VN	Ba mươi mốt tỷ, chín trăm bảy mươi hai triệu, chín trăm tám mươi bảy nghìn, bốn trăm chín mươi chín JPY và mười xu
+31972987499.1	JPY	EN	Thirty OneBillion Nine Hundred Seventy Two Million Nine Hundred Eighty Seven Thousand Four Hundred Ninety Nine JPY And Ten xu.
+257869468656.3	VND	VN	Hai trăm năm mươi bảy tỷ tám trăm sáu mươi chín triệu bốn trăm sáu mươi tám nghìn sáu trăm năm mươi sáu đồng ./.
+257869468656.3	VND	EN	Two Hundred Fifty SevenBillion Eight Hundred Sixty Nine Million Four Hundred Sixty Eight Thousand Six Hundred Fifty Six VND.
+257869468656.3	USD	VN	Hai trăm năm mươi bảy tỷ, tám trăm sáu mươi chín triệu, bốn trăm sáu mươi tám nghìn, sáu trăm năm mươi sáu đô la Mỹ và ba mươi xu
+257869468656.3	USD	EN	Two Hundred Fifty SevenBillion Eight Hundred Sixty Nine Million Four Hundred Sixty Eight Thousand Six Hundred Fifty Six Dollars And Thirty  cent.
+257869468656.3	EUR	VN	Hai trăm năm mươi bảy tỷ, tám trăm sáu mươi chín triệu, bốn trăm sáu mươi tám nghìn, sáu trăm năm mươi sáu EURO và ba mươi xu
+257869468656.3	JPY	VN	Hai trăm năm mươi bảy tỷ, tám trăm sáu mươi chín triệu, bốn trăm sáu mươi tám nghìn, sáu trăm năm mươi sáu JPY và ba mươi xu
+257869468656.3	JPY	EN	Two Hundred Fifty SevenBillion Eight Hundred Sixty Nine Million Four Hundred Sixty Eight Thousand Six Hundred Fifty Six JPY And Thirty  xu.
+7036.67	VND	VN	Bảy nghìn không trăm ba mươi sáu đồng ./.
+7036.67	VND	EN	Seven Thousand Thirty Six VND.
+7036.67	USD	VN	Bảy nghìn, không trăm ba mươi sáu đô la Mỹ và sáu mươi bảy xu
+7036.67	USD	EN	Seven Thousand Thirty Six Dollars And Sixty Seven cent.
+7036.67	EUR	VN	Bảy nghìn, không trăm ba mươi sáu EURO và sáu mươi bảy xu
+7036.67	JPY	VN	Bảy nghìn, không trăm ba mươi sáu JPY và sáu mươi bảy xu
+7036.67	JPY	EN	Seven Thousand Thirty Six JPY And Sixty Seven xu.
+5307.7	VND	VN	Năm nghìn ba trăm lẻ bảy đồng ./.
+5307.7	VND	EN	Five Thousand Three Hundred Seven VND.
+5307.7	USD	VN	Năm nghìn, ba trăm lẻ bảy đô la Mỹ và bảy mươi xu
+5307.7	USD	EN	Five Thousand Three Hundred Seven Dollars And Seventy  cent.
+5307.7	EUR	VN	Năm nghìn, ba trăm lẻ bảy EURO và bảy mươi xu
+5307.7	JPY	VN	Năm nghìn, ba trăm lẻ bảy JPY và bảy mươi xu
+5307.7	JPY	EN	Five Thousand Three Hundred Seven JPY And Seventy  xu.
+8489110.33	VND	VN	Tám triệu bốn trăm tám mươi chín nghìn một trăm mười đồng ./.
+8489110.33	VND	EN	Eight Million Four Hundred Eighty Nine Thousand One Hundred Ten VND.
+8489110.33	USD	VN	Tám triệu, bốn trăm tám mươi chín nghìn, một trăm mười đô la Mỹ và ba mươi ba xu
+8489110.33	USD	EN	Eight Million Four Hundred Eighty Nine Thousand One Hundred Ten Dollars And Thirty Three cent.
+8489110.33	EUR	VN	Tám triệu, bốn trăm tám mươi chín nghìn, một trăm mười EURO và ba mươi ba xu
+8489110.33	JPY	VN	Tám triệu, bốn trăm tám mươi chín nghìn, một trăm mười JPY và ba mươi ba xu
+8489110.33	JPY	EN	Eight Million Four Hundred Eighty Nine Thousand One Hundred Ten JPY And Thirty Three xu.
+9521.46	VND	VN	Chín nghìn năm trăm hai mươi mốt đồng ./.
+9521.46	VND	EN	Nine Thousand Five Hundred Twenty One VND.
+9521.46	USD	VN	Chín nghìn, năm trăm hai mươi mốt đô la Mỹ và bốn mươi sáu xu
+9521.46	USD	EN	Nine Thousand Five Hundred Twenty One Dollars And Forty Six cent.
+9521.46	EUR	VN	Chín nghìn, năm trăm hai mươi mốt EURO và bốn mươi sáu xu
+9521.46	JPY	VN	Chín nghìn, năm trăm hai mươi mốt JPY và bốn mươi sáu xu
+9521.46	JPY	EN	Nine Thousand Five Hundred Twenty One JPY And Forty Six xu.
+541	VND	VN	Năm trăm bốn mươi mốt đồng ./.
+541	VND	EN	Five Hundred Forty One VND.
+541	USD	VN	Năm trăm bốn mươi mốt đô la Mỹ.
+541	USD	EN	Five Hundred Forty One Dollars Only.
+541	EUR	VN	Năm trăm bốn mươi mốt EURO.
+541	JPY	VN	Năm trăm bốn mươi mốt JPY.
+541	JPY	EN	Five Hundred Forty One JPY Only.
+4946418616.4	VND	VN	Bốn tỷ chín trăm bốn mươi sáu triệu bốn trăm mười tám nghìn sáu trăm mười sáu đồng ./.
+4946418616.4	VND	EN	FourBillion Nine Hundred Forty Six Million Four Hundred Eighteen Thousand Six Hundred Sixteen VND.
+4946418616.4	USD	VN	Bốn tỷ, chín trăm bốn mươi sáu triệu, bốn trăm mười tám nghìn, sáu trăm mười sáu đô la Mỹ và bốn mươi xu
+4946418616.4	USD	EN	FourBillion Nine Hundred Forty Six Million Four Hundred Eighteen Thousand Six Hundred Sixteen Dollars And Forty  cent.
+4946418616.4	EUR	VN	Bốn tỷ, chín trăm bốn mươi sáu triệu, bốn trăm mười tám nghìn, sáu trăm mười sáu EURO và bốn mươi xu
+4946418616.4	JPY	VN	Bốn tỷ, chín trăm bốn mươi sáu triệu, bốn trăm mười tám nghìn, sáu trăm mười sáu JPY và bốn mươi xu
+4946418616.4	JPY	EN	FourBillion Nine Hundred Forty Six Million Four Hundred Eighteen Thousand Six Hundred Sixteen JPY And Forty  xu.
+67762702	VND	VN	Sáu mươi bảy triệu bảy trăm sáu mươi hai nghìn bảy trăm lẻ hai đồng ./.
+67762702	VND	EN	Sixty Seven Million Seven Hundred Sixty Two Thousand Seven Hundred Two VND.
+67762702	USD	VN	Sáu mươi bảy triệu, bảy trăm sáu mươi hai nghìn, bảy trăm lẻ hai đô la Mỹ.
+67762702	USD	EN	Sixty Seven Million Seven Hundred Sixty Two Thousand Seven Hundred Two Dollars Only.
+67762702	EUR	VN	Sáu mươi bảy triệu, bảy trăm sáu mươi hai nghìn, bảy trăm lẻ hai EURO.
+67762702	JPY	VN	Sáu mươi bảy triệu, bảy trăm sáu mươi hai nghìn, bảy trăm lẻ hai JPY.
+67762702	JPY	EN	Sixty Seven Million Seven Hundred Sixty Two Thousand Seven Hundred Two JPY Only.
+813859.6	VND	VN	Tám trăm mười ba nghìn tám trăm năm mươi chín đồng ./.
+813859.6	VND	EN	Eight Hundred Thirteen Thousand Eight Hundred Fifty Nine VND.
+813859.6	USD	VN	Tám trăm mười ba nghìn, tám trăm năm mươi chín đô la Mỹ và sáu mươi xu
+813859.6	USD	EN	Eight Hundred Thirteen Thousand Eight Hundred Fifty Nine Dollars And Sixty  cent.
+813859.6	EUR	VN	Tám trăm mười ba nghìn, tám trăm năm mươi chín EURO và sáu mươi xu
+813859.6	JPY	VN	Tám trăm mười ba nghìn, tám trăm năm mươi chín JPY và sáu mươi xu
+813859.6	JPY	EN	Eight Hundred Thirteen Thousand Eight Hundred Fifty Nine JPY And Sixty  xu.
+138777476	VND	VN	Một trăm ba mươi tám triệu bảy trăm bảy mươi bảy nghìn bốn trăm bảy mươi sáu đồng ./.
+138777476	VND	EN	One Hundred Thirty Eight Million Seven Hundred Seventy Seven Thousand Four Hundred Seventy Six VND.
+138777476	USD	VN	Một trăm ba mươi tám triệu, bảy trăm bảy mươi bảy nghìn, bốn trăm bảy mươi sáu đô la Mỹ.
+138777476	USD	EN	One Hundred Thirty Eight Million Seven Hundred Seventy Seven Thousand Four Hundred Seventy Six Dollars Only.
+138777476	EUR	VN	Một trăm ba mươi tám triệu, bảy trăm bảy mươi bảy nghìn, bốn trăm bảy mươi sáu EURO.
+138777476	JPY	VN	Một trăm ba mươi tám triệu, bảy trăm bảy mươi bảy nghìn, bốn trăm bảy mươi sáu JPY.
+138777476	JPY	EN	One Hundred Thirty Eight Million Seven Hundred Seventy Seven Thousand Four Hundred Seventy Six JPY Only.
+3993794943.2	VND	VN	Ba tỷ chín trăm chín mươi ba triệu bảy trăm chín mươi bốn nghìn chín trăm bốn mươi ba đồng ./.
+3993794943.2	VND	EN	ThreeBillion Nine Hundred Ninety Three Million Seven Hundred Ninety Four Thousand Nine Hundred Forty Three VND.
+3993794943.2	USD	VN	Ba tỷ, chín trăm chín mươi ba triệu, bảy trăm chín mươi bốn nghìn, chín trăm bốn mươi ba đô la Mỹ và hai mươi xu
+3993794943.2	USD	EN	ThreeBillion Nine Hundred Ninety Three Million Seven Hundred Ninety Four Thousand Nine Hundred Forty Three Dollars And Twenty  cent.
+3993794943.2	EUR	VN	Ba tỷ, chín trăm chín mươi ba triệu, bảy trăm chín mươi bốn nghìn, chín trăm bốn mươi ba EURO và hai mươi xu
+3993794943.2	JPY	VN	Ba tỷ, chín trăm chín mươi ba triệu, bảy trăm chín mươi bốn nghìn, chín trăm bốn mươi ba JPY và hai mươi xu
+3993794943.2	JPY	EN	ThreeBillion Nine Hundred Ninety Three Million Seven Hundred Ninety Four Thousand Nine Hundred Forty Three JPY And Twenty  xu.
+1929.6	VND	VN	Một nghìn chín trăm hai mươi chín đồng ./.
+1929.6	VND	EN	One Thousand Nine Hundred Twenty Nine VND.
+1929.6	USD	VN	Một nghìn, chín trăm hai mươi chín đô la Mỹ và sáu mươi xu
+1929.6	USD	EN	One Thousand Nine Hundred Twenty Nine Dollars And Sixty  cent.
+1929.6	EUR	VN	Một nghìn, chín trăm hai mươi chín EURO và sáu mươi xu
+1929.6	JPY	VN	Một nghìn, chín trăm hai mươi chín JPY và sáu mươi xu
+1929.6	JPY	EN	One Thousand Nine Hundred Twenty Nine JPY And Sixty  xu.
+1367.1	VND	VN	Một nghìn ba trăm sáu mươi bảy đồng ./.
+1367.1	VND	EN	One Thousand Three Hundred Sixty Seven VND.
+1367.1	USD	VN	Một nghìn, ba trăm sáu mươi bảy đô la Mỹ và mười xu
+1367.1	USD	EN	One Thousand Three Hundred Sixty Seven Dollars And Ten cent.
+1367.1	EUR	VN	Một nghìn, ba trăm sáu mươi bảy EURO và mười xu
+1367.1	JPY	VN	Một nghìn, ba trăm sáu mươi bảy JPY và mười xu
+1367.1	JPY	EN	One Thousand Three Hundred Sixty Seven JPY And Ten xu.
+1094660792	VND	VN	Một tỷ không trăm chín mươi bốn triệu sáu trăm sáu mươi nghìn bảy trăm chín mươi hai đồng ./.
+1094660792	VND	EN	OneBillion Ninety Four Million Six Hundred Sixty Thousand Seven Hundred Ninety Two VND.
+1094660792	USD	VN	Một tỷ, không trăm chín mươi bốn triệu, sáu trăm sáu mươi nghìn, bảy trăm chín mươi hai đô la Mỹ.
+1094660792	USD	EN	OneBillion Ninety Four Million Six Hundred Sixty Thousand Seven Hundred Ninety Two Dollars Only.
+1094660792	EUR	VN	Một tỷ, không trăm chín mươi bốn triệu, sáu trăm sáu mươi nghìn, bảy trăm chín mươi hai EURO.
+1094660792	JPY	VN	Một tỷ, không trăm chín mươi bốn triệu, sáu trăm sáu mươi nghìn, bảy trăm chín mươi hai JPY.
+1094660792	JPY	EN	OneBillion Ninety Four Million Six Hundred Sixty Thousand Seven Hundred Ninety Two JPY Only.
+461578727.9	VND	VN	Bốn trăm sáu mươi mốt triệu năm trăm bảy mươi tám nghìn bảy trăm hai mươi bảy đồng ./.
+461578727.9	VND	EN	Four Hundred Sixty One Million Five Hundred Seventy Eight Thousand Seven Hundred Twenty Seven VND.
+461578727.9	USD	VN	Bốn trăm sáu mươi mốt triệu, năm trăm bảy mươi tám nghìn, bảy trăm hai mươi bảy đô la Mỹ và chín mươi xu
+461578727.9	USD	EN	Four Hundred Sixty One Million Five Hundred Seventy Eight Thousand Seven Hundred Twenty Seven Dollars And Ninety  cent.
+461578727.9	EUR	VN	Bốn trăm sáu mươi mốt triệu, năm trăm bảy mươi tám nghìn, bảy trăm hai mươi bảy EURO và chín mươi xu
+461578727.9	JPY	VN	Bốn trăm sáu mươi mốt triệu, năm trăm bảy mươi tám nghìn, bảy trăm hai mươi bảy JPY và chín mươi xu
+461578727.9	JPY	EN	Four Hundred Sixty One Million Five Hundred Seventy Eight Thousand Seven Hundred Twenty Seven JPY And Ninety  xu.
+342.63	VND	VN	Ba trăm bốn mươi hai đồng ./.
+342.63	VND	EN	Three Hundred Forty Two VND.
+342.63	USD	VN	Ba trăm bốn mươi hai đô la Mỹ và sáu mươi ba xu
+342.63	USD	EN	Three Hundred Forty Two Dollars And Sixty Three cent.
+342.63	EUR	VN	Ba trăm bốn mươi hai EURO và sáu mươi ba xu
+342.63	JPY	VN	Ba trăm bốn mươi hai JPY và sáu mươi ba xu
+342.63	JPY	EN	Three Hundred Forty Two JPY And Sixty Three xu.
+558903329.8	VND	VN	Năm trăm năm mươi tám triệu chín trăm lẻ ba nghìn ba trăm hai mươi chín đồng ./.
+558903329.8	VND	EN	Five Hundred Fifty Eight Million Nine Hundred Three Thousand Three Hundred Twenty Nine VND.
+558903329.8	USD	VN	Năm trăm năm mươi tám triệu, chín trăm lẻ ba nghìn, ba trăm hai mươi chín đô la Mỹ và tám mươi xu
+558903329.8	USD	EN	Five Hundred Fifty Eight Million Nine Hundred Three Thousand Three Hundred Twenty Nine Dollars And Eighty  cent.
+558903329.8	EUR	VN	Năm trăm năm mươi tám triệu, chín trăm lẻ ba nghìn, ba trăm hai mươi chín EURO và tám mươi xu
+558903329.8	JPY	VN	Năm trăm năm mươi tám triệu, chín trăm lẻ ba nghìn, ba trăm hai mươi chín JPY và tám mươi xu
+558903329.8	JPY	EN	Five Hundred Fifty Eight Million Nine Hundred Three Thousand Three Hundred Twenty Nine JPY And Eighty  xu.
+8694153199	VND	VN	Tám tỷ sáu trăm chín mươi bốn triệu một trăm năm mươi ba nghìn một trăm chín mươi chín đồng ./.
+8694153199	VND	EN	EightBillion Six Hundred Ninety Four Million One Hundred Fifty Three Thousand One Hundred Ninety Nine VND.
+8694153199	USD	VN	Tám tỷ, sáu trăm chín mươi bốn triệu, một trăm năm mươi ba nghìn, một trăm chín mươi chín đô la Mỹ.
+8694153199	USD	EN	EightBillion Six Hundred Ninety Four Million One Hundred Fifty Three Thousand One Hundred Ninety Nine Dollars Only.
+8694153199	EUR	VN	Tám tỷ, sáu trăm chín mươi bốn triệu, một trăm năm mươi ba nghìn, một trăm chín mươi chín EURO.
+8694153199	JPY	VN	Tám tỷ, sáu trăm chín mươi bốn triệu, một trăm năm mươi ba nghìn, một trăm chín mươi chín JPY.
+8694153199	JPY	EN	EightBillion Six Hundred Ninety Four Million One Hundred Fifty Three Thousand One Hundred Ninety Nine JPY Only.
+845684.9	VND	VN	Tám trăm bốn mươi lăm nghìn sáu trăm tám mươi bốn đồng ./.
+845684.9	VND	EN	Eight Hundred Forty Five Thousand Six Hundred Eighty Four VND.
+845684.9	USD	VN	Tám trăm bốn mươi lăm nghìn, sáu trăm tám mươi bốn đô la Mỹ và chín mươi xu
+845684.9	USD	EN	Eight Hundred Forty Five Thousand Six Hundred Eighty Four Dollars And Ninety  cent.
+845684.9	EUR	VN	Tám trăm bốn mươi lăm nghìn, sáu trăm tám mươi bốn EURO và chín mươi xu
+845684.9	JPY	VN	Tám trăm bốn mươi lăm nghìn, sáu trăm tám mươi bốn JPY và chín mươi xu
+845684.9	JPY	EN	Eight Hundred Forty Five Thousand Six Hundred Eighty Four JPY And Ninety  xu.
+27884927870.65	VND	VN	Hai mươi bảy tỷ tám trăm tám mươi bốn triệu chín trăm hai mươi bảy nghìn tám trăm bảy mươi đồng ./.
+27884927870.65	VND	EN	Twenty SevenBillion Eight Hundred Eighty Four Million Nine Hundred Twenty Seven Thousand Eight Hundred Seventy VND.
+27884927870.65	USD	VN	Hai mươi bảy tỷ, tám trăm tám mươi bốn triệu, chín trăm hai mươi bảy nghìn, tám trăm bảy mươi đô la Mỹ và sáu mươi lăm xu
+27884927870.65	USD	EN	Twenty SevenBillion Eight Hundred Eighty Four Million Nine Hundred Twenty Seven Thousand Eight Hundred Seventy Dollars And Sixty Five cent.
+27884927870.65	EUR	VN	Hai mươi bảy tỷ, tám trăm tám mươi bốn triệu, chín trăm hai mươi bảy nghìn, tám trăm bảy mươi EURO và sáu mươi lăm xu
+27884927870.65	JPY	VN	Hai mươi bảy tỷ, tám trăm tám mươi bốn triệu, chín trăm hai mươi bảy nghìn, tám trăm bảy mươi JPY và sáu mươi lăm xu
+27884927870.65	JPY	EN	Twenty SevenBillion Eight Hundred Eighty Four Million Nine Hundred Twenty Seven Thousand Eight Hundred Seventy JPY And Sixty Five xu.
+4806911.5	VND	VN	Bốn triệu tám trăm lẻ sáu nghìn chín trăm mười một đồng ./.
+4806911.5	VND	EN	Four Million Eight Hundred Six Thousand Nine Hundred Eleven VND.
+4806911.5	USD	VN	Bốn triệu, tám trăm lẻ sáu nghìn, chín trăm mười một đô la Mỹ và năm mươi xu
+4806911.5	USD	EN	Four Million Eight Hundred Six Thousand Nine Hundred Eleven Dollars And Fifty  cent.
+4806911.5	EUR	VN	Bốn triệu, tám trăm lẻ sáu nghìn, chín trăm mười một EURO và năm mươi xu
+4806911.5	JPY	VN	Bốn triệu, tám trăm lẻ sáu nghìn, chín trăm mười một JPY và năm mươi xu
+4806911.5	JPY	EN	Four Million Eight Hundred Six Thousand Nine Hundred Eleven JPY And Fifty  xu.
+281202.64	VND	VN	Hai trăm tám mươi mốt nghìn hai trăm lẻ hai đồng ./.
+281202.64	VND	EN	Two Hundred Eighty One Thousand Two Hundred Two VND.
+281202.64	USD	VN	Hai trăm tám mươi mốt nghìn, hai trăm lẻ hai đô la Mỹ và sáu mươi bốn xu
+281202.64	USD	EN	Two Hundred Eighty One Thousand Two Hundred Two Dollars And Sixty Four cent.
+281202.64	EUR	VN	Hai trăm tám mươi mốt nghìn, hai trăm lẻ hai EURO và sáu mươi bốn xu
+281202.64	JPY	VN	Hai trăm tám mươi mốt nghìn, hai trăm lẻ hai JPY và sáu mươi bốn xu
+281202.64	JPY	EN	Two Hundred Eighty One Thousand Two Hundred Two JPY And Sixty Four xu.
+8869439801	VND	VN	Tám tỷ tám trăm sáu mươi chín triệu bốn trăm ba mươi chín nghìn tám trăm lẻ một đồng ./.
+8869439801	VND	EN	EightBillion Eight Hundred Sixty Nine Million Four Hundred Thirty Nine Thousand Eight Hundred One VND.
+8869439801	USD	VN	Tám tỷ, tám trăm sáu mươi chín triệu, bốn trăm ba mươi chín nghìn, tám trăm lẻ một đô la Mỹ.
+8869439801	USD	EN	EightBillion Eight Hundred Sixty Nine Million Four Hundred Thirty Nine Thousand Eight Hundred One Dollars Only.
+8869439801	EUR	VN	Tám tỷ, tám trăm sáu mươi chín triệu, bốn trăm ba mươi chín nghìn, tám trăm lẻ một EURO.
+8869439801	JPY	VN	Tám tỷ, tám trăm sáu mươi chín triệu, bốn trăm ba mươi chín nghìn, tám trăm lẻ một JPY.
+8869439801	JPY	EN	EightBillion Eight Hundred Sixty Nine Million Four Hundred Thirty Nine Thousand Eight Hundred One JPY Only.
+37128.21	VND	VN	Ba mươi bảy nghìn một trăm hai mươi tám đồng ./.
+37128.21	VND	EN	Thirty Seven Thousand One Hundred Twenty Eight VND.
+37128.21	USD	VN	Ba mươi bảy nghìn, một trăm hai mươi tám đô la Mỹ và hai mươi mốt xu
+37128.21	USD	EN	Thirty Seven Thousand One Hundred Twenty Eight Dollars And Twenty One cent.
+37128.21	EUR	VN	Ba mươi bảy nghìn, một trăm hai mươi tám EURO và hai mươi mốt xu
+37128.21	JPY	VN	Ba mươi bảy nghìn, một trăm hai mươi tám JPY và hai mươi mốt xu
+37128.21	JPY	EN	Thirty Seven Thousand One Hundred Twenty Eight JPY And Twenty One xu.
+49624	VND	VN	Bốn mươi chín nghìn sáu trăm hai mươi bốn đồng ./.
+49624	VND	EN	Forty Nine Thousand Six Hundred Twenty Four VND.
+49624	USD	VN	Bốn mươi chín nghìn, sáu trăm hai mươi bốn đô la Mỹ.
+49624	USD	EN	Forty Nine Thousand Six Hundred Twenty Four Dollars Only.
+49624	EUR	VN	Bốn mươi chín nghìn, sáu trăm hai mươi bốn EURO.
+49624	JPY	VN	Bốn mươi chín nghìn, sáu trăm hai mươi bốn JPY.
+49624	JPY	EN	Forty Nine Thousand Six Hundred Twenty Four JPY Only.
+20622586.19	VND	VN	Hai mươi triệu sáu trăm hai mươi hai nghìn năm trăm tám mươi sáu đồng ./.
+20622586.19	VND	EN	Twenty Million Six Hundred Twenty Two Thousand Five Hundred Eighty Six VND.
+20622586.19	USD	VN	Hai mươi triệu, sáu trăm hai mươi hai nghìn, năm trăm tám mươi sáu đô la Mỹ và mười chín xu
+20622586.19	USD	EN	Twenty Million Six Hundred Twenty Two Thousand Five Hundred Eighty Six Dollars And Nineteen cent.
+20622586.19	EUR	VN	Hai mươi triệu, sáu trăm hai mươi hai nghìn, năm trăm tám mươi sáu EURO và mười chín xu
+20622586.19	JPY	VN	Hai mươi triệu, sáu trăm hai mươi hai nghìn, năm trăm tám mươi sáu JPY và mười chín xu
+20622586.19	JPY	EN	Twenty Million Six Hundred Twenty Two Thousand Five Hundred Eighty Six JPY And Nineteen xu.
+810092	VND	VN	Tám trăm mười nghìn không trăm chín mươi hai đồng ./.
+810092	VND	EN	Eight Hundred Ten Thousand Ninety Two VND.
+810092	USD	VN	Tám trăm mười nghìn, không trăm chín mươi hai đô la Mỹ.
+810092	USD	EN	Eight Hundred Ten Thousand Ninety Two Dollars Only.
+810092	EUR	VN	Tám trăm mười nghìn, không trăm chín mươi hai EURO.
+810092	JPY	VN	Tám trăm mười nghìn, không trăm chín mươi hai JPY.
+810092	JPY	EN	Eight Hundred Ten Thousand Ninety Two JPY Only.
+467166	VND	VN	Bốn trăm sáu mươi bảy nghìn một trăm sáu mươi sáu đồng ./.
+467166	VND	EN	Four Hundred Sixty Seven Thousand One Hundred Sixty Six VND.
+467166	USD	VN	Bốn trăm sáu mươi bảy nghìn, một trăm sáu mươi sáu đô la Mỹ.
+467166	USD	EN	Four Hundred Sixty Seven Thousand One Hundred Sixty Six Dollars Only.
+467166	EUR	VN	Bốn trăm sáu mươi bảy nghìn, một trăm sáu mươi sáu EURO.
+467166	JPY	VN	Bốn trăm sáu mươi bảy nghìn, một trăm sáu mươi sáu JPY.
+467166	JPY	EN	Four Hundred Sixty Seven Thousand One Hundred Sixty Six JPY Only.
+5380129.27	VND	VN	Năm triệu ba trăm tám mươi nghìn một trăm hai mươi chín đồng ./.
+5380129.27	VND	EN	Five Million Three Hundred Eighty Thousand One Hundred Twenty Nine VND.
+5380129.27	USD	VN	Năm triệu, ba trăm tám mươi nghìn, một trăm hai mươi chín đô la Mỹ và hai mươi bảy xu
+5380129.27	USD	EN	Five Million Three Hundred Eighty Thousand One Hundred Twenty Nine Dollars And Twenty Seven cent.
+5380129.27	EUR	VN	Năm triệu, ba trăm tám mươi nghìn, một trăm hai mươi chín EURO và hai mươi bảy xu
+5380129.27	JPY	VN	Năm triệu, ba trăm tám mươi nghìn, một trăm hai mươi chín JPY và hai mươi bảy xu
+5380129.27	JPY	EN	Five Million Three Hundred Eighty Thousand One Hundred Twenty Nine JPY And Twenty Seven xu.
+78.19	VND	VN	Bảy mươi tám đồng ./.
+78.19	VND	EN	Seventy Eight VND.
+78.19	USD	VN	Bảy mươi tám đô la Mỹ và mười chín xu
+78.19	USD	EN	Seventy Eight Dollars And Nineteen cent.
+78.19	EUR	VN	Bảy mươi tám EURO và mười chín xu
+78.19	JPY	VN	Bảy mươi tám JPY và mười chín xu
+78.19	JPY	EN	Seventy Eight JPY And Nineteen xu.
+24970729940.1	VND	VN	Hai mươi bốn tỷ chín trăm bảy mươi triệu bảy trăm hai mươi chín nghìn chín trăm bốn mươi đồng ./.
+24970729940.1	VND	EN	Twenty FourBillion Nine Hundred Seventy Million Seven Hundred Twenty Nine Thousand Nine Hundred Forty VND.
+24970729940.1	USD	VN	Hai mươi bốn tỷ, chín trăm bảy mươi triệu, bảy trăm hai mươi chín nghìn, chín trăm bốn mươi đô la Mỹ và mười xu
+24970729940.1	USD	EN	Twenty FourBillion Nine Hundred Seventy Million Seven Hundred Twenty Nine Thousand Nine Hundred Forty Dollars And Ten cent.
+24970729940.1	EUR	VN	Hai mươi bốn tỷ, chín trăm bảy mươi triệu, bảy trăm hai mươi chín nghìn, chín trăm bốn mươi EURO và mười xu
+24970729940.1	JPY	VN	Hai mươi bốn tỷ, chín trăm bảy mươi triệu, bảy trăm hai mươi chín nghìn, chín trăm bốn mươi JPY và mười xu
+24970729940.1	JPY	EN	Twenty FourBillion Nine Hundred Seventy Million Seven Hundred Twenty Nine Thousand Nine Hundred Forty JPY And Ten xu.
+60626088	VND	VN	Sáu mươi triệu sáu trăm hai mươi sáu nghìn không trăm tám mươi tám đồng ./.
+60626088	VND	EN	Sixty Million Six Hundred Twenty Six Thousand Eighty Eight VND.
+60626088	USD	VN	Sáu mươi triệu, sáu trăm hai mươi sáu nghìn, không trăm tám mươi tám đô la Mỹ.
+60626088	USD	EN	Sixty Million Six Hundred Twenty Six Thousand Eighty Eight Dollars Only.
+60626088	EUR	VN	Sáu mươi triệu, sáu trăm hai mươi sáu nghìn, không trăm tám mươi tám EURO.
+60626088	JPY	VN	Sáu mươi triệu, sáu trăm hai mươi sáu nghìn, không trăm tám mươi tám JPY.
+60626088	JPY	EN	Sixty Million Six Hundred Twenty Six Thousand Eighty Eight JPY Only.
+8336791902.9	VND	VN	Tám tỷ ba trăm ba mươi sáu triệu bảy trăm chín mươi mốt nghìn chín trăm lẻ hai đồng ./.
+8336791902.9	VND	EN	EightBillion Three Hundred Thirty Six Million Seven Hundred Ninety One Thousand Nine Hundred Two VND.
+8336791902.9	USD	VN	Tám tỷ, ba trăm ba mươi sáu triệu, bảy trăm chín mươi mốt nghìn, chín trăm lẻ hai đô la Mỹ và chín mươi xu
+8336791902.9	USD	EN	EightBillion Three Hundred Thirty Six Million Seven Hundred Ninety One Thousand Nine Hundred Two Dollars And Ninety  cent.
+8336791902.9	EUR	VN	Tám tỷ, ba trăm ba mươi sáu triệu, bảy trăm chín mươi mốt nghìn, chín trăm lẻ hai EURO và chín mươi xu
+8336791902.9	JPY	VN	Tám tỷ, ba trăm ba mươi sáu triệu, bảy trăm chín mươi mốt nghìn, chín trăm lẻ hai JPY và chín mươi xu
+8336791902.9	JPY	EN	EightBillion Three Hundred Thirty Six Million Seven Hundred Ninety One Thousand Nine Hundred Two JPY And Ninety  xu.
+677637.5	VND	VN	Sáu trăm bảy mươi bảy nghìn sáu trăm ba mươi bảy đồng ./.
+677637.5	VND	EN	Six Hundred Seventy Seven Thousand Six Hundred Thirty Seven VND.
+677637.5	USD	VN	Sáu trăm bảy mươi bảy nghìn, sáu trăm ba mươi bảy đô la Mỹ và năm mươi xu
+677637.5	USD	EN	Six Hundred Seventy Seven Thousand Six Hundred Thirty Seven Dollars And Fifty  cent.
+677637.5	EUR	VN	Sáu trăm bảy mươi bảy nghìn, sáu trăm ba mươi bảy EURO và năm mươi xu
+677637.5	JPY	VN	Sáu trăm bảy mươi bảy nghìn, sáu trăm ba mươi bảy JPY và năm mươi xu
+677637.5	JPY	EN	Six Hundred Seventy Seven Thousand Six Hundred Thirty Seven JPY And Fifty  xu.
+906	VND	VN	Chín trăm lẻ sáu đồng ./.
+906	VND	EN	Nine Hundred Six VND.
+906	USD	VN	Chín trăm lẻ sáu đô la Mỹ.
+906	USD	EN	Nine Hundred Six Dollars Only.
+906	EUR	VN	Chín trăm lẻ sáu EURO.
+906	JPY	VN	Chín trăm lẻ sáu JPY.
+906	JPY	EN	Nine Hundred Six JPY Only.
+81249.5	VND	VN	Tám mươi mốt nghìn hai trăm bốn mươi chín đồng ./.
+81249.5	VND	EN	Eighty One Thousand Two Hundred Forty Nine VND.
+81249.5	USD	VN	Tám mươi mốt nghìn, hai trăm bốn mươi chín đô la Mỹ và năm mươi xu
+81249.5	USD	EN	Eighty One Thousand Two Hundred Forty Nine Dollars And Fifty  cent.
+81249.5	EUR	VN	Tám mươi mốt nghìn, hai trăm bốn mươi chín EURO và năm mươi xu
+81249.5	JPY	VN	Tám mươi mốt nghìn, hai trăm bốn mươi chín JPY và năm mươi xu
+81249.5	JPY	EN	Eighty One Thousand Two Hundred Forty Nine JPY And Fifty  xu.
+485912757.22	VND	VN	Bốn trăm tám mươi lăm triệu chín trăm mười hai nghìn bảy trăm năm mươi bảy đồng ./.
+485912757.22	VND	EN	Four Hundred Eighty Five Million Nine Hundred Twelve Thousand Seven Hundred Fifty Seven VND.
+485912757.22	USD	VN	Bốn trăm tám mươi lăm triệu, chín trăm mười hai nghìn, bảy trăm năm mươi bảy đô la Mỹ và hai mươi hai xu
+485912757.22	USD	EN	Four Hundred Eighty Five Million Nine Hundred Twelve Thousand Seven Hundred Fifty Seven Dollars And Twenty Two cent.
+485912757.22	EUR	VN	Bốn trăm tám mươi lăm triệu, chín trăm mười hai nghìn, bảy trăm năm mươi bảy EURO và hai mươi hai xu
+485912757.22	JPY	VN	Bốn trăm tám mươi lăm triệu, chín trăm mười hai nghìn, bảy trăm năm mươi bảy JPY và hai mươi hai xu
+485912757.22	JPY	EN	Four Hundred Eighty Five Million Nine Hundred Twelve Thousand Seven Hundred Fifty Seven JPY And Twenty Two xu.
+565486.8	VND	VN	Năm trăm sáu mươi lăm nghìn bốn trăm tám mươi sáu đồng ./.
+565486.8	VND	EN	Five Hundred Sixty Five Thousand Four Hundred Eighty Six VND.
+565486.8	USD	VN	Năm trăm sáu mươi lăm nghìn, bốn trăm tám mươi sáu đô la Mỹ và tám mươi xu
+565486.8	USD	EN	Five Hundred Sixty Five Thousand Four Hundred Eighty Six Dollars And Eighty  cent.
+565486.8	EUR	VN	Năm trăm sáu mươi lăm nghìn, bốn trăm tám mươi sáu EURO và tám mươi xu
+565486.8	JPY	VN	Năm trăm sáu mươi lăm nghìn, bốn trăm tám mươi sáu JPY và tám mươi xu
+565486.8	JPY	EN	Five Hundred Sixty Five Thousand Four Hundred Eighty Six JPY And Eighty  xu.
+6	VND	VN	Sáu đồng ./.
+6	VND	EN	Six VND.
+6	USD	VN	Sáu đô la Mỹ.
+6	USD	EN	Six Dollars Only.
+6	EUR	VN	Sáu EURO.
+6	JPY	VN	Sáu JPY.
+6	JPY	EN	Six JPY Only.
+391405503.45	VND	VN	Ba trăm chín mươi mốt triệu bốn trăm lẻ năm nghìn năm trăm lẻ ba đồng ./.
+391405503.45	VND	EN	Three Hundred Ninety One Million Four Hundred Five Thousand Five Hundred Three VND.
+391405503.45	USD	VN	Ba trăm chín mươi mốt triệu, bốn trăm lẻ năm nghìn, năm trăm lẻ ba đô la Mỹ và bốn mươi lăm xu
+391405503.45	USD	EN	Three Hundred Ninety One Million Four Hundred Five Thousand Five Hundred Three Dollars And Forty Five cent.
+391405503.45	EUR	VN	Ba trăm chín mươi mốt triệu, bốn trăm lẻ năm nghìn, năm trăm lẻ ba EURO và bốn mươi lăm xu
+391405503.45	JPY	VN	Ba trăm chín mươi mốt triệu, bốn trăm lẻ năm nghìn, năm trăm lẻ ba JPY và bốn mươi lăm xu
+391405503.45	JPY	EN	Three Hundred Ninety One Million Four Hundred Five Thousand Five Hundred Three JPY And Forty Five xu.
+81.2	VND	VN	Tám mươi mốt đồng ./.
+81.2	VND	EN	Eighty One VND.
+81.2	USD	VN	Tám mươi mốt đô la Mỹ và hai mươi xu
+81.2	USD	EN	Eighty One Dollars And Twenty  cent.
+81.2	EUR	VN	Tám mươi mốt EURO và hai mươi xu
+81.2	JPY	VN	Tám mươi mốt JPY và hai mươi xu
+81.2	JPY	EN	Eighty One JPY And Twenty  xu.
+33.5	VND	VN	Ba mươi ba đồng ./.
+33.5	VND	EN	Thirty Three VND.
+33.5	USD	VN	Ba mươi ba đô la Mỹ và năm mươi xu
+33.5	USD	EN	Thirty Three Dollars And Fifty  cent.
+33.5	EUR	VN	Ba mươi ba EURO và năm mươi xu
+33.5	JPY	VN	Ba mươi ba JPY và năm mươi xu
+33.5	JPY	EN	Thirty Three JPY And Fifty  xu.
+56139661910.08	VND	VN	Năm mươi sáu tỷ một trăm ba mươi chín triệu sáu trăm sáu mươi mốt nghìn chín trăm mười đồng ./.
+56139661910.08	VND	EN	Fifty SixBillion One Hundred Thirty Nine Million Six Hundred Sixty One Thousand Nine Hundred Ten VND.
+56139661910.08	USD	VN	Năm mươi sáu tỷ, một trăm ba mươi chín triệu, sáu trăm sáu mươi mốt nghìn, chín trăm mười đô la Mỹ và tám xu
+56139661910.08	USD	EN	Fifty SixBillion One Hundred Thirty Nine Million Six Hundred Sixty One Thousand Nine Hundred Ten Dollars And Eight cent.
+56139661910.08	EUR	VN	Năm mươi sáu tỷ, một trăm ba mươi chín triệu, sáu trăm sáu mươi mốt nghìn, chín trăm mười EURO và tám xu
+56139661910.08	JPY	VN	Năm mươi sáu tỷ, một trăm ba mươi chín triệu, sáu trăm sáu mươi mốt nghìn, chín trăm mười JPY và tám xu
+56139661910.08	JPY	EN	Fifty SixBillion One Hundred Thirty Nine Million Six Hundred Sixty One Thousand Nine Hundred Ten JPY And Eight xu.
+80981.54	VND	VN	Tám mươi nghìn chín trăm tám mươi mốt đồng ./.
+80981.54	VND	EN	Eighty Thousand Nine Hundred Eighty One VND.
+80981.54	USD	VN	Tám mươi nghìn, chín trăm tám mươi mốt đô la Mỹ và năm mươi bốn xu
+80981.54	USD	EN	Eighty Thousand Nine Hundred Eighty One Dollars And Fifty Four cent.
+80981.54	EUR	VN	Tám mươi nghìn, chín trăm tám mươi mốt EURO và năm mươi bốn xu
+80981.54	JPY	VN	Tám mươi nghìn, chín trăm tám mươi mốt JPY và năm mươi bốn xu
+80981.54	JPY	EN	Eighty Thousand Nine Hundred Eighty One JPY And Fifty Four xu.
+46	VND	VN	Bốn mươi sáu đồng ./.
+46	VND	EN	Forty Six VND.
+46	USD	VN	Bốn mươi sáu đô la Mỹ.
+46	USD	EN	Forty Six Dollars Only.
+46	EUR	VN	Bốn mươi sáu EURO.
+46	JPY	VN	Bốn mươi sáu JPY.
+46	JPY	EN	Forty Six JPY Only.
+7450667	VND	VN	Bảy triệu bốn trăm năm mươi nghìn sáu trăm sáu mươi bảy đồng ./.
+7450667	VND	EN	Seven Million Four Hundred Fifty Thousand Six Hundred Sixty Seven VND.
+7450667	USD	VN	Bảy triệu, bốn trăm năm mươi nghìn, sáu trăm sáu mươi bảy đô la Mỹ.
+7450667	USD	EN	Seven Million Four Hundred Fifty Thousand Six Hundred Sixty Seven Dollars Only.
+7450667	EUR	VN	Bảy triệu, bốn trăm năm mươi nghìn, sáu trăm sáu mươi bảy EURO.
+7450667	JPY	VN	Bảy triệu, bốn trăm năm mươi nghìn, sáu trăm sáu mươi bảy JPY.
+7450667	JPY	EN	Seven Million Four Hundred Fifty Thousand Six Hundred Sixty Seven JPY Only.
+770771874	VND	VN	Bảy trăm bảy mươi triệu bảy trăm bảy mươi mốt nghìn tám trăm bảy mươi bốn đồng ./.
+770771874	VND	EN	Seven Hundred Seventy Million Seven Hundred Seventy One Thousand Eight Hundred Seventy Four VND.
+770771874	USD	VN	Bảy trăm bảy mươi triệu, bảy trăm bảy mươi mốt nghìn, tám trăm bảy mươi bốn đô la Mỹ.
+770771874	USD	EN	Seven Hundred Seventy Million Seven Hundred Seventy One Thousand Eight Hundred Seventy Four Dollars Only.
+770771874	EUR	VN	Bảy trăm bảy mươi triệu, bảy trăm bảy mươi mốt nghìn, tám trăm bảy mươi bốn EURO.
+770771874	JPY	VN	Bảy trăm bảy mươi triệu, bảy trăm bảy mươi mốt nghìn, tám trăm bảy mươi bốn JPY.
+770771874	JPY	EN	Seven Hundred Seventy Million Seven Hundred Seventy One Thousand Eight Hundred Seventy Four JPY Only.
+5323824438	VND	VN	Năm tỷ ba trăm hai mươi ba triệu tám trăm hai mươi bốn nghìn bốn trăm ba mươi tám đồng ./.
+5323824438	VND	EN	FiveBillion Three Hundred Twenty Three Million Eight Hundred Twenty Four Thousand Four Hundred Thirty Eight VND.
+5323824438	USD	VN	Năm tỷ, ba trăm hai mươi ba triệu, tám trăm hai mươi bốn nghìn, bốn trăm ba mươi tám đô la Mỹ.
+5323824438	USD	EN	FiveBillion Three Hundred Twenty Three Million Eight Hundred Twenty Four Thousand Four Hundred Thirty Eight Dollars Only.
+5323824438	EUR	VN	Năm tỷ, ba trăm hai mươi ba triệu, tám trăm hai mươi bốn nghìn, bốn trăm ba mươi tám EURO.
+5323824438	JPY	VN	Năm tỷ, ba trăm hai mươi ba triệu, tám trăm hai mươi bốn nghìn, bốn trăm ba mươi tám JPY.
+5323824438	JPY	EN	FiveBillion Three Hundred Twenty Three Million Eight Hundred Twenty Four Thousand Four Hundred Thirty Eight JPY Only.
+748748649.3	VND	VN	Bảy trăm bốn mươi tám triệu bảy trăm bốn mươi tám nghìn sáu trăm bốn mươi chín đồng ./.
+748748649.3	VND	EN	Seven Hundred Forty Eight Million Seven Hundred Forty Eight Thousand Six Hundred Forty Nine VND.
+748748649.3	USD	VN	Bảy trăm bốn mươi tám triệu, bảy trăm bốn mươi tám nghìn, sáu trăm bốn mươi chín đô la Mỹ và ba mươi xu
+748748649.3	USD	EN	Seven Hundred Forty Eight Million Seven Hundred Forty Eight Thousand Six Hundred Forty Nine Dollars And Thirty  cent.
+748748649.3	EUR	VN	Bảy trăm bốn mươi tám triệu, bảy trăm bốn mươi tám nghìn, sáu trăm bốn mươi chín EURO và ba mươi xu
+748748649.3	JPY	VN	Bảy trăm bốn mươi tám triệu, bảy trăm bốn mươi tám nghìn, sáu trăm bốn mươi chín JPY và ba mươi xu
+748748649.3	JPY	EN	Seven Hundred Forty Eight Million Seven Hundred Forty Eight Thousand Six Hundred Forty Nine JPY And Thirty  xu.
+947796400146.5	VND	VN	Chín trăm bốn mươi bảy tỷ bảy trăm chín mươi sáu triệu bốn trăm nghìn một trăm bốn mươi sáu đồng ./.
+947796400146.5	VND	EN	Nine Hundred Forty SevenBillion Seven Hundred Ninety Six Million Four Hundred Thousand One Hundred Forty Six VND.
+947796400146.5	USD	VN	Chín trăm bốn mươi bảy tỷ, bảy trăm chín mươi sáu triệu, bốn trăm nghìn, một trăm bốn mươi sáu đô la Mỹ và năm mươi xu
+947796400146.5	USD	EN	Nine Hundred Forty SevenBillion Seven Hundred Ninety Six Million Four Hundred Thousand One Hundred Forty Six Dollars And Fifty  cent.
+947796400146.5	EUR	VN	Chín trăm bốn mươi bảy tỷ, bảy trăm chín mươi sáu triệu, bốn trăm nghìn, một trăm bốn mươi sáu EURO và năm mươi xu
+947796400146.5	JPY	VN	Chín trăm bốn mươi bảy tỷ, bảy trăm chín mươi sáu triệu, bốn trăm nghìn, một trăm bốn mươi sáu JPY và năm mươi xu
+947796400146.5	JPY	EN	Nine Hundred Forty SevenBillion Seven Hundred Ninety Six Million Four Hundred Thousand One Hundred Forty Six JPY And Fifty  xu.
+176771	VND	VN	Một trăm bảy mươi sáu nghìn bảy trăm bảy mươi mốt đồng ./.
+176771	VND	EN	One Hundred Seventy Six Thousand Seven Hundred Seventy One VND.
+176771	USD	VN	Một trăm bảy mươi sáu nghìn, bảy trăm bảy mươi mốt đô la Mỹ.
+176771	USD	EN	One Hundred Seventy Six Thousand Seven Hundred Seventy One Dollars Only.
+176771	EUR	VN	Một trăm bảy mươi sáu nghìn, bảy trăm bảy mươi mốt EURO.
+176771	JPY	VN	Một trăm bảy mươi sáu nghìn, bảy trăm bảy mươi mốt JPY.
+176771	JPY	EN	One Hundred Seventy Six Thousand Seven Hundred Seventy One JPY Only.
+43107539202.6	VND	VN	Bốn mươi ba tỷ một trăm lẻ bảy triệu năm trăm ba mươi chín nghìn hai trăm lẻ hai đồng ./.
+43107539202.6	VND	EN	Forty ThreeBillion One Hundred Seven Million Five Hundred Thirty Nine Thousand Two Hundred Two VND.
+43107539202.6	USD	VN	Bốn mươi ba tỷ, một trăm lẻ bảy triệu, năm trăm ba mươi chín nghìn, hai trăm lẻ hai đô la Mỹ và sáu mươi xu
+43107539202.6	USD	EN	Forty ThreeBillion One Hundred Seven Million Five Hundred Thirty Nine Thousand Two Hundred Two Dollars And Sixty  cent.
+43107539202.6	EUR	VN	Bốn mươi ba tỷ, một trăm lẻ bảy triệu, năm trăm ba mươi chín nghìn, hai trăm lẻ hai EURO và sáu mươi xu
+43107539202.6	JPY	VN	Bốn mươi ba tỷ, một trăm lẻ bảy triệu, năm trăm ba mươi chín nghìn, hai trăm lẻ hai JPY và sáu mươi xu
+43107539202.6	JPY	EN	Forty ThreeBillion One Hundred Seven Million Five Hundred Thirty Nine Thousand Two Hundred Two JPY And Sixty  xu.
+8353216	VND	VN	Tám triệu ba trăm năm mươi ba nghìn hai trăm mười sáu đồng ./.
+8353216	VND	EN	Eight Million Three Hundred Fifty Three Thousand Two Hundred Sixteen VND.
+8353216	USD	VN	Tám triệu, ba trăm năm mươi ba nghìn, hai trăm mười sáu đô la Mỹ.
+8353216	USD	EN	Eight Million Three Hundred Fifty Three Thousand Two Hundred Sixteen Dollars Only.
+8353216	EUR	VN	Tám triệu, ba trăm năm mươi ba nghìn, hai trăm mười sáu EURO.
+8353216	JPY	VN	Tám triệu, ba trăm năm mươi ba nghìn, hai trăm mười sáu JPY.
+8353216	JPY	EN	Eight Million Three Hundred Fifty Three Thousand Two Hundred Sixteen JPY Only.
+7667.4	VND	VN	Bảy nghìn sáu trăm sáu mươi bảy đồng ./.
+7667.4	VND	EN	Seven Thousand Six Hundred Sixty Seven VND.
+7667.4	USD	VN	Bảy nghìn, sáu trăm sáu mươi bảy đô la Mỹ và bốn mươi xu
+7667.4	USD	EN	Seven Thousand Six Hundred Sixty Seven Dollars And Forty  cent.
+7667.4	EUR	VN	Bảy nghìn, sáu trăm sáu mươi bảy EURO và bốn mươi xu
+7667.4	JPY	VN	Bảy nghìn, sáu trăm sáu mươi bảy JPY và bốn mươi xu
+7667.4	JPY	EN	Seven Thousand Six Hundred Sixty Seven JPY And Forty  xu.
+683.5	VND	VN	Sáu trăm tám mươi ba đồng ./.
+683.5	VND	EN	Six Hundred Eighty Three VND.
+683.5	USD	VN	Sáu trăm tám mươi ba đô la Mỹ và năm mươi xu
+683.5	USD	EN	Six Hundred Eighty Three Dollars And Fifty  cent.
+683.5	EUR	VN	Sáu trăm tám mươi ba EURO và năm mươi xu
+683.5	JPY	VN	Sáu trăm tám mươi ba JPY và năm mươi xu
+683.5	JPY	EN	Six Hundred Eighty Three JPY And Fifty  xu.
+8.2	VND	VN	Tám đồng ./.
+8.2	VND	EN	Eight VND.
+8.2	USD	VN	Tám đô la Mỹ và hai mươi xu
+8.2	USD	EN	Eight Dollars And Twenty  cent.
+8.2	EUR	VN	Tám EURO và hai mươi xu
+8.2	JPY	VN	Tám JPY và hai mươi xu
+8.2	JPY	EN	Eight JPY And Twenty  xu.
+40304432967.8	VND	VN	Bốn mươi tỷ ba trăm lẻ bốn triệu bốn trăm ba mươi hai nghìn chín trăm sáu mươi bảy đồng ./.
+40304432967.8	VND	EN	FortyBillion Three Hundred Four Million Four Hundred Thirty Two Thousand Nine Hundred Sixty Seven VND.
+40304432967.8	USD	VN	Bốn mươi tỷ, ba trăm lẻ bốn triệu, bốn trăm ba mươi hai nghìn, chín trăm sáu mươi bảy đô la Mỹ và tám mươi xu
+40304432967.8	USD	EN	FortyBillion Three Hundred Four Million Four Hundred Thirty Two Thousand Nine Hundred Sixty Seven Dollars And Eighty  cent.
+40304432967.8	EUR	VN	Bốn mươi tỷ, ba trăm lẻ bốn triệu, bốn trăm ba mươi hai nghìn, chín trăm sáu mươi bảy EURO và tám mươi xu
+40304432967.8	JPY	VN	Bốn mươi tỷ, ba trăm lẻ bốn triệu, bốn trăm ba mươi hai nghìn, chín trăm sáu mươi bảy JPY và tám mươi xu
+40304432967.8	JPY	EN	FortyBillion Three Hundred Four Million Four Hundred Thirty Two Thousand Nine Hundred Sixty Seven JPY And Eighty  xu.
+79456251	VND	VN	Bảy mươi chín triệu bốn trăm năm mươi sáu nghìn hai trăm năm mươi mốt đồng ./.
+79456251	VND	EN	Seventy Nine Million Four Hundred Fifty Six Thousand Two Hundred Fifty One VND.
+79456251	USD	VN	Bảy mươi chín triệu, bốn trăm năm mươi sáu nghìn, hai trăm năm mươi mốt đô la Mỹ.
+79456251	USD	EN	Seventy Nine Million Four Hundred Fifty Six Thousand Two Hundred Fifty One Dollars Only.
+79456251	EUR	VN	Bảy mươi chín triệu, bốn trăm năm mươi sáu nghìn, hai trăm năm mươi mốt EURO.
+79456251	JPY	VN	Bảy mươi chín triệu, bốn trăm năm mươi sáu nghìn, hai trăm năm mươi mốt JPY.
+79456251	JPY	EN	Seventy Nine Million Four Hundred Fifty Six Thousand Two Hundred Fifty One JPY Only.
+7628	VND	VN	Bảy nghìn sáu trăm hai mươi tám đồng ./.
+7628	VND	EN	Seven Thousand Six Hundred Twenty Eight VND.
+7628	USD	VN	Bảy nghìn, sáu trăm hai mươi tám đô la Mỹ.
+7628	USD	EN	Seven Thousand Six Hundred Twenty Eight Dollars Only.
+7628	EUR	VN	Bảy nghìn, sáu trăm hai mươi tám EURO.
+7628	JPY	VN	Bảy nghìn, sáu trăm hai mươi tám JPY.
+7628	JPY	EN	Seven Thousand Six Hundred Twenty Eight JPY Only.
+42075174.5	VND	VN	Bốn mươi hai triệu không trăm bảy mươi lăm nghìn một trăm bảy mươi bốn đồng ./.
+42075174.5	VND	EN	Forty Two Million Seventy Five Thousand One Hundred Seventy Four VND.
+42075174.5	USD	VN	Bốn mươi hai triệu, không trăm bảy mươi lăm nghìn, một trăm bảy mươi bốn đô la Mỹ và năm mươi xu
+42075174.5	USD	EN	Forty Two Million Seventy Five Thousand One Hundred Seventy Four Dollars And Fifty  cent.
+42075174.5	EUR	VN	Bốn mươi hai triệu, không trăm bảy mươi lăm nghìn, một trăm bảy mươi bốn EURO và năm mươi xu
+42075174.5	JPY	VN	Bốn mươi hai triệu, không trăm bảy mươi lăm nghìn, một trăm bảy mươi bốn JPY và năm mươi xu
+42075174.5	JPY	EN	Forty Two Million Seventy Five Thousand One Hundred Seventy Four JPY And Fifty  xu.
+15732757.61	VND	VN	Mười lăm triệu bảy trăm ba mươi hai nghìn bảy trăm năm mươi bảy đồng ./.
+15732757.61	VND	EN	Fifteen Million Seven Hundred Thirty Two Thousand Seven Hundred Fifty Seven VND.
+15732757.61	USD	VN	Mười lăm triệu, bảy trăm ba mươi hai nghìn, bảy trăm năm mươi bảy đô la Mỹ và sáu mươi mốt xu
+15732757.61	USD	EN	Fifteen Million Seven Hundred Thirty Two Thousand Seven Hundred Fifty Seven Dollars And Sixty One cent.
+15732757.61	EUR	VN	Mười lăm triệu, bảy trăm ba mươi hai nghìn, bảy trăm năm mươi bảy EURO và sáu mươi mốt xu
+15732757.61	JPY	VN	Mười lăm triệu, bảy trăm ba mươi hai nghìn, bảy trăm năm mươi bảy JPY và sáu mươi mốt xu
+15732757.61	JPY	EN	Fifteen Million Seven Hundred Thirty Two Thousand Seven Hundred Fifty Seven JPY And Sixty One xu.
+14115079.92	VND	VN	Mười bốn triệu một trăm mười lăm nghìn không trăm bảy mươi chín đồng ./.
+14115079.92	VND	EN	Fourteen Million One Hundred Fifteen Thousand Seventy Nine VND.
+14115079.92	USD	VN	Mười bốn triệu, một trăm mười lăm nghìn, không trăm bảy mươi chín đô la Mỹ và chín mươi hai xu
+14115079.92	USD	EN	Fourteen Million One Hundred Fifteen Thousand Seventy Nine Dollars And Ninety Two cent.
+14115079.92	EUR	VN	Mười bốn triệu, một trăm mười lăm nghìn, không trăm bảy mươi chín EURO và chín mươi hai xu
+14115079.92	JPY	VN	Mười bốn triệu, một trăm mười lăm nghìn, không trăm bảy mươi chín JPY và chín mươi hai xu
+14115079.92	JPY	EN	Fourteen Million One Hundred Fifteen Thousand Seventy Nine JPY And Ninety Two xu.
+8	VND	VN	Tám đồng ./.
+8	VND	EN	Eight VND.
+8	USD	VN	Tám đô la Mỹ.
+8	USD	EN	Eight Dollars Only.
+8	EUR	VN	Tám EURO.
+8	JPY	VN	Tám JPY.
+8	JPY	EN	Eight JPY Only.
+66487698474.19	VND	VN	Sáu mươi sáu tỷ bốn trăm tám mươi bảy triệu sáu trăm chín mươi tám nghìn bốn trăm bảy mươi bốn đồng ./.
+66487698474.19	VND	EN	Sixty SixBillion Four Hundred Eighty Seven Million Six Hundred Ninety Eight Thousand Four Hundred Seventy Four VND.
+66487698474.19	USD	VN	Sáu mươi sáu tỷ, bốn trăm tám mươi bảy triệu, sáu trăm chín mươi tám nghìn, bốn trăm bảy mươi bốn đô la Mỹ và mười chín xu
+66487698474.19	USD	EN	Sixty SixBillion Four Hundred Eighty Seven Million Six Hundred Ninety Eight Thousand Four Hundred Seventy Four Dollars And Nineteen cent.
+66487698474.19	EUR	VN	Sáu mươi sáu tỷ, bốn trăm tám mươi bảy triệu, sáu trăm chín mươi tám nghìn, bốn trăm bảy mươi bốn EURO và mười chín xu
+66487698474.19	JPY	VN	Sáu mươi sáu tỷ, bốn trăm tám mươi bảy triệu, sáu trăm chín mươi tám nghìn, bốn trăm bảy mươi bốn JPY và mười chín xu
+66487698474.19	JPY	EN	Sixty SixBillion Four Hundred Eighty Seven Million Six Hundred Ninety Eight Thousand Four Hundred Seventy Four JPY And Nineteen xu.
+2	VND	VN	Hai đồng ./.
+2	VND	EN	Two VND.
+2	USD	VN	Hai đô la Mỹ.
+2	USD	EN	Two Dollars Only.
+2	EUR	VN	Hai EURO.
+2	JPY	VN	Hai JPY.
+2	JPY	EN	Two JPY Only.
+67360119040.8	VND	VN	Sáu mươi bảy tỷ ba trăm sáu mươi triệu một trăm mười chín nghìn không trăm bốn mươi đồng ./.
+67360119040.8	VND	EN	Sixty SevenBillion Three Hundred Sixty Million One Hundred Nineteen Thousand Forty VND.
+67360119040.8	USD	VN	Sáu mươi bảy tỷ, ba trăm sáu mươi triệu, một trăm mười chín nghìn, không trăm bốn mươi đô la Mỹ và tám mươi xu
+67360119040.8	USD	EN	Sixty SevenBillion Three Hundred Sixty Million One Hundred Nineteen Thousand Forty Dollars And Eighty  cent.
+67360119040.8	EUR	VN	Sáu mươi bảy tỷ, ba trăm sáu mươi triệu, một trăm mười chín nghìn, không trăm bốn mươi EURO và tám mươi xu
+67360119040.8	JPY	VN	Sáu mươi bảy tỷ, ba trăm sáu mươi triệu, một trăm mười chín nghìn, không trăm bốn mươi JPY và tám mươi xu
+67360119040.8	JPY	EN	Sixty SevenBillion Three Hundred Sixty Million One Hundred Nineteen Thousand Forty JPY And Eighty  xu.
+72425074.4	VND	VN	Bảy mươi hai triệu bốn trăm hai mươi lăm nghìn không trăm bảy mươi bốn đồng ./.
+72425074.4	VND	EN	Seventy Two Million Four Hundred Twenty Five Thousand Seventy Four VND.
+72425074.4	USD	VN	Bảy mươi hai triệu, bốn trăm hai mươi lăm nghìn, không trăm bảy mươi bốn đô la Mỹ và bốn mươi xu
+72425074.4	USD	EN	Seventy Two Million Four Hundred Twenty Five Thousand Seventy Four Dollars And Forty  cent.
+72425074.4	EUR	VN	Bảy mươi hai triệu, bốn trăm hai mươi lăm nghìn, không trăm bảy mươi bốn EURO và bốn mươi xu
+72425074.4	JPY	VN	Bảy mươi hai triệu, bốn trăm hai mươi lăm nghìn, không trăm bảy mươi bốn JPY và bốn mươi xu
+72425074.4	JPY	EN	Seventy Two Million Four Hundred Twenty Five Thousand Seventy Four JPY And Forty  xu.
+528007	VND	VN	Năm trăm hai mươi tám nghìn không trăm lẻ bảy đồng ./.
+528007	VND	EN	Five Hundred Twenty Eight Thousand Seven VND.
+528007	USD	VN	Năm trăm hai mươi tám nghìn, không trăm lẻ bảy đô la Mỹ.
+528007	USD	EN	Five Hundred Twenty Eight Thousand Seven Dollars Only.
+528007	EUR	VN	Năm trăm hai mươi tám nghìn, không trăm lẻ bảy EURO.
+528007	JPY	VN	Năm trăm hai mươi tám nghìn, không trăm lẻ bảy JPY.
+528007	JPY	EN	Five Hundred Twenty Eight Thousand Seven JPY Only.
+16257.19	VND	VN	Mười sáu nghìn hai trăm năm mươi bảy đồng ./.
+16257.19	VND	EN	Sixteen Thousand Two Hundred Fifty Seven VND.
+16257.19	USD	VN	Mười sáu nghìn, hai trăm năm mươi bảy đô la Mỹ và mười chín xu
+16257.19	USD	EN	Sixteen Thousand Two Hundred Fifty Seven Dollars And Nineteen cent.
+16257.19	EUR	VN	Mười sáu nghìn, hai trăm năm mươi bảy EURO và mười chín xu
+16257.19	JPY	VN	Mười sáu nghìn, hai trăm năm mươi bảy JPY và mười chín xu
+16257.19	JPY	EN	Sixteen Thousand Two Hundred Fifty Seven JPY And Nineteen xu.
+4093341.1	VND	VN	Bốn triệu không trăm chín mươi ba nghìn ba trăm bốn mươi mốt đồng ./.
+4093341.1	VND	EN	Four Million Ninety Three Thousand Three Hundred Forty One VND.
+4093341.1	USD	VN	Bốn triệu, không trăm chín mươi ba nghìn, ba trăm bốn mươi mốt đô la Mỹ và mười xu
+4093341.1	USD	EN	Four Million Ninety Three Thousand Three Hundred Forty One Dollars And Ten cent.
+4093341.1	EUR	VN	Bốn triệu, không trăm chín mươi ba nghìn, ba trăm bốn mươi mốt EURO và mười xu
+4093341.1	JPY	VN	Bốn triệu, không trăm chín mươi ba nghìn, ba trăm bốn mươi mốt JPY và mười xu
+4093341.1	JPY	EN	Four Million Ninety Three Thousand Three Hundred Forty One JPY And Ten xu.
+2268.5	VND	VN	Hai nghìn hai trăm sáu mươi tám đồng ./.
+2268.5	VND	EN	Two Thousand Two Hundred Sixty Eight VND.
+2268.5	USD	VN	Hai nghìn, hai trăm sáu mươi tám đô la Mỹ và năm mươi xu
+2268.5	USD	EN	Two Thousand Two Hundred Sixty Eight Dollars And Fifty  cent.
+2268.5	EUR	VN	Hai nghìn, hai trăm sáu mươi tám EURO và năm mươi xu
+2268.5	JPY	VN	Hai nghìn, hai trăm sáu mươi tám JPY và năm mươi xu
+2268.5	JPY	EN	Two Thousand Two Hundred Sixty Eight JPY And Fifty  xu.
+62869211.7	VND	VN	Sáu mươi hai triệu tám trăm sáu mươi chín nghìn hai trăm mười một đồng ./.
+62869211.7	VND	EN	Sixty Two Million Eight Hundred Sixty Nine Thousand Two Hundred Eleven VND.
+62869211.7	USD	VN	Sáu mươi hai triệu, tám trăm sáu mươi chín nghìn, hai trăm mười một đô la Mỹ và bảy mươi xu
+62869211.7	USD	EN	Sixty Two Million Eight Hundred Sixty Nine Thousand Two Hundred Eleven Dollars And Seventy  cent.
+62869211.7	EUR	VN	Sáu mươi hai triệu, tám trăm sáu mươi chín nghìn, hai trăm mười một EURO và bảy mươi xu
+62869211.7	JPY	VN	Sáu mươi hai triệu, tám trăm sáu mươi chín nghìn, hai trăm mười một JPY và bảy mươi xu
+62869211.7	JPY	EN	Sixty Two Million Eight Hundred Sixty Nine Thousand Two Hundred Eleven JPY And Seventy  xu.

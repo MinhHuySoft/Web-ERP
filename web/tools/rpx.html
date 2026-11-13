@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi" data-theme="ribbon-classic">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiểm mẫu in .rpx</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/layers.css">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/fields.css">
+  <link rel="stylesheet" href="../css/print-doc.css">
+  <style>
+    @layer components {
+      .r-page { max-width: 1400px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 16px; }
+      .r-page h1 { font-size: var(--erp-fs-xl); }
+      .r-card { background: var(--erp-surface); border: 1px solid var(--erp-border); border-radius: var(--erp-radius-lg); padding: 16px; display: grid; gap: 10px; }
+      .r-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .r-sum { display: flex; gap: 8px; flex-wrap: wrap; }
+      .r-sum span { padding: 4px 10px; border-radius: 999px; font-weight: 600; background: var(--erp-surface-2); }
+      .r-split { display: grid; grid-template-columns: minmax(320px, 420px) 1fr; gap: 16px; align-items: start; }
+      .r-list { max-height: 75vh; overflow: auto; border: 1px solid var(--erp-border); border-radius: var(--erp-radius); }
+      .r-list table { width: 100%; border-collapse: collapse; font-size: var(--erp-fs-sm); }
+      .r-list th, .r-list td { padding: 4px 8px; border-bottom: 1px solid var(--erp-border); text-align: start; vertical-align: top; }
+      .r-list tr[aria-selected="true"] td { background: var(--erp-primary-soft); }
+      .r-list tbody tr { cursor: pointer; }
+      .r-lv { font-weight: 600; white-space: nowrap; }
+      .r-lv[data-lv="manual"] { color: var(--erp-danger); }
+      .r-lv[data-lv="later"], .r-lv[data-lv="layout"] { color: var(--erp-warning); }
+      .r-lv[data-lv="ok"] { color: var(--erp-success); }
+      .r-detail ul { margin: 0; padding-inline-start: 18px; color: var(--erp-text-muted); font-size: var(--erp-fs-sm); }
+      .r-detail .erp-print__view { max-height: 75vh; }
+      @media (max-width: 900px) { .r-split { grid-template-columns: 1fr; } }
+    }
+  </style>
+</head>
+<body>
+  <main class="r-page">
+    <h1>Kiểm mẫu in ActiveReports (.rpx)</h1>
+    <p class="erp-muted">Chọn thư mục <code>Reports</code> của ERP.NET (hoặc vài tệp <code>.rpx</code>). Trang chuyển từng mẫu sang
+      <code>erp-print-template/1</code> và dựng thử bằng dữ liệu giả, ngay trong trình duyệt — không tải gì lên máy chủ, không chạy
+      script trong mẫu. Mức: <b>ok</b> tự chuyển được · <b>layout</b> cần hiệu chỉnh vị trí · <b>later</b> có tính năng giai đoạn sau ·
+      <b>manual</b> cần sửa tay trên web. Xem <code>docs/kien-truc/06-mau-in.md</code>.</p>
+    <section class="r-card">
+      <div class="r-row">
+        <label class="erp-btn erp-btn--primary">Chọn thư mục…<input id="dir" type="file" webkitdirectory multiple hidden></label>
+        <label class="erp-btn">Chọn tệp .rpx…<input id="files" type="file" accept=".rpx" multiple hidden></label>
+        <span id="progress" class="erp-muted"></span>
+      </div>
+      <div class="r-sum" id="sum"></div>
+    </section>
+    <section class="r-split" id="out" hidden>
+      <div class="r-list"><table><thead><tr><th>Tệp</th><th>Mức</th><th>Trang</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="r-card r-detail" id="detail"><p class="erp-muted">Chọn một mẫu để xem cảnh báo và bản dựng thử.</p></div>
+    </section>
+  </main>
+  <script type="module" src="../js/tools/rpx-check.js"></script>
+</body>
+</html>

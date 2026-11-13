@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3.1" PrintWidth="10772" DocumentName="ARNet Document" ScriptLang="VB.NET" MasterReport="0">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-size: 10pt; color: Black" />
+  </StyleSheet>
+  <Sections>
+    <Section Type="ReportHeader" Name="ReportHeader" Visible="0" Height="0" />
+    <Section Type="PageHeader" Name="PageHeader" Visible="0" Height="0" />
+    <Section Type="GroupHeader" Name="GroupHeader1" Height="3118" DataField="DocumentID" NewPage="1" KeepTogether="1" RepeatStyle="1">
+      <Control Type="AR.Label" Name="SysCom1" Left="0" Top="0" Width="6236" Height="283" Caption="" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold" />
+      <Control Type="AR.Label" Name="SysCom2" Left="0" Top="283" Width="6236" Height="227" Caption="" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-size: 8pt" />
+      <Control Type="AR.Label" Name="aaTitle" Left="0" Top="680" Width="10772" Height="454" Caption="HÓA ĐƠN BÁN HÀNG" Style="font-family: Arial; font-size: 16pt; font-weight: bold; text-align: center" />
+      <Control Type="AR.Field" Name="DATETIMEREPORT_01" Left="0" Top="1134" Width="10772" Height="283" DataField="DocumentDate" Text="Ngày {D} tháng {M} năm {Y}" CanGrow="0" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-style: italic; text-align: center" />
+      <Control Type="AR.Label" Name="aaSo" Left="7937" Top="1417" Width="850" Height="283" Caption="Số:" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Field" Name="SoCT" Left="8787" Top="1417" Width="1984" Height="283" DataField="DocumentID" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold" />
+      <Control Type="AR.Label" Name="aaKH" Left="0" Top="1757" Width="1701" Height="283" Caption="Khách hàng:" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Field" Name="ObjectName" Left="1701" Top="1757" Width="9071" Height="283" DataField="ObjectName" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold" />
+      <Control Type="AR.Label" Name="aaDC" Left="0" Top="2041" Width="1701" Height="283" Caption="Địa chỉ:" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Field" Name="Address" Left="1701" Top="2041" Width="9071" Height="283" DataField="Address" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Label" Name="aaMST" Left="0" Top="2324" Width="1701" Height="283" Caption="Mã số thuế:" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Field" Name="TaxCode" Left="1701" Top="2324" Width="3402" Height="283" DataField="TaxCode" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Label" Name="hd0" Left="0" Top="2721" Width="567" Height="397" Caption="STT" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd1" Left="567" Top="2721" Width="1417" Height="397" Caption="Mã hàng" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd2" Left="1984" Top="2721" Width="3969" Height="397" Caption="Tên hàng hóa, dịch vụ" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd3" Left="5953" Top="2721" Width="850" Height="397" Caption="ĐVT" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd4" Left="6803" Top="2721" Width="1134" Height="397" Caption="Số lượng" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd5" Left="7937" Top="2721" Width="1247" Height="397" Caption="Đơn giá" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="hd6" Left="9184" Top="2721" Width="1587" Height="397" Caption="Thành tiền" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="340" KeepTogether="1">
+      <Control Type="AR.Field" Name="STT" Left="0" Top="0" Width="567" Height="340" DataField="ItemID" SummaryType="3" SummaryFunc="2" SummaryRunning="1" SummaryGroup="GroupHeader1" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="ItemID" Left="567" Top="0" Width="1417" Height="340" DataField="ItemID" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="ItemName" Left="1984" Top="0" Width="3969" Height="340" DataField="ItemName" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " Tag="isBold" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="UnitID" Left="5953" Top="0" Width="850" Height="340" DataField="UnitID" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: center" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="Quantity" Left="6803" Top="0" Width="1134" Height="340" DataField="Quantity" OutputFormat="#,##0.##" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="Price" Left="7937" Top="0" Width="1247" Height="340" DataField="Price" OutputFormat="#,###" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="Amount" Left="9184" Top="0" Width="1587" Height="340" DataField="Amount" OutputFormat="#,###" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter1" Height="2551">
+      <Control Type="AR.Label" Name="aaCong" Left="0" Top="0" Width="9184" Height="340" Caption="Cộng tiền hàng" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="TongTien" Left="9184" Top="0" Width="1587" Height="340" DataField="Amount" OutputFormat="#,###" SummaryType="3" SummaryGroup="GroupHeader1" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="aaVAT" Left="0" Top="340" Width="9184" Height="340" Caption="Thuế GTGT (10%)" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="TienThue" Left="9184" Top="340" Width="1587" Height="340" DataField="=Amount * 0.1" OutputFormat="#,###" SummaryType="3" SummaryGroup="GroupHeader1" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="aaTT" Left="0" Top="680" Width="9184" Height="340" Caption="Tổng cộng tiền thanh toán" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Field" Name="TongTT" Left="9184" Top="680" Width="1587" Height="340" DataField="=Amount * 1.1" OutputFormat="#,###" SummaryType="3" SummaryGroup="GroupHeader1" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: right" BorderLeftStyle="1" BorderRightStyle="1" BorderTopStyle="1" BorderBottomStyle="1" />
+      <Control Type="AR.Label" Name="aaBC" Left="0" Top="1077" Width="2268" Height="283" Caption="Số tiền viết bằng chữ:" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; " />
+      <Control Type="AR.Field" Name="COUNTNUMBER_01" Left="2268" Top="1077" Width="8504" Height="283" DataField="=Amount * 1.1" SummaryType="3" SummaryGroup="GroupHeader1" Tag="CountNumber;VND;VN" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-style: italic" />
+      <Control Type="AR.Label" Name="aaNM" Left="567" Top="1587" Width="3402" Height="283" Caption="Người mua hàng" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" />
+      <Control Type="AR.Label" Name="aaNB" Left="6803" Top="1587" Width="3402" Height="283" Caption="Người bán hàng" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-weight: bold; text-align: center" />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="340">
+      <Control Type="AR.Field" Name="LngPageInfo" Left="7937" Top="0" Width="2835" Height="283" SummaryType="4" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-size: 8pt; text-align: right" />
+      <Control Type="AR.Label" Name="sysReportPrintDate" Left="0" Top="0" Width="3402" Height="283" Caption="" Style="font-family: Arial; font-size: 9pt; vertical-align: middle; font-size: 7pt; font-style: italic" />
+    </Section>
+    <Section Type="ReportFooter" Name="ReportFooter" Visible="0" Height="0" />
+  </Sections>
+  <PageSettings LeftMargin="567" RightMargin="567" TopMargin="567" BottomMargin="567" PaperSize="9" />
+  <Script><![CDATA[Sub ActiveReport_ReportStart
+End Sub]]></Script>
+</ActiveReportsLayout>

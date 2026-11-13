@@ -1,0 +1,897 @@
+{
+ "$schema": "erp-print-template/1",
+ "id": "CS_ReceiptReport",
+ "title": "Phiếu thu",
+ "unit": "mm",
+ "page": {
+  "paper": "A5",
+  "orientation": "portrait",
+  "width": 148,
+  "height": 210,
+  "margin": {
+   "top": 8,
+   "right": 8,
+   "bottom": 8,
+   "left": 10
+  },
+  "bodyWidth": 130
+ },
+ "data": {
+  "sort": {
+   "auto": true
+  }
+ },
+ "styles": {
+  "Normal": {
+   "font": "Times New Roman",
+   "size": 10
+  }
+ },
+ "groups": [
+  {
+   "id": "GH1",
+   "by": "DocumentID",
+   "newPage": "before",
+   "keepTogether": "firstDetail",
+   "repeatHeader": "onPage"
+  }
+ ],
+ "bands": [
+  {
+   "id": "PageHeader",
+   "type": "pageHeader",
+   "height": 11,
+   "controls": [
+    {
+     "id": "SysCom1",
+     "type": "text",
+     "x": 0,
+     "y": 0,
+     "w": 80,
+     "h": 5,
+     "value": {
+      "sys": "SysCom1",
+      "fallback": "TÊN CÔNG TY"
+     },
+     "style": {
+      "bold": true,
+      "size": 10
+     },
+     "role": "company.line1"
+    },
+    {
+     "id": "SysCom2",
+     "type": "text",
+     "x": 0,
+     "y": 5,
+     "w": 80,
+     "h": 5,
+     "value": {
+      "sys": "SysCom2",
+      "fallback": "Địa chỉ"
+     },
+     "style": {
+      "size": 8
+     },
+     "role": "company.line2"
+    },
+    {
+     "id": "mau",
+     "type": "text",
+     "x": 82,
+     "y": 0,
+     "w": 48,
+     "h": 10,
+     "value": {
+      "text": "Mẫu số 01 - TT\n(Ban hành theo TT 200/2014/TT-BTC)"
+     },
+     "style": {
+      "size": 7,
+      "align": "center",
+      "italic": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "GH1",
+   "type": "groupHeader",
+   "group": "GH1",
+   "height": 54,
+   "keepTogether": true,
+   "controls": [
+    {
+     "id": "title",
+     "type": "text",
+     "x": 0,
+     "y": 2,
+     "w": 130,
+     "h": 8,
+     "value": {
+      "text": "PHIẾU THU"
+     },
+     "style": {
+      "bold": true,
+      "size": 16,
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "ngay",
+     "type": "text",
+     "x": 0,
+     "y": 10,
+     "w": 130,
+     "h": 5,
+     "value": {
+      "dateText": "Ngày {D} tháng {M} năm {Y}",
+      "field": "DocumentDate"
+     },
+     "style": {
+      "italic": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "soL",
+     "type": "text",
+     "x": 88,
+     "y": 15,
+     "w": 12,
+     "h": 5,
+     "value": {
+      "text": "Số:"
+     }
+    },
+    {
+     "id": "so",
+     "type": "text",
+     "x": 100,
+     "y": 15,
+     "w": 30,
+     "h": 5,
+     "value": {
+      "field": "DocumentID"
+     },
+     "style": {
+      "bold": true
+     }
+    },
+    {
+     "id": "nopL",
+     "type": "text",
+     "x": 0,
+     "y": 21,
+     "w": 42,
+     "h": 5,
+     "value": {
+      "text": "Họ và tên người nộp tiền:"
+     }
+    },
+    {
+     "id": "nop",
+     "type": "text",
+     "x": 42,
+     "y": 21,
+     "w": 88,
+     "h": 5,
+     "value": {
+      "field": "ObjectName"
+     },
+     "style": {
+      "bold": true
+     },
+     "canGrow": true
+    },
+    {
+     "id": "dcL",
+     "type": "text",
+     "x": 0,
+     "y": 26,
+     "w": 18,
+     "h": 5,
+     "value": {
+      "text": "Địa chỉ:"
+     }
+    },
+    {
+     "id": "dc",
+     "type": "text",
+     "x": 18,
+     "y": 26,
+     "w": 112,
+     "h": 5,
+     "value": {
+      "field": "Address"
+     },
+     "canGrow": true
+    },
+    {
+     "id": "ldL",
+     "type": "text",
+     "x": 0,
+     "y": 31,
+     "w": 22,
+     "h": 5,
+     "value": {
+      "text": "Lý do nộp:"
+     }
+    },
+    {
+     "id": "ld",
+     "type": "text",
+     "x": 22,
+     "y": 31,
+     "w": 108,
+     "h": 5,
+     "value": {
+      "field": "Description"
+     },
+     "canGrow": true
+    },
+    {
+     "id": "stL",
+     "type": "text",
+     "x": 0,
+     "y": 36,
+     "w": 18,
+     "h": 5,
+     "value": {
+      "text": "Số tiền:"
+     }
+    },
+    {
+     "id": "st",
+     "type": "text",
+     "x": 18,
+     "y": 36,
+     "w": 50,
+     "h": 5,
+     "value": {
+      "field": "Amount"
+     },
+     "style": {
+      "bold": true
+     },
+     "format": "#,##0",
+     "summary": {
+      "func": "sum",
+      "scope": "group:GH1",
+      "running": "none",
+      "lookAhead": true
+     }
+    },
+    {
+     "id": "vbcL",
+     "type": "text",
+     "x": 0,
+     "y": 41,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Viết bằng chữ:"
+     }
+    },
+    {
+     "id": "vbc",
+     "type": "text",
+     "x": 26,
+     "y": 41,
+     "w": 104,
+     "h": 5,
+     "value": {
+      "field": "Amount"
+     },
+     "style": {
+      "italic": true
+     },
+     "canGrow": true,
+     "format": {
+      "kind": "words",
+      "currency": "VND",
+      "lang": "VN"
+     },
+     "summary": {
+      "func": "sum",
+      "scope": "group:GH1",
+      "running": "none",
+      "lookAhead": true
+     }
+    },
+    {
+     "id": "h1",
+     "type": "text",
+     "x": 0,
+     "y": 48,
+     "w": 10,
+     "h": 6,
+     "value": {
+      "text": "STT"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "style": {
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "h2",
+     "type": "text",
+     "x": 10,
+     "y": 48,
+     "w": 70,
+     "h": 6,
+     "value": {
+      "text": "Diễn giải"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "style": {
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "h3",
+     "type": "text",
+     "x": 80,
+     "y": 48,
+     "w": 20,
+     "h": 6,
+     "value": {
+      "text": "TK Có"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "style": {
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "h4",
+     "type": "text",
+     "x": 100,
+     "y": 48,
+     "w": 30,
+     "h": 6,
+     "value": {
+      "text": "Số tiền"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "style": {
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+     }
+    }
+   ]
+  },
+  {
+   "id": "Detail",
+   "type": "detail",
+   "height": 6,
+   "keepTogether": true,
+   "stretchControls": true,
+   "controls": [
+    {
+     "id": "stt",
+     "type": "text",
+     "x": 0,
+     "y": 0,
+     "w": 10,
+     "h": 6,
+     "value": {
+      "field": "LineID"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "canGrow": true,
+     "style": {
+      "align": "center",
+      "valign": "middle"
+     },
+     "summary": {
+      "func": "count",
+      "scope": "group:GH1",
+      "running": "group"
+     }
+    },
+    {
+     "id": "dg",
+     "type": "text",
+     "x": 10,
+     "y": 0,
+     "w": 70,
+     "h": 6,
+     "value": {
+      "field": "LineDescription"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "canGrow": true,
+     "padding": {
+      "l": 2,
+      "r": 2
+     },
+     "style": {
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "tk",
+     "type": "text",
+     "x": 80,
+     "y": 0,
+     "w": 20,
+     "h": 6,
+     "value": {
+      "field": "CreditAccount"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "canGrow": true,
+     "style": {
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "tien",
+     "type": "text",
+     "x": 100,
+     "y": 0,
+     "w": 30,
+     "h": 6,
+     "value": {
+      "field": "LineAmount"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "canGrow": true,
+     "format": "#,###",
+     "padding": {
+      "r": 2
+     },
+     "style": {
+      "align": "right",
+      "valign": "middle"
+     },
+     "rules": [
+      {
+       "when": "LineAmount < 0",
+       "style": {
+        "color": "#c00000"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "GF1",
+   "type": "groupFooter",
+   "group": "GH1",
+   "height": 34,
+   "controls": [
+    {
+     "id": "tcL",
+     "type": "text",
+     "x": 10,
+     "y": 0,
+     "w": 90,
+     "h": 6,
+     "value": {
+      "text": "Cộng"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "style": {
+      "bold": true,
+      "align": "center",
+      "valign": "middle"
+     }
+    },
+    {
+     "id": "tc",
+     "type": "text",
+     "x": 100,
+     "y": 0,
+     "w": 30,
+     "h": 6,
+     "value": {
+      "field": "LineAmount"
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     },
+     "format": "#,###",
+     "padding": {
+      "r": 2
+     },
+     "style": {
+      "bold": true,
+      "align": "right",
+      "valign": "middle"
+     },
+     "summary": {
+      "func": "sum",
+      "scope": "group:GH1",
+      "running": "none"
+     }
+    },
+    {
+     "id": "k0",
+     "type": "text",
+     "x": 0,
+     "y": 0,
+     "w": 10,
+     "h": 6,
+     "value": {
+      "text": ""
+     },
+     "border": {
+      "top": {
+       "style": "solid"
+      },
+      "right": {
+       "style": "solid"
+      },
+      "bottom": {
+       "style": "solid"
+      },
+      "left": {
+       "style": "solid"
+      }
+     }
+    },
+    {
+     "id": "sig0",
+     "type": "text",
+     "x": 0,
+     "y": 10,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Giám đốc"
+     },
+     "style": {
+      "bold": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sig1",
+     "type": "text",
+     "x": 26,
+     "y": 10,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Kế toán trưởng"
+     },
+     "style": {
+      "bold": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sig2",
+     "type": "text",
+     "x": 52,
+     "y": 10,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Người nộp tiền"
+     },
+     "style": {
+      "bold": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sig3",
+     "type": "text",
+     "x": 78,
+     "y": 10,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Người lập phiếu"
+     },
+     "style": {
+      "bold": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sig4",
+     "type": "text",
+     "x": 104,
+     "y": 10,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "text": "Thủ quỹ"
+     },
+     "style": {
+      "bold": true,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sigh0",
+     "type": "text",
+     "x": 0,
+     "y": 15,
+     "w": 26,
+     "h": 4,
+     "value": {
+      "text": "(Ký, họ tên)"
+     },
+     "style": {
+      "italic": true,
+      "size": 8,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sigh1",
+     "type": "text",
+     "x": 26,
+     "y": 15,
+     "w": 26,
+     "h": 4,
+     "value": {
+      "text": "(Ký, họ tên)"
+     },
+     "style": {
+      "italic": true,
+      "size": 8,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sigh2",
+     "type": "text",
+     "x": 52,
+     "y": 15,
+     "w": 26,
+     "h": 4,
+     "value": {
+      "text": "(Ký, họ tên)"
+     },
+     "style": {
+      "italic": true,
+      "size": 8,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sigh3",
+     "type": "text",
+     "x": 78,
+     "y": 15,
+     "w": 26,
+     "h": 4,
+     "value": {
+      "text": "(Ký, họ tên)"
+     },
+     "style": {
+      "italic": true,
+      "size": 8,
+      "align": "center"
+     }
+    },
+    {
+     "id": "sigh4",
+     "type": "text",
+     "x": 104,
+     "y": 15,
+     "w": 26,
+     "h": 4,
+     "value": {
+      "text": "(Ký, họ tên)"
+     },
+     "style": {
+      "italic": true,
+      "size": 8,
+      "align": "center"
+     }
+    },
+    {
+     "id": "lap",
+     "type": "text",
+     "x": 78,
+     "y": 29,
+     "w": 26,
+     "h": 5,
+     "value": {
+      "field": "UserCreateName"
+     },
+     "style": {
+      "align": "center"
+     }
+    }
+   ]
+  },
+  {
+   "id": "PageFooter",
+   "type": "pageFooter",
+   "height": 5,
+   "controls": [
+    {
+     "id": "line",
+     "type": "line",
+     "x1": 0,
+     "y1": 0.3,
+     "x2": 130,
+     "y2": 0.3
+    },
+    {
+     "id": "in",
+     "type": "text",
+     "x": 0,
+     "y": 0.6,
+     "w": 70,
+     "h": 4,
+     "value": {
+      "printDate": true
+     },
+     "style": {
+      "size": 7,
+      "italic": true
+     }
+    },
+    {
+     "id": "LngPageInfo",
+     "type": "text",
+     "x": 90,
+     "y": 0.6,
+     "w": 40,
+     "h": 4,
+     "value": {
+      "pageInfo": "VN"
+     },
+     "style": {
+      "size": 8,
+      "align": "right"
+     },
+     "role": "page.info"
+    }
+   ]
+  }
+ ],
+ "assets": {},
+ "source": {
+  "kind": "web",
+  "converter": "",
+  "warnings": []
+ }
+}

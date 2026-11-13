@@ -8,7 +8,8 @@
 
 const ROLES = new Set(['login', 'session', 'menu', 'menu-group', 'menu-item', 'screen', 'toolbar', 'filter', 'record', 'tab', 'field', 'grid',
   'row-template', 'pager', 'tabs', 'tab-panel', 'messages', 'message', 'confirm', 'dialog', 'lookup-result', 'status', 'attachments',
-  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options']);
+  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options', 'print-document', 'print-params']);
+const PRINT_TYPES = ['text', 'number', 'money', 'quantity', 'percent', 'date', 'datetime', 'bool'];
 const FORM_TYPES = ['LIST', 'LISTEDIT', 'EDIT', 'REPORT', 'DASHBOARD', 'CUSTOM'];
 const MODES = ['view', 'new', 'edit', 'find'];
 const CONTROLS = ['text', 'textarea', 'password', 'number', 'money', 'quantity', 'percent', 'date', 'datetime', 'select', 'multiselect',
@@ -113,6 +114,32 @@ export function validate(doc) {
       });
     });
     if (t.hasAttribute('data-editable') && t.getAttribute('data-form') && !doc.getElementById(t.getAttribute('data-form') || '')) add('warning', '11.1', 'data-form trỏ tới form không có trong tài liệu.', t);
+  });
+
+  // 15.1 Mẫu in
+  doc.querySelectorAll('[data-erp="print-document"]').forEach((s) => {
+    if (s.tagName !== 'SECTION') add('warning', '15.1', 'print-document nên là <section>.', s);
+    if (!s.getAttribute('data-template-src')) add('error', '15.1', 'print-document thiếu data-template-src (URL mẫu in).', s);
+    const fmt = s.getAttribute('data-template-format');
+    if (fmt && !['rpx', 'json'].includes(fmt)) add('error', '15.1', `data-template-format "${fmt}" không hợp lệ (rpx/json).`, s);
+    const grids = Array.from(s.querySelectorAll('table[data-erp="grid"]'));
+    if (!grids.some((t) => t.getAttribute('data-grid-id') === 'R0')) add('error', '15.1', 'print-document thiếu lưới dữ liệu chính data-grid-id="R0".', s);
+    grids.forEach((t) => { if (!/^R\d+$/.test(t.getAttribute('data-grid-id') || '')) add('error', '15.1', 'Lưới trong print-document phải có data-grid-id R0, R1…', t); });
+    for (const n of ['data-number-group', 'data-number-decimal']) { const v = s.getAttribute(n); if (v !== null && !/^[.,\s ']?$/.test(v)) add('error', '15.1', `${n} chỉ là một ký tự (. , ' hoặc khoảng trắng).`, s); }
+    if (s.closest('[data-erp="screen"]')?.getAttribute('data-form-type') !== 'REPORT' && !s.closest('[data-erp="dialog"]')) add('warning', '15.1', 'print-document nên nằm trong screen REPORT.', s);
+  });
+  doc.querySelectorAll('[data-erp="print-params"]').forEach((dl) => {
+    if (dl.tagName !== 'DL') add('warning', '15.1', 'print-params nên là <dl>.', dl);
+    dl.querySelectorAll('dd').forEach((dd) => {
+      const n = dd.getAttribute('data-name');
+      if (!n) { add('error', '15.1', 'dd trong print-params thiếu data-name.', dd); return; }
+      const ty = dd.getAttribute('data-type') || 'text';
+      if (!PRINT_TYPES.includes(ty)) add('error', '15.1', `data-type "${ty}" không hợp lệ.`, dd);
+      const v = dd.getAttribute('data-value');
+      if (v && ['number', 'money', 'quantity', 'percent'].includes(ty) && !/^-?\d+(\.\d+)?$/.test(v)) add('error', '2.5', `Tham số số "${n}" phải dạng bất biến, đang là "${v}".`, dd);
+      if (v && (ty === 'date' || ty === 'datetime') && !/^\d{4}-\d{2}-\d{2}/.test(v)) add('error', '2.5', `Tham số ngày "${n}" phải dạng ISO, đang là "${v}".`, dd);
+      if (/^(Sys\.)?(.*pass.*|.*pwd.*|.*token.*|.*secret.*|.*connection.*)$/i.test(n)) add('error', '2.8', `Không gửi bí mật trong tham số in ("${n}").`, dd);
+    });
   });
 
   // 13 Thông điệp

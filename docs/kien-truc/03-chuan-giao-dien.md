@@ -104,6 +104,11 @@ Người dùng tự đổi màu trong *Giao diện & hiển thị → Màu sắc
   - Nếu cần đồng nhất trên mọi máy, có thể tự host **Be Vietnam Pro** hoặc **Inter** (giấy phép OFL, có bộ ký tự tiếng Việt).
   - Việc này cần tải tệp font vào `web/fonts/`, nên chủ dự án duyệt trước.
 
+- **Trang giấy của mẫu in** (`.pp-page` và các ô bên trong, `css/print-doc.css`): giấy trắng, mực đen, font / cỡ pt / màu
+  lấy từ mẫu (như ActiveReports), kích thước tính bằng mm. Bản in phải giống nhau trên mọi theme và giống WinForms nên
+  không dùng token. Khung xem quanh trang (thanh công cụ, vùng cuộn, cảnh báo) vẫn theo token như mọi component.
+  Xem [06-mau-in.md](06-mau-in.md).
+
 ## 6. Việc tiếp theo (chưa làm)
 
 - Trạng thái đang tải dạng khung xương (skeleton) cho lưới và màn hình, thay cho dòng chữ "Đang tải…".

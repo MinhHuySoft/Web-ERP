@@ -141,6 +141,7 @@ Mỗi `<form method="post">` PHẢI chứa input ẩn chống giả mạo theo c
 | `status` | `data` | 16 |
 | `attachments` | `section` | 16 |
 | `report-result` | `section` | 15 |
+| `print-document`, `print-params` | `section`, `dl` | 15.1 |
 
 ## 5. Phiên làm việc và menu
 
@@ -685,6 +686,54 @@ Link tải file (Excel, PDF) dùng thêm thuộc tính `download`, hoặc BE tr�
 - SP trả nhiều result set: mỗi bảng phụ là một `table[data-erp=grid]` tiếp theo, kèm `caption`.
 - Bảng `Msg/Type` của SP được chuyển thành `messages`.
 
+### 15.1 Mẫu in (`print-document`)
+
+Màn in chứng từ / báo cáo theo mẫu (thiết kế như ActiveReports). FE dựng trang và in; BE chỉ gửi **mẫu** và **dữ liệu**.
+Đặc tả mẫu và bộ dựng: [06-mau-in.md](06-mau-in.md).
+
+```html
+<section data-erp="screen" data-screen-id="CS_ReceiptReport" data-form-type="REPORT" data-mode="view" data-screen-key="print:CS_ReceiptReport:PT1126/0001">
+  <h1>Phiếu thu</h1>
+  <form data-erp="filter" method="get" action="/erp/print/CS_ReceiptReport">
+    <input type="hidden" name="DocumentID" value="PT1126/0001;PT1126/0002">
+    <div data-erp="field" data-control="select"><label for="pt">Mẫu in</label>
+      <select id="pt" name="Template"><option value="CS_ReceiptReport" selected>Phiếu thu</option>…</select></div>
+    <button type="submit" data-action="find">Xem</button>
+  </form>
+  <section data-erp="print-document"
+           data-template-src="/erp/print/templates/CS_ReceiptReport/CS_ReceiptReport.rpx" data-template-format="rpx"
+           data-design-href="/erp/print/designer/CS_ReceiptReport?Template=CS_ReceiptReport"
+           data-number-group="." data-number-decimal="," data-title="Phiếu thu PT1126/0001">
+    <dl data-erp="print-params">
+      <dt>Từ ngày</dt><dd data-name="FromDate" data-type="date" data-value="2026-11-01">01/11/2026</dd>
+      <dd data-name="Sys.SysCom1">CÔNG TY …</dd>
+      <dd data-name="Lang.ObjectID">Mã đối tượng</dd>
+      <dd data-name="Caption.FromDate">Từ ngày</dd>
+      <dd data-name="Image.logo"><img src="/erp/print/assets/logo" alt="Logo"></dd>
+    </dl>
+    <table data-erp="grid" data-grid-id="R0">… cột của result set 0 …</table>
+    <table data-erp="grid" data-grid-id="R1">… result set 1 (subreport) …</table>
+  </section>
+</section>
+```
+
+- `data-template-src` (PHẢI): URL mẫu, trả `application/json` (`erp-print-template/1`) hoặc XML `.rpx` của WinForms.
+  `data-template-format` NÊN có: `json` | `rpx`. FE không chạy Script trong mẫu.
+- `data-design-href` (CÓ THỂ): chỉ gửi khi người dùng được sửa mẫu (quyền `EPER` như ERP); FE hiện nút "Thiết kế mẫu".
+- `data-number-group`, `data-number-decimal` (NÊN): phân cách số theo cấu hình công ty (WinForms: theo máy, thường `.` `,`).
+- Lưới `R0` (PHẢI) = result set chính của SP `<Report>Stp`; `R1`… = các result set sau, đúng thứ tự. Lưới theo mục 11
+  (`th[data-field][data-type]`, giá trị máy trong `td[data-value]`); ô `null` của SQL gửi `td[data-null]`. Cột chữ không
+  có `data-value` thì FE dùng chữ trong ô. Lưới này là **dữ liệu in**, FE không hiện thành lưới.
+- `dl[data-erp=print-params]`: mỗi `dd[data-name]` một giá trị, `data-type` như cột lưới, giá trị máy ở `data-value`:
+  - tên trơn: tham số báo cáo (`@FromDate`, `@Template`, `UINPUT1..6`…);
+  - `Sys.<Tên>`: tham số hệ thống (`GetSysParam`: `SysCom1..4`, `ReportLocation`, `ReportPrintDate`, `SubTitle`,
+    `ServerDate`, `CurrencyMinor.<Tiền>` = đơn vị lẻ của ngoại tệ);
+  - `Lang.<Tên>`: chữ theo ngôn ngữ phiên cho nhãn `Lng<Tên>`, `LngPage`, `Month1..12`;
+  - `Caption.<Tham số>`: tên hiển thị của tham số (nhãn `PAR*`);
+  - `Image.<Tên>`: ảnh hệ thống (`logo`, `Signature1`…) — `img src` cùng origin.
+- Không gửi bí mật trong tham số in (mật khẩu, chuỗi kết nối, token).
+- Bảng `Msg/Type` của SP chuyển thành `messages` như mục 15.
+
 ## 16. Thành phần khác
 
 - **Trạng thái:** `<data data-erp="status" value="18" data-tone="success">Đã lập hóa đơn</data>`.
@@ -737,6 +786,7 @@ FE có bộ biểu tượng SVG riêng. BE chỉ gửi **tên**. Tên không có
   - [ ] Form POST có token chống giả mạo; `record` có `__version` khi sửa.
   - [ ] Nút không được phép thì không gửi, hoặc gửi kèm `disabled`. Dữ liệu cột bị ẩn vì quyền không có trong HTML.
   - [ ] Thông điệp từ SP được ánh xạ đúng `data-msg-type` / `confirm`.
+  - [ ] `print-document` có `data-template-src` và lưới `R0`; tham số in có `data-name`, giá trị máy bất biến.
 - **Kiểm tra thực tế:** FE có trang `web/tools/validate.html`. Dán HTML hoặc nhập URL của BE vào, trang báo lỗi theo
   danh sách trên.
 

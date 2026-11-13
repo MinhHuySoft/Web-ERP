@@ -30,6 +30,9 @@ python -I tools/mock-gen/build_mock.py              # sinh lại web/mock/ từ 
 
 - **Mock = BE giả:** `web/config.js` trỏ 4 điểm vào tới `web/mock/*.html`. Dev server nhận POST tới `/mock/*`, trả file
   tương ứng và **in dữ liệu form ra console** (để kiểm tra FE gửi đúng chuẩn).
+- **Mẫu in:** `node tools/print-tests/run.mjs` (test Node của `web/js/print/`, không thư viện);
+  `node tools/print-tests/rpx-batch.mjs <thư mục Reports> --build` kiểm hàng loạt `.rpx`; trang `/tools/rpx.html` làm
+  việc đó trong trình duyệt. Thư mục JSON ra (nếu có) chứa chữ của mẫu khách: để ngoài repo.
 - **Kiểm tra chuẩn:** mở `/tools/validate.html` (dán HTML hoặc nhập URL). Có thể gọi trong code:
   `import { validate } from '/js/tools/validate.js'; validate(new DOMParser().parseFromString(html, 'text/html'))`.
 - **Nối BE thật:** sửa `loginUrl`, `sessionUrl`, `menuUrl`, `homeUrl` (+ `allowedOrigins` nếu khác origin) trong `web/config.js`.
@@ -59,6 +62,7 @@ web/
     dashboard.css         dải KPI, biểu đồ, khối liên kết nhanh
     responsive.css        điểm gãy 1279 / 1023 / 767px (ngăn kéo menu, thanh điều hướng dưới, toolbar cuộn ngang)
     print.css             in
+    print-doc.css         mẫu in: khung xem (token) + trang giấy .pp-page (ngoại lệ token, 06-mau-in.md)
     themes/<tên>.css      12 theme: chỉ ghi đè token + vài hiệu ứng riêng, dẫn xuất màu từ --erp-primary
   js/
     app.js                khởi động: applySettings() → initPwa() → new Shell(#erp-app).start()
@@ -93,12 +97,25 @@ web/
                           sửa trực tiếp, dạng thẻ, xuất CSV nhanh, serialize() dòng thay đổi
       messages.js         thông điệp: success/info → toast; error/warning → khung + gắn vào ô
       dashboard.js        KPI → dải chỉ số; table[data-erp=chart] → biểu đồ SVG
+    print/                mẫu in (docs/kien-truc/06-mau-in.md) — không DOM trừ render.js / viewer.js, chạy được trong Node
+      xml.js              đọc XML tối giản (cho .rpx)
+      rpx.js              .rpx ActiveReports 3 → mẫu erp-print-template/1 (quy ước ERP → thuộc tính tường minh, cảnh báo)
+      expr.js             ngôn ngữ biểu thức an toàn (compile / evaluate / check)
+      netformat.js        định dạng .NET (#,##0.## / dd/MM/yyyy) như .NET Framework của WinForms
+      words.js            đọc số thành chữ — chép đúng Tools.Currency của WinForms
+      engine.js           bộ dựng: sắp, nhóm, tổng (cả ở đầu nhóm), dàn band, phân trang, Trang N/M
+      render.js           vẽ trang mm (DOM + SVG viền), đo chữ bằng trình duyệt
+      barcode.js          Code 128 (SVG)
+      fake.js             dữ liệu giả theo cột mẫu dùng
+      viewer.js           vai trò section[data-erp=print-document]: thanh xem, thu phóng, in qua khung riêng
     tools/validate.js     validate(doc) → danh sách lỗi/cảnh báo theo đặc tả (mục 19)
+    tools/rpx-check.js    trang kiểm .rpx hàng loạt
   tools/validate.html     trang kiểm tra cho đội BE
+  tools/rpx.html          kiểm hàng loạt thư mục Reports (.rpx) ngay trong trình duyệt
   mock/                   HTML mẫu (BE giả) do tools/mock-gen/build_mock.py sinh — KHÔNG sửa tay
 
 tools/                    (ngoài web/) dev-server.py, mock-gen/build_mock.py, icons/build_icons.py, metadata-export/,
-                          legacy-decompile/
+                          legacy-decompile/, print-tests/ (test Node của mẫu in + rpx-batch.mjs)
 docs/                     phân tích hệ thống cũ (legacy-analysis/), kiến trúc & chuẩn (kien-truc/), hướng dẫn (huong-dan/)
 ```
 
@@ -270,6 +287,7 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Icon | `js/core/icons.js` (đường SVG nét 1.8, tên trùng `data-action` / phân hệ) |
 | Màu, thang chữ, mật độ | `css/tokens.css`; theme: `css/themes/<tên>.css` |
 | Danh sách thẻ / thuộc tính được phép từ BE | `js/core/sanitize.js` |
+| Mẫu in: chuyển `.rpx`, biểu thức, định dạng, số thành chữ, dựng trang, in | `js/print/*` (06-mau-in.md), `css/print-doc.css`; test `tools/print-tests/` |
 | Luật kiểm tra chuẩn | `js/tools/validate.js` |
 | Mock (BE giả) | `tools/mock-gen/build_mock.py` → chạy lại → `web/mock/` |
 | Cài thành ứng dụng (PWA): manifest, icon, service worker, nút cài | `web/manifest.webmanifest`, `web/sw.js`, `js/core/pwa.js`, `tools/icons/build_icons.py` (mục 6.1) |
@@ -316,6 +334,7 @@ thêm ảnh xem trước `[data-theme-preview="<tên>"]` cuối `css/shell.css`.
 - [ ] Mở app với mock, không lỗi console; thử màn bị ảnh hưởng ở **1280px, 768px, 375px**.
 - [ ] Thử ít nhất theme **Ribbon cổ điển**, **Ribbon tối** và một theme kính (Glassmorphism); thử chế độ **Sidebar**.
 - [ ] Nếu đổi `build_mock.py`: chạy lại generator, `validate` toàn bộ `web/mock/` → **0 lỗi**.
+- [ ] Nếu đổi `web/js/print/`: `node tools/print-tests/run.mjs` đạt hết; mở `mock/print/*.html` xem và thử In.
 - [ ] Đối chiếu [chuẩn giao diện](../kien-truc/03-chuan-giao-dien.md) mục 3–4 (danh sách cấm, tương phản, trạng thái, bố cục).
 - [ ] Đổi hành vi giao tiếp với BE → cập nhật đặc tả + hướng dẫn BE cùng lúc.
 - [ ] Đổi `sw.js` (danh sách giữ / cách xử lý) → tăng `VERSION`; thử mở app khi tắt dev server: vỏ vẫn hiện, không
