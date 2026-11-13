@@ -197,6 +197,7 @@ function enhanceFilter(form) {
   if (btn && !btn.querySelector('svg')) btn.prepend(icon('filter'));
   const n = form.querySelectorAll('[data-erp="field"]').length;
   if (n > 2) {
+    form.classList.add('erp-filter--collapsible');
     const toggle = h('button', { type: 'button', class: 'erp-btn erp-filter__toggle', 'aria-expanded': 'false', onclick: () => {
       const open = !form.classList.contains('is-open');
       form.classList.toggle('is-open', open);
