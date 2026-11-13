@@ -136,6 +136,8 @@ việc) · `status`. Vùng nào ẩn (Ribbon khi dùng Sidebar, thanh trạng th
 - **Nút "Lọc"** đứng cạnh các nút của toolbar (Nạp lại…). Nút ghi tóm tắt điều kiện đang lọc, vd `01/11 – 11/11/2026 · Hà Nội`.
   Bấm mới mở bảng lọc nổi. Esc, bấm ra ngoài, hoặc bấm Lọc thì bảng đóng.
 - Lưới trong tab chi tiết và lưới không có form lọc vẫn giữ ô "Tìm trong lưới" (lọc tại chỗ).
+- **Phân trang:** `nav[data-erp=pager]` của BE (chuẩn 11.5) gắn vào cuối lưới đứng ngay trước nó (`enhancePager`). Các link
+  Đầu/Trước/Sau/Cuối mở trong cùng tab; URL do BE đặt (giữ bộ lọc), FE không tự ghép.
 
 
 1. Người dùng bấm menu / link → `interceptNavigation` (forms.js) chặn, đọc `data-target` → `ctx.navigate(url, target)`.
@@ -253,6 +255,7 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Cách mở tab / xử lý response / gửi form / xác nhận / hộp thoại | `js/shell/tabs.js` |
 | Kéo đổi vị trí tab (chuột), menu tab "Chuyển sang trái/phải", Ctrl+Shift+PageUp/PageDown | `js/shell/tabs.js` (`moveTab`, `dragTab`), `shell.js` (phím) |
 | Màn danh sách: một ô tìm (tìm trên DB) + nút "Lọc" gộp thanh lọc | `js/enhance/screen.js` (`compactFilter`), `css/screen.css` |
+| Phân trang của BE (`nav[data-erp=pager]`) ở cuối lưới | `js/enhance/screen.js` (`enhancePager`), `css/grid.css` (`.erp-pager`) |
 | Bố cục chứng từ "Gọn" (mặc định; ô xếp nối nhau lấp kín chiều ngang) / "Theo ERP" | `core/settings.js` (`recordLayout`), `css/fields.css`, `shell/settings-panel.js` |
 | Ribbon / Sidebar / bảng lệnh Ctrl+K | `js/shell/ribbon.js`, `sidebar.js`, `palette.js` (+ `menu-model.js`) |
 | Bảng "Giao diện & hiển thị" | `js/shell/settings-panel.js`, `css/shell.css` |
