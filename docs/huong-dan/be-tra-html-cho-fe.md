@@ -81,6 +81,9 @@ gợi ý — BE được đặt tùy ý.
 | In theo mẫu (chứng từ / báo cáo) | GET | `/erp/print/{Report}?DocumentID=a;b&Template=…` | `screen` `REPORT` + `print-document` (mục 5.4b) |
 | Trình thiết kế mẫu in | GET | `/erp/screens/{Form}/print/designer?Template=…&DocumentID=…` | `screen` + `print-designer` (mục 5.4c) |
 | Lưu mẫu in | POST | `/erp/screens/{Form}/print/designer/save` | `messages` (`success` / `error` + 422) |
+| Trình vẽ layout form | GET | `/erp/screens/{Form}/layout` | `screen` + `layout-designer` (mục 5.4d) |
+| Bố cục của `data-layout-src` | GET | `/erp/screens/{Form}/layout/data` | JSON `erp-form-layout/1` |
+| Lưu / khôi phục bố cục | POST | `/erp/screens/{Form}/layout/save` | `messages` (`success` / `error` + 422 / 409) |
 | Mẫu in của `data-template-src` | GET | `/erp/print/templates/{Report}/{Template}.rpx` hoặc `.json` | XML `.rpx` (bản mới nhất `SY_RpFTbl`, không có thì thư mục `Reports`) hoặc JSON `erp-print-template/1` |
 
 ## 4. Bảng tra vai trò `data-erp`
@@ -393,6 +396,30 @@ Cách làm như WinForms (`ReportViewerFrm`, xem `docs/kien-truc/06-mau-in.md`):
    `data-template-src` trả JSON (`data-template-format="json"`). Ghi nhật ký "Sửa mẫu in" như WinForms.
 3. **Không** ghi vào `SY_RpFTbl` (WinForms vẫn dùng `.rpx` của nó) — hai bên chạy song song; khi `.rpx` đổi sau phiên bản web,
    màn thiết kế nên báo để người dùng quyết định.
+
+### 5.4d Trình vẽ layout form (`layout-designer`, chuẩn 15.3)
+
+Như Ctrl+F12 (`LayoutSettingFrm`) của WinForms. Thiết kế đầy đủ ở [07-ve-layout-form.md](../kien-truc/07-ve-layout-form.md).
+
+1. **Nút trên chứng từ**: `<a data-action="layout" href="…/layout" data-target="tab" data-shortcut="Ctrl+F12">Vẽ layout</a>`.
+   - Chỉ gửi khi người dùng có quyền Admin trên form.
+   - Không gửi khi bố cục form không đọc từ `SY_FrmCfg` (form viết tay).
+2. **Màn vẽ**: `section[data-erp=layout-designer]` có `data-form` (FID) và `data-layout-src`.
+   - `form` lưu có token + `input[name=Form]`.
+   - Không được lưu thì không gửi `form`; khi đó gửi `messages` `info` giải thích.
+3. **Bố cục JSON** (`data-layout-src`, `Cache-Control: no-store`) gồm:
+   - `tabs` (master `1,2,3,A,B,C` + trang chi tiết `5…13`);
+   - `items` (`tab`, `group` = đường dẫn nhóm cha, `name`, `cfg` = chuỗi LYT nguyên văn);
+   - `fields` (cột bảng chính, bỏ cột bí mật);
+   - `versions`, `revision` = sha256 các dòng bố cục.
+4. **Lưu** trong một giao dịch:
+   - Khóa theo FID, đọc dòng `UPDLOCK`. So `revision`: khác thì trả 409, không ghi gì.
+   - Chỉ ghi dòng LYT / LYS / T?V theo chênh lệch. Giữ UserAutoID cũ. Thứ tự "001"…, `VDate = GETDATE()`.
+   - Thuộc tính LYS đi theo ô.
+   - Không đụng dòng khác của FID và dòng mồ côi.
+   - Lưu ảnh trước / sau vào `web.FormLayoutVersion` (migration `0003_form_layouts`).
+   - Xóa bộ đệm metadata của form.
+   - Báo người dùng mở lại ERP WinForms để thấy bố cục mới (WinForms giữ bộ đệm tới 1 ngày).
 
 ### 5.5 Tra cứu F4 (response của `data-lookup-src`)
 

@@ -123,6 +123,8 @@ function inlineText(wrap, input, out) {
     const cs = getComputedStyle(input);
     const x = (parseFloat(cs.borderInlineStartWidth) || 0) + (parseFloat(cs.paddingInlineStart) || 0) + textWidth(input.value, cs);
     wrap.style.setProperty('--erp-lk-x', `${Math.ceil(x)}px`);
+    // Tên dài bị cắt "…": rê chuột xem tên đầy đủ.
+    if (out.textContent) out.title = out.textContent; else out.removeAttribute('title');
   };
   for (const ev of ['input', 'change', 'erp:set']) input.addEventListener(ev, place);
   new ResizeObserver(place).observe(wrap);

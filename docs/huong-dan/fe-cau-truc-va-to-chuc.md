@@ -64,6 +64,7 @@ web/
     print.css             in
     print-doc.css         mẫu in: khung xem (token) + trang giấy .pp-page (ngoại lệ token, 06-mau-in.md)
     print-designer.css    trình thiết kế mẫu in
+    layout-designer.css   trình vẽ layout form (dùng khung .erp-pd của trình thiết kế mẫu in)
     themes/<tên>.css      12 theme: chỉ ghi đè token + vài hiệu ứng riêng, dẫn xuất màu từ --erp-primary
   js/
     app.js                khởi động: applySettings() → initPwa() → new Shell(#erp-app).start()
@@ -110,6 +111,8 @@ web/
       fake.js             dữ liệu giả theo cột mẫu dùng
       viewer.js           vai trò section[data-erp=print-document]: thanh xem, thu phóng, in qua khung riêng
       designer.js         vai trò section[data-erp=print-designer]: trình thiết kế mẫu in (canvas, thuộc tính, lưu)
+    layout/
+      designer.js         vai trò section[data-erp=layout-designer]: vẽ layout form như Ctrl+F12 (lưới 40 cột, kéo thả, thuộc tính LYT, lưu)
     tools/validate.js     validate(doc) → danh sách lỗi/cảnh báo theo đặc tả (mục 19)
     tools/rpx-check.js    trang kiểm .rpx hàng loạt
   tools/validate.html     trang kiểm tra cho đội BE

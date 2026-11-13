@@ -1,0 +1,58 @@
+/* Trình vẽ layout form (docs/kien-truc/07-ve-layout-form.md). Dùng khung chung của trình thiết kế mẫu in (.erp-pd: thanh công cụ,
+   hai cột bên, bảng thuộc tính) và chỉ token --erp-*. Lưới vẽ là lưới 40 cột như LayoutX của WinForms (chuẩn ERP-HTML 9.2). */
+@layer components {
+  .erp-ld__center { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+  .erp-ld__tabs { flex: none; }
+  .erp-ld__tabs .erp-subtab.is-drop { outline: 2px dashed var(--erp-primary); outline-offset: -2px; }
+  .erp-ld__canvas {
+    flex: 1; min-height: 0; overflow: auto; padding: 12px; background: var(--erp-panel-bg); border: 1px solid var(--erp-border);
+    border-radius: 0 var(--erp-radius) var(--erp-radius) var(--erp-radius);
+  }
+  .erp-ld__canvas:focus-visible { outline: 2px solid var(--erp-primary); outline-offset: -2px; }
+  .erp-ld__grid {
+    display: grid; grid-template-columns: repeat(var(--ld-cols, 40), minmax(0, 1fr)); grid-auto-rows: minmax(44px, auto); gap: 6px;
+    min-height: 48px; border-radius: var(--erp-radius-sm);
+  }
+  .erp-ld__grid.is-drop { outline: 2px dashed var(--erp-primary); outline-offset: 2px; }
+  .erp-ld__item {
+    position: relative; grid-column: span var(--ld-span, 10); grid-row: span var(--ld-rows, 1); display: flex; flex-direction: column;
+    justify-content: center; gap: 2px; min-width: 0; padding: 4px 8px; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-sm);
+    background: var(--erp-surface); color: var(--erp-text); font-size: var(--erp-fs-sm); cursor: grab;
+  }
+  .erp-ld__item.is-row-start { grid-column: 1 / span var(--ld-span, 10); }
+  .erp-ld__item:focus-visible { outline: 2px solid var(--erp-primary); outline-offset: 1px; }
+  .erp-ld__item.is-selected { border-color: var(--erp-primary); box-shadow: 0 0 0 2px var(--erp-primary-soft); }
+  .erp-ld__item.is-hidden { opacity: .55; border-style: dashed; }
+  .erp-ld__item.is-missing { border-color: var(--erp-warning); }
+  .erp-ld__item.is-dragging { opacity: .4; }
+  .erp-ld__item.is-drop-before { box-shadow: inset 3px 0 0 var(--erp-primary); }
+  .erp-ld__item.is-drop-after { box-shadow: inset -3px 0 0 var(--erp-primary); }
+  .erp-ld__item.is-ct23 { justify-content: flex-start; padding: 6px; background: var(--erp-surface-2); }
+  .erp-ld__ghead { display: flex; align-items: center; gap: 4px; margin-bottom: 4px; font-weight: 600; font-size: var(--erp-fs-xs); color: var(--erp-text-muted); }
+  .erp-ld__ghead svg { width: 14px; height: 14px; }
+  .erp-ld__cap { font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-ld__req { color: var(--erp-danger); }
+  .erp-ld__ctl { display: flex; justify-content: space-between; gap: 6px; font-size: var(--erp-fs-xs); color: var(--erp-text-faint); white-space: nowrap; overflow: hidden; }
+  .erp-ld__ctl small { overflow: hidden; text-overflow: ellipsis; }
+  .erp-ld__btn {
+    align-self: flex-start; max-width: 100%; padding: 2px 8px; border: 1px solid var(--erp-border-strong); border-radius: var(--erp-radius-sm);
+    background: var(--erp-surface-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .erp-ld__grip { position: absolute; inset-block: 0; inset-inline-end: -5px; width: 10px; cursor: ew-resize; touch-action: none; }
+  .erp-ld__grip::after { content: ""; position: absolute; inset-block: 30%; inset-inline-start: 4px; width: 2px; border-radius: 2px; background: var(--erp-border-strong); }
+  .erp-ld__item:hover > .erp-ld__grip::after, .erp-ld__item.is-selected > .erp-ld__grip::after { background: var(--erp-primary); }
+  .erp-ld__empty { grid-column: 1 / -1; align-self: center; padding: 24px; text-align: center; color: var(--erp-text-muted); }
+  .erp-ld__searchbox { padding: 6px 8px; }
+  .erp-ld__note { margin: 6px 10px; font-size: var(--erp-fs-xs); line-height: 1.5; color: var(--erp-text-muted); }
+  .erp-ld__name { display: grid; gap: 2px; }
+  .erp-ld__name small { color: var(--erp-text-muted); }
+  .erp-ld__versions { list-style: none; margin: 0; padding: 0; }
+  .erp-ld__versions li { display: grid; gap: 4px; padding: 8px 10px; border-bottom: 1px solid var(--erp-border); }
+  .erp-ld__versions small { color: var(--erp-text-muted); }
+  .erp-ld__versions .erp-btn { justify-self: start; }
+  @media (max-width: 1100px) {
+    .erp-ld { grid-template-rows: auto minmax(420px, 1fr) auto auto; }
+    .erp-ld > .erp-ld__center { order: 1; }
+    .erp-ld > .erp-pd__side { order: 2; }
+  }
+}
