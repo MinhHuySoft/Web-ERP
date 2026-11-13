@@ -79,6 +79,8 @@ gợi ý — BE được đặt tùy ý.
 | Tab chi tiết nạp lười | GET | `…/{key}/tabs/{T2}` | nội dung panel (vd `table[data-erp="grid"]`) |
 | Xuất Excel / In | GET | `…&format=xlsx|pdf` | file (`Content-Disposition`) |
 | In theo mẫu (chứng từ / báo cáo) | GET | `/erp/print/{Report}?DocumentID=a;b&Template=…` | `screen` `REPORT` + `print-document` (mục 5.4b) |
+| Trình thiết kế mẫu in | GET | `/erp/screens/{Form}/print/designer?Template=…&DocumentID=…` | `screen` + `print-designer` (mục 5.4c) |
+| Lưu mẫu in | POST | `/erp/screens/{Form}/print/designer/save` | `messages` (`success` / `error` + 422) |
 | Mẫu in của `data-template-src` | GET | `/erp/print/templates/{Report}/{Template}.rpx` hoặc `.json` | XML `.rpx` (bản mới nhất `SY_RpFTbl`, không có thì thư mục `Reports`) hoặc JSON `erp-print-template/1` |
 
 ## 4. Bảng tra vai trò `data-erp`
@@ -360,6 +362,31 @@ Cách làm như WinForms (`ReportViewerFrm`, xem `docs/kien-truc/06-mau-in.md`):
 5. **Quyền**: mở màn in theo quyền in của form; `data-design-href` chỉ khi được sửa mẫu (`EPER`, Admin luôn được).
 6. Sau khi in (GĐ sau): ghi `LanIn/PrintCount`, `AutoLock` như WinForms.
 
+### 5.4c Trình thiết kế mẫu in (`print-designer`, chuẩn 15.2)
+
+```html
+<section data-erp="screen" data-screen-id="CS_ReceiptReport" data-form-type="CUSTOM" data-mode="edit" data-screen-key="design:CS_ReceiptFrm:CS_ReceiptReport">
+  <h1>Thiết kế mẫu in — In phiếu thu</h1>
+  <section data-erp="print-designer" data-template-name="CS_ReceiptReport"
+           data-template-src="/erp/screens/CS_ReceiptFrm/print/templates/CS_ReceiptReport.rpx" data-template-format="rpx"
+           data-preview-src="/erp/screens/CS_ReceiptFrm/print?DocumentID=PT1126/0001&amp;Template=CS_ReceiptReport">
+    <form method="post" action="/erp/screens/CS_ReceiptFrm/print/designer/save">
+      <input type="hidden" name="__RequestVerificationToken" value="…">
+      <input type="hidden" name="Template" value="CS_ReceiptReport">
+    </form>
+  </section>
+</section>
+```
+
+1. **Quyền sửa** như ERP: `EPER` trong `SY_FrmCfg` của báo cáo (mặc định mọi người dùng), nhóm Admin luôn được. Không được
+   sửa → không gửi `form` (FE chỉ cho xem) và không gửi `data-design-href` trên màn in.
+2. **Lưu** (`POST …/save`, multipart): `Template`, `Json`, `Comment` + token. Kiểm lại mẫu (`$schema`, ≤ 2 MB, tên control,
+   biểu thức chỉ đọc), ghi một phiên bản mới **bất biến** vào `web.PrintTemplateVersion` (người lưu, giờ, ghi chú, nguồn
+   `.rpx` + ngày + sha256 nếu sửa từ mẫu WinForms) và trỏ `web.PrintTemplate` của (báo cáo, mẫu) sang phiên bản đó. Từ đó
+   `data-template-src` trả JSON (`data-template-format="json"`). Ghi nhật ký "Sửa mẫu in" như WinForms.
+3. **Không** ghi vào `SY_RpFTbl` (WinForms vẫn dùng `.rpx` của nó) — hai bên chạy song song; khi `.rpx` đổi sau phiên bản web,
+   màn thiết kế nên báo để người dùng quyết định.
+
 ### 5.5 Tra cứu F4 (response của `data-lookup-src`)
 
 ```html
@@ -489,6 +516,7 @@ __RequestVerificationToken=…&__version=2026-11-10T16:05:11.320&DocumentDate=20
 | Lỗi theo ô lưới do BE trả (`td[data-invalid][title]`) | Chưa hiển thị — gửi `messages` `error` nêu rõ dòng |
 | `data-lookup-add`, `data-lookup-free`, `data-label-width`, `data-begin-group` (menu) | Chưa — FE bỏ qua, gửi cũng không sao |
 | `print-document` (mẫu `.rpx` hoặc JSON, dựng trang, in đúng khổ) | **Đã hỗ trợ** (2026-11-13). Chưa: subreport, QR, tem nhiều cột, crossLine, biểu đồ (cảnh báo trên màn in) |
+| `print-designer` (trình thiết kế: kéo thả, thuộc tính, nhóm, tổng, biểu thức, xem trước, lưu) | **Đã hỗ trợ** (2026-11-13, MVP GĐ2) |
 
 FE **bỏ qua** thuộc tính/vai trò không biết (tương thích tiến). Cần tính năng mới → đề xuất bổ sung đặc tả (tăng 1.x).
 
@@ -534,3 +562,4 @@ FE **bỏ qua** thuộc tính/vai trò không biết (tương thích tiến). C�
 | Tra cứu | `lookups/CF_ObjectTbl.html`, `CF_ItemTbl.html` |
 | Kết quả hành động, đính kèm, hộp thoại | `actions/custom-ok.html`, `deleted.html`, `locked.html`, `attachments.html`, `change-password.html` |
 | In theo mẫu (JSON / `.rpx`) | `print/CS_ReceiptReport.html`, `print/AR_InvoiceReport.html`, mẫu ở `print/templates/` |
+| Thiết kế mẫu in, kết quả lưu | `print/CS_ReceiptReport.designer.html`, `print/AR_InvoiceReport.designer.html`, `actions/print-template-saved.html` |

@@ -8,7 +8,7 @@
 
 const ROLES = new Set(['login', 'session', 'menu', 'menu-group', 'menu-item', 'screen', 'toolbar', 'filter', 'record', 'tab', 'field', 'grid',
   'row-template', 'pager', 'tabs', 'tab-panel', 'messages', 'message', 'confirm', 'dialog', 'lookup-result', 'status', 'attachments',
-  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options', 'print-document', 'print-params']);
+  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options', 'print-document', 'print-params', 'print-designer']);
 const PRINT_TYPES = ['text', 'number', 'money', 'quantity', 'percent', 'date', 'datetime', 'bool'];
 const FORM_TYPES = ['LIST', 'LISTEDIT', 'EDIT', 'REPORT', 'DASHBOARD', 'CUSTOM'];
 const MODES = ['view', 'new', 'edit', 'find'];
@@ -127,6 +127,15 @@ export function validate(doc) {
     grids.forEach((t) => { if (!/^R\d+$/.test(t.getAttribute('data-grid-id') || '')) add('error', '15.1', 'Lưới trong print-document phải có data-grid-id R0, R1…', t); });
     for (const n of ['data-number-group', 'data-number-decimal']) { const v = s.getAttribute(n); if (v !== null && !/^[.,\s ']?$/.test(v)) add('error', '15.1', `${n} chỉ là một ký tự (. , ' hoặc khoảng trắng).`, s); }
     if (s.closest('[data-erp="screen"]')?.getAttribute('data-form-type') !== 'REPORT' && !s.closest('[data-erp="dialog"]')) add('warning', '15.1', 'print-document nên nằm trong screen REPORT.', s);
+  });
+  // 15.2 Trình thiết kế mẫu in
+  doc.querySelectorAll('[data-erp="print-designer"]').forEach((s) => {
+    if (s.tagName !== 'SECTION') add('warning', '15.2', 'print-designer nên là <section>.', s);
+    if (!s.getAttribute('data-template-src')) add('error', '15.2', 'print-designer thiếu data-template-src (URL mẫu đang sửa).', s);
+    const fmt = s.getAttribute('data-template-format');
+    if (fmt && !['rpx', 'json'].includes(fmt)) add('error', '15.2', `data-template-format "${fmt}" không hợp lệ (rpx/json).`, s);
+    const f = s.querySelector('form[method="post" i]');
+    if (f && !f.querySelector('input[name="Template"]')) add('error', '15.2', 'Form lưu mẫu thiếu input name="Template".', f);
   });
   doc.querySelectorAll('[data-erp="print-params"]').forEach((dl) => {
     if (dl.tagName !== 'DL') add('warning', '15.1', 'print-params nên là <dl>.', dl);
