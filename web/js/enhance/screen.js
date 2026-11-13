@@ -10,6 +10,7 @@ import { enhanceGrid } from './grid.js';
 import { enhanceMessages } from './messages.js';
 import { interceptNavigation } from './forms.js';
 import { enhanceDashboard } from './dashboard.js';
+import { enhancePrintDocument } from '../print/viewer.js';
 
 const MODE_LABEL = { view: 'Xem', new: 'Thêm mới', edit: 'Đang sửa', find: 'Danh sách' };
 const TYPE_CLASS = { LIST: 'list', LISTEDIT: 'list', EDIT: 'edit', REPORT: 'report', DASHBOARD: 'dashboard', CUSTOM: 'custom' };
@@ -138,6 +139,8 @@ export function enhanceFragment(root, ctx) {
   interceptNavigation(root, ctx);
   // FE tự kiểm tra (validateRecord) để mở đúng tab chứa ô lỗi; tắt bong bóng kiểm tra mặc định của trình duyệt
   root.querySelectorAll('form').forEach((f) => { /** @type {HTMLFormElement} */ (f).noValidate = true; });
+  // Mẫu in trước lưới: các lưới R0, R1… bên trong là dữ liệu in, không nâng cấp thành lưới
+  root.querySelectorAll('section[data-erp="print-document"]').forEach((p) => enhancePrintDocument(/** @type {HTMLElement} */ (p), ctx));
   root.querySelectorAll('[data-erp="toolbar"]').forEach((m) => enhanceToolbar(/** @type {HTMLElement} */ (m), ctx));
   root.querySelectorAll('form[data-erp="filter"]').forEach((f) => enhanceFilter(/** @type {HTMLFormElement} */ (f)));
   root.querySelectorAll('form[data-erp="record"]').forEach((f) => enhanceRecord(/** @type {HTMLFormElement} */ (f)));

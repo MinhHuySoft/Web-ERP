@@ -903,7 +903,7 @@ def build_list(menu, form):
                 a_btn('edit', f'{BASE}/screens/{sid}.edit.html', 'Sửa', data_target='self', data_shortcut='F3'),
                 a_btn('reload', url, 'Nạp lại', data_target='self'),
                 a_btn('export', f'{BASE}/actions/export.html', 'Xuất Excel', data_target='_blank'),
-                a_btn('print', f'{BASE}/actions/print.html', 'In', data_target='_blank'),
+                a_btn('print', f'{BASE}/print/CS_ReceiptReport.html', 'In'),
             ]))
             parts.append(std_filter(sid, url, with_dates=False, with_branch='BranchID' in [c['field'] for c in cols]))
             parts.append(grid_html('T0', cols, rows, pk, None, selectable='multi', total_rows=2345 if big else n))
@@ -1025,7 +1025,7 @@ def build_edit(menu, sid, title, table, details, prefix, para='', pk=None):
                      a_btn('edit', f'{base}/{idx}.edit.html' if idx == 1 else f'{base}/1.edit.html', 'Sửa', data_target='self', data_shortcut='F3'),
                      s_btn('delete', rid, f'{BASE}/actions/deleted.html', 'Xóa', data_confirm='Xóa chứng từ này?'),
                      a_btn('copy', f'{base}/new.html', 'Sao chép', data_target='tab'),
-                     a_btn('print', f'{BASE}/actions/print.html', 'In', data_target='_blank', data_shortcut='Ctrl+P'),
+                     a_btn('print', f'{BASE}/print/AR_InvoiceReport.html', 'In', data_shortcut='Ctrl+P'),
                      a_btn('attach', f'{BASE}/actions/attachments.html', 'Đính kèm', data_target='dialog'),
                      a_btn('prev', f'{base}/{max(idx - 1, 1)}.html', 'Trước', data_target='self'),
                      a_btn('next', f'{base}/{min(idx + 1, n_records)}.html', 'Sau', data_target='self'),
@@ -2231,6 +2231,205 @@ def build_session_login_home(first_screens):
 </section>'''))
 
 
+def tw(mm):
+    """mm → twip (đơn vị của .rpx)."""
+    return str(round(mm * 1440 / 25.4))
+
+
+def build_print():
+    """Mẫu in (chuẩn 15.1): hai màn in với dữ liệu giả.
+    - Phiếu thu: mẫu JSON erp-print-template/1 (mẫu web).
+    - Hóa đơn: tệp .rpx tự viết theo cấu trúc ActiveReports 3 (FE tự chuyển, như mẫu WinForms của khách)."""
+    T = lambda id, x, y, w, h, value, **kw: dict(id=id, type='text', x=x, y=y, w=w, h=h, value=value, **kw)
+    B = {'top': {'style': 'solid'}, 'right': {'style': 'solid'}, 'bottom': {'style': 'solid'}, 'left': {'style': 'solid'}}
+    bold = {'bold': True}
+    receipt = {
+        '$schema': 'erp-print-template/1', 'id': 'CS_ReceiptReport', 'title': 'Phiếu thu', 'unit': 'mm',
+        'page': {'paper': 'A5', 'orientation': 'portrait', 'width': 148, 'height': 210,
+                 'margin': {'top': 8, 'right': 8, 'bottom': 8, 'left': 10}, 'bodyWidth': 130},
+        'data': {'sort': {'auto': True}},
+        'styles': {'Normal': {'font': 'Times New Roman', 'size': 10}},
+        'groups': [{'id': 'GH1', 'by': 'DocumentID', 'newPage': 'before', 'keepTogether': 'firstDetail', 'repeatHeader': 'onPage'}],
+        'bands': [
+            {'id': 'PageHeader', 'type': 'pageHeader', 'height': 11, 'controls': [
+                T('SysCom1', 0, 0, 80, 5, {'sys': 'SysCom1', 'fallback': 'TÊN CÔNG TY'}, style={'bold': True, 'size': 10}, role='company.line1'),
+                T('SysCom2', 0, 5, 80, 5, {'sys': 'SysCom2', 'fallback': 'Địa chỉ'}, style={'size': 8}, role='company.line2'),
+                T('mau', 82, 0, 48, 10, {'text': 'Mẫu số 01 - TT\n(Ban hành theo TT 200/2014/TT-BTC)'}, style={'size': 7, 'align': 'center', 'italic': True}),
+            ]},
+            {'id': 'GH1', 'type': 'groupHeader', 'group': 'GH1', 'height': 54, 'keepTogether': True, 'controls': [
+                T('title', 0, 2, 130, 8, {'text': 'PHIẾU THU'}, style={'bold': True, 'size': 16, 'align': 'center', 'valign': 'middle'}),
+                T('ngay', 0, 10, 130, 5, {'dateText': 'Ngày {D} tháng {M} năm {Y}', 'field': 'DocumentDate'}, style={'italic': True, 'align': 'center'}),
+                T('soL', 88, 15, 12, 5, {'text': 'Số:'}), T('so', 100, 15, 30, 5, {'field': 'DocumentID'}, style=bold),
+                T('nopL', 0, 21, 42, 5, {'text': 'Họ và tên người nộp tiền:'}), T('nop', 42, 21, 88, 5, {'field': 'ObjectName'}, style=bold, canGrow=True),
+                T('dcL', 0, 26, 18, 5, {'text': 'Địa chỉ:'}), T('dc', 18, 26, 112, 5, {'field': 'Address'}, canGrow=True),
+                T('ldL', 0, 31, 22, 5, {'text': 'Lý do nộp:'}), T('ld', 22, 31, 108, 5, {'field': 'Description'}, canGrow=True),
+                T('stL', 0, 36, 18, 5, {'text': 'Số tiền:'}),
+                T('st', 18, 36, 50, 5, {'field': 'Amount'}, style=bold, format='#,##0',
+                  summary={'func': 'sum', 'scope': 'group:GH1', 'running': 'none', 'lookAhead': True}),
+                T('vbcL', 0, 41, 26, 5, {'text': 'Viết bằng chữ:'}),
+                T('vbc', 26, 41, 104, 5, {'field': 'Amount'}, style={'italic': True}, canGrow=True, format={'kind': 'words', 'currency': 'VND', 'lang': 'VN'},
+                  summary={'func': 'sum', 'scope': 'group:GH1', 'running': 'none', 'lookAhead': True}),
+                T('h1', 0, 48, 10, 6, {'text': 'STT'}, border=B, style={'bold': True, 'align': 'center', 'valign': 'middle'}),
+                T('h2', 10, 48, 70, 6, {'text': 'Diễn giải'}, border=B, style={'bold': True, 'align': 'center', 'valign': 'middle'}),
+                T('h3', 80, 48, 20, 6, {'text': 'TK Có'}, border=B, style={'bold': True, 'align': 'center', 'valign': 'middle'}),
+                T('h4', 100, 48, 30, 6, {'text': 'Số tiền'}, border=B, style={'bold': True, 'align': 'center', 'valign': 'middle'}),
+            ]},
+            {'id': 'Detail', 'type': 'detail', 'height': 6, 'keepTogether': True, 'stretchControls': True, 'controls': [
+                T('stt', 0, 0, 10, 6, {'field': 'LineID'}, border=B, canGrow=True, style={'align': 'center', 'valign': 'middle'},
+                  summary={'func': 'count', 'scope': 'group:GH1', 'running': 'group'}),
+                T('dg', 10, 0, 70, 6, {'field': 'LineDescription'}, border=B, canGrow=True, padding={'l': 2, 'r': 2}, style={'valign': 'middle'}),
+                T('tk', 80, 0, 20, 6, {'field': 'CreditAccount'}, border=B, canGrow=True, style={'align': 'center', 'valign': 'middle'}),
+                T('tien', 100, 0, 30, 6, {'field': 'LineAmount'}, border=B, canGrow=True, format='#,###', padding={'r': 2},
+                  style={'align': 'right', 'valign': 'middle'}, rules=[{'when': 'LineAmount < 0', 'style': {'color': '#c00000'}}]),
+            ]},
+            {'id': 'GF1', 'type': 'groupFooter', 'group': 'GH1', 'height': 34, 'controls': [
+                T('tcL', 10, 0, 90, 6, {'text': 'Cộng'}, border=B, style={'bold': True, 'align': 'center', 'valign': 'middle'}),
+                T('tc', 100, 0, 30, 6, {'field': 'LineAmount'}, border=B, format='#,###', padding={'r': 2}, style={'bold': True, 'align': 'right', 'valign': 'middle'},
+                  summary={'func': 'sum', 'scope': 'group:GH1', 'running': 'none'}),
+                T('k0', 0, 0, 10, 6, {'text': ''}, border=B),
+                *[T(f'sig{i}', i * 26, 10, 26, 5, {'text': t}, style={'bold': True, 'align': 'center'}) for i, t in
+                  enumerate(['Giám đốc', 'Kế toán trưởng', 'Người nộp tiền', 'Người lập phiếu', 'Thủ quỹ'])],
+                *[T(f'sigh{i}', i * 26, 15, 26, 4, {'text': '(Ký, họ tên)'}, style={'italic': True, 'size': 8, 'align': 'center'}) for i in range(5)],
+                T('lap', 78, 29, 26, 5, {'field': 'UserCreateName'}, style={'align': 'center'}),
+            ]},
+            {'id': 'PageFooter', 'type': 'pageFooter', 'height': 5, 'controls': [
+                {'id': 'line', 'type': 'line', 'x1': 0, 'y1': 0.3, 'x2': 130, 'y2': 0.3},
+                T('in', 0, 0.6, 70, 4, {'printDate': True}, style={'size': 7, 'italic': True}),
+                T('LngPageInfo', 90, 0.6, 40, 4, {'pageInfo': 'VN'}, style={'size': 8, 'align': 'right'}, role='page.info'),
+            ]},
+        ],
+        'assets': {},
+        'source': {'kind': 'web', 'converter': '', 'warnings': []},
+    }
+    write('print/templates/CS_ReceiptReport.json', json.dumps(receipt, ensure_ascii=False, indent=1) + '\n')
+
+    # ---- .rpx giả (cấu trúc ActiveReports 3.1 như mẫu WinForms) ----
+    def ctl(typ, name, x, y, w, h, **a):
+        attrs = ''.join(f' {k}="{e(v)}"' for k, v in a.items())
+        return f'      <Control Type="{typ}" Name="{name}" Left="{tw(x)}" Top="{tw(y)}" Width="{tw(w)}" Height="{tw(h)}"{attrs} />\n'
+    cell = dict(BorderLeftStyle='1', BorderRightStyle='1', BorderTopStyle='1', BorderBottomStyle='1')
+    st = lambda extra='': f'font-family: Arial; font-size: 9pt; vertical-align: middle; {extra}'
+    gh = (ctl('AR.Label', 'SysCom1', 0, 0, 110, 5, Caption='', Style=st('font-weight: bold'))
+          + ctl('AR.Label', 'SysCom2', 0, 5, 110, 4, Caption='', Style=st('font-size: 8pt'))
+          + ctl('AR.Label', 'aaTitle', 0, 12, 190, 8, Caption='HÓA ĐƠN BÁN HÀNG', Style='font-family: Arial; font-size: 16pt; font-weight: bold; text-align: center')
+          + ctl('AR.Field', 'DATETIMEREPORT_01', 0, 20, 190, 5, DataField='DocumentDate', Text='Ngày {D} tháng {M} năm {Y}', CanGrow='0', Style=st('font-style: italic; text-align: center'))
+          + ctl('AR.Label', 'aaSo', 140, 25, 15, 5, Caption='Số:', Style=st())
+          + ctl('AR.Field', 'SoCT', 155, 25, 35, 5, DataField='DocumentID', Style=st('font-weight: bold'))
+          + ctl('AR.Label', 'aaKH', 0, 31, 30, 5, Caption='Khách hàng:', Style=st())
+          + ctl('AR.Field', 'ObjectName', 30, 31, 160, 5, DataField='ObjectName', Style=st('font-weight: bold'))
+          + ctl('AR.Label', 'aaDC', 0, 36, 30, 5, Caption='Địa chỉ:', Style=st())
+          + ctl('AR.Field', 'Address', 30, 36, 160, 5, DataField='Address', Style=st())
+          + ctl('AR.Label', 'aaMST', 0, 41, 30, 5, Caption='Mã số thuế:', Style=st())
+          + ctl('AR.Field', 'TaxCode', 30, 41, 60, 5, DataField='TaxCode', Style=st())
+          + ''.join(ctl('AR.Label', f'hd{i}', x, 48, w, 7, Caption=c, Style=st('font-weight: bold; text-align: center'), **cell)
+                    for i, (x, w, c) in enumerate([(0, 10, 'STT'), (10, 25, 'Mã hàng'), (35, 70, 'Tên hàng hóa, dịch vụ'), (105, 15, 'ĐVT'),
+                                                   (120, 20, 'Số lượng'), (140, 22, 'Đơn giá'), (162, 28, 'Thành tiền')])))
+    det = (ctl('AR.Field', 'STT', 0, 0, 10, 6, DataField='ItemID', SummaryType='3', SummaryFunc='2', SummaryRunning='1', SummaryGroup='GroupHeader1', Style=st('text-align: center'), **cell)
+           + ctl('AR.Field', 'ItemID', 10, 0, 25, 6, DataField='ItemID', Style=st(), **cell)
+           + ctl('AR.Field', 'ItemName', 35, 0, 70, 6, DataField='ItemName', Style=st(), Tag='isBold', **cell)
+           + ctl('AR.Field', 'UnitID', 105, 0, 15, 6, DataField='UnitID', Style=st('text-align: center'), **cell)
+           + ctl('AR.Field', 'Quantity', 120, 0, 20, 6, DataField='Quantity', OutputFormat='#,##0.##', Style=st('text-align: right'), **cell)
+           + ctl('AR.Field', 'Price', 140, 0, 22, 6, DataField='Price', OutputFormat='#,###', Style=st('text-align: right'), **cell)
+           + ctl('AR.Field', 'Amount', 162, 0, 28, 6, DataField='Amount', OutputFormat='#,###', Style=st('text-align: right'), **cell))
+    gf = (ctl('AR.Label', 'aaCong', 0, 0, 162, 6, Caption='Cộng tiền hàng', Style=st('font-weight: bold; text-align: right'), **cell)
+          + ctl('AR.Field', 'TongTien', 162, 0, 28, 6, DataField='Amount', OutputFormat='#,###', SummaryType='3', SummaryGroup='GroupHeader1', Style=st('font-weight: bold; text-align: right'), **cell)
+          + ctl('AR.Label', 'aaVAT', 0, 6, 162, 6, Caption='Thuế GTGT (10%)', Style=st('text-align: right'), **cell)
+          + ctl('AR.Field', 'TienThue', 162, 6, 28, 6, DataField='=Amount * 0.1', OutputFormat='#,###', SummaryType='3', SummaryGroup='GroupHeader1', Style=st('text-align: right'), **cell)
+          + ctl('AR.Label', 'aaTT', 0, 12, 162, 6, Caption='Tổng cộng tiền thanh toán', Style=st('font-weight: bold; text-align: right'), **cell)
+          + ctl('AR.Field', 'TongTT', 162, 12, 28, 6, DataField='=Amount * 1.1', OutputFormat='#,###', SummaryType='3', SummaryGroup='GroupHeader1', Style=st('font-weight: bold; text-align: right'), **cell)
+          + ctl('AR.Label', 'aaBC', 0, 19, 40, 5, Caption='Số tiền viết bằng chữ:', Style=st())
+          + ctl('AR.Field', 'COUNTNUMBER_01', 40, 19, 150, 5, DataField='=Amount * 1.1', SummaryType='3', SummaryGroup='GroupHeader1', Tag='CountNumber;VND;VN', Style=st('font-style: italic'))
+          + ctl('AR.Label', 'aaNM', 10, 28, 60, 5, Caption='Người mua hàng', Style=st('font-weight: bold; text-align: center'))
+          + ctl('AR.Label', 'aaNB', 120, 28, 60, 5, Caption='Người bán hàng', Style=st('font-weight: bold; text-align: center')))
+    pf = (ctl('AR.Field', 'LngPageInfo', 140, 0, 50, 5, SummaryType='4', Style=st('font-size: 8pt; text-align: right'))
+          + ctl('AR.Label', 'sysReportPrintDate', 0, 0, 60, 5, Caption='', Style=st('font-size: 7pt; font-style: italic')))
+    rpx = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           f'<ActiveReportsLayout Version="3.1" PrintWidth="{tw(190)}" DocumentName="ARNet Document" ScriptLang="VB.NET" MasterReport="0">\n'
+           '  <StyleSheet>\n    <Style Name="Normal" Value="font-family: Arial; font-size: 10pt; color: Black" />\n  </StyleSheet>\n'
+           '  <Sections>\n'
+           '    <Section Type="ReportHeader" Name="ReportHeader" Visible="0" Height="0" />\n'
+           '    <Section Type="PageHeader" Name="PageHeader" Visible="0" Height="0" />\n'
+           f'    <Section Type="GroupHeader" Name="GroupHeader1" Height="{tw(55)}" DataField="DocumentID" NewPage="1" KeepTogether="1" RepeatStyle="1">\n{gh}    </Section>\n'
+           f'    <Section Type="Detail" Name="Detail" Height="{tw(6)}" KeepTogether="1">\n{det}    </Section>\n'
+           f'    <Section Type="GroupFooter" Name="GroupFooter1" Height="{tw(45)}">\n{gf}    </Section>\n'
+           f'    <Section Type="PageFooter" Name="PageFooter" Height="{tw(6)}">\n{pf}    </Section>\n'
+           '    <Section Type="ReportFooter" Name="ReportFooter" Visible="0" Height="0" />\n'
+           '  </Sections>\n'
+           f'  <PageSettings LeftMargin="{tw(10)}" RightMargin="{tw(10)}" TopMargin="{tw(10)}" BottomMargin="{tw(10)}" PaperSize="9" />\n'
+           '  <Script><![CDATA[Sub ActiveReport_ReportStart\nEnd Sub]]></Script>\n'
+           '</ActiveReportsLayout>\n')
+    write('print/templates/AR_InvoiceReport.rpx', rpx)
+
+    # ---- dữ liệu giả ----
+    sys_rows = [('Sys.SysCom1', 'CÔNG TY TNHH THƯƠNG MẠI MẪU'), ('Sys.SysCom2', 'Số 1 Đường Mẫu, Quận 1, TP. Hồ Chí Minh'),
+                ('Sys.SysCom3', 'MST: 0300000000'), ('Sys.ReportLocation', 'TP. Hồ Chí Minh'), ('Sys.ReportPrintDate', '1')]
+    def params_dl(extra):
+        items = ''.join(f'<dt>{e(k)}</dt><dd data-name="{e(k)}">{e(v)}</dd>' for k, v in sys_rows + extra)
+        return f'<dl data-erp="print-params">{items}</dl>'
+    def tbl(cols, rows):
+        head = ''.join(f'<th data-field="{c}" data-type="{t}">{c}</th>' for c, t in cols)
+        body = []
+        for r in rows:
+            tds = []
+            for (c, t), v in zip(cols, r):
+                if v is None:
+                    tds.append('<td data-null></td>')
+                elif t in ('money', 'quantity', 'number', 'bool'):
+                    tds.append(f'<td data-value="{v}">{e(v)}</td>')
+                elif t == 'date':
+                    tds.append(f'<td data-value="{v}">{v[8:10]}/{v[5:7]}/{v[0:4]}</td>')
+                else:
+                    tds.append(f'<td>{e(v)}</td>')
+            body.append('<tr>' + ''.join(tds) + '</tr>')
+        return f'<table data-erp="grid" data-grid-id="R0"><thead><tr>{head}</tr></thead><tbody>{"".join(body)}</tbody></table>'
+    def screen(sid, title, key, tpl_src, fmt, tbl_html, docs, templates):
+        opts = ''.join(f'<option value="{e(v)}"{" selected" if i == 0 else ""}>{e(t)}</option>' for i, (v, t) in enumerate(templates))
+        flt = (f'<form data-erp="filter" method="get" action="{BASE}/print/{sid}.html">'
+               f'<input type="hidden" name="DocumentID" value="{e(";".join(docs))}">'
+               f'<div data-erp="field" data-control="select" data-span="12"><label for="pt-{sid}">Mẫu in</label><select id="pt-{sid}" name="Template">{opts}</select></div>'
+               '<button type="submit" data-action="find">Xem</button></form>')
+        return page(title, f'''<section data-erp="screen" data-screen-id="{sid}" data-form-type="REPORT" data-mode="view" data-screen-key="{e(key)}">
+<h1>{e(title)}</h1>
+{flt}
+<section data-erp="print-document" data-template-src="{BASE}/print/templates/{tpl_src}" data-template-format="{fmt}" data-title="{e(title)} {e(docs[0])}" data-number-group="." data-number-decimal=",">
+{params_dl([('Template', templates[0][0]), ('DocumentID', ';'.join(docs))])}
+{tbl_html}
+</section>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Mock: mẫu và dữ liệu giả. Backend thật trả dữ liệu của SP {e(sid)}Stp (@Template, @DocumentID) và mẫu từ kho mẫu in.</p></div>
+</section>''')
+    people = ['Nguyễn Văn An', 'Trần Thị Bình', 'Công ty CP Dược phẩm Minh Châu (chi nhánh miền Nam, khu công nghiệp Tân Bình mở rộng)']
+    rc = [('DocumentID', 'text'), ('DocumentDate', 'date'), ('ObjectName', 'text'), ('Address', 'text'), ('Description', 'text'),
+          ('LineID', 'text'), ('LineDescription', 'text'), ('CreditAccount', 'text'), ('LineAmount', 'money'), ('Amount', 'money'), ('UserCreateName', 'text')]
+    rr = []
+    docs = []
+    for d, (n, who) in enumerate([(3, people[0]), (1, people[1]), (22, people[2])]):
+        doc = f'PT1126/{d + 1:04d}'
+        docs.append(doc)
+        for i in range(n):
+            amt = (i + 1) * 1250000 + d * 375000 + (-300000 if (d, i) == (2, 5) else 0)
+            rr.append([doc, f'2026-11-{10 + d:02d}', who, f'{12 + d} Đường Số {d + 3}, Phường {d + 1}, TP. Hồ Chí Minh',
+                       'Thu tiền bán hàng theo hóa đơn' if d != 2 else 'Thu tiền công nợ tháng 10 và tháng 11 theo biên bản đối chiếu',
+                       f'{i + 1}', f'Thu tiền hóa đơn HD{d + 1}{i + 1:03d}' + (' — kèm phí vận chuyển và bốc xếp tại kho' if i % 7 == 3 else ''),
+                       '131' if i % 3 else '5111', amt, amt, 'Lê Thu Hà'])
+    write('print/CS_ReceiptReport.html', screen('CS_ReceiptReport', 'Phiếu thu', 'print:CS_ReceiptReport', 'CS_ReceiptReport.json', 'json', tbl(rc, rr), docs,
+                                                 [('CS_ReceiptReport', 'Phiếu thu (mẫu web)'), ('CS_Receipt2Report', 'Phiếu thu 2 liên')]))
+    ic = [('DocumentID', 'text'), ('DocumentDate', 'date'), ('ObjectName', 'text'), ('Address', 'text'), ('TaxCode', 'text'), ('ItemID', 'text'),
+          ('ItemName', 'text'), ('UnitID', 'text'), ('Quantity', 'quantity'), ('Price', 'money'), ('Amount', 'money'), ('IsBold', 'bool')]
+    ir = []
+    idocs = []
+    for d, n in enumerate([4, 2]):
+        doc = f'HD1126/{d + 1:04d}'
+        idocs.append(doc)
+        for i in range(n):
+            q = [10, 2.5, 120, 1][i % 4]
+            p = [185000, 1240000, 9500, 3600000][i % 4]
+            ir.append([doc, f'2026-11-{12 + d:02d}', people[d], f'{30 + d} Lê Lợi, Quận 1, TP. Hồ Chí Minh', f'03{d}1234567',
+                       f'VT{d}{i:03d}', ['Băng gạc vô trùng 10x10 cm', 'Dung dịch sát khuẩn tay nhanh 500 ml', 'Găng tay y tế', 'Máy đo huyết áp điện tử'][i % 4],
+                       ['Hộp', 'Chai', 'Đôi', 'Cái'][i % 4], q, p, round(q * p), 'true' if i == 0 else 'false'])
+    write('print/AR_InvoiceReport.html', screen('AR_InvoiceReport', 'Hóa đơn bán hàng', 'print:AR_InvoiceReport', 'AR_InvoiceReport.rpx', 'rpx', tbl(ic, ir), idocs,
+                                                 [('AR_InvoiceReport', 'Hóa đơn (mẫu .rpx)')]))
+
+
 def build_actions():
     write('actions/custom-ok.html', page('Kết quả', '<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã thực hiện thao tác (mock).</p></div>'))
     write('actions/deleted.html', page('Đã xóa', '<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã xóa chứng từ (mock).</p></div>'))
@@ -2364,6 +2563,7 @@ def main():
     build_lookups()
     build_session_login_home(first_screens)
     build_actions()
+    build_print()
     build_dialogs()
     total = sum(len(fs) for _, _, fs in os.walk(OUT))
     size = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk(OUT) for f in fs)
