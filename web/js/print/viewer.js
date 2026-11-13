@@ -162,7 +162,10 @@ export function enhancePrintDocument(section, ctx) {
   const design = section.getAttribute('data-design-href');
   if (design && isAllowedUrl(design)) bar.append(h('a', { class: 'erp-btn', href: design, 'data-target': 'tab' }, icon('edit'), h('span', {}, 'Thiết kế mẫu')));
   bar.append(warnBox, info);
-  section.prepend(bar);
+  // Một thanh duy nhất: gộp nút In / thu phóng / khổ giấy / thiết kế vào thanh "Mẫu in … Xem" của màn (form lọc), như ERP.
+  // Các ô chọn ở đây không có name nên không gửi theo form lọc.
+  const filter = section.closest('[data-erp="screen"]')?.querySelector('form[data-erp="filter"]');
+  if (filter) { bar.classList.add('erp-print__bar--filter'); filter.append(bar); } else section.prepend(bar);
   section.append(view);
 
   /** @type {HTMLElement|null} */ let docEl = null;
@@ -197,7 +200,9 @@ export function enhancePrintDocument(section, ctx) {
     view.replaceChildren(docEl);
     applyZoom();
     printBtn.disabled = false;
-    info.textContent = `${pages.length} trang · ${data.main.rows.length} dòng · ${Math.round(performance.now() - t0)} ms`;
+    // Thanh gọn: chỉ số trang; số dòng và thời gian dựng ở chú thích.
+    info.textContent = `${pages.length} trang`;
+    info.title = `${pages.length} trang · ${data.main.rows.length} dòng · ${Math.round(performance.now() - t0)} ms`;
     const all = [...loadWarnings, ...warnings];
     warnBox.hidden = !all.length;
     warnBox.replaceChildren(...(all.length ? [h('summary', {}, `Cảnh báo (${all.length})`), h('ul', {}, ...all.slice(0, 50).map((w) => h('li', {}, w)))] : []));

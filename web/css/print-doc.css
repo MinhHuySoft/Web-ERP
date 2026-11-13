@@ -10,9 +10,23 @@
   .erp-print__zoom select { height: var(--erp-ctl-h); border: 1px solid var(--erp-input-border); border-radius: var(--erp-radius-sm);
     background: var(--erp-input-bg); color: var(--erp-text); font: inherit; padding: 0 6px; }
   .erp-print__info { color: var(--erp-text-muted); font-size: var(--erp-fs-sm); margin-inline-start: auto; }
-  .erp-print__warn { color: var(--erp-warning); font-size: var(--erp-fs-sm); }
-  .erp-print__warn summary { cursor: pointer; }
-  .erp-print__warn ul { margin: 4px 0 0; padding-inline-start: 18px; color: var(--erp-text-muted); max-height: 160px; overflow: auto; }
+  .erp-print__warn { color: var(--erp-warning); font-size: var(--erp-fs-sm); position: relative; }
+  .erp-print__warn summary { cursor: pointer; white-space: nowrap; }
+  /* Danh sách cảnh báo mở dạng bảng nổi để thanh không cao lên. */
+  .erp-print__warn ul {
+    position: absolute; z-index: 20; top: calc(100% + 4px); inset-inline-start: 0; width: max-content; max-width: min(520px, 80vw);
+    margin: 0; padding: 8px 12px 8px 26px; color: var(--erp-text-muted); max-height: 220px; overflow: auto;
+    background: var(--erp-surface); border: 1px solid var(--erp-border); border-radius: var(--erp-radius); box-shadow: var(--erp-shadow-lg);
+  }
+  /* Thanh xem in nằm trong thanh lọc "Mẫu in … Xem": giữa các ô và nút Xem, thẳng hàng với ô nhập. */
+  .erp-filter > .erp-print__bar--filter { order: 1; flex: 1 1 0%; align-self: flex-end; padding: 0; min-width: min(100%, 220px); }
+  .erp-filter > .erp-filter__submit { order: 2; }
+  .erp-print__bar--filter .erp-print__info { white-space: nowrap; }
+  @media (min-width: 768px) {
+    .erp-print__bar--filter { flex-wrap: nowrap; }
+    .erp-print__bar--filter > * { flex: none; }
+    .erp-print__bar--filter .erp-print__info { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  }
   .erp-print__view { flex: 1; min-height: 240px; overflow: auto; background: var(--erp-surface-3); border: 1px solid var(--erp-border);
     border-radius: var(--erp-radius); padding: 16px; }
   .erp-print__status { padding: 24px; text-align: center; color: var(--erp-text-muted); }
