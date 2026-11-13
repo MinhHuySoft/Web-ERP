@@ -34,7 +34,8 @@ export function typed(raw, type) {
 /** Đọc một lưới thành bảng dữ liệu. @param {HTMLTableElement} t @returns {import('./engine.js').DataSet} */
 export function readGrid(t) {
   const ths = Array.from(t.querySelectorAll('thead tr:last-child th'));
-  const columns = ths.map((th) => ({ name: th.getAttribute('data-field') || th.textContent?.trim() || '', type: th.getAttribute('data-type') || 'text' }));
+  const columns = ths.map((th) => ({ name: th.getAttribute('data-field') || th.textContent?.trim() || '', type: th.getAttribute('data-type') || 'text',
+    format: th.getAttribute('data-format') || '' }));
   /** @type {Obj[]} */ const rows = [];
   for (const tr of Array.from(t.querySelectorAll('tbody tr'))) {
     /** @type {Obj} */ const r = Object.create(null);

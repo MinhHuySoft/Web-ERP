@@ -102,6 +102,7 @@ lineSpacing letterSpacing}`, `border {top|right|bottom|left: {style: solid|dash|
 | `SORTBY` / `NOSORT` | `data.sort` |
 | SummaryType 1/2/3/4, SummaryFunc, SummaryRunning, SummaryGroup | `summary` / `PageNumber`… (SummaryType None ⇒ không tổng) |
 | `OutputFormat` `#,###.##` với \|v\| < 1 | thêm "0" trước như viewer (`,5` → `0,5`) |
+| TextBox để trống `OutputFormat` (`FormatField`), Tag `Format;Cột` | `autoFormat` — lấy định dạng cột BE gửi ở `th[data-format]` (`SY_FmtFldTbl`) |
 
 Mã Script: chỉ nhận dạng 2 mẫu quen (IsBold, ẩn PageHeader từ trang 2); còn lại giữ `source.script`, cảnh báo `manual`.
 

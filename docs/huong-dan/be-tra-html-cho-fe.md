@@ -355,7 +355,8 @@ Cách làm như WinForms (`ReportViewerFrm`, xem `docs/kien-truc/06-mau-in.md`):
    `Reports` của công ty; mẫu đã "tách sang web" thì JSON trong `web.PrintTemplateVersion`.
 3. **Dữ liệu**: chạy `<Report>Stp` với `@Template` + `@DocumentID` (nhiều chứng từ nối bằng `;`) và các tham số khác của
    SP, trong giao dịch chỉ đọc. Mỗi result set → một lưới `R0`, `R1`…; giá trị máy như mục 6 (số bất biến, ngày ISO,
-   `td[data-null]` cho NULL). Không đổi mã thành tên (in đúng cột SP trả).
+   `td[data-null]` cho NULL). Không đổi mã thành tên (in đúng cột SP trả). Mỗi `th` NÊN có `data-format` = định dạng của
+   cột trong `SY_FmtFldTbl`/`SY_FmatTbl` (như `GetFormatString`), vì WinForms tự gán định dạng đó cho ô để trống `OutputFormat`.
 4. **Tham số in**: tham số của SP (tên trơn), `Sys.*` = `GetSysParam` (ít nhất `SysCom1..4`, `ReportLocation`,
    `ReportPrintDate`, `ServerDate`, `SubTitle`), `Lang.*` cho nhãn `Lng*` có trong mẫu, `Caption.*` cho nhãn `PAR*`,
    `Image.logo` (logo công ty). BE có thể quét tên control trong `.rpx` (`Name="Lng…"`, `"SysCom…"`) để chỉ gửi phần cần.

@@ -509,6 +509,7 @@ class Designer {
     const words = fmt && typeof fmt === 'object' && fmt.kind === 'words';
     const f2 = h('fieldset', {}, h('legend', {}, 'Định dạng'),
       this.input('Chuỗi định dạng .NET', typeof fmt === 'string' ? fmt : '', (x) => { if (x) c.format = x; else delete c.format; }, { list: FORMATS }),
+      this.input('Để trống thì theo định dạng của cột (SY_FmtFldTbl)', !!c.autoFormat, (x) => { if (x) c.autoFormat = true; else delete c.autoFormat; }, { type: 'checkbox' }),
       this.input('Đọc số thành chữ', !!words, (x) => { if (x) c.format = { kind: 'words', currency: 'VND', lang: 'VN' }; else delete c.format; }, { type: 'checkbox' }));
     if (words) f2.append(h('div', { class: 'erp-pd__row2' },
       this.input('Tiền', fmt.currency || 'VND', (x) => { c.format = { ...fmt, currency: x }; }, { list: ['VND', 'USD', 'EUR', 'AUD', 'CAD'] }),
@@ -570,7 +571,7 @@ class Designer {
     else if (kind === 'checkbox') c = { ...base, type: 'checkbox', w: 25, h: 5, caption: 'Ô chọn', value: { field: field || this.fields[0]?.name || '' } };
     else if (kind === 'barcode') c = { ...base, type: 'barcode', w: 40, h: 12, symbology: 'code128', caption: true, value: { field: field || this.fields[0]?.name || '' } };
     else if (kind === 'pageInfo') c = { ...base, type: 'text', w: 30, h: 5, value: { pageInfo: 'VN' }, style: { align: 'right' } };
-    else if (kind === 'field') c = { ...base, type: 'text', w: 30, h: 5, canGrow: true, value: { field: field || this.fields[0]?.name || '' } };
+    else if (kind === 'field') c = { ...base, type: 'text', w: 30, h: 5, canGrow: true, autoFormat: true, value: { field: field || this.fields[0]?.name || '' } };
     else c = { ...base, type: 'text', w: 30, h: 5, canGrow: false, value: { text: 'Chữ' } };
     this.edit(() => {
       b.controls ||= [];

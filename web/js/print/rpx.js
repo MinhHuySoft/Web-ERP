@@ -279,6 +279,8 @@ function convertControl(c, band, ctx) {
     if (df) bind(); else o.value = { text: staticText };
     if (type !== 'AR.Label') {
       if (a.OutputFormat) o.format = a.OutputFormat;
+      // FormatField của ReportViewerFrm: TextBox để trống OutputFormat thì lấy định dạng của cột (SY_FmtFldTbl) lúc chạy.
+      else if (df && !df.startsWith('=')) o.autoFormat = true;
       o.canGrow = a.CanGrow !== '0';
       if (a.CanShrink === '1') o.canShrink = true;
       summary(a, o, band, ctx);
@@ -421,6 +423,7 @@ function tagConventions(a, o, ctx) {
   } else if (T.startsWith('FILTER:')) o.filter = { field: tg.slice(7) };
   else if (tg.length >= 100 && /^[A-Za-z0-9+/=]+$/.test(tg)) { o.propertyX = true; ctx.warn('manual', `ReportPropertyX (SQL / tham số riêng trong Tag) ở ${o.id}`); }
   else if (T === 'SUMMARYEXPRESSION') ctx.warn('manual', 'SummaryExpression');
+  else if (T.startsWith('FORMAT') && !a.DataField && !a.OutputFormat && a.Type !== 'AR.Label') o.autoFormat = tg.slice(7); // Tag "Format;TênCột"
   else if (/DATETIMEREPORT|\{[DMY]\}/i.test(tg)) { /* mẫu ngày đã xử lý theo tên */ }
   else ctx.warn('info', `Tag chưa biết: ${tg.slice(0, 24)}`);
 }

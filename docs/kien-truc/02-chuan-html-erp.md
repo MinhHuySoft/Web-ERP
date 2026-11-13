@@ -725,6 +725,9 @@ Màn in chứng từ / báo cáo theo mẫu (thiết kế như ActiveReports). F
 - Lưới `R0` (PHẢI) = result set chính của SP `<Report>Stp`; `R1`… = các result set sau, đúng thứ tự. Lưới theo mục 11
   (`th[data-field][data-type]`, giá trị máy trong `td[data-value]`); ô `null` của SQL gửi `td[data-null]`. Cột chữ không
   có `data-value` thì FE dùng chữ trong ô. Lưới này là **dữ liệu in**, FE không hiện thành lưới.
+- `th[data-format]` (NÊN): chuỗi định dạng .NET của cột theo `SY_FmtFldTbl` + `SY_FmatTbl` (`Functions.GetFormatString`:
+  dòng đầu theo `AutoID`, mọi form, so tên không phân biệt hoa thường). FE dùng cho ô TextBox của mẫu để trống
+  `OutputFormat`, như `FormatField` của `ReportViewerFrm` (thiếu thì ngày in đủ ngày giờ, số in không phân cách nghìn).
 - `dl[data-erp=print-params]`: mỗi `dd[data-name]` một giá trị, `data-type` như cột lưới, giá trị máy ở `data-value`:
   - tên trơn: tham số báo cáo (`@FromDate`, `@Template`, `UINPUT1..6`…);
   - `Sys.<Tên>`: tham số hệ thống (`GetSysParam`: `SysCom1..4`, `ReportLocation`, `ReportPrintDate`, `SubTitle`,
