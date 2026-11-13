@@ -1,7 +1,8 @@
 # AGENTS.md — điểm vào cho agent lập trình
 
 Dự án **Web-ERP**: dựng lại giao diện ERP.NET (WinForms) thành web. Repo này **chỉ làm frontend** (QĐ-06):
-backend do đội khác làm, trả **HTML thô theo chuẩn ERP-HTML v1.0**; FE (HTML/CSS/JS thuần, không build) dựng giao diện.
+backend (C#, repo riêng [`MinhHuySoft/Web-ERP-BE`](https://github.com/MinhHuySoft/Web-ERP-BE), QĐ-08) trả **HTML thô
+theo chuẩn ERP-HTML v1.0**; FE (HTML/CSS/JS thuần, không build) dựng giao diện.
 Ngôn ngữ tài liệu, chú thích, chữ giao diện: **tiếng Việt**.
 
 ## Đọc gì trước (theo việc)
@@ -10,6 +11,8 @@ Ngôn ngữ tài liệu, chú thích, chữ giao diện: **tiếng Việt**.
 |---|---|
 | **Backend** cần trả HTML cho FE | [`docs/huong-dan/be-tra-html-cho-fe.md`](docs/huong-dan/be-tra-html-cho-fe.md) → đặc tả [`docs/kien-truc/02-chuan-html-erp.md`](docs/kien-truc/02-chuan-html-erp.md) |
 | **Frontend** (sửa / thêm tính năng trong `web/`) | [`docs/huong-dan/fe-cau-truc-va-to-chuc.md`](docs/huong-dan/fe-cau-truc-va-to-chuc.md) → [`docs/kien-truc/03-chuan-giao-dien.md`](docs/kien-truc/03-chuan-giao-dien.md) |
+| **Backend**: tổ chức mã, project, thư mục | [`docs/huong-dan/be-cau-truc-va-to-chuc.md`](docs/huong-dan/be-cau-truc-va-to-chuc.md) |
+| **Triển khai BE** (VPS, nhiều công ty, nâng cấp) | [`docs/QUYET-DINH.md`](docs/QUYET-DINH.md) QĐ-07 → đường lui / nâng cấp [`docs/kien-truc/05-phuong-an-du-phong-va-nang-cap.md`](docs/kien-truc/05-phuong-an-du-phong-va-nang-cap.md) (chưa áp dụng) |
 | Nghiệp vụ / màn hình của hệ cũ | [`docs/legacy-analysis/01-tong-quan.md`](docs/legacy-analysis/01-tong-quan.md) và các file cùng thư mục |
 | Vì sao làm thế này | [`docs/QUYET-DINH.md`](docs/QUYET-DINH.md) |
 
