@@ -14,6 +14,9 @@
     min-height: 48px; border-radius: var(--erp-radius-sm);
   }
   .erp-ld__grid.is-drop { outline: 2px dashed var(--erp-primary); outline-offset: 2px; }
+  /* Khung vẽ và xem trước rộng tối thiểu như màn chứng từ trên máy bàn (cuộn ngang khi hẹp), để ô không bị bóp nhỏ hơn thực tế. */
+  .erp-ld__canvas > .erp-ld__grid { min-width: 1000px; }
+  .erp-ld__canvas > .erp-ld__preview { min-width: 1100px; }
   .erp-ld__item {
     position: relative; grid-column: span var(--ld-span, 10); grid-row: span var(--ld-rows, 1); display: flex; flex-direction: column;
     justify-content: center; gap: 2px; min-width: 0; padding: 4px 8px; border: 1px solid var(--erp-border); border-radius: var(--erp-radius-sm);
@@ -50,6 +53,12 @@
   .erp-ld__versions li { display: grid; gap: 4px; padding: 8px 10px; border-bottom: 1px solid var(--erp-border); }
   .erp-ld__versions small { color: var(--erp-text-muted); }
   .erp-ld__versions .erp-btn { justify-self: start; }
+  .erp-ld__prop { display: grid; gap: 2px; color: var(--erp-text-muted); font-size: var(--erp-fs-xs); }
+  .erp-ld__color { display: flex; align-items: center; gap: 6px; }
+  .erp-ld__color input[type="color"] { width: 44px; height: 28px; padding: 0; border: 1px solid var(--erp-input-border); border-radius: var(--erp-radius-sm); background: var(--erp-input-bg); }
+  .erp-ld__fixed { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 8px; margin: 0; font-size: var(--erp-fs-xs); }
+  .erp-ld__fixed dt { font-weight: 600; color: var(--erp-text-muted); }
+  .erp-ld__fixed dd { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--erp-mono); }
   @media (max-width: 1100px) {
     .erp-ld { grid-template-rows: auto minmax(420px, 1fr) auto auto; }
     .erp-ld > .erp-ld__center { order: 1; }

@@ -151,6 +151,8 @@ export function validate(doc) {
     if (s.tagName !== 'SECTION') add('warning', '15.3', 'layout-designer nên là <section>.', s);
     if (!s.getAttribute('data-layout-src')) add('error', '15.3', 'layout-designer thiếu data-layout-src (URL bố cục erp-form-layout/1).', s);
     if (!s.getAttribute('data-form')) add('error', '15.3', 'layout-designer thiếu data-form (FID đang sửa).', s);
+    const srcTmpl = s.getAttribute('data-source-src');
+    if (srcTmpl !== null && !srcTmpl.includes('{fid}')) add('error', '15.3', 'data-source-src phải có chỗ thay {fid} (mã form nguồn).', s);
     const f = s.querySelector('form[method="post" i]');
     if (f && !f.querySelector('input[name="Form"]')) add('error', '15.3', 'Form lưu bố cục thiếu input name="Form".', f);
   });

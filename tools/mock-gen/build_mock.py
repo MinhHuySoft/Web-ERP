@@ -2264,6 +2264,10 @@ def build_layout_designer(sid, table, title):
     """Trình vẽ layout form (chuẩn 15.3): trang designer + JSON erp-form-layout/1 từ dòng LYT của cấu hình mẫu. Lưu/khôi phục = mock."""
     rows = cfg_of(sid)
     lyt = [r for r in rows if (r['KeyID'] or '').upper().startswith('LYT') and r['SubID']]
+    lys = collections.defaultdict(dict)
+    for r in rows:
+        if (r['KeyID'] or '').upper().startswith('LYS') and r['SubID'] and r.get('SubValue') and r['KeyValue']:
+            lys[(r['KeyID'][3:], r['SubID'])][r['SubValue']] = r['KeyValue']
     groups = {}
     for r in lyt:
         if (r['KeyValue'] or '').split(';')[0] == '23' and r['KeyID'][3:] in LAYOUT_TABS:
@@ -2277,7 +2281,7 @@ def build_layout_designer(sid, table, title):
             tab, grp = groups[k]
         else:
             continue
-        items.append(dict(tab=tab, group=grp, name=r['SubID'], cfg=r['KeyValue'] or ''))
+        items.append(dict(tab=tab, group=grp, name=r['SubID'], cfg=r['KeyValue'] or '', props=lys.get((k, r['SubID']), {})))
     # Nhóm đứng trước ô con của nó trong danh sách (FE giữ thứ tự theo vùng).
     order = {t: i for i, t in enumerate(LAYOUT_TABS)}
     items.sort(key=lambda x: (order[x['tab']], 1 if x['group'] else 0))
@@ -2288,8 +2292,11 @@ def build_layout_designer(sid, table, title):
                          defaultCaption='Thông tin chung' if t == '1' else f'Thông tin {i + 1}'))
     for n in range(1, 10):
         dcp = cfg_get(rows, f'T{n}', 'DCP')
+        grid = bool(cfg_get(rows, f'T{n}', 'TN'))
         tabs.append(dict(id=str(n + 4), kind='detail', page=n, caption=dcp or f'Chi tiết {n}', defaultCaption=f'Chi tiết {n}',
-                         hint=f'Trang chi tiết {n}: ô của chứng từ (LYT{n + 4}) đứng trước lưới T{n} cùng trang.'))
+                         hint=f'Trang chi tiết {n}: ô của chứng từ (LYT{n + 4}) đứng trước lưới T{n} cùng trang.',
+                         grid=grid, dcp=dcp or None, dcpEditable=grid, visible=(cfg_get(rows, f'TPV{n}') or '0') if n <= 5 else None,
+                         visibleEditable=grid and n <= 5))
     used = {x['name'].lower() for x in items}
     fields = []
     for c in table_cols(table):
@@ -2298,18 +2305,34 @@ def build_layout_designer(sid, table, title):
             continue
         fields.append(dict(name=c['column_name'], type={'money': 'money', 'quantity': 'number', 'number': 'number', 'date': 'date', 'datetime': 'datetime',
                                                        'bool': 'bool'}.get(k, 'text'), caption=caption(c['column_name'], fid=sid)))
+    # Mã LYS sửa được theo loại control (như LayoutModel.EditableProps của BE).
+    editable = {'0': ['FH', 'FW', 'PT', 'PL', 'PV1', 'PV3', 'PV4', 'PV5', 'PV6', 'LBEX', 'LBSP'], '1': ['PC'], '30': ['PC'],
+                '4': ['MVR', 'MV', 'MXR', 'MX'], '5': ['MVR', 'MV', 'MXR', 'MX', 'SCB', 'SUD', 'SUV1', 'SUV2'],
+                '20': ['SFB', 'SFT', 'VLS', 'VLC', 'VCW'], '23': ['SFT'], '24': ['BI', 'BC'], '26': ['BI', 'BC'],
+                '28': ['B0', 'B1', 'B2', 'FS', 'FB', 'FN', 'FC', 'F1', 'B4', 'BC', 'TA'], '22': ['BT', 'LT']}
     data = {'$schema': 'erp-form-layout/1', 'form': sid, 'title': title, 'revision': 'mock-1', 'tabs': tabs, 'items': items, 'fields': fields,
+            'editableProps': editable,
             'versions': [dict(no=1, at='12/11/2026 09:15', by='admin', kind='save', comment='Mock: lần lưu mẫu')]}
     write(f'layout/{sid}.json', json.dumps(data, ensure_ascii=False, indent=1))
     body = (f'<section data-erp="screen" data-screen-id="{e(sid)}" data-form-type="CUSTOM" data-mode="edit" data-screen-key="layout:{e(sid)}">'
             f'<h1>Vẽ layout — {e(title)}</h1>'
             f'<section data-erp="layout-designer" data-form="{e(sid)}" data-layout-src="{BASE}/layout/{e(sid)}.json" '
-            f'data-preview-href="{BASE}/records/{slug(sid)}/1.html">'
+            f'data-source-src="{BASE}/layout/source-{{fid}}.json">'
             f'<form method="post" action="{BASE}/actions/layout-saved.html">{TOKEN}<input type="hidden" name="Form" value="{e(sid)}"></form>'
             '</section></section>')
     write(f'layout/{sid}.html', page(f'Vẽ layout — {title}', body))
     write('actions/layout-saved.html', page('Kết quả', '<div data-erp="messages"><p data-erp="message" data-msg-type="success">'
                                                          'Đã lưu bố cục (mock, không ghi gì).</p></div>'))
+    # Nguồn chép bố cục (data-source-src, {fid} rỗng = danh sách form): form mẫu có bố cục trong cấu hình.
+    srcs = [f for f in ('IV_InboundRequestFrm', 'AR_OrderComfirmFrm', 'ContractListFrm') if any((r['KeyID'] or '').upper().startswith('LYT') for r in cfg_of(f))]
+    write('layout/source-.json', json.dumps({'forms': [dict(fid=f, items=sum(1 for r in cfg_of(f) if (r['KeyID'] or '').upper().startswith('LYT')),
+                                                            caption=(forms.get(f.upper()) or {}).get('CaptionVN')) for f in srcs]}, ensure_ascii=False))
+    for f in srcs:
+        frows = cfg_of(f)
+        its = [dict(tab=r['KeyID'][3:], group='', name=r['SubID'], cfg=r['KeyValue'] or '', props={})
+               for r in sorted(frows, key=lambda r: (r['KeyID'], (r['SubValue'] or '').zfill(4)))
+               if (r['KeyID'] or '').upper().startswith('LYT') and r['SubID'] and r['KeyID'][3:] in LAYOUT_TABS]
+        write(f'layout/source-{f}.json', json.dumps({'form': f, 'captions': {}, 'items': its}, ensure_ascii=False))
 
 
 def build_print():

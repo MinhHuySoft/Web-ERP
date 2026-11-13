@@ -814,6 +814,7 @@ toàn bộ giao diện. BE gửi URL bố cục và form lưu, rồi ghi cấu h
 - `data-form` (PHẢI): FID đang vẽ, tức tên form chạy, có hậu tố Para nếu menu có Para.
 - `data-layout-src` (PHẢI): URL trả JSON `erp-form-layout/1` (07-ve-layout-form.md §3).
   - JSON gồm: tab, ô theo thứ tự, cột của bảng, phiên bản đã lưu, `revision`.
+- `data-source-src` (CÓ THỂ): URL nguồn "chép bố cục từ form khác", có chỗ thay `{fid}` (rỗng = danh sách form). Chỉ gửi khi được lưu.
 - `form[method=post]` (CÓ THỂ): có thì được lưu; không có thì chỉ xem.
   - Form PHẢI có `input[name=Form]`.
   - **Lưu**: FE gửi `multipart/form-data` gồm mọi input của form + `Json` (bố cục, kèm `revision` lúc mở) + `Comment`.

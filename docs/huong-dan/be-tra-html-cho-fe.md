@@ -404,18 +404,22 @@ Như Ctrl+F12 (`LayoutSettingFrm`) của WinForms. Thiết kế đầy đủ ở
 1. **Nút trên chứng từ**: `<a data-action="layout" href="…/layout" data-target="tab" data-shortcut="Ctrl+F12">Vẽ layout</a>`.
    - Chỉ gửi khi người dùng có quyền Admin trên form.
    - Không gửi khi bố cục form không đọc từ `SY_FrmCfg` (form viết tay).
-2. **Màn vẽ**: `section[data-erp=layout-designer]` có `data-form` (FID) và `data-layout-src`.
+2. **Màn vẽ**: `section[data-erp=layout-designer]` có `data-form` (FID), `data-layout-src`, và `data-source-src` (URL có `{fid}`,
+   chỉ khi được lưu) để chép bố cục từ form khác.
    - `form` lưu có token + `input[name=Form]`.
    - Không được lưu thì không gửi `form`; khi đó gửi `messages` `info` giải thích.
 3. **Bố cục JSON** (`data-layout-src`, `Cache-Control: no-store`) gồm:
-   - `tabs` (master `1,2,3,A,B,C` + trang chi tiết `5…13`);
+   - `tabs` (master `1,2,3,A,B,C` + trang chi tiết `5…13`, kèm `dcp` / `visible` và cờ sửa được);
+   - `editableProps`: mã LYS sửa được theo loại control (không có mã SQL / lệnh);
    - `items` (`tab`, `group` = đường dẫn nhóm cha, `name`, `cfg` = chuỗi LYT nguyên văn);
    - `fields` (cột bảng chính, bỏ cột bí mật);
    - `versions`, `revision` = sha256 các dòng bố cục.
 4. **Lưu** trong một giao dịch:
    - Khóa theo FID, đọc dòng `UPDLOCK`. So `revision`: khác thì trả 409, không ghi gì.
    - Chỉ ghi dòng LYT / LYS / T?V theo chênh lệch. Giữ UserAutoID cũ. Thứ tự "001"…, `VDate = GETDATE()`.
-   - Thuộc tính LYS đi theo ô.
+   - Thuộc tính LYS đi theo ô (đổi vùng, đổi tên qua `from`). Chỉ sửa mã cho phép; mã có SQL / lệnh giữ nguyên, gửi khác thì 422.
+   - Chặn đổi loại control / đổi tên user control sang lớp khác khi ô còn thuộc tính có lệnh.
+   - Tiêu đề / quyền xem trang chi tiết: `T{n}` / `DCP`, `TPV{n}`.
    - Không đụng dòng khác của FID và dòng mồ côi.
    - Lưu ảnh trước / sau vào `web.FormLayoutVersion` (migration `0003_form_layouts`).
    - Xóa bộ đệm metadata của form.

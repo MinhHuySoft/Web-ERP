@@ -52,7 +52,12 @@
    "page": 1,
    "caption": "Chi tiết 1",
    "defaultCaption": "Chi tiết 1",
-   "hint": "Trang chi tiết 1: ô của chứng từ (LYT5) đứng trước lưới T1 cùng trang."
+   "hint": "Trang chi tiết 1: ô của chứng từ (LYT5) đứng trước lưới T1 cùng trang.",
+   "grid": true,
+   "dcp": null,
+   "dcpEditable": true,
+   "visible": "0",
+   "visibleEditable": true
   },
   {
    "id": "6",
@@ -60,7 +65,12 @@
    "page": 2,
    "caption": "Chi tiết 2",
    "defaultCaption": "Chi tiết 2",
-   "hint": "Trang chi tiết 2: ô của chứng từ (LYT6) đứng trước lưới T2 cùng trang."
+   "hint": "Trang chi tiết 2: ô của chứng từ (LYT6) đứng trước lưới T2 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": "0",
+   "visibleEditable": false
   },
   {
    "id": "7",
@@ -68,7 +78,12 @@
    "page": 3,
    "caption": "Chi tiết 3",
    "defaultCaption": "Chi tiết 3",
-   "hint": "Trang chi tiết 3: ô của chứng từ (LYT7) đứng trước lưới T3 cùng trang."
+   "hint": "Trang chi tiết 3: ô của chứng từ (LYT7) đứng trước lưới T3 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": "0",
+   "visibleEditable": false
   },
   {
    "id": "8",
@@ -76,7 +91,12 @@
    "page": 4,
    "caption": "Chi tiết 4",
    "defaultCaption": "Chi tiết 4",
-   "hint": "Trang chi tiết 4: ô của chứng từ (LYT8) đứng trước lưới T4 cùng trang."
+   "hint": "Trang chi tiết 4: ô của chứng từ (LYT8) đứng trước lưới T4 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": "0",
+   "visibleEditable": false
   },
   {
    "id": "9",
@@ -84,7 +104,12 @@
    "page": 5,
    "caption": "Chi tiết 5",
    "defaultCaption": "Chi tiết 5",
-   "hint": "Trang chi tiết 5: ô của chứng từ (LYT9) đứng trước lưới T5 cùng trang."
+   "hint": "Trang chi tiết 5: ô của chứng từ (LYT9) đứng trước lưới T5 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": "0",
+   "visibleEditable": false
   },
   {
    "id": "10",
@@ -92,7 +117,12 @@
    "page": 6,
    "caption": "Chi tiết 6",
    "defaultCaption": "Chi tiết 6",
-   "hint": "Trang chi tiết 6: ô của chứng từ (LYT10) đứng trước lưới T6 cùng trang."
+   "hint": "Trang chi tiết 6: ô của chứng từ (LYT10) đứng trước lưới T6 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": null,
+   "visibleEditable": false
   },
   {
    "id": "11",
@@ -100,7 +130,12 @@
    "page": 7,
    "caption": "Chi tiết 7",
    "defaultCaption": "Chi tiết 7",
-   "hint": "Trang chi tiết 7: ô của chứng từ (LYT11) đứng trước lưới T7 cùng trang."
+   "hint": "Trang chi tiết 7: ô của chứng từ (LYT11) đứng trước lưới T7 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": null,
+   "visibleEditable": false
   },
   {
    "id": "12",
@@ -108,7 +143,12 @@
    "page": 8,
    "caption": "Chi tiết 8",
    "defaultCaption": "Chi tiết 8",
-   "hint": "Trang chi tiết 8: ô của chứng từ (LYT12) đứng trước lưới T8 cùng trang."
+   "hint": "Trang chi tiết 8: ô của chứng từ (LYT12) đứng trước lưới T8 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": null,
+   "visibleEditable": false
   },
   {
    "id": "13",
@@ -116,7 +156,12 @@
    "page": 9,
    "caption": "Chi tiết 9",
    "defaultCaption": "Chi tiết 9",
-   "hint": "Trang chi tiết 9: ô của chứng từ (LYT13) đứng trước lưới T9 cùng trang."
+   "hint": "Trang chi tiết 9: ô của chứng từ (LYT13) đứng trước lưới T9 cùng trang.",
+   "grid": false,
+   "dcp": null,
+   "dcpEditable": false,
+   "visible": null,
+   "visibleEditable": false
   }
  ],
  "items": [
@@ -124,121 +169,192 @@
    "tab": "1",
    "group": "",
    "name": "PurchaseRequestID",
-   "cfg": "1;4;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "1;4;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PurchaseDate",
-   "cfg": "4;4;1;;;;;;;;;;;;;SELECT FORMAT(GETDATE(), \"dd/MM/yyyy\") AS CurrentDate:;;;;0;0"
+   "cfg": "4;4;1;;;;;;;;;;;;;SELECT FORMAT(GETDATE(), \"dd/MM/yyyy\") AS CurrentDate:;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "StatusButtonCtl",
-   "cfg": "22;4;1;;1;;;;;;;;;;;;;;;0;0"
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;;0;0",
+   "props": {
+    "MSQ": "SELECT * FROM AP_PurchaseStatusTbl",
+    "BCF": "BackColor",
+    "FCF": "ForeColor",
+    "ACF": "StatusID"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "PersonSuggest",
-   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PrintButtonCtl_1",
-   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0",
+   "props": {
+    "BT": "In BB giao nhận hàng hóa",
+    "C2": "SaveContinue",
+    "C4": "AP_GoodsDeliveryReceiptReportStp"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "Department",
-   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PrintButtonCtl_2",
-   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0",
+   "props": {
+    "BT": "In BB không phù hợp",
+    "C2": "SaveContinue",
+    "C4": "AP_DiscrepancyReportStp"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "PurposeDescOrClient",
-   "cfg": "1;12;1;1;;120;;;;;;;;;;;;;;0;0"
+   "cfg": "1;12;1;1;;120;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PrintButtonCtl_3",
-   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0",
+   "props": {
+    "BT": "In ĐN phê duyệt HĐ/ĐH",
+    "C2": "SaveContinue",
+    "C4": "AP_ApproveSuggestContractOrOrderReportStp"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "Notes",
-   "cfg": "1;12;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "1;12;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PrintButtonCtl_4",
-   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0",
+   "props": {
+    "BT": "In BB kiểm nhập kho HH",
+    "C2": "SaveContinue",
+    "C4": "AP_GoodsInspectionAndReceivingReportStp"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "ObjectID",
-   "cfg": "2;7;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "2;7;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "RateExchange",
-   "cfg": "1;2;1;;1;;;;;;;;;;;;;;;0;0"
+   "cfg": "1;2;1;;1;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "CurrencyID",
-   "cfg": "2;3;1;;;;;;;;;;;;;;;;;0;0"
+   "cfg": "2;3;1;;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "Price",
-   "cfg": "5;4;1;1;;;;;;;;;;;;;;;;0;0"
+   "cfg": "5;4;1;1;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "PurposeID",
-   "cfg": "2;4;1;;;;;;;;1;;;;;;;;;0;0"
+   "cfg": "2;4;1;;;;;;;;1;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "BranchID",
-   "cfg": "2;4;1;;;;;;;;;;;;;;;;;0;0"
+   "cfg": "2;4;1;;;;;;;;;;;;;;;;;0;0",
+   "props": {}
   },
   {
    "tab": "1",
    "group": "",
    "name": "CommandButtonCtl",
-   "cfg": "22;4;1;1;;;;;;;;;;;4;;;;;0;0"
+   "cfg": "22;4;1;1;;;;;;;;;;;4;;;;;0;0",
+   "props": {
+    "C3": "Reload",
+    "BT": "Gửi đề nghị",
+    "BI": "email16",
+    "BC": "-16711936",
+    "C4": "UPDATE AP_PurchaseRequestTbl SET StatusID = 2, isLock = 1\r\nWHERE PurchaseRequestID = '{0}'\r\nSELECT N'Đã gửi đề nghị' as Msg",
+    "P1": "PurchaseRequestID",
+    "C1": "ExecSQL",
+    "LBS": "SELECT ISNULL((SELECT CASE WHEN isLock = 1 THEN 1 WHEN StatusID = 1 OR StatusID = 4 THEN 0 ELSE 1 END FROM AP_PurchaseRequestTbl WHERE PurchaseRequestID = '{0}'), 1) AS isSend;",
+    "LBSP": "PurchaseRequestID",
+    "C2": "SaveContinue",
+    "CS4": "select top 1 Msg, MsgType\r\nfrom (\r\n    select \r\n        1 as SortOrder,\r\n        N'Dữ liệu đã được cập nhật hoặc trạng thái đã thay đổi, vui lòng tải lại trang!' as Msg,\r\n        1 as MsgType\r\n    where exists (\r\n        select 1\r\n        from AP_PurchaseRequestTbl\r\n        where PurchaseRequestID = '{0}'\r\n        and StatusID in (2, 3)\r\n    )\r\n) A\r\norder by SortOrder;",
+    "CS5": "PurchaseRequestID"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "CommandButtonCtl_1",
-   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0"
+   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0",
+   "props": {
+    "C3": "Reload",
+    "LBSP": "PurchaseRequestID",
+    "BI": "arrow_right_blue",
+    "BT": "Gửi đặt mua hàng",
+    "BC": "-16711681",
+    "C2": "SaveContinue",
+    "C4": "INSERT INTO AP_OrderTbl (DocumentID, DocumentDate, Memo, Notes, ObjectID, CurrencyID, RateExchange, BranchID, isLock)\r\nSELECT PurchaseRequestID, PurchaseDate, Notes, PurposeDescOrClient, ObjectID, CurrencyID, RateExchange, BranchID, 0                      \r\nFROM AP_PurchaseRequestTbl\r\nWHERE PurchaseRequestID = '{0}';\r\n\r\nINSERT INTO AP_OrderDetailTbl (UserAutoID, DocumentID, ItemID, Quantity, UnitPrice, Notes)\r\nSELECT FORMAT(SYSDATETIME(), 'ddMMyyHHmmssfff') + \r\n    RIGHT('00000' + CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 5) + \r\n    RIGHT('00000' + CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 5) AS UserAutoID, \r\n    PurchaseRequestID, ItemID, Quantity, UnitPrice, TimeRequired           \r\nFROM AP_PurchaseRequestDetailTbl\r\nWHERE PurchaseRequestID = '{0}';\r\n\r\nUPDATE AP_PurchaseRequestTbl SET StatusID = 5 WHERE PurchaseRequestID = '{0}'\r\nSELECT N'Đã gửi đặt mua hàng' as Msg",
+    "P1": "PurchaseRequestID",
+    "LBS": "SELECT CASE WHEN StatusID <> 3 OR EXISTS (SELECT 1 FROM AP_OrderTbl WHERE DocumentID = '{0}') THEN 1  ELSE 0 END AS isSend FROM AP_PurchaseRequestTbl WHERE PurchaseRequestID = '{0}';",
+    "CS4": "select top 1 Msg, MsgType\r\nfrom (\r\n    select \r\n        1 as SortOrder,\r\n        N'Dữ liệu đã được cập nhật hoặc trạng thái đã thay đổi, vui lòng tải lại trang!' as Msg,\r\n        1 as MsgType\r\n    where exists (\r\n        select 1\r\n        from AP_OrderTbl\r\n        where DocumentID = '{0}'\r\n    )\r\n\r\n    union all\r\n\r\n    select \r\n        2 as SortOrder,\r\n        N'Bạn cần gửi đề nghị và chờ đề nghị được duyệt trước khi gửi đặt mua hàng!' as Msg,\r\n        1 as MsgType\r\n    where exists (\r\n        select 1\r\n        from AP_PurchaseRequestTbl\r\n        where PurchaseRequestID = '{0}'\r\n        and StatusID = 4\r\n    )\r\n) A\r\norder by SortOrder;",
+    "CS5": "PurchaseRequestID"
+   }
   },
   {
    "tab": "1",
    "group": "",
    "name": "PrintButtonCtl",
-   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0"
+   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0",
+   "props": {
+    "BT": "In đề xuất mua hàng",
+    "C2": "SaveContinue",
+    "C4": "AP_PurposeRequestListReportStp '{0}'",
+    "P1": "PurchaseRequestID"
+   }
   }
  ],
  "fields": [
@@ -313,6 +429,78 @@
    "caption": "Chi nhánh"
   }
  ],
+ "editableProps": {
+  "0": [
+   "FH",
+   "FW",
+   "PT",
+   "PL",
+   "PV1",
+   "PV3",
+   "PV4",
+   "PV5",
+   "PV6",
+   "LBEX",
+   "LBSP"
+  ],
+  "1": [
+   "PC"
+  ],
+  "30": [
+   "PC"
+  ],
+  "4": [
+   "MVR",
+   "MV",
+   "MXR",
+   "MX"
+  ],
+  "5": [
+   "MVR",
+   "MV",
+   "MXR",
+   "MX",
+   "SCB",
+   "SUD",
+   "SUV1",
+   "SUV2"
+  ],
+  "20": [
+   "SFB",
+   "SFT",
+   "VLS",
+   "VLC",
+   "VCW"
+  ],
+  "23": [
+   "SFT"
+  ],
+  "24": [
+   "BI",
+   "BC"
+  ],
+  "26": [
+   "BI",
+   "BC"
+  ],
+  "28": [
+   "B0",
+   "B1",
+   "B2",
+   "FS",
+   "FB",
+   "FN",
+   "FC",
+   "F1",
+   "B4",
+   "BC",
+   "TA"
+  ],
+  "22": [
+   "BT",
+   "LT"
+  ]
+ },
  "versions": [
   {
    "no": 1,
