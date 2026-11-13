@@ -24,11 +24,23 @@ export function enhanceFields(root, ctx) {
   if (ctx) trackDirty(root, ctx);
 }
 
+/**
+ * Số cột tối thiểu (lưới 40 cột) để ô không cắt chữ. Lưới WinForms dùng font nhỏ hơn, nên LYT SizeX 3–4 của ô ngày / ô chọn
+ * trên web quá hẹp: ô ngày cần đủ "dd/mm/yyyy" + nút lịch, ô chọn cần nhãn nằm trên một dòng (tối đa 12 cột).
+ * @param {string} ctl @param {string} label
+ */
+function minSpan(ctl, label) {
+  if (ctl === 'date') return 5;
+  if (ctl === 'datetime') return 7;
+  if (ctl === 'checkbox') return Math.min(12, Math.ceil((label.length * 7 + 58) / 33));
+  return 1;
+}
+
 /** @param {HTMLElement} box */
 function enhanceField(box) {
   const ctl = box.dataset.control || 'text';
   box.classList.add('erp-field', `erp-field--${ctl}`);
-  const span = clamp(Number(box.dataset.span || 10), 1, 40);
+  const span = clamp(Math.max(Number(box.dataset.span || 10), minSpan(ctl, box.querySelector(':scope > label')?.textContent?.trim() || '')), 1, 40);
   box.style.setProperty('--span', String(span));
   // Màn vừa: lưới 20 cột (tỷ lệ giữ nguyên, tối thiểu 1/4 dòng). Màn hẹp: lưới 4 cột (ô ngắn 1/2, còn lại cả dòng).
   box.style.setProperty('--span-md', String(clamp(Math.round(span / 2), 5, 20)));

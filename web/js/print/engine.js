@@ -15,7 +15,7 @@ import { currencyToWords } from './words.js';
 
 /**
  * @typedef {Record<string, any>} Obj
- * @typedef {{ name: string, type: string }} Column
+ * @typedef {{ name: string, type: string, format?: string }} Column
  * @typedef {{ columns: Column[], rows: Obj[] }} DataSet
  * @typedef {{ main: DataSet, sets?: DataSet[], params?: Map<string, any>, paramCaptions?: Map<string, string>, sys?: Map<string, any>|null,
  *   lang?: Map<string, string>, images?: Map<string, string> }} PrintData
@@ -57,6 +57,8 @@ class Table {
     if (!this.columns.length && this.rows[0]) for (const k of Object.keys(this.rows[0])) this.map.set(k.toLowerCase(), k);
   }
   /** @param {string} n */ key(n) { return this.map.get(String(n).toLowerCase()); }
+  /** Định dạng .NET của cột (SY_FmtFldTbl, BE gửi ở th[data-format]). @param {string} n */
+  format(n) { const k = this.key(n); return (k && this.columns.find((c) => c.name === k)?.format) || ''; }
   /** @param {string} n */ has(n) { return this.map.has(String(n).toLowerCase()); }
   /** @param {number} i @param {string} n */ get(i, n) { const k = this.key(n); const r = this.rows[i]; return k === undefined || !r ? null : (Object.hasOwn(r, k) ? r[k] : null); }
 }
@@ -332,7 +334,8 @@ export function buildDocument(template, data, opts = {}) {
       if (fmt.kind === 'monthName') return getLang(`Month${raw}`) ?? `Tháng ${raw ?? ''}`;
       if (fmt.kind === 'date') raw = raw instanceof Date ? raw : raw;
     }
-    const f = typeof fmt === 'string' ? fmt : '';
+    // Ô TextBox để trống OutputFormat: định dạng theo cột như FormatField của ReportViewerFrm (SY_FmtFldTbl).
+    const f = typeof fmt === 'string' && fmt ? fmt : c.autoFormat ? T.format(c.autoFormat === true ? String(v.field ?? '') : String(c.autoFormat)) : '';
     let text;
     if ((f === '#,###.##' || f === '#,###.####') && typeof raw === 'number' && raw < 1 && raw > -1) {
       const r = roundEven(raw, 2);

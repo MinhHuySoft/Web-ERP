@@ -2366,8 +2366,10 @@ def build_print():
     def params_dl(extra):
         items = ''.join(f'<dt>{e(k)}</dt><dd data-name="{e(k)}">{e(v)}</dd>' for k, v in sys_rows + extra)
         return f'<dl data-erp="print-params">{items}</dl>'
+    fmts = {'DocumentDate': 'dd/MM/yyyy', 'Amount': '#,##0', 'LineAmount': '#,##0', 'Price': '#,##0', 'Quantity': '#,##0.##'}
+
     def tbl(cols, rows):
-        head = ''.join(f'<th data-field="{c}" data-type="{t}">{c}</th>' for c, t in cols)
+        head = ''.join(f'<th data-field="{c}" data-type="{t}"' + (f' data-format="{e(fmts[c])}"' if c in fmts else '') + f'>{c}</th>' for c, t in cols)
         body = []
         for r in rows:
             tds = []

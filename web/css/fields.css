@@ -102,7 +102,10 @@
   }
   @container (max-width: 560px) {
     .erp-fields { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .erp-field, .erp-field.is-row-start { grid-column: span var(--span-m, 4); }
+    /* Cùng độ ưu tiên với quy tắc "Gọn" của màn vừa, nếu không ô đầu dòng giữ span 5–20 của lưới 20 cột và sinh cột ngầm
+       (mọi ô hẹp lại, nhãn ô chọn thành chữ dọc). */
+    .erp-field, .erp-field.is-row-start,
+    :root[data-record-layout="compact"] .erp-record .erp-field.is-row-start { grid-column: span var(--span-m, 4); }
     .erp-fields > button, .erp-fields > .erp-filter__submit { grid-column: 1 / -1; }
   }
 }

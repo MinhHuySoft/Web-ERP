@@ -71,7 +71,12 @@
     .erp-titlebar [data-only="wide"], .erp-ctxbtn { display: none; }
     .erp-fieldset { padding: 12px; }
     .erp-grid__bar { padding: 6px; }
-    .erp-grid__search { flex: 1; width: auto; min-width: 120px; }
+    /* Ô tìm chiếm cả dòng để chữ gợi ý không bị cắt; các nút của lưới xuống dòng dưới. */
+    .erp-grid__search { flex: 1 1 100%; width: auto; min-width: 120px; }
+    /* Phân trang: nút chỉ còn biểu tượng (tên nằm ở title), dòng thông tin co chữ — tối đa 2 dòng. */
+    .erp-pager { justify-content: space-between; }
+    .erp-pager .erp-gbtn { font-size: 0; gap: 0; padding-inline: 6px; }
+    .erp-pager__info { flex: 1 1 100%; order: -1; text-align: end; font-size: var(--erp-fs-xs); }
     .erp-screen--fill { min-height: calc(100dvh - 190px); }
     .erp-toasts { inset-block-end: calc(76px + env(safe-area-inset-bottom)); inset-inline: 12px; width: auto; }
     .erp-dialog { width: calc(100vw - 12px) !important; max-height: calc(100dvh - 12px); }
