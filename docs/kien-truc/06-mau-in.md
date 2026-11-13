@@ -1,9 +1,10 @@
 # 06 — Mẫu in và trình thiết kế mẫu in (M6)
 
-Trạng thái: **GĐ0–GĐ1 phía FE đã có** (2026-11-13): mô hình mẫu, ngôn ngữ biểu thức, bộ chuyển `.rpx`, bộ dựng trang,
-vai trò `print-document`. Trình thiết kế (GĐ2) và kho mẫu ở BE đang làm. Quyết định: [QĐ-09](../QUYET-DINH.md).
-Hợp đồng HTML: [02 mục 15.1](02-chuan-html-erp.md#151-mẫu-in-print-document). Hướng dẫn BE:
-[be-tra-html-cho-fe.md mục 5.4b](../huong-dan/be-tra-html-cho-fe.md).
+Trạng thái (2026-11-13): **GĐ0–GĐ2 xong cả FE và BE**. Đã có mô hình mẫu, ngôn ngữ biểu thức, bộ chuyển `.rpx`, bộ dựng
+trang, in đúng khổ. Ngoài ra có nút In trên chứng từ, mẫu `.rpx` lấy từ `SY_RpFTbl`, trình thiết kế, và kho mẫu web có phiên
+bản cùng quyền `EPER`. Quyết định: [QĐ-09](../QUYET-DINH.md). Hợp đồng HTML:
+[02 mục 15.1–15.2](02-chuan-html-erp.md#151-mẫu-in-print-document). Hướng dẫn BE:
+[be-tra-html-cho-fe.md mục 5.4b–5.4c](../huong-dan/be-tra-html-cho-fe.md).
 
 ## 1. Mục tiêu
 
@@ -144,22 +145,25 @@ Giá trị cột ở band không phải Detail: GH = dòng đầu nhóm, GF = d�
 - In: khung in riêng (iframe) chỉ chứa trang, `@page { size: <w>mm <h>mm; margin: 0 }`; nút In và Ctrl+P.
 - Trang giấy là **ngoại lệ token** của chuẩn giao diện (03): giấy trắng, mực đen, cỡ chữ pt theo mẫu.
 
-## 7. Kho mẫu (BE, GĐ1) và chạy song song WinForms
+## 7. Kho mẫu (BE) và chạy song song WinForms
 
-- Nguồn `.rpx`: bản mới nhất trong `SY_RpFTbl` (khách lưu bằng trình thiết kế WinForms), không có thì thư mục `Reports`.
-- Mẫu web: `web.PrintTemplate` (mẫu theo báo cáo + khóa mẫu), `web.PrintTemplateVersion` (bất biến: JSON, người/giờ
-  xuất bản, nguồn rpx + ngày + sha256), `web.PrintAsset` (ảnh). Chế độ `rpx` (mặc định, tự theo `SY_RpFTbl`) hoặc `web`
-  (đã "tách sang web"; cảnh báo khi `.rpx` đổi sau đó).
-- Quyền sửa mẫu: như ERP — `EPER` của `SY_FrmCfg` (mặc định mọi người dùng), Admin luôn được; tạo mẫu mới chỉ Admin;
-  ghi nhật ký "Sửa mẫu in".
+- Nguồn `.rpx`: bản mới nhất trong `SY_RpFTbl` (khách lưu bằng trình thiết kế WinForms), không có thì thư mục `Reports`
+  (`WebErp:Erp:ReportsRoot/{mã công ty}`, tùy chọn).
+- Mẫu web (migration BE `0002_print_templates`): `web.PrintTemplate` (báo cáo + mẫu → phiên bản đang dùng),
+  `web.PrintTemplateVersion` (bất biến: JSON, sha256, ghi chú, người / giờ lưu, nguồn `rpx` + ngày + sha256 hoặc `web`).
+  Ảnh nhúng nằm trong JSON (base64). Lưu lần đầu = "tách sang web": từ đó web in theo JSON, WinForms vẫn in `.rpx`.
+- URL mẫu kèm `?v=` (số phiên bản web / ngày tệp `.rpx`) nên đổi mẫu là FE nạp bản mới.
+- Quyền sửa mẫu như `ReportViewerFrm`: quyền Admin trên form luôn được; còn lại `EPER` của mẫu (`SY_FrmCfg`, FID = tên tệp):
+  0 / trống mọi người dùng, 1 cần quyền Quản lý, 2 chỉ Admin. Nhật ký `WebErp.Print` khi lưu.
+- Chưa: danh sách phiên bản + khôi phục trên giao diện; báo khi `.rpx` đổi sau phiên bản web; `SY_UserLog` "Sửa mẫu in".
 
 ## 8. Giai đoạn
 
 | GĐ | Nội dung | Trạng thái |
 |---|---|---|
-| 0 | Mô hình, biểu thức, `rpx.js`, trang kiểm, vai trò `print-document` (02 + hướng dẫn BE + validator), mock | **xong (FE)** |
-| 1 | Bộ dựng + in; BE: endpoint in, kho mẫu (`web.PrintTemplate*`), nút In trên chứng từ, nhiều chứng từ | FE xong; BE đang làm |
-| 2 | Trình thiết kế MVP: canvas mm, kéo/co giãn, căn/phân bố, thuộc tính, danh sách trường, band, trang, xem trước, lưu phiên bản, quyền | **FE xong** (§9); BE lưu phiên bản đang làm |
+| 0 | Mô hình, biểu thức, `rpx.js`, trang kiểm, vai trò `print-document` (02 + hướng dẫn BE + validator), mock | **xong** |
+| 1 | Bộ dựng + in; BE: màn in, tệp mẫu từ `SY_RpFTbl`, nút In trên chứng từ, kiểm quyền từng chứng từ | **xong** (in nhiều chứng từ từ danh sách: sau) |
+| 2 | Trình thiết kế MVP: canvas mm, kéo/co giãn, căn/phân bố, thuộc tính, danh sách trường, band, trang, xem trước, lưu phiên bản, quyền | **xong** (§9, §7) |
 | 3 | Đủ như ActiveReports cho chứng từ + tem: QR, tem nhiều cột, subreport, crossLine, repeatToFill, watermark, nhập rpx, 8 mẫu có script tay | |
 | 4 | PDF máy chủ, email/in hàng loạt, crosstab, biểu đồ, drill-down, so sánh phiên bản | |
 
