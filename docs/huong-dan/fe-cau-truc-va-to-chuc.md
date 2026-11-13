@@ -63,6 +63,7 @@ web/
     responsive.css        điểm gãy 1279 / 1023 / 767px (ngăn kéo menu, thanh điều hướng dưới, toolbar cuộn ngang)
     print.css             in
     print-doc.css         mẫu in: khung xem (token) + trang giấy .pp-page (ngoại lệ token, 06-mau-in.md)
+    print-designer.css    trình thiết kế mẫu in
     themes/<tên>.css      12 theme: chỉ ghi đè token + vài hiệu ứng riêng, dẫn xuất màu từ --erp-primary
   js/
     app.js                khởi động: applySettings() → initPwa() → new Shell(#erp-app).start()
@@ -108,6 +109,7 @@ web/
       barcode.js          Code 128 (SVG)
       fake.js             dữ liệu giả theo cột mẫu dùng
       viewer.js           vai trò section[data-erp=print-document]: thanh xem, thu phóng, in qua khung riêng
+      designer.js         vai trò section[data-erp=print-designer]: trình thiết kế mẫu in (canvas, thuộc tính, lưu)
     tools/validate.js     validate(doc) → danh sách lỗi/cảnh báo theo đặc tả (mục 19)
     tools/rpx-check.js    trang kiểm .rpx hàng loạt
   tools/validate.html     trang kiểm tra cho đội BE

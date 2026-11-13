@@ -142,6 +142,7 @@ Mỗi `<form method="post">` PHẢI chứa input ẩn chống giả mạo theo c
 | `attachments` | `section` | 16 |
 | `report-result` | `section` | 15 |
 | `print-document`, `print-params` | `section`, `dl` | 15.1 |
+| `print-designer` | `section` | 15.2 |
 
 ## 5. Phiên làm việc và menu
 
@@ -734,6 +735,33 @@ Màn in chứng từ / báo cáo theo mẫu (thiết kế như ActiveReports). F
 - Không gửi bí mật trong tham số in (mật khẩu, chuỗi kết nối, token).
 - Bảng `Msg/Type` của SP chuyển thành `messages` như mục 15.
 
+### 15.2 Trình thiết kế mẫu in (`print-designer`)
+
+Sửa mẫu in như trình thiết kế ActiveReports của ERP (kéo thả, thuộc tính, nhóm, tổng, biểu thức, xem trước). FE làm toàn
+bộ giao diện; BE gửi mẫu, URL dữ liệu xem trước và form lưu.
+
+```html
+<section data-erp="screen" data-screen-id="CS_ReceiptReport" data-form-type="CUSTOM" data-mode="edit" data-screen-key="design:CS_ReceiptFrm:CS_ReceiptReport">
+  <h1>Thiết kế mẫu in — In phiếu thu</h1>
+  <section data-erp="print-designer" data-template-name="CS_ReceiptReport"
+           data-template-src="/erp/screens/CS_ReceiptFrm/print/templates/CS_ReceiptReport.rpx" data-template-format="rpx"
+           data-preview-src="/erp/screens/CS_ReceiptFrm/print?DocumentID=PT1126/0001&amp;Template=CS_ReceiptReport">
+    <form method="post" action="/erp/screens/CS_ReceiptFrm/print/designer/save">
+      <input type="hidden" name="__RequestVerificationToken" value="…">
+      <input type="hidden" name="Template" value="CS_ReceiptReport">
+    </form>
+  </section>
+</section>
+```
+
+- `data-template-src` (PHẢI), `data-template-format` (NÊN): như 15.1 — mẫu đang có hiệu lực (`.rpx` hoặc JSON web).
+- `data-preview-src` (CÓ THỂ): URL màn in 15.1 của một chứng từ; FE lấy lưới `R0`… và tham số in để xem trước bằng dữ
+  liệu thật và liệt kê trường. Không có thì FE dùng dữ liệu giả theo cột mẫu dùng.
+- `form[method=post]` (CÓ THỂ): có thì người dùng được lưu. FE gửi `multipart/form-data` gồm mọi input của form +
+  `Json` (mẫu `erp-print-template/1`) + `Comment` (ghi chú phiên bản). BE trả `messages` (`success` khi đã lưu, `error`
+  + 422 khi mẫu không hợp lệ / không có quyền). Không có form = chỉ xem.
+- BE PHẢI kiểm lại mẫu khi lưu (schema, kích thước, tên control, biểu thức theo 06-mau-in.md §4) — không tin FE.
+
 ## 16. Thành phần khác
 
 - **Trạng thái:** `<data data-erp="status" value="18" data-tone="success">Đã lập hóa đơn</data>`.
@@ -787,6 +815,7 @@ FE có bộ biểu tượng SVG riêng. BE chỉ gửi **tên**. Tên không có
   - [ ] Nút không được phép thì không gửi, hoặc gửi kèm `disabled`. Dữ liệu cột bị ẩn vì quyền không có trong HTML.
   - [ ] Thông điệp từ SP được ánh xạ đúng `data-msg-type` / `confirm`.
   - [ ] `print-document` có `data-template-src` và lưới `R0`; tham số in có `data-name`, giá trị máy bất biến.
+  - [ ] `print-designer` có `data-template-src`; form lưu có token và `input[name=Template]`.
 - **Kiểm tra thực tế:** FE có trang `web/tools/validate.html`. Dán HTML hoặc nhập URL của BE vào, trang báo lỗi theo
   danh sách trên.
 

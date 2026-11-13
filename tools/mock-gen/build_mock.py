@@ -2391,7 +2391,7 @@ def build_print():
         return page(title, f'''<section data-erp="screen" data-screen-id="{sid}" data-form-type="REPORT" data-mode="view" data-screen-key="{e(key)}">
 <h1>{e(title)}</h1>
 {flt}
-<section data-erp="print-document" data-template-src="{BASE}/print/templates/{tpl_src}" data-template-format="{fmt}" data-title="{e(title)} {e(docs[0])}" data-number-group="." data-number-decimal=",">
+<section data-erp="print-document" data-template-src="{BASE}/print/templates/{tpl_src}" data-template-format="{fmt}" data-design-href="{BASE}/print/{sid}.designer.html" data-title="{e(title)} {e(docs[0])}" data-number-group="." data-number-decimal=",">
 {params_dl([('Template', templates[0][0]), ('DocumentID', ';'.join(docs))])}
 {tbl_html}
 </section>
@@ -2428,6 +2428,19 @@ def build_print():
                        ['Hộp', 'Chai', 'Đôi', 'Cái'][i % 4], q, p, round(q * p), 'true' if i == 0 else 'false'])
     write('print/AR_InvoiceReport.html', screen('AR_InvoiceReport', 'Hóa đơn bán hàng', 'print:AR_InvoiceReport', 'AR_InvoiceReport.rpx', 'rpx', tbl(ic, ir), idocs,
                                                  [('AR_InvoiceReport', 'Hóa đơn (mẫu .rpx)')]))
+
+    # ---- trình thiết kế (chuẩn 15.2): mẫu + dữ liệu xem trước + form lưu có token ----
+    def designer(sid, title, tpl_src, fmt):
+        return page(f'Thiết kế mẫu in — {title}', f'''<section data-erp="screen" data-screen-id="{sid}" data-form-type="CUSTOM" data-mode="edit" data-screen-key="design:{sid}">
+<h1>Thiết kế mẫu in — {e(title)}</h1>
+<section data-erp="print-designer" data-template-src="{BASE}/print/templates/{tpl_src}" data-template-format="{fmt}" data-preview-src="{BASE}/print/{sid}.html" data-template-name="{sid}">
+<form method="post" action="{BASE}/actions/print-template-saved.html">{TOKEN}<input type="hidden" name="Template" value="{sid}"></form>
+</section>
+<div data-erp="messages"><p data-erp="message" data-msg-type="info">Mock: lưu mẫu trả về thông báo giả, không ghi gì. Backend thật lưu phiên bản vào web.PrintTemplateVersion.</p></div>
+</section>''')
+    write('print/CS_ReceiptReport.designer.html', designer('CS_ReceiptReport', 'Phiếu thu', 'CS_ReceiptReport.json', 'json'))
+    write('print/AR_InvoiceReport.designer.html', designer('AR_InvoiceReport', 'Hóa đơn bán hàng', 'AR_InvoiceReport.rpx', 'rpx'))
+    write('actions/print-template-saved.html', page('Đã lưu mẫu in', '<div data-erp="messages"><p data-erp="message" data-msg-type="success">Đã lưu mẫu in (mock, phiên bản nháp 2).</p></div>'))
 
 
 def build_actions():

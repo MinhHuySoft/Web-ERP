@@ -16,7 +16,7 @@ const STANDARD_CASES = [['N0', 0.5, '1'], ['N0', -0.5, '-1'], ['N0', 1234.5, '1.
   ['N2', 2.675, '2,68'], ['N2', 1234567.891, '1.234.567,89'], ['F2', 0.125, '0,13'], ['F2', -98765.4321, '-98765,43'], ['N2', -0.004, '0,00']];
 
 export default function run(t) {
-  const lines = readFileSync(new URL('./format-gold.tsv', import.meta.url), 'utf8').split('\n').filter(Boolean);
+  const lines = readFileSync(new URL('./format-gold.tsv', import.meta.url), 'utf8').split(/\r?\n/).filter(Boolean);
   for (const line of lines) {
     const [f, v, expected] = line.split('\t');
     if (f.startsWith('D:')) t.eq(formatValue(parseIsoDate(v), f.slice(2)), expected, `ngày ${f.slice(2)} ${v}`);

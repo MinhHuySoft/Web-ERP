@@ -1,0 +1,86 @@
+/* Trình thiết kế mẫu in (docs/kien-truc/06-mau-in.md §9). Khung dùng token --erp-*; nội dung trong band là bản vẽ của mẫu
+   (giấy trắng, chữ theo mẫu) — cùng ngoại lệ token với trang in. */
+@layer components {
+  .erp-pd { display: grid; grid-template-columns: 240px minmax(0, 1fr) 300px; grid-template-rows: auto minmax(0, 1fr); gap: 8px; flex: 1;
+    min-height: 520px; }
+  .erp-pd__bar { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 4px; background: var(--erp-surface);
+    border: 1px solid var(--erp-border); border-radius: var(--erp-radius); }
+  .erp-pd__bar .erp-pd__sep { width: 1px; align-self: stretch; background: var(--erp-border); margin: 0 4px; }
+  .erp-pd__tool { display: inline-flex; align-items: center; gap: 4px; height: var(--erp-ctl-h); padding: 0 8px; border: 1px solid transparent;
+    border-radius: var(--erp-radius-sm); background: transparent; color: var(--erp-text); font: inherit; font-size: var(--erp-fs-sm); cursor: pointer; }
+  .erp-pd__tool:hover:not(:disabled) { background: var(--erp-surface-2); border-color: var(--erp-border); }
+  .erp-pd__tool[aria-pressed="true"] { background: var(--erp-primary-soft); border-color: var(--erp-primary); color: var(--erp-primary); }
+  .erp-pd__tool:disabled { opacity: .45; cursor: default; }
+  .erp-pd__tool svg { width: 16px; height: 16px; }
+  .erp-pd__tool--primary { background: var(--erp-primary); color: var(--erp-on-primary); }
+  .erp-pd__tool--primary:hover:not(:disabled) { background: var(--erp-primary-hover); border-color: transparent; }
+  .erp-pd__status { margin-inline-start: auto; color: var(--erp-text-muted); font-size: var(--erp-fs-xs); }
+  .erp-pd__side { background: var(--erp-surface); border: 1px solid var(--erp-border); border-radius: var(--erp-radius); overflow: auto; min-height: 0;
+    font-size: var(--erp-fs-sm); }
+  .erp-pd__side h3 { position: sticky; top: 0; z-index: 1; margin: 0; padding: 6px 10px; font-size: var(--erp-fs-xs); text-transform: uppercase;
+    letter-spacing: .04em; color: var(--erp-text-muted); background: var(--erp-surface-2); border-bottom: 1px solid var(--erp-border); }
+  .erp-pd__tree, .erp-pd__fields { list-style: none; margin: 0; padding: 4px 0; }
+  .erp-pd__tree li, .erp-pd__fields li { padding: 2px 10px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .erp-pd__tree li:hover, .erp-pd__fields li:hover { background: var(--erp-surface-2); }
+  .erp-pd__tree li[aria-selected="true"] { background: var(--erp-primary-soft); color: var(--erp-primary); }
+  .erp-pd__tree .is-band { font-weight: 600; margin-top: 4px; }
+  .erp-pd__tree .is-ctl { padding-inline-start: 22px; color: var(--erp-text-muted); }
+  .erp-pd__fields li { cursor: grab; }
+  .erp-pd__fields li small { color: var(--erp-text-faint); margin-inline-start: 4px; }
+  .erp-pd__props { display: grid; gap: 6px; padding: 8px 10px; }
+  .erp-pd__props label { display: grid; gap: 2px; color: var(--erp-text-muted); font-size: var(--erp-fs-xs); }
+  .erp-pd__props .erp-pd__row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .erp-pd__props .erp-pd__row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .erp-pd__props input:not([type=checkbox]), .erp-pd__props select, .erp-pd__props textarea { width: 100%; box-sizing: border-box; min-height: 28px;
+    border: 1px solid var(--erp-input-border); border-radius: var(--erp-radius-sm); background: var(--erp-input-bg); color: var(--erp-text); font: inherit;
+    font-size: var(--erp-fs-sm); padding: 2px 6px; }
+  .erp-pd__props textarea { min-height: 52px; font-family: var(--erp-mono); resize: vertical; }
+  .erp-pd__props .erp-pd__check { display: flex; align-items: center; gap: 6px; color: var(--erp-text); font-size: var(--erp-fs-sm); }
+  .erp-pd__props fieldset { border: 1px solid var(--erp-border); border-radius: var(--erp-radius-sm); padding: 6px 8px; margin: 0; display: grid; gap: 6px; }
+  .erp-pd__props legend { padding: 0 4px; color: var(--erp-text-muted); font-size: var(--erp-fs-xs); }
+  .erp-pd__err { color: var(--erp-danger); font-size: var(--erp-fs-xs); }
+  .erp-pd__hint { color: var(--erp-text-faint); font-size: var(--erp-fs-xs); }
+
+  .erp-pd__canvas { overflow: auto; background: var(--erp-surface-3); border: 1px solid var(--erp-border); border-radius: var(--erp-radius); min-height: 0;
+    position: relative; outline: none; }
+  .erp-pd__canvas:focus-visible { box-shadow: var(--erp-focus-ring); }
+  .erp-pd__paper { margin: 24px auto 48px; display: flex; flex-direction: column; width: max-content; }
+  .erp-pd__ruler { height: 18px; position: relative; background: var(--erp-surface); border: 1px solid var(--erp-border); border-bottom: 0; }
+  .erp-pd__ruler span { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--erp-border-strong); font-size: 9px; color: var(--erp-text-faint);
+    padding-left: 2px; line-height: 18px; }
+  .erp-pd__band { position: relative; }
+  .erp-pd__bandhead { display: flex; align-items: center; gap: 6px; height: 20px; padding: 0 6px; font-size: var(--erp-fs-xs); color: var(--erp-text-muted);
+    background: var(--erp-surface-2); border: 1px solid var(--erp-border); border-bottom: 0; cursor: pointer; user-select: none; }
+  .erp-pd__bandhead[aria-selected="true"] { background: var(--erp-primary-soft); color: var(--erp-primary); }
+  .erp-pd__bandhead.is-hidden { text-decoration: line-through; }
+  .erp-pd__bandbody { position: relative; border: 1px solid var(--erp-border); }
+  .erp-pd__grip { height: 6px; cursor: ns-resize; background: var(--erp-surface-3); border-inline: 1px solid var(--erp-border); }
+  .erp-pd__grip:hover { background: var(--erp-primary-soft); }
+  .erp-pd__marquee { position: absolute; border: 1px dashed var(--erp-primary); background: color-mix(in srgb, var(--erp-primary) 12%, transparent);
+    pointer-events: none; z-index: 30; }
+
+  /* bản vẽ trong band (ngoại lệ token, như trang in) */
+  .erp-pd__bandbody { background-color: #fff; color: #000; }
+  .erp-pd__bandbody.has-grid { background-image: linear-gradient(to right, rgba(0, 0, 0, .06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, .06) 1px, transparent 1px); }
+  .erp-pd__ctl { position: absolute; box-sizing: border-box; overflow: hidden; cursor: move; outline: 1px dotted rgba(0, 0, 0, .22); display: flex;
+    flex-direction: column; }
+  .erp-pd__ctl.is-bound .pp-text__in { color: #1f4e9c; }
+  .erp-pd__ctl.is-expr .pp-text__in { color: #7a2f8f; }
+  .erp-pd__ctl.is-hidden { opacity: .4; }
+  .erp-pd__ctl[aria-selected="true"] { outline: 2px solid #1a73e8; z-index: 20; }
+  .erp-pd__ctl .pp-text__in { pointer-events: none; }
+  .erp-pd__ctl img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+  .erp-pd__line { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+  .erp-pd__h { position: absolute; width: 8px; height: 8px; background: #fff; border: 1px solid #1a73e8; z-index: 25; }
+  .erp-pd__preview { grid-column: 2; overflow: auto; background: var(--erp-surface-3); border: 1px solid var(--erp-border); border-radius: var(--erp-radius);
+    padding: 16px; min-height: 0; }
+  .erp-pd__preview .pp-doc { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .erp-pd__preview .pp-page { box-shadow: var(--erp-shadow); }
+
+  @media (max-width: 1100px) {
+    .erp-pd { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(420px, 1fr) auto auto; }
+    .erp-pd__side { max-height: 320px; }
+    .erp-pd__preview { grid-column: 1; }
+  }
+}

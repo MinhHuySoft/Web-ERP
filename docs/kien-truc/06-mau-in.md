@@ -159,8 +159,26 @@ Giá trị cột ở band không phải Detail: GH = dòng đầu nhóm, GF = d�
 |---|---|---|
 | 0 | Mô hình, biểu thức, `rpx.js`, trang kiểm, vai trò `print-document` (02 + hướng dẫn BE + validator), mock | **xong (FE)** |
 | 1 | Bộ dựng + in; BE: endpoint in, kho mẫu (`web.PrintTemplate*`), nút In trên chứng từ, nhiều chứng từ | FE xong; BE đang làm |
-| 2 | Trình thiết kế MVP: canvas mm, kéo/co giãn, căn/phân bố, thuộc tính, danh sách trường, band, trang, xem trước, nháp/xuất bản/lịch sử, quyền | đang làm |
+| 2 | Trình thiết kế MVP: canvas mm, kéo/co giãn, căn/phân bố, thuộc tính, danh sách trường, band, trang, xem trước, lưu phiên bản, quyền | **FE xong** (§9); BE lưu phiên bản đang làm |
 | 3 | Đủ như ActiveReports cho chứng từ + tem: QR, tem nhiều cột, subreport, crossLine, repeatToFill, watermark, nhập rpx, 8 mẫu có script tay | |
 | 4 | PDF máy chủ, email/in hàng loạt, crosstab, biểu đồ, drill-down, so sánh phiên bản | |
+
+## 9. Trình thiết kế (`designer.js`, chuẩn 15.2)
+
+- **Canvas**: band xếp dọc như ActiveReports (thanh tên band, thân band khổ mm, tay kéo đổi chiều cao), thước cm, lưới 5 mm,
+  bắt dính 1 mm (giữ Alt để tắt), thu phóng 50–200 %. Control vẽ bằng đúng font / cỡ / căn của mẫu; ô gắn cột màu xanh,
+  biểu thức màu tím, ô ẩn mờ.
+- **Thao tác**: bấm chọn, Shift/Ctrl chọn thêm, khung chọn, kéo dời (thả sang band khác được), 8 tay nắm co giãn, mũi tên
+  dời 1 mm (Shift 5 mm, Alt 0,1 mm), Ctrl+mũi tên đổi cỡ, Delete, Ctrl+C/X/V/D, Ctrl+A, Ctrl+Z/Y (100 bước), Esc hủy kéo.
+- **Thêm**: chữ, trường (hoặc kéo từ danh sách trường), đường, khung, ảnh (logo), ô chọn, mã vạch, số trang; thêm/xóa nhóm.
+- **Căn**: trái / giữa / phải / trên / giữa dọc / dưới theo control chọn đầu, cùng rộng / cùng cao, phân bố ngang / dọc, lên
+  trên cùng / xuống dưới cùng.
+- **Thuộc tính**: trang (khổ, hướng, lề, vùng in, tự sắp), band (cao, hiện, điều kiện, CanGrow/Shrink, giữ liền, kéo ô,
+  in ở đáy, nền; nhóm: cột, sang trang, giữ liền, lặp tiêu đề), control (vị trí, mã, nội dung theo loại, định dạng .NET +
+  số thành chữ, CanGrow, ẩn rỗng / số 0 / trùng, bỏ dấu âm, tổng: hàm / phạm vi / lũy kế, font, cỡ, B/I/U, căn, màu, lề,
+  viền từng cạnh, điều kiện hiện). Biểu thức kiểm cú pháp ngay khi gõ.
+- **Xem trước** bằng chính bộ dựng in với dữ liệu thật của chứng từ (`data-preview-src`) hoặc dữ liệu giả.
+- **Lưu**: kiểm trước (biểu thức, mã trùng, vượt vùng in), hỏi ghi chú, POST form của BE; **Nhập** `.rpx` / `.json`,
+  **Xuất** JSON. Chưa có (GĐ3): sửa rule định dạng có điều kiện bằng giao diện, subreport, tem nhiều cột, QR, watermark.
 
 Hiệu chỉnh: cần 15–20 PDF xuất từ WinForms (cùng dữ liệu z4) để so ≤ 0,5 mm, cùng số trang, cùng chữ.
