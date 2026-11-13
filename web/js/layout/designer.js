@@ -17,7 +17,9 @@ import { enhanceFields } from '../enhance/fields.js';
  * Một ô / control của bố cục: một dòng LYT. `cfg` = 21 vị trí (giữ nguyên các vị trí trình vẽ không sửa).
  * `group` = đường dẫn nhóm cha (tên các nhóm nối nhau như KeyID của WinForms: LYT1GrpBox1GrpBox2 ⇒ "GrpBox1GrpBox2"); "" = ngoài nhóm.
  * `text` = chữ trên nút do BE tính (LYS BT / LT, chữ mặc định của control), chỉ để hiện; không gửi lại.
- * @typedef {{ uid:string, tab:string, group:string, name:string, cfg:string[], text?:string }} Item
+ * `props` = thuộc tính riêng LYS (mã → giá trị); `from` = tên cũ khi đổi tên trong lần sửa này (BE giữ dòng và thuộc tính của ô).
+ * `loaded` = ô đọc từ cấu hình (đổi tên thì gửi `from`); ô thêm mới / chép thì không.
+ * @typedef {{ uid:string, tab:string, group:string, name:string, cfg:string[], text?:string, props:Record<string,string>, from?:string, loaded?:boolean }} Item
  */
 
 export const LAYOUT_SCHEMA = 'erp-form-layout/1';
@@ -29,6 +31,31 @@ const PERM = /** @type {Array<[number,string]>} */ ([[0, 'Mọi người'], [2, 
 const ENABLE = /** @type {Array<[number,string]>} */ ([[0, 'Không dùng'], [1, 'Bình thường'], [2, 'Sửa hoặc thêm'], [3, 'Chỉ khi thêm'], [4, 'Chỉ khi sửa'],
   [7, 'Quản lý'], [9, 'Quản trị']]);
 const CHECK = /** @type {Array<[number,string]>} */ ([[0, 'Không'], [1, 'Cảnh báo khi trống'], [2, 'Không được trùng']]);
+/**
+ * Thuộc tính riêng LYS (PropertyX của WinForms): nhãn và kiểu ô nhập. Mã nào sửa được do BE quyết (`editableProps` theo loại control);
+ * mã khác (có SQL / lệnh, vd LBS, VLQ, C4) chỉ hiện để xem. Bật/tắt ghi "1" / rỗng; màu là số ARGB có dấu như .NET.
+ * @type {Record<string, [string, 'int'|'bool'|'color'|'text'|'font'|'align']>}
+ */
+const PROPS = {
+  FH: ['Cao cố định (px)', 'int'], FW: ['Rộng cố định (px)', 'int'], PT: ['Dịch xuống (px)', 'int'], PL: ['Dịch sang phải (px)', 'int'],
+  PV1: ['Màu chữ của ô', 'color'], PV3: ['Chữ của ô đậm', 'bool'], PV4: ['Màu chữ nhãn', 'color'], PV5: ['Nền nhãn', 'color'], PV6: ['Nhãn đậm', 'bool'],
+  LBEX: ['Khóa ô khi (biểu thức trên dòng, vd StatusID<>2)', 'text'], LBSP: ['Cột tham số của SQL khóa', 'text'],
+  PC: ['Ký tự che (mật khẩu)', 'text'],
+  MVR: ['Có giá trị nhỏ nhất', 'bool'], MV: ['Giá trị nhỏ nhất', 'text'], MXR: ['Có giá trị lớn nhất', 'bool'], MX: ['Giá trị lớn nhất', 'text'],
+  SCB: ['Nút xóa', 'bool'], SUD: ['Nút tăng / giảm', 'bool'], SUV1: ['Bước tăng 1', 'text'], SUV2: ['Bước tăng 2', 'text'],
+  SFB: ['Có khung', 'bool'], SFT: ['Tiêu đề khung', 'text'], VLS: ['Danh sách giá trị (;)', 'text'], VLC: ['Danh sách chữ (;)', 'text'], VCW: ['Độ rộng từng nút (;)', 'text'],
+  BI: ['Biểu tượng', 'text'], BC: ['Màu nền', 'color'],
+  B0: ['Kiểu viền', 'text'], B1: ['Màu viền', 'color'], B2: ['Cỡ viền', 'int'], FS: ['Cỡ chữ', 'int'], FB: ['Kiểu chữ', 'font'], FN: ['Font', 'text'],
+  FC: ['Màu chữ', 'color'], F1: ['Viền chữ', 'text'], B4: ['Màu viền chữ', 'color'], TA: ['Canh chữ', 'align'],
+  BT: ['Chữ trên nút', 'text'], LT: ['Chữ liên kết', 'text'],
+};
+const FONT_STYLES = /** @type {Array<[string,string]>} */ ([['', 'Thường'], ['1', 'Đậm'], ['2', 'Nghiêng'], ['3', 'Đậm nghiêng'], ['4', 'Gạch chân'], ['5', 'Đậm, gạch chân']]);
+const ALIGNS = /** @type {Array<[string,string]>} */ ([['', 'Mặc định'], ['1', 'Trên trái'], ['2', 'Trên giữa'], ['4', 'Trên phải'], ['16', 'Giữa trái'],
+  ['32', 'Chính giữa'], ['64', 'Giữa phải'], ['256', 'Dưới trái'], ['512', 'Dưới giữa'], ['1024', 'Dưới phải']]);
+/** Số ARGB có dấu (.NET Color.ToArgb) → #rrggbb. @param {string} v */
+export function argbToHex(v) { const n = parseInt(v, 10); return Number.isFinite(n) ? `#${((n >>> 0) & 0xffffff).toString(16).padStart(6, '0')}` : '#000000'; }
+/** #rrggbb → số ARGB có dấu, alpha 255. @param {string} hex */
+export function hexToArgb(hex) { return String((0xff000000 | parseInt(hex.slice(1), 16)) | 0); }
 
 /* ---------------- chuỗi LYT 21 vị trí (docs/legacy-analysis/10-engine-form-dong.md §4.7) ---------------- */
 
@@ -96,6 +123,11 @@ class LayoutDesigner {
     this.ctx.registerKey?.('Ctrl+Z', (ev) => { if (!isTyping()) { ev.preventDefault?.(); this.undo(); } });
     this.ctx.registerKey?.('Ctrl+Y', (ev) => { if (!isTyping()) { ev.preventDefault?.(); this.redo(); } });
     this.canvas.addEventListener('keydown', (e) => this.onKey(e));
+    // Bấm chỗ trống của khung vẽ: bỏ chọn ô, hiện thuộc tính / công cụ của tab.
+    this.canvas.addEventListener('click', (e) => {
+      if (this.previewOn || /** @type {HTMLElement} */ (e.target).closest('.erp-ld__item') || !this.sel) return;
+      this.sel = null; this.renderCanvas(); this.renderRight();
+    });
     this.load().catch((e) => { this.status.textContent = `Không nạp được bố cục: ${e.message || e}`; });
   }
 
@@ -108,15 +140,30 @@ class LayoutDesigner {
     if (data?.$schema !== LAYOUT_SCHEMA) throw new Error('Dữ liệu không đúng định dạng erp-form-layout/1');
     this.data = data;
     this.items = (data.items || []).map((/** @type {Obj} */ x) => Object.assign(this.mk(String(x.tab), String(x.group || ''), String(x.name), parseCfg(x.cfg)),
-      x.text ? { text: String(x.text) } : {}));
+      x.text ? { text: String(x.text) } : {}, { props: { ...(x.props || {}) }, loaded: true }));
+    /** @type {Record<string, string[]>} */ this.editable = data.editableProps || {};
+    /** Tiêu đề / quyền xem trang chi tiết (chỉ trang sửa được). @type {Record<string, {caption?:string, visible?:string}>} */
+    this.pages = {};
+    for (const t of data.tabs || []) {
+      if (t.kind !== 'detail') continue;
+      const p = {};
+      if (t.dcpEditable) /** @type {Obj} */ (p).caption = t.dcp || '';
+      if (t.visibleEditable) /** @type {Obj} */ (p).visible = t.visible || '0';
+      if (Object.keys(p).length) this.pages[String(t.page)] = p;
+    }
+    this.sourceList = null;
     this.captions = Object.fromEntries((data.tabs || []).filter((/** @type {Obj} */ t) => t.captionKey).map((/** @type {Obj} */ t) => [t.captionKey, t.caption || '']));
+    this.base = this.snapshot();
     this.tab = (data.tabs || []).find((/** @type {Obj} */ t) => this.items.some((i) => i.tab === t.id))?.id || data.tabs?.[0]?.id || '1';
     this.render();
     this.status.textContent = this.readOnly ? 'Chỉ xem (không có quyền lưu bố cục)' : 'Sẵn sàng';
   }
 
   /** @param {string} tab @param {string} group @param {string} name @param {string[]} cfg @returns {Item} */
-  mk(tab, group, name, cfg) { return { uid: `i${++this.seq}`, tab, group, name, cfg }; }
+  mk(tab, group, name, cfg) { return { uid: `i${++this.seq}`, tab, group, name, cfg, props: {} }; }
+
+  /** Mã LYS sửa được với loại control `ct` (BE gửi: "0" = mọi loại). @param {number} ct @param {string} code */
+  canEditProp(ct, code) { return [...(this.editable['0'] || []), ...(this.editable[String(ct)] || [])].some((c) => c.toUpperCase() === code.toUpperCase()); }
 
   /* ---------------- thanh công cụ ---------------- */
 
@@ -146,13 +193,15 @@ class LayoutDesigner {
 
   /* ---------------- trạng thái / hoàn tác ---------------- */
 
-  snapshot() { return JSON.stringify({ items: this.items, captions: this.captions }); }
+  snapshot() { return JSON.stringify({ items: this.items, captions: this.captions, pages: this.pages }); }
   /** Ghi lại trạng thái trước khi đổi. */
-  push() { this.undoStack.push(this.snapshot()); if (this.undoStack.length > 100) this.undoStack.shift(); this.redoStack = []; this.setDirty(true); }
+  push() { this.undoStack.push(this.snapshot()); if (this.undoStack.length > 100) this.undoStack.shift(); this.redoStack = []; }
+  /** Chưa lưu = khác trạng thái lúc mở (hoàn tác về đúng ban đầu thì hết "chưa lưu"). */
+  updateDirty() { if (this.base !== undefined) this.setDirty(this.snapshot() !== this.base); }
   /** @param {string} s */
-  restore(s) { const o = JSON.parse(s); this.items = o.items; this.captions = o.captions; this.render(); }
-  undo() { const s = this.undoStack.pop(); if (!s) return; this.redoStack.push(this.snapshot()); this.restore(s); this.setDirty(true); }
-  redo() { const s = this.redoStack.pop(); if (!s) return; this.undoStack.push(this.snapshot()); this.restore(s); this.setDirty(true); }
+  restore(s) { const o = JSON.parse(s); this.items = o.items; this.captions = o.captions; this.pages = o.pages || {}; this.render(); }
+  undo() { const s = this.undoStack.pop(); if (!s) return; this.redoStack.push(this.snapshot()); this.restore(s); }
+  redo() { const s = this.redoStack.pop(); if (!s) return; this.undoStack.push(this.snapshot()); this.restore(s); }
   /** @param {boolean} d */
   setDirty(d) { this.dirty = d; this.ctx.setDirty?.(d); }
 
@@ -186,6 +235,7 @@ class LayoutDesigner {
   }
 
   renderTabs() {
+    this.updateDirty();
     const tabs = /** @type {Obj[]} */ (this.data.tabs || []);
     this.tabsBar.replaceChildren(...tabs.map((t) => {
       const n = this.items.filter((i) => i.tab === t.id).length;
@@ -202,11 +252,12 @@ class LayoutDesigner {
 
   /** @param {Obj} t */
   tabTitle(t) {
-    const cap = t.captionKey ? (this.captions[t.captionKey] || '') : (t.caption || '');
+    const cap = t.captionKey ? (this.captions[t.captionKey] || '') : (this.pages?.[String(t.page)]?.caption || t.caption || '');
     return cap || t.defaultCaption || `Tab ${t.id}`;
   }
 
   renderCanvas() {
+    this.updateDirty();
     if (this.previewOn) return this.renderPreview();
     const root = this.zoneEl(this.tab, '', COLS);
     this.canvas.replaceChildren(root);
@@ -238,11 +289,11 @@ class LayoutDesigner {
     const hidden = it.cfg[18] === '1';
     const cls = ['erp-ld__item', `is-ct${t}`, it.uid === this.sel ? 'is-selected' : '', hidden ? 'is-hidden' : '', it.cfg[3] === '1' ? 'is-row-start' : '',
       !field && t <= 20 ? 'is-missing' : ''].filter(Boolean).join(' ');
+    const cap = decText(it.cfg[7]) || (t === 22 ? it.props?.BT || it.props?.LT : '') || it.text || (field?.caption) || it.name;
     const el = h('div', { class: cls, draggable: this.readOnly ? false : 'true', tabindex: '-1', 'data-uid': it.uid,
-      title: `${it.name}${field ? '' : t <= 20 ? ' — không có cột này trong bảng' : ''}${hidden ? ' — đang ẩn' : ''}` });
+      title: `${cap}${cap !== it.name ? ` (${it.name})` : ''}${field ? '' : t <= 20 ? ' — không có cột này trong bảng' : ''}${hidden ? ' — đang ẩn' : ''}` });
     el.style.setProperty('--ld-span', String(span));
     el.style.setProperty('--ld-rows', String(t === 23 ? 1 : rowsOf(it)));
-    const cap = decText(it.cfg[7]) || it.text || (field?.caption) || it.name;
     if (t === 23) {
       el.append(h('div', { class: 'erp-ld__ghead' }, icon('group'), h('span', {}, cap)), this.zoneEl(it.tab, it.group + it.name, span));
     } else if (t === 22 || t === 24 || t === 26) {
@@ -476,8 +527,23 @@ class LayoutDesigner {
           const inp = /** @type {HTMLInputElement} */ (h('input', { type: 'text', value: this.captions[t.captionKey] || '', readonly: ro, placeholder: t.defaultCaption || '' }));
           inp.addEventListener('change', () => { this.push(); this.captions[t.captionKey] = inp.value.trim(); this.renderTabs(); });
           box.append(row(`Tiêu đề tab (${t.captionKey})`, inp));
-        } else box.append(h('p', { class: 'erp-ld__note' }, t.hint || 'Tiêu đề trang chi tiết lấy theo lưới cùng trang (DCP), sửa ở cấu hình form.'));
+        } else {
+          box.append(h('p', { class: 'erp-ld__note' }, t.hint || ''));
+          const pg = this.pages[String(t.page)];
+          if (pg && 'caption' in pg) {
+            const inp = /** @type {HTMLInputElement} */ (h('input', { type: 'text', value: pg.caption || '', readonly: ro, placeholder: t.defaultCaption || '' }));
+            inp.addEventListener('change', () => { this.push(); pg.caption = inp.value.trim(); this.renderTabs(); });
+            box.append(row(`Tiêu đề trang (T${t.page} / DCP)`, inp));
+          } else if (!t.grid) box.append(h('p', { class: 'erp-ld__note' }, `Form không có lưới T${t.page}: ô đặt ở đây hiện thành trang chỉ có ô.`));
+          if (pg && 'visible' in pg) {
+            const sel = /** @type {HTMLSelectElement} */ (h('select', { disabled: ro }, ...[['0', 'Mọi người'], ['1', 'Quản lý'], ['4', 'Admin']].map(([v, l]) => h('option', { value: v }, l))));
+            sel.value = pg.visible || '0';
+            sel.addEventListener('change', () => { this.push(); pg.visible = sel.value; this.updateDirty(); });
+            box.append(row(`Ai thấy trang này (TPV${t.page})`, sel));
+          }
+        }
         box.append(h('p', { class: 'erp-ld__note' }, 'Chọn một ô trên lưới để sửa thuộc tính. Kéo ô để đổi chỗ (thả lên tên tab để chuyển tab), kéo cạnh phải để đổi độ rộng.'));
+        if (!ro) box.append(this.tabTools(t));
         for (const n of [this.data.note, ...(this.data.notes || [])].filter(Boolean)) box.append(h('p', { class: 'erp-ld__note' }, icon('info'), ' ', String(n)));
         parts.push(box);
       }
@@ -492,8 +558,13 @@ class LayoutDesigner {
       h('option', { value: '' }, '(Không thuộc nhóm)'), ...groups.map((g) => h('option', { value: g }, g))));
     grp.value = it.group;
     grp.addEventListener('change', () => { this.push(); it.group = grp.value; this.items.splice(this.items.indexOf(it), 1); this.items.push(it); this.render(); });
+    const nameInp = /** @type {HTMLInputElement} */ (h('input', { type: 'text', value: it.name, readonly: ro, list: `ld-cols-${this.seq}`, spellcheck: 'false',
+      title: 'Tên ô (SubID): tên cột của bảng, hoặc tên control' }));
+    const cols = h('datalist', { id: `ld-cols-${this.seq}` }, ...(/** @type {Obj[]} */ (this.data.fields || [])).map((x) => h('option', { value: x.name }, x.caption || '')));
+    nameInp.addEventListener('change', () => this.rename(it, nameInp.value.trim()) || (nameInp.value = it.name));
     const box = h('div', { class: 'erp-pd__props' },
-      h('div', { class: 'erp-ld__name' }, h('strong', {}, it.name), h('small', {}, f ? `${f.type}${f.caption ? ` · ${f.caption}` : ''}` : ct <= 20 ? 'Không có cột này trong bảng' : 'Control')),
+      h('div', { class: 'erp-ld__name' }, row(it.from ? `Tên (đổi từ ${it.from})` : 'Tên', nameInp), cols,
+        h('small', {}, f ? `${f.type}${f.caption ? ` · ${f.caption}` : ''}` : ct <= 20 ? 'Không có cột này trong bảng' : 'Control')),
       row('Tiêu đề (để trống = theo tên cột)', text(it, 7, { enc: true, placeholder: f?.caption || '' })),
       h('div', { class: 'erp-pd__row2' }, row('Loại control', pick(it, 0, CT, '1')), row('Nhóm', grp)),
       h('div', { class: 'erp-pd__row' },
@@ -506,7 +577,165 @@ class LayoutDesigner {
       row('Giá trị mặc định', text(it, 10, { enc: true })),
       row('Mặc định bằng SQL (chỉ xem trên web)', text(it, 15, { area: true, readonly: true })),
       row('Rộng trên điện thoại (0 = tự động, 1–12 cột)', text(it, 20, { type: 'number', min: 0, max: 12 })));
-    this.right.replaceChildren(h('h3', {}, 'Thuộc tính ô'), box);
+    this.right.replaceChildren(h('h3', {}, 'Thuộc tính ô'), box, h('h3', {}, 'Thuộc tính riêng (LYS)'), this.propsBox(it));
+  }
+
+  /**
+   * Đổi tên ô (SubID): cột khác của bảng, hoặc tên control. Nhóm: đường dẫn của các ô con đổi theo. Ô đọc từ cấu hình mang `from` để BE
+   * giữ dòng và thuộc tính LYS (BE chặn đổi tên user control sang lớp khác).
+   * @param {Item} it @param {string} name @returns {boolean}
+   */
+  rename(it, name) {
+    if (name === it.name) return true;
+    if (!/^[A-Za-z_][A-Za-z0-9_]{0,49}$/.test(name)) { toast('Tên chỉ gồm chữ không dấu, số và "_", bắt đầu bằng chữ, tối đa 50 ký tự.', 'warning'); return false; }
+    if (this.items.some((i) => i !== it && i.name.toLowerCase() === name.toLowerCase())) { toast(`Đã có ô ${name} trong bố cục.`, 'warning'); return false; }
+    this.push();
+    if (typeOf(it) === 23) {
+      const oldPath = it.group + it.name, newPath = it.group + name;
+      const zones = this.subtree(it.tab, oldPath);
+      for (const c of this.items) if (c !== it && c.tab === it.tab && zones.has(c.group)) c.group = newPath + c.group.slice(oldPath.length);
+    }
+    if (it.loaded && !it.from) it.from = it.name;
+    it.name = name;
+    if (it.from && it.from.toLowerCase() === name.toLowerCase()) delete it.from;
+    this.render();
+    return true;
+  }
+
+  /** Thuộc tính riêng LYS của ô: mã sửa được theo loại control (BE quyết), mã có SQL / lệnh chỉ xem. @param {Item} it */
+  propsBox(it) {
+    const ct = typeOf(it);
+    const ro = this.readOnly;
+    const box = h('div', { class: 'erp-pd__props' });
+    const codes = Object.keys(PROPS).filter((c) => this.canEditProp(ct, c));
+    /** @param {string} code @param {string} v */
+    const set = (code, v) => { this.push(); if (v === '') delete it.props[code]; else it.props[code] = v; this.renderCanvas(); };
+    for (const code of codes) {
+      const [label, kind] = PROPS[code];
+      const cur = it.props[code] ?? '';
+      const cap = `${label} (${code})`;
+      if (kind === 'bool') {
+        const cb = /** @type {HTMLInputElement} */ (h('input', { type: 'checkbox', checked: cur === '1', disabled: ro }));
+        cb.addEventListener('change', () => set(code, cb.checked ? '1' : ''));
+        box.append(h('label', { class: 'erp-pd__check' }, cb, cap));
+      } else if (kind === 'color') {
+        const inp = /** @type {HTMLInputElement} */ (h('input', { type: 'color', value: cur ? argbToHex(cur) : '#000000', disabled: ro, 'aria-label': cap }));
+        const state = h('small', {}, cur ? '' : '(mặc định)');
+        inp.addEventListener('change', () => set(code, hexToArgb(inp.value)));
+        const clear = h('button', { type: 'button', class: 'erp-btn erp-btn--sm', disabled: ro || !cur, onclick: () => set(code, '') }, 'Mặc định');
+        box.append(h('div', { class: 'erp-ld__prop' }, h('span', {}, cap), h('span', { class: 'erp-ld__color' }, inp, state, clear)));
+      } else if (kind === 'font' || kind === 'align') {
+        const opts = kind === 'font' ? FONT_STYLES : ALIGNS;
+        const sel = /** @type {HTMLSelectElement} */ (h('select', { disabled: ro }, ...opts.map(([v, l]) => h('option', { value: v }, l))));
+        sel.value = cur;
+        if (sel.value !== cur) sel.append(h('option', { value: cur, selected: true }, cur));
+        sel.addEventListener('change', () => set(code, sel.value));
+        box.append(h('label', {}, cap, sel));
+      } else {
+        const inp = /** @type {HTMLInputElement} */ (h('input', { type: kind === 'int' ? 'number' : 'text', value: cur, readonly: ro, step: kind === 'int' ? '1' : false }));
+        inp.addEventListener('change', () => set(code, inp.value.trim()));
+        box.append(h('label', {}, cap, inp));
+      }
+    }
+    const fixed = Object.entries(it.props).filter(([c]) => !this.canEditProp(ct, c));
+    if (fixed.length) {
+      box.append(h('p', { class: 'erp-ld__note' }, icon('lock'), ' Chỉ sửa trên ERP (có SQL / lệnh, hoặc không dùng cho loại control này):'),
+        h('dl', { class: 'erp-ld__fixed' }, ...fixed.flatMap(([c, v]) => [h('dt', {}, c), h('dd', { title: v }, v)])));
+    }
+    if (!codes.length && !fixed.length) box.append(h('p', { class: 'erp-ld__note' }, 'Loại control này không có thuộc tính riêng sửa trên web.'));
+    return box;
+  }
+
+  /** Công cụ của tab: chuyển hết ô sang tab khác, chép bố cục từ form khác. @param {Obj} t */
+  tabTools(t) {
+    const others = (/** @type {Obj[]} */ (this.data.tabs || [])).filter((x) => x.id !== t.id);
+    const to = /** @type {HTMLSelectElement} */ (h('select', { 'aria-label': 'Tab đích' }, ...others.map((x) => h('option', { value: x.id }, this.tabTitle(x)))));
+    const fs = h('fieldset', {}, h('legend', {}, 'Công cụ tab'),
+      h('label', {}, 'Chuyển hết ô của tab này sang', to),
+      h('button', { type: 'button', class: 'erp-btn erp-btn--sm', onclick: () => this.moveTab(t.id, to.value) }, 'Chuyển tab'));
+    if (this.section.getAttribute('data-source-src')) {
+      fs.append(h('button', { type: 'button', class: 'erp-btn erp-btn--sm', onclick: () => this.copyPanel(t).catch((e) => toast(`Không nạp được: ${e.message || e}`, 'error')) },
+        icon('copy'), ' Chép bố cục từ form khác…'));
+    }
+    return fs;
+  }
+
+  /** Như "Chuyển Tab" của WinForms: mọi ô (kể cả nhóm) sang cuối tab đích; tiêu đề tab master đi theo nếu tab đích chưa có. @param {string} from @param {string} to */
+  moveTab(from, to) {
+    const moving = this.items.filter((i) => i.tab === from);
+    if (!moving.length) { toast('Tab này chưa có ô.', 'info'); return; }
+    this.push();
+    for (const i of moving) i.tab = to;
+    this.items = [...this.items.filter((i) => !moving.includes(i)), ...moving];
+    const tabs = /** @type {Obj[]} */ (this.data.tabs || []);
+    const ft = tabs.find((x) => x.id === from), tt = tabs.find((x) => x.id === to);
+    if (ft?.captionKey && tt?.captionKey && !this.captions[tt.captionKey] && this.captions[ft.captionKey]) this.captions[tt.captionKey] = this.captions[ft.captionKey];
+    this.tab = to; this.sel = null;
+    this.render();
+    toast(`Đã chuyển ${moving.length} ô sang tab "${this.tabTitle(tt || {})}".`, 'success');
+  }
+
+  /**
+   * Chép bố cục một tab của form khác vào tab đang chọn (như "Copy Layout" của WinForms, nhưng chép cả nhóm và ô con).
+   * Nguồn lấy qua `data-source-src` (BE ghép URL, FE chỉ thay `{fid}`). Thuộc tính có SQL / lệnh không được chép.
+   * @param {Obj} t
+   */
+  async copyPanel(t) {
+    const tmpl = this.section.getAttribute('data-source-src') || '';
+    const url = (/** @type {string} */ fid) => tmpl.replace('{fid}', encodeURIComponent(fid));
+    if (!isAllowedUrl(url(''))) throw new Error('URL nguồn không hợp lệ');
+    const get = async (/** @type {string} */ u) => { const r = await fetch(u, { credentials: 'include', headers: { Accept: 'application/json', 'X-ERP-Request': 'layout' } }); if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); };
+    this.sourceList ||= await get(url(''));
+    const forms = /** @type {Obj[]} */ (this.sourceList.forms || []);
+    const fid = /** @type {HTMLInputElement} */ (h('input', { type: 'text', list: 'ld-src-forms', placeholder: 'Mã form, vd AR_InvoiceFrm', spellcheck: 'false' }));
+    const dl = h('datalist', { id: 'ld-src-forms' }, ...forms.map((f) => h('option', { value: f.fid }, `${f.caption || ''} (${f.items} ô)`)));
+    const srcTab = /** @type {HTMLSelectElement} */ (h('select', { disabled: true }, h('option', { value: '' }, '— chọn form trước —')));
+    const info = h('p', { class: 'erp-ld__note' }, `Thay toàn bộ ô của tab "${this.tabTitle(t)}" bằng ô của một tab ở form khác. Lưu bố cục mới ghi vào ERP.`);
+    /** @type {Obj|null} */ let src = null;
+    const go = /** @type {HTMLButtonElement} */ (h('button', { type: 'button', class: 'erp-btn erp-btn--primary erp-btn--sm', disabled: true, onclick: () => src && this.applyCopy(src, srcTab.value, t) }, 'Chép vào tab này'));
+    const loadSrc = async () => {
+      const v = fid.value.trim();
+      if (!/^[A-Za-z0-9_]{1,250}$/.test(v)) { toast('Mã form không hợp lệ.', 'warning'); return; }
+      src = await get(url(v));
+      const tabs = /** @type {Obj[]} */ (this.data.tabs || []);
+      const counts = tabs.map((x) => [x, (/** @type {Obj[]} */ (src?.items || [])).filter((i) => i.tab === x.id).length]).filter(([, n]) => n);
+      srcTab.replaceChildren(...counts.map(([x, n]) => h('option', { value: /** @type {Obj} */ (x).id }, `${/** @type {Obj} */ (x).captionKey && src?.captions?.[/** @type {Obj} */ (x).captionKey] || this.tabTitle(/** @type {Obj} */ (x))} (${n} ô)`)));
+      srcTab.disabled = !counts.length; go.disabled = !counts.length;
+      if (!counts.length) toast(`Form ${v} không có bố cục.`, 'info');
+    };
+    this.right.replaceChildren(h('h3', {}, 'Chép bố cục từ form khác'), h('div', { class: 'erp-pd__props' }, info,
+      h('label', {}, 'Form nguồn', fid), dl,
+      h('button', { type: 'button', class: 'erp-btn erp-btn--sm', onclick: () => loadSrc().catch((e) => toast(`Không nạp được: ${e.message || e}`, 'error')) }, 'Xem bố cục'),
+      h('label', {}, 'Tab nguồn', srcTab), go,
+      h('button', { type: 'button', class: 'erp-btn erp-btn--sm', onclick: () => this.renderRight() }, 'Đóng')));
+    fid.focus();
+  }
+
+  /** @param {Obj} src @param {string} srcTab @param {Obj} t */
+  async applyCopy(src, srcTab, t) {
+    const list = (/** @type {Obj[]} */ (src.items || [])).filter((i) => i.tab === srcTab);
+    if (!list.length) return;
+    if (this.zone(t.id, '').length && !(await confirmBox(`Thay ${this.items.filter((i) => i.tab === t.id).length} ô đang có của tab "${this.tabTitle(t)}" bằng ${list.length} ô của ${src.form}?`, { ok: 'Thay' }))) return;
+    this.push();
+    this.items = this.items.filter((i) => i.tab !== t.id);
+    const taken = new Set(this.items.map((i) => i.name.toLowerCase()));
+    /** @type {string[]} */ const skipped = [];
+    let stripped = 0;
+    for (const x of list) {
+      if (taken.has(String(x.name).toLowerCase())) { skipped.push(x.name); continue; }
+      const it = this.mk(t.id, String(x.group || ''), String(x.name), parseCfg(x.cfg));
+      for (const [c, v] of Object.entries(x.props || {})) { if (this.canEditProp(typeOf(it), c)) it.props[c] = String(v); else stripped++; }
+      if (x.text) it.text = String(x.text);
+      taken.add(it.name.toLowerCase());
+      this.items.push(it);
+    }
+    // Ô con của nhóm không chép được (trùng tên) ra ngoài nhóm.
+    const paths = new Set(this.items.filter((i) => i.tab === t.id && typeOf(i) === 23).map((i) => i.group + i.name));
+    for (const i of this.items) if (i.tab === t.id && i.group && !paths.has(i.group)) i.group = '';
+    this.tab = t.id; this.sel = null;
+    this.render();
+    toast(`Đã chép ${list.length - skipped.length} ô từ ${src.form}.${skipped.length ? ` Bỏ ${skipped.length} ô trùng tên ở tab khác: ${skipped.slice(0, 5).join(', ')}.` : ''}${stripped ? ` Không chép ${stripped} thuộc tính có SQL / lệnh.` : ''} Bấm Lưu để ghi.`,
+      skipped.length || stripped ? 'warning' : 'success', 9000);
   }
 
   /* ---------------- xem trước bằng FE thật ---------------- */
@@ -527,7 +756,7 @@ class LayoutDesigner {
         if (it.cfg[18] === '1') continue;
         if (ct === 23) { add(this.zone(it.tab, it.group + it.name)); continue; }
         const f = fields.find((x) => x.name.toLowerCase() === it.name.toLowerCase());
-        const cap = decText(it.cfg[7]) || it.text || f?.caption || it.name;
+        const cap = decText(it.cfg[7]) || (ct === 22 ? it.props?.BT || it.props?.LT : '') || it.text || f?.caption || it.name;
         const span = String(spanOf(it));
         const box = h('div', { 'data-erp': 'field', 'data-span': span, 'data-row-start': it.cfg[3] === '1' ? '' : false });
         const id = `ldp-${it.uid}`;
@@ -556,8 +785,8 @@ class LayoutDesigner {
   toJson() {
     return {
       $schema: LAYOUT_SCHEMA, form: this.data.form, revision: this.data.revision,
-      captions: this.captions,
-      items: this.items.map((i) => ({ tab: i.tab, group: i.group, name: i.name, cfg: joinCfg(i.cfg) })),
+      captions: this.captions, pages: this.pages,
+      items: this.items.map((i) => ({ tab: i.tab, group: i.group, name: i.name, ...(i.from ? { from: i.from } : {}), cfg: joinCfg(i.cfg), props: i.props || {} })),
     };
   }
 

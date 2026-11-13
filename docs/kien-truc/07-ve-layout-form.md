@@ -70,6 +70,49 @@ Vẽ lại bố cục ô của form chứng từ ngay trên web, như trình thi
 | Giá trị | giá trị mặc định (10), rộng trên điện thoại (20) |
 
 - Mặc định bằng SQL (15) **chỉ hiện để xem**: web không cho nhập SQL.
+
+**Thuộc tính riêng `LYS`** (GĐ2, bảng thứ hai của cột phải)
+
+- Mã nào sửa được do BE quyết (`editableProps` theo loại control), FE chỉ có nhãn và kiểu ô nhập:
+
+  | Loại control | Mã sửa được (ngoài mã chung FH, FW, PT, PL, PV1, PV3–PV6, LBEX, LBSP) |
+  |---|---|
+  | 1 Ô chữ, 30 HTML | PC |
+  | 4 Ngày | MVR, MV, MXR, MX |
+  | 5 Số | MVR, MV, MXR, MX, SCB, SUD, SUV1, SUV2 |
+  | 20 Nút chọn | SFB, SFT, VLS, VLC, VCW |
+  | 23 Nhóm | SFT |
+  | 24, 26 Nút | BI, BC |
+  | 28 Nhãn | B0, B1, B2, FS, FB, FN, FC, F1, B4, BC, TA |
+  | 22 User control | BT (chữ nút), LT (chữ liên kết) |
+
+- Bật/tắt ghi "1" / rỗng; màu là số ARGB có dấu như .NET; kiểu chữ là cờ FontStyle; để trống = về mặc định (xóa dòng).
+- Mã có SQL / lệnh **chỉ xem**, sửa trên ERP. Ví dụ: `LBS` (khóa bằng SQL), `VLQ` (nguồn SQL), mã lệnh của user control (`C1…`, `CS4`, `MSQ`…).
+  - Lý do: trình vẽ của ERP cần mật khẩu chế độ quản trị, còn web chỉ cần quyền Admin trên form.
+  - Cùng một mã có thể là câu lệnh ở lớp này nhưng là kiểu chữ ở lớp khác (vd `F1` của ô quét mã là câu lệnh). Vì vậy BE chặn thêm:
+    - một mã chỉ sửa được khi được phép ở **cả** loại control cũ lẫn mới;
+    - không đổi loại control khi ô còn mã không được phép ở loại mới;
+    - không đổi tên user control sang lớp khác (lớp = phần trước "_" của tên) khi ô có thuộc tính riêng.
+
+**Đổi tên ô** (GĐ2)
+
+- Tên = cột khác của bảng, hoặc tên control.
+- Ô đọc từ cấu hình gửi `from` (tên cũ), để BE giữ UserAutoID và thuộc tính LYS của ô.
+- Đổi tên nhóm thì đường dẫn của các ô con đổi theo.
+
+**Công cụ tab** (GĐ2; bấm chỗ trống của khung vẽ để hiện)
+
+- Tiêu đề tab master (`T?V`).
+- Trang chi tiết: tiêu đề `T{n}` / `DCP` và quyền xem `TPV{n}` (trang 1–5: mọi người / Quản lý / Admin).
+  - Chỉ sửa được khi form có lưới T{n} và không phải trang riêng của form viết tay.
+- **Chuyển tab** (như "Chuyển Tab" của WinForms): mọi ô, kể cả nhóm, sang cuối tab đích. Tiêu đề tab master đi theo nếu tab đích chưa có.
+- **Chép bố cục từ form khác** (như "Copy Layout"): thay các ô của tab đang chọn bằng ô của một tab ở form khác.
+  - Chép cả nhóm và ô con; WinForms không chép ô con.
+  - Bỏ ô trùng tên ở tab khác, có báo.
+  - Không chép thuộc tính có SQL / lệnh.
+  - Nguồn lấy qua `data-source-src`.
+
+**Trạng thái "chưa lưu"**: so với lúc mở. Hoàn tác về đúng ban đầu thì hết "chưa lưu".
 - Các vị trí khác giữ nguyên.
 
 **Xem trước**
@@ -91,9 +134,11 @@ BE gửi:
   "revision": "<sha256 các dòng bố cục>", "canSave": true,
   "tabs": [
     { "id": "1", "kind": "master", "captionKey": "T1V", "caption": "", "defaultCaption": "Thông tin chung" },
-    { "id": "5", "kind": "detail", "page": 1, "caption": "Hàng hóa đề nghị", "defaultCaption": "Chi tiết 1", "hint": "…" }
+    { "id": "5", "kind": "detail", "page": 1, "caption": "Hàng hóa đề nghị", "defaultCaption": "Chi tiết 1", "hint": "…",
+      "grid": true, "dcp": "Hàng hóa đề nghị", "dcpEditable": true, "visible": "0", "visibleEditable": true }
   ],
-  "items": [ { "tab": "1", "group": "", "name": "PurchaseRequestID", "cfg": "1;4;1;1;;;;;;;;;;;;;;;;0;0", "text": null } ],
+  "items": [ { "tab": "1", "group": "", "name": "PurchaseRequestID", "cfg": "1;4;1;1;;;;;;;;;;;;;;;;0;0", "text": null, "props": { "PV4": "-16777024" } } ],
+  "editableProps": { "0": ["FH", "FW", "PT", "PL", "PV1", "PV3", "PV4", "PV5", "PV6", "LBEX", "LBSP"], "22": ["BT", "LT"], "…": [] },
   "fields": [ { "name": "PurchaseDate", "type": "date", "caption": "Ngày đề nghị" } ],
   "versions": [ { "no": 2, "at": "13/11/2026 16:00", "by": "Admin", "kind": "save", "restoredFrom": null, "comment": "…" } ],
   "notes": ["…"], "note": null
@@ -108,7 +153,15 @@ FE gửi lại (`Json`):
 
 ```json
 { "$schema": "erp-form-layout/1", "form": "…", "revision": "…", "captions": {"T1V": "…"},
-  "items": [{ "tab": "1", "group": "", "name": "…", "cfg": "…" }] }
+  "pages": { "1": { "caption": "…", "visible": "0" } },
+  "items": [{ "tab": "1", "group": "", "name": "…", "from": "tên cũ (nếu đổi)", "cfg": "…", "props": { "PT": "-5" } }] }
+```
+
+Nguồn chép (`data-source-src`, `{fid}` rỗng = danh sách form có bố cục):
+
+```json
+{ "forms": [{ "fid": "AR_InvoiceFrm", "items": 31, "caption": "Hóa đơn bán hàng" }] }
+{ "form": "AR_InvoiceFrm", "captions": { "T1V": null }, "items": [{ "tab": "1", "group": "", "name": "…", "cfg": "…", "text": null, "props": {} }] }
 ```
 
 ## 4. Lưu ở BE (an toàn hơn WinForms)
@@ -142,13 +195,9 @@ FE gửi lại (`Json`):
 - **Sau khi lưu**: xóa bộ đệm metadata 5 phút của BE cho form; ghi nhật ký `WebErp.Layout`.
 - **Báo cho người dùng**: máy đang mở ERP WinForms cần mở lại ERP để thấy bố cục mới.
 
-## 5. Chưa làm (GĐ sau)
+## 5. Không làm trên web
 
-- Sửa thuộc tính riêng `LYS` của control (FH, PT, LBS, PV1…). Hiện giữ nguyên.
-- Đổi tên ô / nhóm.
-- Chép bố cục từ form khác.
-- Chuyển cả tab.
-- Thêm cột vào bảng (WinForms có lệnh `ALTER TABLE`; web không làm).
-- Nhập mặc định bằng SQL (vị trí 15).
-- Sửa tiêu đề trang chi tiết (`DCP`) và quyền xem trang (`TPV`).
-- Ghi `SY_UserLog` (chờ đường ghi M4 chung).
+- **Thêm cột vào bảng**: WinForms có lệnh `ALTER TABLE`. Web không đổi cấu trúc DB của khách (QĐ-01).
+- **Nhập SQL hoặc lệnh**: mặc định SQL (vị trí 15), `LBS`, `VLQ`, mã lệnh của user control. Sửa trên ERP (lý do ở mục 2).
+- **Ghi `SY_UserLog`**: trình vẽ của WinForms cũng không ghi. Web có lịch sử riêng trong `web.FormLayoutVersion` (ai, lúc nào,
+  ảnh trước / sau).

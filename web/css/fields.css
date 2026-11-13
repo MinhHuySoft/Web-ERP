@@ -19,7 +19,8 @@
   .erp-field[data-warn] .erp-input { border-color: var(--erp-warning); }
   .erp-field--button { justify-content: flex-end; }
   .erp-field--button > span:empty { height: 1.2em; }
-  .erp-field--button > :is(button, a) { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  /* Nút trên form: chữ dài thì cắt "…" (khối thường, không flex — text-overflow không áp được cho chữ trong flex). */
+  .erp-field--button > :is(button, a) { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
   .erp-field--checkbox { flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 10px; min-height: var(--erp-ctl-h); align-self: end; }
   .erp-field--checkbox .erp-field__label { white-space: normal; color: var(--erp-text); font-weight: 500; font-size: var(--erp-fs-sm); }
   .erp-field--label .erp-output, .erp-field--label output { padding: 6px 0; }
