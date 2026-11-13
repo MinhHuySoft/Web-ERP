@@ -285,7 +285,8 @@ Khi BE có endpoint lưu cài đặt theo người dùng: chỉ thay hàm `read(
 | Lưới dữ liệu | `js/enhance/grid.js`, `css/grid.css` |
 | Dữ liệu gửi lên khi lưu | `js/enhance/forms.js` (`collectFormData`), `Grid.serialize()` |
 | Thông điệp / toast | `js/enhance/messages.js`, `js/core/ui.js`, `css/base.css` |
-| Định dạng số / ngày | `js/core/format.js` |
+| Định dạng số / ngày; cài đặt "Định dạng số" 1.234.567,89 / 1,234,567.89 (`numberStyle`) | `js/core/format.js` (`setNumberStyle`), `core/settings.js`, `shell/settings-panel.js` |
+| Ô của chứng từ trên trang chi tiết (giữ ô, lưới nạp về đặt sau) | `js/enhance/screen.js` (`enhanceDetailTabs`), `css/screen.css` |
 | Icon | `js/core/icons.js` (đường SVG nét 1.8, tên trùng `data-action` / phân hệ) |
 | Màu, thang chữ, mật độ | `css/tokens.css`; theme: `css/themes/<tên>.css` |
 | Danh sách thẻ / thuộc tính được phép từ BE | `js/core/sanitize.js` |

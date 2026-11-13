@@ -5,6 +5,7 @@
  */
 
 import { ensureContrast, inkOn, isHex, tones } from './color.js';
+import { setNumberStyle } from './format.js';
 
 const KEY = 'erp.settings.v1';
 const cfg = /** @type {any} */ (window).ERP_CONFIG || {};
@@ -47,7 +48,7 @@ export const GRADIENT_PRESETS = [
 /** @typedef {{ theme:string, density:'compact'|'standard'|'comfortable', fontSize:number, nav:'ribbon'|'sidebar',
  *   accent:string, gradColors:string[], gradAngle:number, gradChrome:boolean, gradBg:boolean,
  *   reduceMotion:boolean, ribbonCollapsed:boolean, sidebarCollapsed:boolean, sidebarWidth:number,
- *   recordLayout:'compact'|'erp' }} Settings */
+ *   recordLayout:'compact'|'erp', numberStyle:'vn'|'us' }} Settings */
 
 export const SIDEBAR_W = { min: 200, max: 480, def: 268 };
 
@@ -58,6 +59,8 @@ const DEFAULTS = {
   reduceMotion: false, ribbonCollapsed: false, sidebarCollapsed: false, sidebarWidth: SIDEBAR_W.def,
   // Bố cục chứng từ: 'compact' = các ô xếp nối nhau lấp đầy chiều ngang; 'erp' = giữ xuống dòng như form WinForms.
   recordLayout: 'compact',
+  // Định dạng số: 'vn' = 1.234.567,89; 'us' = 1,234,567.89 (WinForms theo vùng Windows của từng máy).
+  numberStyle: 'vn',
 };
 
 /** @param {string} key */
@@ -98,6 +101,7 @@ export function applySettings() {
   root.style.setProperty('--erp-sidebar-w', `${sw}px`);
   root.dataset.motion = current.reduceMotion ? 'reduce' : 'auto';
   root.dataset.recordLayout = current.recordLayout === 'erp' ? 'erp' : 'compact';
+  setNumberStyle(current.numberStyle);
   root.style.setProperty('--erp-font-size', `${current.fontSize}px`);
   const meta = THEMES.find((t) => t.id === theme);
   root.style.colorScheme = meta?.dark ? 'dark' : 'light';
@@ -160,6 +164,12 @@ export const getGridLayout = (key) => read(`erp.grid.${key}`);
 export const saveGridLayout = (key, layout) => store(`erp.grid.${key}`, layout);
 /** @param {string} key */
 export const clearGridLayout = (key) => { try { localStorage.removeItem(`erp.grid.${key}`); } catch { /* */ } };
+
+/* ---- Khổ giấy người dùng chọn khi xem in, theo từng mẫu (ô "Khổ giấy" của màn xem in ERP) ---- */
+/** @param {string} key @returns {string} */
+export const getPrintPaper = (key) => String(read(`erp.print.paper.${key}`) || '');
+/** @param {string} key @param {string} paper "" = theo mẫu */
+export const savePrintPaper = (key, paper) => { if (paper) store(`erp.print.paper.${key}`, paper); else { try { localStorage.removeItem(`erp.print.paper.${key}`); } catch { /* */ } } };
 
 /* ---- Gần đây / Yêu thích ---- */
 /** @typedef {{ url:string, title:string, screenId?:string, at?:number }} NavEntry */

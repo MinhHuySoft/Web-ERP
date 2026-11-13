@@ -9,12 +9,41 @@ import { h } from '../core/dom.js';
 import { icon } from '../core/icons.js';
 import { isAllowedUrl } from '../core/http.js';
 import { toast } from '../core/ui.js';
+import { getNumberStyle, numberSeparators } from '../core/format.js';
+import { getPrintPaper, savePrintPaper } from '../core/settings.js';
 import { buildDocument } from './engine.js';
 import { renderPages, domMeasure } from './render.js';
 import { convertRpx, TEMPLATE_SCHEMA } from './rpx.js';
 import { parseIsoDate } from './netformat.js';
 
 /** @typedef {Record<string, any>} Obj */
+
+/** Khổ giấy chuẩn (mm, dọc). */
+export const PAPERS = /** @type {Record<string, [number, number]>} */ ({ A4: [210, 297], A5: [148, 210], A3: [297, 420], Letter: [215.9, 279.4], Legal: [215.9, 355.6] });
+/** Lựa chọn ô "Khổ giấy" của màn xem in (như màn xem in ERP: A4, A4 ngang, A5, A5 ngang…). */
+export const PAPER_CHOICES = /** @type {Array<[string,string]>} */ ([['A4', 'A4'], ['A4L', 'A4 ngang'], ['A5', 'A5'], ['A5L', 'A5 ngang'], ['A3', 'A3'], ['A3L', 'A3 ngang'],
+  ['Letter', 'Letter'], ['LetterL', 'Letter ngang']]);
+
+/**
+ * Mẫu với khổ giấy khác (ô "Khổ giấy" khi xem in). Giống ActiveReports khi đổi khổ lúc xem: giữ lề và độ rộng vùng in
+ * (PrintWidth) của mẫu, chỉ đổi kích thước trang — chữ không co giãn, đầu/cuối trang theo khổ mới.
+ * @param {Obj} tpl @param {string} choice "" (theo mẫu) | "A4" | "A4L" (ngang) | …
+ */
+export function withPaper(tpl, choice) {
+  const land = /L$/.test(choice || '');
+  const name = land ? choice.slice(0, -1) : choice;
+  const size = name ? PAPERS[name] : null;
+  if (!size) return tpl;
+  const [w, hh] = land ? [size[1], size[0]] : size;
+  return { ...tpl, page: { ...tpl.page, paper: name, orientation: land ? 'landscape' : 'portrait', width: w, height: hh } };
+}
+
+/** Tên khổ của mẫu để hiện trong ô chọn. @param {Obj} page */
+function paperLabel(page) {
+  const land = page.orientation === 'landscape' || Number(page.width) > Number(page.height);
+  const known = PAPERS[page.paper] && PAPER_CHOICES.find(([v]) => v === `${page.paper}${land ? 'L' : ''}`);
+  return known ? known[1] : `${Math.round(page.width * 10) / 10} × ${Math.round(page.height * 10) / 10} mm`;
+}
 
 const NUMERIC = new Set(['number', 'money', 'quantity', 'percent']);
 /** @type {Map<string, Promise<{ template: Obj, warnings: string[] }>>} */
@@ -114,7 +143,10 @@ export function enhancePrintDocument(section, ctx) {
   const data = { main: main ? readGrid(main) : { columns: [], rows: [] }, sets: sets.map(readGrid), params, sys: dl ? sys : null, lang, paramCaptions: captions, images };
   grids.forEach((t) => t.remove());
   dl?.remove();
-  const locale = { group: section.getAttribute('data-number-group') || undefined, decimal: section.getAttribute('data-number-decimal') || undefined };
+  // Người dùng chọn kiểu số 1,234,567.89 (Cài đặt › Định dạng số, như vùng Windows của máy chạy ERP) thì dùng kiểu đó;
+  // còn lại theo cấu hình công ty BE gửi (data-number-*).
+  const locale = getNumberStyle() === 'us' ? numberSeparators()
+    : { group: section.getAttribute('data-number-group') || undefined, decimal: section.getAttribute('data-number-decimal') || undefined };
   const title = section.getAttribute('data-title') || section.closest('[data-erp="screen"]')?.querySelector('h1, .erp-screen__title')?.textContent?.trim() || 'Mẫu in';
 
   const view = h('div', { class: 'erp-print__view', tabindex: '0', 'aria-label': 'Trang in' }, h('div', { class: 'erp-print__status' }, 'Đang dựng mẫu in…'));
@@ -122,9 +154,11 @@ export function enhancePrintDocument(section, ctx) {
   const zoom = /** @type {HTMLSelectElement} */ (h('select', { 'aria-label': 'Thu phóng' },
     ...[['fit', 'Vừa khung'], ['0.5', '50%'], ['0.75', '75%'], ['1', '100%'], ['1.25', '125%'], ['1.5', '150%'], ['2', '200%']].map(([v, t]) => h('option', { value: v }, t))));
   zoom.value = 'fit';
+  const paper = /** @type {HTMLSelectElement} */ (h('select', { 'aria-label': 'Khổ giấy', disabled: '' }, h('option', { value: '' }, 'Theo mẫu')));
   const printBtn = /** @type {HTMLButtonElement} */ (h('button', { type: 'button', class: 'erp-btn erp-btn--primary', disabled: '', title: 'In (Ctrl+P)' }, icon('print'), h('span', {}, 'In')));
   const warnBox = h('details', { class: 'erp-print__warn', hidden: '' });
-  const bar = h('div', { class: 'erp-print__bar' }, printBtn, h('label', { class: 'erp-print__zoom' }, icon('search'), zoom));
+  const bar = h('div', { class: 'erp-print__bar' }, printBtn, h('label', { class: 'erp-print__zoom' }, icon('search'), zoom),
+    h('label', { class: 'erp-print__zoom', title: 'Khổ giấy khi xem và in (không đổi mẫu)' }, icon('file'), paper));
   const design = section.getAttribute('data-design-href');
   if (design && isAllowedUrl(design)) bar.append(h('a', { class: 'erp-btn', href: design, 'data-target': 'tab' }, icon('edit'), h('span', {}, 'Thiết kế mẫu')));
   bar.append(warnBox, info);
@@ -133,12 +167,14 @@ export function enhancePrintDocument(section, ctx) {
 
   /** @type {HTMLElement|null} */ let docEl = null;
   /** @type {Obj|null} */ let tpl = null;
+  /** Mẫu đang hiện (đã áp khổ giấy người dùng chọn). @type {Obj|null} */ let shown = null;
+  /** @type {string[]} */ let loadWarnings = [];
   const applyZoom = () => {
-    if (!docEl || !tpl) return;
+    if (!docEl || !shown) return;
     let z = Number(zoom.value);
     if (zoom.value === 'fit') {
       const avail = view.clientWidth - 32;
-      const pageW = (tpl.page.width / 25.4) * 96;
+      const pageW = (shown.page.width / 25.4) * 96;
       z = Math.max(0.3, Math.min(1.5, avail / pageW));
     }
     /** @type {any} */ (docEl.style).zoom = String(z);
@@ -147,9 +183,31 @@ export function enhancePrintDocument(section, ctx) {
   const ro = new ResizeObserver(() => { if (zoom.value === 'fit') applyZoom(); });
   ro.observe(view);
 
-  const doPrint = () => { if (docEl && tpl) printPages(docEl, tpl, title).catch((e) => toast(`Không in được: ${e.message || e}`, 'error')); };
+  const doPrint = () => { if (docEl && shown) printPages(docEl, shown, title).catch((e) => toast(`Không in được: ${e.message || e}`, 'error')); };
   printBtn.addEventListener('click', doPrint);
   ctx.registerKey?.('Ctrl+P', (ev) => { ev.preventDefault?.(); if (section.isConnected) doPrint(); });
+
+  /** Dựng lại các trang theo khổ giấy đang chọn. */
+  const build = () => {
+    if (!tpl || !measurer) return;
+    shown = withPaper(tpl, paper.value);
+    const t0 = performance.now();
+    const { pages, warnings } = buildDocument(shown, data, { measure: measurer, locale });
+    docEl = renderPages(pages);
+    view.replaceChildren(docEl);
+    applyZoom();
+    printBtn.disabled = false;
+    info.textContent = `${pages.length} trang · ${data.main.rows.length} dòng · ${Math.round(performance.now() - t0)} ms`;
+    const all = [...loadWarnings, ...warnings];
+    warnBox.hidden = !all.length;
+    warnBox.replaceChildren(...(all.length ? [h('summary', {}, `Cảnh báo (${all.length})`), h('ul', {}, ...all.slice(0, 50).map((w) => h('li', {}, w)))] : []));
+  };
+  const fail = (/** @type {any} */ e) => view.replaceChildren(h('div', { class: 'erp-print__status erp-print__status--error' }, `Không dựng được mẫu in: ${e?.message || e}`));
+  paper.addEventListener('change', () => {
+    if (!tpl) return;
+    savePrintPaper(String(tpl.id || src), paper.value);
+    try { build(); } catch (e) { fail(e); }
+  });
 
   const src = section.getAttribute('data-template-src') || '';
   (async () => {
@@ -157,28 +215,23 @@ export function enhancePrintDocument(section, ctx) {
       if (!src) throw new Error('Thiếu data-template-src');
       const loaded = await loadTemplate(src, section.getAttribute('data-template-format') || '');
       tpl = loaded.template;
+      loadWarnings = loaded.warnings;
+      paper.options[0].textContent = `Theo mẫu (${paperLabel(tpl.page)})`;
+      paper.append(...PAPER_CHOICES.map(([v, t]) => h('option', { value: v }, t)));
+      const saved = getPrintPaper(String(tpl.id || src));
+      paper.value = PAPER_CHOICES.some(([v]) => v === saved) ? saved : '';
+      paper.disabled = false;
       if (document.fonts?.ready) await document.fonts.ready;
       measurer ||= domMeasure(document);
-      const t0 = performance.now();
-      const { pages, warnings } = buildDocument(tpl, data, { measure: measurer, locale });
-      docEl = renderPages(pages);
-      view.replaceChildren(docEl);
-      applyZoom();
-      printBtn.disabled = false;
-      info.textContent = `${pages.length} trang · ${data.main.rows.length} dòng · ${Math.round(performance.now() - t0)} ms`;
-      const all = [...loaded.warnings, ...warnings];
-      if (all.length) {
-        warnBox.hidden = false;
-        warnBox.replaceChildren(h('summary', {}, `Cảnh báo (${all.length})`), h('ul', {}, ...all.slice(0, 50).map((w) => h('li', {}, w))));
-      }
+      build();
     } catch (e) {
-      view.replaceChildren(h('div', { class: 'erp-print__status erp-print__status--error' }, `Không dựng được mẫu in: ${/** @type {Error} */ (e).message || e}`));
+      fail(e);
     }
   })();
 }
 
 /**
- * In các trang qua một khung in riêng (không lẫn giao diện ứng dụng), khổ giấy theo mẫu.
+ * In các trang qua một khung in riêng (không lẫn giao diện ứng dụng), khổ giấy theo mẫu (đã áp khổ người dùng chọn).
  * @param {HTMLElement} docEl @param {Obj} tpl @param {string} title
  */
 export async function printPages(docEl, tpl, title) {

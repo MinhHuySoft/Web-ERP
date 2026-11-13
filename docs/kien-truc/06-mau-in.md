@@ -38,7 +38,7 @@ flowchart LR
 | `web/js/print/engine.js` | Bộ dựng trang (không DOM) |
 | `web/js/print/render.js` | Vẽ trang, đo chữ bằng trình duyệt |
 | `web/js/print/barcode.js` | Code 128 (SVG). QR: GĐ3 |
-| `web/js/print/viewer.js` | Vai trò `print-document`: thanh xem, thu phóng, in |
+| `web/js/print/viewer.js` | Vai trò `print-document`: thanh xem, thu phóng, ô "Khổ giấy" (như màn xem in ERP: theo mẫu, A4, A4 ngang, A5…; giữ lề và độ rộng vùng in, nhớ theo mẫu), in |
 | `web/js/print/fake.js` | Dữ liệu giả theo cột mẫu dùng (xem trước khi chưa có dữ liệu) |
 | `web/tools/rpx.html` | Kiểm hàng loạt thư mục `Reports` trong trình duyệt |
 | `tools/print-tests/` | Test Node: số thành chữ (2.268 dòng đối chiếu mã gốc), định dạng (.NET), biểu thức, bộ dựng; `rpx-batch.mjs` |

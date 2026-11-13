@@ -92,6 +92,15 @@ export function validate(doc) {
     const mode = f.closest('[data-erp="screen"]')?.getAttribute('data-mode');
     if (mode === 'edit' && !f.querySelector('input[name="__version"]')) add('warning', '9', 'record ở chế độ edit nên có __version để phát hiện xung đột.', f);
   });
+  // 12 Ô của chứng từ trên trang chi tiết: nằm ngoài form nên control phải có thuộc tính form trỏ tới record của màn.
+  doc.querySelectorAll('[data-erp="tab-panel"] [data-erp="field"]').forEach((fl) => {
+    if (fl.closest('form') || fl.getAttribute('data-control') === 'button') return;
+    for (const c of Array.from(fl.querySelectorAll('input, select, textarea'))) {
+      const owner = c.getAttribute('form');
+      if (!owner) add('error', '12', 'Ô trên trang chi tiết nằm ngoài form: control thiếu thuộc tính form (id của record).', fl);
+      else if (!doc.querySelector(`form[data-erp="record"][id="${CSS.escape(owner)}"]`)) add('error', '12', `Thuộc tính form="${owner}" không trỏ tới form[data-erp=record] nào.`, fl);
+    }
+  });
 
   // 11 Lưới
   doc.querySelectorAll('table[data-erp="grid"]').forEach((t) => {

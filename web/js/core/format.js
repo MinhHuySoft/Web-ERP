@@ -1,15 +1,26 @@
 // @ts-check
-/** Định dạng / phân tích số và ngày theo kiểu Việt Nam (1.234.567,89 · dd/MM/yyyy). */
+/**
+ * Định dạng / phân tích số và ngày (ngày luôn dd/MM/yyyy). Số mặc định kiểu Việt Nam 1.234.567,89; người dùng chọn
+ * kiểu 1,234,567.89 trong Cài đặt (WinForms theo vùng của Windows trên từng máy) — settings.js gọi setNumberStyle.
+ */
 
 const LOCALE = 'vi-VN';
+/** @type {'vn'|'us'} */
+let style = 'vn';
 /** @type {Map<string, Intl.NumberFormat>} */
 const cache = new Map();
 
+/** Kiểu số: 'vn' = 1.234.567,89 · 'us' = 1,234,567.89. @param {string} s */
+export function setNumberStyle(s) { style = s === 'us' ? 'us' : 'vn'; }
+export const getNumberStyle = () => style;
+/** Dấu phân cách đang dùng. @returns {{ group: string, decimal: string }} */
+export const numberSeparators = () => (style === 'us' ? { group: ',', decimal: '.' } : { group: '.', decimal: ',' });
+
 /** @param {number} d */
 function nf(d) {
-  const k = String(d);
+  const k = `${style}${d}`;
   let f = cache.get(k);
-  if (!f) { f = new Intl.NumberFormat(LOCALE, { minimumFractionDigits: d, maximumFractionDigits: d }); cache.set(k, f); }
+  if (!f) { f = new Intl.NumberFormat(style === 'us' ? 'en-US' : LOCALE, { minimumFractionDigits: d, maximumFractionDigits: d }); cache.set(k, f); }
   return f;
 }
 
@@ -23,7 +34,8 @@ export function formatNumber(v, decimals = null) {
 }
 
 /**
- * Phân tích số người dùng gõ: chấp nhận "1.234,5", "1234,5", "1234.5", "1,234.5".
+ * Phân tích số người dùng gõ: chấp nhận "1.234,5", "1234,5", "1234.5", "1,234.5". Có cả hai dấu thì dấu sau cùng là
+ * dấu thập phân; chỉ một loại dấu thì theo kiểu số đang chọn (kiểu 'us': dấu phẩy là phân cách nghìn, dấu chấm là thập phân).
  * @param {string} text @returns {number}
  */
 export function parseNumber(text) {
@@ -36,9 +48,9 @@ export function parseNumber(text) {
     if (s.lastIndexOf(',') > s.lastIndexOf('.')) s = s.replace(/\./g, '').replace(',', '.');
     else s = s.replace(/,/g, '');
   } else if (hasComma) {
-    s = /^\d{1,3}(,\d{3})+$/.test(s) && s.split(',').length > 2 ? s.replace(/,/g, '') : s.replace(',', '.');
+    s = style === 'us' || (/^\d{1,3}(,\d{3})+$/.test(s) && s.split(',').length > 2) ? s.replace(/,/g, '') : s.replace(',', '.');
   } else if (hasDot) {
-    if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
+    if (style !== 'us' && /^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
   }
   const n = Number(s);
   return neg ? -n : n;

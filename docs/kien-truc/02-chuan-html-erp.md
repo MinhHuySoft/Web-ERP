@@ -590,6 +590,30 @@ FE gắn pager vào lưới đứng ngay trước nó. FE có thể nạp tiếp
 - Panel có `data-src` thì FE nạp nội dung khi người dùng mở tab lần đầu (lazy).
 - `data-badge` trên panel: số đếm hiển thị trên tab, ví dụ số dòng.
 
+**Ô của chứng từ trên trang chi tiết** (ERP: `LYT5…LYT13`, trang chi tiết 1…9 cùng trang với lưới T1…T9; form viết tay có
+thể tách thành trang riêng, vd "Công nợ & Giảm giá / CK" của hóa đơn bán):
+
+```html
+<form data-erp="record" id="rec-AR-InvoiceFrm" method="post" action="…">…</form>
+<section data-erp="tabs">
+  <section data-erp="tab-panel" data-tab-id="T1" data-title="Sơ yếu lý lịch" data-src="/erp/screens/HR_PersonFrm/00001/tabs/T1">
+    <fieldset>
+      <div data-erp="field" data-control="text" data-span="8"><label for="rec-HR-PersonFrm-BirthPlace">Nơi sinh</label>
+        <input id="rec-HR-PersonFrm-BirthPlace" name="BirthPlace" form="rec-HR-PersonFrm" readonly value="Hà Nội"></div>
+    </fieldset>
+  </section>
+  <section data-erp="tab-panel" data-tab-id="L6" data-title="Công nợ &amp; Giảm giá / CK">
+    <fieldset>…ô…</fieldset>
+  </section>
+</section>
+```
+
+- Ô đặt trong một `fieldset` (không `data-erp`) ở đầu panel, cấu trúc như mục 9.2.
+- Ô nằm ngoài `form[data-erp=record]` nên control (`input` / `select` / `textarea`, kể cả input ẩn của checkbox) **PHẢI** có
+  thuộc tính `form` = `id` của record, để vẫn thuộc chứng từ khi gửi.
+- Panel vừa có ô vừa có `data-src`: FE giữ phần ô, nội dung nạp về đặt phía sau (lưới của trang).
+- Trang chỉ có ô: không có `data-src`.
+
 ## 13. Thông điệp và xác nhận
 
 ### 13.1 Thông điệp (`messages`)
@@ -722,6 +746,8 @@ Màn in chứng từ / báo cáo theo mẫu (thiết kế như ActiveReports). F
   `data-template-format` NÊN có: `json` | `rpx`. FE không chạy Script trong mẫu.
 - `data-design-href` (CÓ THỂ): chỉ gửi khi người dùng được sửa mẫu (quyền `EPER` như ERP); FE hiện nút "Thiết kế mẫu".
 - `data-number-group`, `data-number-decimal` (NÊN): phân cách số theo cấu hình công ty (WinForms: theo máy, thường `.` `,`).
+  Người dùng chọn "Định dạng số" 1,234,567.89 trong Cài đặt (như vùng Windows của máy chạy ERP) thì FE dùng `,` `.` thay
+  cho giá trị này.
 - Lưới `R0` (PHẢI) = result set chính của SP `<Report>Stp`; `R1`… = các result set sau, đúng thứ tự. Lưới theo mục 11
   (`th[data-field][data-type]`, giá trị máy trong `td[data-value]`); ô `null` của SQL gửi `td[data-null]`. Cột chữ không
   có `data-value` thì FE dùng chữ trong ô. Lưới này là **dữ liệu in**, FE không hiện thành lưới.

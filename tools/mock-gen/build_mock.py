@@ -569,6 +569,15 @@ def option_list(field, value, rng=None):
     return ''.join(f'<option value="{e(v)}"{" selected" if v == value else ""}>{e(t)}</option>' for v, t in opts)
 
 
+def page_fields_html(rid, fields, mode):
+    """Ô của chứng từ trên trang chi tiết (chuẩn 12, LYT5…13): fieldset không data-erp, control gắn form chứng từ bằng thuộc tính form."""
+    out = []
+    for f, raw in fields:
+        h = field_html(rid, f, raw, '', 'view' if mode == 'view' else 'edit')
+        out.append(re.sub(r'<(input|select|textarea)(?=[ >])', lambda m: f'<{m.group(1)} form="{rid}"', h))
+    return '<fieldset>' + ''.join(out) + '</fieldset>'
+
+
 def field_html(fid, f, value=None, display=None, mode='view', idp='f'):
     """f: dict(field, caption, control, span, rows, row_start, readonly, required, decimals, lookup, options, gap)"""
     ctl = f['control']
@@ -1078,6 +1087,17 @@ def build_edit(menu, sid, title, table, details, prefix, para='', pk=None):
                 p.append(f'<section data-erp="tab-panel" data-tab-id="{s}" data-title="{e(dcap)}" data-badge="{cnt}">')
                 p.append(grid_html(s, dcols, drows, dpk, None, editable=editable, form_id=rid if editable else None,
                                    selectable='multi' if editable else 'single', template_row=tmpl))
+                p.append('</section>')
+            if sid.upper() == 'AR_INVOICEFRM':
+                # Trang riêng chỉ có ô của chứng từ (LYT6 của hóa đơn bán, key web L6V): không có data-src.
+                due = '' if mode == 'new' else (TODAY + datetime.timedelta(days=30)).isoformat()
+                pf = [(dict(field='PaymentTermID', caption='Điều khoản TT', control='text', span=6, row_start=True), '' if mode == 'new' else '30N'),
+                      (dict(field='DueDate', caption='Ngày đến hạn', control='date', span=5), due),
+                      (dict(field='DebtDueDate', caption='Hạn công nợ', control='date', span=5), due),
+                      (dict(field='RefDoc', caption='Chứng từ gốc', control='text', span=8, row_start=True), '' if mode == 'new' else 'HD-0001'),
+                      (dict(field='DiscountPercent', caption='Chiết khấu (%)', control='percent', span=5), '' if mode == 'new' else '2.5')]
+                p.append('<section data-erp="tab-panel" data-tab-id="L6" data-title="Công nợ &amp; Giảm giá / CK">')
+                p.append(page_fields_html(rid, pf, mode))
                 p.append('</section>')
             p.append('</section>')
         p.append('</section>')

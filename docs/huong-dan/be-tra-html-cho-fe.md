@@ -227,6 +227,12 @@ Ghi nhớ cho lưới:
 - Chế độ `view`: mọi ô `readonly` (hoặc `disabled` với `select`/`checkbox`). **FE không tự mở khóa ô.**
 - Từ 2 `fieldset[data-erp="tab"]` trở lên → FE vẽ thành tab; 1 cái → khung có tiêu đề.
 - Bố cục ô theo **lưới 40 cột** của WinForms (`data-span` = SizeX, `data-row-start` = isFirstPos…), xem mục 7.
+- **Nút trên form** (LYT ControlType 22 dạng nút, 24, 26 — vd "Chuyển trạng thái", "Xem thông tin hợp đồng"): gửi như ô
+  `data-control="button"` gồm `<span></span>` + `<button type="button">`; chữ nút lấy ở LYT vị trí 7, rồi `LYS{tab}` mã
+  `BT` / `LT` của control. Web chưa chạy lệnh của nút thì gửi `disabled` kèm `title` giải thích.
+- **Ô của chứng từ trên trang chi tiết** (`LYT5…LYT13`): đặt trong `fieldset` (không `data-erp`) ở đầu `tab-panel` của
+  trang, control mang `form="<id record>"` (chuẩn mục 12). Trang có cả lưới thì panel vẫn có `data-src`; trang chỉ có ô thì
+  không. Ví dụ hóa đơn bán: trang riêng `L6` "Công nợ & Giảm giá / CK" đứng trước lưới "Thông tin hóa đơn".
 
 ### 5.3 Chứng từ — sửa / thêm (`data-mode="edit"` / `"new"`) với lưới sửa trực tiếp
 
