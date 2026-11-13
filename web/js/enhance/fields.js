@@ -33,6 +33,8 @@ function minSpan(ctl, label) {
   if (ctl === 'date') return 5;
   if (ctl === 'datetime') return 7;
   if (ctl === 'checkbox') return Math.min(12, Math.ceil((label.length * 7 + 58) / 33));
+  // Nút: chữ (~7,5 px/ký tự) + lề trong + viền phải nằm gọn trong khung (LYT SizeX 3–4 của WinForms hẹp hơn với font web).
+  if (ctl === 'button') return Math.min(16, Math.ceil((label.length * 7.5 + 42) / 33));
   return 1;
 }
 
@@ -40,7 +42,8 @@ function minSpan(ctl, label) {
 function enhanceField(box) {
   const ctl = box.dataset.control || 'text';
   box.classList.add('erp-field', `erp-field--${ctl}`);
-  const span = clamp(Math.max(Number(box.dataset.span || 10), minSpan(ctl, box.querySelector(':scope > label')?.textContent?.trim() || '')), 1, 40);
+  const caption = (box.querySelector(':scope > label') || (ctl === 'button' ? box.querySelector(':scope > button, :scope > a') : null))?.textContent?.trim() || '';
+  const span = clamp(Math.max(Number(box.dataset.span || 10), minSpan(ctl, caption)), 1, 40);
   box.style.setProperty('--span', String(span));
   // Màn vừa: lưới 20 cột (tỷ lệ giữ nguyên, tối thiểu 1/4 dòng). Màn hẹp: lưới 4 cột (ô ngắn 1/2, còn lại cả dòng).
   box.style.setProperty('--span-md', String(clamp(Math.round(span / 2), 5, 20)));

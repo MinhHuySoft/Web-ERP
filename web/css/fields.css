@@ -19,6 +19,7 @@
   .erp-field[data-warn] .erp-input { border-color: var(--erp-warning); }
   .erp-field--button { justify-content: flex-end; }
   .erp-field--button > span:empty { height: 1.2em; }
+  .erp-field--button > :is(button, a) { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
   .erp-field--checkbox { flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 10px; min-height: var(--erp-ctl-h); align-self: end; }
   .erp-field--checkbox .erp-field__label { white-space: normal; color: var(--erp-text); font-weight: 500; font-size: var(--erp-fs-sm); }
   .erp-field--label .erp-output, .erp-field--label output { padding: 6px 0; }
@@ -68,6 +69,12 @@
   .erp-lookup__btn:disabled { color: var(--erp-text-faint); cursor: default; background: var(--erp-input-readonly); }
   .erp-lookup__btn .erp-icon { width: 16px; height: 16px; }
   .erp-field output[data-erp="lookup-text"] { font-size: var(--erp-fs-sm); color: var(--erp-text-muted); min-height: 1.2em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Tên tra cứu trong ô, ngay sau mã (--erp-lk-x do lookup.js tính); không nhận chuột để bấm vẫn vào ô nhập. */
+  .erp-lookup--text { position: relative; }
+  .erp-field .erp-lookup--text > output[data-erp="lookup-text"] {
+    position: absolute; inset-block: 1px; inset-inline-start: calc(var(--erp-lk-x, 10px) + 14px); inset-inline-end: 42px;
+    min-height: 0; line-height: calc(var(--erp-ctl-h) - 2px); font-size: inherit; pointer-events: none;
+  }
   .erp-lookup-pop {
     position: fixed; z-index: 960; max-height: 320px; overflow: auto; padding: 4px; border-radius: var(--erp-radius-lg);
     background: var(--erp-surface); backdrop-filter: none;
