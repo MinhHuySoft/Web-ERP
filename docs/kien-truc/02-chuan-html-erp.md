@@ -143,6 +143,7 @@ Mỗi `<form method="post">` PHẢI chứa input ẩn chống giả mạo theo c
 | `report-result` | `section` | 15 |
 | `print-document`, `print-params` | `section`, `dl` | 15.1 |
 | `print-designer` | `section` | 15.2 |
+| `layout-designer` | `section` | 15.3 |
 
 ## 5. Phiên làm việc và menu
 
@@ -790,6 +791,39 @@ bộ giao diện; BE gửi mẫu, URL dữ liệu xem trước và form lưu.
   `Json` (mẫu `erp-print-template/1`) + `Comment` (ghi chú phiên bản). BE trả `messages` (`success` khi đã lưu, `error`
   + 422 khi mẫu không hợp lệ / không có quyền). Không có form = chỉ xem.
 - BE PHẢI kiểm lại mẫu khi lưu (schema, kích thước, tên control, biểu thức theo 06-mau-in.md §4) — không tin FE.
+
+### 15.3 Trình vẽ layout form (`layout-designer`)
+
+Vẽ lại bố cục ô của form chứng từ (chuỗi `LYT` của `SY_FrmCfg`) như trình thiết kế layout Ctrl+F12 của ERP. FE làm
+toàn bộ giao diện. BE gửi URL bố cục và form lưu, rồi ghi cấu hình như WinForms. Thiết kế: [07-ve-layout-form.md](07-ve-layout-form.md).
+
+```html
+<section data-erp="screen" data-screen-id="AP_PurposeRequestListFrm" data-form-type="CUSTOM" data-mode="edit"
+         data-screen-key="layout:AP_PurposeRequestListFrm">
+  <h1>Vẽ layout — Đề nghị mua hàng</h1>
+  <section data-erp="layout-designer" data-form="AP_PurposeRequestListFrm"
+           data-layout-src="/erp/screens/AP_PurposeRequestListFrm/layout/data">
+    <form method="post" action="/erp/screens/AP_PurposeRequestListFrm/layout/save">
+      <input type="hidden" name="__RequestVerificationToken" value="…">
+      <input type="hidden" name="Form" value="AP_PurposeRequestListFrm">
+    </form>
+  </section>
+</section>
+```
+
+- `data-form` (PHẢI): FID đang vẽ, tức tên form chạy, có hậu tố Para nếu menu có Para.
+- `data-layout-src` (PHẢI): URL trả JSON `erp-form-layout/1` (07-ve-layout-form.md §3).
+  - JSON gồm: tab, ô theo thứ tự, cột của bảng, phiên bản đã lưu, `revision`.
+- `form[method=post]` (CÓ THỂ): có thì được lưu; không có thì chỉ xem.
+  - Form PHẢI có `input[name=Form]`.
+  - **Lưu**: FE gửi `multipart/form-data` gồm mọi input của form + `Json` (bố cục, kèm `revision` lúc mở) + `Comment`.
+  - **Khôi phục**: FE gửi `Restore` = số phiên bản thay cho `Json`.
+- BE trả `messages`:
+  - `success` khi đã lưu;
+  - `error` + 422 khi bố cục không hợp lệ hoặc không có quyền;
+  - `error` + 409 khi bố cục đã bị đổi từ lúc mở.
+- BE PHẢI kiểm lại bố cục khi lưu: tên ô, tab, nhóm, loại control, độ rộng, độ dài cột DB. Không tin FE.
+- Màn chứng từ có nút `data-action="layout"` (phím Ctrl+F12) trỏ tới màn này, chỉ khi người dùng được vẽ.
 
 ## 16. Thành phần khác
 

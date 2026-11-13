@@ -8,7 +8,7 @@
 
 const ROLES = new Set(['login', 'session', 'menu', 'menu-group', 'menu-item', 'screen', 'toolbar', 'filter', 'record', 'tab', 'field', 'grid',
   'row-template', 'pager', 'tabs', 'tab-panel', 'messages', 'message', 'confirm', 'dialog', 'lookup-result', 'status', 'attachments',
-  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options', 'print-document', 'print-params', 'print-designer']);
+  'report-result', 'lookup-text', 'hint', 'error', 'kpi', 'chart', 'options', 'print-document', 'print-params', 'print-designer', 'layout-designer']);
 const PRINT_TYPES = ['text', 'number', 'money', 'quantity', 'percent', 'date', 'datetime', 'bool'];
 const FORM_TYPES = ['LIST', 'LISTEDIT', 'EDIT', 'REPORT', 'DASHBOARD', 'CUSTOM'];
 const MODES = ['view', 'new', 'edit', 'find'];
@@ -145,6 +145,14 @@ export function validate(doc) {
     if (fmt && !['rpx', 'json'].includes(fmt)) add('error', '15.2', `data-template-format "${fmt}" không hợp lệ (rpx/json).`, s);
     const f = s.querySelector('form[method="post" i]');
     if (f && !f.querySelector('input[name="Template"]')) add('error', '15.2', 'Form lưu mẫu thiếu input name="Template".', f);
+  });
+  // 15.3 Trình vẽ layout form
+  doc.querySelectorAll('[data-erp="layout-designer"]').forEach((s) => {
+    if (s.tagName !== 'SECTION') add('warning', '15.3', 'layout-designer nên là <section>.', s);
+    if (!s.getAttribute('data-layout-src')) add('error', '15.3', 'layout-designer thiếu data-layout-src (URL bố cục erp-form-layout/1).', s);
+    if (!s.getAttribute('data-form')) add('error', '15.3', 'layout-designer thiếu data-form (FID đang sửa).', s);
+    const f = s.querySelector('form[method="post" i]');
+    if (f && !f.querySelector('input[name="Form"]')) add('error', '15.3', 'Form lưu bố cục thiếu input name="Form".', f);
   });
   doc.querySelectorAll('[data-erp="print-params"]').forEach((dl) => {
     if (dl.tagName !== 'DL') add('warning', '15.1', 'print-params nên là <dl>.', dl);

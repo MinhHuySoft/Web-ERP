@@ -12,6 +12,7 @@ import { interceptNavigation } from './forms.js';
 import { enhanceDashboard } from './dashboard.js';
 import { enhancePrintDocument } from '../print/viewer.js';
 import { enhancePrintDesigner } from '../print/designer.js';
+import { enhanceLayoutDesigner } from '../layout/designer.js';
 
 const MODE_LABEL = { view: 'Xem', new: 'Thêm mới', edit: 'Đang sửa', find: 'Danh sách' };
 const TYPE_CLASS = { LIST: 'list', LISTEDIT: 'list', EDIT: 'edit', REPORT: 'report', DASHBOARD: 'dashboard', CUSTOM: 'custom' };
@@ -143,6 +144,7 @@ export function enhanceFragment(root, ctx) {
   // Mẫu in trước lưới: các lưới R0, R1… bên trong là dữ liệu in, không nâng cấp thành lưới
   root.querySelectorAll('section[data-erp="print-document"]').forEach((p) => enhancePrintDocument(/** @type {HTMLElement} */ (p), ctx));
   root.querySelectorAll('section[data-erp="print-designer"]').forEach((p) => enhancePrintDesigner(/** @type {HTMLElement} */ (p), ctx));
+  root.querySelectorAll('section[data-erp="layout-designer"]').forEach((p) => enhanceLayoutDesigner(/** @type {HTMLElement} */ (p), ctx));
   root.querySelectorAll('[data-erp="toolbar"]').forEach((m) => enhanceToolbar(/** @type {HTMLElement} */ (m), ctx));
   root.querySelectorAll('form[data-erp="filter"]').forEach((f) => enhanceFilter(/** @type {HTMLFormElement} */ (f)));
   root.querySelectorAll('form[data-erp="record"]').forEach((f) => enhanceRecord(/** @type {HTMLFormElement} */ (f)));

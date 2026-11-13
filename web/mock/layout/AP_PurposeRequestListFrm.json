@@ -1,0 +1,325 @@
+{
+ "$schema": "erp-form-layout/1",
+ "form": "AP_PurposeRequestListFrm",
+ "title": "Đề nghị mua hàng",
+ "revision": "mock-1",
+ "tabs": [
+  {
+   "id": "1",
+   "kind": "master",
+   "captionKey": "T1V",
+   "caption": "",
+   "defaultCaption": "Thông tin chung"
+  },
+  {
+   "id": "2",
+   "kind": "master",
+   "captionKey": "T2V",
+   "caption": "",
+   "defaultCaption": "Thông tin 2"
+  },
+  {
+   "id": "3",
+   "kind": "master",
+   "captionKey": "T3V",
+   "caption": "",
+   "defaultCaption": "Thông tin 3"
+  },
+  {
+   "id": "A",
+   "kind": "master",
+   "captionKey": "TAV",
+   "caption": "",
+   "defaultCaption": "Thông tin 4"
+  },
+  {
+   "id": "B",
+   "kind": "master",
+   "captionKey": "TBV",
+   "caption": "",
+   "defaultCaption": "Thông tin 5"
+  },
+  {
+   "id": "C",
+   "kind": "master",
+   "captionKey": "TCV",
+   "caption": "",
+   "defaultCaption": "Thông tin 6"
+  },
+  {
+   "id": "5",
+   "kind": "detail",
+   "page": 1,
+   "caption": "Chi tiết 1",
+   "defaultCaption": "Chi tiết 1",
+   "hint": "Trang chi tiết 1: ô của chứng từ (LYT5) đứng trước lưới T1 cùng trang."
+  },
+  {
+   "id": "6",
+   "kind": "detail",
+   "page": 2,
+   "caption": "Chi tiết 2",
+   "defaultCaption": "Chi tiết 2",
+   "hint": "Trang chi tiết 2: ô của chứng từ (LYT6) đứng trước lưới T2 cùng trang."
+  },
+  {
+   "id": "7",
+   "kind": "detail",
+   "page": 3,
+   "caption": "Chi tiết 3",
+   "defaultCaption": "Chi tiết 3",
+   "hint": "Trang chi tiết 3: ô của chứng từ (LYT7) đứng trước lưới T3 cùng trang."
+  },
+  {
+   "id": "8",
+   "kind": "detail",
+   "page": 4,
+   "caption": "Chi tiết 4",
+   "defaultCaption": "Chi tiết 4",
+   "hint": "Trang chi tiết 4: ô của chứng từ (LYT8) đứng trước lưới T4 cùng trang."
+  },
+  {
+   "id": "9",
+   "kind": "detail",
+   "page": 5,
+   "caption": "Chi tiết 5",
+   "defaultCaption": "Chi tiết 5",
+   "hint": "Trang chi tiết 5: ô của chứng từ (LYT9) đứng trước lưới T5 cùng trang."
+  },
+  {
+   "id": "10",
+   "kind": "detail",
+   "page": 6,
+   "caption": "Chi tiết 6",
+   "defaultCaption": "Chi tiết 6",
+   "hint": "Trang chi tiết 6: ô của chứng từ (LYT10) đứng trước lưới T6 cùng trang."
+  },
+  {
+   "id": "11",
+   "kind": "detail",
+   "page": 7,
+   "caption": "Chi tiết 7",
+   "defaultCaption": "Chi tiết 7",
+   "hint": "Trang chi tiết 7: ô của chứng từ (LYT11) đứng trước lưới T7 cùng trang."
+  },
+  {
+   "id": "12",
+   "kind": "detail",
+   "page": 8,
+   "caption": "Chi tiết 8",
+   "defaultCaption": "Chi tiết 8",
+   "hint": "Trang chi tiết 8: ô của chứng từ (LYT12) đứng trước lưới T8 cùng trang."
+  },
+  {
+   "id": "13",
+   "kind": "detail",
+   "page": 9,
+   "caption": "Chi tiết 9",
+   "defaultCaption": "Chi tiết 9",
+   "hint": "Trang chi tiết 9: ô của chứng từ (LYT13) đứng trước lưới T9 cùng trang."
+  }
+ ],
+ "items": [
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PurchaseRequestID",
+   "cfg": "1;4;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PurchaseDate",
+   "cfg": "4;4;1;;;;;;;;;;;;;SELECT FORMAT(GETDATE(), \"dd/MM/yyyy\") AS CurrentDate:;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "StatusButtonCtl",
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PersonSuggest",
+   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PrintButtonCtl_1",
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "Department",
+   "cfg": "3;12;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PrintButtonCtl_2",
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PurposeDescOrClient",
+   "cfg": "1;12;1;1;;120;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PrintButtonCtl_3",
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "Notes",
+   "cfg": "1;12;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PrintButtonCtl_4",
+   "cfg": "22;4;1;;1;;;;;;;;;;;;;;1;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "ObjectID",
+   "cfg": "2;7;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "RateExchange",
+   "cfg": "1;2;1;;1;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "CurrencyID",
+   "cfg": "2;3;1;;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "Price",
+   "cfg": "5;4;1;1;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PurposeID",
+   "cfg": "2;4;1;;;;;;;;1;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "BranchID",
+   "cfg": "2;4;1;;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "CommandButtonCtl",
+   "cfg": "22;4;1;1;;;;;;;;;;;4;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "CommandButtonCtl_1",
+   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0"
+  },
+  {
+   "tab": "1",
+   "group": "",
+   "name": "PrintButtonCtl",
+   "cfg": "22;4;1;;;;;;;;;;;;;;;;;0;0"
+  }
+ ],
+ "fields": [
+  {
+   "name": "PurchaseRequestID",
+   "type": "text",
+   "caption": "Mã đề nghị Purchase"
+  },
+  {
+   "name": "PurchaseDate",
+   "type": "date",
+   "caption": "Ngày Purchase"
+  },
+  {
+   "name": "PurposeID",
+   "type": "number",
+   "caption": "Mã Purpose"
+  },
+  {
+   "name": "PersonSuggest",
+   "type": "text",
+   "caption": "Suggest Person"
+  },
+  {
+   "name": "Department",
+   "type": "text",
+   "caption": "Phòng ban"
+  },
+  {
+   "name": "PurposeDescOrClient",
+   "type": "text",
+   "caption": "Client Or Desc Purpose"
+  },
+  {
+   "name": "Price",
+   "type": "money",
+   "caption": "Giá"
+  },
+  {
+   "name": "Notes",
+   "type": "text",
+   "caption": "Ghi chú"
+  },
+  {
+   "name": "StatusID",
+   "type": "text",
+   "caption": "Trạng thái"
+  },
+  {
+   "name": "isLock",
+   "type": "bool",
+   "caption": "Khóa"
+  },
+  {
+   "name": "CurrencyID",
+   "type": "text",
+   "caption": "Loại tiền"
+  },
+  {
+   "name": "ObjectID",
+   "type": "text",
+   "caption": "Mã đối tượng"
+  },
+  {
+   "name": "RateExchange",
+   "type": "number",
+   "caption": "Tỷ giá"
+  },
+  {
+   "name": "BranchID",
+   "type": "text",
+   "caption": "Chi nhánh"
+  }
+ ],
+ "versions": [
+  {
+   "no": 1,
+   "at": "12/11/2026 09:15",
+   "by": "admin",
+   "kind": "save",
+   "comment": "Mock: lần lưu mẫu"
+  }
+ ]
+}

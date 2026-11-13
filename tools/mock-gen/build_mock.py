@@ -471,7 +471,7 @@ def s_btn(action, form_id, formaction, label, **attrs):
 
 
 def toolbar(items):
-    return '<menu data-erp="toolbar">\n  ' + '\n  '.join(items) + '\n</menu>'
+    return '<menu data-erp="toolbar">\n  ' + '\n  '.join(i for i in items if i) + '\n</menu>'
 
 
 def grid_html(grid_id, cols, rows, key_field=None, caption_text=None, editable=False, form_id=None,
@@ -1035,6 +1035,7 @@ def build_edit(menu, sid, title, table, details, prefix, para='', pk=None):
                      s_btn('delete', rid, f'{BASE}/actions/deleted.html', 'Xóa', data_confirm='Xóa chứng từ này?'),
                      a_btn('copy', f'{base}/new.html', 'Sao chép', data_target='tab'),
                      a_btn('print', f'{BASE}/print/AR_InvoiceReport.html', 'In', data_shortcut='Ctrl+P'),
+                     a_btn('layout', f'{BASE}/layout/{sid}.html', 'Vẽ layout', data_target='tab', data_shortcut='Ctrl+F12') if sid.upper() == 'AP_PURPOSEREQUESTLISTFRM' else '',
                      a_btn('attach', f'{BASE}/actions/attachments.html', 'Đính kèm', data_target='dialog'),
                      a_btn('prev', f'{base}/{max(idx - 1, 1)}.html', 'Trước', data_target='self'),
                      a_btn('next', f'{base}/{min(idx + 1, n_records)}.html', 'Sau', data_target='self'),
@@ -2256,6 +2257,61 @@ def tw(mm):
     return str(round(mm * 1440 / 25.4))
 
 
+LAYOUT_TABS = ['1', '2', '3', 'A', 'B', 'C', '5', '6', '7', '8', '9', '10', '11', '12', '13']
+
+
+def build_layout_designer(sid, table, title):
+    """Trình vẽ layout form (chuẩn 15.3): trang designer + JSON erp-form-layout/1 từ dòng LYT của cấu hình mẫu. Lưu/khôi phục = mock."""
+    rows = cfg_of(sid)
+    lyt = [r for r in rows if (r['KeyID'] or '').upper().startswith('LYT') and r['SubID']]
+    groups = {}
+    for r in lyt:
+        if (r['KeyValue'] or '').split(';')[0] == '23' and r['KeyID'][3:] in LAYOUT_TABS:
+            groups[r['KeyID'][3:] + r['SubID']] = (r['KeyID'][3:], r['SubID'])
+    items = []
+    for r in sorted(lyt, key=lambda r: (r['KeyID'], (r['SubValue'] or '').zfill(4))):
+        k = r['KeyID'][3:]
+        if k in LAYOUT_TABS:
+            tab, grp = k, ''
+        elif k in groups:
+            tab, grp = groups[k]
+        else:
+            continue
+        items.append(dict(tab=tab, group=grp, name=r['SubID'], cfg=r['KeyValue'] or ''))
+    # Nhóm đứng trước ô con của nó trong danh sách (FE giữ thứ tự theo vùng).
+    order = {t: i for i, t in enumerate(LAYOUT_TABS)}
+    items.sort(key=lambda x: (order[x['tab']], 1 if x['group'] else 0))
+    caps = {'1': 'T1V', '2': 'T2V', '3': 'T3V', 'A': 'TAV', 'B': 'TBV', 'C': 'TCV'}
+    tabs = []
+    for i, t in enumerate(TAB_ORDER):
+        tabs.append(dict(id=t, kind='master', captionKey=caps[t], caption=cfg_get(rows, caps[t]),
+                         defaultCaption='Thông tin chung' if t == '1' else f'Thông tin {i + 1}'))
+    for n in range(1, 10):
+        dcp = cfg_get(rows, f'T{n}', 'DCP')
+        tabs.append(dict(id=str(n + 4), kind='detail', page=n, caption=dcp or f'Chi tiết {n}', defaultCaption=f'Chi tiết {n}',
+                         hint=f'Trang chi tiết {n}: ô của chứng từ (LYT{n + 4}) đứng trước lưới T{n} cùng trang.'))
+    used = {x['name'].lower() for x in items}
+    fields = []
+    for c in table_cols(table):
+        k = col_kind(c)
+        if k == 'skip' or SECRET_COL.match(c['column_name']):
+            continue
+        fields.append(dict(name=c['column_name'], type={'money': 'money', 'quantity': 'number', 'number': 'number', 'date': 'date', 'datetime': 'datetime',
+                                                       'bool': 'bool'}.get(k, 'text'), caption=caption(c['column_name'], fid=sid)))
+    data = {'$schema': 'erp-form-layout/1', 'form': sid, 'title': title, 'revision': 'mock-1', 'tabs': tabs, 'items': items, 'fields': fields,
+            'versions': [dict(no=1, at='12/11/2026 09:15', by='admin', kind='save', comment='Mock: lần lưu mẫu')]}
+    write(f'layout/{sid}.json', json.dumps(data, ensure_ascii=False, indent=1))
+    body = (f'<section data-erp="screen" data-screen-id="{e(sid)}" data-form-type="CUSTOM" data-mode="edit" data-screen-key="layout:{e(sid)}">'
+            f'<h1>Vẽ layout — {e(title)}</h1>'
+            f'<section data-erp="layout-designer" data-form="{e(sid)}" data-layout-src="{BASE}/layout/{e(sid)}.json" '
+            f'data-preview-href="{BASE}/records/{slug(sid)}/1.html">'
+            f'<form method="post" action="{BASE}/actions/layout-saved.html">{TOKEN}<input type="hidden" name="Form" value="{e(sid)}"></form>'
+            '</section></section>')
+    write(f'layout/{sid}.html', page(f'Vẽ layout — {title}', body))
+    write('actions/layout-saved.html', page('Kết quả', '<div data-erp="messages"><p data-erp="message" data-msg-type="success">'
+                                                         'Đã lưu bố cục (mock, không ghi gì).</p></div>'))
+
+
 def build_print():
     """Mẫu in (chuẩn 15.1): hai màn in với dữ liệu giả.
     - Phiếu thu: mẫu JSON erp-print-template/1 (mẫu web).
@@ -2599,6 +2655,7 @@ def main():
     build_session_login_home(first_screens)
     build_actions()
     build_print()
+    build_layout_designer('AP_PurposeRequestListFrm', 'AP_PurchaseRequestTbl', 'Đề nghị mua hàng')
     build_dialogs()
     total = sum(len(fs) for _, _, fs in os.walk(OUT))
     size = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk(OUT) for f in fs)
