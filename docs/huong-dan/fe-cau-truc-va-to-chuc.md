@@ -138,6 +138,8 @@ việc) · `status`. Vùng nào ẩn (Ribbon khi dùng Sidebar, thanh trạng th
 - Lưới trong tab chi tiết và lưới không có form lọc vẫn giữ ô "Tìm trong lưới" (lọc tại chỗ).
 - **Phân trang:** `nav[data-erp=pager]` của BE (chuẩn 11.5) gắn vào cuối lưới đứng ngay trước nó (`enhancePager`). Các link
   Đầu/Trước/Sau/Cuối mở trong cùng tab; URL do BE đặt (giữ bộ lọc), FE không tự ghép.
+- **Danh sách có tab bên dưới** (`section[data-erp=tabs]` ngay trong màn danh sách, vd lịch tài chính: năm + quý + kỳ): lưới trên
+  không giãn hết chiều cao, màn cuộn bình thường (`grid.css`, `.erp-screen--fill:has(> .erp-dtabs)`).
 
 
 1. Người dùng bấm menu / link → `interceptNavigation` (forms.js) chặn, đọc `data-target` → `ctx.navigate(url, target)`.
