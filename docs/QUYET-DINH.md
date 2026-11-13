@@ -384,14 +384,38 @@ Bổ sung QĐ-05 / QĐ-06 (công nghệ và phạm vi backend).
 
 ---
 
+## QĐ-09 — Giữ đúng ERP trên web; DB thử nghiệm; báo cáo và mẫu in (2026-11-13)
+
+Chủ dự án quyết ngày 2026-11-13, trong lúc làm M2–M6:
+
+1. **Trang quản trị chỉ là cấu hình riêng của BE.** Mọi form của ERP, kể cả form hệ thống (người dùng, nhóm, phân quyền, thiết
+   lập…), giữ trên web ERP như WinForms. Không bỏ form, không dời sang trang quản trị, vì khách đang thao tác trên đó.
+2. **Phạm vi dữ liệu giống ERP.**
+   - Form viết tay không tự lọc theo chi nhánh của người dùng. Chỉ form động (`FrmFormList`, `FrmFormListEdit`, `FrmMasterDetail`)
+     lọc; form viết tay tự lọc trong mã thì lọc theo đúng mã đó.
+   - Mở màn theo menu: thấy menu thì mở được, như `MainFrm.MenuClick` không kiểm cờ "Xem". Cờ quyền chỉ quyết định phạm vi dữ
+     liệu và nút.
+3. **CQ-01 — DB thử nghiệm cho mốc ghi dữ liệu (M4)** là bản sao MedData trên `z4.bms79.com,17444`, khôi phục từ bản sao lưu
+   hằng đêm. Không bao giờ ghi vào DB gốc của khách.
+4. **CQ-03 — Báo cáo.**
+   - Báo cáo dạng lưới: xuất Excel.
+   - Mẫu in: chuyển `.rpx` sang mẫu web (JSON), dựng bằng HTML/CSS. Phải có **trình thiết kế trên web sửa mẫu linh động như
+     ActiveReports**, không phải mẫu cố định. Không mua engine ActiveReports.
+   - Quyền sửa mẫu giống ERP (`EPER` của từng mẫu, mặc định mọi người dùng), thêm quyền "xuất bản" riêng.
+5. **Ghi dữ liệu:** hook kiểm tra nghiệp vụ của khách (EBS/EBE/EBD) lỗi SQL thì cho lưu tiếp như WinForms, nhưng ghi cảnh báo
+   vào log.
+6. **Vận hành:** pool IIS của web ERP luôn chạy (không tự tắt khi rảnh). M4 (ghi dữ liệu) và M6 (báo cáo, mẫu in) làm song song.
+
+---
+
 ## Còn chờ quyết định
 
 | Mã | Câu hỏi | Ảnh hưởng |
 |---|---|---|
-| CQ-01 | Khách hàng / DB nào làm pilot khi nối backend thật? (Demo FE dùng mock Medcom) | Metadata cần export, màn hình ưu tiên |
+| ~~CQ-01~~ | ~~Khách hàng / DB nào làm pilot khi nối backend thật?~~ — đã trả lời 2026-11-13: bản sao MedData trên z4 (QĐ-09) | — |
 | CQ-06 | Đội backend duyệt chuẩn ERP-HTML v1 | Tích hợp backend thật |
 | CQ-02 | Xác nhận danh sách ngoại lệ bảo mật ở QĐ-03 | Hành vi đăng nhập, phân quyền |
-| CQ-03 | Báo cáo `.rpx`: mua engine tương thích (ActiveReports.NET) hay chuyển mẫu sang engine miễn phí? | Chi phí giấy phép, khối lượng chuyển 776 mẫu |
+| ~~CQ-03~~ | ~~Báo cáo `.rpx`: mua engine hay chuyển mẫu?~~ — đã trả lời 2026-11-13: chuyển sang mẫu web + trình thiết kế web (QĐ-09) | — |
 | CQ-04 | Chạy `tools/metadata-export` trên DB pilot (cần tài khoản DB) | Dựng màn hình thật |
 | ~~CQ-07~~ | ~~DB công ty nằm ở đâu so với VPS~~ — đã trả lời 2026-11-11: DB của công ty phát triển cùng VPS, DB khách hàng ở máy chủ riêng của từng khách (QĐ-07, phần bổ sung) | — |
 | ~~CQ-08~~ | ~~VPS chạy Windows hay Linux~~ — đã trả lời 2026-11-11: Windows, BE chạy trên IIS (QĐ-07, phần bổ sung) | — |
