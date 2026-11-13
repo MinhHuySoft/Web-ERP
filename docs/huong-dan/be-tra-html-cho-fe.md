@@ -8,6 +8,7 @@
 > - Ví dụ chạy thật: thư mục [`web/mock/`](../../web/mock/) (FE đang chạy bằng các file này).
 > - Kiểm tra HTML của bạn: mở `web/tools/validate.html` (dán HTML hoặc nhập URL) — phải **0 lỗi**.
 > - Cấu trúc FE (nếu cần biết FE xử lý thế nào): [`fe-cau-truc-va-to-chuc.md`](fe-cau-truc-va-to-chuc.md).
+> - Tổ chức mã và thư mục của BE: [`be-cau-truc-va-to-chuc.md`](be-cau-truc-va-to-chuc.md).
 
 ---
 

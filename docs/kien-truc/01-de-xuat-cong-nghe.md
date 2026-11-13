@@ -115,6 +115,12 @@ flowchart LR
 
 ## 4. Cấu trúc thư mục đề xuất
 
+> **Đã thay thế:**
+> - phần FE: theo `web/` hiện tại, xem [`huong-dan/fe-cau-truc-va-to-chuc.md`](../huong-dan/fe-cau-truc-va-to-chuc.md);
+> - phần BE: theo QĐ-08, xem [`huong-dan/be-cau-truc-va-to-chuc.md`](../huong-dan/be-cau-truc-va-to-chuc.md).
+>
+> Sơ đồ dưới đây được viết trước QĐ-06, chỉ giữ để tham khảo.
+
 ```
 src/
   WebErp.Api/                 ASP.NET Core .NET 10 — endpoint, auth, SignalR, phục vụ wwwroot
